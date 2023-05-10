@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has the following files that are developed by Continental:<itemizedlist>
+<listitem><para><ref refid="_hardware_version_8c" kindref="compound">HardwareVersion.c</ref> - This file implements the functionality of reading the current HW version and base variant from OTP flash memory area.</para></listitem><listitem><para><ref refid="_hardware_version_8h" kindref="compound">HardwareVersion.h</ref> - Header file for <ref refid="_hardware_version_8c" kindref="compound">HardwareVersion.c</ref>. Contains the typedefs for HardwareVersion type, Base Variant type, Hardware Version information and Hardware Version number.</para></listitem><listitem><para><ref refid="_post_build_handler_8c" kindref="compound">PostBuildHandler.c</ref> - This file implements the posibility for functions to select the required PB configuration during startup and according to ECU variant.</para></listitem><listitem><para><ref refid="_post_build_handler_8h" kindref="compound">PostBuildHandler.h</ref> - Header file for <ref refid="_post_build_handler_8c" kindref="compound">PostBuildHandler.c</ref>.</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The existing requirements for <bold>HardwareVersion</bold> functionality are implemented at design level in both components - HardwareVersion (<bold><ref refid="_hardware_version_8c" kindref="compound">HardwareVersion.c</ref></bold>) and PostBuildHandler (<bold><ref refid="_post_build_handler_8c" kindref="compound">PostBuildHandler.c</ref></bold>). As per above mentioned DOORS baseline (29.33), for this component there are no valid non functional requirements.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>See the header files:<itemizedlist>
+<listitem><para><ref refid="_hardware_version_8h" kindref="compound">HardwareVersion.h</ref> - Declaration file for reading OTP data and selecting the corresponding HardwareVersion type,Base Variant type, Hardware Version information and Hardware Version number. This information will be used by other functions.</para></listitem><listitem><para><ref refid="_post_build_handler_8h" kindref="compound">PostBuildHandler.h</ref> - Declaration of function used for selecting the corresponding PB configuration. The functionality from <ref refid="_hardware_version_8c" kindref="compound">HardwareVersion.c</ref> will be also be used here.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The HardwareVersion has two units: HardwareVersion and PostBuildHandler. The below diagram depicts the interaction between the Software Units. <linebreak/>
+ <image type="html" name="HardwareVersion_SoftwareUnitInteraction.png"></image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The interaction between units for HardwareVersion integration components can be split in two parts.<itemizedlist>
+<listitem><para>Selection for the corresponding Post Build configuration</para></listitem><listitem><para>Getting the HW version type, base variant or HW version number</para></listitem></itemizedlist>
+</para><para><bold>Selection of the corresponding Post Build configuration</bold> <image type="html" name="HardwareVersion_PB_DynamicBehavior.png"></image>
+ </para><para><bold>Getting the HW version type, base variant or HW version number</bold> <image type="html" name="HardwareVersion_HW_DynamicBehavior.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>A Data flow diagram is not relevant for SWDD of LIN Integration component. <linebreak/>
+<heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because HardwareVersion component runs in high-power mode. Currently, the component does not require a special power modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value (e.g. NOT_DEFINED_HW). <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the concurrent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para>HardwareVersion operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>Two structures that stores HardwareVersion data and HardwareVersion number is used. For more details, please see <ulink url="struct_hardware_version_number.html">HardwareVersionNumber</ulink> and <ulink url="struct_t_hardware_version_struct.html">THardwareVersionStruct</ulink> data structures.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para><heading level="4">Interoperability</heading>
+</para><para>Interoperability is set to <bold>low</bold> because CDD is project specific.</para><para><heading level="4">Interaction</heading>
+</para><para>Interaction is set to <bold>medium</bold> because the component is used by other components to get information.</para><para><heading level="4">Criticality</heading>
+</para><para>Since <bold>HardwareVersion</bold> is non-safety and the interaction is Medium, the criticality is <bold>medium</bold>.</para><para><heading level="4">Technical complexity</heading>
+</para><para>The technical complexity is <bold>medium</bold> because <bold>HardwareVersion</bold> is split in smaller units but has interactions with other components.</para><para><heading level="4">Risks</heading>
+</para><para>The component <bold>HardwareVersion</bold> is composed of only two unit and no complex alghoritms are implemented therefore the risk is <bold>low</bold>.</para><para><heading level="4">Testability</heading>
+</para><para>The component <bold>HardwareVersion</bold> requires other tools (like PLAST) besides SWATT for 100% tests coverage but all tests can be automated. So, the testability level is <bold>high</bold>. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

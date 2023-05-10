@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para><heading level="3">Component modules</heading>
+</para><para>The component consists of only one SW unit splitted in the following files:<itemizedlist>
+<listitem><para><ref refid="_sys_w_d_diagnosis_8c" kindref="compound">SysWDDiagnosis.c</ref></para></listitem><listitem><para><ref refid="_sys_w_d_diagnosis_8h" kindref="compound">SysWDDiagnosis.h</ref></para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+</sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><image type="html" name="SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The SysWDDiagnosis it&apos;s a component consisting of only one SW unit.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>Consisting of only one SW unit, the Dynamic Behavior between the units is not relevant for this module. <linebreak/>
+ On the function level the dynamic behavior is reflected in Activity Diagrams and description of the functions. <linebreak/>
+ On architectural level the dynamic behavior is reflected in Sequence diagrams and Interaction overview diagram. <linebreak/>
+ For details see: <linebreak/>
+ VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+The received data from RL78 is presented with a red line. The requests and the provided data to RL78 is presented with a green line.</para><para><image type="html" name="Data_flow_SysWDDiagnosis.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>The module does not provide its own tasks. The provided functions are needed by other modules. <linebreak/>
+Also the cyclic functions of the component will run in the context of LinTask after Spi2SysWD with a 10ms cyclic period. <linebreak/>
+The two cyclic function of this component are: <linebreak/>
+<itemizedlist>
+<listitem><para>SysWDDiag_AnalyzeRL78DiagInfoFrame - The cyclic function for receiving and processing the data from RL78. <linebreak/>
+</para></listitem><listitem><para>SysWDDiag_FillDiagInfo - The cyclic function for sending the data to RL78.</para></listitem></itemizedlist>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>There are no specific interrupts for this module.</para><para><heading level="2">Events</heading>
+</para><para>There are no specific events for this module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no specific operating modes for this module.</para><para><heading level="2">Power Modes</heading>
+</para><para>There are no specific power modes for this module.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The data received via SPI from RL78 is validated inside the receiving and processing functions. The length of the data should correspond to the type of the information received based on the Header ID. In case the InfoLenght does not match with the InfoID - an error flag is set for the respective type of data. These flags are used further when sending the data, if error flag is set, the SysWDDiagnosis will inform other components that data was not correctly received or is invalid.</para><para>Also when processing the requests from other components (for CRC32, Read HW/FBL/SW version) the passed parameters by reference are checked for valid values (NULL pointers). In case this check fails the functions will return E_NOT_OK.</para><para>For this component there are no specific DTCs to handle the errors. However the component will call DEM interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref> in case the processed data from RL78 indicates that there are DTC(s) to be set/reset.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>The operation are described in the header files.</para><para>See <ulink url="globals_func.html"><bold>Function list</bold></ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>The defined macros are described in the header files.</para><para>See <ulink url="globals_defs.html"><bold>Defines list</bold></ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>All the functions and the description for them can be found in the section <ulink url="files.html"><bold>Files</bold></ulink></para><para><heading level="2">Data Structures</heading>
+</para><para>The data structures are described in the header files.</para><para>See <ulink url="globals_type.html"><bold>List of data structures</bold></ulink>.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>Evaluation of SysWDDiagnosis SWDD is resumed in the below table and is based on the following rationales:</para><para>•This is a project specific CDD, but some updates can fit the code into different variants, therefore has Low interoperability.</para><para>•The component interacts with RL78 trough Spi2SysWD and Spi2SysWD_APIS when sending and receiving the data, but also with many other components that send requests to RL78 and retrieve the data, having a high number of dependencies.</para><para>•It has medium criticality as the component itself is QM but the functionality impacts the communication between Chorus and RL78.</para><para>•The technical complexity of the module is also medium because there is only one unit, but has many interactions with other components.</para><para>•It has a low risk because the module has only 1 SW Unit.</para><para>•The overall functionality can be tested on with SWATT on unit level.</para><para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

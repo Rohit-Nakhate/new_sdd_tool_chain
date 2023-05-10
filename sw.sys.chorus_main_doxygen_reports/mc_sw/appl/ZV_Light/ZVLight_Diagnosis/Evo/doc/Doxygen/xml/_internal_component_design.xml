@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the following units:<itemizedlist>
+<listitem><para><ref refid="_z_v_light_routines_8c" kindref="compound">ZVLightRoutines.c</ref> - This unit contains the implementation of routine control of ZVLight module <linebreak/>
+</para></listitem><listitem><para><ref refid="_z_v_light_routines_8h" kindref="compound">ZVLightRoutines.h</ref> - Header file for <ref refid="_z_v_light_routines_8c" kindref="compound">ZVLightRoutines.c</ref> <linebreak/>
+ <image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+ </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refere to <ref refid="_internal_component_design_1SWR" kindref="member">Requirements Allocation</ref> chapter.<linebreak/>
+This module does not have non functional requirements. <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>There module is composed from one unit: ZVLightRoutines. <linebreak/>
+The unit ZVLightRoutines handles the implementation of routine control of the ZVLight module.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The external dependencies of the ZVLight_Diagnosis are exposed below: <linebreak/>
+ <image type="html" name="ZVLight_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The next diagrams illustrate the encrypt data state machine. <linebreak/>
+ <bold>The next diagram depicts the dynamic behaviour of stop, request results and abort routines.</bold></para><para><image type="html" name="ZVLight_Routines.png"></image>
+ </para><para><bold>The next diagram depicts the dynamic behaviour of encrypt data negative response.</bold></para><para><image type="html" name="EncryptDataNegativeResponseEncrypt.png"></image>
+ </para><para><bold>The next diagram depicts the dynamic behaviour of encrypt data positive response.</bold> <linebreak/>
+ <image type="html" name="EncryptDataPositiveResponseEncrypt.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the dataflow from ZVLightRoutines module.<linebreak/>
+Each data flow is illustrated through a colored line, as below:<linebreak/>
+<bold>Start</bold> routine - <bold>green</bold><linebreak/>
+<bold>Stop</bold> routine - <bold>red</bold><linebreak/>
+<bold>Request Results</bold> routine - <bold>black</bold><linebreak/>
+<bold>Abort</bold> routine - <bold>blue</bold><linebreak/>
+ <image type="html" name="data_flow_routines.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>ZVLightRoutines operates only on high-power mode, does not require special power modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>ZVLightRoutines runs only in high power since it doesn&apos;t request special power modes, as mentioned above.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The negative response codes are passed to the DCM using the following output parameter: <bold>ErrorCode</bold>.<linebreak/>
+In case of incorrect result of the routine the following parameter will be output: <bold>RC_ROUTINE_RESULT_INCORRECT_RESULTS</bold>.<linebreak/>
+DCM will output the following code errors if routine is not in valid range options: <bold>RC_NRC_0x31_REQUEST_OUT_OF_RANGE</bold>, <bold>RC_NRC_0x31_REQUEST_OUT_OF_RANGE</bold><linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>ZVLight_Diagnosis operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>ZVLight_Diagnosis does not use macros.</para><para><heading level="2">Algorithms</heading>
+</para><para>AES128 algorithm used for encryption. This service is provided by the Komponentenschutz (KS).</para><para><heading level="2">Data Structures</heading>
+</para><para>This component does not use data structures.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just one software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL and not a stack and not new and intraction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>AES128 algorithm used for encryption   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has one unit: CRC32_Mng_CrcEth <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component consists of only one unit: CRC32_Mng_CrcEth. The unit handles the CRC calculation based on the hash value from Ethernet Switch and Hash calculation from Ethernet Switch <linebreak/>
+</para><para>Crc_Eth Status State Machine <image type="html" name="Crc_Eth_Status_State_Machine.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The component consists of only one unit. There is no unit interaction description needed. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>CRC32_Mng_CrcEth has only one SW unit. So, dynamic behaviour between component&apos;s SW units is not applicable.<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+ <image type="html" name="sample_DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No event needs to be configured for the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The component return a value of 5 indicating that there is a error in calculation , which is mentioned as &quot;ENUM_CRC_ETH_STATUS_ERROR_CALCULATION&quot; if the Eth_Swt_Id is selected more than the present, that is more than 2 , or if the block index chosen is not appropriate. The component also return a value of 4 which is mentioned as &quot;ENUM_CRC_ETH_STATUS_ERROR_CALCULATION&quot; when the pCrcval value is equal to null. If the request type is more than 2, the component indicate a status of &quot;ENUM_CRC_ETH_STATUS_ERROR_INVALID_REQ_TYPE&quot; The complete detail of the status is mentioned in the above state Machine diagram. <heading level="2">Synchronization</heading>
+</para><para>Not applicable.</para><para><heading level="2">Operations</heading>
+</para><para>See function list in SW Units.</para><para><heading level="2">Macros</heading>
+</para><para>See macro list: <ulink url="globals_defs.html">Macros</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>Not Applicable. <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

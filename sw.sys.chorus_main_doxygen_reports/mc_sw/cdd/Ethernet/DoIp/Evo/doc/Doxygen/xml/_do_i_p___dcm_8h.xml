@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___dcm_8h" kind="file" language="C++">
+    <compoundname>DoIP_Dcm.h</compoundname>
+    <includes local="yes">SoMgr_Def.h</includes>
+    <includes refid="_do_i_p___server_8h" local="yes">DoIP_Server.h</includes>
+    <includedby refid="_do_i_p___int_8h" local="yes">DoIP_Int.h</includedby>
+    <incdepgraph>
+      <node id="79">
+        <label>DoIP_Server.h</label>
+        <link refid="_do_i_p___server_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>SoMgr.h</label>
+      </node>
+      <node id="80">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="77">
+        <label>DoIP_Dcm.h</label>
+        <link refid="_do_i_p___dcm_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>SoMgr_Def.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="88">
+        <label>DoIP_Msg.c</label>
+        <link refid="_do_i_p___msg_8c"/>
+      </node>
+      <node id="86">
+        <label>DoIP_LIN.c</label>
+        <link refid="_do_i_p___l_i_n_8c"/>
+      </node>
+      <node id="85">
+        <label>DoIP_Dcm.c</label>
+        <link refid="_do_i_p___dcm_8c"/>
+      </node>
+      <node id="90">
+        <label>DoIP_TP.c</label>
+        <link refid="_do_i_p___t_p_8c"/>
+      </node>
+      <node id="84">
+        <label>DoIP_Client.c</label>
+        <link refid="_do_i_p___client_8c"/>
+      </node>
+      <node id="89">
+        <label>DoIP_Server.c</label>
+        <link refid="_do_i_p___server_8c"/>
+      </node>
+      <node id="83">
+        <label>DoIP_Int.h</label>
+        <link refid="_do_i_p___int_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>DoIP_Utils.c</label>
+        <link refid="_do_i_p___utils_8c"/>
+      </node>
+      <node id="82">
+        <label>DoIP_Dcm.h</label>
+        <link refid="_do_i_p___dcm_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>DoIP_Main.c</label>
+        <link refid="_do_i_p___main_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___dcm_8h_1a6f8938dfea7b5426f1578da50a6126f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_DcmTransmit</definition>
+        <argsstring>(PduIdType DoIPTxPduId, const PduInfoType *PduInfoPtr)</argsstring>
+        <name>DoIP_DcmTransmit</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>DoIPTxPduId</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>PduInfoPtr</declname>
+        </param>
+        <briefdescription>
+<para>Handler for copying the DCM response to local buffer and to trigger its transmission. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">DoIPTxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- PDU ID owned by DoIP issued by DCM when it swants to pass a response over DoIP </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduInfoPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- specifies the location and length of the DCM response <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of the operation, if DCM response is taken and forwarded succesfully, </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- operation succeeded </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___dcm_8c_1a466e8e8c9120f2c1cae13859296ab898" kindref="member">PduIdType::DcmTxPduId</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_DcmTransmit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing, statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a5ae3c4d4372cac45391053d6c089e2dd" kindref="member">TEST_DoIP_Dcm__DoIP_DcmTransmit_1</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a6cc37d5053a5a17bc6d7a6ef700b2ee3" kindref="member">TEST_DoIP_Dcm__DoIP_DcmTransmit_2</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a46d804b553b387df70382836e44c1e77" kindref="member">TEST_DoIP_Dcm__DoIP_DcmTransmit_3</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1ae970639694b4198fe124fcf03c619023" kindref="member">TEST_DoIP_Dcm__DoIP_DcmTransmit_4</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19045 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Dcm.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___dcm_8h_1a086394d7c901b695edad602d7ba17cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_CancelReceiveRequest</definition>
+        <argsstring>(PduIdType DcmRxPduId)</argsstring>
+        <name>DoIP_CancelReceiveRequest</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>DcmRxPduId</declname>
+        </param>
+        <briefdescription>
+<para>Set according DoIP error if DCM PduIDs for a diagnistic request are different than the ones configured. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">DcmRxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- PDU ID owned by DoIP issued by DCM when it wants to pass a response over DoIP </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of the operation, if DCM RX PduID is configured in DCM </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- operation succeeded </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_CancelReceiveRequest.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a3e8d10251ca54f14acd45aa583b99251" kindref="member">TEST_DoIP_Dcm__DoIP_CancelReceiveRequest</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Function used if the DcmRxPduId is not configured in DCM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Dcm.h" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___dcm_8h_1aac2a82aa94098156a69ca952c3581431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_CancelTransmitRequest</definition>
+        <argsstring>(PduIdType DcmTxPduIdParm)</argsstring>
+        <name>DoIP_CancelTransmitRequest</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>DcmTxPduIdParm</declname>
+        </param>
+        <briefdescription>
+<para>Set according DoIP error if DCM PduIDs for a diagnistic response are different than the ones configured. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">DcmTxPduIdParm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- PDU ID owned by DoIP issued by DCM when it wants to pass a request over DoIP </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of the operation, if DCM TX PduID is configured in DCM </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- operation succeeded </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_DoIP_CancelTransmitRequest.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a250ac59f989c5d337afd405b8aa43747" kindref="member">TEST_DoIP_Dcm__DoIP_CancelTransmitRequest</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Function used if the DcmTxPduIdParm is not configured in DCM </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Dcm.h" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___dcm_8h_1a6413ae54bd9a2a42620adad52af1f7e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>NotifResultType</type>
+        <definition>NotifResultType DoIP_DcmHandleDiagReq</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, struct pbuf *pBuf, uint16 SrcAddr, uint16 TargetAddr, DoIP_PduR_tenTesterList ClientType)</argsstring>
+        <name>DoIP_DcmHandleDiagReq</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>struct pbuf *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>SrcAddr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>TargetAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="_do_i_p___server_8h_1a697d50489d3facf5d832196b79178e16" kindref="member">DoIP_PduR_tenTesterList</ref></type>
+          <declname>ClientType</declname>
+        </param>
+        <briefdescription>
+<para>Sending data to DCM on the proper channel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handle identifying the local socket resource </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the received data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SrcAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- source address </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">TargetAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- target address </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ClientType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- client type on which the request is received </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Check for DCM indication result and proper doip ACK/NACK </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NTFRSLT_E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- reception is aborted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NTFRSLT_E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Dcm_CopyRxData successful - inform about active diagnostics </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_DcmHandleDiagReq.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing, statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a435dede139ccce059916a198d6bf553b" kindref="member">TEST_DoIP_Dcm__DoIP_DcmHandleDiagReq_1</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a80fe281770e678386418d184ea9774d1" kindref="member">TEST_DoIP_Dcm__DoIP_DcmHandleDiagReq_2</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a184253e00a1ae2be39c8a6a3a477ecdf" kindref="member">TEST_DoIP_Dcm__DoIP_DcmHandleDiagReq_3</ref> <linebreak/>
+ <ref refid="_do_i_p___dcm_8c_8test_1a70cc7e3572146d4ac2d0f956cf67d00f" kindref="member">TEST_DoIP_Dcm__DoIP_DcmHandleDiagReq_4</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15923 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Dcm.h" line="172" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Public interfaces for communication btw DoIP Chorus and DCM. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_do_i_p___dcm_8h" kindref="compound">DoIP_Dcm.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>See <ref refid="_do_i_p__version_8h" kindref="compound">DoIP_version.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn1598 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>01.09.2022 </para></simplesect>
+</para><para>The interfaces in this module are used for communication with DCM </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Dcm.h"/>
+  </compounddef>
+</doxygen>

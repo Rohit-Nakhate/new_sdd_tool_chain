@@ -1,0 +1,1526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_ld_com___cbk_8h" kind="file" language="C++">
+    <compoundname>LdCom_Cbk.h</compoundname>
+    <includes local="yes">ComStack_Types.h</includes>
+    <includedby refid="_cdd___s_o_m_e_i_p_8c" local="yes">Cdd_SOMEIP.c</includedby>
+    <incdepgraph>
+      <node id="108">
+        <label>LdCom_Cbk.h</label>
+        <link refid="_ld_com___cbk_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>ComStack_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="110">
+        <label>LdCom_Cbk.h</label>
+        <link refid="_ld_com___cbk_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>Cdd_SOMEIP.c</label>
+        <link refid="_cdd___s_o_m_e_i_p_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_ld_com___cbk_8h_1a1ef5d9463fb7a9adeeddba69720a6619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LdCom_RxIndication</definition>
+        <argsstring>(PduIdType RxPduId, const PduInfoType *PduInfoPtr)</argsstring>
+        <name>LdCom_RxIndication</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>RxPduId</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>PduInfoPtr</declname>
+        </param>
+        <briefdescription>
+<para>This function indicates a received I-PDU from a lower layer communication interface module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Check if the socket route is enabled.</para></simplesect>
+<simplesect kind="post"><para>The I-PDU data is copied from the underlying layer to LdCom.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the received I-PDU. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduInfoPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains the length (SduLength) of the received I-PDU and a pointer to a buffer (SduDataPtr) containing the I-PDU.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Input include the id of the received Com I-PDU and payload buffer. <linebreak/>
+ Respective service handle callbacks are called if the protocol version match.</para></simplesect>
+<table rows="501" cols="2"><row>
+<entry thead="yes"><para>Configured RxPduID in Tresos  </para></entry><entry thead="yes"><para>Servicehandlecallback   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_notifications_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_notifications_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_info_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_info(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_info_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_info_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_info(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_info_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_info_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_info(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_info_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_info_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_info(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_info_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_info_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_info(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_info_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_relevantObjects_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_relevantObjects(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_relevantObjects_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_relevantObjects_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_relevantObjects(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_relevantObjects_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_relevantObjects_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_relevantObjects(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_relevantObjects_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_relevantObjects_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_relevantObjects(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_relevantObjects_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_relevantObjects_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_relevantObjects(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_relevantObjects_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_targetDistances_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_targetDistances(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_targetDistances_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_targetDistances_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_targetDistances(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_targetDistances_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_targetDistances_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_targetDistances(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_targetDistances_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_targetDistances_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_targetDistances(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_targetDistances_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_targetDistances_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_targetDistances(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_targetDistances_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_velocities_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_velocities_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_velocities_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_velocities_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_velocities_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_velocities_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_velocities_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_velocities_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_velocities_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_velocities_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalInformation_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalInformation_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalInformation_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalInformation_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalInformation_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalInformation_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalInformation_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalInformation_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalInformation_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalInformation_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalRadarInformation_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalRadarInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalRadarInformation_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalRadarInformation_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalRadarInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalRadarInformation_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalRadarInformation_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalRadarInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalRadarInformation_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalRadarInformation_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalRadarInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalRadarInformation_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ACC_additionalRadarInformation_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ACC_additionalRadarInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ACC_additionalRadarInformation_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_crashInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_crashInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_crashInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_crashInfo_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_crashInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_crashInfo_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Airbag_crashInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Airbag_crashInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Airbag_crashInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_doors_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_doors(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_doors_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_doors_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_doors(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_doors_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_doors_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_doors(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_doors_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_doors_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_doors(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_doors_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_hatchesAndTraps_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_hatchesAndTraps(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_hatchesAndTraps_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_hatchesAndTraps_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_hatchesAndTraps(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_hatchesAndTraps_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_hatchesAndTraps_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_hatchesAndTraps(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_hatchesAndTraps_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CarBody_hatchesAndTraps_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CarBody_hatchesAndTraps(request_id, SoAdConf_SoAdPduRoute_RPC_CarBody_hatchesAndTraps_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SteeringAssist_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SteeringAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SteeringAssist_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SteeringAssist_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SteeringAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SteeringAssist_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SteeringAssist_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SteeringAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SteeringAssist_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SteeringAssist_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SteeringAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SteeringAssist_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Damper_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Damper_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Damper_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Damper_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Damper_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Damper_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Damper_damperMonitorInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Damper_damperMonitorInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Damper_damperMonitorInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Damper_damperMonitorInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Damper_damperMonitorInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Damper_damperMonitorInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_notifications_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_notifications_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_info_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_info(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_info_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_info_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_info(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_info_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_info_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_info(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_info_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_AWV_info_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_AWV_info(request_id, SoAdConf_SoAdPduRoute_RPC_AWV_info_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_LaneAssist_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_LaneAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_LaneAssist_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_LaneAssist_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_LaneAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_LaneAssist_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_LaneAssist_notifications_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_LaneAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_LaneAssist_notifications_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_LaneAssist_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_LaneAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_LaneAssist_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_lockStates_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_lockStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_lockStates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_lockStates_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_lockStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_lockStates_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_lockStates_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_lockStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_lockStates_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_lockStates_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_lockStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_lockStates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_safeStates_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_safeStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_safeStates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_safeStates_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_safeStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_safeStates_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_safeStates_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_safeStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_safeStates_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_safeStates_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_safeStates(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_safeStates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_info_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_info(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_info_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_info_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_info(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_info_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_info_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_info(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_info_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_info_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_info(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_info_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CentralLocking_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CentralLocking_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CentralLocking_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_axes_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_axes(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_axes_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_axes_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_axes(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_axes_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_axes_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_axes(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_axes_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_axes_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_axes(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_axes_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_axes_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_axes(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_axes_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_velocityInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_velocityInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_velocityInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_velocityInfo_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_velocityInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_velocityInfo_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_velocityInfo_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_velocityInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_velocityInfo_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_velocityInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_velocityInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_velocityInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_velocityInfo_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_velocityInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_velocityInfo_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_notifications_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_notifications_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_wheels_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_wheels(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_wheels_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_wheels_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_wheels(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_wheels_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_wheels_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_wheels(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_wheels_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_wheels_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_wheels(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_wheels_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_wheels_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_wheels(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_wheels_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_espSystemInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_espSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_espSystemInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_espSystemInfo_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_espSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_espSystemInfo_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_espSystemInfo_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_espSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_espSystemInfo_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_espSystemInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_espSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_espSystemInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Chassis_espSystemInfo_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Chassis_espSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_Chassis_espSystemInfo_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivePerformance_displayParameters_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivePerformance_displayParameters(request_id, SoAdConf_SoAdPduRoute_RPC_DrivePerformance_displayParameters_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_ranges_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_ranges(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_ranges_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_ranges_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_ranges(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_ranges_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_ranges_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_ranges(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_ranges_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_ranges_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_ranges(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_ranges_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_ranges_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_ranges(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_ranges_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_status_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_status(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_status_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_status_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_status(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_status_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_status_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_status(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_status_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_status_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_status(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_status_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_status_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_status(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_status_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_notifications_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_notifications_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_notifications_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_notifications_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_rangeCalcConsumptions_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_rangeCalcConsumptions(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_rangeCalcConsumptions_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_rangeCalcConsumptions_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_rangeCalcConsumptions(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_rangeCalcConsumptions_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_rangeCalcConsumptions_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_rangeCalcConsumptions(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_rangeCalcConsumptions_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_rangeCalcConsumptions_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_rangeCalcConsumptions(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_rangeCalcConsumptions_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DrivingRange_rangeCalcConsumptions_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DrivingRange_rangeCalcConsumptions(request_id, SoAdConf_SoAdPduRoute_RPC_DrivingRange_rangeCalcConsumptions_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_notifications_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_notifications_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_highVoltageBatteries_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_highVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_highVoltageBatteries_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageBatteries_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageBatteries(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageBatteries_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EnergySystem_lowVoltageSystemInfo_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_EnergySystem_lowVoltageSystemInfo(request_id, SoAdConf_SoAdPduRoute_RPC_EnergySystem_lowVoltageSystemInfo_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightFunctions_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightFunctions(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightFunctions_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightFunctions_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightFunctions(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightFunctions_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightFunctions_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightFunctions(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightFunctions_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightFunctions_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightFunctions(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightFunctions_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightFunctions_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightFunctions(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightFunctions_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lamps_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lamps(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lamps_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lamps_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lamps(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lamps_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lamps_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lamps(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lamps_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lamps_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lamps(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lamps_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lamps_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lamps(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lamps_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_info_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_info(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_info_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_info_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_info(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_info_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_info_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_info(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_info_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_info_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_info(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_info_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_info_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_info(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_info_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightButtonModules_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightButtonModules(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightButtonModules_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightButtonModules_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightButtonModules(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightButtonModules_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightButtonModules_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightButtonModules(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightButtonModules_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightButtonModules_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightButtonModules(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightButtonModules_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorLight_lightButtonModules_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorLight_lightButtonModules(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorLight_lightButtonModules_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positions_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positions(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positions_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_posGnssSatInfos_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_posGnssSatInfos(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_posGnssSatInfos_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_GNSS_positionsQuality_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_GNSS_positionsQuality(request_id, SoAdConf_SoAdPduRoute_RPC_GNSS_positionsQuality_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_HighVoltageCoordinator_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_HighVoltageCoordinator_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_HighVoltageCoordinator_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_HighVoltageCoordinator_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_HighVoltageCoordinator_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_HighVoltageCoordinator_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_info_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_info(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_info_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_info_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_info(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_info_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_info_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_info(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_info_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Immobilizer_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Immobilizer_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Immobilizer_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_status_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_status(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_status_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_status_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_status(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_status_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_status_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_status(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_status_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ParkingBrake_status_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ParkingBrake_status(request_id, SoAdConf_SoAdPduRoute_RPC_ParkingBrake_status_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_displayValues_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_displayValues(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_displayValues_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Powertrain_status_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Powertrain_status(request_id, SoAdConf_SoAdPduRoute_RPC_Powertrain_status_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_installations_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_installations(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_installations_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_installations_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_installations(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_installations_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_installations_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_installations(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_installations_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_installations_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_installations(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_installations_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_variants_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_variants(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_variants_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_variants_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_variants(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_variants_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_variants_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_variants(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_variants_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_variants_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_variants(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_variants_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_parameters_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_parameters(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_parameters_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_parameters_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_parameters(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_parameters_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_parameters_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_parameters(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_parameters_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VehicleBasicData_parameters_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VehicleBasicData_parameters(request_id, SoAdConf_SoAdPduRoute_RPC_VehicleBasicData_parameters_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VisualOdometry_visualPositions_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VisualOdometry_visualPositions(request_id, SoAdConf_SoAdPduRoute_RPC_VisualOdometry_visualPositions_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VisualOdometry_visualPositions_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VisualOdometry_visualPositions(request_id, SoAdConf_SoAdPduRoute_RPC_VisualOdometry_visualPositions_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VisualOdometry_anchorPoints_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VisualOdometry_anchorPoints(request_id, SoAdConf_SoAdPduRoute_RPC_VisualOdometry_anchorPoints_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_VisualOdometry_anchorPoints_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_VisualOdometry_anchorPoints(request_id, SoAdConf_SoAdPduRoute_RPC_VisualOdometry_anchorPoints_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EmergencyAssist_notifications_Adaptive  </para></entry><entry thead="no"><para>(void)ComSer_get_EmergencyAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EmergencyAssist_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EmergencyAssist_notifications_ICAS3  </para></entry><entry thead="no"><para>(void)ComSer_get_EmergencyAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EmergencyAssist_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_EmergencyAssist_notifications_Java  </para></entry><entry thead="no"><para>(void)ComSer_get_EmergencyAssist_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_EmergencyAssist_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_UnitMaster_units  </para></entry><entry thead="no"><para>(void)Rte_Read_UnitMaster_units(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Positioning_positions  </para></entry><entry thead="no"><para>(void)Rte_Read_Positioning_positions(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Positioning_posMapInfo  </para></entry><entry thead="no"><para>(void)Rte_Read_Positioning_posMapInfo(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DigitalKey_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DigitalKey_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DigitalKey_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_DigitalKey_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_DigitalKey_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_DigitalKey_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_Kombi_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_distances_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_distances(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_distances_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_ICAS3_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_ICAS3)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_Kombi_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Distance_notifications_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_Distance_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_Distance_notifications_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorSound_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorSound_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorSound_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ExteriorSound_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ExteriorSound_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ExteriorSound_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClimateControl_notifications_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClimateControl_notifications(request_id,SoAdConf_SoAdPduRoute_RPC_ClimateControl_notifications)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClimateControl_status_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClimateControl_status(request_id,SoAdConf_SoAdPduRoute_RPC_ClimateControl_status)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClimateControl_notifications_Connect_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClimateControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClimateControl_notifications_Connect)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClimateControl_status_Connect_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClimateControl_status(request_id, SoAdConf_SoAdPduRoute_RPC_ClimateControl_status_Connect)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClimateControl_consumptions_Connect_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClimateControl_consumptions(request_id, SoAdConf_SoAdPduRoute_RPC_ClimateControl_consumptions_Connect)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_notifications_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_notifications_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_belts_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_belts(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_belts_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_belts_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_belts(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_belts_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_belts_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_belts(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_belts_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_seatOccupancy_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_seatOccupancy(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_seatOccupancy_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_seatOccupancy_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_seatOccupancy(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_seatOccupancy_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_SafetyBeltState_seatOccupancy_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_SafetyBeltState_seatOccupancy(request_id, SoAdConf_SoAdPduRoute_RPC_SafetyBeltState_seatOccupancy_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_clamps_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_clamps(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_clamps_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_notifications_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_notifications_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ICAS3_IVI_MIB_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ICAS3_IVI_MIB_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ConMod_NAD_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ConMod_NAD)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ClampControl_specialStates_OCU_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ClampControl_specialStates(request_id, SoAdConf_SoAdPduRoute_RPC_ClampControl_specialStates_OCU)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_UnitMaster_units_resp  </para></entry><entry thead="no"><para>(void)Rte_Read_UnitMaster_units(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Positioning_positions_resp  </para></entry><entry thead="no"><para>(void)Rte_Read_Positioning_positions(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Positioning_posMapInfo_resp  </para></entry><entry thead="no"><para>(void)Rte_Read_Positioning_posMapInfo(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_LongitudinalCtrlHmiState_displayStates  </para></entry><entry thead="no"><para>(void)Rte_Read_LongitudinalCtrlHmiState_displayStates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_LongitudinalCtrlHmiState_displayStates_Response  </para></entry><entry thead="no"><para>(void)Rte_Read_LongitudinalCtrlHmiState_displayStates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_LongitudinalCtrlHmiState_functionSelection  </para></entry><entry thead="no"><para>(void)Rte_Read_LongitudinalCtrlHmiState_functionSelection(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_LongitudinalCtrlHmiState_functionSelection_Response  </para></entry><entry thead="no"><para>(void)Rte_Read_LongitudinalCtrlHmiState_functionSelection(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Temperature_temperatures  </para></entry><entry thead="no"><para>(void)Rte_Read_Temperature_temperatures(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Temperature_temperatures_Response  </para></entry><entry thead="no"><para>(void)Rte_Read_Temperature_temperatures(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE,request_id)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_availabilities  </para></entry><entry thead="no"><para>(void)SOMEIP_deserialize_PlugAndChargeAuth_availabilities(PduInfoPtr-&gt;SduDataPtr, (uint16)PduInfoPtr-&gt;SduLength)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_availabilities_Response  </para></entry><entry thead="no"><para>(void)SOMEIP_deserialize_PlugAndChargeAuth_availabilities(PduInfoPtr-&gt;SduDataPtr, (uint16)PduInfoPtr-&gt;SduLength)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_tlsRootCaCertificateInformations  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_tlsRootCaCertificateInformations(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_tlsRootCaCertificateInformations_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_tlsRootCaCertificateInformations(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_tlsRootCaCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_tlsRootCaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_tlsRootCaCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_tlsRootCaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_moSub1CaCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_moSub1CaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_moSub1CaCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_moSub1CaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_moSub2CaCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_moSub2CaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_moSub2CaCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_moSub2CaCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_contractCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_contractCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_contractCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_contractCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_vehicleCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_vehicleCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_vehicleCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_vehicleCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_signChallenges  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_signChallenges(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_signChallenges_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_signChallenges(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_reportUnknownRootCertificates  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_reportUnknownRootCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_NOTIFICATION)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PnCAuth_reportUnknownRootCertificates_Resp  </para></entry><entry thead="no"><para>(void)Rte_Read_PnCAuth_reportUnknownRootCertificates(PduInfoPtr-&gt;SduDataPtr,MESS_RESPONSE)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PreCrash_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_PreCrash_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_PreCrash_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PreCrash_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_PreCrash_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_PreCrash_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_notifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_notifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_notifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_notifications_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_notifications_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_notifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_notifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_notifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_speedLimitInfo_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_speedLimitInfo(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_speedLimitInfo_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_speedLimitInfo_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_speedLimitInfo(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_speedLimitInfo_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_speedLimitInfo_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_speedLimitInfo(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_speedLimitInfo_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_speedLimitInfo_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_speedLimitInfo(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_speedLimitInfo_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_systemStatusForHMI_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_systemStatusForHMI(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_systemStatusForHMI_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_systemStatusForHMI_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_systemStatusForHMI(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_systemStatusForHMI_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_systemStatusForHMI_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_systemStatusForHMI(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_systemStatusForHMI_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_systemStatusForHMI_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_systemStatusForHMI(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_systemStatusForHMI_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_functionOnDemandStates_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_functionOnDemandStates(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_functionOnDemandStates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_functionOnDemandStates_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_functionOnDemandStates(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_functionOnDemandStates_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_functionOnDemandStates_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_functionOnDemandStates(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_functionOnDemandStates_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_functionOnDemandStates_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_functionOnDemandStates(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_functionOnDemandStates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_parameterizedNotifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_parameterizedNotifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_parameterizedNotifications_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_parameterizedNotifications_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_parameterizedNotifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_parameterizedNotifications_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_parameterizedNotifications_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_parameterizedNotifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_parameterizedNotifications_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_CruiseControl_parameterizedNotifications_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_CruiseControl_parameterizedNotifications(request_id, SoAdConf_SoAdPduRoute_RPC_CruiseControl_parameterizedNotifications_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_FunctionEnabling_functionEnablingCodes_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_FunctionEnabling_functionEnablingCodes(request_id, SoAdConf_SoAdPduRoute_RPC_FunctionEnabling_functionEnablingCodes_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_FunctionEnabling_functionEnablingCodes_Java_setter_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_FunctionEnabling_functionEnablingCodes((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_FunctionEnabling_functionEnablingCodes_Java_setter)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_FunctionEnabling_baseReports_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_FunctionEnabling_baseReports(request_id, SoAdConf_SoAdPduRoute_RPC_FunctionEnabling_baseReports_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_FunctionEnabling_activationResults_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_FunctionEnabling_activationResults(request_id, SoAdConf_SoAdPduRoute_RPC_FunctionEnabling_activationResults_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_FunctionEnabling_functionEnablingStatus_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_FunctionEnabling_functionEnablingStatus(request_id, SoAdConf_SoAdPduRoute_RPC_FunctionEnabling_functionEnablingStatus_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_OccupantPresence_driverPresenceStatus_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_OccupantPresence_driverPresenceStatus(request_id, SoAdConf_SoAdPduRoute_RPC_OccupantPresence_driverPresenceStatus_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_OccupantPresence_driverPresenceStatus_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)ComSer_get_OccupantPresence_driverPresenceStatus(request_id, SoAdConf_SoAdPduRoute_RPC_OccupantPresence_driverPresenceStatus_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_OccupantPresence_driverPresenceStatus_Java_req  </para></entry><entry thead="no"><para>(void)ComSer_get_OccupantPresence_driverPresenceStatus(request_id, SoAdConf_SoAdPduRoute_RPC_OccupantPresence_driverPresenceStatus_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_speeds_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_speeds(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_speeds_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_velocities_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_velocities(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_velocities_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_pose2D_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_pose2D(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_pose2D_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_additionalVehicleMotionInformations_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_additionalVehicleMotionInformations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_additionalVehicleMotionInformations_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_wheelCorrections_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_wheelCorrections(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_wheelCorrections_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_accelerations_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_accelerations(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_accelerations_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_ICAS3_ZR_TOP_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_ICAS3_ZR_TOP)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_Kombi)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_ConMod_V2X_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_ConMod_V2X)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_Odometry_angularRates_DDA_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_Odometry_angularRates(request_id, SoAdConf_SoAdPduRoute_RPC_Odometry_angularRates_DDA)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargeTimeManager_chargeTimeCalculations_ICAS3_IVI_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ChargeTimeManager_chargeTimeCalculations(request_id, SoAdConf_SoAdPduRoute_RPC_ChargeTimeManager_chargeTimeCalculations_ICAS3_IVI)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargeTimeManager_chargeTimeCalculations_ICAS3_IVI_setter_req  </para></entry><entry thead="no"><para>(void)ComSer_get_ChargeTimeManager_chargeTimeCalculations(request_id, SoAdConf_SoAdPduRoute_RPC_ChargeTimeManager_chargeTimeCalculations_ICAS3_IVI_setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_batteryCareModes_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_batteryCareModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_batteryCareModes_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_batteryCareModes_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_batteryCareModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_batteryCareModes_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_batteryCareModes_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_batteryCareModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_batteryCareModes_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_bidirectionalChargingModes_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_bidirectionalChargingModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_bidirectionalChargingModes_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_bidirectionalChargingModes_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_bidirectionalChargingModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_bidirectionalChargingModes_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_bidirectionalChargingModes_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_bidirectionalChargingModes(request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_bidirectionalChargingModes_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateChargingOptions_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateChargingOptions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateChargingOptions_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateChargingOptions_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateChargingOptions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateChargingOptions_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateChargingOptions_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateChargingOptions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateChargingOptions_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingProcessInformation_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingProcessInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingProcessInformation_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingProcessInformation_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingProcessInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingProcessInformation_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingProcessInformation_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingProcessInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingProcessInformation_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingPlugs_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingPlugs(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingPlugs_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingPlugs_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingPlugs(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingPlugs_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_chargingPlugs_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_chargingPlugs(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_chargingPlugs_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateActions_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateActions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateActions_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateActions_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateActions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateActions_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_immediateActions_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_immediateActions(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_immediateActions_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notificationMarkers_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notificationMarkers(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notificationMarkers_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notificationMarkers_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notificationMarkers(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notificationMarkers_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notificationMarkers_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notificationMarkers(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notificationMarkers_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notifications_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notifications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notifications_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notifications_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notifications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notifications_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_notifications_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_notifications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_notifications_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Adaptive_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_pastErrorInformation((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Adaptive_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Connect_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_pastErrorInformation((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Connect_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Kombi_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_pastErrorInformation((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Kombi_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Adaptive_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_pastErrorInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Adaptive_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Connect_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_pastErrorInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Connect_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_pastErrorInformation_Kombi_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_pastErrorInformation(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_pastErrorInformation_Kombi_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Adaptive_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_views((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Adaptive_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Connect_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_views((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Connect_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Kombi_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_views((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Kombi_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Adaptive_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_views(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Adaptive_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Connect_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_views(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Connect_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_views_Kombi_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_views(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_views_Kombi_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_oruUpdateApprovals_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_oruUpdateApprovals(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_oruUpdateApprovals_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_oruUpdateApprovals_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_oruUpdateApprovals(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_oruUpdateApprovals_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_oruUpdateApprovals_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_oruUpdateApprovals(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_oruUpdateApprovals_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Adaptive_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_switchControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Adaptive_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Connect_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_switchControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Connect_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Kombi_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_switchControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Kombi_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Adaptive_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_switchControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Adaptive_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Connect_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_switchControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Connect_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_switchControls_Kombi_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_switchControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_switchControls_Kombi_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Adaptive_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_valueControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Adaptive_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Connect_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_valueControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Connect_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Kombi_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_valueControls((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Kombi_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Adaptive_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Adaptive_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Connect_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Connect_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueControls_Kombi_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueControls(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueControls_Kombi_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueIndications_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueIndications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueIndications_Adaptive_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueIndications_Connect_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueIndications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueIndications_Connect_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_valueIndications_Kombi_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_valueIndications(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_valueIndications_Kombi_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Adaptive_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_resetToFactoryData((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Adaptive_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Connect_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_resetToFactoryData((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Connect_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Kombi_Set_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_ChargingManagementCore_resetToFactoryData((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Kombi_Setter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Adaptive_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_resetToFactoryData(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Adaptive_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Connect_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_resetToFactoryData(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Connect_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ChargingManagementCore_resetToFactoryData_Kombi_Get_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ChargingManagementCore_resetToFactoryData(request_id,SoAdConf_SoAdPduRoute_RPC_ChargingManagementCore_resetToFactoryData_Kombi_Getter_resp)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ContiUpdateCoordination_supplyVoltage_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ContiUpdateCoordination_supplyVoltage(request_id, SoAdConf_SoAdPduRoute_RPC_ContiUpdateCoordination_supplyVoltage_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ContiUpdateCoordination_supplyVoltage_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ContiUpdateCoordination_supplyVoltage(request_id, SoAdConf_SoAdPduRoute_RPC_ContiUpdateCoordination_supplyVoltage_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ContiUpdateCoordination_diagnosticInformation_Adaptive_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ContiUpdateCoordination_diagnosticInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ContiUpdateCoordination_diagnosticInformation_Adaptive)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_ContiUpdateCoordination_diagnosticInformation_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_ContiUpdateCoordination_diagnosticInformation(request_id, SoAdConf_SoAdPduRoute_RPC_ContiUpdateCoordination_diagnosticInformation_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PersonalizationSystem_slots_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_PersonalizationSystem_slots(request_id, SoAdConf_SoAdPduRoute_RPC_PersonalizationSystem_slots_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PersonalizationSystem_slots_Java_setter_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_PersonalizationSystem_slots((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_PersonalizationSystem_slots_Java_setter)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PersonalizationSystem_display_Java_req  </para></entry><entry thead="no"><para>(void)MiniComServ_get_PersonalizationSystem_display(request_id, SoAdConf_SoAdPduRoute_RPC_PersonalizationSystem_display_Java)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_RPC_PersonalizationSystem_display_Java_setter_req  </para></entry><entry thead="no"><para>(void)MiniComServ_set_PersonalizationSystem_display((PduInfoPtr-&gt;SduDataPtr), (uint16)PduInfoPtr-&gt;SduLength, request_id, SoAdConf_SoAdPduRoute_RPC_PersonalizationSystem_display_Java_setter)   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TripComputer_resets  </para></entry><entry thead="no"><para>(void)Rte_Read_TripComputer_resets(PduInfoPtr-&gt;SduDataPtr, MESS_NOTIFICATION, request_id)   </para></entry></row>
+</table>
+</para><para><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LdCom_RxIndication.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ TEST_LdCom_RxIndication_0002</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <bold>architectural requirments</bold>: <ulink url="linkURL">ID_ArchiteckturalElement</ulink> <linebreak/>
+ and satisfied following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18357; SWR_ICAS1_GW_3829.<linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function indicates a received I-PDU from a lower layer communication interface module.</para><para>This function indicates a received I-PDU from a lower layer communication interface module. <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>thread safe Yes </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the received I-PDU. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduInfoPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains the length (SduLength) of the received I-PDU and a pointer to a buffer (SduDataPtr) containing the I-PDU. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/inc/LdCom_Cbk.h" line="617" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/Cdd_SOMEIP.c" bodystart="308" bodyend="389"/>
+        <references refid="_data_arrays_8h_1a1770088e97e94f58bd23da210d5f6153" compoundref="_data_arrays_8c" startline="91">LdComIPduRxIndicationList</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_type_1a7145e7037a5c52738c2e2d48a3df5848" compoundref="_cdd___s_o_m_e_i_p_8h" startline="101">LdComIPduRxIndicationType::fun_ptr</references>
+        <references refid="_data_arrays_8h_1ac12390197c8ab97e288c61d446871af6" compoundref="_data_arrays_8c" startline="585">LdComIPduRxIndicationMiniComServSetterList</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_mini_com_serv_setter_type_1a3e8f6be8f3d5468c7fe63f10f1664075" compoundref="_cdd___s_o_m_e_i_p_8h" startline="150">LdComIPduRxIndicationMiniComServSetterType::fun_ptr</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_mini_com_serv_setter_type_1a3af8463bdcd3a10bdcf8939c33bf2d0a" compoundref="_cdd___s_o_m_e_i_p_8h" startline="151">LdComIPduRxIndicationMiniComServSetterType::SoAdConf_SoAdPduRoute</references>
+        <references refid="_cdd___s_o_m_e_i_p_8c_1afb68f95197977614feb1b6145a83999d" compoundref="_cdd___s_o_m_e_i_p_8c" startline="99">LdComIPduRxIndicationRteReadList</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_rte_type_1a95f91b9beaf9c9bde84846757a70bd78" compoundref="_cdd___s_o_m_e_i_p_8h" startline="118">LdComIPduRxIndicationRteType::fun_ptr</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_rte_type_1ac17834fde896c647f3d0c1189db83fde" compoundref="_cdd___s_o_m_e_i_p_8h" startline="119">LdComIPduRxIndicationRteType::MessageType</references>
+        <references refid="_cdd___s_o_m_e_i_p_8c_1a8659127c44d53aed4ce8da780fd50b7a" compoundref="_cdd___s_o_m_e_i_p_8c" startline="126">LdComIPduRxIndicationSomeIPDeserializeList</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_some_i_p_deserialize_type_1a7ad41f8e89adbc79143e0f2d02d0c441" compoundref="_cdd___s_o_m_e_i_p_8h" startline="166">LdComIPduRxIndicationSomeIPDeserializeType::fun_ptr</references>
+        <references refid="_cdd___s_o_m_e_i_p_8c_1ae24b8e427c66725d2ba62e6328f77624" compoundref="_cdd___s_o_m_e_i_p_8c" startline="142">LdComIPduRxIndicationRteReadPncList</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_rte_read_pnc_type_1ada0961dc599bd5555db17226597b023d" compoundref="_cdd___s_o_m_e_i_p_8h" startline="134">LdComIPduRxIndicationRteReadPncType::fun_ptr</references>
+        <references refid="struct_ld_com_i_pdu_rx_indication_rte_read_pnc_type_1a5dab62f571c69a5267736fd1f81a2649" compoundref="_cdd___s_o_m_e_i_p_8h" startline="135">LdComIPduRxIndicationRteReadPncType::MessageType</references>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a077a782ee77253cc66a56076fe07d3aa" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="1037" endline="1589">TEST_LdCom_RxIndication_ACC</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a58cc4d027467e476df3e6da7aa2291af" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="1605" endline="1809">TEST_LdCom_RxIndication_AWV</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a9a28e4a1048c206ca8ff05697ded8db5" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="1825" endline="1995">TEST_LdCom_RxIndication_Airbag</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a3d4259e1d6cc4079a9cb0537700404ff" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="2011" endline="2214">TEST_LdCom_RxIndication_CarBody</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a3f99535f310c0c79e41517fcfddd6ecb" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="2230" endline="2569">TEST_LdCom_RxIndication_CentralLocking</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ae1d67f8c3dab3f9f2a96dd893d6e91fc" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="2586" endline="3815">TEST_LdCom_RxIndication_ChargingManagementCore</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a2b984fd22898f37eb3776c4bbc24d616" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="3831" endline="4068">TEST_LdCom_RxIndication_Chassis</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a63e3a506dec1dbadda558a538bee2882" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="4084" endline="4513">TEST_LdCom_RxIndication_ClampControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a49590e74b18c1564cb4c3c2193b45adc" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="4529" endline="4698">TEST_LdCom_RxIndication_ClimateControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a2e46303aeedbe4d00032bde3021f8e8e" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="4714" endline="4849">TEST_LdCom_RxIndication_ContiUpdateCoordination</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a19138ef6f43fd1ffd81808bb1ad66e6f" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="4865" endline="5273">TEST_LdCom_RxIndication_CruiseControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a526a8c7961d1a0ed6e6bc90d5cbfb64c" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="5289" endline="5423">TEST_LdCom_RxIndication_Damper</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1aafec22315b3f2a8e6f3a7329e0af82a4" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="5439" endline="5540">TEST_LdCom_RxIndication_DigitalKey</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a95e8f006204931f9c14cf92efb79e653" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="5556" endline="5838">TEST_LdCom_RxIndication_Distance</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a54288368fc4c24aef6df07c746f0244f" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="5855" endline="5939">TEST_LdCom_RxIndication_DrivePerformance</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a51818c4724dafce0bda0850b2093aefa" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="5955" endline="6362">TEST_LdCom_RxIndication_DrivingRange</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a31e26b5f116e9bbe71f4ca279bc003ed" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="6378" endline="6496">TEST_LdCom_RxIndication_EmergencyAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a37a93a5f1a3d513e5409eeca2d3def73" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="6512" endline="7005">TEST_LdCom_RxIndication_ExteriorLight</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0ce623f91a6103b27408238f4d0215f8" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="7021" endline="7122">TEST_LdCom_RxIndication_ExteriorSound</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a46628e241889e8a5127f183c39eb4c84" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="7138" endline="7613">TEST_LdCom_RxIndication_EnergySystem</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a6b48aacf5d86c9aacdd82710853080d5" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="7629" endline="7784">TEST_LdCom_RxIndication_FunctionEnabling</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1abb748b68c4aa6c1c2a106317e0e1206c" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="7800" endline="8173">TEST_LdCom_RxIndication_GNS</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a991fc423be179e10da4bada5deafa8cc" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8189" endline="8290">TEST_LdCom_RxIndication_HighVoltageCoordinator</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a785bf5b594ebb2b5d08e433579e62311" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8306" endline="8475">TEST_LdCom_RxIndication_Immobilizer</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a74311a5088fba6b16769a3c7036f451a" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8491" endline="8626">TEST_LdCom_RxIndication_LaneAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ac56c28f592c46a78a260ef4b2cbfdc96" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8642" endline="8778">TEST_LdCom_RxIndication_LongitudinalCtrlHmiState</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0e66b1e041c4b8b249721875d72502d9" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8794" endline="8912">TEST_LdCom_RxIndication_OccupantPresence</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a7783a5670319945691fa5021f57773b0" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="8928" endline="9830">TEST_LdCom_RxIndication_Odometry</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1acfe42a256e11b1ebd35ca8e9daa8546b" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="9846" endline="10049">TEST_LdCom_RxIndication_ParkingBrake</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a8580ef73231f053dc6ee2e6d308c883a" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="10065" endline="10204">TEST_LdCom_RxIndication_PersonalizationSystem</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a399ccd87e7a8ef14eea6bd534838462f" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="10220" endline="10603">TEST_LdCom_RxIndication_PlugAndChargeAuth</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0a9bedfa4783476d99efe4e6c2570519" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="10619" endline="10755">TEST_LdCom_RxIndication_Positioning</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a1a6d6d9c7309bc989dcebbbfa6ea282a" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="10771" endline="11144">TEST_LdCom_RxIndication_Powertrain</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a754b29c8921b6846b8feeeb08742a01d" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="11160" endline="11261">TEST_LdCom_RxIndication_PreCrash</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1acd92e1591b4cb11b8da8a2f09a2e523a" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="11277" endline="11497">TEST_LdCom_RxIndication_SafetyBeltState</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a30b3cf770a0d4abc44d86d27401699d4" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="11513" endline="11648">TEST_LdCom_RxIndication_SteeringAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1abe606812215cd182edb70d061a51674a" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="11664" endline="11762">TEST_LdCom_RxIndication_Temperature</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ae51f6339c9dc7769ca2d6e3037003b16" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="11778" endline="12185">TEST_LdCom_RxIndication_TravelAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a82aca04e829c2e86bc08b8bfae9240ce" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="12201" endline="12280">TEST_LdCom_RxIndication_TripComputer</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a6e3de6725f201d0df8dfe89643d1f084" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="12296" endline="12394">TEST_LdCom_RxIndication_UnitMaster</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ae17e4305a79a59b13ed1a0b06518da4e" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="12410" endline="12679">TEST_LdCom_RxIndication_VehicleBasicData</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a425f93ab1169601307d86592068b49ca" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="12695" endline="12830">TEST_LdCom_RxIndication_VisualOdometry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___cbk_8h_1adf2e6de25e0190ce5478c8741f1246c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LdCom_TxConfirmation</definition>
+        <argsstring>(PduIdType TxPduId)</argsstring>
+        <name>LdCom_TxConfirmation</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>TxPduId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/inc/LdCom_Cbk.h" line="619" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/Cdd_SOMEIP.c" bodystart="392" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___cbk_8h_1a5ab86b8438f1c86cc8a746027d0d387f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType LdCom_TriggerTransmit</definition>
+        <argsstring>(PduIdType TxPduId, PduInfoType *PduInfoPtr)</argsstring>
+        <name>LdCom_TriggerTransmit</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>TxPduId</declname>
+        </param>
+        <param>
+          <type>PduInfoType *</type>
+          <declname>PduInfoPtr</declname>
+        </param>
+        <briefdescription>
+<para>This function is called when an I-PDU shall be transmitted. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Check if the socket route is enabled.</para></simplesect>
+<simplesect kind="post"><para>The initial notification for the PDU is requested.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the I-PDU that is requested to be transmitted. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduInfoPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to transmit buffer of L-PDU.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType standard API return type which is shared between the RTE and the BSW modules.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Input include the id of the PDU to be transmitted and pointer to the payload buffer. <linebreak/>
+ Respective service handle callbacks are called.</para></simplesect>
+<table rows="114" cols="2"><row>
+<entry thead="yes"><para>Configured TxPduId in Tresos  </para></entry><entry thead="yes"><para>Callback function for initial notification   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_notifications  </para></entry><entry thead="no"><para>ComSer_ACC_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_info  </para></entry><entry thead="no"><para>ComSer_ACC_info_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_relevantObjects  </para></entry><entry thead="no"><para>ComSer_ACC_relevantObjects_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_targetDistances  </para></entry><entry thead="no"><para>ComSer_ACC_targetDistances_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_velocities  </para></entry><entry thead="no"><para>ComSer_ACC_velocities_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_additionalInformation  </para></entry><entry thead="no"><para>ComSer_ACC_additionalInformation_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ACC_additionalRadarInformation  </para></entry><entry thead="no"><para>ComSer_ACC_additionalRadarInformation_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Airbag_notifications  </para></entry><entry thead="no"><para>ComSer_Airbag_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Airbag_crashInfo  </para></entry><entry thead="no"><para>ComSer_Airbag_crashInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_SteeringAssist_notifications  </para></entry><entry thead="no"><para>ComSer_SteeringAssist_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_AWV_notifications  </para></entry><entry thead="no"><para>ComSer_AWV_notifications_InitialNotificationRequested   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_AWV_info  </para></entry><entry thead="no"><para>ComSer_AWV_info_InitialNotificationRequested   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CarBody_doors  </para></entry><entry thead="no"><para>ComSer_CarBody_doors_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CarBody_hatchesAndTraps  </para></entry><entry thead="no"><para>ComSer_CarBody_hatchesAndTraps_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CentralLocking_lockStates  </para></entry><entry thead="no"><para>ComSer_CentralLocking_lockStates_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CentralLocking_safeStates  </para></entry><entry thead="no"><para>ComSer_CentralLocking_safeStates_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CentralLocking_info  </para></entry><entry thead="no"><para>ComSer_CentralLocking_info_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CentralLocking_notifications  </para></entry><entry thead="no"><para>ComSer_CentralLocking_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargeTimeManager_chargeTimeCalculations  </para></entry><entry thead="no"><para>ComSer_ChargeTimeManager_chargeTimeCalculations_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_batteryCareModes  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_batteryCareModes_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_bidirectionalChargingModes  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_bidirectionalChargingModes_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_chargingPlugs  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_chargingPlugs_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_chargingProcessInformation  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_chargingProcessInformation_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_immediateActions  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_immediateActions_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_immediateChargingOptions  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_immediateChargingOptions_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_notificationMarkers  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_notificationMarkers_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_notifications  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_notifications_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_oruUpdateApprovals  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_oruUpdateApprovals_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_pastErrorInformation  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_pastErrorInformation_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_resetToFactoryData  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_resetToFactoryData_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_switchControls  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_switchControls_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_valueControls  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_valueControls_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_valueIndications  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_valueIndications_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ChargingManagementCore_views  </para></entry><entry thead="no"><para>MiniComServ_ChargingManagementCore_views_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Chassis_axes  </para></entry><entry thead="no"><para>ComSer_Chassis_axes_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Chassis_espSystemInfo  </para></entry><entry thead="no"><para>ComSer_Chassis_espSystemInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Chassis_notifications  </para></entry><entry thead="no"><para>ComSer_Chassis_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Chassis_velocityInfo  </para></entry><entry thead="no"><para>ComSer_Chassis_velocityInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Chassis_wheels  </para></entry><entry thead="no"><para>ComSer_Chassis_wheels_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClampControl_clamps  </para></entry><entry thead="no"><para>ComSer_ClampControl_clamps_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClampControl_notifications  </para></entry><entry thead="no"><para>ComSer_ClampControl_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClampControl_specialStates  </para></entry><entry thead="no"><para>ComSer_ClampControl_specialStates_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClimateControl_consumptions  </para></entry><entry thead="no"><para>ComSer_ClimateControl_consumptions_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClimateControl_notifications  </para></entry><entry thead="no"><para>ComSer_ClimateControl_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ClimateControl_status  </para></entry><entry thead="no"><para>ComSer_ClimateControl_status_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ContiUpdateCoordination_supplyVoltage  </para></entry><entry thead="no"><para>MiniComServ_ContiUpdateCoordination_supplyVoltage_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ContiUpdateCoordination_diagnosticInformation  </para></entry><entry thead="no"><para>MiniComServ_ContiUpdateCoordination_diagnosticInformation_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CruiseControl_notifications  </para></entry><entry thead="no"><para>ComSer_CruiseControl_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CruiseControl_speedLimitInfo  </para></entry><entry thead="no"><para>ComSer_CruiseControl_speedLimitInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CruiseControl_systemStatusForHMI  </para></entry><entry thead="no"><para>ComSer_CruiseControl_systemStatusForHMI_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CruiseControl_functionOnDemandStates  </para></entry><entry thead="no"><para>ComSer_CruiseControl_functionOnDemandStates_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_CruiseControl_parameterizedNotifications  </para></entry><entry thead="no"><para>ComSer_CruiseControl_parameterizedNotifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Damper_notifications  </para></entry><entry thead="no"><para>ComSer_Damper_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Damper_damperMonitorInfo  </para></entry><entry thead="no"><para>ComSer_Damper_damperMonitorInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DigitalKey_notifications  </para></entry><entry thead="no"><para>ComSer_DigitalKey_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Distance_distances  </para></entry><entry thead="no"><para>ComSer_Distance_distances_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Distance_notifications  </para></entry><entry thead="no"><para>ComSer_Distance_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DrivePerformance_displayParameters  </para></entry><entry thead="no"><para>ComSer_DrivePerformance_displayParameters_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DrivingRange_notifications  </para></entry><entry thead="no"><para>ComSer_DrivingRange_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DrivingRange_ranges  </para></entry><entry thead="no"><para>ComSer_DrivingRange_ranges_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DrivingRange_status  </para></entry><entry thead="no"><para>ComSer_DrivingRange_status_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_EmergencyAssist_notifications  </para></entry><entry thead="no"><para>ComSer_EmergencyAssist_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_DrivingRange_rangeCalcConsumptions  </para></entry><entry thead="no"><para>ComSer_DrivingRange_rangeCalcConsumptions_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_EnergySystem_notifications  </para></entry><entry thead="no"><para>ComSer_EnergySystem_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_EnergySystem_highVoltageBatteries  </para></entry><entry thead="no"><para>ComSer_EnergySystem_highVoltageBatteries_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_EnergySystem_lowVoltageBatteries  </para></entry><entry thead="no"><para>ComSer_EnergySystem_lowVoltageBatteries_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_EnergySystem_lowVoltageSystemInfo  </para></entry><entry thead="no"><para>ComSer_EnergySystem_lowVoltageSystemInfo_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorLight_lightFunctions  </para></entry><entry thead="no"><para>ComSer_ExteriorLight_lightFunctions_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorLight_lamps  </para></entry><entry thead="no"><para>ComSer_ExteriorLight_lamps_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorLight_notifications  </para></entry><entry thead="no"><para>ComSer_ExteriorLight_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorLight_info  </para></entry><entry thead="no"><para>ComSer_ExteriorLight_info_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorLight_lightButtonModules  </para></entry><entry thead="no"><para>ComSer_ExteriorLight_lightButtonModules_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ExteriorSound_notifications  </para></entry><entry thead="no"><para>ComSer_ExteriorSound_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_FunctionEnabling_functionEnablingCodes  </para></entry><entry thead="no"><para>MiniComServ_FunctionEnabling_functionEnablingCodes_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_FunctionEnabling_baseReports  </para></entry><entry thead="no"><para>MiniComServ_FunctionEnabling_baseReports_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_FunctionEnabling_activationResults  </para></entry><entry thead="no"><para>MiniComServ_FunctionEnabling_activationResults_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_FunctionEnabling_functionEnablingStatus  </para></entry><entry thead="no"><para>MiniComServ_FunctionEnabling_functionEnablingStatus_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_GNSS_positions  </para></entry><entry thead="no"><para>ComSer_GNSS_positions_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_GNSS_posGnssSatInfos  </para></entry><entry thead="no"><para>ComSer_GNSS_posGnssSatInfos_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_GNSS_positionsQuality  </para></entry><entry thead="no"><para>ComSer_GNSS_positionsQuality_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_HighVoltageCoordinator_notifications  </para></entry><entry thead="no"><para>ComSer_HighVoltageCoordinator_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Immobilizer_info  </para></entry><entry thead="no"><para>ComSer_Immobilizer_info_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Immobilizer_notifications  </para></entry><entry thead="no"><para>ComSer_Immobilizer_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_LaneAssist_notifications  </para></entry><entry thead="no"><para>ComSer_LaneAssist_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_OccupantPresence_driverPresenceStatus  </para></entry><entry thead="no"><para>ComSer_OccupantPresence_driverPresenceStatus_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_speeds  </para></entry><entry thead="no"><para>MiniComServ_Odometry_speeds_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_velocities  </para></entry><entry thead="no"><para>MiniComServ_Odometry_velocities_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_pose2D  </para></entry><entry thead="no"><para>MiniComServ_Odometry_pose2D_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_additionalVehicleMotionInformations  </para></entry><entry thead="no"><para>MiniComServ_Odometry_additionalVehicleMotionInformations_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_wheelCorrections  </para></entry><entry thead="no"><para>MiniComServ_Odometry_wheelCorrections_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_accelerations  </para></entry><entry thead="no"><para>MiniComServ_Odometry_accelerations_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Odometry_angularRates  </para></entry><entry thead="no"><para>MiniComServ_Odometry_angularRates_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ParkingBrake_notifications  </para></entry><entry thead="no"><para>ComSer_ParkingBrake_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_ParkingBrake_status  </para></entry><entry thead="no"><para>ComSer_ParkingBrake_status_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PersonalizationSystem_slots  </para></entry><entry thead="no"><para>MiniComServ_PersonalizationSystem_slots_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PersonalizationSystem_display  </para></entry><entry thead="no"><para>MiniComServ_PersonalizationSystem_display_LdCom_Callout();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Powertrain_notifications  </para></entry><entry thead="no"><para>ComSer_Powertrain_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Powertrain_displayValues  </para></entry><entry thead="no"><para>ComSer_Powertrain_displayValues_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_Powertrain_status  </para></entry><entry thead="no"><para>ComSer_Powertrain_status_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_PreCrash_notifications  </para></entry><entry thead="no"><para>ComSer_PreCrash_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_SafetyBeltState_notifications  </para></entry><entry thead="no"><para>ComSer_SafetyBeltState_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_SafetyBeltState_belts  </para></entry><entry thead="no"><para>ComSer_SafetyBeltState_belts_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_SafetyBeltState_seatOccupancy  </para></entry><entry thead="no"><para>ComSer_SafetyBeltState_seatOccupancy_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TravelAssist_notifications  </para></entry><entry thead="no"><para>ComSer_TravelAssist_notifications_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TravelAssist_lanes  </para></entry><entry thead="no"><para>ComSer_TravelAssist_lanes_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TravelAssist_curveParameters  </para></entry><entry thead="no"><para>ComSer_TravelAssist_curveParameters_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TravelAssist_info  </para></entry><entry thead="no"><para>ComSer_TravelAssist_info_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_TravelAssist_relevantObjects  </para></entry><entry thead="no"><para>ComSer_TravelAssist_relevantObjects_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_VehicleBasicData_installations  </para></entry><entry thead="no"><para>ComSer_VehicleBasicData_installations_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_VehicleBasicData_variants  </para></entry><entry thead="no"><para>ComSer_VehicleBasicData_variants_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_VehicleBasicData_parameters  </para></entry><entry thead="no"><para>ComSer_VehicleBasicData_parameters_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_VisualOdometry_visualPositions  </para></entry><entry thead="no"><para>ComSer_VisualOdometry_visualPositions_InitialNotificationRequested();   </para></entry></row>
+<row>
+<entry thead="no"><para>LdComIPdu_VisualOdometry_anchorPoints  </para></entry><entry thead="no"><para>ComSer_VisualOdometry_anchorPoints_InitialNotificationRequested();   </para></entry></row>
+</table>
+<image type="html" name="LdCom_TriggerTransmit.png">callsequence</image>
+  <simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ TEST_LdCom_TriggerTransmit_0003</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <bold>architectural requirments</bold>: <ulink url="linkURL">ID_ArchiteckturalElement</ulink> <linebreak/>
+ and satisfied following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18357; SWR_ICAS1_GW_3829.<linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function is called when an I-PDU shall be transmitted.</para><para>This function is called when an I-PDU shall be transmitted. <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>thread safe Yes </para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TxPduId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the I-PDU that is requested to be transmitted. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduInfoPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to transmit buffer of L-PDU. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/inc/LdCom_Cbk.h" line="790" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/Cdd_SOMEIP.c" bodystart="406" bodyend="421"/>
+        <references refid="_data_arrays_8h_1a9df056fb618d3673df27e84a08555787" compoundref="_data_arrays_8c" startline="611">LdComTriggerTransmitInitialnotificationList</references>
+        <references refid="struct_ld_com_trigger_transmit_initialnotification_type_1a2cf60688dd9ec1a9d18164946ff8d614" compoundref="_cdd___s_o_m_e_i_p_8h" startline="181">LdComTriggerTransmitInitialnotificationType::fun_ptr</references>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ab23aec3596f0cb4f45c61edabe892ad6" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="12924" endline="13072">TEST_LdCom_TriggerTransmit_ACC</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a6b1980ea77290d9854b1f217f6ba87c1" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13087" endline="13169">TEST_LdCom_TriggerTransmit_Airbag</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0d6bd99eedd941937d619b2d4041bb76" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13184" endline="13267">TEST_LdCom_TriggerTransmit_AWV</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1af97d047baa28672088749040f71daff3" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13282" endline="13365">TEST_LdCom_TriggerTransmit_CarBody</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ae254d429f93144fd62dab8c19396b057" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13380" endline="13488">TEST_LdCom_TriggerTransmit_CentralLocking</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ae9a801dc14142223426dfa42af98f670" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13503" endline="13781">TEST_LdCom_TriggerTransmit_ChargingManagmentCore</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0f51219acd3d1daad5b2ed5b78635b7f" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13796" endline="13918">TEST_LdCom_TriggerTransmit_Chassis</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0a8f5b37941f82e795905152b829c026" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="13933" endline="14029">TEST_LdCom_TriggerTransmit_ClampControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0538a21ffa4a63cf0fb0775383c1f5a0" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14044" endline="14140">TEST_LdCom_TriggerTransmit_ClimateControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a559270ad9787fa026df0bebfa492e539" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14155" endline="14239">TEST_LdCom_TriggerTransmit_ContiUpdateCoordination</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a7dfd2f00f40e056655998ee5596ce3a1" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14254" endline="14376">TEST_LdCom_TriggerTransmit_CruiseControl</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a487deca2f09c5acb3b3707c98fcc187f" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14391" endline="14474">TEST_LdCom_TriggerTransmit_Damper</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a888a8e3efefe716e9c0f8815d2ceae43" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14489" endline="14559">TEST_LdCom_TriggerTransmit_DigitalKey</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1af642eb942ce2f86389f1824e7b085bfc" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14574" endline="14657">TEST_LdCom_TriggerTransmit_Distance</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a5a76427537f516aa1aaf30dda41df631" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14672" endline="14742">TEST_LdCom_TriggerTransmit_DrivePerformance</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a8cc06c0455277d833f1c3b204fc7691e" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14757" endline="14865">TEST_LdCom_TriggerTransmit_DrivingRange</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a9203c143c9cd504d586ebc30db5f328b" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14880" endline="14950">TEST_LdCom_TriggerTransmit_EmergencyAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a0d39b93239407aadec575166720a1717" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="14965" endline="15074">TEST_LdCom_TriggerTransmit_EnergySystem</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a655216d1a1e2e5890f67e2684d586643" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15089" endline="15211">TEST_LdCom_TriggerTransmit_ExteriorLight</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ad5f117b5807290fc927103025bcd6bc0" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15226" endline="15296">TEST_LdCom_TriggerTransmit_ExteriorSound</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a79edd041188f7a35af9243284a6f22fd" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15311" endline="15420">TEST_LdCom_TriggerTransmit_FunctionEnabling</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a9f470eec82b3a60ef882c1362cc05b0c" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15435" endline="15531">TEST_LdCom_TriggerTransmit_GNSS</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1aadd231f63bfe30d86d44ffc376cf8bcd" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15546" endline="15617">TEST_LdCom_TriggerTransmit_HighVoltageCoordinator</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ad8ef0921789643baafdc28a8aff7abc8" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15632" endline="15715">TEST_LdCom_TriggerTransmit_Immobilizer</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1af6605323d591cc5182351425c0f15b10" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15730" endline="15800">TEST_LdCom_TriggerTransmit_LaneAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a8a1f8af75ef2f4835ed2c89540b0e28c" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15815" endline="15885">TEST_LdCom_TriggerTransmit_OccupantPresence</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a6eb2eda872d9be953a0d91cae73c19d8" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="15900" endline="16048">TEST_LdCom_TriggerTransmit_Odometry</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ada07fa7db6b32dd84178fa2e7e8359ac" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16063" endline="16146">TEST_LdCom_TriggerTransmit_ParkingBrake</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a88526c4497c8362cefd83d0721fdc2c0" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16161" endline="16244">TEST_LdCom_TriggerTransmit_PersonalizationSystem</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a349451986eadae67aa2012758d9a0141" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16259" endline="16355">TEST_LdCom_TriggerTransmit_Powertrain</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a7dad2e2d853f4ecee2dd2486e1f26ee6" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16370" endline="16440">TEST_LdCom_TriggerTransmit_PreCrash</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1ac8b2423c67f56af851258e12cbb918e0" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16455" endline="16551">TEST_LdCom_TriggerTransmit_SafetyBeltState</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a9391a08f75ab9addf359913f105241a8" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16566" endline="16636">TEST_LdCom_TriggerTransmit_SteeringAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1aca1179cd5573df95a9bdd40a4abc170e" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16651" endline="16773">TEST_LdCom_TriggerTransmit_TravelAssist</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1aff9646dae207298a9a1898aa940ff3ae" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16788" endline="16884">TEST_LdCom_TriggerTransmit_VehicleBasicData</referencedby>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_8test_1a6fc3e933d1f84cda17ff4f96fc0f6aa4" compoundref="_cdd___s_o_m_e_i_p_8c_8test" startline="16899" endline="16982">TEST_LdCom_TriggerTransmit_VisualOdometry</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file of LdCom functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_ld_com___cbk_8h" kindref="compound">LdCom_Cbk.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version 1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author uie65302 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date 15.11.2022 </para></simplesect>
+</para><para>Header file of LdCom functionality.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/inc/LdCom_Cbk.h"/>
+  </compounddef>
+</doxygen>

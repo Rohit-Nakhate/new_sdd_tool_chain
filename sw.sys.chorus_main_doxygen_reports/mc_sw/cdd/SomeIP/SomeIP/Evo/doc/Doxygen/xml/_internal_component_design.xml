@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para><image type="html" name="Component_Overview.png">Component overview Diagram</image>
+ </para><para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para>Cdd_SOMEIP</para></listitem><listitem><para>Cross-core Context Switch</para></listitem><listitem><para>Data Serializer/Deserializer</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level.<linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para>Cdd_SOMEIP</para></listitem><listitem><para>Cross-core Context Switch</para></listitem><listitem><para>Data Serializer/Deserializer</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription">
+<title>1. Cdd_Someip (Cdd_SOMEIP.c, Cdd_SOMEIP.h, BswM_UserCallouts.h, LdCom_Cbk.h, LdCom_GwAdapter.c)</title>
+<para>This unit is a wrapper on top of the BSW to establish communication between BSW module and Comserver application.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+</sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="Dynamic_unit_Someip.png">callsequence</image>
+  <heading level="2">Tasks</heading>
+</para><para>Cross core communication is now initiated by EthTask. <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No Events</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>The unit operates on High power mode. No start up or shut down operations are considered.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>No synchronization mechanism applied here.</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para><ref refid="_cdd___s_o_m_e_i_p_8h_1a4b8e7649de0438676ae999715fe99864" kindref="member">MESS_NOTIFICATION</ref> : Macro for the SomeIP message type Notification. <linebreak/>
+<ref refid="_cdd___s_o_m_e_i_p_8h_1a0d0e62214e53b141ee529a9b59c269aa" kindref="member">MESS_RESPONSE</ref> : Macro for the SomeIP message type Response. <linebreak/>
+<ref refid="_cdd___s_o_m_e_i_p__cfg_8h_1a88b877881c9b801ae18edb42f08fe917" kindref="member">Server_Service_ACC</ref> : Service ID for ACC (All servuces has respective service ID macros). <linebreak/>
+<ref refid="_cdd___s_o_m_e_i_p__cfg_8h_1aeaef36813cce4ae0a895103ccd0cfac4" kindref="member">LdComIPdu_RPC_EnergySystem_notifications_ICAS3_req</ref> : Macro defines for LdCom IPdus for LdCom_RxIndication. <linebreak/>
+#LdComIPdu_ACC_Event_notification : Pdu Ids used in LdCom_TriggerTransmit. <linebreak/>
+#SdEventHandlerGroup_EnergySystem_Notification : Server Service event group handle ID definitions. <linebreak/>
+<ref refid="_bsw_m___user_callouts__cfg_8h_1a55a3bf9dae9046536b96702090fc7f60" kindref="member">SdConsumedEventGroup_UnitMaster_units</ref> : Client Service event group handle ID definitions. <linebreak/>
+<ref refid="_bsw_m___user_callouts_8h_1a2918e6c0f8d786da3753df34a41e124a" kindref="member">UnitMaster</ref> : Client Service handle ID. <linebreak/>
+<ref refid="_ld_com___gw_adapter_8c_1a915cdef2d00fbe7be35c256dea7fd619" kindref="member">LdCom_FifoSize</ref> : FiFo size. <linebreak/>
+<ref refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" kindref="member">LdCom_PduSize</ref> : Pdu size. <linebreak/>
+<ref refid="_ld_com___gw_adapter_8c_1a579a1709398f522eed353a85bf92cbc1" kindref="member">LdCom_NoOfTxPdus</ref> : Number of transmission PDUs. <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" kindref="member">LdCom_NoOfRxPdus</ref> : Number of reception PDUs. <linebreak/>
+ <heading level="2">Algorithms</heading>
+</para><para>No algorithms worth explaining are used/implemented in the unit.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para><para><itemizedlist>
+<listitem><para><ref refid="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" kindref="member">LdCom_TxPdus</ref> is the array used for sending out data over ISO-TP.</para></listitem><listitem><para><ref refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" kindref="member">LdCom_RxPdus</ref> is the array used for receiving data over ISO-TP.</para></listitem><listitem><para><ref refid="_ld_com___gw_adapter_8c_1aa4eb4d4550700bb8bcc25583842596fd" kindref="member">LdCom_RxFifoBuffer</ref> specifies the elements of the RX FIFO.</para></listitem><listitem><para><ref refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" kindref="member">LdCom_RxFifo</ref> is the RX FIFO, that is used for receiving data over ISO-TP.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription2">
+<title>2. Cross-core Context switch (CrossCore_SOMEIP_TxReq.c, CrossCore_SOMEIP_TxReq.h)</title>
+<para>This unit facilitates context switch between cores with interrupts. Comserv module is in Core 0 and Minicomserv is Core 1. SomeIP modules are in Core 2.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+</sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="Dynamic_unit_Someip2.png">callsequence</image>
+  <heading level="2">Tasks</heading>
+</para><para>ComservTask triggers the module Comserv</para><para><heading level="2">Interrupts &amp; Events</heading>
+</para><para>Two Interrupts available: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a6e06274c9cd84ddcfce28c5687ee49a5" kindref="member">OS_ISR_SomeIpTxReqCore0()</ref>, <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a58356f1c76429845e9c1f8218493fa89" kindref="member">OS_ISR_SomeIpTxReqCore1()</ref>. <linebreak/>
+ These interrupts are used to set events Ev_SomeIpTxReqCore0, Ev_SomeIpTxReqCore1 in EthTask respectively.<linebreak/>
+ In the EthTask, these events invoke processes <ref refid="_cross_core___some_ip___tx_req_8h_1afc370e37b0aa9827f479fd0245f49f05" kindref="member">Process_SomeIpTxReqCore0()</ref>, <ref refid="_cross_core___some_ip___tx_req_8h_1a573df02670dc928fb979584b9e5a90f2" kindref="member">Process_SomeIpTxReqCore1()</ref> respectively. <linebreak/>
+ Cross-core transfer of TxPdu buffer is implemented using the processes.<linebreak/>
+ <heading level="2">Operating Modes</heading>
+</para><para>No Operation modes</para><para><heading level="2">Power Modes</heading>
+</para><para>No Power modes</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No Error Handling</para><para><heading level="2">Synchronization</heading>
+</para><para>No synchronization mechanism applied here.</para><para><heading level="2">Operations</heading>
+</para><para>Operations are explained in the corresponding files.</para><para><heading level="2">Macros</heading>
+</para><para>#SomeIp_FIfoCore1BackupSize : Macro for the size of the SomeIp_TxFifo_Core1_Backup. <linebreak/>
+<ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a2ccd5e6ddd2dcc190d9d4577ed69f2c3" kindref="member">SomeIp_FIfoCore1ReducedSize</ref> : Macro for the size of the SomeIp_FifoBufferCore1_Reduced. <linebreak/>
+ <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a28a6bac25a8c1b554fe352d88062ab85" kindref="member">SomeIp_FIfoCore0Size</ref> : Macro for the size of the SomeIp_TxFifo_Core0. <linebreak/>
+ <heading level="2">Algorithms</heading>
+</para><para>No algorithms worth explaining are used/implemented in the unit.</para><para><heading level="2">Data Structures</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1aff29bff54ee8ea9351464e18f4c5c5f1" kindref="member">cc_someip_TxReq_debug</ref> Structure containing the counters that are incremented inside respective functions.</para></listitem><listitem><para>::SomeIp_FifoBufferCore1_Backup Array of Structure with the data inside the fifo. <linebreak/>
+</para></listitem><listitem><para><ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1abbb93c3b6e486e90d2d35d0b82045c37" kindref="member">SomeIp_FifoBufferCore1_Reduced</ref> Array of Structure with the data inside the fifo. <linebreak/>
+</para></listitem><listitem><para><ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a39c014177848576810f4c87bc734f308" kindref="member">SomeIp_FifoBufferCore0</ref> Array of Structure with the data inside the fifo. <linebreak/>
+</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription3">
+<title>3. Data Serializer/Deserializer (serializing_util.c, serializing_util.h)</title>
+<para>This unit is responsible for serilization and deserialization of payload data in the SomeIP buffer.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+</sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_3">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="Dynamic_unit_Someip3.png">callsequence</image>
+  <heading level="2">Tasks</heading>
+</para><para>No Tasks. <heading level="2">Interrupts</heading>
+</para><para>No Interrupts <heading level="2">Events</heading>
+</para><para>No Events <heading level="2">Operating Modes</heading>
+</para><para>No Operation modes</para><para><heading level="2">Power Modes</heading>
+</para><para>No Power modes <heading level="2">Exception and Error Handling</heading>
+</para><para>No Error Handling <heading level="2">Synchronization</heading>
+</para><para>No synchronization mechanism applied here. <heading level="2">Operations</heading>
+</para><para>Operations are explained in the corresponding files.</para><para><heading level="2">Macros</heading>
+</para><para>NA</para><para><heading level="2">Algorithms</heading>
+</para><para>No algorithms worth explaining are used/implemented in the unit. <heading level="2">Data Structures</heading>
+</para><para>NA</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Configuration is project specific.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Number of dependencies less then 7.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Complex device driver.   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>No algorithms and interaction is rated medium.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Number of units lower then 5.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Tests have to be performed using PLAST due to the nature of the component.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

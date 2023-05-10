@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_0_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_0_requirements</compoundname>
+    <title>ExportedDoorsSpecification_0_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_0_requirements_1ExportedDoorsSpecification_0">
+<title>ExportedDoorsSpecification_0</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1282">
+<title>SWR_ICAS1_L3_DWA_1282</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 346 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1227 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 657 <linebreak/>
+Defective ATWS sensor -&gt; internal error <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ (pc_DWA_mit_IRUe== &quot;aktiv&quot; OR pc_DWA_mit_NGS== &quot;aktiv&quot; ) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( <linebreak/>
+ IF ( DWASensors_01.DWASensor_Error== &quot;normal&quot; OR <linebreak/>
+ (DWASensore_01.DWASensor_IRUE_schaerfen == entschaerfen AND <linebreak/>
+ (DWASensors_01.DWASensor_IRUE_Status == unscharf) AND <linebreak/>
+ (DWASensore_01.DWASensor_NGS_schaerfen == entschaerfen AND <linebreak/>
+ DWASensors_01.DWASensor_NGS_Status == unscharf) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaDefektInternerFehler := 0 <linebreak/>
+ <linebreak/>
+ ELSE IF (DWASensors_01.DWASensor_Error== &quot;Fehler&quot;) <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaDefektInternerFehler := 1 (0x04090E) <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1282 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1284">
+<title>SWR_ICAS1_L3_DWA_1284</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 383 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1266 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 746 <linebreak/>
+ATWS sensor (NGS sensor) -&gt; implausible signal <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_NGS== &quot;aktiv&quot; AND <linebreak/>
+ Within 30s after locking the car (enStDWAStatus == 1) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( IF DWASensors_01.DWASensor_NGS_Winkel_unplaus == &quot;unplausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaNeigungssensorUnplausiblesSignal := 1 (0x040A08) <linebreak/>
+ <linebreak/>
+ IF DWASensors_01.DWASensor_NGS_Winkel_unplaus == &quot;plausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaNeigungssensorUnplausiblesSignal := 0 <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ Note: The signl enStDWAStatus depends on the time value in the parameter p_t_DWA_Voraktivierungszeit <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1284 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1285">
+<title>SWR_ICAS1_L3_DWA_1285</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 420 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1309 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 824 <linebreak/>
+ATWS sensor (IRUE sensor) -&gt; implausible signal <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_IRUe== &quot;verbaut&quot; AND <linebreak/>
+ Within 30s after locking the car (enStDWAStatus == 1) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( <linebreak/>
+ IF DWASensors_01.DWASensor_IRUE_Signal_unplaus == &quot;unplausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaInnenraumueberwachungUnplausiblesSignal := 1 (0x040B08) <linebreak/>
+ <linebreak/>
+ IF DWASensors_01.DWASensor_IRUE_Signal_unplaus == &quot;plausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaInnenraumueberwachungUnplausiblesSignal := 0 <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ Note: The signl enStDWAStatus depends on the time value in the parameter p_t_DWA_Voraktivierungszeit <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1285 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1286">
+<title>SWR_ICAS1_L3_DWA_1286</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 485 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1352 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 903 <linebreak/>
+ATWS sensor slave -&gt; open load/defect <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ (cp_DWA_verbaut== &quot;verbaut&quot;) AND <linebreak/>
+ (pc_DWA_mit_IRUe== &quot;verbaut&quot; OR pc_DWA_mit_NGS== &quot;aktiv&quot; )) AND <linebreak/>
+ Within 30s after locking the car (enStDWAStatus == 1) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( <linebreak/>
+ IF DWASensors_01.DWASensor_Slave_unplaus == &quot;unplausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaSlaveUnterbrechungDefekt := 1 (0x040C0E) <linebreak/>
+ <linebreak/>
+ IF DWASensors_01.DWASensor_Slave_unplaus == &quot;plausibel&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaSlaveUnterbrechungDefekt := 0 <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ Note: The signl enStDWAStatus depends on the time value in the parameter p_t_DWA_Voraktivierungszeit <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1286 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1287">
+<title>SWR_ICAS1_L3_DWA_1287</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 521 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1397 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 990 <linebreak/>
+ATWS sensor -&gt; no basic setting <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ (cp_DWA_verbaut== &quot;verbaut&quot;) AND <linebreak/>
+ (pc_DWA_mit_IRUe== &quot;verbaut&quot; OR pc_DWA_mit_NGS== &quot;aktiv&quot; ) <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( <linebreak/>
+ IF DWASensors_01.DWASensor_NotConfigured == &quot;nicht konfiguriert&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaKeineGrundeinstellung := 1 (0x040205) <linebreak/>
+ <linebreak/>
+ IF DWASensors_01.DWASensor_NotConfigured == &quot;Konfiguration OK&quot; <linebreak/>
+ then <linebreak/>
+ DTC_SensorDwaKeineGrundeinstellung := 0 <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1287 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1594">
+<title>SWR_ICAS1_L3_DWA_1594</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 282 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 851 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1750 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1734 <linebreak/>
+0x04050B - Scheibenbruchsensor (Option Audi: Heckscheibenbruch) -&gt; Unterbrechung <linebreak/>
+ <linebreak/>
+ IF (pc_DWA_aktiv == &quot;aktiv&quot; AND cp_DWA_HSB_HSK_ueberwachung_aktiv == &quot;aktiv&quot;) <linebreak/>
+ then <linebreak/>
+ ( IF (StHeckscheibe.bHSBruchErkannt == 1) <linebreak/>
+ then <linebreak/>
+ set DTC: 0x04050B := prefail <linebreak/>
+ <linebreak/>
+ IF (StHeckscheibe.bHSBruchErkannt == 0) <linebreak/>
+ then <linebreak/>
+ set DTC: 0x04050B := prepass <linebreak/>
+ ) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1594 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1600">
+<title>SWR_ICAS1_L3_DWA_1600</title>
+<para>Requirement is satisfied here: <linebreak/>
+./ComponentDesign.markdown line 153 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/inc/DWA_Task.h line 191 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 70 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 72 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 81 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 86 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 91 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 414 <linebreak/>
+DWA shall configured in ICAS1 10ms task. <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1600 <linebreak/>
+ _ObjectType: Non Functional Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1440">
+<title>SWR_ICAS1_L3_DWA_1440</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 960 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1823 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1955 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; arming&gt;=&quot;&quot;&gt; AND <linebreak/>
+ Sounders_01.Sounder_Status == unscharf AND <linebreak/>
+ &lt;Sounder timeout=&quot;&quot; expired&gt;=&quot;&quot;&gt;) <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := No Request&gt; <linebreak/>
+ &lt;Schedule Status := No Request&gt; <linebreak/>
+ <linebreak/>
+ Note: After the Sounder Timeout expired when the the Sounders_01.Sounder_Status == unscharf the DWA can not arm. <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1440 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1446">
+<title>SWR_ICAS1_L3_DWA_1446</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1000 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1856 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2026 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; disarming&gt;=&quot;&quot;&gt; AND <linebreak/>
+ Sounders_01.Sounder_Status == unscharf AND <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := No Request&gt; <linebreak/>
+ &lt;Schedule Status := No Request&gt; <linebreak/>
+ <linebreak/>
+ Note: When the the Sounders_01.Sounder_Status == unscharf in Schedule Status == Disarming the DWA should disarm. <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1446 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1448">
+<title>SWR_ICAS1_L3_DWA_1448</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 886 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1787 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1828 <linebreak/>
+IF (&lt;First ever=&quot;&quot; vehicle=&quot;&quot; startup&gt;=&quot;&quot;&gt; AND <linebreak/>
+ &lt;Schedule status=&quot;=&quot; unknown&gt;=&quot;&quot;&gt;) <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := No Request&gt; <linebreak/>
+ &lt;Schedule Status := No Request&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1448 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1436">
+<title>SWR_ICAS1_L3_DWA_1436</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 920 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1802 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1890 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; no=&quot;&quot; request&gt;=&quot;&quot;&gt; AND <linebreak/>
+ bStrgSNDSchaerfen == 1 ) <linebreak/>
+ then <linebreak/>
+ &lt;Start sounder=&quot;&quot; timeout&gt;=&quot;&quot;&gt; <linebreak/>
+ &lt;Schedule Request := Main Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Arming&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1436 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1438">
+<title>SWR_ICAS1_L3_DWA_1438</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 960 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1824 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1955 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; arming&gt;=&quot;&quot;&gt; AND <linebreak/>
+ Sounders_01.Sounder_Status == scharf <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := Armed Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Armed&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1438 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1450">
+<title>SWR_ICAS1_L3_DWA_1450</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1000 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1857 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2026 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; disarming&gt;=&quot;&quot;&gt; AND <linebreak/>
+ Sounders_01.Sounder_Status == scharf AND <linebreak/>
+ &lt;Sounder timeout=&quot;&quot; expired&gt;=&quot;&quot;&gt;) <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := Armed Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Armed&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1450 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1449">
+<title>SWR_ICAS1_L3_DWA_1449</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1038 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1889 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2097 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; alarm&gt;=&quot;&quot;&gt; AND <linebreak/>
+ bStrgSNDAlAusloesen == 0 AND <linebreak/>
+ Sounders_01.Sounder_Status == scharf) <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := Armed Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Armed&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1449 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1442">
+<title>SWR_ICAS1_L3_DWA_1442</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1079 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1924 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2174 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; armed&gt;=&quot;&quot;&gt; AND <linebreak/>
+ bStrgSNDSchaerfen == 0) <linebreak/>
+ then <linebreak/>
+ &lt;Start sounder=&quot;&quot; timeout&gt;=&quot;&quot;&gt; <linebreak/>
+ &lt;Schedule Request := Main Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Disarming&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1442 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1451">
+<title>SWR_ICAS1_L3_DWA_1451</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1038 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1890 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2097 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; alarm&gt;=&quot;&quot;&gt; AND <linebreak/>
+ bStrgSNDSchaerfen == 0) <linebreak/>
+ then <linebreak/>
+ &lt;Start sounder=&quot;&quot; timeout&gt;=&quot;&quot;&gt; <linebreak/>
+ &lt;Schedule Request := Main Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Disarming&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1451 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1455">
+<title>SWR_ICAS1_L3_DWA_1455</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1079 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1925 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2174 <linebreak/>
+IF (&lt;Schedule status=&quot;=&quot; armed&gt;=&quot;&quot;&gt; AND <linebreak/>
+ bStrgSNDAlAusloesen == 1) <linebreak/>
+ then <linebreak/>
+ &lt;Schedule Request := Armed Schedule&gt; <linebreak/>
+ &lt;Schedule Status := Alarm&gt; <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1455 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1680">
+<title>SWR_ICAS1_L3_DWA_1680</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1070 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1113 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1974 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2257 <linebreak/>
+If enStrgQTGBeepTyp = 0 -&gt; 1 or 0 -&gt; 2 then switch to master table. <linebreak/>
+ Note: see chapter 3.4 Sub-Function Sounder LIN Communication <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1680 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1682">
+<title>SWR_ICAS1_L3_DWA_1682</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1070 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1113 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1975 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2257 <linebreak/>
+If enStrgQTGBeepTyp = 1 -&gt;0 or 2 -&gt; 0 then switch to short table. <linebreak/>
+ Note: see chapter 3.4 Sub-Function Sounder LIN Communication <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1682 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1274">
+<title>SWR_ICAS1_L3_DWA_1274</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 621 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1516 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1314 <linebreak/>
+ATWS siren -&gt; defective / internal error&quot;   \n  \n IF ((s_KL_15 == off OR s_KL_15 == on) AND  \n  cp_DWA_verbaut== &quot;verbaut&quot; AND  \n  pc_DWA_mit_Einfachhorn == &quot;LIN-Sounder verbaut") <linebreak/>
+ then <linebreak/>
+ ( IF (Sounders_01.Sounder_Error == Fehler ) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaDefektInternerFehler := 1 (0x04120E) <linebreak/>
+ <linebreak/>
+ IF (Sounders_01.Sounder_Error == normal ) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaDefektInternerFehler := 0 <linebreak/>
+ ) <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1274 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1275">
+<title>SWR_ICAS1_L3_DWA_1275</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 657 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1559 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1385 <linebreak/>
+ATWS siren -&gt; the accumulator cannot be charged <linebreak/>
+ <linebreak/>
+ IF ((s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_Einfachhorn == &quot;LIN-Sounder verbaut&quot;) <linebreak/>
+ then <linebreak/>
+ ( IF (Sounders_01.Sounder_AccuError == Fehler ) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaAkkuNichtLadbar := 1 (0x04130E) <linebreak/>
+ <linebreak/>
+ IF (Sounders_01.Sounder_AccuError== normal ) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaAkkuNichtLadbar := 0 <linebreak/>
+ ) <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1275 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1276">
+<title>SWR_ICAS1_L3_DWA_1276</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 693 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1601 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1456 <linebreak/>
+ATWS siren -&gt; incorrect code <linebreak/>
+ <linebreak/>
+ IF ((s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_Einfachhorn == &quot;LIN-Sounder verbaut&quot;) <linebreak/>
+ then <linebreak/>
+ ( IF (Sounders_01.Sounder_KommunikationsError == Fehler) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaFalscherCode := 1 (0x041204) <linebreak/>
+ <linebreak/>
+ IF (Sounders_01.Sounder_KommunikationsError == normal) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaFalscherCode := 0 <linebreak/>
+ ) <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1276 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1277">
+<title>SWR_ICAS1_L3_DWA_1277</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 729 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1643 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1527 <linebreak/>
+ATWS siren -&gt; the lower limit value has been under-run <linebreak/>
+ <linebreak/>
+ IF ((s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_Einfachhorn == &quot;LIN-Sounder verbaut&quot;) <linebreak/>
+ then <linebreak/>
+ ( IF (Sounders_01.Sounder_Unterspannung == aktiv) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaUntererGrenzwertUnterschritten := 1 (0x041202) <linebreak/>
+ <linebreak/>
+ IF (Sounders_01.Sounder_Unterspannung == normal) <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaUntererGrenzwertUnterschritten := 0 <linebreak/>
+ ) <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1277 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1279">
+<title>SWR_ICAS1_L3_DWA_1279</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 763 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 1685 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 1598 <linebreak/>
+&quot;Störung&quot;; <linebreak/>
+ <linebreak/>
+ IF ( (s_KL_15 == off OR s_KL_15 == on) AND <linebreak/>
+ cp_DWA_verbaut== &quot;verbaut&quot; AND <linebreak/>
+ pc_DWA_mit_Einfachhorn == &quot;LIN-Sounder verbaut&quot; <linebreak/>
+ ) <linebreak/>
+ then <linebreak/>
+ ( IF bStrgSNDSchaerfen != bStSND <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaStoerung := 1 (0x041318) <linebreak/>
+ <linebreak/>
+ IF bStrgSNDSchaerfen == bStSND <linebreak/>
+ then <linebreak/>
+ DTC_SireneDwaStoerung := 0 <linebreak/>
+ ) <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1279 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1707">
+<title>SWR_ICAS1_L3_DWA_1707</title>
+<para>Requirement is satisfied here: <linebreak/>
+./ComponentDesign.markdown line 154 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+./ComponentDesign.markdown line 340 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 95 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 97 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 106 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 111 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Integration.c.test line 116 <linebreak/>
+The SW-component ATWS requires 5 blocks in the non-volatile memory, according to the definition in the ARXML-File, in order to store: <linebreak/>
+ - the ATWS-state (port NV_DWA_Zustand, 26 bytes) <linebreak/>
+ - the ATWS-alarm counter (port NV_DWA_Alarmzaehler, 24 bytes) <linebreak/>
+ - the ATWS-history (port NV_DWA_Historie, 61 bytes) <linebreak/>
+ - the ATWS-panic alarm history (port NV_DWA_Panik_Historie, 21 bytes) <linebreak/>
+ - the external states (Port NvDwaExtZustaende, 8 Byte) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1707 <linebreak/>
+ _ObjectType: Non Functional Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1505">
+<title>SWR_ICAS1_L3_DWA_1505</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 253 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 2027 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2391 <linebreak/>
+IF (pc_Lenkerseite == 0x1 (steering wheel on the right)) <linebreak/>
+ then <linebreak/>
+ IF (enStDWAAlarmquelle == 3 (doorContactBackwardsLeft)) <linebreak/>
+ then <linebreak/>
+ DWA_Alarmquelle := 4 <linebreak/>
+ <linebreak/>
+ ELSEIF (enStDWAAlarmquelle == 4 (doorContactBackwardsRight)) <linebreak/>
+ then <linebreak/>
+ DWA_Alarmquelle := 3 <linebreak/>
+ <linebreak/>
+ ELSE <linebreak/>
+ DWA_Alarmquelle := enStDWAAlarmquelle <linebreak/>
+ <linebreak/>
+ Note: DWA_Alarmquelle is mapped to an internal service interface AntiTheftSystem, service ID 0x6023. <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1505 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_L3_DWA_1668">
+<title>SWR_ICAS1_L3_DWA_1668</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 222 <linebreak/>
+Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/src/DWA_Task.c line 2009 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 2331 <linebreak/>
+If the rear window breakage monitoring is not active (cp_DWA_HSB_HSK_ueberwachung_aktiv != 1), the value 0 (false) must be set for the data element bHSBruchErkannt. <linebreak/>
+ ID: SWR_ICAS1_L3_DWA_1668 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_22045">
+<title>SWR_ICAS1_GW_22045</title>
+<para>Requirement is satisfied here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/inc/DWA_Task.h line 191 <linebreak/>
+Requirement is verified here: <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/DWA/Evo/test/swut/DWA_Task.c.test line 414 <linebreak/>
+The cyclic call shall be implemented in the following order by the SWC supplier: <linebreak/>
+ 0. cyclic_zkmebintpre <linebreak/>
+ 1. cyclic_zv <linebreak/>
+ 2. cyclic_dwa <linebreak/>
+ 3. cyclic_kft <linebreak/>
+ 4. cyclic_qtg <linebreak/>
+ 5. cyclic_cpd <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_22045 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: Q <linebreak/>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

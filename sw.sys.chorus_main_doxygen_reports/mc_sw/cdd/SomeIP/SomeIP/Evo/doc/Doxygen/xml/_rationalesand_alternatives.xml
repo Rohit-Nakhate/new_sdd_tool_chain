@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rationalesand_alternatives" kind="page">
+    <compoundname>RationalesandAlternatives</compoundname>
+    <title>Rationales and Alternatives</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Design Decisions:<linebreak/>
+<linebreak/>
+<orderedlist>
+<listitem><para>Stubbed communication functions (glue code) to ensure the linkage between platform components: ComServer, DoIP, CanTp, CanNM and BAP modules. <linebreak/>
+</para></listitem><listitem><para>Cross-core communication is facilitated using Interrupts. The ISR sets an OS Event. The EthTask invokes a process when the event is triggered. This is done in order to keep the ISR as light as possible. <linebreak/>
+</para></listitem><listitem><para>Standard SOME/IP Tranformer and Serializer/Deserializer is not used due to the limitation of Rte_Light. Application level Serializer/Deserializer is used by Comserver and Minicomserver. Cdd_SOMEIP provides the helper functions to applications. <linebreak/>
+</para></listitem></orderedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

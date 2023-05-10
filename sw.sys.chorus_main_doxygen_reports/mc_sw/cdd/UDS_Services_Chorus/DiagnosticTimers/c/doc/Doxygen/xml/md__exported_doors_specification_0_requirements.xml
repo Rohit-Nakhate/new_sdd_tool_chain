@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_0_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_0_requirements</compoundname>
+    <title>ExportedDoorsSpecification_0_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_0_requirements_1ExportedDoorsSpecification_0">
+<title>ExportedDoorsSpecification_0</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_867">
+<title>SWR_ICAS1_Diag_867</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a22b321880f1f4c379d21e7bfa39671fb" kindref="member">RetriggerNMDiagActiveTimer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 275 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1056 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus moves back from a NonDefaultSession to the DefaultSession due to the transition 35 <linebreak/>
+ THEN <linebreak/>
+ T_NM_DiagActive = 40 s <linebreak/>
+ ELSE <linebreak/>
+ T_NM_DiagActive = 4 s <linebreak/>
+ AND <linebreak/>
+ Chorus shall start the timer <linebreak/>
+ ID: SWR_ICAS1_Diag_867 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_866">
+<title>SWR_ICAS1_Diag_866</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1abb8bda9524bc2ad46335af38f5ecb4b5" kindref="member">DiagnosticTimersSetDefaultSessionState</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 198 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1acb2c362b7cc8c782ac8db06c0b46585b" kindref="member">setNMDiagActive</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1120 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus detects transiton to a NonDefaultSession <linebreak/>
+ THEN <linebreak/>
+ T_NM_DiagActive shall be stopped <linebreak/>
+ ID: SWR_ICAS1_Diag_866 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_864">
+<title>SWR_ICAS1_Diag_864</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a50516030e17bb2ff1c9a45e92ed3f97b" kindref="member">DiagnosticTimersNotifyDiagnoseActiveStatus</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 351 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1080 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus is in the DefaultSession, <linebreak/>
+ AND <linebreak/>
+ there is a diagnostic request or response <linebreak/>
+ THEN <linebreak/>
+ Chours shall start or re-trigger T_NM_DiagActive timer <linebreak/>
+ ID: SWR_ICAS1_Diag_864 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_863">
+<title>SWR_ICAS1_Diag_863</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1accf1c6bd9ae32e695100ac3284439bc9" kindref="member">RetriggerNMDiagActiveTimerOnDiagnosticRequest</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 473 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1081 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chours is in the DefaultSession, <linebreak/>
+ AND <linebreak/>
+ functionally addressed TesterPresent with SuppressPositiveResponseBit == 1 <linebreak/>
+ OR <linebreak/>
+ requests with SID 01hex - 0Fhex (OBDServices) to be ignored <linebreak/>
+ THEN <linebreak/>
+ Chours shall not start or re-trigger T_NM_DiagActive timer <linebreak/>
+ ID: SWR_ICAS1_Diag_863 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_857">
+<title>SWR_ICAS1_Diag_857</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a7ae7eeda3fd2299e044c75ab6bcfd8ed" kindref="member">DiagnosticTimersCyclic</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 391 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1092 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus is in the DeafaultSession <linebreak/>
+ AND <linebreak/>
+ T_NM_DiagActive is running <linebreak/>
+ THEN <linebreak/>
+ s_NM_DiagActive = 1 <linebreak/>
+ <linebreak/>
+ Remark: s_NM_DiagActive is a signal exposed to the RTE <linebreak/>
+ ID: SWR_ICAS1_Diag_857 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_856">
+<title>SWR_ICAS1_Diag_856</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1acb2c362b7cc8c782ac8db06c0b46585b" kindref="member">setNMDiagActive</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 427 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1093 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus is in a NonDefaultSession <linebreak/>
+ THEN <linebreak/>
+ s_NM_DiagActive = 1 <linebreak/>
+ <linebreak/>
+ Remark: s_NM_DiagActive is a signal exposed to the RTE <linebreak/>
+ ID: SWR_ICAS1_Diag_856 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_859">
+<title>SWR_ICAS1_Diag_859</title>
+<para>Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1094 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chours is in the DeafaulSession <linebreak/>
+ AND <linebreak/>
+ T_NM_DiagActive timer expired <linebreak/>
+ THEN <linebreak/>
+ s_NM_DiagActive = 0 <linebreak/>
+ <linebreak/>
+ Remark: s_NM_DiagActive is a signal exposed to the RTE <linebreak/>
+ ID: SWR_ICAS1_Diag_859 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_875">
+<title>SWR_ICAS1_Diag_875</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a33c2f4ab26568847fa7914f9808c8f5a" kindref="member">RetriggerTDiagEnableTimer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 235 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a7611afef38cc55c3d9630269550e9fbe" kindref="member">processDrivingCycleTimer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 607 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1095 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus detects transition from KL15_ON to KL15_OFF <linebreak/>
+ THEN <linebreak/>
+ T_Diag_Enable = 900 s (15 min) <linebreak/>
+ <linebreak/>
+ ELSE IF Chorus wakes up AND <linebreak/>
+ KL15_OFF <linebreak/>
+ THEN <linebreak/>
+ T_Diag_Enable = 60 s <linebreak/>
+ AND <linebreak/>
+ Chorus shall start the timer <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_875 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_873">
+<title>SWR_ICAS1_Diag_873</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1acce7f1f215bef9df95b6950680071dd6" kindref="member">ProcessTDiagEnable</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 518 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1ab1b09dec935e8ba390f544eebc86b916" kindref="member">ProcessNMDiagAcive</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 563 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1096 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus detects the transition from the DefaultSession to a NonDefaultSession <linebreak/>
+ THEN <linebreak/>
+ The T_Diag_Enable timer shall be stopped <linebreak/>
+ ID: SWR_ICAS1_Diag_873 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_876">
+<title>SWR_ICAS1_Diag_876</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1aef22b7fd5ea0d9c10ec2026352698069" kindref="member">DiagnosticTimersNotifyTransition35</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 312 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1055 <linebreak/>
+Requirement is satisfied here: if <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1097 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ T_Diag_Enable timer has elapsed <linebreak/>
+ AND <linebreak/>
+ all requests have been processed <linebreak/>
+ THEN <linebreak/>
+ Chorus shall not re-trigger T_NM_DiagActive timer <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_876 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_877">
+<title>SWR_ICAS1_Diag_877</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ T_Diag_Enable timer has elapsed, <linebreak/>
+ AND <linebreak/>
+ there is still request in processing <linebreak/>
+ THEN <linebreak/>
+ this request shall be completed <linebreak/>
+ ID: SWR_ICAS1_Diag_877 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_917">
+<title>SWR_ICAS1_Diag_917</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a0471b7e5c30e6ba274a701143885b3ae" kindref="member">update_SI_DiagnoseActive_SignalForSPN</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 825 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+After start up or wake up, as long as the ICAS1 hasn&apos;t received a single Diagnostic request, it shall, in every Systeminfo PDU it sends out, set the signal Systeminfo_01.SI_Diagnose_Aktiv = 0 . <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_917 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_911">
+<title>SWR_ICAS1_Diag_911</title>
+<para>Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1ade90a0a06b5845e757e11aa66aeecc6a" kindref="member">RetriggerSI_DiagnoseAktivTimer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h line 429 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a3ddeb8a3ca962f45864edfc3b44985eb" kindref="member">ProcessSI_DiagnoseActive</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 694 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1ab55c7b8e5f3c9b2d96f334ebbd6958c3" kindref="member">decrementSI_DiagnoseActiveTimer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 737 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1a3e8bd26f8fbb89b1e799ac8985280bac" kindref="member">update_SI_DiagnoseActive_Signal</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 781 <linebreak/>
+Requirement is satisfied here: SuspendAllInterrupts <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 881 <linebreak/>
+Requirement is satisfied here: <ref refid="_diagnostic_timers_8c_1abb8bda9524bc2ad46335af38f5ecb4b5" kindref="member">DiagnosticTimersSetDefaultSessionState</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 1039 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ Chorus has received the diagnostic message, <linebreak/>
+ THEN <linebreak/>
+ Chorus shall reset the timer for si_Diagnose_Aktiv to the initial value = 4 seconds and start the timer <linebreak/>
+ AND <linebreak/>
+ Chorus shall set the signal Systeminfo_01.SI_Diagnose_Aktiv = 1. <linebreak/>
+ ID: SWR_ICAS1_Diag_911 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_Diag_912">
+<title>SWR_ICAS1_Diag_912</title>
+<para>Requirement is satisfied here: SuspendAllInterrupts <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c line 882 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ The timer for si_Diagnose_Aktiv expired, <linebreak/>
+ THEN <linebreak/>
+ Chorus shall set the signal Systeminfo_01.SI_Diagnose_Aktiv = 0. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_912 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+</para></simplesect>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

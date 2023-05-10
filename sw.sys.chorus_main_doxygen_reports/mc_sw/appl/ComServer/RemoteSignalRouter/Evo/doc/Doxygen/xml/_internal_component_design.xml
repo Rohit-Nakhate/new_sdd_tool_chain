@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has one generated unit RemoteSignalRouter_Routing.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1247  </para></entry><entry thead="no"><para>No action. This is the definition of the timeout detection mechanism   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1264  </para></entry><entry thead="no"><para>No action. This is the definition of the Tunnel Pdu layout   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><image type="html" name="RemoteSignalRouter_SoftwareUnitInterfaces.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The Module interracts with the Rte through the Data Receive Event and Routing Engine for starting and stopping the transmission of a Pdu / or sending Init Values.</para><para><bold>Tunnel Pdu Reception</bold></para><para>The next diagram will depict the reception of a tunnel Pdu.</para><para><image type="html" name="RemoteSignalRouter_DynamicBehavior_RxIndication.png"></image>
+ </para><para><bold>Timeout detection.</bold> The next diagram will depict the timeout detection after a normal reception<linebreak/>
+<linebreak/>
+<linebreak/>
+ <image type="html" name="RemoteSignalRouter_DynamicBehavior_Timeout.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The component has only one generated unit RemoteSignalRouter_Routing so data flow diagrm is not applicable to show the flow of data between the SW units.</para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>High Power</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>See function list Functions</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL and not a stack and not new and intraction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

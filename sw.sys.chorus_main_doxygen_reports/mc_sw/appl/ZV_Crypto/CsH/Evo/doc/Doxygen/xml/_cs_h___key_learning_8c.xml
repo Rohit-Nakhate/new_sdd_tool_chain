@@ -1,0 +1,1854 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_cs_h___key_learning_8c" kind="file" language="C++">
+    <compoundname>CsH_KeyLearning.c</compoundname>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes local="yes">Rte_CsH.h</includes>
+    <includes refid="_cs_h___key_learning_8h" local="yes">CsH_KeyLearning.h</includes>
+    <includes refid="_cs_h___nv_ram_8h" local="yes">CsH_nvram.h</includes>
+    <includes local="yes">CsmPi.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">KY_KessyEvMngr.h</includes>
+    <includes local="yes">UHF_DataTypes.h</includes>
+    <incdepgraph>
+      <node id="52">
+        <label>KY_KessyEvMngr.h</label>
+      </node>
+      <node id="51">
+        <label>Dem.h</label>
+      </node>
+      <node id="50">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="49">
+        <label>CsmPi.h</label>
+      </node>
+      <node id="44">
+        <label>CsH_KeyLearning.h</label>
+        <link refid="_cs_h___key_learning_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>CsH_nvram.h</label>
+        <link refid="_cs_h___nv_ram_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>Rte_CsH_Type.h</label>
+      </node>
+      <node id="42">
+        <label>Rte.h</label>
+      </node>
+      <node id="45">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="41">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="40">
+        <label>CsH_KeyLearning.c</label>
+        <link refid="_cs_h___key_learning_8c"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>UHF_DataTypes.h</label>
+      </node>
+      <node id="43">
+        <label>Rte_CsH.h</label>
+      </node>
+      <node id="47">
+        <label>CsH_DataTypes.h</label>
+        <link refid="_cs_h___data_types_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1addecc07847d57a1d7a41c14e1e88a472" prot="public" static="no">
+        <name>NUMBER_OF_KEYS_RECEIVED</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing amount of keys that can be received.</para><para>Determines length <ref refid="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" kindref="member">bFFBSchluessel</ref> <linebreak/>
+ Used in <ref refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" kindref="member">CsH_Update_StanbyRAM_FfbData</ref> when updating RAM Data <linebreak/>
+ when clearing WCZInit <linebreak/>
+ and during copying of FDH Data in <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung</ref> <linebreak/>
+ In for loop in <ref refid="_cs_h___key_learning_8c_1a5cf5120168d9d45efb616bcb2db58ad2" kindref="member">evFindSlotNumber</ref>. <linebreak/>
+<simplesect kind="remark"><para>values 8u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a0a8f27c163c69eb0e93f65ca2d48c0d8" prot="public" static="no">
+        <name>WCZ_LENGTH</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used when preparing rolling counter</para><para>Used when preparing rolling counter in <ref refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent</ref> and <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung</ref> <linebreak/>
+<simplesect kind="remark"><para>values 4u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="82" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1aa0e26d510fa2d6068a1b55be9629a1c5" prot="public" static="no">
+        <name>WCZ_TRANSFER_OK</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant indicating that WCZ was transfered correctly.</para><para>Used in switch case construction in <ref refid="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" kindref="member">evFFBDataExchangeResp</ref> as status for WCZ transfer. <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="92" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1af3b0fd0f1ec5d0bb0ac2f5adbffae859" prot="public" static="no">
+        <name>WCZ_TRANSFER_N_OK</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant indicating that WCZ wasn&apos;t correctly transfered to FDH</para><para>Used in switch case construction in <ref refid="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" kindref="member">evFFBDataExchangeResp</ref> as status for WCZ transfer. <linebreak/>
+<simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="102" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1ae47a1dd2a09b0a85e6e182ed70b93e74" prot="public" static="no">
+        <name>WCZ_TRANSFER_PENDING</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing status of WCZ Transfer.</para><para>Used in switch case construction in <ref refid="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" kindref="member">evFFBDataExchangeResp</ref>. Not used for now. <linebreak/>
+<simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="112" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a600828026f327aa563776261914b6a36" prot="public" static="no">
+        <name>TRANSPONDER_ID_LENGTH</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used when copying transponder ID from Pim</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" kindref="member">CsH_Update_StanbyRAM_FfbData</ref> when copying transponder ID from Pim <linebreak/>
+<simplesect kind="remark"><para>values 4u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="122" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a337ecd4889073c71a06f12849b4a5322" prot="public" static="no">
+        <name>FFB_DATEN_PACKET_LENGTH</name>
+        <initializer>12u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing length of FFB Data</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a6dfa77cf9ee8985fe931ba1c85d86d24" kindref="member">checkAllDataPointers</ref> <linebreak/>
+<simplesect kind="remark"><para>values 12u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="132" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a94c589647f8cdb75d96794b9744645a1" prot="public" static="no">
+        <name>KEY_FREQ_05</name>
+        <initializer>0x05u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x05u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x05u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="142" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a1dd19369ebd202750c16a18a8a3261bf" prot="public" static="no">
+        <name>KEY_FREQ_01</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x01u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="152" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a2543ebaa41682b28863f1b0c05ce0238" prot="public" static="no">
+        <name>KEY_FREQ_06</name>
+        <initializer>0x06u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x06u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x06u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="162" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1af9ca1d41ebaac3f8530b443a3713e79b" prot="public" static="no">
+        <name>KEY_FREQ_07</name>
+        <initializer>0x07u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x07u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x07u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="172" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a6aa4330a50dfd66c13107da74135491f" prot="public" static="no">
+        <name>KEY_FREQ_02</name>
+        <initializer>0x02u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x02u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="182" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1afd380e650cc8ef13b6316143f9acf0f5" prot="public" static="no">
+        <name>KEY_FREQ_03</name>
+        <initializer>0x03u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key frequency with value of 0x03u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" kindref="member">FrequencyCheck</ref> when checking key frequency <linebreak/>
+<simplesect kind="remark"><para>values 0x03u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="192" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a75a1e1aa92e9766cc2e6e2e1fb94efcc" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_01</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 1</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 1u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="202" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a6a812ffa8a4eb2218cbede20c0f3a894" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_02</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 2</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 2u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="212" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a9f92c8f52e9e3975533bad42eb92cb44" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_03</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 3</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 3u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="222" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a3f72a5d333b4237987cf1afbc62abe75" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_04</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 4</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 4u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 4u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="232" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1aed3366049fb200ef384a16139fe09120" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_05</name>
+        <initializer>5u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 5</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 5u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 5u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="242" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1aae9736e3afc3622b5fe0feb9dfb7eb07" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_06</name>
+        <initializer>6u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 6</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 6u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 6u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="252" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1aa9b235d37a7bd7ea8fcfb24c1a82145e" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_07</name>
+        <initializer>7u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 7</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 7u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 7u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="262" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a3585150ea9aa0d1a8ff3a91b85c6846a" prot="public" static="no">
+        <name>TRANSPONDER_ID_NUM_08</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ID of Transponder number 8</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" kindref="member">sendTransponderIDtoSam</ref> when sending ID with value of 8u to SAM <linebreak/>
+<simplesect kind="remark"><para>values 8u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="272" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a2abbd8d074fef7659989f2ce7314cfb7" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_01</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x03u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="282" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1af8f18982bf349fb341c19770ac48392d" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_02</name>
+        <initializer>0x02u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x02u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="292" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1aa24c59b84a03841bf52884425458223a" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_03</name>
+        <initializer>0x03u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x03u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x03u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="302" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1ae4d322f994238b9e311e0a87bd2f37e1" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_10</name>
+        <initializer>0x10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x10u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x10u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="312" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1ad963702a0e90bf72f81bcf221af5cf54" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_20</name>
+        <initializer>0x20u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x20u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x20u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="322" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a0993e3f178d5b51d995bf27267d61816" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_40</name>
+        <initializer>0x40u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x40u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x40u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="332" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___key_learning_8c_1a639f6873d4525f511c57231526e4790c" prot="public" static="no">
+        <name>SCHLUESSEL_KONFIGURATIONS_DATEN_80</name>
+        <initializer>0x80u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing key configuration data with value of 0x80u</para><para>Used in <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration</ref> when configurating UHF channel <linebreak/>
+<simplesect kind="remark"><para>values 0x80u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="342" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" prot="public" static="no" mutable="no">
+        <type>Rte_PimType_CsH_CsH_FfbSkc</type>
+        <definition>Rte_PimType_CsH_CsH_FfbSkc Standby_CsH_FfbSkc</definition>
+        <argsstring></argsstring>
+        <name>Standby_CsH_FfbSkc</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>FFB SKC variables stored in Standby RAM</para><para>Stores variables related to FFB SKC in the Standby RAM to enable quick extraction of <linebreak/>
+ the data on the wake up. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___key_learning_8c_1a55c1fb114ddc2104566c246a2e41c846" kindref="member">CsH_Update_StanbyRAM_FFBSKC()</ref>, CsH_Clear_StanbyRAM_FFBSKC, <ref refid="_cs_h___crypto_operations_8h_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq()</ref>, <ref refid="_cs_h___crypto_operations_8h_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>, <ref refid="_cs_h___crypto_operations_8h_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>, CheckSignature_ZKA, <ref refid="_cs_h___crypto_operations_8h_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq()</ref>, <ref refid="_cs_h___key_learning_8c_1a9bc9e99ae8e4b11b84998878545d7058" kindref="member">CSH_getFFBSKCFlag()</ref>} <linebreak/>
+ protection {global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="365" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="365" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" compoundref="_cs_h___crypto_operations_8c" startline="647" endline="715">evEncryptReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" compoundref="_cs_h___crypto_operations_8c" startline="834" endline="873">CheckSignature_ZKA</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" compoundref="_cs_h___crypto_operations_8c" startline="880" endline="922">evCheckSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a306827f6f84ca550322b431bc8c135b5" compoundref="_cs_h___crypto_operations_8c_8test" startline="346" endline="463">TEST_evEncryptReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a3bf9b21ef48163d3b49d3c93ed143bb7" compoundref="_cs_h___crypto_operations_8c_8test" startline="475" endline="569">TEST_evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a37e15ed8e63a07e810cc76db3ef3475b" compoundref="_cs_h___crypto_operations_8c_8test" startline="581" endline="700">TEST_evCalcSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a2977cda1c8e0d5ffac6d06f3d80b358a" compoundref="_cs_h___crypto_operations_8c_8test" startline="842" endline="982">TEST_CheckSignature_ZKA</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aaabbca92bf7301dec8a426669c1738cd" compoundref="_cs_h___crypto_operations_8c_8test" startline="994" endline="1139">TEST_evCheckSignatureReq</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a9bc9e99ae8e4b11b84998878545d7058" compoundref="_cs_h___key_learning_8c" startline="1523" endline="1526">CSH_getFFBSKCFlag</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a55c1fb114ddc2104566c246a2e41c846" compoundref="_cs_h___key_learning_8c" startline="1723" endline="1731">CsH_Update_StanbyRAM_FFBSKC</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1ad26a098e211e4f2ffdec8a309dccdbb3" compoundref="_cs_h___key_learning_8c" startline="1756" endline="1760">CsH_Clear_StanbyRAM_FFBSKC</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab8217c60d43c3c1976a19e264d57fdfc" compoundref="_cs_h___key_learning_8c_8test" startline="482" endline="679">TEST_FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a27c2733391c0450c7f06a3a56de1e4e5" compoundref="_cs_h___key_learning_8c_8test" startline="858" endline="916">TEST_CSH_getFFBSKCFlag</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a907a5302acbf65edd9f90f9724c121a6" compoundref="_cs_h___key_learning_8c_8test" startline="1502" endline="1563">TEST_CsH_Update_StanbyRAM_FFBSKC</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ac995ac37fef5fee333ab3db0c53bb37b" compoundref="_cs_h___key_learning_8c_8test" startline="1651" endline="1680">TEST_CsH_Clear_StanbyRAM_FFBSKC</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" prot="public" static="no" mutable="no">
+        <type>Rte_PimType_CsH_CsH_FfbData</type>
+        <definition>Rte_PimType_CsH_CsH_FfbData Standby_CsH_FfbData</definition>
+        <argsstring></argsstring>
+        <name>Standby_CsH_FfbData</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>FFB Data variables stored in Standby RAM</para><para>Stores variables related to FFB Data in the Standby RAM to enable quick extraction of <linebreak/>
+ the data on the wake up. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" kindref="member">CsH_Update_StanbyRAM_FfbData()</ref>, <ref refid="_cs_h___key_learning_8c_1a9d4077732f289eb46c99f70d8970d7c6" kindref="member">CSH_getFFBDataFlag()</ref> <ref refid="_cs_h___key_learning_8c_1adbc3d36dda039cf192be23ad12d67618" kindref="member">CsH_Clear_StanbyRAM_FfbData()</ref>, <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung()</ref> <ref refid="_cs_h___key_learning_8c_1ae878a998e9af4277c80a2a14c3626a02" kindref="member">evCheckTransponderID()</ref>, <ref refid="_cs_h___key_learning_8c_1a5cf5120168d9d45efb616bcb2db58ad2" kindref="member">evFindSlotNumber()</ref>} <linebreak/>
+ protection {global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="383" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="383" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a5cf5120168d9d45efb616bcb2db58ad2" compoundref="_cs_h___key_learning_8c" startline="1474" endline="1490">evFindSlotNumber</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a9d4077732f289eb46c99f70d8970d7c6" compoundref="_cs_h___key_learning_8c" startline="1533" endline="1536">CSH_getFFBDataFlag</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1ae878a998e9af4277c80a2a14c3626a02" compoundref="_cs_h___key_learning_8c" startline="1543" endline="1555">evCheckTransponderID</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" compoundref="_cs_h___key_learning_8c" startline="1738" endline="1749">CsH_Update_StanbyRAM_FfbData</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1adbc3d36dda039cf192be23ad12d67618" compoundref="_cs_h___key_learning_8c" startline="1768" endline="1772">CsH_Clear_StanbyRAM_FfbData</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab8217c60d43c3c1976a19e264d57fdfc" compoundref="_cs_h___key_learning_8c_8test" startline="482" endline="679">TEST_FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a468f236f6a8d052050830c6217a006c4" compoundref="_cs_h___key_learning_8c_8test" startline="691" endline="764">TEST_evFindSlotNumber</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a81f743889691b21e58f39dc5871b2762" compoundref="_cs_h___key_learning_8c_8test" startline="928" endline="984">TEST_CSH_getFFBDataFlag</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a774b5b3aad41425e4024881da5438e25" compoundref="_cs_h___key_learning_8c_8test" startline="997" endline="1064">TEST_evCheckTransponderID</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ad9948d759d6d6a26a54d406d8101880b" compoundref="_cs_h___key_learning_8c_8test" startline="1575" endline="1639">TEST_CsH_Update_StanbyRAM_FfbData</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a79701a5a697e1eff43627897ae5d0799" compoundref="_cs_h___key_learning_8c_8test" startline="1692" endline="1721">TEST_CsH_Clear_StanbyRAM_FfbData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a3ada4d149ec33bd97c6b3cec9750a541" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bIsCsH_Stanby_Initializated</definition>
+        <argsstring></argsstring>
+        <name>bIsCsH_Stanby_Initializated</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Standby RAM Initialization Flag</para><para>Indicates if Standby RAM has been initialized. <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1ab6f4b75a8edbff193cb1a00a43d0dc6b" kindref="member">CsH_InitVarFunc()</ref>} <linebreak/>
+ protection {global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="398" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="398" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a4fc4edf6fc5e8310b52e068d2b3633eb" compoundref="_cs_h___key_learning_8c" startline="1272" endline="1282">CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab72f5096bdc6e61f1bebc49175e7333e" compoundref="_cs_h___key_learning_8c_8test" startline="303" endline="366">TEST_CsH_KeyHandler_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1aa93f27eac1e325183a5246a5f39e13bf" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean b_FFBSKCUebertragungReq</definition>
+        <argsstring></argsstring>
+        <name>b_FFBSKCUebertragungReq</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used to start FFBSKC Key learning process</para><para>Boolean value informing if WFS requested start of FFBSKC key learning process. <linebreak/>
+ Checked Cyclically in <ref refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent</ref>. <linebreak/>
+<simplesect kind="remark"><para>range {0u - 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" kindref="member">FFBSKCUebertragung()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="415" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="415" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" compoundref="_cs_h___key_learning_8c" startline="1289" endline="1337">FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a6bfa16b26796fe27b66ffec06d3cc82c" compoundref="_cs_h___key_learning_8c" startline="1567" endline="1613">FFBSKCUebertragung_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a740997ed04bb7b5aa2cff36dcf657d59" compoundref="_cs_h___key_learning_8c_8test" startline="378" endline="470">TEST_FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a11a6f32a31371cf103ab253938199d16" compoundref="_cs_h___key_learning_8c_8test" startline="1076" endline="1195">TEST_FFBSKCUebertragung_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a19f37bf915d7a9afdebc71ad0bfc582a" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 u8_FFBSKCUebertragungResp</definition>
+        <argsstring></argsstring>
+        <name>u8_FFBSKCUebertragungResp</name>
+        <initializer>= E_NOT_OK</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Response of FFBSKC Key learning process</para><para>Response about the operation result for Key Learning function in <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung</ref> <simplesect kind="remark"><para>range {0u, 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="430" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="430" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" compoundref="_cs_h___key_learning_8c" startline="1289" endline="1337">FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a6bfa16b26796fe27b66ffec06d3cc82c" compoundref="_cs_h___key_learning_8c" startline="1567" endline="1613">FFBSKCUebertragung_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a740997ed04bb7b5aa2cff36dcf657d59" compoundref="_cs_h___key_learning_8c_8test" startline="378" endline="470">TEST_FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a11a6f32a31371cf103ab253938199d16" compoundref="_cs_h___key_learning_8c_8test" startline="1076" endline="1195">TEST_FFBSKCUebertragung_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1ae0fe66e9dd9b6248aafa95a6100bef30" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean b_FFBDatenUebertragungReq</definition>
+        <argsstring></argsstring>
+        <name>b_FFBDatenUebertragungReq</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used to start FFBDaten Key learning process</para><para>Boolean value informing if WFS requested start of FFBDaten key learning process. <linebreak/>
+ Checked Cyclically in <ref refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent</ref>. <linebreak/>
+<simplesect kind="remark"><para>range {0u - 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="446" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="446" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1ace062134f569d31c8823e37c72dac460" compoundref="_cs_h___key_learning_8c" startline="1620" endline="1653">FFBDatenUebertragungResp_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a253155edaee4ba02abeb6210ca9e2bae" compoundref="_cs_h___key_learning_8c_8test" startline="1207" endline="1302">TEST_FFBDatenUebertragungResp_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a96a3127d7109fe88b805d2921d1ae1bc" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean alreadyReSendWCZtoFDH</definition>
+        <argsstring></argsstring>
+        <name>alreadyReSendWCZtoFDH</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Boolean value denoting if Rolling Code Counter has already been sent to FDH</para><para>Determines if WCZ wasnt correctly transfered to FDH. is checked cyclically in <ref refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent</ref> . <linebreak/>
+<simplesect kind="remark"><para>range {0u - 1u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" kindref="member">evFFBDataExchangeResp()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="461" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="461" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" compoundref="_cs_h___key_learning_8c" startline="1497" endline="1516">evFFBDataExchangeResp</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a40c26dd7dc98f245e67c7f98ad1b5e62" compoundref="_cs_h___key_learning_8c" startline="1660" endline="1679">Resend_WCZ_to_FDH</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a291a6e6f35024fc5d7e81bb839905440" compoundref="_cs_h___key_learning_8c_8test" startline="776" endline="846">TEST_evFFBDataExchangeResp</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a948ec2f689c848bf15aa6a0f893b86a2" compoundref="_cs_h___key_learning_8c_8test" startline="1314" endline="1339">TEST_Resend_WCZ_to_FDH</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bFFBSchluessel[8u]</definition>
+        <argsstring>[8u]</argsstring>
+        <name>bFFBSchluessel</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Boolean Array denoting indexes of learned keys</para><para>Array is assigned values read from Rte with True values under indexes <linebreak/>
+ that correspond to learned keys. <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="477" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="477" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a40c26dd7dc98f245e67c7f98ad1b5e62" compoundref="_cs_h___key_learning_8c" startline="1660" endline="1679">Resend_WCZ_to_FDH</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1a4faef8d52b3c73cf11adfc578b4b7117" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 u8_FFBDatenUebertragungResp</definition>
+        <argsstring></argsstring>
+        <name>u8_FFBDatenUebertragungResp</name>
+        <initializer>= 1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Response of FFBDaten Key learning process</para><para>Response about the operation result for Key Learning function in <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung</ref> <simplesect kind="remark"><para>range {0u, 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" kindref="member">CsH_TaskCyclicEvent()</ref>, <ref refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" kindref="member">FFBDatenUebertragung()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="492" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="492" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1ace062134f569d31c8823e37c72dac460" compoundref="_cs_h___key_learning_8c" startline="1620" endline="1653">FFBDatenUebertragungResp_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab8217c60d43c3c1976a19e264d57fdfc" compoundref="_cs_h___key_learning_8c_8test" startline="482" endline="679">TEST_FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a253155edaee4ba02abeb6210ca9e2bae" compoundref="_cs_h___key_learning_8c_8test" startline="1207" endline="1302">TEST_FFBDatenUebertragungResp_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___key_learning_8c_1ab11a88d1aed764d0398f9ccf7fddb0d5" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 s_schluesselkonfigurationsdaten</definition>
+        <argsstring></argsstring>
+        <name>s_schluesselkonfigurationsdaten</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Channel Configuration provided to WFS</para><para>Key Configuration provided to WFS. Stores configuration for a key during FFB keylearning process. <linebreak/>
+ Contains information about keys frequency and if platform is MEB. <linebreak/>
+<simplesect kind="remark"><para>range {0u - 255u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" kindref="member">vnumUHFKanalkonfiguration()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="508" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="508" bodyend="-1"/>
+        <referencedby refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" compoundref="_cs_h___key_learning_8c" startline="1887" endline="1942">vnumUHFKanalkonfiguration</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a91588d7b949238dbda10152f27df3e08" compoundref="_cs_h___key_learning_8c_8test" startline="2004" endline="2098">TEST_vnumUHFKanalkonfiguration</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a2cecbce1949a3a83286ab128e4592d22" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CSH_SetDTC_035819_IfKeysNotLearned</definition>
+        <argsstring>(void)</argsstring>
+        <name>CSH_SetDTC_035819_IfKeysNotLearned</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set DTC 0x035819 to active if SKC and TransponderID are not learned <linebreak/>
+</para><para>This function is called in CSH cyclic fuction <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called in CSH cyclic fuction <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Sets DTC_035819 If Keys are Not Learned </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_SetDTC_035819_IfKeysNotLearned.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a6099ac62f47a7221233585248915adbd" kindref="member">TEST_CSH_SetDTC_035819_IfKeysNotLearned</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_339 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Set DTC 0x035819 to active if SKC and TransponderID are not learned <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="559" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1686" bodyend="1698"/>
+        <references refid="_cs_h___key_learning_8c_1aa6089680f8887fc9c03b3a6e50811201" compoundref="_cs_h___key_learning_8c" startline="1705" endline="1716">CSH_CheckDtc_035819Status</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a6099ac62f47a7221233585248915adbd" compoundref="_cs_h___key_learning_8c_8test" startline="1351" endline="1423">TEST_CSH_SetDTC_035819_IfKeysNotLearned</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1aa6089680f8887fc9c03b3a6e50811201" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType CSH_CheckDtc_035819Status</definition>
+        <argsstring>(void)</argsstring>
+        <name>CSH_CheckDtc_035819Status</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if DTC 0x035819 is active <linebreak/>
+</para><para>This function is called by CSH_SetDTC_035819_IfKeysNotLearned <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CSH_SetDTC_035819_IfKeysNotLearned <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retval - RTE Status for evaluated operation. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Rte_Call_CsH_ZV_DemEventId_35819_GetEventStatus data determines RTE Status return value. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_CheckDtc_035819Status.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1ad9a9c1cecb14d806d353d493dd5eddd2" kindref="member">TEST_CSH_CheckDtc_035819Status</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_330 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Check if DTC 0x035819 is active <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="605" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1705" bodyend="1716"/>
+        <referencedby refid="_cs_h___key_learning_8c_1a2cecbce1949a3a83286ab128e4592d22" compoundref="_cs_h___key_learning_8c" startline="1686" endline="1698">CSH_SetDTC_035819_IfKeysNotLearned</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ad9a9c1cecb14d806d353d493dd5eddd2" compoundref="_cs_h___key_learning_8c_8test" startline="1435" endline="1490">TEST_CSH_CheckDtc_035819Status</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a55c1fb114ddc2104566c246a2e41c846" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CsH_Update_StanbyRAM_FFBSKC</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Update_StanbyRAM_FFBSKC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function for storing the FFB_SKC and the corresponding validity flag into Standby RAM <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called in CsH Init and Cyclic functions. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" kindref="member">Standby_CsH_FfbSkc</ref> - FFBSKC variables stored in Standby RAM <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Update_StanbyRAM_FFBSKC.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a907a5302acbf65edd9f90f9724c121a6" kindref="member">TEST_CsH_Update_StanbyRAM_FFBSKC</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function storing the FFB_SKC data in Standby RAM. <linebreak/>
+ Helper function for storing the FFB_SKC and the corresponding validity flag into Standby RAM <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="645" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1723" bodyend="1731"/>
+        <references refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a4fc4edf6fc5e8310b52e068d2b3633eb" compoundref="_cs_h___key_learning_8c" startline="1272" endline="1282">CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1a6bfa16b26796fe27b66ffec06d3cc82c" compoundref="_cs_h___key_learning_8c" startline="1567" endline="1613">FFBSKCUebertragung_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab72f5096bdc6e61f1bebc49175e7333e" compoundref="_cs_h___key_learning_8c_8test" startline="303" endline="366">TEST_CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a907a5302acbf65edd9f90f9724c121a6" compoundref="_cs_h___key_learning_8c_8test" startline="1502" endline="1563">TEST_CsH_Update_StanbyRAM_FFBSKC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CsH_Update_StanbyRAM_FfbData</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Update_StanbyRAM_FfbData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function for storing the FFB Key data and the corresponding validity flag into Standby RAM <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called in CsH Init and Cyclic functions. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" kindref="member">Standby_CsH_FfbData</ref> - FFB Data variables stored in Standby RAM <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Update_StanbyRAM_FfbData.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1ad9948d759d6d6a26a54d406d8101880b" kindref="member">TEST_CsH_Update_StanbyRAM_FfbData</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function storing the FFB Ket data in Standby RAM. <linebreak/>
+ Helper function for storing the FFB Key data and the corresponding validity flag into Standby RAM <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="688" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1738" bodyend="1749"/>
+        <references refid="_cs_h___key_learning_8c_1addecc07847d57a1d7a41c14e1e88a472" compoundref="_cs_h___key_learning_8c" startline="72">NUMBER_OF_KEYS_RECEIVED</references>
+        <references refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" compoundref="_cs_h___key_learning_8c" startline="383">Standby_CsH_FfbData</references>
+        <references refid="_cs_h___key_learning_8c_1a600828026f327aa563776261914b6a36" compoundref="_cs_h___key_learning_8c" startline="122">TRANSPONDER_ID_LENGTH</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a4fc4edf6fc5e8310b52e068d2b3633eb" compoundref="_cs_h___key_learning_8c" startline="1272" endline="1282">CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_1ace062134f569d31c8823e37c72dac460" compoundref="_cs_h___key_learning_8c" startline="1620" endline="1653">FFBDatenUebertragungResp_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab72f5096bdc6e61f1bebc49175e7333e" compoundref="_cs_h___key_learning_8c_8test" startline="303" endline="366">TEST_CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a253155edaee4ba02abeb6210ca9e2bae" compoundref="_cs_h___key_learning_8c_8test" startline="1207" endline="1302">TEST_FFBDatenUebertragungResp_WFS_Response</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ad9948d759d6d6a26a54d406d8101880b" compoundref="_cs_h___key_learning_8c_8test" startline="1575" endline="1639">TEST_CsH_Update_StanbyRAM_FfbData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1ad26a098e211e4f2ffdec8a309dccdbb3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CsH_Clear_StanbyRAM_FFBSKC</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Clear_StanbyRAM_FFBSKC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function clearing data related to FFB SKC in the Standby RAM <linebreak/>
+</para><para>Sets CsH_FFBSKC_ValidationFlag to False and fill data in CsH_FFBSKC with zeroes in <ref refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" kindref="member">Standby_CsH_FfbSkc</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Triggered at the start of function <ref refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" kindref="member">FFBSKCUebertragung</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" kindref="member">Standby_CsH_FfbSkc</ref> - FFBSKC variables stored in Standby RAM <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>FFBSKC related data stored in Standby RAM is cleared <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Clear_StanbyRAM_FFBSKC.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1ac995ac37fef5fee333ab3db0c53bb37b" kindref="member">TEST_CsH_Clear_StanbyRAM_FFBSKC</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function clearing the FFB_SKC data in Standby RAM. <linebreak/>
+ Helper function clearing data related to FFB SKC in the Standby RAM <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="729" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1756" bodyend="1760"/>
+        <references refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <referencedby refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" compoundref="_cs_h___key_learning_8c" startline="1289" endline="1337">FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ac995ac37fef5fee333ab3db0c53bb37b" compoundref="_cs_h___key_learning_8c_8test" startline="1651" endline="1680">TEST_CsH_Clear_StanbyRAM_FFBSKC</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1adbc3d36dda039cf192be23ad12d67618" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CsH_Clear_StanbyRAM_FfbData</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Clear_StanbyRAM_FfbData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function clearing data related to FFBData in the Standby RAM <linebreak/>
+</para><para>Sets CsH_FFBData_ValidationFlag to False and fills pFFBTransponderId with zeroes in <ref refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" kindref="member">Standby_CsH_FfbData</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Triggered at the start of function <ref refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" kindref="member">FFBSKCUebertragung</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" kindref="member">Standby_CsH_FfbData</ref> - FFBData variables stored in Standby RAM <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>FFBData related data stored in Standby RAM is cleared <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Clear_StanbyRAM_FfbData.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a79701a5a697e1eff43627897ae5d0799" kindref="member">TEST_CsH_Clear_StanbyRAM_FfbData</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function clearing the FFDData data in Standby RAM. <linebreak/>
+ Helper function clearing data related to FFBData in the Standby RAM <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="770" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1768" bodyend="1772"/>
+        <references refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" compoundref="_cs_h___key_learning_8c" startline="383">Standby_CsH_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" compoundref="_cs_h___key_learning_8c" startline="1289" endline="1337">FFBSKCUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a79701a5a697e1eff43627897ae5d0799" compoundref="_cs_h___key_learning_8c_8test" startline="1692" endline="1721">TEST_CsH_Clear_StanbyRAM_FfbData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a6dfa77cf9ee8985fe931ba1c85d86d24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC boolean</type>
+        <definition>STATIC boolean checkAllDataPointers</definition>
+        <argsstring>(const uint8 *rawDataPointer)</argsstring>
+        <name>checkAllDataPointers</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawDataPointer</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the Learning Crypt is not equal to 0.</para><para>This function checks if the Learning Crypt for given key slot received from WFS as part of FFB Key Learning trigger is not equal to 0. If case given Learning Crypt contains zero, then the Key Learning process is skipped for given key slot. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>FFB Key Learning trigger received by CsH </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of rawDataPointer - pointer to the array containing Learning Crypts for 8 key slots received from WFS. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - Status of the operation (ok/processing error) <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="checkAllDataPointers.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a517c1ef8f45489372767bb9f915fbb34" kindref="member">TEST_checkAllDataPointers</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function checking the Learning Crypt. . <linebreak/>
+ This function checks if the Learning Crypt is not equal to 0. <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="822" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1780" bodyend="1793"/>
+        <references refid="_cs_h___key_learning_8c_1a337ecd4889073c71a06f12849b4a5322" compoundref="_cs_h___key_learning_8c" startline="132">FFB_DATEN_PACKET_LENGTH</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a517c1ef8f45489372767bb9f915fbb34" compoundref="_cs_h___key_learning_8c_8test" startline="1733" endline="1799">TEST_checkAllDataPointers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC boolean</type>
+        <definition>STATIC boolean FrequencyCheck</definition>
+        <argsstring>(uint8 keyFrequency)</argsstring>
+        <name>FrequencyCheck</name>
+        <param>
+          <type>uint8</type>
+          <declname>keyFrequency</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the Key Frequency for given key slot is consistent with ICAS1 configuration <linebreak/>
+</para><para>This function checks if the Key Frequency data included in the Learning Crypt for given key slot received from WFS <linebreak/>
+ as part of FFB Key Learning trigger is consistent with ICAS1 configuration. If case the Key Frequency is inconsistent with ICAS1 configuration, <linebreak/>
+ then the entire Key Learning process is ceased. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>FFB Key Learning triggered <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>keyFrequency - Key Frequency data included in the Learning Crypt <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - Determines if frequency is valid/invalid <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="FrequencyCheck.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a64cac02a167f2637ec84f28619190cb1" kindref="member">TEST_FrequencyCheck</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_702 <linebreak/>
+ <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function checks if the Key Frequency for given key slot is consistent with ICAS1 configuration. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="873" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1801" bodyend="1816"/>
+        <references refid="_cs_h___key_learning_8c_1a94c589647f8cdb75d96794b9744645a1" compoundref="_cs_h___key_learning_8c" startline="142">KEY_FREQ_05</references>
+        <references refid="_cs_h___key_learning_8c_1a1dd19369ebd202750c16a18a8a3261bf" compoundref="_cs_h___key_learning_8c" startline="152">KEY_FREQ_01</references>
+        <references refid="_cs_h___key_learning_8c_1a2543ebaa41682b28863f1b0c05ce0238" compoundref="_cs_h___key_learning_8c" startline="162">KEY_FREQ_06</references>
+        <references refid="_cs_h___key_learning_8c_1af9ca1d41ebaac3f8530b443a3713e79b" compoundref="_cs_h___key_learning_8c" startline="172">KEY_FREQ_07</references>
+        <references refid="_cs_h___key_learning_8c_1a6aa4330a50dfd66c13107da74135491f" compoundref="_cs_h___key_learning_8c" startline="182">KEY_FREQ_02</references>
+        <references refid="_cs_h___key_learning_8c_1afd380e650cc8ef13b6316143f9acf0f5" compoundref="_cs_h___key_learning_8c" startline="192">KEY_FREQ_03</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a64cac02a167f2637ec84f28619190cb1" compoundref="_cs_h___key_learning_8c_8test" startline="1811" endline="1885">TEST_FrequencyCheck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC void</type>
+        <definition>static void sendTransponderIDtoSam</definition>
+        <argsstring>(uint8 transponderID, uint8 *dataToBeSend)</argsstring>
+        <name>sendTransponderIDtoSam</name>
+        <param>
+          <type>uint8</type>
+          <declname>transponderID</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>dataToBeSend</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function provides TransponderID data over CAN to SAM during Key Learning process <linebreak/>
+</para><para>The function is called sequentially for all 8 key slots during Key Learning process and only after <linebreak/>
+ evaluation of the Learning Crypts received from WFS is successful. Based on the key number (i.e., key slot in range 0..7), <linebreak/>
+ the function sends the TransponderID data to SAM over CAN. The TransponderID data bytes are sent in reverted order. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called after evaluation of the Learning Crypts received from WFS is successful <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>transponderID - key number <linebreak/>
+ [in] pointer of dataToBeSend - pointer to the TransponderID data received from WFS <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>TransponderID provided to SAM via RTE </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="sendTransponderIDtoSam.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a1ee631b0aeeb208f53d9f70d6026eb57" kindref="member">TEST_sendTransponderIDtoSam</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_388 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function provides TransponderID data over CAN to SAM during Key Learning process <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="947" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1823" bodyend="1879"/>
+        <references refid="_cs_h___key_learning_8c_1a75a1e1aa92e9766cc2e6e2e1fb94efcc" compoundref="_cs_h___key_learning_8c" startline="202">TRANSPONDER_ID_NUM_01</references>
+        <references refid="_cs_h___key_learning_8c_1a6a812ffa8a4eb2218cbede20c0f3a894" compoundref="_cs_h___key_learning_8c" startline="212">TRANSPONDER_ID_NUM_02</references>
+        <references refid="_cs_h___key_learning_8c_1a9f92c8f52e9e3975533bad42eb92cb44" compoundref="_cs_h___key_learning_8c" startline="222">TRANSPONDER_ID_NUM_03</references>
+        <references refid="_cs_h___key_learning_8c_1a3f72a5d333b4237987cf1afbc62abe75" compoundref="_cs_h___key_learning_8c" startline="232">TRANSPONDER_ID_NUM_04</references>
+        <references refid="_cs_h___key_learning_8c_1aed3366049fb200ef384a16139fe09120" compoundref="_cs_h___key_learning_8c" startline="242">TRANSPONDER_ID_NUM_05</references>
+        <references refid="_cs_h___key_learning_8c_1aae9736e3afc3622b5fe0feb9dfb7eb07" compoundref="_cs_h___key_learning_8c" startline="252">TRANSPONDER_ID_NUM_06</references>
+        <references refid="_cs_h___key_learning_8c_1aa9b235d37a7bd7ea8fcfb24c1a82145e" compoundref="_cs_h___key_learning_8c" startline="262">TRANSPONDER_ID_NUM_07</references>
+        <references refid="_cs_h___key_learning_8c_1a3585150ea9aa0d1a8ff3a91b85c6846a" compoundref="_cs_h___key_learning_8c" startline="272">TRANSPONDER_ID_NUM_08</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" compoundref="_cs_h___key_learning_8c" startline="1344" endline="1467">FFBDatenUebertragung</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a1ee631b0aeeb208f53d9f70d6026eb57" compoundref="_cs_h___key_learning_8c_8test" startline="1897" endline="1992">TEST_sendTransponderIDtoSam</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC void</type>
+        <definition>STATIC void vnumUHFKanalkonfiguration</definition>
+        <argsstring>(void)</argsstring>
+        <name>vnumUHFKanalkonfiguration</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function provides WFS with the UHF channel configuration for the keys. <linebreak/>
+</para><para>This function is called by RTE from WFS. The function provides UHF channel configuration to WFS, <linebreak/>
+ which will be further stored in the keys during the Key Learning process. <linebreak/>
+ The configuration of the UHF channel configuration is based on the coding parameters: c_Kessy_UWB_Frequenzband_[a|b|c]_aktiv. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Function called by WFS <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1ab11a88d1aed764d0398f9ccf7fddb0d5" kindref="member">s_schluesselkonfigurationsdaten</ref> - UHF Channel Configuration provided to WFS <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><ref refid="_cs_h___key_learning_8c_1ab11a88d1aed764d0398f9ccf7fddb0d5" kindref="member">s_schluesselkonfigurationsdaten</ref> provided via RTE </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="vnumUHFKanalkonfiguration.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a91588d7b949238dbda10152f27df3e08" kindref="member">TEST_vnumUHFKanalkonfiguration</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_431 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_432 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_433 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_434 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_435 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function provides WFS with the UHF channel configuration for the keys. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1026" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1887" bodyend="1942"/>
+        <references refid="_cs_h___key_learning_8c_1ab11a88d1aed764d0398f9ccf7fddb0d5" compoundref="_cs_h___key_learning_8c" startline="508">s_schluesselkonfigurationsdaten</references>
+        <references refid="_cs_h___data_types_8h_1a20e8bf634cf7b19e54edb86004f15afd" compoundref="_cs_h___data_types_8h" startline="70">FUNK_FREQUENZ_01</references>
+        <references refid="_cs_h___key_learning_8c_1aa24c59b84a03841bf52884425458223a" compoundref="_cs_h___key_learning_8c" startline="302">SCHLUESSEL_KONFIGURATIONS_DATEN_03</references>
+        <references refid="_cs_h___data_types_8h_1ad834c55b328d675534284c4891649f6c" compoundref="_cs_h___data_types_8h" startline="80">FUNK_FREQUENZ_02</references>
+        <references refid="_cs_h___key_learning_8c_1a2abbd8d074fef7659989f2ce7314cfb7" compoundref="_cs_h___key_learning_8c" startline="282">SCHLUESSEL_KONFIGURATIONS_DATEN_01</references>
+        <references refid="_cs_h___data_types_8h_1af676f9f339aed68d5fe42b8f000f79b6" compoundref="_cs_h___data_types_8h" startline="90">FUNK_FREQUENZ_03</references>
+        <references refid="_cs_h___key_learning_8c_1af8f18982bf349fb341c19770ac48392d" compoundref="_cs_h___key_learning_8c" startline="292">SCHLUESSEL_KONFIGURATIONS_DATEN_02</references>
+        <references refid="_cs_h___key_learning_8c_1ae4d322f994238b9e311e0a87bd2f37e1" compoundref="_cs_h___key_learning_8c" startline="312">SCHLUESSEL_KONFIGURATIONS_DATEN_10</references>
+        <references refid="_cs_h___key_learning_8c_1ad963702a0e90bf72f81bcf221af5cf54" compoundref="_cs_h___key_learning_8c" startline="322">SCHLUESSEL_KONFIGURATIONS_DATEN_20</references>
+        <references refid="_cs_h___key_learning_8c_1a0993e3f178d5b51d995bf27267d61816" compoundref="_cs_h___key_learning_8c" startline="332">SCHLUESSEL_KONFIGURATIONS_DATEN_40</references>
+        <references refid="_cs_h___key_learning_8c_1a639f6873d4525f511c57231526e4790c" compoundref="_cs_h___key_learning_8c" startline="342">SCHLUESSEL_KONFIGURATIONS_DATEN_80</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a91588d7b949238dbda10152f27df3e08" compoundref="_cs_h___key_learning_8c_8test" startline="2004" endline="2098">TEST_vnumUHFKanalkonfiguration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a6bfa16b26796fe27b66ffec06d3cc82c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void FFBSKCUebertragung_WFS_Response</definition>
+        <argsstring>(void)</argsstring>
+        <name>FFBSKCUebertragung_WFS_Response</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Prepare and send response to WFS during key learning process. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by the Scheduler in a predefined cycle </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1aa93f27eac1e325183a5246a5f39e13bf" kindref="member">b_FFBSKCUebertragungReq</ref> - Flag used to start FFBSKC Key learning process <linebreak/>
+ <linebreak/>
+ <ref refid="_cs_h___key_learning_8c_1a19f37bf915d7a9afdebc71ad0bfc582a" kindref="member">u8_FFBSKCUebertragungResp</ref> - Response of FFBSKC Key learning process <linebreak/>
+ <linebreak/>
+ <ref refid="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" kindref="member">bFFBSchluessel</ref> - Boolean Array denoting indexes of learned keys <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Communicates and exchanges Data with UHF and FFB Data Handler during Key learning process </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="FFBSKCUebertragung_WFS_Response.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a11a6f32a31371cf103ab253938199d16" kindref="member">TEST_FFBSKCUebertragung_WFS_Response</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_716 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_717 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_719 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_720 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_721 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_344 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_511 <linebreak/>
+ <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_429 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_441 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_725 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1113" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1567" bodyend="1613"/>
+        <references refid="_cs_h___data_types_8h_1af676f9f339aed68d5fe42b8f000f79b6" compoundref="_cs_h___data_types_8h" startline="90">FUNK_FREQUENZ_03</references>
+        <references refid="_cs_h___key_learning_8c_1aa93f27eac1e325183a5246a5f39e13bf" compoundref="_cs_h___key_learning_8c" startline="415">b_FFBSKCUebertragungReq</references>
+        <references refid="_cs_h___key_learning_8c_1a19f37bf915d7a9afdebc71ad0bfc582a" compoundref="_cs_h___key_learning_8c" startline="430">u8_FFBSKCUebertragungResp</references>
+        <references refid="_cs_h___key_learning_8c_1a55c1fb114ddc2104566c246a2e41c846" compoundref="_cs_h___key_learning_8c" startline="1723" endline="1731">CsH_Update_StanbyRAM_FFBSKC</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a11a6f32a31371cf103ab253938199d16" compoundref="_cs_h___key_learning_8c_8test" startline="1076" endline="1195">TEST_FFBSKCUebertragung_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1ace062134f569d31c8823e37c72dac460" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void FFBDatenUebertragungResp_WFS_Response</definition>
+        <argsstring>(void)</argsstring>
+        <name>FFBDatenUebertragungResp_WFS_Response</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Prepare and send response to WFS during key learning process. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by the Scheduler in a predefined cycle </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para></para></simplesect>
+<ref refid="_cs_h___key_learning_8c_1ae0fe66e9dd9b6248aafa95a6100bef30" kindref="member">b_FFBDatenUebertragungReq</ref> - Flag used to start FFBDaten Key learning process<linebreak/>
+ <linebreak/>
+ <ref refid="_cs_h___key_learning_8c_1a4faef8d52b3c73cf11adfc578b4b7117" kindref="member">u8_FFBDatenUebertragungResp</ref> - Response of FFBDaten Key learning process <linebreak/>
+ <linebreak/>
+ <ref refid="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" kindref="member">bFFBSchluessel</ref> - Boolean Array denoting indexes of learned keys <linebreak/>
+ <simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Communicates and exchanges Data with UHF and FFB Data Handler during Key learning process </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="FFBDatenUebertragungResp_WFS_Response.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a253155edaee4ba02abeb6210ca9e2bae" kindref="member">TEST_FFBDatenUebertragungResp_WFS_Response</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_392 <linebreak/>
+ <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1188" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1620" bodyend="1653"/>
+        <references refid="_cs_h___key_learning_8c_1a4faef8d52b3c73cf11adfc578b4b7117" compoundref="_cs_h___key_learning_8c" startline="492">u8_FFBDatenUebertragungResp</references>
+        <references refid="_cs_h___key_learning_8c_1ae0fe66e9dd9b6248aafa95a6100bef30" compoundref="_cs_h___key_learning_8c" startline="446">b_FFBDatenUebertragungReq</references>
+        <references refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" compoundref="_cs_h___key_learning_8c" startline="1738" endline="1749">CsH_Update_StanbyRAM_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a253155edaee4ba02abeb6210ca9e2bae" compoundref="_cs_h___key_learning_8c_8test" startline="1207" endline="1302">TEST_FFBDatenUebertragungResp_WFS_Response</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a40c26dd7dc98f245e67c7f98ad1b5e62" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Resend_WCZ_to_FDH</definition>
+        <argsstring>(void)</argsstring>
+        <name>Resend_WCZ_to_FDH</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>If Distributing RollingCodeCounters to ICAS1::FFBDataHandler faild then resend acction required <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by the Scheduler in a predefined cycle </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><linebreak/>
+ <ref refid="_cs_h___key_learning_8c_1a96a3127d7109fe88b805d2921d1ae1bc" kindref="member">alreadyReSendWCZtoFDH</ref> - Boolean value denoting if Rolling Code Counter has already been sent to FDH <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Communicates and exchanges Data with UHF and FFB Data Handler during Key learning process </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Resend_WCZ_to_FDH.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___key_learning_8c_8test_1a948ec2f689c848bf15aa6a0f893b86a2" kindref="member">TEST_Resend_WCZ_to_FDH</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000026"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_733 <linebreak/>
+ <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1234" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1660" bodyend="1679"/>
+        <references refid="_cs_h___key_learning_8c_1addecc07847d57a1d7a41c14e1e88a472" compoundref="_cs_h___key_learning_8c" startline="72">NUMBER_OF_KEYS_RECEIVED</references>
+        <references refid="_cs_h___key_learning_8c_1a0a8f27c163c69eb0e93f65ca2d48c0d8" compoundref="_cs_h___key_learning_8c" startline="82">WCZ_LENGTH</references>
+        <references refid="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" compoundref="_cs_h___key_learning_8c" startline="477">bFFBSchluessel</references>
+        <references refid="_cs_h___key_learning_8c_1a96a3127d7109fe88b805d2921d1ae1bc" compoundref="_cs_h___key_learning_8c" startline="461">alreadyReSendWCZtoFDH</references>
+        <referencedby refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a948ec2f689c848bf15aa6a0f893b86a2" compoundref="_cs_h___key_learning_8c_8test" startline="1314" endline="1339">TEST_Resend_WCZ_to_FDH</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_KeyHandler_Cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_KeyHandler_Cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1246" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1246" bodyend="1265"/>
+        <references refid="_cs_h___key_learning_8c_1aa93f27eac1e325183a5246a5f39e13bf" compoundref="_cs_h___key_learning_8c" startline="415">b_FFBSKCUebertragungReq</references>
+        <references refid="_cs_h___key_learning_8c_1a6bfa16b26796fe27b66ffec06d3cc82c" compoundref="_cs_h___key_learning_8c" startline="1567" endline="1613">FFBSKCUebertragung_WFS_Response</references>
+        <references refid="_cs_h___key_learning_8c_1ae0fe66e9dd9b6248aafa95a6100bef30" compoundref="_cs_h___key_learning_8c" startline="446">b_FFBDatenUebertragungReq</references>
+        <references refid="_cs_h___key_learning_8c_1ace062134f569d31c8823e37c72dac460" compoundref="_cs_h___key_learning_8c" startline="1620" endline="1653">FFBDatenUebertragungResp_WFS_Response</references>
+        <references refid="_cs_h___key_learning_8c_1a96a3127d7109fe88b805d2921d1ae1bc" compoundref="_cs_h___key_learning_8c" startline="461">alreadyReSendWCZtoFDH</references>
+        <references refid="_cs_h___key_learning_8c_1a40c26dd7dc98f245e67c7f98ad1b5e62" compoundref="_cs_h___key_learning_8c" startline="1660" endline="1679">Resend_WCZ_to_FDH</references>
+        <references refid="_cs_h___key_learning_8c_1a2cecbce1949a3a83286ab128e4592d22" compoundref="_cs_h___key_learning_8c" startline="1686" endline="1698">CSH_SetDTC_035819_IfKeysNotLearned</references>
+        <references refid="_cs_h___key_learning_8c_1aed9eec31c8f51f5f5c92311b7f990411" compoundref="_cs_h___key_learning_8c" startline="1887" endline="1942">vnumUHFKanalkonfiguration</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a355c82c2831e7f771f03bf172bcc783d" compoundref="_cs_h___key_learning_8c_8test" startline="201" endline="291">TEST_CsH_KeyHandler_Cyclic</referencedby>
+        <referencedby refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" compoundref="_cs_h___task_8c" startline="108" endline="116">CsH_TaskCyclicEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a4fc4edf6fc5e8310b52e068d2b3633eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_KeyHandler_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_KeyHandler_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CsH init function called by scheduler. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1272" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1272" bodyend="1282"/>
+        <references refid="_cs_h___key_learning_8c_1a3ada4d149ec33bd97c6b3cec9750a541" compoundref="_cs_h___key_learning_8c" startline="398">bIsCsH_Stanby_Initializated</references>
+        <references refid="_cs_h___key_learning_8c_1a55c1fb114ddc2104566c246a2e41c846" compoundref="_cs_h___key_learning_8c" startline="1723" endline="1731">CsH_Update_StanbyRAM_FFBSKC</references>
+        <references refid="_cs_h___key_learning_8c_1a9c4b579676000ba04a7baa747f4fbf0c" compoundref="_cs_h___key_learning_8c" startline="1738" endline="1749">CsH_Update_StanbyRAM_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab72f5096bdc6e61f1bebc49175e7333e" compoundref="_cs_h___key_learning_8c_8test" startline="303" endline="366">TEST_CsH_KeyHandler_Init</referencedby>
+        <referencedby refid="_cs_h___task_8c_1ab6f4b75a8edbff193cb1a00a43d0dc6b" compoundref="_cs_h___task_8c" startline="88" endline="91">CsH_InitVarFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1adfcecfa84ee44146bd0767806cff249f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType FFBSKCUebertragung</definition>
+        <argsstring>(const uint8 *rawFFBSKC)</argsstring>
+        <name>FFBSKCUebertragung</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBSKC</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Server function for FFB_SKC Learning process triggered by WFS <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1289" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1289" bodyend="1337"/>
+        <references refid="_cs_h___key_learning_8c_1ad26a098e211e4f2ffdec8a309dccdbb3" compoundref="_cs_h___key_learning_8c" startline="1756" endline="1760">CsH_Clear_StanbyRAM_FFBSKC</references>
+        <references refid="_cs_h___key_learning_8c_1adbc3d36dda039cf192be23ad12d67618" compoundref="_cs_h___key_learning_8c" startline="1768" endline="1772">CsH_Clear_StanbyRAM_FfbData</references>
+        <references refid="_cs_h___key_learning_8c_1a19f37bf915d7a9afdebc71ad0bfc582a" compoundref="_cs_h___key_learning_8c" startline="430">u8_FFBSKCUebertragungResp</references>
+        <references refid="_cs_h___key_learning_8c_1aa93f27eac1e325183a5246a5f39e13bf" compoundref="_cs_h___key_learning_8c" startline="415">b_FFBSKCUebertragungReq</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a740997ed04bb7b5aa2cff36dcf657d59" compoundref="_cs_h___key_learning_8c_8test" startline="378" endline="470">TEST_FFBSKCUebertragung</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a2d43bbb2a93c940d4faacc6492d05e99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType FFBDatenUebertragung</definition>
+        <argsstring>(boolean bFFBSchluesselNr1, boolean bFFBSchluesselNr2, boolean bFFBSchluesselNr3, boolean bFFBSchluesselNr4, boolean bFFBSchluesselNr5, boolean bFFBSchluesselNr6, boolean bFFBSchluesselNr7, boolean bFFBSchluesselNr8, const uint8 *rawFFBDatenPaket1, const uint8 *rawFFBDatenPaket2, const uint8 *rawFFBDatenPaket3, const uint8 *rawFFBDatenPaket4, const uint8 *rawFFBDatenPaket5, const uint8 *rawFFBDatenPaket6, const uint8 *rawFFBDatenPaket7, const uint8 *rawFFBDatenPaket8)</argsstring>
+        <name>FFBDatenUebertragung</name>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr1</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr2</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr3</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr4</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr5</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr6</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr7</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>bFFBSchluesselNr8</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket1</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket2</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket3</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket4</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket5</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket6</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket7</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFFBDatenPaket8</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Server function for FFB_SKC Learning process triggered by WFS <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1344" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1344" bodyend="1467"/>
+        <references refid="_cs_h___key_learning_8c_1a4faef8d52b3c73cf11adfc578b4b7117" compoundref="_cs_h___key_learning_8c" startline="492">u8_FFBDatenUebertragungResp</references>
+        <references refid="_cs_h___key_learning_8c_1addecc07847d57a1d7a41c14e1e88a472" compoundref="_cs_h___key_learning_8c" startline="72">NUMBER_OF_KEYS_RECEIVED</references>
+        <references refid="_cs_h___key_learning_8c_1a3132e49c2aee5aa0764afe924c4e6da7" compoundref="_cs_h___key_learning_8c" startline="477">bFFBSchluessel</references>
+        <references refid="_cs_h___key_learning_8c_1ae0fe66e9dd9b6248aafa95a6100bef30" compoundref="_cs_h___key_learning_8c" startline="446">b_FFBDatenUebertragungReq</references>
+        <references refid="_cs_h___key_learning_8c_1a6dfa77cf9ee8985fe931ba1c85d86d24" compoundref="_cs_h___key_learning_8c" startline="1780" endline="1793">checkAllDataPointers</references>
+        <references refid="_cs_h___key_learning_8c_1a636d2198ddc3806511ca9620478a4564" compoundref="_cs_h___key_learning_8c" startline="1801" endline="1816">FrequencyCheck</references>
+        <references refid="_cs_h___key_learning_8c_1a0a8f27c163c69eb0e93f65ca2d48c0d8" compoundref="_cs_h___key_learning_8c" startline="82">WCZ_LENGTH</references>
+        <references refid="_cs_h___key_learning_8c_1aa7953a3cdb9ca9f43e88e1a5cf2a6ab5" compoundref="_cs_h___key_learning_8c" startline="1823" endline="1879">sendTransponderIDtoSam</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1ab8217c60d43c3c1976a19e264d57fdfc" compoundref="_cs_h___key_learning_8c_8test" startline="482" endline="679">TEST_FFBDatenUebertragung</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a5cf5120168d9d45efb616bcb2db58ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evFindSlotNumber</definition>
+        <argsstring>(const uint8 *ReceivedTransponderID, uint8 *slotNumber)</argsstring>
+        <name>evFindSlotNumber</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>ReceivedTransponderID</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>slotNumber</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used to provide the Key index of the key with given TransponderID <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1474" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1474" bodyend="1490"/>
+        <references refid="_cs_h___key_learning_8c_1addecc07847d57a1d7a41c14e1e88a472" compoundref="_cs_h___key_learning_8c" startline="72">NUMBER_OF_KEYS_RECEIVED</references>
+        <references refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" compoundref="_cs_h___key_learning_8c" startline="383">Standby_CsH_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a468f236f6a8d052050830c6217a006c4" compoundref="_cs_h___key_learning_8c_8test" startline="691" endline="764">TEST_evFindSlotNumber</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1aa6d641504958def3d21d6bd2b5303a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void evFFBDataExchangeResp</definition>
+        <argsstring>(uint8 saveWCZStatus)</argsstring>
+        <name>evFFBDataExchangeResp</name>
+        <param>
+          <type>uint8</type>
+          <declname>saveWCZStatus</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns a status of storing the Rolling Code Counter by FDH which is part of the FFB Data Learning process. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1497" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1497" bodyend="1516"/>
+        <references refid="_cs_h___key_learning_8c_1aa0e26d510fa2d6068a1b55be9629a1c5" compoundref="_cs_h___key_learning_8c" startline="92">WCZ_TRANSFER_OK</references>
+        <references refid="_cs_h___key_learning_8c_1af3b0fd0f1ec5d0bb0ac2f5adbffae859" compoundref="_cs_h___key_learning_8c" startline="102">WCZ_TRANSFER_N_OK</references>
+        <references refid="_cs_h___key_learning_8c_1a96a3127d7109fe88b805d2921d1ae1bc" compoundref="_cs_h___key_learning_8c" startline="461">alreadyReSendWCZtoFDH</references>
+        <references refid="_cs_h___key_learning_8c_1ae47a1dd2a09b0a85e6e182ed70b93e74" compoundref="_cs_h___key_learning_8c" startline="112">WCZ_TRANSFER_PENDING</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a291a6e6f35024fc5d7e81bb839905440" compoundref="_cs_h___key_learning_8c_8test" startline="776" endline="846">TEST_evFFBDataExchangeResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a9bc9e99ae8e4b11b84998878545d7058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean CSH_getFFBSKCFlag</definition>
+        <argsstring>(void)</argsstring>
+        <name>CSH_getFFBSKCFlag</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Getter Function for FFBSKC Validation Flag <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1523" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1523" bodyend="1526"/>
+        <references refid="_cs_h___key_learning_8c_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a27c2733391c0450c7f06a3a56de1e4e5" compoundref="_cs_h___key_learning_8c_8test" startline="858" endline="916">TEST_CSH_getFFBSKCFlag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1a9d4077732f289eb46c99f70d8970d7c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean CSH_getFFBDataFlag</definition>
+        <argsstring>(void)</argsstring>
+        <name>CSH_getFFBDataFlag</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Getter Function for FFBData Validation Flag <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1533" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1533" bodyend="1536"/>
+        <references refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" compoundref="_cs_h___key_learning_8c" startline="383">Standby_CsH_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a81f743889691b21e58f39dc5871b2762" compoundref="_cs_h___key_learning_8c_8test" startline="928" endline="984">TEST_CSH_getFFBDataFlag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___key_learning_8c_1ae878a998e9af4277c80a2a14c3626a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evCheckTransponderID</definition>
+        <argsstring>(uint8 KeyIndex, const uint8 *ReceivedTransponderID)</argsstring>
+        <name>evCheckTransponderID</name>
+        <param>
+          <type>uint8</type>
+          <declname>KeyIndex</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>ReceivedTransponderID</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the TransponderID stored in the Standby RAM for the key number is the same as received in ReceivedTransponderID <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" line="1543" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c" bodystart="1543" bodyend="1555"/>
+        <references refid="_cs_h___key_learning_8c_1a9ed108caedad1aca6313af51fd61e040" compoundref="_cs_h___key_learning_8c" startline="383">Standby_CsH_FfbData</references>
+        <referencedby refid="_cs_h___key_learning_8c_8test_1a774b5b3aad41425e4024881da5438e25" compoundref="_cs_h___key_learning_8c_8test" startline="997" endline="1064">TEST_evCheckTransponderID</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for CsH SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_cs_h___key_learning_8c" kindref="compound">CsH_KeyLearning.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+$Author: Mateusz Witon (uic39591), Robert Mastalerz (uidm5889), Rudolf Paula (uib65373), Pawel Dymowski (uib46966), Leszek Rafinski (uie99376), Maciej Lankow (uie32362) $ <simplesect kind="rcs"><title>Date</title><para>02.06.2022 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_KeyLearning.c"/>
+  </compounddef>
+</doxygen>

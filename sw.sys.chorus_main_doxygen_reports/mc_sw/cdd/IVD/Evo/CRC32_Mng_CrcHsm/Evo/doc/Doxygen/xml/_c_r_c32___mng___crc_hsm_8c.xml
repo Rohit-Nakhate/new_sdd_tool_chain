@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_c_r_c32___mng___crc_hsm_8c" kind="file" language="C++">
+    <compoundname>CRC32_Mng_CrcHsm.c</compoundname>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">eb_hsm_proxy.h</includes>
+    <includes refid="_c_r_c32___mng___crc_hsm_8h" local="yes">CRC32_Mng_CrcHsm.h</includes>
+    <includes local="yes">Crc.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="2">
+        <label>CRC32_Mng_CrcHsm.c</label>
+        <link refid="_c_r_c32___mng___crc_hsm_8c"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>agw.h</label>
+      </node>
+      <node id="4">
+        <label>eb_hsm_proxy.h</label>
+      </node>
+      <node id="8">
+        <label>Crc.h</label>
+      </node>
+      <node id="5">
+        <label>CRC32_Mng_CrcHsm.h</label>
+        <link refid="_c_r_c32___mng___crc_hsm_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Rte_CRC32_Mng_Type.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_t___crc_hsm___context__s" prot="public">T_CrcHsm_Context_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1acfdc540898175a26df17017f7eda4511" prot="public" static="no">
+        <name>CRC_CALC_START_VALUE</name>
+        <initializer>0xFFFFFFFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>start value of CRC</para><para>start value of CRC is hexa decimal 0xFFFFFFFF <simplesect kind="remark"><para>values 0xFFFFFFFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="65" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1adec436e7599cb1eb447e0430080fade6" prot="public" static="no">
+        <name>HSM_INVALID_CHANNEL_ID</name>
+        <initializer>0xFFU</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>invalid channel id of hsm</para><para>invalid channel id of hsm is hexadecimal 0xFF <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="75" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1a927c23e0938db0fd636331df8da29c0a" prot="public" static="no">
+        <name>HSM_HASH_DATA_LENGTH</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>the length of HSM hash</para><para>the length of HSM hash data is 32 bytes <simplesect kind="remark"><para>values 32u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="85" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1a0dee6f88187d75cbc8f8160516af9e99" prot="public" static="no">
+        <name>THREE_DIGITS</name>
+        <initializer>100</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>value of THREE_DIGITS</para><para>the value of THREE_DIGITS is 100 <simplesect kind="remark"><para>values 100 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="95" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1abde11a6ee98560227d0d3889da0408e4" prot="public" static="no">
+        <name>ASCII_ZERO</name>
+        <initializer>0x30u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>value of ASCII_ZERO</para><para>value of ASCII_ZERO is hexa decimal 0x30 <simplesect kind="remark"><para>values 0x30u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="105" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1af9511dfd0a267799d430efbb59ed6733" prot="public" static="no">
+        <name>DIVIDE_10</name>
+        <initializer>10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>value of DIVIDE_10</para><para>value of DIVIDE_10 is 10 bytes <simplesect kind="remark"><para>values 10u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="115" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_hsm_8c_1a28058f70322c00eacb48599400efaa2d" prot="public" static="no">
+        <name>BASE_10</name>
+        <initializer>10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>value of BASE_10</para><para>value of BASE_10 is 10 bytes <simplesect kind="remark"><para>values 10u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="125" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_r_c32___mng___crc_hsm_8c_1a7ca280e1306b6127fd20dfbc00779499" prot="public" static="yes" mutable="no">
+        <type>T_CrcHsm_Context_s</type>
+        <definition>T_CrcHsm_Context_s CrcHsm_Context</definition>
+        <argsstring></argsstring>
+        <name>CrcHsm_Context</name>
+        <initializer>=
+{
+    .Status = <ref refid="_c_r_c32___mng___crc_hsm_8h_1a2734e69c01ec849c6c7e30665b69b8e2a3f29c598bee2966f43212e535bd4ff7b" kindref="member">ENUM_CRC_HSM_STATUS_INIT</ref>,
+    .HsmChannelId =  0xFFU ,
+    .pCrcHsm_Hash = {0}
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>variable to store all Crc hsm context</para><para>The structure variable hold all CRC HSM context in a structure element. <simplesect kind="remark"><para>range The structure elements holds Status,channel Id and hash value <linebreak/>
+ values uint8 <linebreak/>
+ context {Structure variable declaration and initialization of structure members} <linebreak/>
+ protection {The variable CrcHsm_Context is Static} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="152" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_c_r_c32___mng___crc_hsm_8c_1aeb1d758955835f4e57380eda0074809a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CRC32_Mng_CrcHsm_HashGetResp</definition>
+        <argsstring>(uint32 *pCrcVal)</argsstring>
+        <name>CRC32_Mng_CrcHsm_HashGetResp</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref> *</type>
+          <declname>pCrcVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function which requests the response for hash request from Hsm.</para><para>Based on the status of Hsm hash request, it updates the CrcHsm status. If hash request returns status COMPLETE, then CRC calculation is requested via crc.h library.</para><para><simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32___mng___crc_hsm_8c_1ad40fdd6abff263cfb5e1d33576d581cc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>static uint8 CRC32_Mng_CrcHsm_HsmChannelAllocate</definition>
+        <argsstring>(void)</argsstring>
+        <name>CRC32_Mng_CrcHsm_HsmChannelAllocate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocation of a new first free HSM channel.</para><para>This function iterates over all supported HSM channels and allocates the first free channel returning its index.</para><para><simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 hsmFirsFreeChannelId - ID number of allocated HSM channel.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcHsm_HsmChannelAllocate.png">CRC32_Mng_CrcHsm_HsmChannelAllocate Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase(SWATT) shall be based on the different possible return values of function <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1afa7ea63b5988d25c51b45a602cf071b7" kindref="member">eb_hsm_channel_allocate()</ref> for different values of hsmchannelid(boundary check). <linebreak/>
+ mock the function <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1afa7ea63b5988d25c51b45a602cf071b7" kindref="member">eb_hsm_channel_allocate()</ref> <linebreak/>
+ <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1a8e7daf7c25d976f186d0c6e9d4a8afc8" kindref="member">TEST_CRC32_Mng_CrcHsm_HsmChannelAllocate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.IVD_Chorus.CRC32_Mng_CrcHSM.SW Architecture.Components.CRC32_Mng_CrcHSM</ulink> <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_UNECE_997<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32___mng___crc_hsm_8c_1a2c2f9b924456d0816f403a6b615d306e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CRC32_Mng_CrcHsm_HsmChannelRelease</definition>
+        <argsstring>(uint8 *channelIdPtr)</argsstring>
+        <name>CRC32_Mng_CrcHsm_HsmChannelRelease</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>channelIdPtr</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Release of a HSM channel and marks it as invalid.</para><para>This function close channel to clear the history to be sure that all previous contexts are removed. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[in/out]uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>channelIdPtr - Pointer to the HSM channel ID to be released. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcHsm_HsmChannelRelease.png">CRC32_Mng_CrcHsm_HsmChannelRelease Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase(SWATT) shall be based on the possible return values of function <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1af5d8bb0078e97a452848d80bbc5b20cb" kindref="member">eb_hsm_channel_release()</ref> for different values of hsmchannelid(boundary check) <linebreak/>
+ mock the function <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1af5d8bb0078e97a452848d80bbc5b20cb" kindref="member">eb_hsm_channel_release()</ref> <ref refid="_c_r_c32___mng___crc_hsm_8c_8test_1a6155f846e0529e38a38366d9cf777fa0" kindref="member">TEST_CRC32_Mng_CrcHsm_HsmChannelRelease</ref> <linebreak/>
+ <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.IVD_Chorus.CRC32_Mng_CrcHSM.SW Architecture.Components.CRC32_Mng_CrcHSM</ulink> <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_UNECE_998<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c" line="307" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Realize CRC facilities for Hardware Security Module (HSM) logical blocks. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_c_r_c32___mng___crc_hsm_8c" kindref="compound">CRC32_Mng_CrcHsm.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>v.0.1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie16865 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>16.06.2021 </para></simplesect>
+</para><para>It serves as a sub component for the CRC32_Mng. The main task is to use the interfaces from the HSM to get the hash value, and then use the Autosar CRC library to calculate the CRC from the received hash. The component informs CRC32_Mng about the current status and returns the calculated CRC. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/IVD/Evo/CRC32_Mng_CrcHsm/src/CRC32_Mng_CrcHsm.c"/>
+  </compounddef>
+</doxygen>

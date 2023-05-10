@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has 5 units:<itemizedlist>
+<listitem><para><ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref></para></listitem><listitem><para><ref refid="_u_h_f___c_r_c10_8c" kindref="compound">UHF_CRC10.c</ref></para></listitem><listitem><para><ref refid="_u_h_f___receiver_8c" kindref="compound">UHF_Receiver.c</ref></para></listitem><listitem><para><ref refid="_u_h_f___sender_8c" kindref="compound">UHF_Sender.c</ref></para></listitem><listitem><para><ref refid="_u_h_f___battery_handler_8c" kindref="compound">UHF_BatteryHandler.c</ref></para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="6" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_UHF_374  </para></entry><entry thead="no"><para>ICAS1::UHF-Master shall utilize maximum 0.50 kB RAM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_UHF_375  </para></entry><entry thead="no"><para>ICAS1::UHF-Master shall utilize maximum 7.00 kB ROM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_UHF_382  </para></entry><entry thead="no"><para>ICAS1::UHF-Master shall generate maximum 0.25% of CPU Load at peaks.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_UHF_376  </para></entry><entry thead="no"><para>ICAS1 shall schedule ICAS1::UHF-Master each 10ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_UHF_377  </para></entry><entry thead="no"><para>ICAS1::UHF-Master shall be available 30 ms at the latest (&lt;=30 ms) after ICAS1 start-up.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" kindref="member">CRC_Compute_CRC10</ref> - Interface used internally to calculate a CRC10 checksum</para></listitem><listitem><para><ref refid="_u_h_f___battery_handler_8c_1ae311295780cf6f04a050d67a6e875471" kindref="member">UHF_BatteryHandler_Init</ref> - Interface used internally to initialize data in Battery Handler unit</para></listitem><listitem><para><ref refid="_u_h_f___battery_handler_8c_1a3ed4f37453db564eb07a23051af5e34d" kindref="member">UHF_BatteryHandler_Stop</ref> - Interface used internally to clear data in Battery Handler unit</para></listitem><listitem><para><ref refid="_u_h_f___battery_handler_8c_1a3278730895cc1b2efcbeacea00aa59e7" kindref="member">UHF_BatteryHandler_Cyclic</ref> - Interface used internally to cyclicity run functionality in Battery Handler unit</para></listitem><listitem><para><ref refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" kindref="member">UHF_Receiver_Init</ref> - Interface used internally to initialize data in Receiver unit</para></listitem><listitem><para><ref refid="_u_h_f___receiver_8c_1aff395d4c78fdcb658b99e16462e9ee5e" kindref="member">UHF_Receiver_Get_BatteryLevel</ref> - Interface used internally to return Battery Level from Receiver unit</para></listitem><listitem><para><ref refid="_u_h_f___receiver_8c_1ae3acdd1492786bdbd0b13cfbb7c8f38b" kindref="member">UHF_Receiver_Get_SchluesselNr</ref> - Interface used internally to return SchluesselNr from Receiver unit</para></listitem><listitem><para><ref refid="_u_h_f___receiver_8c_1ad4d723b7c5c71e3e1174a1a039a8602e" kindref="member">UHF_Receiver_Is_FirstMessageArrived</ref> - Interface used internally to return if FirstMessageArrived from Receiver unit</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_UHF.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>UHF SWC dynamic behavior is described in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para>UHF SWC is assigned to <bold> CORE 1 </bold>, in SWA: <bold>VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ApplicationLayer_Core1</bold>. <linebreak/>
+UHF component execution is under controll of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.UHF_Init</bold> <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.UHF_Cyclic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>UHF does not have requirements for specific operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>UHF SWC power modes are described in SWA: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.UHF_Init</bold> <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.UHF_Cyclic</bold></para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>Key battery status error is handled by UHF component.<linebreak/>
+IF si_keyfob_battery_error_counter_xx_value &gt; p_UHF_Schluesselbatterie_counter_max(the error counter value for the xx key exceeds the maximum set value)<linebreak/>
+THEN DTC_ZV_Funkschluessel_xx_Batterie_leer := aktiv (ICAS1::UHF-Master shall set the DTC event on ICAS1::DEM with &apos;Prefailed&apos; condition)<linebreak/>
+ELSE DTC_ZV_Funkschluessel_xx_Batterie_leer := passiv (ICAS1::UHF-Master shall reset the DTC event on ICAS1::DEM with &apos;Prepassed&apos; condition)<linebreak/>
+ where:<linebreak/>
+xx denotes a Remote Control Key Number (si_ffb_batt_schluesselnummer).<linebreak/>
+ It is implemented in <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para><ulink url="globals_defs.html">Macros defintions</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>There are few significant calculations &amp; algorithms designed within UHF component: <linebreak/>
+ <linebreak/>
+1) Merging payload sent from SAM on CAN - realised in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> - UHF Reads UHF_01 to UHF_08 messages and copies data for internal buffers and afterwards sends it to FFB Data Handler or Kessy depending on a copied s_UHF_LogicalHeader_buf.Port_Number <linebreak/>
+ <image type="html" name="Reading_Msg_from_SAM.png"></image>
+ </para><para>2) Splitting merged payload to format which is valid for CAN messages and sending it to SAM in <ref refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" kindref="member">evUHFSenden</ref> after receiving trigger from Kessy Event Manager.<linebreak/>
+3) Evaluating the battery voltage and providing information in case of low battery level, by updating battery counter, time of last error encounter and error flags. <linebreak/>
+ Realised in <ref refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" kindref="member">updateBatteryCounter</ref> and <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para><ref refid="_u_h_f___receiver_8c_1a7023f361b90a6153acf4d1e21edd7505" kindref="member">s_UHF_Sensor_01_buf</ref> <ref refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" kindref="member">s_UHF_Sensor_0n_buf</ref> <ref refid="_u_h_f___receiver_8c_1a543e385836fea9a08c29a56db6088aa1" kindref="member">s_UHF_LogicalHeader_buf</ref></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para>Ad. Interoperability<linebreak/>
+UHF is designed for ICAS1 project with specific hardware architecture. This means that potential adaptation to other project would require additional configuration e.g., event handling utilizing Kessy_Event_Manager.<linebreak/>
+Ad. Interaction<linebreak/>
+UHF in general is using RTE connection.<linebreak/>
+Ad. Criticality<linebreak/>
+UHF is rated as QM component.<linebreak/>
+Ad. Technical complexity<linebreak/>
+UHF is using algorithms on high level of complexity like assembling UHF telegram received over CAN with multiple messages.<linebreak/>
+Ad. Risks<linebreak/>
+UHF contains algorithms of high complexity and include 5 SW Units.<linebreak/>
+Ad. Testability<linebreak/>
+UHF is tested completely on SWATT level.<linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

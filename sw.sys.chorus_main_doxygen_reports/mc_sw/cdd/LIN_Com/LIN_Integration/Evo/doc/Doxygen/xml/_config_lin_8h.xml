@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_config_lin_8h" kind="file" language="C++">
+    <compoundname>ConfigLin.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">ConfigLinDiag.h</includes>
+    <includes local="yes">RoutingOps.h</includes>
+    <includes local="yes">LinFlash.h</includes>
+    <includes local="yes">ConfigNmHighSpeed.h</includes>
+    <includes local="yes">ErrHdl_DEM_Interface.h</includes>
+    <includes refid="_lin_integration_8h" local="yes">LinIntegration.h</includes>
+    <includedby refid="_config_lin_8c" local="yes">ConfigLin.c</includedby>
+    <includedby refid="_lin_integration_8c" local="yes">LinIntegration.c</includedby>
+    <includedby refid="_lin_schedule_8c" local="yes">LinSchedule.c</includedby>
+    <includedby refid="_lin_task_8c" local="yes">LinTask.c</includedby>
+    <incdepgraph>
+      <node id="23">
+        <label>Lin.h</label>
+      </node>
+      <node id="17">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="21">
+        <label>ErrHdl_DEM_Interface.h</label>
+      </node>
+      <node id="22">
+        <label>LinIntegration.h</label>
+        <link refid="_lin_integration_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>LinFlash.h</label>
+      </node>
+      <node id="20">
+        <label>ConfigNmHighSpeed.h</label>
+      </node>
+      <node id="18">
+        <label>RoutingOps.h</label>
+      </node>
+      <node id="24">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="15">
+        <label>ConfigLin.h</label>
+        <link refid="_config_lin_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="28">
+        <label>LinSchedule.c</label>
+        <link refid="_lin_schedule_8c"/>
+      </node>
+      <node id="27">
+        <label>LinIntegration.c</label>
+        <link refid="_lin_integration_8c"/>
+      </node>
+      <node id="29">
+        <label>LinTask.c</label>
+        <link refid="_lin_task_8c"/>
+      </node>
+      <node id="25">
+        <label>ConfigLin.h</label>
+        <link refid="_config_lin_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ConfigLin.c</label>
+        <link refid="_config_lin_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct___t_lin_rx_object" prot="public">_TLinRxObject</innerclass>
+    <innerclass refid="struct___t_lin_tx_object" prot="public">_TLinTxObject</innerclass>
+    <innerclass refid="struct___t_lin_channel_init" prot="public">_TLinChannelInit</innerclass>
+    <innerclass refid="union___t_lin_status" prot="public">_TLinStatus</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_config_lin_8h_1aefc04a670cc98033f9260b36afa3a19f" prot="public" static="no">
+        <name>K_LIN_CYCLE_TIME</name>
+        <initializer>(uint8) LIN_TIME_BASE_IN_MS</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the time base of the LIN timer in ms.</para><para>The time base is taken from LIN_FlexDriver component and is 3rd party <simplesect kind="remark"><para>value: 5 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1a5df112fb709bd138386f1581b0a44ac4" prot="public" static="no">
+        <name>LIN_DIAG_SCHED_TIMER_MAX</name>
+        <initializer>(uint8)(50u / K_LIN_CYCLE_TIME)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the max value for diag counter</para><para>The max timer is 50 ms and is dependent on time base of the LIN timer. <linebreak/>
+ It is used to count before switching to diag response schedule <simplesect kind="remark"><para>value: 10 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="83" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1a7fc54666a9fb8e625f3f34eae2eaa07c" prot="public" static="no">
+        <name>LIN_DIAG_SCHED_TIMER_LOAD_VALUE</name>
+        <initializer>(uint8)0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the start value for the diag counter</para><para>It is used to reset the diag counter after switching to diagnostic schedule <simplesect kind="remark"><para>value: 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="93" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1a7433abcf6fcefe978ab49b7f2edcdb04" prot="public" static="no">
+        <name>DEF_LIN_TX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <param><defname>channel</defname></param>
+        <param><defname>pTxBuffer</defname></param>
+        <param><defname>LinFrameProtectedId</defname></param>
+        <param><defname>cb</defname></param>
+        <param><defname>_p</defname></param>
+        <initializer>const <ref refid="_config_lin_8h_1a92f596ba214c1730c96349ce97112d19" kindref="member">TLinTxObject</ref> TmtObject_##name = {                                             \
+	  (Tuint8 *)(pTxBuffer),                                                          \
+	  LinFrameProtectedId,                                                            \
+	  (TComChannel)(channel),                                                           \
+	  (CTXCALLBACK)(cb),                                                              \
+	  (void *)(_p)}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a LIN receive object. <simplesect kind="remark"><para>The name of the LinTxObj has to correspond with the LIN_messaged, named at the ldf-file!<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="141" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1acbeecd03b92408dd775257343f6eb9bf" prot="public" static="no">
+        <name>REF_LIN_TX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <initializer>(&amp;(TmtObject_##name))</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro returns a reference to a LIN receive object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="154" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1a696ded77ca1fb33791fbea871a081112" prot="public" static="no">
+        <name>DECL_LIN_TX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <initializer>extern const <ref refid="_config_lin_8h_1a92f596ba214c1730c96349ce97112d19" kindref="member">TLinTxObject</ref> TmtObject_##name</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro declares a LIN receive object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="163" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_lin_8h_1af37815940e9150e6c641634fdb993799" prot="public" static="no">
+        <name>MASK_MANUALLY_CHECK_LAST_ID</name>
+        <initializer>0x3Fu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used to check the last ID LIN status</para><para>Using the mask will ensure that manually modified IDs are handled <simplesect kind="remark"><para>The value o the mask is 0x3F <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="301" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_config_lin_8h_1a760f421cf26964cea5c6c389a379524d" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* LINBUSOFF_CALLBACK) (TComChannel ChannelNo)</definition>
+        <argsstring>)(TComChannel ChannelNo)</argsstring>
+        <name>LINBUSOFF_CALLBACK</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the bus off callback routine.</para><para>This routine will be called when there is no any header transmission, frame transmission, frame reception or receive or transmit error on the LIN bus <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ChannelNo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN bus channel </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This type of function returns nothing. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="104" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1ad8d95e83740337d793ae0f5542b375c4" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* LINWAKEUP_CALLBACK) (TComChannel ChannelNo)</definition>
+        <argsstring>)(TComChannel ChannelNo)</argsstring>
+        <name>LINWAKEUP_CALLBACK</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the bus wakeup callback routine. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ChannelNo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN bus channel </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This type of function returns nothing. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="112" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1a694310615d8a7f8eda395e2152b13025" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* LRXCALLBACK) (const TTreatmentElement *const *Tmt, Tuint8 *Txb, Tuint8 Id)</definition>
+        <argsstring>)(const TTreatmentElement *const *Tmt, Tuint8 *Txb, Tuint8 Id)</argsstring>
+        <name>LRXCALLBACK</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the receive callback routine.</para><para>This routine will be called on successful reception of a parameterized receive object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Tmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to a treatment list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Txb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to source data (received data from LIN). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- actual length of the message, length of source (received) data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This type of function returns nothing. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="126" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1ab7f6b1530dc4d8f28ba1d276468aa49f" prot="public" static="no">
+        <type>struct <ref refid="struct___t_lin_rx_object" kindref="compound">_TLinRxObject</ref></type>
+        <definition>typedef struct _TLinRxObject  TLinRxObject</definition>
+        <argsstring></argsstring>
+        <name>TLinRxObject</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a general type for LIN Receive-Object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="213" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1a92f596ba214c1730c96349ce97112d19" prot="public" static="no">
+        <type>struct <ref refid="struct___t_lin_tx_object" kindref="compound">_TLinTxObject</ref></type>
+        <definition>typedef struct _TLinTxObject  TLinTxObject</definition>
+        <argsstring></argsstring>
+        <name>TLinTxObject</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a general Transmit-Object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="248" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1a71b1481b99c3d4c6dc515adccb2d97d4" prot="public" static="no">
+        <type>struct <ref refid="struct___t_lin_channel_init" kindref="compound">_TLinChannelInit</ref></type>
+        <definition>typedef struct _TLinChannelInit  TLinChannelInit</definition>
+        <argsstring></argsstring>
+        <name>TLinChannelInit</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the channel initialization structure. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="291" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_config_lin_8h_1a3b46cbb501272cd45d88bd6c6221d4a2" prot="public" static="no">
+        <type>union <ref refid="union___t_lin_status" kindref="compound">_TLinStatus</ref></type>
+        <definition>typedef union _TLinStatus  TLinStatus</definition>
+        <argsstring></argsstring>
+        <name>TLinStatus</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This union defines the type for communication status of the LIN</para><para>The hardware status of the previous communication will be read using the <linebreak/>
+ l_ifc_read_status(ifc) interface provided by LIN FlexDriver component. <linebreak/>
+ <simplesect kind="remark"><para>Returned value of this interface is a status word (16 bit frame) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="375" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_config_lin_8h_1a8e36f486b1942a87add4a9105f6c71ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinDoLinMsgRouting</definition>
+        <argsstring>(const TComChannel linComChannel, const TLinStatus LinStatus)</argsstring>
+        <name>LinDoLinMsgRouting</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_config_lin_8h_1a3b46cbb501272cd45d88bd6c6221d4a2" kindref="member">TLinStatus</ref></type>
+          <declname>LinStatus</declname>
+        </param>
+        <briefdescription>
+<para>This function calls the Routing callbacks on LIN frame transmission on given linComChannel. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s called cyclically from the LinTask.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context LinTask <linebreak/>
+ thread safe yes - the interrupts are suspended when callbacks are called<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LinInstance for routing_requirement </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">LinStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of the Lin channel </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinDoLinMsgRouting.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinDoLinMsgRouting <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function calls the routing callbacks on frame transmission on LIN channels. Needed for timeout monitoring of the frames. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h" line="486" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/ConfigLin.c" bodystart="82" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides the necessary callback functions for LIN Integration component. </para>    </briefdescription>
+    <detaileddescription>
+<para>This file can be included by other modules. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/ConfigLin.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___can___global___timeout___detection_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Can_Global_Timeout_Detection.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___can___global___timeout___detection_8c" local="yes">ErrHdl_Can_Global_Timeout_Detection.c</includedby>
+    <includedby refid="_err_hdl___d_k2___can___timeout___detection_8c" local="yes">ErrHdl_DK2_Can_Timeout_Detection.c</includedby>
+    <includedby refid="_err_hdl___if_8c" local="yes">ErrHdl_If.c</includedby>
+    <includedby refid="src_2_err_hdl___can___bus___enable___conditions_8c" local="yes">ErrHdl_Can_Bus_Enable_Conditions.c</includedby>
+    <includedby refid="_2src_2_err_hdl___can___bus___enable___conditions_8c" local="yes">ErrHdl_Can_Bus_Enable_Conditions.c</includedby>
+    <incdepgraph>
+      <node id="166">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="164">
+        <label>ErrHdl_Can_Global_Timeout_Detection.h</label>
+        <link refid="_err_hdl___can___global___timeout___detection_8h"/>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="171">
+        <label>ErrHdl_If.c</label>
+        <link refid="_err_hdl___if_8c"/>
+      </node>
+      <node id="168">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="169">
+        <label>ErrHdl_Can_Global_Timeout_Detection.c</label>
+        <link refid="_err_hdl___can___global___timeout___detection_8c"/>
+      </node>
+      <node id="172">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.c</label>
+        <link refid="src_2_err_hdl___can___bus___enable___conditions_8c"/>
+      </node>
+      <node id="167">
+        <label>ErrHdl_Can_Global_Timeout_Detection.h</label>
+        <link refid="_err_hdl___can___global___timeout___detection_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>ErrHdl_DK2_Can_Timeout_Detection.c</label>
+        <link refid="_err_hdl___d_k2___can___timeout___detection_8c"/>
+      </node>
+      <node id="173">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.c</label>
+        <link refid="_2src_2_err_hdl___can___bus___enable___conditions_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga26ba42e366dd33e9a0b7d2da46e77ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrCanGlobalTimeoutMonitor</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrCanGlobalTimeoutMonitor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function cyclically monitors CAN global timeout. And if message is not received before timer timeout, then set the DTC.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context isr, ErrHandlerTask - Called cyclically every 10ms <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_2inc_2_err_hdl___types_8h_1a567446f1353c51289a6d3b023c3af570" kindref="member">ERR_NUMB_OF_CAN_MONITORED_BUSES</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCanGlobalTimeoutMonitor.png">Activity Diagram of function ErrCanGlobalTimeoutMonitor </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___global___timeout___detection_8c_8test_1a907f0293fd85e708c9f85224e718c0f7" kindref="member">TEST_ErrCanGlobalTimeoutMonitor</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10077 </para><para>SWR_ICAS1_GW_3511 </para><para>SWR_ICAS1_GW_10079 </para><para>SWR_ICAS1_GW_3513 </para><para>SWR_ICAS1_GW_3513 </para><para>SWR_ICAS1_GW_3514 </para><para>SWR_ICAS1_GW_3515 </para><para>SWR_ICAS1_GW_3516 </para><para>SWR_ICAS1_GW_3517 </para><para>SWR_ICAS1_GW_3518 </para><para>SWR_ICAS1_GW_3519 </para><para>SWR_ICAS1_GW_3520 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Global_Timeout_Detection.h" line="108" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Global_Timeout_Detection.c" bodystart="251" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gac7b40b0320e41af2e7f7eb4c2891f8bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetCanGlobalTimeoutCounter</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrResetCanGlobalTimeoutCounter</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets global timeout counter and DTC if message has been received.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaf25591417ea9fbeb99975d9731a2ac59" kindref="member">ErrMsgCanDK2Received</ref>, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gae5cfef2792b63b838a2bee810c472bc7" kindref="member">ErrMsgReceived</ref> <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___global___timeout___detection_8c_1a6cf5ba78b9ab289f2b9a72582857a447" kindref="member">ChannelTimeoutCntr</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetCanGlobalTimeoutCounter.png">Activity Diagram of function ErrResetCanGlobalTimeoutCounter </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___global___timeout___detection_8c_8test_1a57d849854a17cbdac81acca0343a58b6" kindref="member">TEST_ErrResetCanGlobalTimeoutCounter</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10008 </para><para>SWR_ICAS1_GW_10077 </para><para>SWR_ICAS1_GW_3511 </para><para>SWR_ICAS1_GW_10079 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Global_Timeout_Detection.h" line="149" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Global_Timeout_Detection.c" bodystart="462" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga441be02ea8b9ba499c72e867b11e102c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrCheckCanBusEnableConditions</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrCheckCanBusEnableConditions</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if Can global timeout enable conditions is active.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga26ba42e366dd33e9a0b7d2da46e77ce1" kindref="member">ErrCanGlobalTimeoutMonitor</ref>, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gac7b40b0320e41af2e7f7eb4c2891f8bc" kindref="member">ErrResetCanGlobalTimeoutCounter</ref> <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean RetVal: TRUE when all enable conditions are fulfilled, otherwise FALSE.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCheckCanBusEnableConditions.png">Activity Diagram of function ErrCheckCanBusEnableConditions </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___global___timeout___detection_8c_8test_1aa3faf94f2dddf161aaa429d41c7ddcb6" kindref="member">TEST_ErrCheckCanBusEnableConditions</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10008 </para><para>SWR_ICAS1_GW_10077 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Global_Timeout_Detection.h" line="187" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Global_Timeout_Detection.c" bodystart="327" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab034569e861b326a93261d9ae8bc1aeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrIsCanGlobalTimeoutAllowed</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrIsCanGlobalTimeoutAllowed</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if global timeout is allowed for a CAN.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga26ba42e366dd33e9a0b7d2da46e77ce1" kindref="member">ErrCanGlobalTimeoutMonitor</ref>, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga1775656a8c55da9804e552b841175b51" kindref="member">ErrSetCanGlobalTimeoutDEMCond</ref>, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga1775656a8c55da9804e552b841175b51" kindref="member">ErrSetCanGlobalTimeoutDEMCond</ref>} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean RetVal: TRUE if Global Timeout is allowed, otherwise FALSE.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrIsCanGlobalTimeoutAllowed.png">Activity Diagram of function ErrIsCanGlobalTimeoutAllowed </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___global___timeout___detection_8c_8test_1a5fb3815cfce74cda218d6df0ab8df597" kindref="member">TEST_ErrIsCanGlobalTimeoutAllowed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10008 </para><para>SWR_ICAS1_GW_10077 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Global_Timeout_Detection.h" line="225" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Global_Timeout_Detection.c" bodystart="424" bodyend="460"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_Can_Global_Timeout_Detection functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___can___global___timeout___detection_8h" kindref="compound">ErrHdl_Can_Global_Timeout_Detection.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>5 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>3/1/2023 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Global_Timeout_Detection.h"/>
+  </compounddef>
+</doxygen>

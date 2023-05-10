@@ -1,0 +1,870 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_w_f_s__csm_8c" kind="file" language="C++">
+    <compoundname>WFS_csm.c</compoundname>
+    <includes refid="_rte___w_f_s__extended_8h" local="yes">Rte_WFS_extended.h</includes>
+    <includes refid="_w_f_s___extra_definitions_8h" local="yes">WFS_Extradefinitions.h</includes>
+    <includes refid="_w_f_s__csm_8h" local="yes">WFS_csm.h</includes>
+    <incdepgraph>
+      <node id="116">
+        <label>WFS_com.h</label>
+        <link refid="_w_f_s__com_8h"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>CsmPi_SymKeyExtract.h</label>
+      </node>
+      <node id="102">
+        <label>Rte_WFS_extended.h</label>
+        <link refid="_rte___w_f_s__extended_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>Dem.h</label>
+      </node>
+      <node id="103">
+        <label>CsmPi.h</label>
+      </node>
+      <node id="113">
+        <label>OsekComRte_Exp.h</label>
+      </node>
+      <node id="101">
+        <label>WFS_csm.c</label>
+        <link refid="_w_f_s__csm_8c"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="106">
+        <label>CsmPi_Random.h</label>
+      </node>
+      <node id="105">
+        <label>CsmPi_SymKeyExtractConfig.h</label>
+      </node>
+      <node id="110">
+        <label>Rte_EcuM_Type.h</label>
+      </node>
+      <node id="109">
+        <label>CsmPi_SymBlockDecrypt.h</label>
+      </node>
+      <node id="115">
+        <label>WFS_ExtraDefinitions.h</label>
+        <link refid="_w_f_s___extra_definitions_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>OsekComMsgs_ExpCfgGen.h</label>
+      </node>
+      <node id="112">
+        <label>SWCO_Identification.h</label>
+      </node>
+      <node id="118">
+        <label>AdaptationGWDiagSignalMap.h</label>
+      </node>
+      <node id="104">
+        <label>CsmPi_RandomConfig.h</label>
+      </node>
+      <node id="108">
+        <label>CsmPi_SymBlockEncrypt.h</label>
+      </node>
+      <node id="119">
+        <label>WFS_csm.h</label>
+        <link refid="_w_f_s__csm_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a805b19e2dfda0501643d34320d82e004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmRandomSeed_RandomSeedStart</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_WFS_CsmRandomSeed_RandomSeedStart</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_RandomSeedStart, responsible for requesting the initialization of the Random state which has been given in the passed configuration. <linebreak/>
+ The state initialization function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - seeding start was successfully requested <linebreak/>
+ CSMPI_E_BUSY - another service of Random is already running <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmRandomSeed_RandomSeedStart.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a9568fd63b53c99df0794f71c99995b7b" kindref="member">TEST_Rte_Call_WFS_CsmRandomSeed_RandomSeedStart</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="104" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="104" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a1269544387a1aac6fe0229c75bf292e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmRandomSeed_RandomSeedUpdate</definition>
+        <argsstring>(const uint8 *seedBuffer, uint32 seedLength)</argsstring>
+        <name>Rte_Call_WFS_CsmRandomSeed_RandomSeedUpdate</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>seedBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>seedLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_RandomSeedUpdate responsible for requesting the seeding of the Random state which has been given with in passed configuration. <linebreak/>
+ The seeding function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* seedBuffer - a pointer to the start of an array which contains the seed <linebreak/>
+ uint32 seedLength - length of the seed array <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - seeding update was successfully requested <linebreak/>
+ CSMPI_E_BUSY - another service of Random is already running <linebreak/>
+ CSMPI_E_NOT_OK - no seeding has been started yet <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmRandomSeed_RandomSeedUpdate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1ad392db60a61c837c7fd834ce5a31bef2" kindref="member">TEST_Rte_Call_WFS_CsmRandomSeed_RandomSeedUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="165" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="165" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ad6756ce2952ce7c2d63e71ffbe5a83d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmRandomSeed_RandomSeedFinish</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_WFS_CsmRandomSeed_RandomSeedFinish</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_RandomSeedUpdate responsible for requesting the finishing of the seeding. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - seeding finish was successfully requested <linebreak/>
+ CSMPI_E_BUSY - another service of Random is already running <linebreak/>
+ CSMPI_E_NOT_OK - no seeding has been started yet <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmRandomSeed_RandomSeedFinish.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a915400ddf998e10e92bb3df990192a5f" kindref="member">TEST_Rte_Call_WFS_CsmRandomSeed_RandomSeedFinish</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="218" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="218" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ac03a6ccba3adb9205643996186701250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractStart</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractStart</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymKeyExtractStart responsible for requesting the start of the symmetric key extraction for the given configuration. <linebreak/>
+ The start function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - start was successfully requested <linebreak/>
+ CSMPI_E_BUSY - service of the symmetric key extraction is already running <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractStart.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a9984bf0cadcb631659813f197b93310a" kindref="member">TEST_Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractStart</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="272" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="272" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a0bd9216b26e85609ab4bf4fe12144b5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractUpdate</definition>
+        <argsstring>(const uint8 *dataBuffer, uint32 dataLength)</argsstring>
+        <name>Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractUpdate</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>dataBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>dataLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymKeyExtractUpdate responsible for requesting the update of the symmetric key extraction for the given data. <linebreak/>
+ The update function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* dataBuffer - a pointer to the start of an array which contains a part of the key which should be extracted <linebreak/>
+ uint32 dataLength - amount of bytes of data</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - update was successfully requested <linebreak/>
+ CSMPI_E_NOT_OK - no symmetric key extraction has been started yet <linebreak/>
+ CSMPI_E_BUSY - main function is processing a requested service at the moment <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractUpdate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a3655ac3b82fdec8c93f6d8517d51a2e5" kindref="member">TEST_Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="332" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="332" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ade57eb4835d457bfef15ccac942830e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractFinish</definition>
+        <argsstring>(CsmPi_SymKeyType *key)</argsstring>
+        <name>Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractFinish</name>
+        <param>
+          <type>CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymKeyExtractFinish responsible for requesting the finishing of the symmetric key extraction and the storing of the key in the given buffer. <linebreak/>
+ The finish function of the configured primitive is called and its return value is returned. <linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>CsmPi_SymKeyType*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dataBuffer - a pointer to the buffer where the extracted key should be stored</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - finish was successfully requested <linebreak/>
+ CSMPI_E_NOT_OK - no symmetric key extraction has been started yet <linebreak/>
+ CSMPI_E_BUSY - main function is processing a requested service at the moment <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractFinish.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a2599fb87bbf2be42f8a30b6752aebdb0" kindref="member">TEST_Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtractFinish</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_151 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="392" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="392" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a016f5b7ff56bce38b4d7150f5adb9c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmRandomGenerate_RandomGenerate</definition>
+        <argsstring>(uint8 *resultBuffer, uint32 resultLength)</argsstring>
+        <name>Rte_Call_WFS_CsmRandomGenerate_RandomGenerate</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>resultBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>resultLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_RandomGenerate responsible for requesting the generation of pseudo random bytes. <linebreak/>
+ The byte generation function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>resultBuffer - a pointer to the start of a buffer where the generated pseudo random bytes should be stored <linebreak/>
+ uint32 resultLength - olds the amount of bytes which should be generated</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - byte generation was successfully requested <linebreak/>
+ CSMPI_E_BUSY - another service of the Random is already running <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmRandomGenerate_RandomGenerate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1acc367a34c1f1f9ff42532b98d84365d9" kindref="member">TEST_Rte_Call_WFS_CsmRandomGenerate_RandomGenerate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="451" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="451" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ac6a423aa9b682b6bc4f05edf7d9b8ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmRandomGenerate_RandomGenerateSync</definition>
+        <argsstring>(uint8 *resultBuffer, uint32 resultLength)</argsstring>
+        <name>Rte_Call_WFS_CsmRandomGenerate_RandomGenerateSync</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>resultBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>resultLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_RandomGenerateSync responsible for requesting the generation of pseudo random bytes. <linebreak/>
+ The byte generation function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>resultBuffer - a pointer to the start of a buffer where the generated pseudo random bytes should be stored uint32 resultLength - holds the amount of bytes which should be generated</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - byte generation was successfully requested <linebreak/>
+ CSMPI_E_BUSY - another service of the Random is already running <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmRandomGenerate_RandomGenerateSync.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a4f6de9a53d81e82a60a625a31e541a79" kindref="member">TEST_Rte_Call_WFS_CsmRandomGenerate_RandomGenerateSync</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="507" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="507" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ad581a94e18a3f1aa66e2461ba5ff9e8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymBlockEncrypt_SymBlockEncrypt</definition>
+        <argsstring>(const CsmPi_SymKeyType *key, const uint8 *plainTextBuffer, uint32 plainTextLength, uint8 *cipherTextBuffer, uint32 *cipherTextLength)</argsstring>
+        <name>Rte_Call_WFS_CsmSymBlockEncrypt_SymBlockEncrypt</name>
+        <param>
+          <type>const CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>plainTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>cipherTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymBlockEncrypt responsible for the symmetrical block encryption computation for the given data. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CsmPi_SymKeyType* key - a pointer to the key which should be used in the symmetrical block encryption computation <linebreak/>
+ const uint8* plainTextBuffer - pointer to the start of an array which contains the constant plain text that shall be encrypted <linebreak/>
+ uint32 plainTextLength - length of the constant plain text in bytes <linebreak/>
+ uint8* cipherTextBuffer - a pointer to the start of an array where the encrypted text will be stored <linebreak/>
+ uint32* cipherTextLength - holds a pointer to a memory location in which the length information is stored. On calling this function this parameter shall contain the size of the buffer provided by cipherTextPtr. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - symmetrical block encryption computation finished with success <linebreak/>
+ CSMPI_E_BUSY - service of the symmetrical block encryption computation is already running <linebreak/>
+ CSMPI_E_NOT_OK - symmetrical block encryption computation failed <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymBlockEncrypt_SymBlockEncrypt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a496da6eaf484702ebd4dc0b839fda07a" kindref="member">TEST_Rte_Call_WFS_CsmSymBlockEncrypt_SymBlockEncrypt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="569" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="569" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a294514a3c850d17cb86122523f6868bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymBlockDecrypt_SymBlockDecrypt</definition>
+        <argsstring>(const CsmPi_SymKeyType *key, const uint8 *cipherTextBuffer, uint32 cipherTextLength, uint8 *plainTextBuffer, uint32 *plainTextLength)</argsstring>
+        <name>Rte_Call_WFS_CsmSymBlockDecrypt_SymBlockDecrypt</name>
+        <param>
+          <type>const CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>cipherTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>plainTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymBlockDecrypt responsible for the symmetrical block decryption computation for the given data. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CsmPi_SymKeyType* key - a pointer to the key which should be used in the symmetrical block decryption computation <linebreak/>
+ const uint8* cipherTextBuffer - a pointer to the start of an array which contains the constant cipher text that shall be decrypted <linebreak/>
+ uint32 cipherTextLength - length of the constant cipher text in bytes <linebreak/>
+ uint8* plainTextBuffer - a pointer to the start of an array where the decrypted text will be stored <linebreak/>
+ uint32* plainTextLength - holds a pointer to a memory location in which the length information is stored.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - symmetrical block decryption computation finished with success <linebreak/>
+ CSMPI_E_BUSY - service of the symmetrical block decryption computation is already running <linebreak/>
+ CSMPI_E_NOT_OK - symmetrical block decryption computation failed <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymBlockDecrypt_SymBlockDecrypt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a4bf9aa28ae20f09fdd45b0b239386d47" kindref="member">TEST_Rte_Call_WFS_CsmSymBlockDecrypt_SymBlockDecrypt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="630" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="630" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1ab63ed4f40de2b710a9b673d07db3c81f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymEncrypt_SymEncrypt</definition>
+        <argsstring>(const CsmPi_SymKeyType *key, const uint8 *InitVectorBuffer, uint32 InitVectorLength, const uint8 *plainTextBuffer, uint32 plainTextLength, uint8 *cipherTextBuffer, uint32 *cipherTextLength)</argsstring>
+        <name>Rte_Call_WFS_CsmSymEncrypt_SymEncrypt</name>
+        <param>
+          <type>const CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>InitVectorBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>InitVectorLength</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>plainTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>cipherTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymEncrypt responsible for the symmetrical encryption computation for the given data. <linebreak/>
+<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CsmPi_SymKeyType* key - a pointer to the key which should be used in the symmetrical encryption computation <linebreak/>
+ const uint8* InitVectorBuffer - holds a pointer to the key which has to be used during the symmetrical encryption computation <linebreak/>
+ uint32 InitVectorLength - holds the length of the initialisation vector which has to be used during the symmetrical encryption computation <linebreak/>
+ const uint8* plainTextBuffer - a pointer to the start of an array which contains the constant plain text that shall be encrypted <linebreak/>
+ uint32* plainTextLength - length of the constant plain text in bytes <linebreak/>
+ uint8* cipherTextBuffer - a pointer to the start of an array where the encrypted text will be stored <linebreak/>
+ uint32* cipherTextLength - holds a pointer to a memory location in which the length information is stored. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - symmetrical encryption computation finished with success <linebreak/>
+ CSMPI_E_BUSY - service of the symmetrical encryption computation is already running <linebreak/>
+ CSMPI_E_NOT_OK - symmetrical encryption computation failed <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymEncrypt_SymEncrypt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a6f4d18e4be4fe89479a402651dd342e2" kindref="member">TEST_Rte_Call_WFS_CsmSymEncrypt_SymEncrypt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="695" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="695" bodyend="700"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1aae0f2f78f28a5459fcd9f5a8783a6730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymDecrypt_SymDecrypt</definition>
+        <argsstring>(const CsmPi_SymKeyType *key, const uint8 *InitVectorBuffer, uint32 InitVectorLength, const uint8 *cipherTextBuffer, uint32 cipherTextLength, uint8 *plainTextBuffer, uint32 *plainTextLength)</argsstring>
+        <name>Rte_Call_WFS_CsmSymDecrypt_SymDecrypt</name>
+        <param>
+          <type>const CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>InitVectorBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>InitVectorLength</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>cipherTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>plainTextBuffer</declname>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymDecrypt responsible for the symmetrical decryption computation for the given data. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CsmPi_SymKeyType* key - a pointer to the key which should be used in the symmetrical decryption computation <linebreak/>
+ const uint8* InitVectorBuffer - holds a pointer to the key which has to be used during the symmetrical decryption computation <linebreak/>
+ uint32 InitVectorLength - holds the length of the initialisation vector which has to be used during the symmetrical decryption computation <linebreak/>
+ const uint8* cipherTextBuffer - a pointer to the start of an array which contains the constant cipher text that shall be decrypted <linebreak/>
+ uint32* cipherTextLength - length of the constant cipher text in bytes <linebreak/>
+ uint8* plainTextBuffer - a pointer to the start of an array where the decrypted text will be stored <linebreak/>
+ uint32* plainTextLength - holds a pointer to a memory location in which the length information is stored <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - symmetrical decryption computation finished with success <linebreak/>
+ CSMPI_E_BUSY - service of the symmetrical decryption computation is already running <linebreak/>
+ CSMPI_E_NOT_OK - symmetrical decryption computation failed <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymDecrypt_SymDecrypt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a5db8310a022700b9214a090b33b588b0" kindref="member">TEST_Rte_Call_WFS_CsmSymDecrypt_SymDecrypt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="760" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="760" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s__csm_8c_1a609a4b31b286f4315d1a0e5fcfa30941" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtract</definition>
+        <argsstring>(const uint8 *dataBuffer, uint32 dataLength, CsmPi_SymKeyType *key)</argsstring>
+        <name>Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtract</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>dataBuffer</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>dataLength</declname>
+        </param>
+        <param>
+          <type>CsmPi_SymKeyType *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for Csm function CsmPi_SymKeyExtract responsible for executing a synchronous nonstreaming symmetric key extraction for the given configuration. <linebreak/>
+ The synchronous function of the configured primitive is called and its return value is returned. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* dataBuffer - a pointer to the start of an array which contains a part of the key which should be extracted <linebreak/>
+ uint32 dataLength - the amount of bytes of data <linebreak/>
+ CsmPi_SymKeyType* key - a pointer to the buffer where the extracted key should be stored <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ CSMPI_E_OK - function was successfully requested <linebreak/>
+ CSMPI_E_NOT_OK - symmetric key extraction has been unsuccesfull <linebreak/>
+ CSMPI_E_BUSY - other request is processing a requested service at the moment <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtract.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s__csm_8c_8test_1a1f0a8cf6e5fad8848d0d81f60816ae22" kindref="member">TEST_Rte_Call_WFS_CsmSymKeyExtract_SymKeyExtract</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>EA_GUID of relebant archictecture_decision will have to be updated when new version of SW Archiecture will be available <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" line="819" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c" bodystart="819" bodyend="824"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The unit, collecting functions responsible for communication between Csm (Crypto Service Manager) and WFS library. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_w_f_s__csm_8c" kindref="compound">WFS_csm.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn6214, Artur Redosz (uidp7980), Pawel Dymowski (uib46966) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2023-01-27 </para></simplesect>
+<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_csm.c"/>
+  </compounddef>
+</doxygen>

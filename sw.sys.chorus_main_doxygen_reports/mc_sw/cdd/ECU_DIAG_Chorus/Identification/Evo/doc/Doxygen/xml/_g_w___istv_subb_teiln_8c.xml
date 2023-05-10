@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_g_w___istv_subb_teiln_8c" kind="file" language="C++">
+    <compoundname>GW_IstvSubbTeiln.c</compoundname>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <includes local="yes">RoutineControl.h</includes>
+    <includes local="yes">DK2_LinBuiltInList.h</includes>
+    <includes local="yes">DK2_CanBuiltInList.h</includes>
+    <incdepgraph>
+      <node id="219">
+        <label>DK2_CanBuiltInList.h</label>
+      </node>
+      <node id="217">
+        <label>RoutineControl.h</label>
+      </node>
+      <node id="214">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="216">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="215">
+        <label>agw.h</label>
+      </node>
+      <node id="218">
+        <label>DK2_LinBuiltInList.h</label>
+      </node>
+      <node id="213">
+        <label>GW_IstvSubbTeiln.c</label>
+        <link refid="_g_w___istv_subb_teiln_8c"/>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_g_w___istv_subb_teiln_8c_1a883b592149584b34169c2c9f9dcec7b1" prot="public" static="no">
+        <name>MESSAGE_0x061D_ARRAY_SIZE</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DID 0x061D array isze <simplesect kind="remark"><para>values 6u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_IstvSubbTeiln.c" line="70" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_IstvSubbTeiln.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_g_w___istv_subb_teiln_8c_1a26cf6f89d31b432ca338185fa337dbdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType GW_Read_Identification_0x061D</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>GW_Read_Identification_0x061D</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0x061D will give Construction of Subbus participants. We can read DID 0x061D by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-0x061D data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="GW_Read_Identification_0x061D.png">GW_Read_Identification_0x061D Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_g_w___istv_subb_teiln_8c_8test_1af01a4a78ac6538512c07268b9afbabb8" kindref="member">TEST_GW_Read_Identification_0x061D</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on opstatus and Data</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000042"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_4761 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_IstvSubbTeiln.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_IstvSubbTeiln.c" bodystart="118" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file contains the code for GW_IstvSubbTeiln functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_g_w___istv_subb_teiln_8c" kindref="compound">GW_IstvSubbTeiln.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#9 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif61827 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/11/30 </para></simplesect>
+Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+ Expected test coverage (100%) and type of test coverage is C1. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_IstvSubbTeiln.c"/>
+  </compounddef>
+</doxygen>

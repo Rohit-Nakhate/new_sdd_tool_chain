@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte___cs_h___c_s_8h" kind="file" language="C++">
+    <compoundname>Rte_CsH_CS.h</compoundname>
+    <includes local="yes">NvM.h</includes>
+    <includes local="yes">CsmPi.h</includes>
+    <includes local="yes">KY_KessyEvMngr.h</includes>
+    <includedby refid="_cs_h___extra_definitions_8h" local="yes">CsH_ExtraDefinitions.h</includedby>
+    <incdepgraph>
+      <node id="102">
+        <label>KY_KessyEvMngr.h</label>
+      </node>
+      <node id="101">
+        <label>CsmPi.h</label>
+      </node>
+      <node id="99">
+        <label>Rte_CsH_CS.h</label>
+        <link refid="_rte___cs_h___c_s_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>NvM.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="103">
+        <label>Rte_CsH_CS.h</label>
+        <link refid="_rte___cs_h___c_s_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>CsH_ExtraDefinitions.h</label>
+        <link refid="_cs_h___extra_definitions_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" prot="public" static="no">
+        <name>Rte_Call_CsH_KessyEvMngr_setEvRequest</name>
+        <initializer>KessyEvMngr_setEvRequest</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to FFB SKC Ubertragung request. It is implemented on WFS component side <linebreak/>
+</para><para>This function is called by CsH to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the result of FFB SKC Uebertragung to WFS <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsH during key learning process <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bFFBResult <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retval - RTE Status for evaluated operation. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="FFBDatenKommunikationResp_FFBSKCUebertragungResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Should be tested on WFS side. CsH is just calling this function. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Response function for FFB SKC Uebertragung. <linebreak/>
+ **************************************************************************</para></simplesect>
+Event function of the CsH module. The function provides the response to FFB Daten Ubertragung request. It is implemented on WFS component side <linebreak/>
+</para><para>This function is called by CsH to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the result of FFB Daten Uebertragung to WFS <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsH during key learning process <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bFFBResult <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retval - RTE Status for evaluated operation. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="FFBDatenKommunikationResp_FFBDatenUebertragungResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Should be tested on WFS side. CsH is just calling this function. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Response function for FFB Daten Uebertragung. <linebreak/>
+ **************************************************************************</para></simplesect>
+Rte_Call_CsH_FFBDatenKommunikationResp_FFBSKCUebertragungResp Macro **************************************************************************</para><para>Rte_Call_CsH_FFBDatenKommunikationResp_FFBDatenUebertragungResp Macro **************************************************************************</para><para>Rte_Call_CsH_KessyEvMngr_setEvRequest Macro </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/Rte_CsH_CS.h" line="155" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/Rte_CsH_CS.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rte functions for CsH SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_rte___cs_h___c_s_8h" kindref="compound">Rte_CsH_CS.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+$Author: Robert Mastalerz (uidm5889), Leszek Rafinski (uie99376), Maciej Lankow(uie32362) $ <simplesect kind="rcs"><title>Date</title><para>30.05.2022 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/Rte_CsH_CS.h"/>
+  </compounddef>
+</doxygen>

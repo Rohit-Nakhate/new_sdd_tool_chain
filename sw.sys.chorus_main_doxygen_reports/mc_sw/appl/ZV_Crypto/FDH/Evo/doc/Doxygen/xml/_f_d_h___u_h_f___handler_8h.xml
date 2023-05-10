@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_f_d_h___u_h_f___handler_8h" kind="file" language="C++">
+    <compoundname>FDH_UHF_Handler.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes refid="_f_d_h___data_types_8h" local="yes">FDH_DataTypes.h</includes>
+    <includedby refid="_f_d_h___task_8c" local="yes">FDH_Task.c</includedby>
+    <includedby refid="_f_d_h___u_h_f___handler_8c" local="yes">FDH_UHF_Handler.c</includedby>
+    <incdepgraph>
+      <node id="80">
+        <label>FDH_UHF_Handler.h</label>
+        <link refid="_f_d_h___u_h_f___handler_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>FDH_DataTypes.h</label>
+        <link refid="_f_d_h___data_types_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="83">
+        <label>Rte_FDH_Type.h</label>
+      </node>
+      <node id="84">
+        <label>FDH_nvram.h</label>
+        <link refid="_f_d_h___nv_ram_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="85">
+        <label>FDH_UHF_Handler.h</label>
+        <link refid="_f_d_h___u_h_f___handler_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>FDH_UHF_Handler.c</label>
+        <link refid="_f_d_h___u_h_f___handler_8c"/>
+      </node>
+      <node id="86">
+        <label>FDH_Task.c</label>
+        <link refid="_f_d_h___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1aedd834be1fcef2567131ca025360d00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_MessageInitialization</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_MessageInitialization</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init function for <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref>.</para><para>Function initializes internal buffer which is utilized during UHF telegram reception and processing. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> - W access </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>sUHF_Message structure fields are initialized for cyclic processing in RUN mode.  <image type="html" name="UHF_MessageInitialization.png">Activity Diagram UHF_MessageInitialization</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1aeba2f475238c62d364f0fea5d2aec724" kindref="member">TEST_UHF_MessageInitialization</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check if structure fields are set to correct init value. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function to initialize UHF_Message data.<linebreak/>
+ Init function for <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref>.</para></simplesect>
+Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="117" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1520" bodyend="1543"/>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <references refid="struct_s___u_h_f___message_1a4e7d012a243d5c83c873570a1a68dc12" compoundref="_f_d_h___data_types_8h" startline="241">S_UHF_Message::sPayload</references>
+        <references refid="struct_s___u_h_f___payload_1afce0b404b5e5c6277d174f2b3f5446ed" compoundref="_f_d_h___data_types_8h" startline="228">S_UHF_Payload::FZV</references>
+        <references refid="struct_s___u_h_f___payload_1ad78c9b3a221da3c08035025acf4ddb06" compoundref="_f_d_h___data_types_8h" startline="229">S_UHF_Payload::Comfort</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1a386e6a0f41df54db73f615926d150249" compoundref="_f_d_h___data_types_8h" startline="208">S_FDH_Flags::DiscardTelegram</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="struct_s___f_d_h___flags_1a40aae55bc90b290384d79ecc01e721fa" compoundref="_f_d_h___data_types_8h" startline="209">S_FDH_Flags::FirstFzvTelegram</references>
+        <references refid="struct_s___f_d_h___flags_1ae924a49b17f2b661a07052ae31d4933e" compoundref="_f_d_h___data_types_8h" startline="210">S_FDH_Flags::FirstFzvTelegramWasSet</references>
+        <references refid="struct_s___f_d_h___flags_1a72db2ce813ebd90f7a12735b01e49553" compoundref="_f_d_h___data_types_8h" startline="211">S_FDH_Flags::NewMessage</references>
+        <references refid="struct_s___f_d_h___flags_1acee0fbc7b92a295ca3feff0d445a262c" compoundref="_f_d_h___data_types_8h" startline="212">S_FDH_Flags::TransponderIDValid</references>
+        <references refid="struct_s___f_d_h___flags_1a999d9fb13617448332cd9d42d62c6744" compoundref="_f_d_h___data_types_8h" startline="213">S_FDH_Flags::SignatureValid</references>
+        <references refid="struct_s___f_d_h___flags_1a10ec92cb5c70b22ec94f092386136466" compoundref="_f_d_h___data_types_8h" startline="214">S_FDH_Flags::ResetButtonAction</references>
+        <references refid="struct_s___f_d_h___flags_1a4d72611961106d2a7c817ebb6d25ed47" compoundref="_f_d_h___data_types_8h" startline="215">S_FDH_Flags::ValidFzv</references>
+        <references refid="struct_s___f_d_h___flags_1ad33dd547bd941af33350ee5d8601ca86" compoundref="_f_d_h___data_types_8h" startline="216">S_FDH_Flags::LFBit</references>
+        <references refid="struct_s___f_d_h___flags_1a9db0e1217a7e35b7bccd90239db46d49" compoundref="_f_d_h___data_types_8h" startline="217">S_FDH_Flags::LFRangeEntire</references>
+        <references refid="struct_s___f_d_h___flags_1ac859deeeb43115a072733d631a909338" compoundref="_f_d_h___data_types_8h" startline="218">S_FDH_Flags::LFRangeTrunk</references>
+        <references refid="struct_s___u_h_f___message_1a42e9586be0fe6bf667705cfa18833ecc" compoundref="_f_d_h___data_types_8h" startline="243">S_UHF_Message::u8KeyIndex</references>
+        <references refid="_f_d_h___data_types_8h_1ad7b59ba1a4f601f9825539e4fe22d2b4" compoundref="_f_d_h___data_types_8h" startline="75">KEY_INDEX_UNSET</references>
+        <references refid="struct_s___u_h_f___message_1ae4db5cff50d8b2ec3129c9cfbaa23674" compoundref="_f_d_h___data_types_8h" startline="244">S_UHF_Message::u8RFTransponderID</references>
+        <references refid="_f_d_h___data_types_8h_1a316032de5f8a4b7f79157f1241636881" compoundref="_f_d_h___data_types_8h" startline="47">RAW_UHF_TRANSPONDER_ID_LENGTH</references>
+        <references refid="struct_s___u_h_f___message_1a85f97c28ba8a4a35052960b3863d6811" compoundref="_f_d_h___data_types_8h" startline="245">S_UHF_Message::u8RFPortNumber</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1ac981eb87ffc208d764a1e0c5b149deee" compoundref="_f_d_h___u_h_f___handler_8c" startline="184">PORT_UNKNOWN_TELEGRAMM</references>
+        <references refid="struct_s___u_h_f___message_1a4e657f495d584ddbfbb481114c0449f7" compoundref="_f_d_h___data_types_8h" startline="246">S_UHF_Message::u8RFFunctionNumber</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a2145fccf6492f1d613541e600428312d" compoundref="_f_d_h___u_h_f___handler_8c" startline="200">FUNC_UNKNOWN_FUNC</references>
+        <references refid="struct_s___u_h_f___message_1a0172e0f1d6ed6d63bdbc954387eae0cc" compoundref="_f_d_h___data_types_8h" startline="247">S_UHF_Message::u8BatteryLevel</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1af83b5a9e1a24dee4df37dd117ed90d10" compoundref="_f_d_h___u_h_f___handler_8c" startline="232">BATTERY_VOLTAGE_UNKNOWN</references>
+        <references refid="struct_s___u_h_f___message_1a891679f8ec5e82638f01d5e4ffe06012" compoundref="_f_d_h___data_types_8h" startline="248">S_UHF_Message::u8SignalStaerke</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1acb39db32c8ffa3f3738f2af628364dca" compoundref="_f_d_h___u_h_f___handler_8c" startline="239">STAERKE_UNKNOWN</references>
+        <referencedby refid="_f_d_h___task_8c_1a75010decb651eb86f0de841b2d3cf9dd" compoundref="_f_d_h___task_8c" startline="92" endline="98">FDH_Start</referencedby>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1aeba2f475238c62d364f0fea5d2aec724" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="889" endline="942">TEST_UHF_MessageInitialization</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1a6c7a346da21b7e706a5bab4a95205593" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_TimerInitialization</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_TimerInitialization</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function initializes internal timers i.e. timers are stopped. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" kindref="member">u32FDH_TimerA</ref> - initialized with STOP value. <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a32d8123dc637715cf719ea93ccc674cb" kindref="member">u32FDH_TimerB</ref> - initialized with STOP value. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Timers will not run unless intentionally loaded started during UHF telegrams processing flow. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1a32de7e9b84fabb068246171601d6c0d7" kindref="member">TEST_UHF_TimerInitialization</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check if timers are set to correct init value. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function to initialize internal timers.<linebreak/>
+ Function initializes internal timers i.e. timers are stopped.</para></simplesect>
+Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="149" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1551" bodyend="1555"/>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" compoundref="_f_d_h___u_h_f___handler_8c" startline="305">u32FDH_TimerA</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1afdc7794c9c2ba84db2d50f984cbcadf1" compoundref="_f_d_h___u_h_f___handler_8c" startline="247">FDH_TIMERA_STOP</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a32d8123dc637715cf719ea93ccc674cb" compoundref="_f_d_h___u_h_f___handler_8c" startline="319">u32FDH_TimerB</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1af0e298eb56b459228285f30c64fc5048" compoundref="_f_d_h___u_h_f___handler_8c" startline="254">FDH_TIMERB_STOP</references>
+        <referencedby refid="_f_d_h___task_8c_1a75010decb651eb86f0de841b2d3cf9dd" compoundref="_f_d_h___task_8c" startline="92" endline="98">FDH_Start</referencedby>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1a32de7e9b84fabb068246171601d6c0d7" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="954" endline="971">TEST_UHF_TimerInitialization</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1ab59c8f72efdda193e4d984b8c84a47d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_CyclicHandle</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_CyclicHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Main cyclic function for UHF message processing.</para><para>Function is handling cyclic processing of WCZ ranges of received and validated FZV telegrams. The simplified flow is: <linebreak/>
+ Every 10ms the following flow is executed: <linebreak/>
+ <ndash/> If new message received and validated (signature, transponder) <linebreak/>
+ -<mdash/> If button is reset (flag set in evUHFEmpfang) -&gt; clear existing output events; clear new message event for comfort function <linebreak/>
+ -<mdash/> Otherwise, switch (telegram function) <linebreak/>
+ -<mdash/> CASE FZV <linebreak/>
+ ---<mdash/> If WCZ storage in NVM is valid (completed R/W, no errors) <linebreak/>
+ -----<mdash/> If Key index of current (new) message is not disabled <linebreak/>
+ -------<mdash/> store it as last key index <linebreak/>
+ -------<mdash/> If first telegram in burst -&gt; setup slot for NVM write and reset timer used for FZV burst detection <linebreak/>
+ -------<mdash/> copy to internal buffer (not nv yet) incoming WCZ value <linebreak/>
+ -------<mdash/> calculate WCZ and determine into which range it falls <linebreak/>
+ -------<mdash/> trigger storage of WCZ to NVM <linebreak/>
+ -------<mdash/> if the present key is not deactivated already (KEY_STATUS_INACTIVE_MECH_KESSY) <linebreak/>
+ ---------<mdash/> calculate status of key (based on present range and recent status in NVM) and trigger storage of updated value into NVM <linebreak/>
+ ---------<mdash/> -&gt; range 1: -&gt; status = 0 <linebreak/>
+ ---------<mdash/> -&gt; range 2: -&gt; increment status by 1 up to 3 times <linebreak/>
+ ---------<mdash/> -&gt; range 3: -&gt; deactivate (KEY_STATUS_INACTIVE_MECH_KESSY) <linebreak/>
+ -------<mdash/> clear first telegram flag (as all checks processed already) <linebreak/>
+ -----<mdash/> if in range 1 -&gt; set valid=1 of the present key (=keyIndex od processed telegram) <linebreak/>
+ -----<mdash/> discard telegram if in range 3 <linebreak/>
+ ---<mdash/> if valid key -&gt; report button code (generate event for ZV Lib), reload and start timer A; stop timer B <linebreak/>
+ -<mdash/> CASE COMFORT <linebreak/>
+ ---<mdash/> if timerA is running and timerB is stopped OR timerA is stopped and timerB is running <linebreak/>
+ -----<mdash/> report comfort event button code (generate event for ZV Lib), reload and start timerB; stop timerA <linebreak/>
+ -<mdash/> CASE RELEASE <linebreak/>
+ ---<mdash/> stop timerA and timerB <linebreak/>
+ ---<mdash/> clear button code report (event) <linebreak/>
+ <ndash/> clear validation flag of transponder Id, signature, new message flag <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_464} {SWR_L3_CRoute_FFB_481} {SWR_L3_CRoute_FFB_275} {SWR_L3_CRoute_FFB_297} {SWR_L3_CRoute_FFB_354} {SWR_L3_CRoute_FFB_174} {SWR_L3_CRoute_FFB_273} {SWR_L3_CRoute_FFB_287} {SWR_L3_CRoute_FFB_288} {SWR_L3_CRoute_FFB_263} {SWR_L3_CRoute_FFB_289} {SWR_L3_CRoute_FFB_272} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> - R access to most of the fields in the structure, W to some like <bold>DiscardTelegram</bold>. This structure is major input data to this cyclic function, fields like &quot;event/new value/validity&quot; are written when values are &quot;consumed&quot;. <linebreak/>
+ <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> - direct R access to status fields in structure, but also indirect access through used function calls e.g. <ref refid="_f_d_h___w_c_z___handler_8c_1a2f62d9020dbb8b00c89b3f0a671e9250" kindref="member">WCZ_SetValue</ref>. <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" kindref="member">u32FDH_TimerA</ref> u32FDH_TimerB - R/W access, globally declared timers, directly accessed. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>General flow as follows: Input telegram, initially received and validated/processed (evUHFEmpfang, UHF_MessageValidation) in structure sUHF_Message in this cyclic call are the consumed and output signals are generated over <ref refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" kindref="member">ButtonCodeReport</ref> function. Local memory is declared for WCZin, WCZincprev, WCZCalc while telegram burst is processed. <linebreak/>
+ <image type="html" name="UHF_CyclicHandle.png">Activity Diagram UHF_CyclicHandle</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1aa13f728db6ee8d63972303c94e112aca" kindref="member">TEST_UHF_CyclicHandle</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_354. </para><para>SWR_L3_CRoute_FFB_205. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_275. </para><para>SWR_L3_CRoute_FFB_297. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_327. </para><para>SWR_L3_CRoute_FFB_481. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_464. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_174. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_273. </para><para>SWR_L3_CRoute_FFB_287. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_288. </para><para>SWR_L3_CRoute_FFB_289. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_263. </para><para>SWR_L3_CRoute_FFB_272. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_268. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Main cyclic function for UHF message processing.</para><para>Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="283" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1566" bodyend="1646"/>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1a72db2ce813ebd90f7a12735b01e49553" compoundref="_f_d_h___data_types_8h" startline="211">S_FDH_Flags::NewMessage</references>
+        <references refid="struct_s___f_d_h___flags_1acee0fbc7b92a295ca3feff0d445a262c" compoundref="_f_d_h___data_types_8h" startline="212">S_FDH_Flags::TransponderIDValid</references>
+        <references refid="struct_s___f_d_h___flags_1a999d9fb13617448332cd9d42d62c6744" compoundref="_f_d_h___data_types_8h" startline="213">S_FDH_Flags::SignatureValid</references>
+        <references refid="struct_s___f_d_h___flags_1a10ec92cb5c70b22ec94f092386136466" compoundref="_f_d_h___data_types_8h" startline="214">S_FDH_Flags::ResetButtonAction</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" compoundref="_f_d_h___u_h_f___handler_8c" startline="1226" endline="1316">ButtonCodeReport</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a71c4bc44be230fb4491ad665527d20fe" compoundref="_f_d_h___u_h_f___handler_8c" startline="92">PAYLOAD_BUTTONCODE_NO</references>
+        <references refid="_f_d_h___data_types_8h_1ad7b59ba1a4f601f9825539e4fe22d2b4" compoundref="_f_d_h___data_types_8h" startline="75">KEY_INDEX_UNSET</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a75da064fb0766e6e4edd36fa1cdd6f74" compoundref="_f_d_h___u_h_f___handler_8c" startline="216">FUNC_NUMMER_COMFORT</references>
+        <references refid="struct_s___u_h_f___message_1a4e657f495d584ddbfbb481114c0449f7" compoundref="_f_d_h___data_types_8h" startline="246">S_UHF_Message::u8RFFunctionNumber</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a0676a212ad90663e1c6f2eab842044fb" compoundref="_f_d_h___u_h_f___handler_8c" startline="192">PORT_FFB_TELEGRAMM</references>
+        <references refid="struct_s___u_h_f___message_1a85f97c28ba8a4a35052960b3863d6811" compoundref="_f_d_h___data_types_8h" startline="245">S_UHF_Message::u8RFPortNumber</references>
+        <references refid="struct_s___u_h_f___message_1a42e9586be0fe6bf667705cfa18833ecc" compoundref="_f_d_h___data_types_8h" startline="243">S_UHF_Message::u8KeyIndex</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1abf672f02f6d92f9edbfda912fd0b9d3d" compoundref="_f_d_h___u_h_f___handler_8c" startline="208">FUNC_NUMMER_FZV</references>
+        <references refid="_f_d_h___w_c_z___handler_8h_1a24fdd3fac3c26aae152b7b2d7b2c2005" compoundref="_f_d_h___w_c_z___handler_8c" startline="3025" endline="3136">WCZ_Validate</references>
+        <references refid="struct_s___u_h_f___message_1a4e7d012a243d5c83c873570a1a68dc12" compoundref="_f_d_h___data_types_8h" startline="241">S_UHF_Message::sPayload</references>
+        <references refid="struct_s___u_h_f___payload_1afce0b404b5e5c6277d174f2b3f5446ed" compoundref="_f_d_h___data_types_8h" startline="228">S_UHF_Payload::FZV</references>
+        <references refid="struct_s___payload___f_z_v_1a45aae43ddd0cb16d8df15f3453760414" compoundref="_f_d_h___data_types_8h" startline="176">S_Payload_FZV::ButtonCode</references>
+        <references refid="_f_d_h___data_types_8h_1aca55ae1d96ed6abf8f8ed91234a16cfd" compoundref="_f_d_h___data_types_8h" startline="28">UNUSED_RETVAL</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" compoundref="_f_d_h___u_h_f___handler_8c" startline="305">u32FDH_TimerA</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a32d8123dc637715cf719ea93ccc674cb" compoundref="_f_d_h___u_h_f___handler_8c" startline="319">u32FDH_TimerB</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1af0e298eb56b459228285f30c64fc5048" compoundref="_f_d_h___u_h_f___handler_8c" startline="254">FDH_TIMERB_STOP</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1afdc7794c9c2ba84db2d50f984cbcadf1" compoundref="_f_d_h___u_h_f___handler_8c" startline="247">FDH_TIMERA_STOP</references>
+        <references refid="struct_s___u_h_f___payload_1ad78c9b3a221da3c08035025acf4ddb06" compoundref="_f_d_h___data_types_8h" startline="229">S_UHF_Payload::Comfort</references>
+        <references refid="struct_s___payload___comfort_1a748b9359e5f569861ff86287f8d8d507" compoundref="_f_d_h___data_types_8h" startline="193">S_Payload_Comfort::ButtonCode</references>
+        <references refid="struct_s___f_d_h___flags_1ad33dd547bd941af33350ee5d8601ca86" compoundref="_f_d_h___data_types_8h" startline="216">S_FDH_Flags::LFBit</references>
+        <references refid="struct_s___f_d_h___flags_1a9db0e1217a7e35b7bccd90239db46d49" compoundref="_f_d_h___data_types_8h" startline="217">S_FDH_Flags::LFRangeEntire</references>
+        <references refid="struct_s___f_d_h___flags_1ac859deeeb43115a072733d631a909338" compoundref="_f_d_h___data_types_8h" startline="218">S_FDH_Flags::LFRangeTrunk</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1ab167ed4a762f29868a70e79443bfc0d5" compoundref="_f_d_h___u_h_f___handler_8c" startline="224">FUNC_NUMMER_RELEASE</references>
+        <referencedby refid="_f_d_h___task_8c_1a039ddc8eb74041064ebea355e50f56ad" compoundref="_f_d_h___task_8c" startline="116" endline="126">FDH_TaskCyclicEvent</referencedby>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1aa13f728db6ee8d63972303c94e112aca" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="983" endline="1161">TEST_UHF_CyclicHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1ac459fa4d1df04398a423cfc3de7a057f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_TimerHandle</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_TimerHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handling UHF timer A and B.</para><para>Timer A is loaded/started by FZV telegram reception and B is loaded/started by Comfort telegram reception. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_779} {SWR_L3_CRoute_FFB_260} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" kindref="member">u32FDH_TimerA</ref> and <ref refid="_f_d_h___u_h_f___handler_8c_1a32d8123dc637715cf719ea93ccc674cb" kindref="member">u32FDH_TimerB</ref> - both timer are modified. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref> reloads timers when Comfort telegrams are processed, when any timer expire UHF_CyclicHandle consumes the events. In addition direct bypass of clearing output signals when both timers expired via call <ref refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" kindref="member">ButtonCodeReport</ref> <linebreak/>
+ <image type="html" name="UHF_TimerHandle.png">Activity Diagram UHF_TimerHandle</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1adf7af2400bf8568189772a6b8c6b7d9a" kindref="member">TEST_UHF_TimerHandle</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_260. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_291. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_779. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function handling UHF timer A and B.</para><para>Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="337" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1654" bodyend="1677"/>
+        <references refid="_f_d_h___u_h_f___handler_8c_1afdc7794c9c2ba84db2d50f984cbcadf1" compoundref="_f_d_h___u_h_f___handler_8c" startline="247">FDH_TIMERA_STOP</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a1eb2515847bd794c3d5b1bf2f4ca287e" compoundref="_f_d_h___u_h_f___handler_8c" startline="305">u32FDH_TimerA</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1af0e298eb56b459228285f30c64fc5048" compoundref="_f_d_h___u_h_f___handler_8c" startline="254">FDH_TIMERB_STOP</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a32d8123dc637715cf719ea93ccc674cb" compoundref="_f_d_h___u_h_f___handler_8c" startline="319">u32FDH_TimerB</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" compoundref="_f_d_h___u_h_f___handler_8c" startline="1226" endline="1316">ButtonCodeReport</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a71c4bc44be230fb4491ad665527d20fe" compoundref="_f_d_h___u_h_f___handler_8c" startline="92">PAYLOAD_BUTTONCODE_NO</references>
+        <references refid="_f_d_h___data_types_8h_1ad7b59ba1a4f601f9825539e4fe22d2b4" compoundref="_f_d_h___data_types_8h" startline="75">KEY_INDEX_UNSET</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <referencedby refid="_f_d_h___task_8c_1a039ddc8eb74041064ebea355e50f56ad" compoundref="_f_d_h___task_8c" startline="116" endline="126">FDH_TaskCyclicEvent</referencedby>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1adf7af2400bf8568189772a6b8c6b7d9a" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="1173" endline="1243">TEST_UHF_TimerHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1aada6cc70095efe54ee976dff9e06383d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void evCheckSignatureResp</definition>
+        <argsstring>(boolean bSignatureValid, uint8 numCheckSignatureStatus)</argsstring>
+        <name>evCheckSignatureResp</name>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bSignatureValid</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numCheckSignatureStatus</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function providing result to the C/S service evCheckSignatureReq.</para><para>This is callout function (from CSH module), which is providing result to the C/S service evCheckSignatureReq, called in <ref refid="_f_d_h___u_h_f___handler_8c_1ac2dde2331a6fa6d668868d075e9f2a41" kindref="member">UHF_MessageValidation</ref>. There is no pending status supported. <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {{SWR_L3_CRoute_FFB_220} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bSignatureValid - true, if signature correct, otherwise false. <linebreak/>
+ uint8 numCheckSignatureStatus - in case of status 0, signature check is complete, otherwise ignore. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void  <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.SignatureValid - W access.  N/A  <image type="html" name="evCheckSignatureResp.png">Activity Diagram evCheckSignatureResp</image>
+   SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1aa7d25c1dfdefd911d94271a1f521b15a" kindref="member">TEST_evCheckSignatureResp</ref> <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {SWR_L3_CRoute_FFB_220}. {SWR_L3_CRoute_FFB_222}. <linebreak/>
+ Function providing result to the C/S service evCheckSignatureReq.</para></simplesect>
+Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="381" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1685" bodyend="1695"/>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1a999d9fb13617448332cd9d42d62c6744" compoundref="_f_d_h___data_types_8h" startline="213">S_FDH_Flags::SignatureValid</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1aa7d25c1dfdefd911d94271a1f521b15a" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="1255" endline="1304">TEST_evCheckSignatureResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1a1eb6c540454d52af6de63805df3dda18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void evCheckTransponderIDResp</definition>
+        <argsstring>(boolean bTransponderIDValid, uint8 numCheckTransponderIDStatus)</argsstring>
+        <name>evCheckTransponderIDResp</name>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bTransponderIDValid</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numCheckTransponderIDStatus</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function providing result to the C/S service evCheckTransponderIDReq.</para><para>This is callout function (from CSH module), which is providing result to the C/S service evCheckTransponderIDReq, called in <ref refid="_f_d_h___u_h_f___handler_8c_1ac2dde2331a6fa6d668868d075e9f2a41" kindref="member">UHF_MessageValidation</ref>. There is no pending status supported. <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bTransponderIDValid - true, if transponder Id is recognized (learnt), otherwise false. <linebreak/>
+ uint8 numCheckTransponderIDStatus - in case of status 0, transponder check is complete, otherwise ignore. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.TransponderIDValid - W access. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="evCheckSignatureResp.png">Activity Diagram evCheckSignatureResp</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1a7282312f592478cd94ba1aaf37804186" kindref="member">TEST_evCheckTransponderIDResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_207. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function providing result to the C/S service evCheckTransponderIDReq.</para><para>Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="424" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1703" bodyend="1713"/>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1acee0fbc7b92a295ca3feff0d445a262c" compoundref="_f_d_h___data_types_8h" startline="212">S_FDH_Flags::TransponderIDValid</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1a7282312f592478cd94ba1aaf37804186" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="1316" endline="1365">TEST_evCheckTransponderIDResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___u_h_f___handler_8h_1a31a9ac319f44da8c7a4d3dc5aec5475d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_z_v_crypto___s_c_i_d_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType evUHFEmpfang</definition>
+        <argsstring>(const uint8 *rawUHFTransponderID, uint8 numUHFPortNumber, uint8 numUHFFunktionsnummer, uint8 numBatteryLevel, const uint8 *rawUHFPayload, boolean bCRCValid, uint8 u8UHFSignalstaerke)</argsstring>
+        <name>evUHFEmpfang</name>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>rawUHFTransponderID</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numUHFPortNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numUHFFunktionsnummer</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numBatteryLevel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>rawUHFPayload</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bCRCValid</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>u8UHFSignalstaerke</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Callout function (from CSH module), which is forwarding new UHF FFB telegram for processing.</para><para>The simplified flow is: <linebreak/>
+ <ndash/> if CRC is correct and telegram is for FFB <linebreak/>
+ -<mdash/> store button code / frame counter for next telegram analysis in static variable <linebreak/>
+ -<mdash/> CASE FZV telegram <linebreak/>
+ ---<mdash/> call evUHFEmpfang_FZV <linebreak/>
+ -<mdash/> CASE COMFORT telegram <linebreak/>
+ ---<mdash/> call evUHFEmpfang_Comfort <linebreak/>
+ -<mdash/> CASE RELEASE telegram <linebreak/>
+ ---<mdash/> call evUHFEmpfang_Release <linebreak/>
+ -<mdash/> ENDCASE <linebreak/>
+ -<mdash/> if function and key index valid <linebreak/>
+ ---<mdash/> store other telegram fields: function, port, battery level, signal strength (starke) <linebreak/>
+ ---<mdash/> validate message (transponder Id, signature, battery level) <linebreak/>
+ ---<mdash/> set new message trigger. <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_414} {SWR_L3_CRoute_FFB_354} {SWR_L3_CRoute_FFB_287} {SWR_L3_CRoute_FFB_288} {SWR_L3_CRoute_FFB_284} {SWR_L3_CRoute_FFB_285} {SWR_L3_CRoute_FFB_259} {SWR_L3_CRoute_FFB_283} {SWR_L3_CRoute_FFB_293} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rawUHFTransponderID - pointer to byte oriented transponder Id of received telegram <linebreak/>
+ uint8 numUHFPortNumber - only if 1 (FFB telegram) to be processed, otherwise kessy <linebreak/>
+ uint8 numUHFFunktionsnummer - function of the telegram: FZV=0, Comfort=1, Release=2 <linebreak/>
+ uint8 numBatteryLevel - for further check, stored along with other data from telegram in local buffer <linebreak/>
+ uint8 rawUHFPayload[] - raw data of telegram for parsing, includes WCZ, signature,... <linebreak/>
+ boolean bCRCValid - true if CRC of the telegram content is valid <linebreak/>
+ uint8 u8UHFSignalstaerke - signal strength <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - RTE status. </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.TransponderIDValid - W access. <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sPayload.FZV - R/W access <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sPayload.Comfort - R/W access <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8KeyIndex - R/W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8RFTransponderID - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8RFPortNumber - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8RFFunctionNumber - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8BatteryLevel - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> u8SignalStaerke - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.LFBit - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.LFRangeEntire - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.LFRangeTrunk - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.DiscardTelegram - R/W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.FirstFzvTelegram - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.ValidFzv - R/W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.ResetButtonAction - W <linebreak/>
+ <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref> sFlags.NewMessage - W <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Callout from UHF Master on new telegram reception to initiate processing. sUHF internal message attributes/flags are filled in and message validation is next step, then <ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref> will process further the new telegram.  <image type="html" name="evUHFEmpfang.png">Activity Diagram evUHFEmpfang</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___u_h_f___handler_8c_8test_1ae09fd920c6af69fc20416e00fb84e38c" kindref="member">TEST_evUHFEmpfang</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_192. </para><para>SWR_L3_CRoute_FFB_361. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_205. </para><para>SWR_L3_CRoute_FFB_206. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_208. </para><para>SWR_L3_CRoute_FFB_211. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_324. </para><para>SWR_L3_CRoute_FFB_300. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_178. </para><para>SWR_L3_CRoute_FFB_181. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_182. </para><para>SWR_L3_CRoute_FFB_301. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_406. </para><para>SWR_L3_CRoute_FFB_407. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_408. </para><para>SWR_L3_CRoute_FFB_259. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_354. </para><para>SWR_L3_CRoute_FFB_287. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_288. </para><para>SWR_L3_CRoute_FFB_228. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_324. </para><para>SWR_L3_CRoute_FFB_283. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_284. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_285. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_293. </para><para>SWR_L3_CRoute_FFB_414. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Callout function (from CSH module), which is forwarding new UHF FFB telegram for processing.</para><para>Please find detail information in the header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h" line="571" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_UHF_Handler.c" bodystart="1721" bodyend="1796"/>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a0676a212ad90663e1c6f2eab842044fb" compoundref="_f_d_h___u_h_f___handler_8c" startline="192">PORT_FFB_TELEGRAMM</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1af6212aaf67d69d956c3e60b3492030ef" compoundref="_f_d_h___u_h_f___handler_8c" startline="1344" endline="1361">TransponderIDComparison</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <references refid="struct_s___u_h_f___message_1ae4db5cff50d8b2ec3129c9cfbaa23674" compoundref="_f_d_h___data_types_8h" startline="244">S_UHF_Message::u8RFTransponderID</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1a10ec92cb5c70b22ec94f092386136466" compoundref="_f_d_h___data_types_8h" startline="214">S_FDH_Flags::ResetButtonAction</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1abf672f02f6d92f9edbfda912fd0b9d3d" compoundref="_f_d_h___u_h_f___handler_8c" startline="208">FUNC_NUMMER_FZV</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a0fa00eefd1c91118d789a69c23631dbc" compoundref="_f_d_h___u_h_f___handler_8c" startline="1369" endline="1428">evUHFEmpfang_FZV</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a75da064fb0766e6e4edd36fa1cdd6f74" compoundref="_f_d_h___u_h_f___handler_8c" startline="216">FUNC_NUMMER_COMFORT</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a2507087ff97a971fa81971b7e337a43f" compoundref="_f_d_h___u_h_f___handler_8c" startline="1436" endline="1490">evUHFEmpfang_Comfort</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1ab167ed4a762f29868a70e79443bfc0d5" compoundref="_f_d_h___u_h_f___handler_8c" startline="224">FUNC_NUMMER_RELEASE</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a4068e8ef94db2c449d21462ab7b32642" compoundref="_f_d_h___u_h_f___handler_8c" startline="1498" endline="1510">evUHFEmpfang_Release</references>
+        <references refid="_f_d_h___data_types_8h_1a940ae083682553706172c769246a7b14" compoundref="_f_d_h___data_types_8h" startline="22">bTrue</references>
+        <references refid="_f_d_h___data_types_8h_1a316032de5f8a4b7f79157f1241636881" compoundref="_f_d_h___data_types_8h" startline="47">RAW_UHF_TRANSPONDER_ID_LENGTH</references>
+        <references refid="struct_s___u_h_f___message_1a85f97c28ba8a4a35052960b3863d6811" compoundref="_f_d_h___data_types_8h" startline="245">S_UHF_Message::u8RFPortNumber</references>
+        <references refid="struct_s___u_h_f___message_1a4e657f495d584ddbfbb481114c0449f7" compoundref="_f_d_h___data_types_8h" startline="246">S_UHF_Message::u8RFFunctionNumber</references>
+        <references refid="struct_s___u_h_f___message_1a0172e0f1d6ed6d63bdbc954387eae0cc" compoundref="_f_d_h___data_types_8h" startline="247">S_UHF_Message::u8BatteryLevel</references>
+        <references refid="struct_s___u_h_f___message_1a891679f8ec5e82638f01d5e4ffe06012" compoundref="_f_d_h___data_types_8h" startline="248">S_UHF_Message::u8SignalStaerke</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1ac2dde2331a6fa6d668868d075e9f2a41" compoundref="_f_d_h___u_h_f___handler_8c" startline="1084" endline="1142">UHF_MessageValidation</references>
+        <references refid="struct_s___f_d_h___flags_1a386e6a0f41df54db73f615926d150249" compoundref="_f_d_h___data_types_8h" startline="208">S_FDH_Flags::DiscardTelegram</references>
+        <references refid="struct_s___f_d_h___flags_1a72db2ce813ebd90f7a12735b01e49553" compoundref="_f_d_h___data_types_8h" startline="211">S_FDH_Flags::NewMessage</references>
+        <references refid="_z_v_crypto___s_c_i_d_8c_8test_1af29b2c4145853fe948d72594a1b03039" compoundref="_z_v_crypto___s_c_i_d_8c_8test" startline="63">RTE_E_OK</references>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_8test_1ae09fd920c6af69fc20416e00fb84e38c" compoundref="_f_d_h___u_h_f___handler_8c_8test" startline="1752" endline="1928">TEST_evUHFEmpfang</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the FDH functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_f_d_h___u_h_f___handler_8h" kindref="compound">FDH_UHF_Handler.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/05/11 </para></simplesect>
+</para><para>This file can be included by other modules. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_UHF_Handler.h"/>
+  </compounddef>
+</doxygen>

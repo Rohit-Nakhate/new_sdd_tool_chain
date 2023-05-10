@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_lin_task_8h" kind="file" language="C++">
+    <compoundname>LinTask.h</compoundname>
+    <includes local="yes">Os_api.h</includes>
+    <includes local="yes">Can.h</includes>
+    <includes local="yes">RoutingOps.h</includes>
+    <includedby refid="_lin_task_8c" local="yes">LinTask.c</includedby>
+    <incdepgraph>
+      <node id="158">
+        <label>Os_api.h</label>
+      </node>
+      <node id="159">
+        <label>Can.h</label>
+      </node>
+      <node id="160">
+        <label>RoutingOps.h</label>
+      </node>
+      <node id="157">
+        <label>LinTask.h</label>
+        <link refid="_lin_task_8h"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="162">
+        <label>LinTask.c</label>
+        <link refid="_lin_task_8c"/>
+      </node>
+      <node id="161">
+        <label>LinTask.h</label>
+        <link refid="_lin_task_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_lin_task_8h_1a47201de0bf00c2c78c1e49af6b181c0a" prot="public" static="no">
+        <name>K_LIN_TASK_TIME_MSEC</name>
+        <param><defname>msec</defname></param>
+        <initializer>((msec) / <ref refid="_config_lin_8h_1aefc04a670cc98033f9260b36afa3a19f" kindref="member">K_LIN_CYCLE_TIME</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro converts a time value from milliseconds to a internal used resolution.</para><para>The provided time value is dependent on time base of the LIN timer defined by K_LIN_CYCLE_TIME. <linebreak/>
+ <simplesect kind="remark"><para>Value: (msec) / K_LIN_CYCLE_TIME <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="69" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_task_8h_1a5a410ea4ea38c996ab0b5c897d1ce814" prot="public" static="no">
+        <name>DEF_LIN_RX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <param><defname>channel</defname></param>
+        <param><defname>pLinRxBuffer</defname></param>
+        <param><defname>LinFrameProtectedId</defname></param>
+        <param><defname>LinFrameLength</defname></param>
+        <param><defname>cb</defname></param>
+        <param><defname>_p</defname></param>
+        <param><defname>n</defname></param>
+        <initializer>const <ref refid="_config_lin_8h_1ab7f6b1530dc4d8f28ba1d276468aa49f" kindref="member">TLinRxObject</ref> LinRxObject_##name = {                                                                 \
+      (TComChannel)(channel),                                                                               \
+      pLinRxBuffer,                                                                                         \
+      LinFrameProtectedId,                                                                                  \
+      LinFrameLength,                                                                                       \
+      (<ref refid="_config_lin_8h_1a694310615d8a7f8eda395e2152b13025" kindref="member">LRXCALLBACK</ref>)(cb),                                                                                    \
+      (void *)(_p),                                                                                         \
+      (n)}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro defines a LIN receive object.</para><para>It is used by PduRoutingChorus component to configure the LIN channels </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="83" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_task_8h_1a79579a8a8eb5ba530cf2f687842c9975" prot="public" static="no">
+        <name>REF_LIN_RX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <initializer>(&amp;(LinRxObject_##name))</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro returns a reference to a LIN receive object.</para><para>It is used by PduRoutingChorus component to configure the LIN channels </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="100" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_task_8h_1a897596c777c40cd426cc80d208d9361a" prot="public" static="no">
+        <name>DECL_LIN_RX_MESSAGE_OBJ</name>
+        <param><defname>name</defname></param>
+        <initializer>extern const <ref refid="_config_lin_8h_1ab7f6b1530dc4d8f28ba1d276468aa49f" kindref="member">TLinRxObject</ref> LinRxObject_##name</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro declares a LIN receive object.</para><para>It is used by PduRoutingChorus component to configure the LIN channels </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="110" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_lin_task_8h_1a663e979037c2617ec349adb2937dc83f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinTask_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>LinTask_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function represents the Standard Interface to activate the LinTask. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an external function to be used by other components.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: SystemControl task (once at startup) <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinTask_Start.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on TEST_LinTask_Start <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to activate the LinTask. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="172" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinTask.c" bodystart="269" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_task_8h_1a12695464b3f278c08f02cad57a588c7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_TASK_LinTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_TASK_LinTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This is the function definition of the task main loop of the OSEK task LinTask. </para>        </briefdescription>
+        <detaileddescription>
+<para>It has to be defined with the OSEK key word TASK instead of normal ANSI C notation.</para><para><simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="pre"><para>The function should be called from SystemControl task (on Core2) at POWERUP after reset or wakeup </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals #Prescaler_WdgM - Prescaler for calling WdgM_MainFunction</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="TASK.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on <ref refid="_lin_task_8c_1a12695464b3f278c08f02cad57a588c7d" kindref="member">OS_TASK_LinTask</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is the function definition of the task main loop of the OSEK task LinTask <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h" line="278" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinTask.c" bodystart="297" bodyend="362"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Function declarations and external data references of the LinTask. </para>    </briefdescription>
+    <detaileddescription>
+<para>This module provides the header file with the function declarations and external <linebreak/>
+data references of the LinTask and its corresponding standard interface definition. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinTask.h"/>
+  </compounddef>
+</doxygen>

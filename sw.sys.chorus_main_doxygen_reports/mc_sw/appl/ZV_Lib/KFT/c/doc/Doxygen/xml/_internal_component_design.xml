@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para><ref refid="_k_f_t___task_8c" kindref="compound">KFT_Task.c</ref> - Code is needed for extending CAN frames duration, it is called by scheduler which will init, start and stop the operation of KFT</para></listitem><listitem><para><ref refid="_k_f_t___task_8h" kindref="compound">KFT_Task.h</ref> - Header file for <ref refid="_k_f_t___task_8c" kindref="compound">KFT_Task.c</ref></para></listitem><listitem><para><ref refid="_k_f_t___stubs_8c" kindref="compound">KFT_Stubs.c</ref> - Lib with stubs is needed for testing KFT related interfaces</para></listitem><listitem><para><ref refid="_k_f_t___stubs_8h" kindref="compound">KFT_Stubs.h</ref> - Header file for <ref refid="_k_f_t___stubs_8c" kindref="compound">KFT_Stubs.c</ref></para></listitem><listitem><para><ref refid="_k_f_t___nv_ram_8h" kindref="compound">KFT_NvRam.h</ref> - Header file is needed for connecting memory and lib</para></listitem><listitem><para><ref refid="_k_f_t___extra_definitions_8h" kindref="compound">KFT_ExtraDefinitions.h</ref> - This headerfile controls the overwriting of generated S/R autosar_functions</para></listitem><listitem><para><ref refid="_k_f_t___mem_map_8h" kindref="compound">KFT_MemMap.h</ref></para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>All the software requirements assigned to KFT are satisfied by <ref refid="_k_f_t___task_8c" kindref="compound">KFT_Task.c</ref> . KFT module has no non functional requirements .</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in KFT.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>Since KFT is made up of only one unit, there are no interfaces between software units to describe.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><heading level="2">Tasks</heading>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>KFT uses no interrupts.</para><para><heading level="2">Events</heading>
+</para><para>KFT uses no events.</para><para><heading level="2">Operating Modes</heading>
+</para><para>KFT does not have mode dependent requirements.</para><para><heading level="2">Power Modes</heading>
+</para><para>KFT runs only in high power since it doesn&apos;t request special power modes.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>N/A</para><para><heading level="2">Operations</heading>
+</para><para>N/A</para><para><heading level="2">Macros</heading>
+</para><para>No complex macros or function like macros used.</para><para><heading level="2">Algorithms</heading>
+</para><para>No complex algorithms are used.</para><para><heading level="2">Data Structures</heading>
+</para><para>No complex data structures used apart from those imported from other functionalities. In such cases, descriptions are given at the coresponding function that uses them.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>High  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

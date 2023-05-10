@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_g_w___e_c_u___prog_info_8c" kind="file" language="C++">
+    <compoundname>GW_ECU_ProgInfo.c</compoundname>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <incdepgraph>
+      <node id="199">
+        <label>GW_ECU_ProgInfo.c</label>
+        <link refid="_g_w___e_c_u___prog_info_8c"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="201">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_g_w___e_c_u___prog_info_8c_1a81f661289289b2e637c0830af6404c84" prot="public" static="no">
+        <name>F1DF_PAYLOAD</name>
+        <initializer>0x40u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DID 0xF1DF payload <simplesect kind="remark"><para>values 40u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ECU_ProgInfo.c" line="73" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ECU_ProgInfo.c" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_g_w___e_c_u___prog_info_8c_1a4be524907d99ea23247fb76b8c0f0972" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType GW_Read_IdentificationData_0xF1DF</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>GW_Read_IdentificationData_0xF1DF</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0xF1DF will give ECU Programming Information. We can read DID 0xF1DF by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0xF1DF data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="GW_Read_IdentificationData_0xF1DF.png">GW_Read_IdentificationData_0xF1DF Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ <ref refid="_g_w___e_c_u___prog_info_8c_8test_1ab550f40b1428688b212978e3c8015d44" kindref="member">TEST_GW_Read_IdentificationData_0xF1DF_null_ptr</ref> <linebreak/>
+ <ref refid="_g_w___e_c_u___prog_info_8c_8test_1a09450dd32ebf8459921f4352fe25172d" kindref="member">TEST_GW_Read_IdentificationData_0xF1DF_params_ok</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on opstatus and Data</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000040"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_7960 <linebreak/>
+ </para><para>SWR_ICAS1_GW_12045 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ECU_ProgInfo.c" line="125" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ECU_ProgInfo.c" bodystart="125" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ECU_ProgInfo.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___handle_async_calls_8h" kind="file" language="C++">
+    <compoundname>RteLight_HandleAsyncCalls.h</compoundname>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">ComM.h</includes>
+    <includes local="yes">EcuM.h</includes>
+    <includes local="yes">CsmPi.h</includes>
+    <includes local="yes">Csm.h</includes>
+    <includes local="yes">RteLight_CsmMapping.h</includes>
+    <incdepgraph>
+      <node id="39">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="45">
+        <label>Csm.h</label>
+      </node>
+      <node id="41">
+        <label>Dem.h</label>
+      </node>
+      <node id="44">
+        <label>CsmPi.h</label>
+      </node>
+      <node id="42">
+        <label>ComM.h</label>
+      </node>
+      <node id="40">
+        <label>NvM.h</label>
+      </node>
+      <node id="46">
+        <label>RteLight_CsmMapping.h</label>
+      </node>
+      <node id="43">
+        <label>EcuM.h</label>
+      </node>
+      <node id="38">
+        <label>RteLight_HandleAsyncCalls.h</label>
+        <link refid="_rte_light___handle_async_calls_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_rte_light___handle_async_calls_8h_1aabce2e84a357a45765f6ab88b9e13c45" prot="public" static="no">
+        <name>CS_ASYNC_TIMEOUT_STOP</name>
+        <initializer>0xFFU</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>marker for stopping timeout monitoring for async calls.<linebreak/>
+</para><para>marker for stopping timeout monitoring for async calls.<linebreak/>
+<simplesect kind="remark"><para>values 0xFFU (max uint8) <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="82" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RteLight_cs_eState</name>
+        <enumvalue id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2fa894393d89a8ea2c72f91fa36ffe7ac58" prot="public">
+          <name>CS_INIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2fae2503fcef178d7e6e833d06b02361723" prot="public">
+          <name>CS_IDLE</name>
+          <briefdescription>
+<para>&lt; Initial state; in this state the Rte_Call has not been triggered </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2fa0bc8df385adfd150af830157e8ca37ac" prot="public">
+          <name>CS_CALL_REQUESTED</name>
+          <briefdescription>
+<para>&lt; Idle state; in this state no async call is in progress </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2fae908ae215f9edf943f083911f394e4d9" prot="public">
+          <name>CS_JOB_REQUESTED</name>
+          <briefdescription>
+<para>&lt; Call Requested state; in this state the Rte_Call has been triggered </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_rte_light___handle_async_calls_8h_1aafc63bd3a344cf381baaebb1d5dfae2fa76f012daf922eea5c51bac65078103fc" prot="public">
+          <name>CS_TRIGGER_CALLBACK</name>
+          <briefdescription>
+<para>&lt; Job Requested state; in this state the Server Async operation is in progress, waiting now to finish and trigger the callback </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enum containg the possible states of a CS Async calls.<linebreak/>
+</para><para>A State Machine is used to handle the CS Async calls, therefore this enum contains all the possible states.<linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="66" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" bodystart="66" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaf01fcff789981241aea468c8cc51bf4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_CORE_Satellite</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_CORE_Satellite</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Satellite function for Core cyclic function for the SWC to SWC calls handler handle async operation has multiple use cases:<orderedlist>
+<listitem><para>client without callback, synchronous server operation</para></listitem><listitem><para>client without callback, asynchronous server operation</para></listitem><listitem><para>client with callback, asynchronous server operation</para></listitem></orderedlist>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>The fifo management data is updated.</para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_CORE_Satellite.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte_light___handle_async_calls_8h_8test_1a8bef25bc5b9492aad3b83d761f3fc5d7" kindref="member">TEST_RteLight_CORE_Satellite</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_&lt;CORE&gt;_Satellite from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___handle_async_calls_8h_1ae5ddb0383260d1d722bc483b5ea7ad99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_call_SWC_PORT_OPERATION</definition>
+        <argsstring>(RteLight_cs_SWC_PORT_OPERATION_type *pointer)</argsstring>
+        <name>RteLight_call_SWC_PORT_OPERATION</name>
+        <param>
+          <type>RteLight_cs_SWC_PORT_OPERATION_type *</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Calls the ASW server operation &lt;ServerRunnable&gt; This function is a private inline function</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RteLight_cs_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt;_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>*pointer<linebreak/>
+. The &lt;RteLight_cs_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt;_type&gt; must defined in SST. range <linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_call_SWC_PORT_OPERATION.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of RteLight_call_SWC_PORT_OPERATION function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte_light___handle_async_calls_8h_8test_1a345d13af4fd5516195344ad69c650c13" kindref="member">TEST_RteLight_call_SWC_PORT_OPERATION</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_call_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="218" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___handle_async_calls_8h_1a242c15cdcd1a838bd9fa644360ff8a09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_call_SWC_PORT_OPERATION_Callback</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_call_SWC_PORT_OPERATION_Callback</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Calls the callback for the client that triggers the Rte_Result call. Resets the timeout counter.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_call_SWC_PORT_OPERATION_Callback.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of client call back function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte_light___handle_async_calls_8h_8test_1a5cbc3d8cb21530f3b76e7a30cc037f0c" kindref="member">TEST_RteLight_call_SWC_PORT_OPERATION_Callback</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_call_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt;_Callback from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="275" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___handle_async_calls_8h_1a8c0de4fe431c0d14c5bc0044dce890b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_call_SWC_PORT_BSWOPERATION</definition>
+        <argsstring>(RteLight_cs_SWC_PORT_OPERATION_type *pointer)</argsstring>
+        <name>RteLight_call_SWC_PORT_BSWOPERATION</name>
+        <param>
+          <type>RteLight_cs_SWC_PORT_OPERATION_type *</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Calls the BSW server operation &lt;ServerRunnable&gt; This function is a private inline function</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RteLight_cs_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt;_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>*pointer<linebreak/>
+. The &lt;RteLight_cs_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt;_type&gt; must defined in SST. range <linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_call_SWC_PORT_BSWOPERATION.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of RteLight_call_SWC_PORT_OPERATION function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte_light___handle_async_calls_8h_8test_1a99f5ed2c5d8018f0c07c7a42a0ba9c6e" kindref="member">TEST_RteLight_call_SWC_PORT_BSWOPERATION</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_call_&lt;SWC&gt;_&lt;PORT&gt;_&lt;BSWOPERATION&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h" line="333" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GENERATED FILE. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para>teLight_HandleAsyncCalls</para></simplesect>
+<simplesect kind="rcs"><title>Revision</title></simplesect>
+$Author:$ $Date:$ DO NOT CHANGE THIS FILE. IF YOU DO THIS, A FLYING UNICORN WILL DIE. Contains internal rte functions and variables. The file is used by RTE files only. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_HandleAsyncCalls.h"/>
+  </compounddef>
+</doxygen>

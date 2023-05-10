@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The ORU_SafetyGuard_ASIL component is splitted into the following SW units:<itemizedlist>
+<listitem><para><ref refid="_o_r_u___safety_guard___a_s_i_l___task_8c" kindref="compound">ORU_SafetyGuard_ASIL_Task.c</ref> - This module contains the business logic of ORU Safety Guard.</para></listitem><listitem><para><ref refid="_o_r_u___safety_guard___a_s_i_l___task_8h" kindref="compound">ORU_SafetyGuard_ASIL_Task.h</ref> - Header file for <ref refid="_o_r_u___safety_guard___a_s_i_l___task_8c" kindref="compound">ORU_SafetyGuard_ASIL_Task.c</ref> .</para></listitem><listitem><para><ref refid="_o_r_u___safety_guard___a_s_i_l__version_8h" kindref="compound">ORU_SafetyGuard_ASIL_Version.h</ref> - Software version header file of the SWC ORUGUARD1.</para></listitem><listitem><para><ref refid="_o_r_u_g_u_a_r_d1___rte_patch_8h" kindref="compound">ORUGUARD1_RtePatch.h</ref> - Rte patch header file of the SWC ORUGUARD1.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="11" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_39  </para></entry><entry thead="no"><para>For integration a RAM consumption of the ORU_GUARD1 library of 1200 Bytes shall be considered.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_150  </para></entry><entry thead="no"><para>For integration a ROM consumption of the ORU_GUARD1 library of 20000 Bytes shall be considered.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_152  </para></entry><entry thead="no"><para>For integrantion an ORU_GUARD1 NVM block shall be configured as redundant block storage with error correction.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_153  </para></entry><entry thead="no"><para>The ORU_GUARD1 NVM block shall be able to store 64 Byte of data.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_41  </para></entry><entry thead="no"><para>The ORU_GUARD1 library and safe RTE buffers shall be protected by MPU.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_168  </para></entry><entry thead="no"><para>The RTE shall be generated considering the E2E and ASIL classification of signals in SST.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_318  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_319  </para></entry><entry thead="no"><para>For integration a stack usage of 256 Bytes shall be considered for runnable ORUGUARD1_Task.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_320  </para></entry><entry thead="no"><para>For integration a stack usage of 32 Bytes shall be considered for runnable ORUGUARD1_Val0x1AF_GetVersion.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_353  </para></entry><entry thead="no"><para>No NVM block shall be assigned to SWC ORUGUARD1.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in ORU_SafetyGuard_ASIL.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_ORU_SafetyGuard_ASIL.png">Software_Unit_Interaction_ORU_SafetyGuard_ASIL</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>ORU_SafetyGuard_ASIL SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_SafetyGuard_ASIL/SW Architecture/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para>ORU_SafetyGuard_ASIL SWC is assigned to <bold> CORE 0 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core0</bold>. <linebreak/>
+ORU_SafetyGuard_ASIL component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C0 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_SafetyGuard_ASIL/SW Architecture/Dynamic/Lifecycle</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because ORU_SafetyGuard_ASIL doesn&apos;t require a special power mode.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality doesn&apos;t require a special power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>When function is called with NULL_PTR, RTE_E_INVALID is returned.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since <bold>ORU_SafetyGuard_ASIL</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Macros</heading>
+</para><para>No complex macros or function like macros used. Following macros are used: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para><bold>ORU_SafetyGuard_ASIL</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para><bold>ORU_SafetyGuard_ASIL</bold> doesn&apos;t use complex data structures. In such cases, descriptions are given at the coresponding function that uses them.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>ASIL B(D)   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>SWATT or other tools.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

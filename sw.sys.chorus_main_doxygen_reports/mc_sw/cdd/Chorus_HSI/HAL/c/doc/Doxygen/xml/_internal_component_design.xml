@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <tableofcontents/>
+    <briefdescription>
+<para>Export the exteral interfaces to be used by the other modules. </para>    </briefdescription>
+    <detaileddescription>
+<para>Export the exteral interfaces to be used by the other modules.</para><sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para><heading level="3">Component modules</heading>
+</para><para>The component is splitted into the follwing SW units:</para><para><itemizedlist>
+<listitem><para><ref refid="hal_8h" kindref="compound">hal.h</ref> - Export the exteral interfaces to be used by the other modules.</para></listitem><listitem><para><ref refid="hal__cfg_8h" kindref="compound">hal_cfg.h</ref> - General configuration for items from the HAL module.</para></listitem><listitem><para><ref refid="hal__base_8h" kindref="compound">hal_base.h</ref> - Provides the declaration of the types and functions used by other modules. Defines the structure for the generated code.</para></listitem><listitem><para><ref refid="hal__base_8c" kindref="compound">hal_base.c</ref> - Contains the implementation of the functions used as basis for other modules. The implementation is based on the active configuration.</para></listitem><listitem><para>hal_defines_gen.h -</para></listitem><listitem><para>hal_cfg_gen.h -</para></listitem><listitem><para>hal_cfg_gen.c -</para></listitem><listitem><para><ref refid="hal__common_8h" kindref="compound">hal_common.h</ref> - Header file for <ref refid="hal__common_8c" kindref="compound">hal_common.c</ref>. Provides declaration of functions that need low level access common to all Chorus uC types.</para></listitem><listitem><para><ref refid="hal__common_8c" kindref="compound">hal_common.c</ref> - Source file for HAL common part. Contains implementation of functions that need low level access common to all Chorus uC types.</para></listitem><listitem><para><ref refid="hal__variant_8h" kindref="compound">hal_variant.h</ref> - Provides declaration of functions that need low level access specific to one Chorus uC variant.</para></listitem><listitem><para><ref refid="hal__variant_8c" kindref="compound">hal_variant.c</ref> - Contains implementation of functions that need low level access specific to one Chorus uC variant.</para></listitem><listitem><para><ref refid="gw__dev__msg_8h" kindref="compound">gw_dev_msg.h</ref> - Provides declarations of function for sending GW developer messages.</para></listitem><listitem><para><ref refid="gw__dev__msg_8c" kindref="compound">gw_dev_msg.c</ref> - Contains implementation of functions for sending GW developer messages.</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The SW requirements are linked functions by annotation with the requirements ID (@satisfy).</para><para>See <ulink url="globals_func.html"><bold>Function list</bold></ulink></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>See the header files:</para><para><itemizedlist>
+<listitem><para><ulink url="hal__base_8h.html#func-members"><bold>hal_base.h</bold></ulink> - Provides the declaration of the types and functions used by other modules. Defines the structure for the generated code.</para></listitem><listitem><para><ulink url="hal__cfg_gen_8h.html#func-members"><bold>hal_cfg_gen.h</bold></ulink> -</para></listitem><listitem><para><ulink url="hal__variant_8h.html#func-members"><bold>hal_variant.h</bold></ulink> - Provides declaration of functions that need low level access specific to one Chorus uC variant.</para></listitem><listitem><para><ulink url="hal__common_8h.html#func-members"><bold>hal_common.h</bold></ulink> - Header file for <ref refid="hal__common_8c" kindref="compound">hal_common.c</ref>. Provides declaration of functions that need low level access common to all Chorus uC types.</para></listitem><listitem><para><ulink url="gw__dev__msg_8h.html#func-members"><bold>gw_dev_msg.h</bold></ulink> - Provides declarations of function for sending GW developer messages.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="hal_components.png">HAL components modules</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The interaction between units for HAL:</para><para><bold>Dynamic Behavior for GW_DEV_MSG</bold> <image type="html" name="HAL_GW_DEV_MSG_DynamicBehavior.png"></image>
+ </para><para><bold>Dynamic Behavior for HAL_VARIANT</bold> <image type="html" name="HAL_Variant_DynamicBehavior.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>The module does not provide its own tasks. The provided functions are needed by other modules.</para><para><heading level="2">Interrupts</heading>
+</para><para>The module does not provide its own interrupts.</para><para><heading level="2">Events</heading>
+</para><para>The wakeup events detection is done in the module. See <ref refid="hal__variant_8h_8test_1a3b3ce64a23277e66f9dd3ab948c990fe" kindref="member">HAL_WakeupReason_CheckNewEventAndClear</ref>.</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no specific operating modes for this module.</para><para><heading level="2">Power Modes</heading>
+</para><para>The HAL component operates only in High Power Mode but prepares the configuration of certain ports for sleep mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>There are no specific handling of errors such as DEM events. The functionality for this modules does not rely on external input.</para><para><heading level="2">Synchronization</heading>
+</para><para>No syncronization is necessary for the moment. Only one function should update the global variables most of them during startup.</para><para>See <ulink url="globals_vars.html">global variables list</ulink></para><para><heading level="2">Operations</heading>
+</para><para>The operation are described in the header files.</para><para>See <ulink url="globals_func.html"><bold>Function list</bold></ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>The defined macros are described in the header files.</para><para>See <ulink url="globals_defs.html"><bold>Defines list</bold></ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The functionality doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>The data structures are described in the header files.</para><para>See <ulink url="annotated.html"><bold>List of data structures</bold></ulink>.</para><para>See <ulink url="globals_enum.html"><bold>List of enums</bold></ulink></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para><heading level="4">Interoperability</heading>
+</para><para>Interoperability is set to <bold>medium</bold> because a simple wrapper is required to exchange data.</para><para><heading level="4">Interaction</heading>
+</para><para>Interaction is set to <bold>high</bold> because the number of dependencies from dependency diagram is greater than 7.</para><para><heading level="4">Criticality</heading>
+</para><para>It has <bold>medium</bold> critcality as it can cause issues with the power consumption of the current but is not expected to have an influence on the driving.</para><para><heading level="4">Technical complexity</heading>
+</para><para>The technical complexity is <bold>high</bold> because <bold>HAL</bold> is split in SW units and has interactions with other components.</para><para><heading level="4">Risks</heading>
+</para><para>The number of SW Units of HAL is bigger than 5, therefore the risk is <bold>high</bold>.</para><para><heading level="4">Testability</heading>
+</para><para>The component <bold>HAL</bold> requires other tools (like PLAST) besides SWATT for 100% tests coverage but all tests can be automated. So, the testability level is <bold>high</bold>. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

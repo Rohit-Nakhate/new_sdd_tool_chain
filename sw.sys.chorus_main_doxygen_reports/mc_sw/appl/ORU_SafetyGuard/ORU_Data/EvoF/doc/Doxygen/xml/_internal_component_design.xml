@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The ORU_Data component is splitted into the following SW units:<itemizedlist>
+<listitem><para><ref refid="_o_r_u___data___task_8c" kindref="compound">ORU_Data_Task.c</ref> - This module contains the ORU_Data functionality.</para></listitem><listitem><para><ref refid="_o_r_u___data___task_8h" kindref="compound">ORU_Data_Task.h</ref> - Header file for <ref refid="_o_r_u___data___task_8c" kindref="compound">ORU_Data_Task.c</ref> .</para></listitem><listitem><para><ref refid="_o_r_u___data__version_8h" kindref="compound">ORU_Data_Version.h</ref> - Software version header file of ORU_Data.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in ORU_Data.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_ORU_Data.png">Software_Unit_Interaction_ORU_Data</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>ORU_Data SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_Data/SW Architecture/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para>ORU_Data SWC is assigned to <bold> CORE 0 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core0</bold>. <linebreak/>
+ORU_Data component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C0 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_Data/SW Architecture/Dynamic/Dynamic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because ORU_Data doesn&apos;t require a special power mode.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality doesn&apos;t require a special power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>HashValue shall be taken over only in case it&apos;s CRC matches the one received from the routine. <linebreak/>
+As long as it is not correct, default values shall be kept.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since <bold>ORU_Data</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para><bold>ORU_Data</bold> operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>No complex macros or function like macros used. Following macros are used: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para><bold>ORU_Data</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para><bold>ORU_Data</bold> doesn&apos;t use complex data structures. In such cases, descriptions are given at the coresponding function that uses them.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>ASIL B   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>SWATT or other tools.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

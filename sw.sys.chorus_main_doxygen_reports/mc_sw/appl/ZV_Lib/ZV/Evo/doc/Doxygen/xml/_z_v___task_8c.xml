@@ -1,0 +1,972 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_z_v___task_8c" kind="file" language="C++">
+    <compoundname>ZV_Task.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes refid="_z_v___extra_definitions_8h" local="yes">ZV_ExtraDefinitions.h</includes>
+    <includes local="yes">Rte_ZV.h</includes>
+    <includes local="yes">ZVAD_Task.h</includes>
+    <includes refid="_z_v___task_8h" local="yes">ZV_Task.h</includes>
+    <includes refid="_z_v___ecu_m_8h" local="yes">ZV_EcuM.h</includes>
+    <incdepgraph>
+      <node id="26">
+        <label>ZV_EcuM.h</label>
+        <link refid="_z_v___ecu_m_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ZV_Task.c</label>
+        <link refid="_z_v___task_8c"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Rte_ZV.h</label>
+      </node>
+      <node id="25">
+        <label>ZV_Task.h</label>
+        <link refid="_z_v___task_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ZV_ExtraDefinitions.h</label>
+        <link refid="_z_v___extra_definitions_8h"/>
+      </node>
+      <node id="21">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="24">
+        <label>ZVAD_Task.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_z_v___task_8c_1ae71d8de1ff9d54053bda7855abe1c0a3" prot="public" static="no">
+        <name>ZV_ENTR_VERR_TIMER</name>
+        <initializer>0x16U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>define for extending verriegeln and entriegeln signals on CAN</para><para>220ms for extending verriegeln(lock) and entriegeln(unlock) signals on CAN <linebreak/>
+<simplesect kind="remark"><para>values 0x16U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="67" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v___task_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para>For SWATT testing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="82" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_z_v___task_8c_1a8aff594eb1e6bfa81a025389b99b961b" prot="public" static="no">
+        <type>Std_ReturnType(*</type>
+        <definition>typedef Std_ReturnType(* Rte_Write_func) (boolean recvSignal)</definition>
+        <argsstring>)(boolean recvSignal)</argsstring>
+        <name>Rte_Write_func</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE Write Typedef <linebreak/>
+</para><para>Typedef used for RTE Read function pointers <linebreak/>
+<simplesect kind="remark"><para>values N/A <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="77" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_z_v___task_8c_1aeec71e831c83cd42328c78fbdf1041b6" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZV_EcuM_Run_requested</definition>
+        <argsstring></argsstring>
+        <name>ZV_EcuM_Run_requested</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ECU_StateRequest for ZV component <linebreak/>
+<simplesect kind="remark"><para>range - see values <linebreak/>
+ values FALSE - Release state run from ZV library <linebreak/>
+ TRUE - Request state run from ZV library <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task context <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="88" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v___task_8c_1a01bf10bb248994afdb764d0e5ca1167c" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>volatile boolean ZV_boRun</definition>
+        <argsstring></argsstring>
+        <name>ZV_boRun</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for initialization <linebreak/>
+</para><para>Allows the lib&apos;s function to run. <linebreak/>
+<simplesect kind="remark"><para>range TRUE if ZV_InitVarFunc is called, FALSE otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="103" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_z_v___task_8c_1ab298b04fe9e9c3300c2228a63b9cea7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_Prepare_RteBuffer</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_Prepare_RteBuffer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE generated function which prepares the RTE buffers for signals having range check activated. <linebreak/>
+</para><para>The function needs to be called before any runnable call. Its handles the status flags and last valid values. <linebreak/>
+This function is not available in a *.h file. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a5399f5e8d610083053362832d51229c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cyclic_zv</definition>
+        <argsstring>(void)</argsstring>
+        <name>cyclic_zv</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ZV library provided cyclic runnable function</para><para>This function is not available in a *.h file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1afeb6e6e81e7018dfa7e1033060b73235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_preMwZvSpielschutzE3_ReadDataHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_preMwZvSpielschutzE3_ReadDataHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE generated function which updates the value and status of the signals configured as implicit for &apos;MwZvSpielschutzE3_ReadData&apos; runnable. <linebreak/>
+</para><para>This function is not available in a *.h file <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a6bbe541042434ac653c8ee4169622528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_precyclic_zvHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_precyclic_zvHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE generated function which updates the value and status of the signals configured as implicitv for &apos;cyclic_zv&apos; runnable. <linebreak/>
+</para><para>This function is not available in a *.h file <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a790b7b6d0293a8cb11c2066246208161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_postcyclic_zvHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_postcyclic_zvHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE generated function which updates the value and status of the output signals configured as implicit for &apos;cyclic_zv&apos; runnable. <linebreak/>
+</para><para>This function prohibits output signal to change their value while the SWC runnable is executed. <linebreak/>
+ This function is not available in a *.h file. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a859287277e3222eb5d2ac94f93eb534a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_postMwZvSpielschutzE3_ReadDataHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_postMwZvSpielschutzE3_ReadDataHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE generated function which updates the value and status of the output signals configured as implicit for &apos;MwZvSpielschutzE3_ReadData&apos; runnable. <linebreak/>
+</para><para>This function prohibits output signal to change their value while the SWC runnable is executed. <linebreak/>
+ This function is not available in a *.h file. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a3feaada1c2ce6d0ffb19756990a7e5d8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_PreAllRunnablesHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_PreAllRunnablesHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the value and status of the input signals configured as implicit. <linebreak/>
+</para><para>This function prohibits input signal to change their value while the SWC runnable is executed. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_PreAllRunnablesHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a413b4476ef449e460c53c1b8d1f37889" kindref="member">TEST_ZV_Task__ZV_PreAllRunnablesHook</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function required by RTE_Light to update the signals configured as implicit <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="201" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="549" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1aaf07fcb7b51a89c9fcc846c4d86768f7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_PostAllRunnablesHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_PostAllRunnablesHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the value and status of the output signals configured as implicit. <linebreak/>
+</para><para>This function prohibits output signal to change their value while the SWC runnable is executed. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_PostAllRunnablesHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a766aa53dd8b21d7dbf436502c2069200" kindref="member">TEST_ZV_Task__ZV_PostAllRunnablesHook</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function required by RTE_Light to update the signals configured as implicit <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="235" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="558" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1aef01190a7d9c7fb44a41fc23176eab1d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendSignals</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendSignals</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for doors and mirror folding on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendSignals.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a4bb28e7ba896c1f97a5da51a47fa1903" kindref="member">TEST_ZV_Task__ZV_ExtendSignals</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a function which calls the methods that are responsible for extending the duration of ZV lib outputs for doors and mirror folding on CAN for 220ms. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="270" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="701" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a08a864562223634882f61fe65d56294a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendSignalsFront</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendSignalsFront</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for front doors on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendSignalsFront.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a8e2409ff057e8b631ac33ca927f9b632" kindref="member">TEST_ZV_Task__ZV_ExtendSignalsFront</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a function which calls the methods that are responsible for extending the duration of ZV lib outputs for front doors on CAN for 220ms. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="305" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="671" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1aa06709e39dd024747e9c9a4a06db6419" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendSignalsRear</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendSignalsRear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for rear doors on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendSignalsRear.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1ac81b7526e1128dfcfc1c6f7860a4e881" kindref="member">TEST_ZV_Task__ZV_ExtendSignalsRear</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a function which calls the methods that are responsible for extending the duration of ZV lib outputs for rear doors on CAN for 220ms. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="340" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="680" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a8a44b2193640bddb79b29d1c3b26e380" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendSignal220ms</definition>
+        <argsstring>(uint8 *timer_u8, Rte_Write_func rte_write_func, boolean *prev_value_bo, boolean curr_value_bo)</argsstring>
+        <name>ZV_ExtendSignal220ms</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>timer_u8</declname>
+        </param>
+        <param>
+          <type><ref refid="_z_v___task_8c_1a8aff594eb1e6bfa81a025389b99b961b" kindref="member">Rte_Write_func</ref></type>
+          <declname>rte_write_func</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>prev_value_bo</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>curr_value_bo</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function which is used to extend the duration of the outputs on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>ZV_ENTR_VERR_TIMER <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendSignal220ms.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a9f35f4251bb4a4533bc992fdf083b7fa" kindref="member">TEST_ZV_Task__ZV_ExtendSignal220ms</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a helper function which is used to extend the duration of the outputs on CAN for 220ms. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="374" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="567" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1aba462d6759a4e60fdb2477942692fc90" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendFrontDriver</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendFrontDriver</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for front driver door on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendFrontDriver.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1ab1b9b8246cd79c2153058de2cea643ca" kindref="member">TEST_ZV_Task__ZV_ExtendFrontDriver</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1156 SWR_ICAS1_L3_ZV_1163 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="407" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="603" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a1c36f25b40a9f6b9c8ea1feb39abb25d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendFrontPassenger</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendFrontPassenger</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for front passenger door on CAN for 220ms</para><para>This functions is called in zv cyclic task <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendFrontPassenger.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1ae8a11393541dbd71075dc3018a68f3ef" kindref="member">TEST_ZV_Task__ZV_ExtendFrontPassenger</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1164 SWR_ICAS1_L3_ZV_1165 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="440" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="620" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a38208cb02c69521daaf06495c4591867" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendRearDriver</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendRearDriver</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for rear driver door on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendRearDriver.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a8df999ad53e4397fd49759eadbdc7b0c" kindref="member">TEST_ZV_Task__ZV_ExtendRearDriver</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1168 SWR_ICAS1_L3_ZV_1171 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="473" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="637" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a1a1f0b0019043e2e34e35f277b3a5d9e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendRearPassenger</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendRearPassenger</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib outputs for rear passenger door on CAN for 220ms <linebreak/>
+</para><para>This functions is called in zv cyclic task <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendRearPassenger.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a8bbda4b734ad08ea9805e1f8678b65f2" kindref="member">TEST_ZV_Task__ZV_ExtendRearPassenger</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1168 SWR_ICAS1_L3_ZV_1171 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="506" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="654" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a73fc0ced60d348be1be9cc4595e153e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZV_ExtendSpgAnklappen</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_ExtendSpgAnklappen</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to extend duration of ZV lib output for mirror folding on CAN for 220ms</para><para>This functions is called in zv cyclic task <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_ExtendSpgAnklappen.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a1b198ff5f5cc6b1b47e9f961a9db2cc7" kindref="member">TEST_ZV_Task__ZV_ExtendSpgAnklappen</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1300 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="539" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="689" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a11107bf8f3548d05fb2dd786939df548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initalize the variables for the ZV module <linebreak/>
+</para><para>This function is called by ModelsTask (Scheduler) before starting the model (MmDoSetup is called). The code here must be short. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v___task_8c_1a01bf10bb248994afdb764d0e5ca1167c" kindref="member">ZV_boRun</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>ZV_boRun is set to TRUE <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1ae25081bcf8160b23a8fbf63cc67c5e97" kindref="member">TEST_ZV_Task__ZV_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which sets the value of the ZV_boRun <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="717" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="717" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a18f88b3b8b5982c8001defda2644dbca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the ZV module <linebreak/>
+</para><para>This function is called by ModelsTask (Scheduler) when the model&apos;s recurrence occurs. This function should be performed with a cycle time of 10 ms. <linebreak/>
+<simplesect kind="pre"><para>Must be called after ZV_InitVarFunc. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v___task_8c_1a01bf10bb248994afdb764d0e5ca1167c" kindref="member">ZV_boRun</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v___task_8c_8test_1a8bbbec3ea0c07da19b9280b9c0bee0cf" kindref="member">TEST_ZV_Task__ZV_TaskCyclicEvent</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_22045,SWR_ICAS1_GW_9768,SWR_ICAS1_GW_9770 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="725" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="725" bodyend="746"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1aafc6ac87b627252ff90276c2569bfc95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_ZV_ECU_StateRequest_RequestRUN</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_ZV_ECU_StateRequest_RequestRUN</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="749" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="749" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v___task_8c_1a7885682986bbb464d2e4827caf59aada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_ZV_ECU_StateRequest_ReleaseRUN</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_ZV_ECU_StateRequest_ReleaseRUN</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" line="759" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c" bodystart="759" bodyend="764"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for ZV SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_z_v___task_8c" kindref="compound">ZV_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/04/01 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Expected test coverage (100%) and type of test coverage (C1/CTC). Add software requirement IDs in the testcases. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZV/Evo/src/ZV_Task.c"/>
+  </compounddef>
+</doxygen>

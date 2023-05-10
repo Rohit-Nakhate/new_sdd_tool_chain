@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_k_r_m_activation_8h" kind="file" language="C++">
+    <compoundname>KRMActivation.h</compoundname>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includedby refid="_k_r_m_activation_8c" local="yes">KRMActivation.c</includedby>
+    <incdepgraph>
+      <node id="26">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="25">
+        <label>KRMActivation.h</label>
+        <link refid="_k_r_m_activation_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="29">
+        <label>KRMActivation.c</label>
+        <link refid="_k_r_m_activation_8c"/>
+      </node>
+      <node id="28">
+        <label>KRMActivation.h</label>
+        <link refid="_k_r_m_activation_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_k_r_m_activation_8h_1ac9e85d5d754df6bed483385871d1e1bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType GW_KRM_ActivityMonitor</definition>
+        <argsstring>(void)</argsstring>
+        <name>GW_KRM_ActivityMonitor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>GW_KRM_ActivityMonitor</bold> monitors if Konzernrollenmodus shall be still in active state. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is cyclically called in DiagTask. <linebreak/>
+ <simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant - No <linebreak/>
+ context - called by DiagTask <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core 2 <linebreak/>
+ synchronous - Data is processed right away.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ Returns E_OK in case of success, different value idicates an error <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>T_GW_0x04FB_ANP GW_0x04FB_ANP <linebreak/>
+This is Struct variable, Struct element &quot;KRM_Active&quot; holds the current value of DID 0x04FB.This is both input and output variable. Range - KRM_INACTIVE_VALUE, KRM_ACTIVE_VALUE.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Called every 10ms by DiagTask. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="GW_KRM_ActivityMonitor.png">GW_KRM_ActivityMonitor Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using one of the following test methods: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on ESC52 message, ESC52.ESP_Rollenmodus_Deaktivieren, adaptation status, KL15 state. <linebreak/>
+ <ref refid="_k_r_m_activation_8c_8test_1a15a95e0e502cbfe34db39adf41eccfec" kindref="member">TEST_GW_KRM_ActivityMonitor</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies the following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L1_KRM_39; SWR_L1_KRM_128; SWR_L1_KRM_137; SWR_L1_KRM_123; SWR_L1_KRM_121; SWR_L1_KRM_133; SWR_L1_KRM_67; SWR_L1_KRM_136 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/KRM/c/inc/KRMActivation.h" line="97" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/KRM/c/src/KRMActivation.c" bodystart="1091" bodyend="1147"/>
+      </memberdef>
+      <memberdef kind="function" id="_k_r_m_activation_8h_1a2367210944fe1f697d68d04a9a0ec29b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void s_ESP_Rollenmodus_Deaktivieren_Message_Counter</definition>
+        <argsstring>(void)</argsstring>
+        <name>s_ESP_Rollenmodus_Deaktivieren_Message_Counter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function counts the ESC_52 messages (to find out if Konzernrollenmodus is to deactivate). </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ called via CanIPDU_ESC_52_F_RcvIndication</para><para><simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called by DiagTask through Rte_DreUpdateCoreGW <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core 2 <linebreak/>
+ synchronous - Data is processed right away.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>fiveMessagesCounterStart [IN] : Flag which is notify that ESC52 message counter should start; bool, init value=false <linebreak/>
+ FiveMessagesEsc52Occured [OUT]: Flag which is notify about counter expired; bool, init value=false. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="s_ESP_Rollenmodus_Deaktivieren_Message_Counter.png">s_ESP_Rollenmodus_Deaktivieren_Message_Counter Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using one of the following test methods: <linebreak/>
+Equivalence class analysis (test of representative values from input range) <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on fiveMessagesCounterStart,FiveMessagesEsc52Occured values. <ref refid="_k_r_m_activation_8c_8test_1ad96cfca42be42a3ee937d20b3543e28b" kindref="member">TEST_s_ESP_Rollenmodus_Deaktivieren_Message_Counter</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies the following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L1_KRM_123 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/KRM/c/inc/KRMActivation.h" line="143" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/KRM/c/src/KRMActivation.c" bodystart="1066" bodyend="1088"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This header contains those function declarations that can be accessed externally. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_k_r_m_activation_8h" kindref="compound">KRMActivation.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#5 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic18224 </para></simplesect>
+<simplesect kind="rcs"><title>DateTime</title><para>2021/02/12 04:23:34 </para></simplesect>
+<linebreak/>
+This file can be included by other modules. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/KRM/c/inc/KRMActivation.h"/>
+  </compounddef>
+</doxygen>

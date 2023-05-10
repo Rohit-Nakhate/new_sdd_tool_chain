@@ -1,0 +1,1048 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_so_mgr___cbk_8c_8test" kind="file" language="C++">
+    <compoundname>SoMgr_Cbk.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1ad4fa39fccadc4268241bcc716e20224d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_RxIndication</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_RxIndication</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000070"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_RxIndication</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_RxIndication </title><para>Test type: Decision testing <linebreak/>
+Overview: Check the status of the SocketHdl and send the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a8641fe6f39fd32ac239714ffa80eb59e" kindref="member">SoMgr_RxIndication</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check the status of the SocketHdl and send the expected message <linebreak/>
+ SocketId = 1 <linebreak/>
+ BufPtr_aux[1]={0} <linebreak/>
+ Length = 1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].SockType = SOMGR_SOCK_TCP_CLIENT <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_RxIndication checks if: <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].RxByteCount = 0 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].pFuncRxIndication = NULL <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="101" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="101" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a483c51a4c4c9e6c5449fa99ad5745c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_RxIndication_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_RxIndication_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000071"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_RxIndication_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_RxIndication_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check the status of the SocketHdl and send the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a8641fe6f39fd32ac239714ffa80eb59e" kindref="member">SoMgr_RxIndication</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check the status of the SocketHdl and send the expected message <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ BufPtr_aux[1]={0} <linebreak/>
+ Length = 1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].SockType = SOMGR_SOCK_TCP_CLIENT <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].RxByteCount = 0 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: create test to check the status of the SocketHdl and send the expected message <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ BufPtr_aux[1]={0} <linebreak/>
+ Length = 1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].SockType = SOMGR_SOCK_NOT_INIT <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].RxByteCount = 0 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: create test to check the status of the SocketHdl and send the expected message <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ BufPtr_aux[1]={0} <linebreak/>
+ Length = 1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].SockType = SOMGR_SOCK_TCP_SERVER <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pFuncRxIndication = DoIP_RxIndication <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].RxByteCount = 0 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_RxIndication_1 checks if: <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].RxByteCount = 1 <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: SoMgr_RxIndication_1 checks if: <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].RxByteCount = 1 <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: SoMgr_RxIndication_1 checks if: <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].RxByteCount = 1 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="182" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="182" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1ab53845c26aa888cac79b49777e087306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_CopyTxData</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_CopyTxData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000072"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_CopyTxData</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_CopyTxData </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the data is copied <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1ad161565956e1d9d3ab9b3a71ffb4fb3f" kindref="member">SoMgr_CopyTxData</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the data is copied <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ BufPtr_aux[1]={1} <linebreak/>
+ Length = 1 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_CopyTxData returns BUFREQ_E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="275" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="275" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a7e3c7393e690907be73b10cc9c25326b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_CopyTxData_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_CopyTxData_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000073"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_CopyTxData_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_CopyTxData_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the data is copied <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1ad161565956e1d9d3ab9b3a71ffb4fb3f" kindref="member">SoMgr_CopyTxData</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the data is copied <linebreak/>
+ SoMgr_SocketTable[0].TxByteCount = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ BufPtr_aux = 1 <linebreak/>
+ Length = 1 <linebreak/>
+ pBuf_aux.tot_len = 3 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pTxWin= &amp;pBuf_aux <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: create test to check if the data is copied <linebreak/>
+ SoMgr_SocketTable[0].TxByteCount = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ BufPtr_aux = 1 <linebreak/>
+ Length = 0 <linebreak/>
+ pBuf_aux.tot_len = 3 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pTxWin= &amp;pBuf_aux <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].TcpTxByteCount = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_CopyTxData_1 returns BUFREQ_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: SoMgr_CopyTxData_1 returns BUFREQ_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="337" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="337" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1acd3b248793fea655f48c47218c3ee099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_CopyTxData_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_CopyTxData_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000074"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_CopyTxData_2</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_CopyTxData_2 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the data is copied <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1ad161565956e1d9d3ab9b3a71ffb4fb3f" kindref="member">SoMgr_CopyTxData</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the data is copied <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS+1 <linebreak/>
+ BufPtr_aux = 1 <linebreak/>
+ Length = 1 <linebreak/>
+ pBuf_aux.tot_len = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_CopyTxData_2 returns BUFREQ_E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="424" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="424" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1af2f3a451591c23218b406c70187a1e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TxConfirmation</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TxConfirmation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000075"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TxConfirmation</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TxConfirmation </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if there is still data to send in pBuf <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1af8ead95f438278f1e90fb54d92eb6d8b" kindref="member">SoMgr_TxConfirmation</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if there is still data to send in pBuf <linebreak/>
+ SoMgr_SocketTable[12].TxConfirmed = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS+1 <linebreak/>
+ Length = 8 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TxConfirmation checks that SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS+1].TxConfirmed = 0 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="474" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="474" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1ad4f49c799cc342fde3d0545f858c51cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TxConfirmation_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TxConfirmation_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000076"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TxConfirmation_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TxConfirmation_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if there is still data to send in pBuf <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1af8ead95f438278f1e90fb54d92eb6d8b" kindref="member">SoMgr_TxConfirmation</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if there is still data to send in pBuf <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].TxConfirmed = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ Length = 5 <linebreak/>
+ pBuf_aux.tot_len = 5 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ TcpIp_TcpTransmit = E_NOT_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: create test to check if there is still data to send in pBuf <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].TxConfirmed = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ Length = 5 <linebreak/>
+ pBuf_aux.tot_len = 5 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ TcpIp_TcpTransmit = E_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: create test to check if there is still data to send in pBuf <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].TxConfirmed = NULL_PTR <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ Length = 5 <linebreak/>
+ pBuf_aux.tot_len = 5 <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TxConfirmation_1 checks that SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS+1].TxConfirmed = 5 <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: SoMgr_TxConfirmation_1 checks that SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS+1].TxConfirmed = 5 <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: SoMgr_TxConfirmation_1 checks that SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS+1].TxConfirmed = 5 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="540" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="540" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a3221e5aa3d255adff92442cf9a6defe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000077"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ RemoteAddrPtr_aux.port = SOMGR_PORT_DOIP_TCP_DATA SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].SockType = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].LocalPort = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncTcpAccepted = DoIP_Client_TcpAccepted <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncTcpConnected = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].RemoteIpAddr = RemoteAddrPtr_aux <linebreak/>
+ SoMgr_Main_GetSocketHdl = SOMGR_IPv6_CLIENT_TCP_TO_ECU_2 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="640" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="640" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a1eb27509517d8f11f72a3fe65d82592f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000078"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ RemoteAddrPtr_aux.port = SOMGR_PORT_DOIP_TCP_DATA <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester_ConnectionSocket].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester_ConnectionSocket2].State = SOMGR_SOCKETSTATE_ONLINE - 1 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].SockType = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].LocalPort = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncTcpAccepted = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].pFuncTcpConnected = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_1 returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="734" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="734" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a1257a771f9db3c9d1af843c99760ae37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000079"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_2</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_2 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv4_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ RemoteAddrPtr_aux.port = SOMGR_PORT_DOIP_TCP_DATA <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester_ConnectionSocket].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester_ConnectionSocket2].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_2 returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="823" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="823" bodyend="855"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1aa630314a62dcedaf0998cb7b62ef9f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000080"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_3</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_3 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].SockType = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].LocalPort = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncTcpAccepted = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncTcpConnected = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_3 returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="884" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="884" bodyend="944"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a8323114f7514d7bf72cc7c13b8da5507" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000081"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_4</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_4 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester_ConnectionSocket].State = SOMGR_SOCKETSTATE_ONLINE  SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester_ConnectionSocket2].State = SOMGR_SOCKETSTATE_ONLINE - 1 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].SockType = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].LocalPort = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncRxIndication = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncTcpAccepted = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].pFuncTcpConnected = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_4 returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="974" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="974" bodyend="1034"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1ac01866ec1f4e8408ce5983098e1d1da2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000082"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_5</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_5 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv6_TCP_Tester <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester_ConnectionSocket].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester_ConnectionSocket2].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv6_TCP_Tester].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_5 returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1059" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1059" bodyend="1090"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1aa180c7bc0db068ca7114e6d8c1be4f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_6</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_6</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000083"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_6</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_6 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SoMgr_SocketDefId_IPv4_UDP_Console <linebreak/>
+ SocketId = SoMgr_SocketDefId_IPv4_UDP_Console <linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_UDP_Console].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SoMgr_SocketDefId_IPv4_UDP_Console].State = SOMGR_SOCKETSTATE_CONNECTING <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_6 returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1114" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1114" bodyend="1144"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a1a0a727f05af140bc5e8e8be17343783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpAccepted_7</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpAccepted_7</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000084"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpAccepted_7</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpAccepted_7 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the SocketId is in a listen server socket an return the expected message <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS<linebreak/>
+ SocketIdConnected = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpAccepted_7 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1166" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1166" bodyend="1192"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1aa58d543ace1fa3a9ee8e8483895d35d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpConnected</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpConnected</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000085"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpConnected</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpConnected </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the Tcp function is connected <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a271cc0ca220220dc2f65e97f0998a1ef" kindref="member">SoMgr_TcpConnected</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the Tcp function is connected <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpConnected checks if SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1214" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1214" bodyend="1237"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a9983a18d77733f302a45a02393d916c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpConnected_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpConnected_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000086"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpConnected_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpConnected_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the Tcp function is connected <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a271cc0ca220220dc2f65e97f0998a1ef" kindref="member">SoMgr_TcpConnected</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the Tcp function is connected <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].pFuncTcpConnected = TcpConnect <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpConnected_1 checks if SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1261" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1261" bodyend="1285"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a44584c0f1728db2b49f9428e4a39a7a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpConnected_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpConnected_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000087"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpConnected_2</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpConnected_2 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if the Tcp function is connected <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a271cc0ca220220dc2f65e97f0998a1ef" kindref="member">SoMgr_TcpConnected</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if the Tcp function is connected <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].State = SOMGR_SOCKETSTATE_NOT_INIT <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpConnected_2 checks if SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_NOT_INIT <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1307" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1307" bodyend="1333"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1ad650b39b80285ac73457eeae74d3a655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpIpEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpIpEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000088"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpIpEvent</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpIpEvent </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if all the other events are closed <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1ae4a2dfa0374da2efccdcc6d8ccd0e7ab" kindref="member">SoMgr_TcpIpEvent</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if all the other events are closed <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].EventCount = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ Event = TCPIP_TCP_FIN_RECEIVED <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-1].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-1 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpIpEvent nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1357" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1357" bodyend="1388"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1afbd5caf213bbd7879f5c2e12c1d3ebc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_TcpIpEvent_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_TcpIpEvent_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000089"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_TcpIpEvent_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_TcpIpEvent_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if all the other events are closed <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1ae4a2dfa0374da2efccdcc6d8ccd0e7ab" kindref="member">SoMgr_TcpIpEvent</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if all the other events are closed <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].EventCount = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ Event = TCPIP_TCP_FIN_RECEIVED <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: create test to check if all the other events are closed <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS -3].EventCount = 0 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-3 <linebreak/>
+ Event = 0x04 <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-3].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-3 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: create test to check if all the other events are closed <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-3].EventCount = 1 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-3 <linebreak/>
+ Event = TCPIP_TCP_RESET <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-3].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS -3].SocketId = SOMGR_SOCKET_INVALID <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-3 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 4: create test to check if all the other events are closed <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-2].EventCount = 1 <linebreak/>
+ SocketId = SOMGR_MAX_NUM_SOCKETS-2 <linebreak/>
+ Event = TCPIP_TCP_RESET <linebreak/>
+ SoMgr_SocketTable[SOMGR_MAX_NUM_SOCKETS-2].State = SOMGR_SOCKETSTATE_ONLINE <linebreak/>
+ SoMgr_getSocketHdl = SOMGR_MAX_NUM_SOCKETS-2 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_TcpIpEvent_1 nothing to return <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: SoMgr_TcpIpEvent_1 nothing to return <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: SoMgr_TcpIpEvent_1 nothing to return <linebreak/>
+</para></listitem><listitem><para>expected results from condition 4: SoMgr_TcpIpEvent_1 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1437" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1437" bodyend="1524"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a152020aa3e6b5d9bf126f6e6e640cee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000090"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = SOMGR_LOCAL_ADDR_ID_COUNT <linebreak/>
+ State = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1545" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1545" bodyend="1564"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1aead4cdd49491d7d8a6f21a54decc354b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000091"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_1</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_1 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = SOMGR_LOCAL_ADDR_ID_COUNT - 1 <linebreak/>
+ State = TCPIP_TCP_CLOSED <linebreak/>
+ SoMgr_LocalIpAddrTable[SOMGR_LOCAL_ADDR_ID_COUNT].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_1 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1586" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1586" bodyend="1613"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a1f8d4bee3c8478a29a596e1da85aace0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000092"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_2</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_2 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Console <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Console].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_2 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1635" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1635" bodyend="1662"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1acd2f48d940a0b6aa57fdc5ed7ffe862b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000093"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_3</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_3 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Gateway <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Gateway].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_3 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1684" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1684" bodyend="1714"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1aa348b5f2aeac53603cf01a90c11a907d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000094"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_4</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_4 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Gateway_MC <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv4_Gateway_MC].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_4 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1736" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1736" bodyend="1764"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a66e1512f6398dd8c78b196419764b928" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000095"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_5</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_5 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv6_Gateway <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv6_Gateway].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_5 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1786" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1786" bodyend="1816"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a8f89d2667fe043ed5c9e48818e95ae6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_6</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_6</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000096"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_6</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_6 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv6_Gateway_ANMC <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[TcpIpConf_TcpIpLocalAddr_TcpIpLocalAddr_IPv6_Gateway_ANMC].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_6 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1838" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1838" bodyend="1866"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8c_8test_1a6f65270f044faac2630e375a951bfbff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_7</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_7</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000097"><xreftitle>Test</xreftitle><xrefdescription><para>SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_7</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Unit test for function SoMgr_LocalIpAddrAssignmentChg_7 </title><para>Test type: Decision testing <linebreak/>
+Overview: Check if a specific IpAddr is set and open the specific socket id <linebreak/>
+Verifies: <ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref></para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: create test to check if a specific IpAddr is set and open the specific socket id <linebreak/>
+ IpAddrId = SOMGR_LOCAL_ADDR_ID_COUNT-1 <linebreak/>
+ State = TCPIP_IPADDR_STATE_ASSIGNED <linebreak/>
+ SoMgr_LocalIpAddrTable[SOMGR_LOCAL_ADDR_ID_COUNT-1].StateChanges = 0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: SoMgr_LocalIpAddrAssignmentChg_7 nothing to return <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" line="1888" column="1" bodyfile="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test" bodystart="1888" bodyend="1916"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Test case specification file for <ref refid="_so_mgr___cbk_8c" kindref="compound">SoMgr_Cbk.c</ref> unit. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/test/swut/SoMgr_Cbk.c.test"/>
+  </compounddef>
+</doxygen>

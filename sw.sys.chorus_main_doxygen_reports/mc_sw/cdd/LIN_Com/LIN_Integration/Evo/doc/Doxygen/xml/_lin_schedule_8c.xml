@@ -1,0 +1,1722 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_lin_schedule_8c" kind="file" language="C++">
+    <compoundname>LinSchedule.c</compoundname>
+    <includes refid="_lin_schedule_8h" local="yes">LinSchedule.h</includes>
+    <includes local="yes">lin.h</includes>
+    <includes local="yes">lin_cfg_types.h</includes>
+    <includes local="yes">lin_cfg.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes refid="_config_lin_8h" local="yes">ConfigLin.h</includes>
+    <includes local="yes">DWA_LIN_heartbeat.h</includes>
+    <includes local="yes">DK2_LinBuiltInList.h</includes>
+    <includes refid="_lin_integration___cfg_8h" local="yes">LinIntegration_Cfg.h</includes>
+    <incdepgraph>
+      <node id="106">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="121">
+        <label>DWA_LIN_heartbeat.h</label>
+      </node>
+      <node id="123">
+        <label>LinIntegration_Cfg.h</label>
+        <link refid="_lin_integration___cfg_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>Lin.h</label>
+      </node>
+      <node id="105">
+        <label>LinSchedule.h</label>
+        <link refid="_lin_schedule_8h"/>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="104">
+        <label>LinSchedule.c</label>
+        <link refid="_lin_schedule_8c"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>lin_cfg.h</label>
+      </node>
+      <node id="120">
+        <label>ErrHdl_DEM_Interface.h</label>
+      </node>
+      <node id="109">
+        <label>LinIntegration.h</label>
+        <link refid="_lin_integration_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>lin_def_gen.h</label>
+      </node>
+      <node id="118">
+        <label>LinFlash.h</label>
+      </node>
+      <node id="122">
+        <label>DK2_LinBuiltInList.h</label>
+      </node>
+      <node id="113">
+        <label>lin.h</label>
+      </node>
+      <node id="119">
+        <label>ConfigNmHighSpeed.h</label>
+      </node>
+      <node id="117">
+        <label>RoutingOps.h</label>
+      </node>
+      <node id="111">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="115">
+        <label>ConfigLin.h</label>
+        <link refid="_config_lin_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="107">
+        <label>lin_cfg_types.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_lin_schedule_data_t" prot="public">LinScheduleDataT</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_lin_schedule_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="61" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_schedule_8c_1a95e57208d636f69699fc400fdf2b273a" prot="public" static="no">
+        <name>LIN_LOCAL_INLINE</name>
+        <initializer>static inline</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This helps to declare and identify inline static functions for the LIN Integration component <simplesect kind="remark"><para>Value: static inline </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="74" column="10" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_schedule_8c_1a77c1e9ae8d52bc9aab8a82e554474cec" prot="public" static="no">
+        <name>LIN_LOCAL</name>
+        <initializer>static</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This helps to declare and identify static functions for the LIN Integration component <simplesect kind="remark"><para>Value: static </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="84" column="10" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_lin_schedule_8c_1a755fe315fc23a3ecf2395dbc3e3967f4" prot="public" static="no">
+        <name>LIN_SCHEDULE_10MS</name>
+        <initializer>(uint8)(10u / K_LIN_CYCLE_TIME)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the schedule time for LIN</para><para>The schedule time is 10 ms and is dependent on time base of the LIN timer. <linebreak/>
+ <simplesect kind="remark"><para>value: 2 (10ms/K_LIN_CYCLE_TIME) <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="95" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_lin_schedule_8c_1ae54c67bb68eab0967a19e9d04f17051a" prot="public" static="no">
+        <type>struct LinScheduleDataT</type>
+        <definition>typedef struct LinScheduleDataT  LinScheduleDataT</definition>
+        <argsstring></argsstring>
+        <name>LinScheduleDataT</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the type for the Schedule tables data used by Lin Integration component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="122" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" prot="public" static="yes" mutable="no">
+        <type><ref refid="_lin_schedule_8c_1ae54c67bb68eab0967a19e9d04f17051a" kindref="member">LinScheduleDataT</ref></type>
+        <definition>LinScheduleDataT LinScheduleData[LIN_IFC_NR_MAX]</definition>
+        <argsstring>[LIN_IFC_NR_MAX]</argsstring>
+        <name>LinScheduleData</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Array that contains the schedule tables data for all LIN interfaces</para><para>The data will be updated and used by other Lin Integration subcomponents to manage the scheduling of the LIN tables. <simplesect kind="remark"><para>range See each member<linebreak/>
+ values See each member<linebreak/>
+ context activatedSchedule {LinTask/C1, <ref refid="_lin_schedule_8c_1aa27e693e83acbfbc03576ab38459c28c" kindref="member">LinInt_ScheduleTable_Init</ref> / <ref refid="_lin_schedule_8c_1a07e2e0d9301d3a88cf04ca9b0f9ced52" kindref="member">LinScheduleFlashUpdate</ref> / <ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref>/ <ref refid="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" kindref="member">LinScheduleAlternUpdate</ref> / <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref> , &quot;set activatedSchedule&quot; } <linebreak/>
+ context activatedSchedule {LinTask/C1 + DiagTask/C2, various functions , &quot;read activatedSchedule&quot; } <linebreak/>
+ context requestedSchedule {LinTask/C1, <ref refid="_lin_schedule_8c_1aa27e693e83acbfbc03576ab38459c28c" kindref="member">LinInt_ScheduleTable_Init</ref>, &quot;init requestedSchedule only at startup&quot; } <linebreak/>
+ context requestedSchedule {DiagTask/C2, <ref refid="_lin_schedule_8c_1ab1377d36732a6bf4e37cafaf4d33f36e" kindref="member">LinInt_ScheduleTable_RequestOldTable</ref>/ <ref refid="_lin_schedule_8c_1a687f1080b2b0165fc3e3ea516770247b" kindref="member">LinInt_ScheduleTable_RequestTable</ref> , &quot;set requestedSchedule&quot; } <linebreak/>
+ context requestedSchedule {LinTask/C1 + DiagTask/C2, various functions , &quot;read requestedSchedule&quot; } <linebreak/>
+ context OldRequestedLinScheduleTable {LinTask/C1, <ref refid="_lin_schedule_8c_1a1a53e4a6b4a501e996224a6cadce389e" kindref="member">LinInt_ScheduleTable_SaveOldTable</ref>, &quot;init OldRequestedLinScheduleTable&quot;} <linebreak/>
+ context OldRequestedLinScheduleTable {DiagTask/C2, <ref refid="_lin_schedule_8c_1a1a53e4a6b4a501e996224a6cadce389e" kindref="member">LinInt_ScheduleTable_SaveOldTable</ref>, &quot;set OldRequestedLinScheduleTable&quot;} <linebreak/>
+ context OldRequestedLinScheduleTable {DiagTask/C2, <ref refid="_lin_schedule_8c_1ab1377d36732a6bf4e37cafaf4d33f36e" kindref="member">LinInt_ScheduleTable_RequestOldTable</ref> , &quot;read OldRequestedLinScheduleTable&quot; } <linebreak/>
+ context isFlashScheduleRequested {DiagTask/C2, <ref refid="_lin_schedule_8c_1a66e429045f4d1a1d532cac24c98f5229" kindref="member">LinInt_ScheduleTable_RequestFlash</ref> / <ref refid="_lin_schedule_8c_1a66e429045f4d1a1d532cac24c98f5229" kindref="member">LinInt_ScheduleTable_RequestFlash</ref>, &quot;set isFlashScheduleRequested&quot; } <linebreak/>
+ context isFlashScheduleRequested {LinTask/C1 + DiagTask/C2, <ref refid="_lin_schedule_8c_1aad89c2543a4a8dc0a8a3c43355cc902e" kindref="member">LinInt_ScheduleTable_IsFlashRequested</ref> / <ref refid="_lin_schedule_8c_1a07e2e0d9301d3a88cf04ca9b0f9ced52" kindref="member">LinScheduleFlashUpdate</ref>, <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref>, &quot;read isFlashScheduleRequested&quot; } <linebreak/>
+ context isAlternativeScheduleRequested {LinTask/C1, <ref refid="_lin_schedule_8c_1a7ee74113a69e8cf2d30117e16d110998" kindref="member">LinInt_ScheduleTable_RequestAlternative</ref>/ <ref refid="_lin_schedule_8c_1a7ee74113a69e8cf2d30117e16d110998" kindref="member">LinInt_ScheduleTable_RequestAlternative</ref>, &quot;set isAlternativeScheduleRequested&quot; } <linebreak/>
+ context isAlternativeScheduleRequested {LinTask/C1, <ref refid="_lin_schedule_8c_1a00d03049f86932e0d6bddf87684ce6a9" kindref="member">LinInt_ScheduleTable_IsAlternativeRequested</ref> / <ref refid="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" kindref="member">LinScheduleAlternUpdate</ref>, <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref>, &quot;read isAlternativeScheduleRequested&quot; } <linebreak/>
+ context applScheduleEntry {LinTask/C1, <ref refid="_lin_schedule_8c_1aa27e693e83acbfbc03576ab38459c28c" kindref="member">LinInt_ScheduleTable_Init</ref> / <ref refid="_lin_schedule_8c_1a07e2e0d9301d3a88cf04ca9b0f9ced52" kindref="member">LinScheduleFlashUpdate</ref> / <ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref>/ <ref refid="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" kindref="member">LinScheduleAlternUpdate</ref> / <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref> , &quot;set applScheduleEntry&quot; } <linebreak/>
+ context applScheduleEntry {<ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref> , &quot;read applScheduleEntry&quot; } <linebreak/>
+ context requestSent {LinTask/C1, <ref refid="_lin_schedule_8c_1a3c58c889343c7d7c7d367deb36d32483" kindref="member">LinScheduleDiagnosis</ref> / <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update</ref>, &quot;set requestSent&quot; } <linebreak/>
+ context requestSent {LinTask/C1, <ref refid="_lin_schedule_8c_1a3c58c889343c7d7c7d367deb36d32483" kindref="member">LinScheduleDiagnosis</ref> , &quot;read requestSent&quot; } <linebreak/>
+ context suppressCommunicationDTC {LinTask/C1, <ref refid="_lin_schedule_8c_1a3c58c889343c7d7c7d367deb36d32483" kindref="member">LinScheduleDiagnosis</ref> / <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update</ref>, &quot;set suppressCommunicationDTC&quot; } <linebreak/>
+ context suppressCommunicationDTC {DiagTask/C2, <ref refid="_lin_schedule_8c_1af908124e05b476b521f1743e08ad0a99" kindref="member">LinInt_ScheduleDiag_CommunicationIsValid</ref> , &quot;read suppressCommunicationDTC&quot; } <linebreak/>
+ context alternScheduleHandled {LinTask/C1, <ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref> / <ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref>, &quot;set alternScheduleHandled&quot; } <linebreak/>
+ context alternScheduleHandled {LinTask/C1, <ref refid="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" kindref="member">LinScheduleDiagUpdate</ref>, &quot;read alternScheduleHandled&quot; } <linebreak/>
+ context diagCounter {LinTask/C1, <ref refid="_lin_schedule_8c_1a3c58c889343c7d7c7d367deb36d32483" kindref="member">LinScheduleDiagnosis</ref> / <ref refid="_lin_schedule_8c_1af3905beb5718df07f3efc001a67b84ab" kindref="member">LinInt_ScheduleDiag_IncrementCounter</ref>/ <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref>, <ref refid="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" kindref="member">LinScheduleAlternUpdate</ref>, &quot;modify/increment diagCounter&quot; } <linebreak/>
+ context diagCounter {LinTask/C1, <ref refid="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" kindref="member">LinScheduleApplUpdate</ref>, <ref refid="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" kindref="member">LinScheduleAlternUpdate</ref> , &quot;read diagCounter&quot; } <linebreak/>
+ context requestSleep {LinTask/C1, <ref refid="_lin_schedule_8c_1aa254f20c56c153521bc60b3a036a2b18" kindref="member">LinInt_ScheduleTable_RequestSleep</ref>, <ref refid="_lin_schedule_8c_1a7fafe7428345d9cd20a978d772db404b" kindref="member">LinInt_ScheduleTable_ClearSleepRequest</ref>, <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update</ref> , &quot;set requestSleep&quot; } <linebreak/>
+ context requestSleep {LinTask/C1, <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update</ref> , &quot;read requestSleep&quot; } <linebreak/>
+ protection {none, &quot;Data is written only from LinTask, or DiagTask. THe exception is for LinTask startup, but in those cases the data fron DiagTask is updated only on Diag Request request so is OK. &quot;} <linebreak/>
+ storage class {init ram}  <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="176" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_lin_schedule_8c_1a6788316dabcd1e13a3f72092f811af78" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LinScheduleApplUpdate</definition>
+        <argsstring>(const l_ifc_handle ifc, const uint8 nextScheduledEntry, const l_schedule_handle requestedSchedule)</argsstring>
+        <name>LinScheduleApplUpdate</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>nextScheduledEntry</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>requestedSchedule</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function handles switching of schedule table for LIN bus while applicative schedule is activated. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will be called from <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref> <linebreak/>
+ While in applicative schedule it can be changed to flash, diagnostic or another applicative.</para><para><simplesect kind="pre"><para>Applicative schedule is activated. </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nextScheduledEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">requestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[] <linebreak/>
+ <ref refid="_lin_integration___cfg_8c_1a1eccb0d3e309dc2f64de1e1a6fd23eb4" kindref="member">LinScheduleConstData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If the context of <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>, if the activated schedule is application schedule the current <linebreak/>
+ function will be called to handle the actual switching of the schedule table for the provided LIN interface</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinScheduleApplUpdate.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinScheduleApplUpdate <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>{SWR_ICAS1_L3_DK4_274, SWR_ICAS1_L3_DK4_276, SWR_ICAS1_L3_DK4_278, SWR_ICAS1_L3_DK4_281, SWR_ICAS1_L3_DK4_630} Design Decision - Justification. This is a helper function to handle the switching of schedule table for LIN bus while applicative schedule is activated. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="274" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="626" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a4cf86f3d2890b2a512f96f2fb870237f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LinScheduleDiagUpdate</definition>
+        <argsstring>(const l_ifc_handle ifc, const uint8 nextScheduledEntry, const l_schedule_handle requestedSchedule)</argsstring>
+        <name>LinScheduleDiagUpdate</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>nextScheduledEntry</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>requestedSchedule</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function handles switching of schedule table for LIN bus while diagnostic schedule is activated. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will be called from <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>. <linebreak/>
+ While in diagnostic schedule it can be changed to applicative.</para><para><simplesect kind="pre"><para>Diagnostic schedule is activated </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nextScheduledEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">requestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[] <linebreak/>
+ <ref refid="_lin_integration___cfg_8c_1a1eccb0d3e309dc2f64de1e1a6fd23eb4" kindref="member">LinScheduleConstData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>In the context of <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>, if the activated schedule is diagnostic schedule, the current <linebreak/>
+ function will be called to handle the actual switching of the schedule table for the provided LIN interface</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinScheduleDiagUpdate.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinScheduleDiagUpdate <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>{SWR_ICAS1_L3_DK4_275, SWR_ICAS1_L3_DK4_279} Design Decision - Justification. This is a helper function to handle the switching of schedule table for LIN bus while diagnostic schedule is activated. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="345" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="676" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a07e2e0d9301d3a88cf04ca9b0f9ced52" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LinScheduleFlashUpdate</definition>
+        <argsstring>(const l_ifc_handle ifc, const uint8 nextScheduledEntry, const l_schedule_handle requestedSchedule)</argsstring>
+        <name>LinScheduleFlashUpdate</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>nextScheduledEntry</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>requestedSchedule</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function handles switching of schedule table for LIN bus while flashing schedule is activated </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will be called from <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>. <linebreak/>
+ While in flash schedule it can be changed to applicative. <linebreak/>
+</para><para><simplesect kind="pre"><para>Flashing schedule is activated </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nextScheduledEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">requestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[] <linebreak/>
+ <ref refid="_lin_integration___cfg_8c_1a1eccb0d3e309dc2f64de1e1a6fd23eb4" kindref="member">LinScheduleConstData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>In the context of <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>, if the activated schedule is flashing schedule, the current <linebreak/>
+ function will be called to handle the actual switching of the schedule table for the provided LIN interface</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinScheduleFlashUpdate.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinScheduleFlashUpdate <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>{SWR_ICAS1_L3_DK4_448} Design Decision - Justification. This is a helper function to handle the switching of schedule table for LIN bus while flashing schedule is activated. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="407" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="714" bodyend="732"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a9f3a62b6a6a59909a0ec6f1aa373aa69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LinScheduleAlternUpdate</definition>
+        <argsstring>(const l_ifc_handle ifc, const uint8 nextScheduledEntry, const l_schedule_handle requestedSchedule)</argsstring>
+        <name>LinScheduleAlternUpdate</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>nextScheduledEntry</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>requestedSchedule</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function handles switching of schedule table for LIN bus while alternative applicative schedule is activated </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will be called from <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>. <linebreak/>
+ While in alternative schedule it can be changed to applicative</para><para><simplesect kind="pre"><para>Alternative schedule is activated </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nextScheduledEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">requestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[] <linebreak/>
+ <ref refid="_lin_integration___cfg_8c_1a1eccb0d3e309dc2f64de1e1a6fd23eb4" kindref="member">LinScheduleConstData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>In the context of <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>, if the activated schedule is alternative schedule, the current <linebreak/>
+ function will be called to handle the actual switching of the schedule table for the provided LIN interface</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinScheduleAlternUpdate.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinScheduleAlternUpdate <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to handle the switching of schedule table for LIN bus while alternative applicative schedule is activated. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="478" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="734" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a3c58c889343c7d7c7d367deb36d32483" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LinScheduleDiagnosis</definition>
+        <argsstring>(const l_ifc_handle ifc, const uint8 nextScheduledEntry, const scheduleType requestedScheduleType, const scheduleType activatedScheduleType)</argsstring>
+        <name>LinScheduleDiagnosis</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>nextScheduledEntry</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_lin_integration___cfg_8h_1a3052ea4a5b3a66274d4cf35abd835ef9" kindref="member">scheduleType</ref></type>
+          <declname>requestedScheduleType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_lin_integration___cfg_8h_1a3052ea4a5b3a66274d4cf35abd835ef9" kindref="member">scheduleType</ref></type>
+          <declname>activatedScheduleType</declname>
+        </param>
+        <briefdescription>
+<para>This function performs diagnostic actions for LIN Schedule for specific LIN bus,. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will update istverbau status for LIN slaves, <linebreak/>
+ resets flag that suspends LIN communication DTCs and <linebreak/>
+ shortens time between schedule switch for slave response.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nextScheduledEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">requestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">activatedScheduleType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_schedule_8c_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>Will be called in the context of <ref refid="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" kindref="member">LinInt_ScheduleTable_Update()</ref>, before switching the schedule table. <linebreak/>
+ The flag that suspends LIN communication DTCs will be reset if nextScheduledEntry parameter is 1. <linebreak/>
+ If the activated schedule type is application schedule or alternative schedule, <linebreak/>
+ the presence status of the LIN bus will be reset by calling BIL_IstverbauReset() function. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinScheduleDiagnosis.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinScheduleDiagnosis <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function will perform diagnostic actions for LIN Schedule for a provided LIN bus. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="551" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="590" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1afa12d31985529dcf1329191071a8b4df" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8</type>
+        <definition>static uint8 LinHandleToIndex</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinHandleToIndex</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>Inline function to return the index for the LIN bus based on the provided ifc. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - - output based only on constants and parameters <linebreak/>
+ multicore safe: Yes - output based only on constants and parameters <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface for which the index is requested</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - LIN index corresponding to the provided interface</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>This helper function assumes that LIN_IFC_NR_MAX == LIN_CHANNELS_COUNT <linebreak/>
+ For this reason the function will return the provided parameter linInterface. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to return the index for the LIN bus based on the provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="579" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="579" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1aa27e693e83acbfbc03576ab38459c28c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_Init</definition>
+        <argsstring>(const uint8 linIndex)</argsstring>
+        <name>LinInt_ScheduleTable_Init</name>
+        <param>
+          <type>const uint8</type>
+          <declname>linIndex</declname>
+        </param>
+        <briefdescription>
+<para>This function will set the initial Lin schedule table <linebreak/>
+ It&apos;s called from the LinTask. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_Init.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_Init <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to initialize the Lin schedule table based on the provided index. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="774" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="774" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1aa2da0779c018334839f0909c52b10f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_SetInitialActivatedTable</definition>
+        <argsstring>(const l_ifc_handle linInterface, const l_schedule_handle table)</argsstring>
+        <name>LinInt_ScheduleTable_SetInitialActivatedTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>This function will set a specific Lin schedule table for a provided interface <linebreak/>
+ It&apos;s called from the LinTask. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the schedule table is provided </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- schedule table to be set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_SetInitialActivatedTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_SetInitialActivatedTable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to set a provided activated table for a LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="788" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="788" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a115a38ceabaaa7305f869161c7775e25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_Update</definition>
+        <argsstring>(const l_ifc_handle ifc)</argsstring>
+        <name>LinInt_ScheduleTable_Update</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>ifc</declname>
+        </param>
+        <briefdescription>
+<para>This function updates current LIN schedule table and changes it if needed. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ It&apos;s called from the LinTask.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ifc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- LIN interface to be handled </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_Update.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_Update <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DK4_250 SWR_ICAS1_L3_DK4_247 <linebreak/>
+ Design Decision - Justification. Helper function to update the current LIN schedule table. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="799" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="799" bodyend="903"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a66e429045f4d1a1d532cac24c98f5229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_RequestFlash</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_RequestFlash</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the flash schedule table for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the schedule table is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_RequestFlash.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_RequestFlash <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to request the flash schedule table for a provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="905" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="905" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a9751ccd48f4f36a786c8aed9439b7fa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_ReleaseFlash</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_ReleaseFlash</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will release the flash schedule table for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the schedule table is released </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_ReleaseFlash.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_ReleaseFlash <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to release the flash schedule table for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="916" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="916" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1ab7c1966c3e42706aba86061ca6e423d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsFlashSupported</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsFlashSupported</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the flashing table is supported for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - output based only on constants and parameters <linebreak/>
+ multicore safe: Yes - output based only on constants and parameters <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="remark"><para>This function will return TRUE when flashing table is supported and FALSE when flashing table is not supported.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsFlashSupported.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsFlashSupported. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the flashing table is supported for a provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="927" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="927" bodyend="945"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1aad89c2543a4a8dc0a8a3c43355cc902e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsFlashRequested</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsFlashRequested</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the flashing table is requested for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will return TRUE after the request LinInt_ScheduleTable_RequestFlash(ifc) <linebreak/>
+ and FALSE after the request to LinInt_ScheduleTable_ReleaseFlash(ifc).</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsFlashRequested.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsFlashRequested <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the flashing table is requested for a provided LIN interface. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="947" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="947" bodyend="953"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a7e2834ffe36d3deb8f2e47b5894385bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsFlashActivated</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsFlashActivated</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the flashing table is activated for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will return TRUE only when the actual schedule table is a flashing table. <linebreak/>
+ Switch will be done after the current schedule table finishes the current execution.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsFlashActivated.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsFlashActivated <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the flashing table is activated for a provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="955" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="955" bodyend="973"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a7ee74113a69e8cf2d30117e16d110998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_RequestAlternative</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_RequestAlternative</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the alternative schedule table for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>For DWA LIN: DWA sounder is coded and the driver door is locked. </para></simplesect>
+<simplesect kind="post"><para>If alternative schedule table is requested it should be released using the <ref refid="_lin_schedule_8h_1af375b1b1bb033491c2774a29d068def1" kindref="member">LinInt_ScheduleTable_ReleaseAlternative()</ref> interface.</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the schedule table is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_RequestAlternative.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_RequestAlternative. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to request the alternative schedule table for a provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="975" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="975" bodyend="984"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1af375b1b1bb033491c2774a29d068def1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_ReleaseAlternative</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_ReleaseAlternative</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will release the alternative schedule table for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>For DWA LIN: DWA sounder is coded and the driver door is unlocked. </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the schedule table is released </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_ReleaseAlternative.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method The testing method is described on  TEST_LinInt_ScheduleTable_ReleaseAlternative. </title><para></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to release the alternative schedule table for a provided LIN interface. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="986" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="986" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a00d03049f86932e0d6bddf87684ce6a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsAlternativeRequested</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsAlternativeRequested</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the alternative table is requested for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function will return TRUE after the request LinInt_ScheduleTable_RequestAlternative(ifc) <linebreak/>
+ and FALSE after the request to LinInt_ScheduleTable_ReleaseAlternative(ifc).</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsAlternativeRequested.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsAlternativeRequested. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the alternative table is requested for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="997" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="997" bodyend="1004"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a5f72cde54ebb4ec910eb8760f622ab60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsAlternativeSupported</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsAlternativeSupported</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the alternative table is supported for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will return TRUE when alternative table is supported and FALSE when alternative table is not supported.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - - output based only on constants and parameters <linebreak/>
+ multicore safe: Yes - output based only on constants and parameters <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsAlternativeSupported.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsAlternativeSupported. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the alternative table is supported for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1006" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1006" bodyend="1024"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a0e29680d2a8ea78221d5622bc5c01020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsAlternativeActivated</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsAlternativeActivated</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if the alternative table is activated for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will return TRUE only when the actual schedule table is the alternative table. <linebreak/>
+ Switch will be done after the current schedule table finishes the current execution.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsAlternativeActivated.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsAlternativeActivated. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if the alternative table is activated for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1026" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1026" bodyend="1044"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1ad4fcd2979362f0fec81cc41585a07dd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsDiagActivated</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsDiagActivated</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if a diagnose table (request or response) is active for for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will return TRUE if a diagnose table is active for the LIN interface and FALSE otherwise. <linebreak/>
+ <simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsDiagActivated.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsDiagActivated. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if a diagnose table (request or response) is active for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1046" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1046" bodyend="1066"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a9e04318103b82b2a160ed5c2b8c32145" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleTable_IsDiagRequested</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_IsDiagRequested</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if a diagnose table (request or response) is requested for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will return TRUE if a diag table is requested and FALSE if a diag table is not requested</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>result - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_IsDiagRequested.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_IsDiagRequested. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if a diagnose table (request or response) is requested for a provided LIN interface </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1068" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1068" bodyend="1088"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a523993848673222d983506d1dc4c1427" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>l_schedule_handle</type>
+        <definition>l_schedule_handle LinInt_ScheduleTable_GetDiagRequestTable</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_GetDiagRequestTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will get the request diagnose table for the LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - - output based only on constants and parameters <linebreak/>
+ multicore safe: Yes - output based only on constants and parameters <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the diag table is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>l_schedule_handle - for each LIN interface x will return the LinConfig[x].diagRequestSchedule</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_GetDiagRequestTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_GetDiagRequestTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to get the request diagnose table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1090" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1090" bodyend="1095"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a439824e7e42d798f57ffcb476bc99da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>l_schedule_handle</type>
+        <definition>l_schedule_handle LinInt_ScheduleTable_GetDiagResponseTable</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_GetDiagResponseTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will get the response diagnose table for the LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - - output based only on constants and parameters <linebreak/>
+ multicore safe: Yes - output based only on constants and parameters <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the diag table response is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>l_schedule_handle - for each LIN interface x will return the LinConfig[x].diagResponseSchedule</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_GetDiagResponseTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_GetDiagResponseTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to get the response diagnose table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1097" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1097" bodyend="1102"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1ab1377d36732a6bf4e37cafaf4d33f36e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_RequestOldTable</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_RequestOldTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will restore the previous requested table for the LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used after a temporary switch to another LIN table.</para><para><simplesect kind="pre"><para>Should be called after a request to LinInt_ScheduleTable_SaveOldTable </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the restore is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_RequestOldTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_RequestOldTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to restore the previous requested table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1104" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1104" bodyend="1113"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a1a53e4a6b4a501e996224a6cadce389e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_SaveOldTable</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_SaveOldTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will temporary save the current requested table for the LIN interface, so that it can be restored later. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used before a temporary switch to another LIN table.</para><para><simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="pre"><para>Should be called before a request to switch to a LIN diagnose schedule table </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the save is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_SaveOldTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_SaveOldTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to temporary save the current requested table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1115" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1115" bodyend="1124"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a687f1080b2b0165fc3e3ea516770247b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_RequestTable</definition>
+        <argsstring>(const l_ifc_handle linInterface, const l_schedule_handle RequestedSchedule)</argsstring>
+        <name>LinInt_ScheduleTable_RequestTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <param>
+          <type>const l_schedule_handle</type>
+          <declname>RequestedSchedule</declname>
+        </param>
+        <briefdescription>
+<para>This function will temporary request another table for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>There should be a request to switch to a LIN diagnose schedule table. <linebreak/>
+ <ref refid="_lin_schedule_8h_1a1a53e4a6b4a501e996224a6cadce389e" kindref="member">LinInt_ScheduleTable_SaveOldTable()</ref> was used before to save the current requested table </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the switch is requested </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RequestedSchedule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Schedule table to be used for switch</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_RequestTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_RequestTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to temporary request another table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1126" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1126" bodyend="1134"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a1881f1c6e35c852332b0e2ea3f335aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>l_schedule_handle</type>
+        <definition>l_schedule_handle LinInt_ScheduleTable_GetRequestedTable</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_GetRequestedTable</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will get the requested schedule table for the LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>For DWA LIN the result should be the main table if the Sounder is not armed, <linebreak/>
+ alternative table if the Sounder is armed or one of the diagnostics table</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which is requested the table </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>l_schedule_handle - for the provided LIN interface x will return the LinConfig[x].requestedSchedule</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_GetRequestedTable.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_GetRequestedTable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to get the requested schedule table for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1136" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1136" bodyend="1141"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1aa254f20c56c153521bc60b3a036a2b18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_RequestSleep</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_RequestSleep</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the LIN bus sleep for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para>For DWA LIN called cyclically every approximate 500ms if the Sounder is armed.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the sleep is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_RequestSleep.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_RequestSleep. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to request the LIN bus sleep for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1143" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1143" bodyend="1152"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1a7fafe7428345d9cd20a978d772db404b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleTable_ClearSleepRequest</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleTable_ClearSleepRequest</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will clear the sleep request for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>Will be called when the sleep mode is activated for this LIN interface</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>) <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the clear is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleTable_ClearSleepRequest.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleTable_ClearSleepRequest. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to clear the request sleep for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1154" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1154" bodyend="1163"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1af3905beb5718df07f3efc001a67b84ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ScheduleDiag_IncrementCounter</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleDiag_IncrementCounter</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function will increment the diag counter for a LIN interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>The diag counter is incremented only in case haven&apos;t reached the max value defined by <ref refid="_config_lin_8h_1a5df112fb709bd138386f1581b0a44ac4" kindref="member">LIN_DIAG_SCHED_TIMER_MAX</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the clear is requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleDiag_IncrementCounter.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleDiag_IncrementCounter. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to increment the diag counter for a provided LIN interface. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1165" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1165" bodyend="1175"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_schedule_8c_1af908124e05b476b521f1743e08ad0a99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ScheduleDiag_CommunicationIsValid</definition>
+        <argsstring>(const l_ifc_handle linInterface)</argsstring>
+        <name>LinInt_ScheduleDiag_CommunicationIsValid</name>
+        <param>
+          <type>const l_ifc_handle</type>
+          <declname>linInterface</declname>
+        </param>
+        <briefdescription>
+<para>This function informs ErrHdl if it can set DTCs regarding the LIN communication. </para>        </briefdescription>
+        <detaileddescription>
+<para>Switching to LIN flashing might cause timeouts in data frame reception.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory <linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linInterface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- interface for which the check is requested</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration___stubs_8h_1aff75a2ee0ec713565b5b4261c67af05e" kindref="member">LinScheduleData</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>The functions will return: <linebreak/>
+ TRUE - if a schedule table for data transmission is active <linebreak/>
+ FALSE -if a schedule table for data transmission is not active <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ScheduleDiag_CommunicationIsValid.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ScheduleDiag_CommunicationIsValid. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to inform ErrHdl if it can set DTCs regarding the LIN communication. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" line="1177" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c" bodystart="1177" bodyend="1194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation file for LinSchedule. </para>    </briefdescription>
+    <detaileddescription>
+<para>This module handles LIN schedule table switching. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinSchedule.c"/>
+  </compounddef>
+</doxygen>

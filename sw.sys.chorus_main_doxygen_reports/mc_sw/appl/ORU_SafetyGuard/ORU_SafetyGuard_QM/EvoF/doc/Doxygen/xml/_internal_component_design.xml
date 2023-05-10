@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The ORU_SafetyGuard_QM component is splitted into the following SW units:<itemizedlist>
+<listitem><para><ref refid="_o_r_u___safety_guard___q_m___task_8c" kindref="compound">ORU_SafetyGuard_QM_Task.c</ref> - This module contains all client server interfaces needed by ORU Guard</para></listitem><listitem><para><ref refid="_o_r_u___safety_guard___q_m___task_8h" kindref="compound">ORU_SafetyGuard_QM_Task.h</ref> - Header file for <ref refid="_o_r_u___safety_guard___q_m___task_8c" kindref="compound">ORU_SafetyGuard_QM_Task.c</ref></para></listitem><listitem><para><ref refid="_o_r_u_g_u_a_r_d1___i_f___rte_patch_8h" kindref="compound">ORUGUARD1_IF_RtePatch.h</ref> - Rte patch header file of the SWC ORUGUARD1_IF.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Note: Start, Stop and RequestResults functions for routines 0360 and 035f implements the same requirement as only routine name is mentioned in them. <linebreak/>
+Read and ConditionCheckRead functions for data 1034, 1036, 1044, 1045, 1046 and 1047 implements the same requirement as only data name is mentioned in them. Non functional requirements are traced here: <table rows="64" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_249  </para></entry><entry thead="no"><para>The integration shall provide an AUTOSAR port StOruGuard1Diag to receive diagnostic data from ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_276  </para></entry><entry thead="no"><para>The integration shall provide an AUTOSAR port StOruGuard1Nvm to receive signals regarding data to be stored non volatile from ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_277  </para></entry><entry thead="no"><para>The integration shall provide an AUTOSAR port StOruGuard1Dem to receive signals for diagnostic event management (error reporting) from ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_278  </para></entry><entry thead="no"><para>The integration shall provide an AUTOSAR port StOruGuard1 to receive information from ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_279  </para></entry><entry thead="no"><para>The integration shall consume an AUTOSAR port StDiagOruGuard1 to provide diagnostic data to ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_280  </para></entry><entry thead="no"><para>The integration shall consume an AUTOSAR port StNvmOruGuard1 to provide NVM status information to ORU_GUARD1.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_284  </para></entry><entry thead="no"><para>The NVM data and status shall be accessible by ORU_GUARD1_IF with the following client/server interfaces: Rte_Call_NvmBlock_ReadBlock, <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>Rte_Call_NvmBlock_WriteBlock and Rte_Call_NvmBlock_GetErrorStatus.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_160  </para></entry><entry thead="no"><para>The status of DTC &quot;0x86F07B - Online Remote Update - Softwareversionen inkonsistent&quot; shall be accessible by ORU_GUARD1_IF with the following <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>client/server interfaces: Rte_Call_SwInconsistentInfo_GetEventStatus and Rte_Call_SwInconsistentMonitor_SetEventStatus   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_289  </para></entry><entry thead="no"><para>The following client/server interface shall be used to inform ORU_GUARD1_IF about a status change of DTC "0x86F07B - Online Remote Update <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>- Softwareversionen inkonsistent": ORUG1IF_SwInconsistentCallback.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_161  </para></entry><entry thead="no"><para>The status of DTC &quot;0x86F07C - Online Remote Update - Softwareversionen inkonsistent - Fahrzeug stillgelegt&quot; shall be accessible by ORU_GUARD1_IF <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>with the following client/server interfaces: Rte_Call_VehLockedInfo_GetEventStatus and Rte_Call_VehLockedMonitor_SetEventStatus.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_290  </para></entry><entry thead="no"><para>The following client/server interface shall be used to inform ORU_GUARD1_IF about a status change of DTC "0x86F07C - Online Remote Update <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>- Softwareversionen inkonsistent - Fahrzeug stillgelegt": ORUG1IF_VehLockedCallback.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_154  </para></entry><entry thead="no"><para>0x1005 - Status ORUGuard1 G1_Info. The following functions shall be called by DCM to read the data of MW 0x1005: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_Info_ConditionCheckRead and ORUG1IF_Info_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_155  </para></entry><entry thead="no"><para>0x1044 - Status Metadaten ORUGuard1 G1_MetaDataState. The following functions shall be called by DCM to read the data of MW 0x1044: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_MetaData_ConditionCheckRead and ORUG1IF_MetaData_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_156  </para></entry><entry thead="no"><para>0x1045 - Zustand ORUGuard1 G1_State. The following functions shall be called by DCM to read the data of MW 0x1045: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_State_ConditionCheckRead and ORUG1IF_State_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_157  </para></entry><entry thead="no"><para>0x1034 - Sperrzustand ORUGuard1 G1_FixationState. The following functions shall be called by DCM to read the data of MW 0x1034: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_FixState_ConditionCheckRead and ORUG1IF_FixState_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_158  </para></entry><entry thead="no"><para>0x1036 - Zielsteuergeräte-Informationen G1_ECUData. The following functions shall be called by DCM to read the data of MW 0x1036: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_TargetInfo_ConditionCheckRead and ORUG1IF_TargetInfo_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_159  </para></entry><entry thead="no"><para>0x1046 - Kampagnenergebnisse G1_ECUDataSummary. The following functions shall be called by DCM to read the data of MW 0x1046: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>ORUG1IF_CampaignResults_ConditionCheckRead and ORUG1IF_CampaignResults_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_299  </para></entry><entry thead="no"><para>0x035F - Online Remote Update Zusatzinformationen. The following functions shall be called by DCM to start and stop routine 0x035F <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>and to request results of routine 0x035F: ORUG1IF_ECUMetaData_Start and ORUG1IF_ECUMetaData_Stop.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_300  </para></entry><entry thead="no"><para>0x0360 - Online Remote Update Entsperrung Guard. he following functions shall be called by DCM to start and stop routine 0x0360 <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>and to request results of routine 0x0360: ORUG1IF_UnlockGuard_Start and ORUG1IF_UnlockGuard_Stop.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_288  </para></entry><entry thead="no"><para>Generated random numbers shall be accessible by ORU_GUARD1_IF with the following client/server interface: <linebreak/>
+   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para>Rte_Call_CsmRandomGenerate_RandomGenerateSync.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_149  </para></entry><entry thead="no"><para>For integration a RAM consumption of the ORU_GUARD1IF library of 200 Bytes shall be considered.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_151  </para></entry><entry thead="no"><para>For integration a ROM consumption of the ORU_GUARD1IF library of 10000 Bytes shall be considered.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_345  </para></entry><entry thead="no"><para>The ORUGUARD1 NVM block shall be restored at startup.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_347  </para></entry><entry thead="no"><para>The configured ORUGUARD1 PIM block shall be stored in NVM when the write request by ORUGUARD1 is received.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_321  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_Init.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_322  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable ORUGUARD1_IF_Task.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_326  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_Info_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_327  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_CampaignResults_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_328  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_CampaignResults_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_323  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_VehLockedCallback.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_324  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_SwInconsistentCallback.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_325  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_Info_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_329  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_FixState_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_330  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_FixState_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_334  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_State_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_331  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_MetaData_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_333  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_State_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_336  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_TargetInfo_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_152  </para></entry><entry thead="no"><para>For integrantion an ORUGUARD1 NVM block shall be configured as redundant block storage with error correction.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_342  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable ORUGUARD1_IF_UnlockGuard_RequestResults.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_339  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable ORUGUARD1_IF_ECUMetaData_RequestResults.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_335  </para></entry><entry thead="no"><para>For integration a stack usage of 48 Bytes shall be considered for runnable ORUGUARD1_IF_TargetInfo_ConditionCheckRead.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_341  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_UnlockGuard_Stop.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_337  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable ORUGUARD1_IF_ECUMetaData_Start.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_332  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_MetaData_ReadData.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_340  </para></entry><entry thead="no"><para>For integration a stack usage of 128 Bytes shall be considered for runnable ORUGUARD1_IF_UnlockGuard_Start.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_346  </para></entry><entry thead="no"><para>A number of 720 write cycles per year shall be considered for the ORUGUARD1 NVM block.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_338  </para></entry><entry thead="no"><para>For integration a stack usage of 64 Bytes shall be considered for runnable ORUGUARD1_IF_ECUMetaData_Stop.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ORU_SG_153  </para></entry><entry thead="no"><para>The ORUGUARD1 NVM block shall be able to store 64 Byte of data.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in ORU_SafetyGuard_QM.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_ORU_SafetyGuard_QM.png">Software_Unit_Interaction_ORU_SafetyGuard_QM</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>ORU_SafetyGuard_QM SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_SafetyGuard_QM/SW Architecture/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para>ORU_SafetyGuard_QM SWC is assigned to <bold> CORE 0 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core0</bold>. <linebreak/>
+ORU_SafetyGuard_QM component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C0 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/ORU_SafetyGuard/ORU_SafetyGuard_QM/SW Architecture/Dynamic/Lifecycle</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>Not applicable because ORU_SafetyGuard_QM doesn&apos;t require a special power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>In case any pointer parameters are NULL, return RTE_E_INVALID. <linebreak/>
+When function is called with NULL PTR, E_NOT_OK returned. <linebreak/>
+When function is called with NULL PTR, UDScub_GENERAL_PROGRAMMING_FAILURE returned. If the data&apos;s range is not in boundaries, UDScub_REQUEST_OUT_OF_RANGE returned. If writing process is not succeeded, UDScub_GENERAL_REJECTED returned.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since <bold>ORU_SafetyGuard_QM</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Macros</heading>
+</para><para>No complex macros or function like macros used. Following macros are used: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para><bold>ORU_SafetyGuard_QM</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para><bold>ORU_SafetyGuard_QM</bold> doesn&apos;t use complex data structures. In such cases, descriptions are given at the coresponding function that uses them.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>QM   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>SWATT or other tools.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

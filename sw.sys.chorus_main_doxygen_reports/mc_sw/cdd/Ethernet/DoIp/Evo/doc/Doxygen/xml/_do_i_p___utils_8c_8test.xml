@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___utils_8c_8test" kind="file" language="C++">
+    <compoundname>DoIP_Utils.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1aac2d2e3f6ea418adf25591413b6ae8c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIP_SetError</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIP_SetError</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000124"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIP_SetError </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check the field error information in DoIP_Status.ErrStatus </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a672c35a279a66af2bbcfa793fe7c3be9" kindref="member">DoIP_SetError</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: code = DOIP_ERR_UNKNOWN_TARGET <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Status.ErrStatus is updated with the error code received <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="83" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="83" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a2f8f6e669d6ade640c455d14c39cebfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIP_SetErrorStatistic</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIP_SetErrorStatistic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000125"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIP_SetErrorStatistic </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the DoIP_Error is incremented for every specific error </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a70703bbd71b15be00d470b68cc967808" kindref="member">DoIP_SetErrorStatistic</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Call the function with every code error <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Check that DoIp_Error is incremented with 1 for every specific error <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="122" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="122" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a2558f03446046c6194c19a25c093a302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertCanID</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertCanID</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000126"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertCanID </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the CanID has been stored in the DoIP_CanIdTable </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1afdfd78e286afb4771ebe0552c7d827bd" kindref="member">DoIPMonitor_InsertCanID</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Call function DoIPMonitor_InsertCanID 3 times to cover all decisions <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_EcuMonitor.CanIdNextToWrite to 11 <linebreak/>
+ Set: cbd_aux.ID = 22 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: CanID is stored in the DoIP_CanIdTable <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="229" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="229" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a4e2110be0c2930dafa6c4c2f04286167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_Lookup</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_Lookup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000127"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_Lookup </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the DoIP_EcuTable[].LogAddr is being updated, and if the returned value of function is search index </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a99a424457b00cf5a856d890e7a082574" kindref="member">DoIPMonitor_Lookup</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Give the variables LogAddr and DoIP_EcuMonitor_LastUsedIndex different values, so that test can cover every decision <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is search index <linebreak/>
+ DoIP_EcuTable[].LogAddr is updated <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="275" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="275" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a12200cf282d2dfc922c7449ac37b559d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertRequest_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertRequest_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000128"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertRequest_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if global variables are being updated </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a4e8a984bfef072d8cd008ebe583125da" kindref="member">DoIPMonitor_InsertRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set: bSucceeded = TRUE <linebreak/>
+ Set: EthMain_Set.DoIPMonitorActive = TRUE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: RequestMsgCount is incremented with 1 <linebreak/>
+ : BusType = ecuType <linebreak/>
+ Function DoIPMonitor_Lookup was called once. <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="327" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="327" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1af27d2f85901f52e94da0b9b14dce456a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertRequest_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertRequest_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000129"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertRequest_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the global data is being updated </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a4e8a984bfef072d8cd008ebe583125da" kindref="member">DoIPMonitor_InsertRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set: boolean bSucceeded = FALSE <linebreak/>
+ Set: EthMain_Set.DoIPMonitorActive = TRUE <linebreak/>
+ Function DoIPMonitor_Lookup was called once. <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_EcuTable[0].BusType == ecuType <linebreak/>
+ DoIP_EcuTable[0].RequestMsgCount = 1 <linebreak/>
+ DoIP_EcuTable[0].RequestFailCount = 1 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="377" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="377" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a440a37e5fcd44e61106cab61863094af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertRequest_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertRequest_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000130"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertRequest_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies that the global data is not being updated </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a4e8a984bfef072d8cd008ebe583125da" kindref="member">DoIPMonitor_InsertRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set bSucceeded = FALSE <linebreak/>
+ Set EthMain_Set.DoIPMonitorActive = FALSE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_EcuTable[0].RequestMsgCount=0 <linebreak/>
+ DoIP_EcuTable[0].RequestFailCount==0 <linebreak/>
+ Function DoIPMonitor_Lookup was not called. <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="428" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="428" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a8508e2c98bf029076086afc6988339fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertResponse_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertResponse_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000131"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertResponse_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if global variables are being updated </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a99de838502f2a2efccc71fbb7a36a945" kindref="member">DoIPMonitor_InsertResponse</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set: bSucceeded = TRUE <linebreak/>
+ Set: EthMain_Set.DoIPMonitorActive = TRUE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: ResponseMsgCount is incremented with 1 <linebreak/>
+ : BusType = ecuType <linebreak/>
+ Function DoIPMonitor_Lookup was called once. <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="476" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="476" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a65e379f83e2848afb6e90b07c87efc5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertResponse_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertResponse_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000132"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertResponse_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the global data is being updated </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a99de838502f2a2efccc71fbb7a36a945" kindref="member">DoIPMonitor_InsertResponse</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set: boolean bSucceeded = FALSE <linebreak/>
+ Set: EthMain_Set.DoIPMonitorActive = TRUE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_EcuTable[0].BusType == ecuType <linebreak/>
+ DoIP_EcuTable[0].ResponseMsgCount = 1 <linebreak/>
+ DoIP_EcuTable[0].ResponseFailCount = 1 <linebreak/>
+ Function DoIPMonitor_Lookup was called once. <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="525" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="525" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1ac1492a5068773e8bb16a835a49120166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_InsertResponse_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_InsertResponse_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000133"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_InsertResponse_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies that the global data is not being updated </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a99de838502f2a2efccc71fbb7a36a945" kindref="member">DoIPMonitor_InsertResponse</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set return value of function DoIPMonitor_Lookup to 0 <linebreak/>
+ Set bSucceeded = FALSE <linebreak/>
+ Set EthMain_Set.DoIPMonitorActive = FALSE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_EcuTable[0].ResponseMsgCount=0 <linebreak/>
+ DoIP_EcuTable[0].ResponseFailCount=0 <linebreak/>
+ Function DoIPMonitor_Lookup was called once. <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="574" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="574" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___utils_8c_8test_1a841b94891ac30a95af296c7566aad3b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Utils__DoIPMonitor_Clear</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Utils__DoIPMonitor_Clear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000134"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Utils__DoIPMonitor_Clear</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Test verifies if the global variables are set to 0 </title><para>Test type: Statement testing <linebreak/>
+Overview: Check if all the information is clear <linebreak/>
+Verifies: <ref refid="_do_i_p___utils_8h_1a6aa1031fe6ef298ed7763c3e98f2bb85" kindref="member">DoIPMonitor_Clear</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set all global variables to 1 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: All global data is set to 0 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" line="620" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test" bodystart="620" bodyend="672"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Test case specification file for <ref refid="_do_i_p___utils_8c" kindref="compound">DoIP_Utils.c</ref> module. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="_do_i_p___utils_8c_8test" kindref="compound">DoIP_Utils.c.test</ref>.</para><para><simplesect kind="author"><para>Patras, Ionela - uidn1598 / / Zagan, Andrei - uie55532 </para></simplesect>
+<simplesect kind="date"><para>20 Jul 2020 14:32:35</para></simplesect>
+Testcase specification file for <ref refid="_do_i_p___utils_8c" kindref="compound">DoIP_Utils.c</ref>. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Utils.c.test"/>
+  </compounddef>
+</doxygen>

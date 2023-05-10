@@ -1,0 +1,1282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para><heading level="3">The component &quot;ComServer_CL&quot; is splitted into the following subcomponents: ComServer and ComServer_Serialization.</heading>
+</para><para><image type="html" name="Comserv_CL_UnitComposition.png"></image>
+</para><para><linebreak/>
+ <heading level="4">1. ComServer</heading>
+</para><para>This subcomponent is responsible for handling the services (offer/request and availability check) based on the specification and initiating notification sending (initial/on change/cyclical/response) for the subscribers. <linebreak/>
+<itemizedlist>
+<listitem><para><bold>ComServ:</bold> Generated(only .c file, .h file is written by hand). This unit is responsible for requesting and offering the services. It initiates to send notifications cyclically, on change or as a response for a request. <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_SdHandling:</bold> Generated. This unit is responsible for managing the state of the requested/offered services and their resourcegroups. It handles the requests and offers with SD. <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_util:</bold> Written by hand. Includes functions which are used for signal2service and for service2signal transformation. <image type="html" name="Comserv_UnitComposition.png"></image>
+</para></listitem></itemizedlist>
+</para><para><heading level="4">2. ComServer_Serialization</heading>
+</para><para>This subcomponent is responsible for serializing and deserializing the data according to the SOME/IP protocol and the given specification. <linebreak/>
+<itemizedlist>
+<listitem><para><bold>ComServ_cdd_send_gen:</bold> Generated. This unit is responsible for building up the skeleton of the notification. <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_SomeIP_payload_gen:</bold> Generated. This unit is responsible for generating the payload of the notification. <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_serializing_util:</bold> Written by hand. Includes functions which are used during the data serialisation process in order to keep the rules: TAG (WireType+TLV) + DATA <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_cdd_read_gen:</bold> Generated. This unit is responsible for deserializing the received data from the server. <linebreak/>
+</para></listitem><listitem><para><bold>ComServ_set_gen:</bold> Generated. This unit is responsible for mapping the received data to the corresponding signal and controlling the corresponding routing mechaninsm. <image type="html" name="Comserv_Serialization_UnitComposition.png"></image>
+</para></listitem></itemizedlist>
+</para><para><image type="html" name="Component_Overview.png">Component overview Diagram</image>
+  <hruler/>
+</para><para>ComServer_CL component is mostly generated. <linebreak/>
+The steps that needs to be followed in order to generate the ComserverQM source files and header files are fully discrebed in the comserv_codegen_manual.docx which is located at <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/codegen/manual/comserv_codegen_manual.docx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/codegen/manual/comserv_codegen_manual.docx</ulink> . The code generator is located in Git: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/c/tools/codegen">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/c/tools/codegen</ulink> <image type="html" name="Generator_Overview.png">Generator overview Diagram</image>
+ The generator uses the following files: <linebreak/>
+</para><para><itemizedlist>
+<listitem><para><bold>*ServiceSpecification_ComservQM*.xlsx</bold> <linebreak/>
+It is the official ServiceSpecification provided by VW in DFL. It determines from ComServer point of view which services should be offered or requested. <linebreak/>
+Furthermore, it describes for every resource group of the services the connection between its signals &quot;signal world&quot; and properties &quot;service world&quot;. <linebreak/>
+Determines the calculation method of the property: &lt;MethodName&gt; <linebreak/>
+This file is stored in artifactory and is located in : <linebreak/>
+ Chorus_MainLine\sw.sys.chorus_main_build\ mc_sw \ _TPD \ appl\ ComServer \ ComServ \ Evo \ cfg \ ServiceSpecification <linebreak/>
+Because the tool we use needs a slitghtly differently columns order this file it is not used in code generation. <linebreak/>
+</para></listitem><listitem><para><bold>MEB_ICAS1_ServiceSpecification_ComServ.xlsx</bold> <linebreak/>
+Because our tool needs an slitghtly differently format to generate the code we have our local ServiceSpecification that we keep it up to date and we are patching it based on the official file. Differences from the official are: <linebreak/>
+ This excel file has to be sorted by service and resource name otherwise the generated code will be incorrect or incomplete. <linebreak/>
+ New column was introduced &quot;Some/IP&quot; in order to indicate if the signal needs to be implemented/mapped on the service or not. This was introduced because not all the signals present in the oficial ServiceSpecification needs to be implemented. Usually each change (adding/removing new signals) is treated under a specific CR, and this column is used to control when these changes will be implemented. <linebreak/>
+Location in Git : <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input/MEB_ICAS1_ServiceSpecification_ComServ.xlsx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input/MEB_ICAS1_ServiceSpecification_ComServ.xlsx</ulink> <linebreak/>
+</para></listitem><listitem><para><bold>*ComServQM_SST_V*.xlsx</bold> <linebreak/>
+It is the official file that is provided to us by VW in DFL. <linebreak/>
+It describes the signals: &lt;SignalName&gt;, &lt;PortName&gt;, &lt;SignalGroupName&gt;, &lt;SignalType&gt;, &lt;MappedSignalName&gt;, &lt;MappedPortName&gt;, &lt;Sender&gt;, &lt;Receiver&gt;, &lt;DataType&gt;, , &lt;QueueSize&gt;, &lt;MinPhysical&gt;, &lt;MaxPhysical&gt;, &lt;Unit&gt;, &lt;Resolution&gt;, &lt;Offset&gt;, &lt;StructDatatype&gt;, &lt;BusName&gt;, &lt;MinDigital&gt;, &lt;MaxDigital&gt;,&lt;Timeout&gt;, &lt;InitValue&gt;, &lt;ErrorValue&gt;,&lt;MessageName&gt;, &lt;StartOnEvent&gt;, &lt;EnableUpdate&gt;, &lt;E2E&gt;, &lt;ASIL classification&gt;=&quot;&quot;&gt;, &lt;Implicit&gt;, &lt;RunnableEntity&gt;, &lt;SwAddrMethod&gt; <linebreak/>
+This official version is stored on artifactory and the location is: Chorus_MainLine\sw.sys.chorus_main_build\ mc_sw \ _TPD \ appl\ ComServer \ ComServ \ Evo \ cfg \ sst <linebreak/>
+</para></listitem><listitem><para><bold>SST_ComServ.xlsx</bold> <linebreak/>
+Because our tool for code generation and for RTE needs a different columns order we have our local SST file that we keep it up to date. <linebreak/>
+For the right format we have a tool to generate the local SST.The steps that needs to be followed in order to generate the SST file are fully discrebed in the generate_sst_manual.docx which is located at <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/generate_sst/manual/generate_sst_manual.docx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/generate_sst/manual/generate_sst_manual.docx</ulink> <linebreak/>
+Tool location : <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/generate_sst/sst_for_classic.py">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/c/tools/generate_sst/sst_for_classic.py</ulink> <linebreak/>
+Location of SST: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input/SST_ComServ.xlsx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input/SST_ComServ.xlsx</ulink> <linebreak/>
+</para></listitem><listitem><para><bold>ARXML files of the services</bold> <linebreak/>
+It is provided by VW. These arxml files describe the structure of the services. The official arxml files are stored on artifactory and the location is: Chorus_MainLine\sw.sys.chorus_main_build\ mc_sw \ _TPD \ appl\ ComServer \ ComServ \ Evo \ cfg \ arxml <linebreak/>
+</para></listitem><listitem><para><bold>services.txt</bold> <linebreak/>
+This file is used to pick from service specification the services that are necessary for ComservCL. <linebreak/>
+location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>extraInitialNotification.txt</bold> <linebreak/>
+It includes a list of services where the initial notification is triggered separately from service discovery. <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>services_sends_cyclically.txt</bold> <linebreak/>
+It includes a list about services which are sent cyclically <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>pdus_to_be_stopped.txt</bold> <linebreak/>
+It includes a list about PDUS which should be handled by ComServer_CL <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>extraVLANs.txt</bold> <linebreak/>
+It includes a list about services which are sent on the specific VLAN <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>tunnel_transmissions.txt</bold> <linebreak/>
+It includes a list about PDUs which are sent through tunnel <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink></para></listitem><listitem><para><bold>systemManifests.txt</bold> <linebreak/>
+It includes a list about systemManifest files which should be used during generation <linebreak/>
+ location in GIT: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/appl/ComServer/ComServ/Evo/cfg/input</ulink> <linebreak/>
+The following naming conventions are used: <linebreak/>
+</para></listitem></itemizedlist>
+</para><para><linebreak/>
+<orderedlist>
+<listitem><para>From the MEB_ICAS1_ServiceSpecification_ComServ.xlsx file:<itemizedlist>
+<listitem><para>&lt;SignalName&gt;: name of the signal (column A)</para></listitem><listitem><para>&lt;ServiceName&gt;: name of the service (column I)</para></listitem><listitem><para>&lt;ResourceName&gt;: name of the resourcegroup (column K)</para></listitem><listitem><para>&lt;KommServer&gt;: describes the role of comserv for each service (column H) <linebreak/>
+<table rows="3" cols="2"><row>
+<entry thead="yes"><para>KommServer  </para></entry><entry thead="yes"><para>Rol   </para></entry></row>
+<row>
+<entry thead="no"><para>C  </para></entry><entry thead="no"><para>client   </para></entry></row>
+<row>
+<entry thead="no"><para>S  </para></entry><entry thead="no"><para>server   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;Key-Property&gt;: name of the property key for each resource name (column L)</para></listitem><listitem><para>&lt;Some/IP Key Value&gt;: Value of each key property(column M).It can be found also in column D (TLV Data-ID) from each service description file(Service_*.xlsx *).This files can be found in DFL.(column M)</para></listitem><listitem><para>&lt;Property name&gt;=&quot;&quot;&gt;: Name of the property for each resource.(column O)</para></listitem><listitem><para>&lt;SomeIP parameter&gt;=&quot;&quot;&gt;: Number for SomeIP Parameter(column R)</para></listitem><listitem><para>&lt;MethodName&gt;: name of the calculation method (column Q) <linebreak/>
+ <table rows="7" cols="1"><row>
+<entry thead="yes"><para>MethodName   </para></entry></row>
+<row>
+<entry thead="no"><para>mappedServiceValue   </para></entry></row>
+<row>
+<entry thead="no"><para>mappedValue   </para></entry></row>
+<row>
+<entry thead="no"><para>propertyValue   </para></entry></row>
+<row>
+<entry thead="no"><para>signalValue   </para></entry></row>
+<row>
+<entry thead="no"><para>staticValue   </para></entry></row>
+<row>
+<entry thead="no"><para>valueType   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;Some/IP&gt;: This column is used exclusivly to indicate if the signal is implemented or not in Comserv. (column U) <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Some/IP  </para></entry><entry thead="yes"><para>Description   </para></entry></row>
+<row>
+<entry thead="no"><para>x  </para></entry><entry thead="no"><para>the signal is implemented   </para></entry></row>
+<row>
+<entry thead="no"><para>Blank  </para></entry><entry thead="no"><para>the signal is not implemented   </para></entry></row>
+</table>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From the SST_ComServ.xlsx: <linebreak/>
+<itemizedlist>
+<listitem><para>&lt;SignalName&gt;: name of the signal (column A)</para></listitem><listitem><para>&lt;Portname&gt;: name of the port (column B)</para></listitem><listitem><para>&lt;MappedSignalName&gt;: name of the mapped signal name (column D)</para></listitem><listitem><para>&lt;Mapped&gt;: name of the mapped (column E)</para></listitem><listitem><para>&lt;Sender&gt;: name of the bus that sends the signal (column F)</para></listitem><listitem><para>&lt;Receiver&gt;: name of the bus that receivs the signal (column G)<linebreak/>
+ <table rows="15" cols="2"><row>
+<entry thead="yes"><para>name in column F/G  </para></entry><entry thead="yes"><para>BusName   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_ACANFD  </para></entry><entry thead="no"><para>A   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_ABCANFD  </para></entry><entry thead="no"><para>AB   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_AFSCANFD  </para></entry><entry thead="no"><para>RemAFS   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_EVCANFD  </para></entry><entry thead="no"><para>EV   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_FCANFD1  </para></entry><entry thead="no"><para>F   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_FASCANFD1  </para></entry><entry thead="no"><para>FAS   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_FASCANFD2  </para></entry><entry thead="no"><para>FAS2   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_MFLCAN  </para></entry><entry thead="no"><para>RemMFL   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_KCAN  </para></entry><entry thead="no"><para>K   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_K2CAN  </para></entry><entry thead="no"><para>K2   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_VLAN_Connect_2  </para></entry><entry thead="no"><para>VC_2   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_VLAN_Connect  </para></entry><entry thead="no"><para>VC   </para></entry></row>
+<row>
+<entry thead="no"><para>E3V_VLAN_FAS  </para></entry><entry thead="no"><para>VFAS   </para></entry></row>
+<row>
+<entry thead="no"><para>DD  </para></entry><entry thead="no"><para>DD   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;MinPhysical&gt;: minimum physical value of the signal (column I)</para></listitem><listitem><para>&lt;MaxPhysical&gt;: maximum physical value of the signal (column J)</para></listitem><listitem><para>&lt;Unit&gt;: name of the unit that is used for value of the signal(column K)</para></listitem><listitem><para>&lt;Resolution&gt;: Value of resolution (column L)</para></listitem><listitem><para>&lt;Offset&gt;: Offset value(column M)</para></listitem><listitem><para>&lt;DataType&gt; and the corresponding &lt;ShortSignalType&gt;: type of the signal (column N) <linebreak/>
+ <table rows="11" cols="2"><row>
+<entry thead="yes"><para>&lt;SignalType&gt;  </para></entry><entry thead="yes"><para>&lt;ShortSignalType&gt;   </para></entry></row>
+<row>
+<entry thead="no"><para>boolean  </para></entry><entry thead="no"><para>b   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="structstring__struct" kindref="compound">string_struct</ref>  </para></entry><entry thead="no"><para>string   </para></entry></row>
+<row>
+<entry thead="no"><para>uint8  </para></entry><entry thead="no"><para>u8   </para></entry></row>
+<row>
+<entry thead="no"><para>sint8  </para></entry><entry thead="no"><para>s8   </para></entry></row>
+<row>
+<entry thead="no"><para>uint16  </para></entry><entry thead="no"><para>u16   </para></entry></row>
+<row>
+<entry thead="no"><para>float32  </para></entry><entry thead="no"><para>f32   </para></entry></row>
+<row>
+<entry thead="no"><para>sint32  </para></entry><entry thead="no"><para>s32   </para></entry></row>
+<row>
+<entry thead="no"><para>uint32  </para></entry><entry thead="no"><para>u32   </para></entry></row>
+<row>
+<entry thead="no"><para>float64  </para></entry><entry thead="no"><para>f64   </para></entry></row>
+<row>
+<entry thead="no"><para>uint64  </para></entry><entry thead="no"><para>u64   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;MinDigital&gt;: minimum digital value of the signal (column P)</para></listitem><listitem><para>&lt;MaxDigital&gt;: maximum digital value of the signal (column Q)</para></listitem><listitem><para>&lt;Offset&gt;: value for timeout(column R)</para></listitem><listitem><para>&lt;InitValue&gt;: initial value of the signal (column S)</para></listitem><listitem><para>&lt;ErrorValue&gt;: error value of the signal (column T)(currently not used in generator as per SWR_L3_CRoute_Comserv_1053)</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From the ARXML files of the specific service:<itemizedlist>
+<listitem><para>&lt;TLVofProperty&gt;: TLV value of the property <linebreak/>
+</para></listitem><listitem><para>&lt;PropertyType&gt; and the corresponding &lt;ShortPropertyType&gt;: type of the property <linebreak/>
+ <table rows="11" cols="2"><row>
+<entry thead="yes"><para>&lt;PropertyType&gt;  </para></entry><entry thead="yes"><para>&lt;ShortPropertyT   </para></entry></row>
+<row>
+<entry thead="no"><para>boolean  </para></entry><entry thead="no"><para>b   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="structstring__struct" kindref="compound">string_struct</ref>  </para></entry><entry thead="no"><para>string   </para></entry></row>
+<row>
+<entry thead="no"><para>uint8  </para></entry><entry thead="no"><para>u8   </para></entry></row>
+<row>
+<entry thead="no"><para>sint8  </para></entry><entry thead="no"><para>s8   </para></entry></row>
+<row>
+<entry thead="no"><para>uint16  </para></entry><entry thead="no"><para>u16   </para></entry></row>
+<row>
+<entry thead="no"><para>float32  </para></entry><entry thead="no"><para>f32   </para></entry></row>
+<row>
+<entry thead="no"><para>sint32  </para></entry><entry thead="no"><para>s32   </para></entry></row>
+<row>
+<entry thead="no"><para>uint32  </para></entry><entry thead="no"><para>u32   </para></entry></row>
+<row>
+<entry thead="no"><para>float64  </para></entry><entry thead="no"><para>f64   </para></entry></row>
+<row>
+<entry thead="no"><para>uint64  </para></entry><entry thead="no"><para>u64   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;ObjectNumber&gt;: number of the object <linebreak/>
+ <table rows="5" cols="1"><row>
+<entry thead="yes"><para>&lt;ObjectNumber&gt;   </para></entry></row>
+<row>
+<entry thead="no"><para>1   </para></entry></row>
+<row>
+<entry thead="no"><para>2   </para></entry></row>
+<row>
+<entry thead="no"><para>3   </para></entry></row>
+<row>
+<entry thead="no"><para>etc   </para></entry></row>
+</table>
+</para></listitem><listitem><para>&lt;NumBerOfSignalReceivedToSet&gt;: determines that a specific property is in how many object and if the corresponding signal is not internal then + 1u (PDU message) <linebreak/>
+</para></listitem><listitem><para>&lt;ObjectLenght&gt;: Lenght of the object <linebreak/>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From pdus_to_be_stopped.txt , tunnel_transmissions.txt:<itemizedlist>
+<listitem><para>&lt;PDUName&gt; : name of the PDU</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From services.txt ,extraInitialNotification.txt ,services_sends_cyclically.txt ,tunnel_transmissions.txt:<itemizedlist>
+<listitem><para>&lt;SignalName&gt;: name of the signal</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From systemManifests.txt:<itemizedlist>
+<listitem><para>&lt;FileName&gt;: name of the System Manifest files that comserver uses for code generation.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>From extraVLANs.txt:<itemizedlist>
+<listitem><para>&lt;VlanName&gt; : name of the VLAN</para></listitem><listitem><para>&lt;SignalName&gt; : name of the signal</para></listitem></itemizedlist>
+</para></listitem></orderedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para><blockquote><para>The SW requirements are defined in module <bold>5.SWR_ICAS1_ComServ</bold> and in chapter <bold>2.23.1 SOME/IP Communication Chorus from SWR_ICAS1_BSW.</bold> All the software requirements assigned to ComservCL are satisfied by mentioned subcomponents. </para></blockquote></para><para>Non functional requirements are traced here: <table rows="12" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1236  </para></entry><entry thead="no"><para>The ComServ of ICAS1 shall run on Classic Autosar environment.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1498  </para></entry><entry thead="no"><para>The CPU load consumed by ComServCL should be maximum 15% @ 180MHz.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1499  </para></entry><entry thead="no"><para>The main Function cycle time should be 10ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1495  </para></entry><entry thead="no"><para>The RAM consumed by ComServCL should be maximum 40KB.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1496  </para></entry><entry thead="no"><para>The ROM consumed by ComServCL should be maximum 350KB.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1497  </para></entry><entry thead="no"><para>The NVM consumed by ComServCL should be maximum 0.1KB.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1500  </para></entry><entry thead="no"><para>The start-up time of the ComServCL should be maximum 200ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1069  </para></entry><entry thead="no"><para>ComServer_CL shall update service properties and make them available to the service user latest 15 ms after their corresponding changed signals were available at CRoute.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1120  </para></entry><entry thead="no"><para>Service calls which lead to sending a signal must be processed after 20ms at the latest.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1076  </para></entry><entry thead="no"><para>Service calls which lead to sending a response to the caller must be processed by the ComServer_CL in maximum 15 ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_Comserv_1327  </para></entry><entry thead="no"><para>ComServer_CL shall provide updated signals latest 20 ms after their corresponding service-based request has been received by CRoute.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><heading level="3">Interfaces of ComServer:</heading>
+</para><para><image type="html" name="Comserv_CL_ExternalSoftwareUnitInterfaces.png"></image>
+  <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><itemizedlist>
+<listitem><para><bold>ComServer</bold> subcomponent calls <bold>ComServer_Serialization</bold> subcomponent when one of the corresponding signal of the offered service is changed or a request is received or there is a new subscriber.</para></listitem><listitem><para><bold>ComServer_Serialization</bold> subcomponent calls <bold>ComServer</bold> subcomponent when notification is received and property is valid or a notification is received and property is not valid.</para></listitem></itemizedlist>
+</para><para>The SoftwareUnitInteraction Diagram shows how the units communicates with each other <linebreak/>
+ <image type="html" name="SoftwareUnitInteraction.png">SoftwareUnitInteraction Diagram</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_ComServer">
+<title>Dynamic Behavior - ComServer</title>
+<para>The dynamic behavior of ComServer subcomponent can be seen on the ComServer Interdependencies diagram.</para><para><image type="html" name="ComServer_Interdependencies_diagram.png">ComServer Interdependencies Diagram</image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para><bold>SchM_ICAS1_Main_C0</bold> <linebreak/>
+ The subcomponent ComServer is called every 10ms from: SchM_ICAS1_Main_C0 <linebreak/>
+SchM_ICAS1_Main_C0 task used by the Core0 sub-scheduler to execute the cyclic functions of applications placed on Core0. <linebreak/>
+This is an extended task, scheduled by an alarm, triggering an event. (period = 5ms) <linebreak/>
+Must have the highest priority of all OsTasks from this core because ASIL functions are scheduled from here. <linebreak/>
+The execution is protected by External Watchdog and the applications by the S-MPU and C-MPU. <linebreak/>
+Note that the stack size is 10kB to have enough reserve for worst case. The main functions from some 3rd party libraries are also scheduled from this OsTask, worst case stack consumption is unknown. <linebreak/>
+This task accounts for average 22% CPU load on Core0. <linebreak/>
+Max. allowed Jitter +/- 1% for 5ms task it means +/- 50 micro seconds. <linebreak/>
+This task is started from Task_SWP_Init. <linebreak/>
+ From SchM_ICAS1_Main_C0 (period = 10ms) the ComServer (QM) functionality is scheduled:<itemizedlist>
+<listitem><para>ComServ_Main()</para></listitem></itemizedlist>
+</para><para>OsTaskActivation: 1 <linebreak/>
+OsTaskAutostart: False <linebreak/>
+OsTaskPriority: 210 <linebreak/>
+OsStacksize: 10000 <linebreak/>
+OsTaskResourceRef: None <linebreak/>
+OsTaskSchedule: FULL <linebreak/>
+Type: Extended Task</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured.</para><para><heading level="2">Events</heading>
+</para><para>No OS event needs to be configured.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>ComServer will verify if the reading of RTE signals was made successfully (positive reponse).</para><para><heading level="2">Synchronization</heading>
+</para><para>Syncronization is assured by task prioritization. No special handling needed.</para><para><heading level="2">Operations</heading>
+</para><para><hruler/>
+ <anchor id="_internal_component_design_1check_ServiceName_ResourceGroupName_signalChange"/><heading level="3">static void check_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_signalChange(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+Cyclic function called at 10 ms, initiates a notification sending for the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt; if it has a subscriber and at least one signal has changed since the last call of this function. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para>If service is already offered then this function is called.</para></simplesect>
+<simplesect kind="post"><para></para></simplesect>
+if the specific signal is changed between two calls of this function then the latest state of the signal is saved <linebreak/>
+ and the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter will be set in order to be sent a notification about it for the subscribers. <linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter <linebreak/>
+<linebreak/>
+ for every signal in a &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;: <linebreak/>
+ [inout] &lt;MethodName&gt;_&lt;ShortPropertyType&gt;_&lt;SignalName&gt;_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_prev <linebreak/>
+ [in] &lt;MethodName&gt;_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+<linebreak/>
+ for every different PDU in the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;: <linebreak/>
+ [inout] &lt;BusName&gt;_&lt;MessageName&gt;_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_o&lt;ObjectNumber&gt; _received_prev <linebreak/>
+ [in] &lt;BusName&gt;_&lt;MessageName&gt;_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_o&lt;ObjectNumber&gt; _received <linebreak/>
+<linebreak/>
+ for every string in the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;: <linebreak/>
+ [inout] &lt;MethodName&gt;_&lt;ShortPropertyType&gt;_&lt;SignalName&gt;_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_prev <linebreak/>
+ [in] &lt;MethodName&gt;_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="check_ServiceName_ResourceGroupName_signalChange.png">check_ServiceName_ResourceGroupName_signalChange</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para>Unit test is not required as covered by full code review. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1001, SWR_ICAS1_GW_3786, SWR_ICAS1_GW_3787, SWR_ICAS1_GW_3751. <linebreak/>
+ <hruler/>
+ <anchor id="_internal_component_design_1update_ServiceName_signals"/><heading level="3">static void update_&lt;ServiceName&gt;_signals(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para>Cyclic function called at 10 ms, updates all variables which hold signals for the service &lt;ServiceName&gt;. </para></simplesect>
+<simplesect kind="par"><title>Details </title><para></para></simplesect>
+As soon as a signal is received, the received-status-variable of the associated service-object will be set to true.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+If service is already offered then this function is called.</para><para><simplesect kind="post"><para><linebreak/>
+ Global variables of the &lt;ServiceName&gt; are set accordingly. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+None</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] &lt;BusName&gt;_&lt;MessageName&gt;_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_o&lt;ObjectNumber&gt;_received <linebreak/>
+ [inout] &lt;ServiceName&gt;_&lt;EventGroupName&gt;_object_&lt;ObjectNumber&gt;_received <linebreak/>
+<linebreak/>
+ <bold>IF</bold> calculation method: signalValue <linebreak/>
+ [out] value_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+<linebreak/>
+ <bold>IF</bold> calculation method: mappedValue <linebreak/>
+ [out] mappedValue_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+<linebreak/>
+ <bold>IF</bold> calculation method: valueType <linebreak/>
+ [out] valueType_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="update_ServiceName_signals.png">update_ServiceName_signals</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1010, SWR_L3_CRoute_Comserv_1011, SWR_L3_CRoute_Comserv_1013, SWR_L3_CRoute_Comserv_1195, SWR_L3_CRoute_Comserv_1197, SWR_L3_CRoute_Comserv_1008, SWR_L3_CRoute_Comserv_1019, SWR_L3_CRoute_Comserv_1020, SWR_L3_CRoute_Comserv_1022, SWR_L3_CRoute_Comserv_1048, SWR_L3_CRoute_Comserv_1050, SWR_L3_CRoute_Comserv_1057, SWR_L3_CRoute_Comserv_1062, SWR_L3_CRoute_Comserv_1066, SWR_L3_CRoute_Comserv_1067. <linebreak/>
+</para><para><hruler/>
+ <anchor id="_internal_component_design_1reset_ServiceName_ResourceGroupName_signalname"/><heading level="3">void reset_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_&lt;SignalName&gt;(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para>The function sets the &lt;SignalName&gt; to its initial value.</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="reset_ServiceName_ResourceGroupName_SignalName.png">reset_ServiceName_ResourceGroupName_SignalName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1write_ServiceName_ResourceGroupName_SignalName"/><heading level="3">void write_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_&lt;SignalName&gt;(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function calculates and sets the signalValue from the serviceValue of the received &lt;ServiceName&gt; &lt;ResourceGroupName&gt; &lt;SignalName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+serviceValue_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="write_ServiceName_ResourceGroupName_SignalName.png">write_ServiceName_ResourceGroupName_SignalName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1002, SWR_L3_CRoute_Comserv_1079, SWR_L3_CRoute_Comserv_1098, SWR_L3_CRoute_Comserv_1099, SWR_L3_CRoute_Comserv_1103, SWR_L3_CRoute_Comserv_1112. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1reset_ServiceName_ResourceGroupName_signals"/><heading level="3">void reset_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_signals(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function calls the reset functions of the signals of the &lt;ServiceName&gt; &lt;ResourceGroupName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="reset_ServiceName_ResourceGroupName_signals.png">reset_ServiceName_ResourceGroupName_signals</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1reset_ServiceName_ResourceGroupName_values"/><heading level="3">void reset_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_values(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function sets all service-values for the resource &lt;ResourceGroupName&gt; of the requested service &lt;ServiceName&gt; to the corresponding signal init-value.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+for every &lt;SignalName&gt; in the requested &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;: <linebreak/>
+ serviceValue_&lt;SignalName&gt;_&lt;ShortPropertyType&gt;</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="reset_ServiceName_ResourceGroupName_values.png">reset_ServiceName_ResourceGroupName_values</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComSer_ServiceName_ResourceGroupName_EventRequested"/><heading level="3">void ComSer_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_EventRequested(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para>It is a callback function: Enables the subscription for the resource &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt; </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+It is called in case of the first subscriber of the &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt; on a specific VLAN.</para><para><simplesect kind="post"><para></para></simplesect>
+&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_hasSubscription global variable will be increased by one.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_hasSubscription <linebreak/>
+<linebreak/>
+ IF the &lt;ServiceName&gt; is not in the extraInitialNotification.txt then <linebreak/>
+ [inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ResourceGroupName_EventRequested.png">ComSer_ServiceName_ResourceGroupName_EventRequested</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComSer_ServiceName_ResourceGroupName_InitialNotificationRequested"/><heading level="3">void ComSer_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_InitialNotificationRequested(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+It is a callback function: Initiates an initial notification for the resource &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+It is called if there is a new subscriber of the &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt; on a specific VLAN and <linebreak/>
+ the &lt;ServiceName&gt; is in the &quot;extraInitialNotification.txt&quot;.</para><para><simplesect kind="post"><para></para></simplesect>
+&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_InitialNotificationRequested global variable will be set to 1u. <linebreak/>
+ &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter global variable will be set to 6u.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;InitialNotificationRequested <linebreak/>
+ [inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ResourceGroupName_InitialNotificationRequested.png">ComSer_ServiceName_ResourceGroupName_InitialNotificationRequested</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComSer_ServiceName_ResourceGroupName_EventReleased"/><heading level="3">void ComSer_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_EventReleased(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+It is a callback function: Stops the subscription for the resource &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+It is called if the last subscriber of the &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt; on a specific VLAN is unsubscribed.</para><para><simplesect kind="post"><para></para></simplesect>
+&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_hasSubscription global variable will be reduced by 1.</para><para>If the function is called because of the last subscriber then the global variables: &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter and &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_InitialNotificationRequested will be set to 0u and FALSE respectively. It means that no more notification will be sent for the &lt;ResourceGroupName&gt; of the &lt;ServiceName&gt;.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_hasSubscription<linebreak/>
+ [out] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter<linebreak/>
+ [out] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_InitialNotificationRequested<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ResourceGroupName_EventReleased.png">ComSer_ServiceName_ResourceGroupName_EventReleased</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComSer_get_ServiceName_ResourceGroupName"/><heading level="3">void ComSer_get_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint32 request_id, uint16 PduDest)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function sends the infos for the resource &lt;ResourceGroupName&gt; of the service &lt;ServiceName&gt; as response.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">request_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- requested ID of the SOME/IP notification <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PduDest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Destination of the notification <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[out] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter2 <linebreak/>
+ [out] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_lastRequestID <linebreak/>
+ [out] &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_lastPduDest <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_get_ServiceName_ResourceGroupName.png">ComSer_get_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_ICAS1_GW_3827. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComServ_sendResponse"/><heading level="3">void <ref refid="_com_serv_8h_1a2ca10120b82b4398e97baeeba2b68cce" kindref="member">ComServ_sendResponse(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function checks for each &lt;ResourceGroupName&gt; if a response is required and initiates the response if necessary.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+Request is received for one of the offered service.</para><para><simplesect kind="post"><para></para></simplesect>
+Response notification is initiated.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+for every &lt;ResourceGroupName&gt; in the offered &lt;ServiceName&gt; <linebreak/>
+ &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_send_counter2 <linebreak/>
+ &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_lastRequestID <linebreak/>
+ &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_lastPduDest <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComServ_sendResponse.png">ComServ_sendResponse</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_ICAS1_GW_3830, SWR_ICAS1_GW_3740, SWR_ICAS1_GW_3845, SWR_ICAS1_GW_3859. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComServ_Send_Notification_Cyclically"/><heading level="3">void <ref refid="_com_serv_8c_1a76ab094ddef2a5e7db40aebf8a664a99" kindref="member">ComServ_Send_Notification_Cyclically(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+Cyclically function called at 10 ms, sets the notification counters of the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] Cyclical_Notification_Time_Counter <linebreak/>
+ [out] &lt;service&gt;_&lt;ResourceGroupName&gt;_Time_Counter <linebreak/>
+  If Cyclical_Notification_Time_Counter is diveded by 500u then Cyclical_Notification_Time_Counter will be incremented or set to 0u</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComServ_Send_Notification_Cyclically.png">ComServ_Send_Notification_Cyclically</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1493. <hruler/>
+ <anchor id="_internal_component_design_1Comserv_Update"/><heading level="3">void ComServ_Update(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function updates the services and check if notification sending is needed.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+New Osek Copy is Available for Core 0. (every 10ms)</para><para><simplesect kind="post"><para></para></simplesect>
+Services wil be updated <linebreak/>
+ Notifications will be sent <linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[in] alreadyOffered <linebreak/>
+ [inout] TravelAssist_Delay_Counter <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComServ_Update.png">ComServ_Update</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComServ_cyclic"/><heading level="3">void <ref refid="_com_serv_8h_1a1af122880771d9f971af48c62e5f1f61" kindref="member">ComServ_cyclic(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+It initiates to offer/request services and initiates to send notifications cyclically.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComServ_cyclic.png">ComServ_cyclic</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ {It is a helper function}. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1Comserv_Main"/><heading level="3">void <ref refid="_com_serv_8h_1a8a589a92deab751abc2e9f2b3de4d6b2" kindref="member">Comserv_Main(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+ComServer Main cyclic function, called every 10ms by SchM_ICAS1_Main_C0.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="Comserv_Main.png">Comserv_Main</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1206, SWR_L3_CRoute_Comserv_1237, SWR_L3_CRoute_Comserv_1337, SWR_L3_CRoute_Comserv_1338. <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1ComServ_bus_config"/><heading level="3">void <ref refid="_com_serv_8h_1aac83c3d6a91c1ce8fb810dd35643706c" kindref="member">ComServ_bus_config(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function switch off the routing of the PDUs which are controlled by ComServer_CL.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+It is called once from the RoutingTask(Routing.c).</para><para><simplesect kind="post"><para></para></simplesect>
+PDUs which are controlled by ComServer_CL will be switched off</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComServ_bus_config.png">ComServ_bus_config</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: SWR_L3_CRoute_Comserv_1104. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void ComSer_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_EventAvailable(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function sets the global sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status variable.</para><para><simplesect kind="par"><title>Details</title><para></para></simplesect>
+Means that the subcription for the &lt;ResourceGroupName&gt; of the &lt;ServiceName&gt; was made successful.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+This function is called by BSWM if the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt; is available.</para><para><simplesect kind="post"><para></para></simplesect>
+The global sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status variable is set to AVAILABLE ( 2u ) <linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ResourceGroupName_EventAvailable.png">ComSer_ServiceName_ResourceGroupName_EventAvailable</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void ComSer_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_EventDown(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function sets the global sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status variable.</para><para><simplesect kind="par"><title>Details</title><para></para></simplesect>
+Switches off the corresponding PDUs and calls the reset functions of the signals of &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+This function is called by BSWM if the &lt;ServiceName&gt;_&lt;ResourceGroupName&gt; is not available.</para><para><simplesect kind="post"><para></para></simplesect>
+The global sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status variable is set to DOWN ( 3u )<linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+None</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ResourceGroupName_EventDown.png">ComSer_ServiceName_ResourceGroupName_EventDown</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied the following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1091, SWR_L3_CRoute_Comserv_1104. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void ComSer_&lt;ServiceName&gt;_ServiceAvailable(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function sets the global sd_&lt;ServiceName&gt;_status variable to available.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+This function is called by BSWM if the &lt;ServiceName&gt; is available.</para><para><simplesect kind="post"><para></para></simplesect>
+The global sd_&lt;ServiceName&gt;_status variable is set to AVAILABLE.<linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] sd_&lt;ServiceName&gt;_status<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ServiceAvailable.png">ComSer_ServiceName_ServiceAvailable</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void ComSer_&lt;ServiceName&gt;_ServiceDown(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+If the Client Service &lt;ServiceName&gt; is down BswM calls Comserv and this function sets the global sd_&lt;ServiceName&gt;_status variable to down.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="pre"><para></para></simplesect>
+This function is called by BSWM if the &lt;ServiceName&gt; is not available.</para><para><simplesect kind="post"><para></para></simplesect>
+The global sd_&lt;ServiceName&gt;_status variable is set to DOWN ( 3u )<linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] sd_&lt;ServiceName&gt;_status<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_ServiceName_ServiceDown.png">ComSer_ServiceName_ServiceDown</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void <ref refid="_com_serv___sd_handling_8h_1a0419dc3cc3e0a08926aa1dd7a683196a" kindref="member">requestClientServices(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function requests status for every service through SD in case ComServer_CL is client.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: The services (provided / required) implemented by the ComServer_CL and the rules for service-to-signal signal-to-service transformation needs to be static according with [ComServSpec] and [SST]. This means that it should NOT be possible to be changed during run-time. </para></xrefdescription></xrefsect><simplesect kind="pre"><para></para></simplesect>
+This function is called by ComServ_cyclic.</para><para><simplesect kind="post"><para></para></simplesect>
+Needed services will be requested<linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+for every requested services: <linebreak/>
+ [inout] sd_&lt;ServiceName&gt;_status <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="requestClientServices.png">requestClientServices</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: SWR_L3_CRoute_Comserv_1081, SWR_L3_CRoute_Comserv_1293, SWR_L3_CRoute_Comserv_1325, SWR_L3_CRoute_Comserv_1324, SWR_L3_CRoute_Comserv_1323, SWR_L3_CRoute_Comserv_1322, SWR_L3_CRoute_Comserv_1199, SWR_L3_CRoute_Comserv_1090. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void request_&lt;ServiceName&gt;_EventGroups(void)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+Cyclic function (called at 10ms) requests every event groups through SD in case ComServer_CL is client.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+for every requested &lt;ResourceGroupName&gt; in &lt;ServiceName&gt;:<linebreak/>
+ [inout] sd_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_status<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="request_ServiceName_EventGroups.png">request_ServiceName_EventGroups</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+SWR_L3_CRoute_Comserv_1083. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void <ref refid="_com_serv___sd_handling_8h_1a320c6c1e47bad40878902e1d2f99da39" kindref="member">offerServerServices(void)</ref></heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function offers every services through SD in case ComServer_CL is server.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000002"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: The services (provided / required) implemented by the ComServer_CL and the rules for service-to-signal signal-to-service transformation needs to be static according with [ComServSpec] and [SST]. This means that it should NOT be possible to be changed during run-time. </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[inout] alreadyOffered<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="offerServerServices.png">offerServerServices</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function satisfied following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1006, SWR_L3_CRoute_Comserv_1024, SWR_L3_CRoute_Comserv_1292, SWR_L3_CRoute_Comserv_1321, SWR_L3_CRoute_Comserv_1320, SWR_L3_CRoute_Comserv_1319, SWR_L3_CRoute_Comserv_1318, SWR_L3_CRoute_Comserv_1317, SWR_L3_CRoute_Comserv_1316, SWR_L3_CRoute_Comserv_1315, SWR_L3_CRoute_Comserv_1314, SWR_L3_CRoute_Comserv_1313, SWR_L3_CRoute_Comserv_1312, SWR_L3_CRoute_Comserv_1311, SWR_L3_CRoute_Comserv_1343, SWR_L3_CRoute_Comserv_1310, SWR_L3_CRoute_Comserv_1309, SWR_L3_CRoute_Comserv_1308, SWR_L3_CRoute_Comserv_1307, SWR_L3_CRoute_Comserv_1306, SWR_L3_CRoute_Comserv_1305, SWR_L3_CRoute_Comserv_1304, SWR_L3_CRoute_Comserv_1303, SWR_L3_CRoute_Comserv_1302, SWR_L3_CRoute_Comserv_1301, SWR_L3_CRoute_Comserv_1300, SWR_L3_CRoute_Comserv_1299, SWR_L3_CRoute_Comserv_1298, SWR_L3_CRoute_Comserv_1297, SWR_L3_CRoute_Comserv_1296, SWR_L3_CRoute_Comserv_1295, SWR_L3_CRoute_Comserv_1294, SWR_L3_CRoute_Comserv_1344, SWR_L3_CRoute_Comserv_1199, SWR_L3_CRoute_Comserv_1037. <linebreak/>
+<hruler/>
+ <heading level="2">Macros</heading>
+</para><para>See macro list .</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>List of the currently defined data structures types can be seen <ulink url="annotated.html">here</ulink>.</para><para><heading level="2">Shared Variables Analysis</heading>
+</para><para>The analysis of the shared variables used inside this subcomponent can be opened <ulink url="../../Shared Variables of ComServer_CL.docx">here </ulink>. <linebreak/>
+It is located in Git: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/doc/Shared%20Variables%20of%20ComServer_CL.docx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/doc/Shared%20Variables%20of%20ComServer_CL.docx</ulink> </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_Serialization">
+<title>Dynamic Behavior - ComServer_Serialization</title>
+<para>The dynamic behavior of ComServer_Serialization subcomponent can be seen on the ComServer_Serialization Interdependencies diagram.</para><para><image type="html" name="ComServer_Serialization_Interdependencies_diagram.png">ComServer_Serialization Interdependencies Diagram</image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>There is no Task in terms of ComServer_Serialization subcomponent. <linebreak/>
+ <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured.</para><para><heading level="2">Events</heading>
+</para><para>No OS event needs to be configured.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>During serialization Comserver will check if the RTE reading is finished correclty. In case the RTE read returns an error (return code different then RTE_E_OK) the signal will not be serialized into the notification/response payload.</para><para><heading level="2">Synchronization</heading>
+</para><para>Syncronization is assured by task prioritization. No special handling needed.</para><para><heading level="2">Operations</heading>
+</para><para><hruler/>
+ <anchor id="_internal_component_design_1Rte_Read_ServiceName_ResourceGroupName"/><heading level="3">void Rte_Read_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint8 *array, uint8 MessageType, uint32 request_id)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function deserializes the received SOME/IP payload of the notification of &lt;ServiceName&gt; &lt;ResourceGroupName&gt;. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>*array - it includes the received payload <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>messageType - type of the SOME/IP notification <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>request_id - requested ID <linebreak/>
+ <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="Rte_Read_ServiceName_ResourceGroupName.png">Rte_Read_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review. <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+This function  the following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1002, SWR_L3_CRoute_Comserv_1079, SWR_L3_CRoute_Comserv_1087, SWR_ICAS1_GW_3629, SWR_ICAS1_GW_3735, SWR_ICAS1_GW_3781. <linebreak/>
+<hruler/>
+</para><para><heading level="3">void build_sd_message_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint32 req_id, uint8 MessageType, uint8 buffer[], uint32 *length)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function helps to build the SOME/IP message of the &lt;ServiceName&gt; &lt;ResourceGroupName&gt; notification.<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>request_id - requested ID <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>messageType - type of the SOME/IP notification <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>buffer[] - buffer of the message <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>*length - the lenght of the buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para>[in] req_id <linebreak/>
+ [in] MessageType <linebreak/>
+ [inout] buffer[] <linebreak/>
+ [inout] *length <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="build_sd_message_for_ServiceName_ResourceGroupName.png">build_sd_message_for_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+this function  following DOORS Requirements or Design Decision: <linebreak/>
+{It is a helper function}. <linebreak/>
+<hruler/>
+</para><para><heading level="3">boolean send_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint32 request_id, uint8 messageType, uint16 PduDest)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+This function helps to build the SOME/IP payload of the &lt;ResourceGroupName&gt; notification &lt;ServiceName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>request_id - requested ID <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>messageType - type of the SOME/IP notification <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PduDest - ID of the &lt;ServiceName&gt; &lt;ResourceGroupName&gt; for the SoAd <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+boolean transmitResult<linebreak/>
+ <simplesect kind="par"><title>Globals</title><para></para></simplesect>
+[in] req_id<linebreak/>
+ [in] MessageType<linebreak/>
+ [inout] PduDest<linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="send_ServiceName_ResourceGroupName.png">send_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+This function satisfied the following DOORS Requirements or Design Decision: SWR_L3_CRoute_Comserv_999 <linebreak/>
+<hruler/>
+ <anchor id="_internal_component_design_1get_someIP_payload_for_ServiceName_ResourceGroupName"/><heading level="3">void get_someIP_payload_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint8 *buffer, uint32 *length)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function generates the SOME/IP notification payload of the &lt;ServiceName&gt; &lt;ResourceGroupName&gt;.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- array where the payload is stored <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">*length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="get_someIP_payload_for_ServiceName_ResourceGroupName.png">get_someIP_payload_for_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+This function  the following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1001, SWR_L3_CRoute_Comserv_1015, SWR_L3_CRoute_Comserv_1016, SWR_L3_CRoute_Comserv_1019, SWR_L3_CRoute_Comserv_1029, SWR_L3_CRoute_Comserv_1030, SWR_L3_CRoute_Comserv_1032, SWR_L3_CRoute_Comserv_1034, SWR_L3_CRoute_Comserv_1036, SWR_L3_CRoute_Comserv_1038, SWR_L3_CRoute_Comserv_1039, SWR_L3_CRoute_Comserv_1195, SWR_L3_CRoute_Comserv_1196, SWR_L3_CRoute_Comserv_1197, SWR_ICAS1_GW_3629, SWR_ICAS1_GW_3640, SWR_ICAS1_GW_3645, SWR_ICAS1_GW_3648, SWR_ICAS1_GW_3669, SWR_ICAS1_GW_3670, SWR_ICAS1_GW_3677, SWR_ICAS1_GW_3704, SWR_ICAS1_GW_3706, SWR_ICAS1_GW_3724, SWR_ICAS1_GW_3725, SWR_ICAS1_GW_3726, SWR_ICAS1_GW_3728, SWR_ICAS1_GW_3729, SWR_ICAS1_GW_3731, SWR_ICAS1_GW_3741, SWR_ICAS1_GW_3742, SWR_ICAS1_GW_3789, SWR_ICAS1_GW_3839.<linebreak/>
+<hruler/>
+</para><para><heading level="3">void ComSer_set_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(DT_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;_vector myVec, uint8 noElements)</heading>
+</para><para><simplesect kind="par"><title>Brief description</title><para></para></simplesect>
+The function extracts the received values from &lt;ServiceName&gt; &lt;ResourceGroupName&gt; and mapp them to their signals.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous - yes <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">myVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- structure of the &lt;ServiceName&gt; &lt;ResourceGroupName&gt; <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">noElements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of the received notification of &lt;ServiceName&gt; &lt;ResourceGroupName&gt; <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+N/A.</para><para><simplesect kind="par"><title>Globals</title><para></para></simplesect>
+for every property in &lt;ServiceName&gt;_&lt;ResourceGroupName&gt;: <linebreak/>
+ [out] serviceValue_&lt;SignalName&gt;_&lt;ShortPropertyType&gt; <linebreak/>
+ <simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="ComSer_set_ServiceName_ResourceGroupName.png">ComSer_set_ServiceName_ResourceGroupName</image>
+ </para><para><simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+Unit test is not required as covered by full code review.</para><para><simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+This function  the following DOORS Requirements or Design Decision: <linebreak/>
+ SWR_L3_CRoute_Comserv_1000, SWR_L3_CRoute_Comserv_1088, SWR_L3_CRoute_Comserv_1089, SWR_L3_CRoute_Comserv_1100. <linebreak/>
+ <heading level="2">Macros</heading>
+</para><para>See macro list.</para><para><heading level="2">Algorithms</heading>
+</para><para>The serialization and deserialization algorithms are explained under the following operations:</para><para><itemizedlist>
+<listitem><para><ref refid="_internal_component_design_1get_someIP_payload_for_ServiceName_ResourceGroupName" kindref="member">void get_someIP_payload_for_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint8 *buffer, uint32 *length)</ref></para></listitem><listitem><para><ref refid="_internal_component_design_1Rte_Read_ServiceName_ResourceGroupName" kindref="member">void Rte_Read_&lt;ServiceName&gt;_&lt;ResourceGroupName&gt;(uint8 *array, uint8 MessageType, uint32 request_id)</ref></para></listitem></itemizedlist>
+</para><para><heading level="2">Data Structures</heading>
+</para><para>List of the currently defined data structures types can be seen <ulink url="annotated.html">here</ulink>.</para><para><heading level="2">Shared Variables Analysis</heading>
+</para><para>The analysis of the shared variables used inside this subcomponent can be opened <ulink url="../../Shared Variables of ComServer_CL.docx">here </ulink>. <linebreak/>
+It is located in Git: <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/doc/Shared%20Variables%20of%20ComServer_CL.docx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/appl/ComServer/ComServ/Evo/doc/Shared%20Variables%20of%20ComServer_CL.docx</ulink> </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagrams below presents the major dataflow from the module.<linebreak/>
+The Data Flow is described in 2 diagrams for both types of services that are implemented in ComServer : Server and Client.</para><para>The first one is for data flow from ComserverQM Server perspective. <image type="html" name="server_dataflow.png"></image>
+ The second one is for data flow from ComserverQM Client perspective. <image type="html" name="client_dataflow.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Comserver is depending on many custom ICAS1 components.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Number of dependencies from interfaces and dependencies equals 4. See <ref refid="_external_interfaces_dependencies" kindref="compound">External Interfaces and Dependencies</ref>.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>A failure in this component can impact other functionalities which can be recognized by driver/ passenger, causing strong annoyance and it is an Communication Stack component.   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>due to algorithms used for deserialization and serialization of the data and big number of services that it implements.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>generic code is used for all the services which lowers the risks for inconsistencies and mallfunctions in services implementation.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Input and outputs of this component can be manipulated/seen at system level. There are few requirements that needs to be tested at software level.<linebreak/>
+ Interaction of this component with the other components in the programable unit is assured by automated interface testing(RTE interfaces).   </para></entry></row>
+</table>
+<table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_ld_com___gw_adapter_8c" kind="file" language="C++">
+    <compoundname>LdCom_GwAdapter.c</compoundname>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes local="yes">ComStack_Types.h</includes>
+    <includes local="yes">Rte_KS.h</includes>
+    <includes local="yes">CanTp.h</includes>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">Fifo.h</includes>
+    <includes local="yes">RTE.h</includes>
+    <incdepgraph>
+      <node id="113">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="116">
+        <label>CanTp.h</label>
+      </node>
+      <node id="119">
+        <label>RTE.h</label>
+      </node>
+      <node id="114">
+        <label>ComStack_Types.h</label>
+      </node>
+      <node id="115">
+        <label>Rte_KS.h</label>
+      </node>
+      <node id="117">
+        <label>agw.h</label>
+      </node>
+      <node id="118">
+        <label>Fifo.h</label>
+      </node>
+      <node id="112">
+        <label>LdCom_GwAdapter.c</label>
+        <link refid="_ld_com___gw_adapter_8c"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_ld_com___pdu_info_type" prot="public">LdCom_PduInfoType</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_ld_com___gw_adapter_8c_1a915cdef2d00fbe7be35c256dea7fd619" prot="public" static="no">
+        <name>LdCom_FifoSize</name>
+        <initializer>(3U)  /*TODO document the FiFo size*/</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="59" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" prot="public" static="no">
+        <name>LdCom_PduSize</name>
+        <initializer>(11U) /*Must match the size of the IKA challenge */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="60" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_ld_com___gw_adapter_8c_1a579a1709398f522eed353a85bf92cbc1" prot="public" static="no">
+        <name>LdCom_NoOfTxPdus</name>
+        <initializer>(14U) /*Must match the number of KS slaves*/</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="61" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" prot="public" static="no">
+        <name>LdCom_NoOfRxPdus</name>
+        <initializer>(14U) /*Must match the number of KS slaves*/</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="62" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_ld_com___gw_adapter_8c_1a17bbc11c386822b42f468b8724a1437c" prot="public" static="no">
+        <name>LdCom_Min</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer>(((x)&lt;(y))?(x):(y))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="64" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" prot="public" static="no" mutable="no">
+        <type>LdCom_PduInfoType</type>
+        <definition>LdCom_PduInfoType LdCom_TxPdus[(14U)]</definition>
+        <argsstring>[(14U)]</argsstring>
+        <name>LdCom_TxPdus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="75" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="75" bodyend="-1"/>
+        <referencedby refid="_ld_com___gw_adapter_8c_1a3b71e5482b8a292d023746f23e397ccc" compoundref="_ld_com___gw_adapter_8c" startline="172" endline="192">LdCom_Transmit</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_1aaf8dc341b7aa865a3d4ca684c02fb407" compoundref="_ld_com___gw_adapter_8c" startline="250" endline="288">LdCom_CopyTxData</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1aa6f4d015e27e740b99ea1fdbc5e91fab" compoundref="_ld_com___gw_adapter_8c_8test" startline="287" endline="355">TEST_LdCom_Transmit_0002</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a229845b9d4783f87a3c5b381c66db7f0" compoundref="_ld_com___gw_adapter_8c_8test" startline="368" endline="488">TEST_LdCom_CopyTxData_0003</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" prot="public" static="no" mutable="no">
+        <type>LdCom_PduInfoType</type>
+        <definition>LdCom_PduInfoType LdCom_RxPdus[(14U)]</definition>
+        <argsstring>[(14U)]</argsstring>
+        <name>LdCom_RxPdus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="76" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="76" bodyend="-1"/>
+        <referencedby refid="_ld_com___gw_adapter_8c_1a11a518c51d0bcdc26963c1f5bd311183" compoundref="_ld_com___gw_adapter_8c" startline="330" endline="343">LdCom_StartOfReception</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_1abe7bcc924a7c84946f2c168f6f435ae2" compoundref="_ld_com___gw_adapter_8c" startline="399" endline="438">LdCom_CopyRxData</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_1a5704ba02cf04ddff9d0c2e6115e10865" compoundref="_ld_com___gw_adapter_8c" startline="471" endline="478">LdCom_TpRxIndication</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1acab89129fba477a7d91f9cbe4188fd8c" compoundref="_ld_com___gw_adapter_8c_8test" startline="501" endline="580">TEST_LdCom_StartOfReception_0004</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1adf189efc0569ed2ee8c6b095ba2d8bd1" compoundref="_ld_com___gw_adapter_8c_8test" startline="593" endline="713">TEST_LdCom_CopyRxData_0005</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1af34d785ca141455b8a7f300ce7541c11" compoundref="_ld_com___gw_adapter_8c_8test" startline="727" endline="770">TEST_LdCom_TpRxIndication_0006</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_ld_com___gw_adapter_8c_1aa4eb4d4550700bb8bcc25583842596fd" prot="public" static="no" mutable="no">
+        <type>LdCom_PduInfoType</type>
+        <definition>LdCom_PduInfoType LdCom_RxFifoBuffer[(14U) *(3U)]</definition>
+        <argsstring>[(14U) *(3U)]</argsstring>
+        <name>LdCom_RxFifoBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="78" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="78" bodyend="-1"/>
+        <referencedby refid="_ld_com___gw_adapter_8c_1abeec279057d6bb80b74d1dcc9490c2b8" compoundref="_ld_com___gw_adapter_8c" startline="116" endline="123">LdCom_Init</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a78bf6a63f1464ffef1d84c159ef3124f" compoundref="_ld_com___gw_adapter_8c_8test" startline="226" endline="232">init_LdCom_RxFifoBuffer</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a477e2de1078f32d2c297c20a176884be" compoundref="_ld_com___gw_adapter_8c_8test" startline="246" endline="273">TEST_LdCom_Init_0001</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" prot="public" static="no" mutable="no">
+        <type>TFifo</type>
+        <definition>TFifo LdCom_RxFifo[(14U)]</definition>
+        <argsstring>[(14U)]</argsstring>
+        <name>LdCom_RxFifo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="79" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="79" bodyend="-1"/>
+        <referencedby refid="_ld_com___gw_adapter_8c_1abeec279057d6bb80b74d1dcc9490c2b8" compoundref="_ld_com___gw_adapter_8c" startline="116" endline="123">LdCom_Init</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_1a5704ba02cf04ddff9d0c2e6115e10865" compoundref="_ld_com___gw_adapter_8c" startline="471" endline="478">LdCom_TpRxIndication</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_1ab949866ff080086ca598a0e24bbaf319" compoundref="_ld_com___gw_adapter_8c" startline="525" endline="550">LdCom_Receive</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1ab722b600744ca242b78fcbc1ccf7260a" compoundref="_ld_com___gw_adapter_8c_8test" startline="203" endline="212">init_LdCom_RxFifo</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a477e2de1078f32d2c297c20a176884be" compoundref="_ld_com___gw_adapter_8c_8test" startline="246" endline="273">TEST_LdCom_Init_0001</referencedby>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1af34d785ca141455b8a7f300ce7541c11" compoundref="_ld_com___gw_adapter_8c_8test" startline="727" endline="770">TEST_LdCom_TpRxIndication_0006</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1abeec279057d6bb80b74d1dcc9490c2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LdCom_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>LdCom_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the LdCom module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] TFifo <ref refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" kindref="member">LdCom_RxFifo</ref><linebreak/>
+ [out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1aa4eb4d4550700bb8bcc25583842596fd" kindref="member">LdCom_RxFifoBuffer</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LdCom_Init.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1a477e2de1078f32d2c297c20a176884be" kindref="member">TEST_LdCom_Init_0001</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="116" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="116" bodyend="123"/>
+        <references refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" compoundref="_ld_com___gw_adapter_8c" startline="62">LdCom_NoOfRxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" compoundref="_ld_com___gw_adapter_8c" startline="79">LdCom_RxFifo</references>
+        <references refid="_ld_com___gw_adapter_8c_1aa4eb4d4550700bb8bcc25583842596fd" compoundref="_ld_com___gw_adapter_8c" startline="78">LdCom_RxFifoBuffer</references>
+        <references refid="_ld_com___gw_adapter_8c_1a915cdef2d00fbe7be35c256dea7fd619" compoundref="_ld_com___gw_adapter_8c" startline="59">LdCom_FifoSize</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a477e2de1078f32d2c297c20a176884be" compoundref="_ld_com___gw_adapter_8c_8test" startline="246" endline="273">TEST_LdCom_Init_0001</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1a3b71e5482b8a292d023746f23e397ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType LdCom_Transmit</definition>
+        <argsstring>(PduIdType id, const Ks_Ika_Challenge_ImplType *pData)</argsstring>
+        <name>LdCom_Transmit</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const Ks_Ika_Challenge_ImplType *</type>
+          <declname>pData</declname>
+        </param>
+        <briefdescription>
+<para>Transmit function for the slave communication. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+<simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">txId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>slave handle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the data to be sent </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>#E_NOT_OK or return value from CanTp_Transmit() </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" kindref="member">LdCom_TxPdus</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>Based on the given MsgType, CanTp_Transmit() needs to be called.</para></simplesect>
+<image type="html" name="callsequence_LdCom_Transmit.png">callsequence</image>
+  <simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1aa6f4d015e27e740b99ea1fdbc5e91fab" kindref="member">TEST_LdCom_Transmit_0002</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="172" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="172" bodyend="192"/>
+        <references refid="_ld_com___gw_adapter_8c_1a579a1709398f522eed353a85bf92cbc1" compoundref="_ld_com___gw_adapter_8c" startline="61">LdCom_NoOfTxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a17bbc11c386822b42f468b8724a1437c" compoundref="_ld_com___gw_adapter_8c" startline="64">LdCom_Min</references>
+        <references refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" compoundref="_ld_com___gw_adapter_8c" startline="60">LdCom_PduSize</references>
+        <references refid="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" compoundref="_ld_com___gw_adapter_8c" startline="75">LdCom_TxPdus</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1aa6f4d015e27e740b99ea1fdbc5e91fab" compoundref="_ld_com___gw_adapter_8c_8test" startline="287" endline="355">TEST_LdCom_Transmit_0002</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1aaf8dc341b7aa865a3d4ca684c02fb407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BufReq_ReturnType</type>
+        <definition>BufReq_ReturnType LdCom_CopyTxData</definition>
+        <argsstring>(PduIdType id, const PduInfoType *info, RetryInfoType *retry, PduLengthType *availableDataPtr)</argsstring>
+        <name>LdCom_CopyTxData</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>RetryInfoType *</type>
+          <declname>retry</declname>
+        </param>
+        <param>
+          <type>PduLengthType *</type>
+          <declname>availableDataPtr</declname>
+        </param>
+        <briefdescription>
+<para>Function for copying the data in the given buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ It is called to acquire the transmit data for a segmented pdu <linebreak/>
+ This is done by CanTp, when the transmission was triggered with CanTp_Transmit() <simplesect kind="pre"><para>Transmission was started using CanTp_Transmit() </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the transmission buffer, where the data are stored </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contains the information about the datalength to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>retry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is unused </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">availableDataPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is filled with the number of bytes, that should be sent </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>#BUFREQ_OK<linebreak/>
+ #BUFREQ_E_BUSY </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" kindref="member">LdCom_TxPdus</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="callsequence_LdCom_CopyTxData.png">callsequence</image>
+  <simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1a229845b9d4783f87a3c5b381c66db7f0" kindref="member">TEST_LdCom_CopyTxData_0003</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="250" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="250" bodyend="288"/>
+        <references refid="_ld_com___gw_adapter_8c_1a579a1709398f522eed353a85bf92cbc1" compoundref="_ld_com___gw_adapter_8c" startline="61">LdCom_NoOfTxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" compoundref="_ld_com___gw_adapter_8c" startline="60">LdCom_PduSize</references>
+        <references refid="_ld_com___gw_adapter_8c_1aac6f7c04052f159240a4d977ffd9bfb7" compoundref="_ld_com___gw_adapter_8c" startline="75">LdCom_TxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a17bbc11c386822b42f468b8724a1437c" compoundref="_ld_com___gw_adapter_8c" startline="64">LdCom_Min</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a229845b9d4783f87a3c5b381c66db7f0" compoundref="_ld_com___gw_adapter_8c_8test" startline="368" endline="488">TEST_LdCom_CopyTxData_0003</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1a11a518c51d0bcdc26963c1f5bd311183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BufReq_ReturnType</type>
+        <definition>BufReq_ReturnType LdCom_StartOfReception</definition>
+        <argsstring>(PduIdType id, const PduInfoType *info, PduLengthType TpSduLength, PduLengthType *bufferSizePtr)</argsstring>
+        <name>LdCom_StartOfReception</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>PduLengthType</type>
+          <declname>TpSduLength</declname>
+        </param>
+        <param>
+          <type>PduLengthType *</type>
+          <declname>bufferSizePtr</declname>
+        </param>
+        <briefdescription>
+<para>Function is called by the PduR/CanTp from Core2 and indicates a received message. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+<simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para><ref refid="_ld_com___gw_adapter_8c_1abe7bcc924a7c84946f2c168f6f435ae2" kindref="member">LdCom_CopyRxData()</ref> needs to be called to copy the data in the reception buffer. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the slave from which the message came from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is unused </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">TpSduLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the length of the data, that are going to be received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bufferSizePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is filled with the maximum number of bytes the LdCom impplementation is able to handle. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>#BUFREQ_OK<linebreak/>
+ #BUFREQ_E_OVFL </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" kindref="member">LdCom_RxPdus</ref><linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="LdCom_StartOfReception.png"></image>
+  No callsequence, just the following checks:<itemizedlist>
+<listitem><para>Is the id is smaller than the number of slaves?</para></listitem><listitem><para>Is the length of the received data smaller than the maximum number of bytes, that we can handle?<linebreak/>
+ <linebreak/>
+ If both checks are ok, the maximum number of bytes is given back as bufferSizePtr. </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1acab89129fba477a7d91f9cbe4188fd8c" kindref="member">TEST_LdCom_StartOfReception_0004</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="330" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="330" bodyend="343"/>
+        <references refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" compoundref="_ld_com___gw_adapter_8c" startline="62">LdCom_NoOfRxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" compoundref="_ld_com___gw_adapter_8c" startline="60">LdCom_PduSize</references>
+        <references refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" compoundref="_ld_com___gw_adapter_8c" startline="76">LdCom_RxPdus</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1acab89129fba477a7d91f9cbe4188fd8c" compoundref="_ld_com___gw_adapter_8c_8test" startline="501" endline="580">TEST_LdCom_StartOfReception_0004</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1abe7bcc924a7c84946f2c168f6f435ae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BufReq_ReturnType</type>
+        <definition>BufReq_ReturnType LdCom_CopyRxData</definition>
+        <argsstring>(PduIdType id, const PduInfoType *info, PduLengthType *bufferSizePtr)</argsstring>
+        <name>LdCom_CopyRxData</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>PduLengthType *</type>
+          <declname>bufferSizePtr</declname>
+        </param>
+        <briefdescription>
+<para>Function is copying the received data into the reception array. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>If this is the first chunk of data, <ref refid="_ld_com___gw_adapter_8c_1a11a518c51d0bcdc26963c1f5bd311183" kindref="member">LdCom_StartOfReception()</ref> needs to be called before.<linebreak/>
+ If this is a following chunk of data, LdCom_RxPdus[id].arraySize need to have the value from last chunk. </para></simplesect>
+<simplesect kind="post"><para><ref refid="_ld_com___gw_adapter_8c_1a5704ba02cf04ddff9d0c2e6115e10865" kindref="member">LdCom_TpRxIndication()</ref> needs to be called after the last chunk by the lower layer, so the data need to be put in the FIFO. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the slave from which the message came from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contains the received data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bufferSizePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the remaining bytes after this copying. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>#BUFREQ_E_NOT_OK<linebreak/>
+ #BUFREQ_OK </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" kindref="member">LdCom_RxPdus</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="callsequence_LdCom_CopyRxData.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1adf189efc0569ed2ee8c6b095ba2d8bd1" kindref="member">TEST_LdCom_CopyRxData_0005</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="399" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="399" bodyend="438"/>
+        <references refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" compoundref="_ld_com___gw_adapter_8c" startline="62">LdCom_NoOfRxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" compoundref="_ld_com___gw_adapter_8c" startline="60">LdCom_PduSize</references>
+        <references refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" compoundref="_ld_com___gw_adapter_8c" startline="76">LdCom_RxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a17bbc11c386822b42f468b8724a1437c" compoundref="_ld_com___gw_adapter_8c" startline="64">LdCom_Min</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1adf189efc0569ed2ee8c6b095ba2d8bd1" compoundref="_ld_com___gw_adapter_8c_8test" startline="593" endline="713">TEST_LdCom_CopyRxData_0005</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1a5704ba02cf04ddff9d0c2e6115e10865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LdCom_TpRxIndication</definition>
+        <argsstring>(PduIdType id, Std_ReturnType result)</argsstring>
+        <name>LdCom_TpRxIndication</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Function is putting the received data in the reception FIFO. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>All junks need to be copied to the reception array with <ref refid="_ld_com___gw_adapter_8c_1abe7bcc924a7c84946f2c168f6f435ae2" kindref="member">LdCom_CopyRxData()</ref>. </para></simplesect>
+<simplesect kind="post"><para>The SWC needs to take the element from the FIFO and process it </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the slave from which the message came from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the information, whether the reception was OK </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] TFifo <ref refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" kindref="member">LdCom_RxFifo</ref><linebreak/>
+ [out] LdCom_PduInfoType <ref refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" kindref="member">LdCom_RxPdus</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LdCom_TpRxIndication.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1af34d785ca141455b8a7f300ce7541c11" kindref="member">TEST_LdCom_TpRxIndication_0006</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="471" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="471" bodyend="478"/>
+        <references refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" compoundref="_ld_com___gw_adapter_8c" startline="62">LdCom_NoOfRxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" compoundref="_ld_com___gw_adapter_8c" startline="79">LdCom_RxFifo</references>
+        <references refid="_ld_com___gw_adapter_8c_1af1697e49a76ed47af81c597b97baa23b" compoundref="_ld_com___gw_adapter_8c" startline="76">LdCom_RxPdus</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1af34d785ca141455b8a7f300ce7541c11" compoundref="_ld_com___gw_adapter_8c_8test" startline="727" endline="770">TEST_LdCom_TpRxIndication_0006</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_ld_com___gw_adapter_8c_1ab949866ff080086ca598a0e24bbaf319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType LdCom_Receive</definition>
+        <argsstring>(PduIdType id, Ks_Ika_Challenge_ImplType *pData)</argsstring>
+        <name>LdCom_Receive</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>Ks_Ika_Challenge_ImplType *</type>
+          <declname>pData</declname>
+        </param>
+        <briefdescription>
+<para>Function is checking for received messages for the given slave. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>FIFO needs to be intialzed (Done in <ref refid="_ld_com___gw_adapter_8c_1abeec279057d6bb80b74d1dcc9490c2b8" kindref="member">LdCom_Init()</ref>) </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the slave for which it should be checked for received data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the buffer, where the received data should be stored in </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>#RTE_E_NO_DATA<linebreak/>
+ #RTE_E_OK<linebreak/>
+ #RTE_E_INVALID </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[out] TFifo <ref refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" kindref="member">LdCom_RxFifo</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None callsequence <image type="html" name="callsequence_LdCom_Receive.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="_ld_com___gw_adapter_8c_8test_1a8231e2b3467d90089769bea5d7502351" kindref="member">TEST_LdCom_Receive_0007</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" line="525" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c" bodystart="525" bodyend="550"/>
+        <references refid="_ld_com___gw_adapter_8c_1aa5b571218cdfe2cb9090c0b90cce6872" compoundref="_ld_com___gw_adapter_8c" startline="62">LdCom_NoOfRxPdus</references>
+        <references refid="_ld_com___gw_adapter_8c_1a772e31448cdc7a39bb661df8874e83f0" compoundref="_ld_com___gw_adapter_8c" startline="79">LdCom_RxFifo</references>
+        <references refid="_ld_com___gw_adapter_8c_1a17bbc11c386822b42f468b8724a1437c" compoundref="_ld_com___gw_adapter_8c" startline="64">LdCom_Min</references>
+        <references refid="_ld_com___gw_adapter_8c_1a5857a4d70d322c8251d53f0289dae18e" compoundref="_ld_com___gw_adapter_8c" startline="60">LdCom_PduSize</references>
+        <referencedby refid="_ld_com___gw_adapter_8c_8test_1a8231e2b3467d90089769bea5d7502351" compoundref="_ld_com___gw_adapter_8c_8test" startline="784" endline="876">TEST_LdCom_Receive_0007</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation file of LdCom functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_ld_com___gw_adapter_8c" kindref="compound">LdCom_GwAdapter.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uid95192 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2016-12-15 </para></simplesect>
+</para><para><linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/LdCom_GwAdapter.c"/>
+  </compounddef>
+</doxygen>

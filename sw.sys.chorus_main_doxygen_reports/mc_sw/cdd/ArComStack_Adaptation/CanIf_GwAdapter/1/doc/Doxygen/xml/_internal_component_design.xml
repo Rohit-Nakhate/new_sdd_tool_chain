@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is split in two units: CanIf_GwAdapter&apos;s static code and configuration. The configuration part is generated based on an export from tresos.<linebreak/>
+The relevant part are the Cand and CanIf configuration. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>No requirements are created for this wrapper.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><image type="html" name="CanIf_GwAdapter_SoftwareUnitInterfaces.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="CanIf_GwAdapter_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The Module interractions can be split in three parts: transmission, reception and dynamic channel config.<linebreak/>
+ <bold>Transmission.</bold></para><para>The upper layer (CanTp) is calling the transmission function with parameters. It expects by successful transmission to receive a confirmation.</para><para><image type="html" name="CanIf_GwAdapter_DynamicBehavior_Transmission.png"></image>
+ </para><para><bold>Reception.</bold> <linebreak/>
+The next diagram will depict the reception of a Pdu which is dispatched to the upper layer:<linebreak/>
+<linebreak/>
+ <image type="html" name="CanIf_GwAdapter_DynamicBehavior_Reception.png"></image>
+ </para><para><bold>Dynamic channel configuration.</bold><linebreak/>
+The dynamic part is designed for interractions with DoIP. It provides mechanism for Tx Confirmation and Rx Indication.<linebreak/>
+This part is not used in ICAS1/ICASevo but it is still maintained for other projects</para><para><image type="html" name="CanIf_GwAdapter_DynamicBehavior_DynamicConfig.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured for by the module. <linebreak/>
+<heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>High Power</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>The synchronization is insured by the AUTOSAR Model.<linebreak/>
+ CanTp insures that a ongoing transmission or reception is not calling the CanIf_GwAdapter&apos;s API in a wrong order. <linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>No comment.<linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

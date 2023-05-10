@@ -1,0 +1,1333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___receiver_8c" kind="file" language="C++">
+    <compoundname>UHF_Receiver.c</compoundname>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_u_h_f___receiver_8h" local="yes">UHF_Receiver.h</includes>
+    <includes local="yes">Rte_UHF.h</includes>
+    <includes refid="_u_h_f___c_r_c10_8h" local="yes">UHF_CRC10.h</includes>
+    <includes refid="_u_h_f___data_types_8h" local="yes">UHF_DataTypes.h</includes>
+    <includes local="yes">KY_KessyEvMngr.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <incdepgraph>
+      <node id="72">
+        <label>KY_KessyEvMngr.h</label>
+      </node>
+      <node id="69">
+        <label>UHF_DataTypes.h</label>
+        <link refid="_u_h_f___data_types_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>Dem.h</label>
+      </node>
+      <node id="73">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="65">
+        <label>UHF_Receiver.h</label>
+        <link refid="_u_h_f___receiver_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>UHF_CRC10.h</label>
+        <link refid="_u_h_f___c_r_c10_8h"/>
+      </node>
+      <node id="64">
+        <label>Rte.h</label>
+      </node>
+      <node id="66">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="62">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="61">
+        <label>UHF_Receiver.c</label>
+        <link refid="_u_h_f___receiver_8c"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>UHF_nvram.h</label>
+        <link refid="_u_h_f___nv_ram_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>Rte_UHF_Type.h</label>
+      </node>
+      <node id="67">
+        <label>Rte_UHF.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structs___u_h_f___sensor__01" prot="public">s_UHF_Sensor_01</innerclass>
+    <innerclass refid="structs___u_h_f___sensor__0n" prot="public">s_UHF_Sensor_0n</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1a668165b99a1911d8d2f13dd49e3539d4" prot="public" static="no">
+        <name>SENSOR_INIT_COUNTER</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used as initial counter for <ref refid="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" kindref="member">u8UHF_Sensor_Zaehler</ref></para><para>used as initial value for <ref refid="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" kindref="member">u8UHF_Sensor_Zaehler</ref> in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> <linebreak/>
+ assigned to <ref refid="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" kindref="member">u8UHF_Sensor_Zaehler</ref> after reading SAM Msg in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="74" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1ad511c12875de1d1c84e0104b9bc3b0ca" prot="public" static="no">
+        <name>PAYLOAD_INIT_LENGTH</name>
+        <initializer>0xFFFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used as initial payload length value for <ref refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" kindref="member">u16UHF_PayloadDatenlaenge_can</ref></para><para>used as initial value for <ref refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" kindref="member">u16UHF_PayloadDatenlaenge_can</ref> in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> <linebreak/>
+ assigned to <ref refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" kindref="member">u16UHF_PayloadDatenlaenge_can</ref> after reading SAM Msg in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> <linebreak/>
+ assigned to <ref refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" kindref="member">u16UHF_PayloadDatenlaenge_can</ref> after new CAN-Messages was received in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> <simplesect kind="remark"><para>values 0xFFFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="86" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1aa27526745035060a2a3f6533a3f714ee" prot="public" static="no">
+        <name>UHF_PAYLOAD_RAW_LENGTH</name>
+        <initializer>((<ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref>)(<ref refid="_u_h_f___c_r_c10_8c_8test_1a1b845bc26a70738722ab9c0cea984bd6" kindref="member">MAX_UHF_RF_MSG_SIZE</ref>-<ref refid="_u_h_f___data_types_8h_1a99f8aa287a0baee64d89d6b897cddd24" kindref="member">UHF_SENSOR_01_DATA_CAN_LEN</ref>))</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant describing max length for raw UHF Payload</para><para>used in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> and <ref refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" kindref="member">bEvaluateCRC10</ref> <linebreak/>
+ when assigning values to <ref refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" kindref="member">u8rawUHFPayload</ref> <simplesect kind="remark"><para>values 58u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="97" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1acce855d0c46e392409ccf3c8aa5179da" prot="public" static="no">
+        <name>PORT_KESSY_TELEGRAMM</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case</para><para>used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case determining if port number <linebreak/>
+ in s_UHF_LogicalHeader_buf.Port_Number belongs to the Kessy <simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="108" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1a0676a212ad90663e1c6f2eab842044fb" prot="public" static="no">
+        <name>PORT_FFB_TELEGRAMM</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case</para><para>used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case determining if port number <linebreak/>
+ in s_UHF_LogicalHeader_buf.Port_Number belongs to the FFB <simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="119" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___receiver_8c_1a18b71b2084540194de83f3bf9d3a1bbc" prot="public" static="no">
+        <name>PORT_WEL_KESSY_TELEGRAMM</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case</para><para>used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> in switch case determining if port number <linebreak/>
+ in s_UHF_LogicalHeader_buf.Port_Number belongs to the Kessy <simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="130" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_u_h_f___receiver_8c_1ae4fd583bcd0232d43fed05badf6938e0" prot="public" static="no">
+        <type>struct s_UHF_Sensor_01</type>
+        <definition>typedef struct s_UHF_Sensor_01 S_UHF_Sensor_01</definition>
+        <argsstring></argsstring>
+        <name>S_UHF_Sensor_01</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Structure to store data from CCAN Message from UHF_Sensor_01 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_u_h_f___receiver_8c_1af893743b294df826e61ebcf5c726f384" prot="public" static="no">
+        <type>struct s_UHF_Sensor_0n</type>
+        <definition>typedef struct s_UHF_Sensor_0n S_UHF_Sensor_0n</definition>
+        <argsstring></argsstring>
+        <name>S_UHF_Sensor_0n</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Structure to store data from CCAN Messages from UHF_Sensor_02-08 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="154" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a7023f361b90a6153acf4d1e21edd7505" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___receiver_8c_1ae4fd583bcd0232d43fed05badf6938e0" kindref="member">S_UHF_Sensor_01</ref></type>
+        <definition>S_UHF_Sensor_01 s_UHF_Sensor_01_buf</definition>
+        <argsstring></argsstring>
+        <name>s_UHF_Sensor_01_buf</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer structure for the UHF_Sensor_01 message</para><para>Buffer structure used as container to read UHF_Sensor1 message from CCAN <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Is assigned values after Rte reads in <ref refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" kindref="member">vRead_UHF_RPort</ref> Its data is copied in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="175" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="175" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" compoundref="_u_h_f___receiver_8c" startline="1008" endline="1048">vRead_UHF_RPort</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a956141bdcd542aa0429fbc3a108dd090" compoundref="_u_h_f___receiver_8c_8test" startline="1000" endline="1156">TEST_vRead_UHF_RPort</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8UHF_Sensor_Zaehler</definition>
+        <argsstring></argsstring>
+        <name>u8UHF_Sensor_Zaehler</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Sensor counter</para><para>UHF current message number counter. In case its value is 0 it is automatically updated to 1. <simplesect kind="remark"><para>range {0-31u, 0xFFu} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Initialized in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> with value 0u used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> when reading message from SAM} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="191" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="191" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a8e831d5f00687df2839b0a5dc57683aa" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 u16actual_DataReceived</definition>
+        <argsstring></argsstring>
+        <name>u16actual_DataReceived</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Sum of data length received from UHF_Sensors</para><para>Value is used to store sum of data lengths of received UHF CAN messages. <simplesect kind="remark"><para>range {0u, 48-440u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Is initialized with value 0u in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> Its value is updated when reading messages in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> and afterwards its reset to 0u} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="208" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="208" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a9c16f855c91424d62565c46ecd482862" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 u16UHF_SensorDatenlaenge_can</definition>
+        <argsstring></argsstring>
+        <name>u16UHF_SensorDatenlaenge_can</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CAN Data length in Bits</para><para>Used to store data length after receiving message from SAM <simplesect kind="remark"><para>range {0-511u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Is initialized with value 0u in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> and assigned value after receiving message in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> } <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="224" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="224" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a543e385836fea9a08c29a56db6088aa1" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___data_types_8h_1aca3c972d1d035680ae216c529330c9ca" kindref="member">S_UHF_LogicalHeader</ref></type>
+        <definition>S_UHF_LogicalHeader s_UHF_LogicalHeader_buf</definition>
+        <argsstring></argsstring>
+        <name>s_UHF_LogicalHeader_buf</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer structure for the Logical header of the UHF message</para><para>Buffer structure for the Logical header of the UHF message that is to be forwarded <linebreak/>
+ to the respectively addressed application. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its updated and used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="240" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="240" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aff395d4c78fdcb658b99e16462e9ee5e" compoundref="_u_h_f___receiver_8c" startline="973" endline="976">UHF_Receiver_Get_BatteryLevel</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1abbbb703cc13d51fae7854f08b4464e88" compoundref="_u_h_f___receiver_8c_8test" startline="901" endline="922">TEST_UHF_Receiver_Get_BatteryLevel</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 u16UHF_PayloadDatenlaenge_can</definition>
+        <argsstring></argsstring>
+        <name>u16UHF_PayloadDatenlaenge_can</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of payload received in CAN message from SAM</para><para>Used to store length of payload received in CAN message from SAM. <linebreak/>
+ Calculated using <ref refid="_u_h_f___receiver_8c_1a9c16f855c91424d62565c46ecd482862" kindref="member">u16UHF_SensorDatenlaenge_can</ref> and <ref refid="_u_h_f___data_types_8h_1aff68fc03f7b053b38d6a3d72c80fb7a4" kindref="member">UHF_SENSOR_MIN_LENGTH</ref> <simplesect kind="remark"><para>range {40-440u and 0xFFFFu} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Initialized in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> with value 0xFFFFu used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> when reading message from SAM} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="257" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="257" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8rawUHFPayload[((uint16)(MAX_UHF_RF_MSG_SIZE-UHF_SENSOR_01_DATA_CAN_LEN))]</definition>
+        <argsstring>[((uint16)(MAX_UHF_RF_MSG_SIZE-UHF_SENSOR_01_DATA_CAN_LEN))]</argsstring>
+        <name>u8rawUHFPayload</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram Payload without Logical Header</para><para>Payload from the Logical Header of the received UHF Telegram <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Initialized with values of 0u in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> Its value is updated in <ref refid="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" kindref="member">updateRawUHFPayload</ref> and checked in <ref refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" kindref="member">bEvaluateCRC10</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="274" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="274" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" compoundref="_u_h_f___receiver_8c" startline="1055" endline="1068">updateRawUHFPayload</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" compoundref="_u_h_f___receiver_8c" startline="1076" endline="1092">bEvaluateCRC10</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a247493f00976aa58e86762f229197e7b" compoundref="_u_h_f___receiver_8c_8test" startline="1168" endline="1211">TEST_updateRawUHFPayload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___receiver_8c_1af893743b294df826e61ebcf5c726f384" kindref="member">S_UHF_Sensor_0n</ref></type>
+        <definition>S_UHF_Sensor_0n s_UHF_Sensor_0n_buf</definition>
+        <argsstring></argsstring>
+        <name>s_UHF_Sensor_0n_buf</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer structure for the UHF_Sensor_02-UHF_Sensor_08 message</para><para>Buffer structure used as container to read UHF_Sensor_02-UHF_Sensor_08 message from CCAN <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Is assigned values after Rte reads in <ref refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" kindref="member">vRead_UHF_RPort</ref> Its data is copied in <ref refid="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" kindref="member">updateRawUHFPayload</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="290" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="290" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" compoundref="_u_h_f___receiver_8c" startline="1008" endline="1048">vRead_UHF_RPort</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" compoundref="_u_h_f___receiver_8c" startline="1055" endline="1068">updateRawUHFPayload</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a956141bdcd542aa0429fbc3a108dd090" compoundref="_u_h_f___receiver_8c_8test" startline="1000" endline="1156">TEST_vRead_UHF_RPort</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a247493f00976aa58e86762f229197e7b" compoundref="_u_h_f___receiver_8c_8test" startline="1168" endline="1211">TEST_updateRawUHFPayload</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1ab1f4f1eae5e69424655f5a4a7f8e0a2c" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8numUHFPortNumber</definition>
+        <argsstring></argsstring>
+        <name>u8numUHFPortNumber</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram Port number</para><para>Port Number from the Logical Header of the received UHF Telegram <simplesect kind="remark"><para>range {0-2u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its value is updated and send in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="305" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="305" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a4aded70a2e446f615503dea83893eb5a" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8numUHFFunktionsnummer</definition>
+        <argsstring></argsstring>
+        <name>u8numUHFFunktionsnummer</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram function number</para><para>Function Number from the Logical Header of the received UHF Telegram <simplesect kind="remark"><para>range {0-5u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its value is updated and send in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="320" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="320" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1ad6fb18c080babd09b221cbfd10a6c8b4" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8numBatteryLevel</definition>
+        <argsstring></argsstring>
+        <name>u8numBatteryLevel</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram Raw Key Battery Level</para><para>Raw Key Battery Level from the Logical Header of the received UHF Telegram <simplesect kind="remark"><para>range {0-255u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its value is updated and send in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="335" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="335" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a8b0a4eec79b28759226a717ae7a482e6" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bCRCValid</definition>
+        <argsstring></argsstring>
+        <name>bCRCValid</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram Result of the CRC10 Check</para><para>Result of the CRC10 Check. If 0 is received error is detected in case its 1 CRC is valid. <simplesect kind="remark"><para>range {TRUE, FALSE} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Initialized with FALSE in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> Is updated and sent in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="351" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="351" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1ad0ae4d805e49f951b1a467a9d89e4a23" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8SchluesselNr</definition>
+        <argsstring></argsstring>
+        <name>u8SchluesselNr</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Slot number of a key</para><para>Used in order to convey currently active key ID. <simplesect kind="remark"><para>range {0-8u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Is assigned value in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> and used for update in <ref refid="_u_h_f___receiver_8c_1ada26c65fb08a9c03c18bc73986f443f3" kindref="member">updateSignalStrength</ref> and <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="367" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="367" bodyend="-1"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a27b5ff185da1841378d36128eabbd322" compoundref="_u_h_f___battery_handler_8c_8test" startline="1005" endline="1079">TEST_PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae3acdd1492786bdbd0b13cfbb7c8f38b" compoundref="_u_h_f___receiver_8c" startline="983" endline="986">UHF_Receiver_Get_SchluesselNr</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a04bd4c7b22b443eeb463977e3a577e59" compoundref="_u_h_f___receiver_8c_8test" startline="934" endline="955">TEST_UHF_Receiver_Get_SchluesselNr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1aa3e5f3d7f153f9c5a22ec7c67d0e6075" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean FirstMessageArrived</definition>
+        <argsstring></argsstring>
+        <name>FirstMessageArrived</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>boolean variable indicating that first UHF message has already arrived.</para><para>Array indicates if battery voltage in any of learned keys is invalid. <simplesect kind="remark"><para>range {TRUE, FALSE} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its value is set in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> after first message arrives} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="382" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="382" bodyend="-1"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a27b5ff185da1841378d36128eabbd322" compoundref="_u_h_f___battery_handler_8c_8test" startline="1005" endline="1079">TEST_PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ad4d723b7c5c71e3e1174a1a039a8602e" compoundref="_u_h_f___receiver_8c" startline="993" endline="996">UHF_Receiver_Is_FirstMessageArrived</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a41e47018ee56a26dca637e4b2b5c447d" compoundref="_u_h_f___receiver_8c_8test" startline="967" endline="988">TEST_UHF_Receiver_Is_FirstMessageArrived</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8UHFSignalstaerke</definition>
+        <argsstring></argsstring>
+        <name>u8UHFSignalstaerke</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF Telegram Signal strength</para><para>Normalized signal strength of the received UFH Telegram <simplesect kind="remark"><para>range {0-127u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Initialized with 0u in <ref refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" kindref="member">UHF_Start</ref> Updated in <ref refid="_u_h_f___receiver_8c_1ada26c65fb08a9c03c18bc73986f443f3" kindref="member">updateSignalStrength</ref> Is used in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="400" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="400" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" compoundref="_u_h_f___receiver_8c" startline="717" endline="726">UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" compoundref="_u_h_f___receiver_8c" startline="963" endline="966">UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ada26c65fb08a9c03c18bc73986f443f3" compoundref="_u_h_f___receiver_8c" startline="1099" endline="1151">updateSignalStrength</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ad9c912bde3aa759cdfcb85bb6abc7cbe" compoundref="_u_h_f___receiver_8c_8test" startline="1279" endline="1346">TEST_updateSignalStrength</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a0c1fbc5363d0b89bd693d9f3e01e07c6" prot="public" static="yes" mutable="no">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 u8RawUHF_Msg[MAX_UHF_RF_MSG_SIZE]</definition>
+        <argsstring>[MAX_UHF_RF_MSG_SIZE]</argsstring>
+        <name>u8RawUHF_Msg</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer structure for the UHF message</para><para>Used in <ref refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" kindref="member">bEvaluateCRC10</ref> when computing CRC with <ref refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" kindref="member">CRC_Compute_CRC10</ref> <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {updated in <ref refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" kindref="member">bEvaluateCRC10</ref> and used when computing in <ref refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" kindref="member">CRC_Compute_CRC10</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="415" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="415" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" compoundref="_u_h_f___receiver_8c" startline="1076" endline="1092">bEvaluateCRC10</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1a2de572b11e1b1798b2ed2f765dec80a9" prot="public" static="yes" mutable="no">
+        <type>Std_ReturnType(*const</type>
+        <definition>Std_ReturnType(* const get_Sensor_Zaehler_can[8])(uint8 *data)</definition>
+        <argsstring>[8])(uint8 *data)</argsstring>
+        <name>get_Sensor_Zaehler_can</name>
+        <initializer>= {
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_01_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_02_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_03_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_04_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_05_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_06_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_07_Zaehler_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_08_Zaehler_can
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Const variable holding pointers to RTE call functions.</para><para>Array elements point to functions used to get data from CAN from messages UHF_Sensor_01_Zaehler ... UHF_Sensor_08_Zaehler <simplesect kind="remark"><para>values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used by vRead_UHF_RPort} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___receiver_8c" kindref="compound">UHF_Receiver.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="429" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="429" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" compoundref="_u_h_f___receiver_8c" startline="1008" endline="1048">vRead_UHF_RPort</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___receiver_8c_1af0e73194e9247dbe18126deda80c4ec8" prot="public" static="yes" mutable="no">
+        <type>Std_ReturnType(*const</type>
+        <definition>Std_ReturnType(* const get_Sensor_Data_can[8])(uint64 *data)</definition>
+        <argsstring>[8])(uint64 *data)</argsstring>
+        <name>get_Sensor_Data_can</name>
+        <initializer>= {
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_01_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_02_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_03_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_04_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_05_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_06_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_07_Data_can,
+    Rte_Read_UHF_RP_UHF_Sensor_s_UHF_Sensor_08_Data_can,
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Const variable holding pointers to RTE call functions.</para><para>Array elements point to functions used to get data from CAN from messages UHF_Sensor_01_Data ... UHF_Sensor_08_Data <simplesect kind="remark"><para>values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used by vRead_UHF_RPort} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___receiver_8c" kindref="compound">UHF_Receiver.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="452" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="452" bodyend="-1"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" compoundref="_u_h_f___receiver_8c" startline="1008" endline="1048">vRead_UHF_RPort</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC void</type>
+        <definition>STATIC void vRead_UHF_RPort</definition>
+        <argsstring>(uint16 number)</argsstring>
+        <name>vRead_UHF_RPort</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>number</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function assigns into global structures value of UHF message data.</para><para>Function assigns into global structures value of UHF message data depending on a chosen with parameter number of the message. Based on switch construction with cases from 1 to 8 reading corresponding UHF_Sensor. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number - used in switch to determine from which UHF port message shall be read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___receiver_8c_1a7023f361b90a6153acf4d1e21edd7505" kindref="member">s_UHF_Sensor_01_buf</ref> - Buffer structure for the UHF_Sensor_01 message <ref refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" kindref="member">s_UHF_Sensor_0n_buf</ref> - Buffer structure for the UHF_Sensor_02-UHF_Sensor_08 message <ref refid="_u_h_f___receiver_8c_1a2de572b11e1b1798b2ed2f765dec80a9" kindref="member">get_Sensor_Zaehler_can</ref> - Array of pointers to RTE functions <ref refid="_u_h_f___receiver_8c_1af0e73194e9247dbe18126deda80c4ec8" kindref="member">get_Sensor_Data_can</ref> - Array of pointers to RTE functions </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>s_UHF_Sensor_01-s_UHF_Sensor_08 Message is read and saved in buffer  <image type="html" name="vRead_UHF_RPort.png">Activity Diagram vRead_UHF_RPort</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___receiver_8c_8test_1a956141bdcd542aa0429fbc3a108dd090" kindref="member">TEST_vRead_UHF_RPort</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function for copy message.<linebreak/>
+ Function assigns into global structures value of UHF message data. <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="538" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="1008" bodyend="1048"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1a2561983df5a3f1832e3867685b7c1080" compoundref="_u_h_f___data_types_8h" startline="67">UHF_SENSOR_01</references>
+        <references refid="_u_h_f___receiver_8c_1a7023f361b90a6153acf4d1e21edd7505" compoundref="_u_h_f___receiver_8c" startline="175">s_UHF_Sensor_01_buf</references>
+        <references refid="_u_h_f___data_types_8h_1af8d2bc7d5d2b9abaf9683bcb083d54e0" compoundref="_u_h_f___data_types_8h" startline="502">UHF_SHIFT_40_BITS</references>
+        <references refid="_u_h_f___data_types_8h_1ad28245fd760b3ce54c793a63b65909b1" compoundref="_u_h_f___data_types_8h" startline="490">UHF_SHIFT_32_BITS</references>
+        <references refid="_u_h_f___data_types_8h_1a9c93bfa8a590cb86a4892a6bba10deb3" compoundref="_u_h_f___data_types_8h" startline="478">UHF_SHIFT_24_BITS</references>
+        <references refid="_u_h_f___data_types_8h_1a5b18e75f02600e71fbfb8a098ced09fb" compoundref="_u_h_f___data_types_8h" startline="466">UHF_SHIFT_16_BITS</references>
+        <references refid="_u_h_f___data_types_8h_1ac15f3298d73e6c97e3083633c87e8d56" compoundref="_u_h_f___data_types_8h" startline="454">UHF_SHIFT_8_BITS</references>
+        <references refid="_u_h_f___data_types_8h_1a1be1f45c6c2fee88a22c3de98c9ee487" compoundref="_u_h_f___data_types_8h" startline="144">UHF_SENSOR_08</references>
+        <references refid="_u_h_f___receiver_8c_1a2de572b11e1b1798b2ed2f765dec80a9" compoundref="_u_h_f___receiver_8c" startline="429">get_Sensor_Zaehler_can</references>
+        <references refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" compoundref="_u_h_f___receiver_8c" startline="290">s_UHF_Sensor_0n_buf</references>
+        <references refid="_u_h_f___receiver_8c_1af0e73194e9247dbe18126deda80c4ec8" compoundref="_u_h_f___receiver_8c" startline="452">get_Sensor_Data_can</references>
+        <references refid="_u_h_f___data_types_8h_1ab38f4f59b091728f0025004099bc46e5" compoundref="_u_h_f___data_types_8h" startline="514">UHF_SHIFT_48_BITS</references>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a956141bdcd542aa0429fbc3a108dd090" compoundref="_u_h_f___receiver_8c_8test" startline="1000" endline="1156">TEST_vRead_UHF_RPort</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void updateRawUHFPayload</definition>
+        <argsstring>(uint16 sensorStep)</argsstring>
+        <name>updateRawUHFPayload</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>sensorStep</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to store payload that arrived with KY or FFB action over CCAN.</para><para>Seven Bytes of payload arrive and then they are put in a proper place in structure prepared for payload. Additionally bytes should be reversed. <simplesect kind="pre"><para>Payload arrived with KY or FFB action over CCAN </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sensorStep - Number of a message <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" kindref="member">u8rawUHFPayload</ref> - container to store payload <ref refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" kindref="member">s_UHF_Sensor_0n_buf</ref> - container with payload that arrived </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>s_UHF_Sensor_0n_buf.Data_can data is copied to <ref refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" kindref="member">u8rawUHFPayload</ref>  <image type="html" name="updateRawUHFPayload.png">Activity Diagram updateRawUHFPayload</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___receiver_8c_8test_1a247493f00976aa58e86762f229197e7b" kindref="member">TEST_updateRawUHFPayload</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function to copy data to <ref refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" kindref="member">u8rawUHFPayload</ref> <linebreak/>
+ Function used to store payload that arrived with KY or FFB action over CCAN. <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="587" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="1055" bodyend="1068"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1a10bf99e473fd977d9c60ad1495b588a6" compoundref="_u_h_f___data_types_8h" startline="276">UHF_VALUE_7</references>
+        <references refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" compoundref="_u_h_f___receiver_8c" startline="274">u8rawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" compoundref="_u_h_f___receiver_8c" startline="290">s_UHF_Sensor_0n_buf</references>
+        <references refid="_u_h_f___data_types_8h_1a840299207cbfb4c3a394baa36956bd07" compoundref="_u_h_f___data_types_8h" startline="526">UHF_OFFSET_PLUS_1</references>
+        <references refid="_u_h_f___data_types_8h_1af18b180d4d02f8b062c83869774d37a4" compoundref="_u_h_f___data_types_8h" startline="260">UHF_VALUE_6</references>
+        <references refid="_u_h_f___data_types_8h_1a1dd591747054806370cc749b9df0e1b8" compoundref="_u_h_f___data_types_8h" startline="538">UHF_OFFSET_PLUS_2</references>
+        <references refid="_u_h_f___data_types_8h_1ad732b7d2990f3c2031c3566010a26185" compoundref="_u_h_f___data_types_8h" startline="244">UHF_VALUE_5</references>
+        <references refid="_u_h_f___data_types_8h_1a63bc838400495b3ff23d6db4e7b34921" compoundref="_u_h_f___data_types_8h" startline="550">UHF_OFFSET_PLUS_3</references>
+        <references refid="_u_h_f___data_types_8h_1a339712b16eaa96f2043150887b8443ea" compoundref="_u_h_f___data_types_8h" startline="214">UHF_VALUE_3</references>
+        <references refid="_u_h_f___data_types_8h_1a676d0a3b88958c6f04b68e7ef77d7b82" compoundref="_u_h_f___data_types_8h" startline="562">UHF_OFFSET_PLUS_4</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <references refid="_u_h_f___data_types_8h_1a19dbddb67d16ca2fd0b696bc1df6a92b" compoundref="_u_h_f___data_types_8h" startline="574">UHF_OFFSET_PLUS_5</references>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___data_types_8h_1a3bb001587d8c67bc5b01662ab0467564" compoundref="_u_h_f___data_types_8h" startline="586">UHF_OFFSET_PLUS_6</references>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a247493f00976aa58e86762f229197e7b" compoundref="_u_h_f___receiver_8c_8test" startline="1168" endline="1211">TEST_updateRawUHFPayload</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC boolean</type>
+        <definition>STATIC boolean bEvaluateCRC10</definition>
+        <argsstring>(const uint8 *pMsg, uint16 msg_bitlength)</argsstring>
+        <name>bEvaluateCRC10</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>pMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>msg_bitlength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is called internally. It is used for checking CRC for payload in order to validate its correctness.</para><para>This function is called internally. It is used for checking CRC for payload in order to validate its correctness. If CRC Result in used <ref refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" kindref="member">CRC_Compute_CRC10</ref> equals 0 - It confirms CRC is correct and returns TRUE. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="_u_h_f___c_r_c10_8c_8test_1a1cbecab281ec270e3ae1f0fb71d02b16" kindref="member">P2CONST(uint8</ref></parametername>
+<parametername direction="in">AUTOMATIC</parametername>
+<parametername direction="in">RTE_APPL_DATA)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pMsg - pointer of incomming message <linebreak/>
+ [in] uint16 msg_bitlength - length of message <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - TRUE, FALSE depending on CRC correctness </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___receiver_8c_1a0c1fbc5363d0b89bd693d9f3e01e07c6" kindref="member">u8RawUHF_Msg</ref> - Buffer for the message to be checked <ref refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" kindref="member">u8rawUHFPayload</ref> - Data used when preparing message to be checked </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="bEvaluateCRC10.png">Activity Diagram bEvaluateCRC10</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___receiver_8c_8test_1ad59c515ef59fb87130cbff59a77a5c98" kindref="member">TEST_bEvaluateCRC10</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function for validating message correctness.<linebreak/>
+ This function is called internally. It is used for checking CRC for payload in order to validate its correctness. <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="642" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="1076" bodyend="1092"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___receiver_8c_1a0c1fbc5363d0b89bd693d9f3e01e07c6" compoundref="_u_h_f___receiver_8c" startline="415">u8RawUHF_Msg</references>
+        <references refid="_u_h_f___data_types_8h_1a1b845bc26a70738722ab9c0cea984bd6" compoundref="_u_h_f___data_types_8h" startline="442">MAX_UHF_RF_MSG_SIZE</references>
+        <references refid="_u_h_f___data_types_8h_1a99f8aa287a0baee64d89d6b897cddd24" compoundref="_u_h_f___data_types_8h" startline="401">UHF_SENSOR_01_DATA_CAN_LEN</references>
+        <references refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" compoundref="_u_h_f___receiver_8c" startline="274">u8rawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1aa27526745035060a2a3f6533a3f714ee" compoundref="_u_h_f___receiver_8c" startline="97">UHF_PAYLOAD_RAW_LENGTH</references>
+        <references refid="_u_h_f___c_r_c10_8h_1a073e5d29d66352964275530518756898" compoundref="_u_h_f___c_r_c10_8c" startline="363" endline="378">CRC_Compute_CRC10</references>
+        <references refid="_u_h_f___data_types_8h_1a00c591cf83934377bfa8bfe84de8f85c" compoundref="_u_h_f___data_types_8h" startline="596">RFCOMINT_PASE_CHECKSUM_CRC10_INIT_VAL</references>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ad59c515ef59fb87130cbff59a77a5c98" compoundref="_u_h_f___receiver_8c_8test" startline="1223" endline="1266">TEST_bEvaluateCRC10</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1ada26c65fb08a9c03c18bc73986f443f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void updateSignalStrength</definition>
+        <argsstring>(uint8 keyNumber)</argsstring>
+        <name>updateSignalStrength</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>keyNumber</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function reads signal strength of a proper key depending on a number given as argument.</para><para>Function uses switch-case and depending on a key number given as a parameter calls proper Rte Read to store data about signal strength. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>keyNumber - 1..8<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" kindref="member">u8UHFSignalstaerke</ref> - UHF Telegram Signal strength </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="updateSignalStrength.png">Activity Diagram updateSignalStrength</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___receiver_8c_8test_1ad9c912bde3aa759cdfcb85bb6abc7cbe" kindref="member">TEST_updateSignalStrength</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000031"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_113 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function reads signal strength of a proper key depending on a number given as argument. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="706" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="1099" bodyend="1151"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" compoundref="_u_h_f___receiver_8c" startline="400">u8UHFSignalstaerke</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <references refid="_u_h_f___data_types_8h_1a339712b16eaa96f2043150887b8443ea" compoundref="_u_h_f___data_types_8h" startline="214">UHF_VALUE_3</references>
+        <references refid="_u_h_f___data_types_8h_1ad8b47f182861b53e17e879a2d52921c3" compoundref="_u_h_f___data_types_8h" startline="230">UHF_VALUE_4</references>
+        <references refid="_u_h_f___data_types_8h_1ad732b7d2990f3c2031c3566010a26185" compoundref="_u_h_f___data_types_8h" startline="244">UHF_VALUE_5</references>
+        <references refid="_u_h_f___data_types_8h_1af18b180d4d02f8b062c83869774d37a4" compoundref="_u_h_f___data_types_8h" startline="260">UHF_VALUE_6</references>
+        <references refid="_u_h_f___data_types_8h_1a10bf99e473fd977d9c60ad1495b588a6" compoundref="_u_h_f___data_types_8h" startline="276">UHF_VALUE_7</references>
+        <references refid="_u_h_f___data_types_8h_1a23cf68f2c958002832484557a5c79a23" compoundref="_u_h_f___data_types_8h" startline="291">UHF_VALUE_8</references>
+        <referencedby refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ad9c912bde3aa759cdfcb85bb6abc7cbe" compoundref="_u_h_f___receiver_8c_8test" startline="1279" endline="1346">TEST_updateSignalStrength</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a1a0d9fc6deb6719e760c7e3608c20c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Receiver_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Receiver_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialization routine, called once on each EnterRun event by scheduler. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="717" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="717" bodyend="726"/>
+        <references refid="_u_h_f___receiver_8c_1a8b0a4eec79b28759226a717ae7a482e6" compoundref="_u_h_f___receiver_8c" startline="351">bCRCValid</references>
+        <references refid="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" compoundref="_u_h_f___receiver_8c" startline="191">u8UHF_Sensor_Zaehler</references>
+        <references refid="_u_h_f___receiver_8c_1a668165b99a1911d8d2f13dd49e3539d4" compoundref="_u_h_f___receiver_8c" startline="74">SENSOR_INIT_COUNTER</references>
+        <references refid="_u_h_f___receiver_8c_1a8e831d5f00687df2839b0a5dc57683aa" compoundref="_u_h_f___receiver_8c" startline="208">u16actual_DataReceived</references>
+        <references refid="_u_h_f___receiver_8c_1a9c16f855c91424d62565c46ecd482862" compoundref="_u_h_f___receiver_8c" startline="224">u16UHF_SensorDatenlaenge_can</references>
+        <references refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" compoundref="_u_h_f___receiver_8c" startline="257">u16UHF_PayloadDatenlaenge_can</references>
+        <references refid="_u_h_f___receiver_8c_1ad511c12875de1d1c84e0104b9bc3b0ca" compoundref="_u_h_f___receiver_8c" startline="86">PAYLOAD_INIT_LENGTH</references>
+        <references refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" compoundref="_u_h_f___receiver_8c" startline="274">u8rawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1aa27526745035060a2a3f6533a3f714ee" compoundref="_u_h_f___receiver_8c" startline="97">UHF_PAYLOAD_RAW_LENGTH</references>
+        <references refid="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" compoundref="_u_h_f___receiver_8c" startline="400">u8UHFSignalstaerke</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a62ea5bcac1851bc441b7fe09df18b07f" compoundref="_u_h_f___receiver_8c_8test" startline="154" endline="202">TEST_UHF_Receiver_Init</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1a4ceefbc110fc4b2d91784d794ff09f48" compoundref="_u_h_f___task_8c" startline="103" endline="106">UHF_Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1aaec16b6af62f3334d9332d6c16f0948b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg1fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg1fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="733" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="733" bodyend="736"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a2561983df5a3f1832e3867685b7c1080" compoundref="_u_h_f___data_types_8h" startline="67">UHF_SENSOR_01</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1af6b2aec7f5a9dd703302557b3940b084" compoundref="_u_h_f___receiver_8c_8test" startline="214" endline="234">TEST_UHF_Call_Ev_UHFRFMsg1fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1ac5f9aec14e2f396955c5df3f59455edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg2fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg2fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="743" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="743" bodyend="746"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1aed8c02fcbcaaea1085f2642960a50587" compoundref="_u_h_f___data_types_8h" startline="78">UHF_SENSOR_02</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a94fd1e6e3a06d1272a3a9dd3bd2002a9" compoundref="_u_h_f___receiver_8c_8test" startline="246" endline="266">TEST_UHF_Call_Ev_UHFRFMsg2fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1af2d8bf862792df85e0b8c547011fc325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg3fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg3fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="754" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="754" bodyend="757"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1af22874db525ddc411dcba077576b952e" compoundref="_u_h_f___data_types_8h" startline="89">UHF_SENSOR_03</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aefc59176abece1d0065a2a85c3a20e86" compoundref="_u_h_f___receiver_8c_8test" startline="278" endline="298">TEST_UHF_Call_Ev_UHFRFMsg3fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a4318fa745aae0b244672e4c285438f89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg4fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg4fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="764" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="764" bodyend="767"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a29eed3ecb3180d5612adb0777de22b63" compoundref="_u_h_f___data_types_8h" startline="100">UHF_SENSOR_04</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aaf8386dd49fabb21ab05db9a681b56cd" compoundref="_u_h_f___receiver_8c_8test" startline="310" endline="330">TEST_UHF_Call_Ev_UHFRFMsg4fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a2f6ca1be082b841ae6d460ab9d306d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg5fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg5fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="774" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="774" bodyend="777"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a0ce2d638a4ef50063bf8c1af08d05565" compoundref="_u_h_f___data_types_8h" startline="111">UHF_SENSOR_05</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1acceaca2531e39cefb782991971143cfc" compoundref="_u_h_f___receiver_8c_8test" startline="342" endline="362">TEST_UHF_Call_Ev_UHFRFMsg5fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1aaba21df58835b49bce27cdf973131910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg6fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg6fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="784" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="784" bodyend="787"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a818cb2cd188c2969d4a4f57d9c8703fa" compoundref="_u_h_f___data_types_8h" startline="122">UHF_SENSOR_06</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ad954dc43211432f15d4518862b870934" compoundref="_u_h_f___receiver_8c_8test" startline="374" endline="394">TEST_UHF_Call_Ev_UHFRFMsg6fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a0853f19e080a1d2b184c7600b2e7dcbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg7fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg7fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="794" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="794" bodyend="797"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a5ab92c53176365a20a8fb64fb155274b" compoundref="_u_h_f___data_types_8h" startline="133">UHF_SENSOR_07</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aeda3585e41475c9eb06a26884175a659" compoundref="_u_h_f___receiver_8c_8test" startline="406" endline="426">TEST_UHF_Call_Ev_UHFRFMsg7fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a154b53a1bcd54a5e0dbdbd2131f12fc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg8fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg8fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="804" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="804" bodyend="807"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a1be1f45c6c2fee88a22c3de98c9ee487" compoundref="_u_h_f___data_types_8h" startline="144">UHF_SENSOR_08</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a738a16769a3ed61c64736e83635f5921" compoundref="_u_h_f___receiver_8c_8test" startline="438" endline="458">TEST_UHF_Call_Ev_UHFRFMsg8fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1a694c9aeed1d8b2c4a9efb2b62522d7b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_UHFRFMsg9fromSAM</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_UHFRFMsg9fromSAM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is called by Kessy EventMngr after UHF receives message from SAM. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="814" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="814" bodyend="817"/>
+        <references refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" compoundref="_u_h_f___receiver_8c" startline="824" endline="955">vread_UHFRFMsgfromSAM</references>
+        <references refid="_u_h_f___data_types_8h_1a2498ed67d4546b947d33dc3fd0bf540f" compoundref="_u_h_f___data_types_8h" startline="155">UHF_SENSOR_09</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a270e2b94ebdbfa9e04f19c15df1b1e2d" compoundref="_u_h_f___receiver_8c_8test" startline="470" endline="490">TEST_UHF_Call_Ev_UHFRFMsg9fromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vread_UHFRFMsgfromSAM</definition>
+        <argsstring>(uint16 sensornummer)</argsstring>
+        <name>vread_UHFRFMsgfromSAM</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>sensornummer</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function to merge payload sent over CAN from SAM <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="824" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="824" bodyend="955"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___receiver_8c_1a7b255352e1c2088e9957b82d98270f1b" compoundref="_u_h_f___receiver_8c" startline="1008" endline="1048">vRead_UHF_RPort</references>
+        <references refid="_u_h_f___data_types_8h_1a2561983df5a3f1832e3867685b7c1080" compoundref="_u_h_f___data_types_8h" startline="67">UHF_SENSOR_01</references>
+        <references refid="_u_h_f___receiver_8c_1a7023f361b90a6153acf4d1e21edd7505" compoundref="_u_h_f___receiver_8c" startline="175">s_UHF_Sensor_01_buf</references>
+        <references refid="_u_h_f___data_types_8h_1aff68fc03f7b053b38d6a3d72c80fb7a4" compoundref="_u_h_f___data_types_8h" startline="165">UHF_SENSOR_MIN_LENGTH</references>
+        <references refid="_u_h_f___data_types_8h_1a1f42682ffa3dc5d85aebe4752f3f7fc4" compoundref="_u_h_f___data_types_8h" startline="422">UHF_SENSOR_MAX_LENGTH</references>
+        <references refid="_u_h_f___receiver_8c_1ab1aa5c8ba618999ffb5c2d7b3a3ec252" compoundref="_u_h_f___receiver_8c" startline="191">u8UHF_Sensor_Zaehler</references>
+        <references refid="_u_h_f___receiver_8c_1a8e831d5f00687df2839b0a5dc57683aa" compoundref="_u_h_f___receiver_8c" startline="208">u16actual_DataReceived</references>
+        <references refid="_u_h_f___receiver_8c_1a9c16f855c91424d62565c46ecd482862" compoundref="_u_h_f___receiver_8c" startline="224">u16UHF_SensorDatenlaenge_can</references>
+        <references refid="_u_h_f___receiver_8c_1a543e385836fea9a08c29a56db6088aa1" compoundref="_u_h_f___receiver_8c" startline="240">s_UHF_LogicalHeader_buf</references>
+        <references refid="structs___u_h_f___logical_header_1a2394ee831ca08f9284203987810e987a" compoundref="_u_h_f___data_types_8h" startline="642">s_UHF_LogicalHeader::Transponder_ID</references>
+        <references refid="_u_h_f___data_types_8h_1a10bf99e473fd977d9c60ad1495b588a6" compoundref="_u_h_f___data_types_8h" startline="276">UHF_VALUE_7</references>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___data_types_8h_1af18b180d4d02f8b062c83869774d37a4" compoundref="_u_h_f___data_types_8h" startline="260">UHF_VALUE_6</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <references refid="_u_h_f___data_types_8h_1a339712b16eaa96f2043150887b8443ea" compoundref="_u_h_f___data_types_8h" startline="214">UHF_VALUE_3</references>
+        <references refid="structs___u_h_f___logical_header_1a7edb70f469caf5718e48e7a165683311" compoundref="_u_h_f___data_types_8h" startline="643">s_UHF_LogicalHeader::Port_Number</references>
+        <references refid="_u_h_f___data_types_8h_1ad8b47f182861b53e17e879a2d52921c3" compoundref="_u_h_f___data_types_8h" startline="230">UHF_VALUE_4</references>
+        <references refid="structs___u_h_f___logical_header_1afb0ee0654abb8c53214379893f126fc6" compoundref="_u_h_f___data_types_8h" startline="644">s_UHF_LogicalHeader::Funktionsnummer</references>
+        <references refid="structs___u_h_f___logical_header_1a3eccd9082eec9197cb218d57ef0909a8" compoundref="_u_h_f___data_types_8h" startline="645">s_UHF_LogicalHeader::BatteryLevel</references>
+        <references refid="_u_h_f___receiver_8c_1ab019606f7f0135cdfcd95bec280d2316" compoundref="_u_h_f___receiver_8c" startline="257">u16UHF_PayloadDatenlaenge_can</references>
+        <references refid="_u_h_f___data_types_8h_1aed8c02fcbcaaea1085f2642960a50587" compoundref="_u_h_f___data_types_8h" startline="78">UHF_SENSOR_02</references>
+        <references refid="_u_h_f___data_types_8h_1af22874db525ddc411dcba077576b952e" compoundref="_u_h_f___data_types_8h" startline="89">UHF_SENSOR_03</references>
+        <references refid="_u_h_f___data_types_8h_1a29eed3ecb3180d5612adb0777de22b63" compoundref="_u_h_f___data_types_8h" startline="100">UHF_SENSOR_04</references>
+        <references refid="_u_h_f___data_types_8h_1a0ce2d638a4ef50063bf8c1af08d05565" compoundref="_u_h_f___data_types_8h" startline="111">UHF_SENSOR_05</references>
+        <references refid="_u_h_f___data_types_8h_1a818cb2cd188c2969d4a4f57d9c8703fa" compoundref="_u_h_f___data_types_8h" startline="122">UHF_SENSOR_06</references>
+        <references refid="_u_h_f___data_types_8h_1a5ab92c53176365a20a8fb64fb155274b" compoundref="_u_h_f___data_types_8h" startline="133">UHF_SENSOR_07</references>
+        <references refid="_u_h_f___data_types_8h_1a1be1f45c6c2fee88a22c3de98c9ee487" compoundref="_u_h_f___data_types_8h" startline="144">UHF_SENSOR_08</references>
+        <references refid="_u_h_f___receiver_8c_1aace86c2f38f3a799edcd411f0592c098" compoundref="_u_h_f___receiver_8c" startline="290">s_UHF_Sensor_0n_buf</references>
+        <references refid="_u_h_f___data_types_8h_1a05062177771f9afd60667d255e7c5b28" compoundref="_u_h_f___data_types_8h" startline="432">UHF_SENSOR_0N_DATASIZE</references>
+        <references refid="_u_h_f___receiver_8c_1ad511c12875de1d1c84e0104b9bc3b0ca" compoundref="_u_h_f___receiver_8c" startline="86">PAYLOAD_INIT_LENGTH</references>
+        <references refid="_u_h_f___receiver_8c_1a6b17412594f4e799121d6315de084098" compoundref="_u_h_f___receiver_8c" startline="1055" endline="1068">updateRawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" compoundref="_u_h_f___receiver_8c" startline="1076" endline="1092">bEvaluateCRC10</references>
+        <references refid="_u_h_f___receiver_8c_1ab1f4f1eae5e69424655f5a4a7f8e0a2c" compoundref="_u_h_f___receiver_8c" startline="305">u8numUHFPortNumber</references>
+        <references refid="_u_h_f___receiver_8c_1a4aded70a2e446f615503dea83893eb5a" compoundref="_u_h_f___receiver_8c" startline="320">u8numUHFFunktionsnummer</references>
+        <references refid="_u_h_f___receiver_8c_1ad6fb18c080babd09b221cbfd10a6c8b4" compoundref="_u_h_f___receiver_8c" startline="335">u8numBatteryLevel</references>
+        <references refid="_u_h_f___receiver_8c_1a8b0a4eec79b28759226a717ae7a482e6" compoundref="_u_h_f___receiver_8c" startline="351">bCRCValid</references>
+        <references refid="_u_h_f___receiver_8c_1ad0ae4d805e49f951b1a467a9d89e4a23" compoundref="_u_h_f___receiver_8c" startline="367">u8SchluesselNr</references>
+        <references refid="_u_h_f___receiver_8c_1aa3e5f3d7f153f9c5a22ec7c67d0e6075" compoundref="_u_h_f___receiver_8c" startline="382">FirstMessageArrived</references>
+        <references refid="_u_h_f___receiver_8c_1ada26c65fb08a9c03c18bc73986f443f3" compoundref="_u_h_f___receiver_8c" startline="1099" endline="1151">updateSignalStrength</references>
+        <references refid="_u_h_f___receiver_8c_1a18b71b2084540194de83f3bf9d3a1bbc" compoundref="_u_h_f___receiver_8c" startline="130">PORT_WEL_KESSY_TELEGRAMM</references>
+        <references refid="_u_h_f___receiver_8c_1acce855d0c46e392409ccf3c8aa5179da" compoundref="_u_h_f___receiver_8c" startline="108">PORT_KESSY_TELEGRAMM</references>
+        <references refid="_u_h_f___receiver_8c_1a0676a212ad90663e1c6f2eab842044fb" compoundref="_u_h_f___receiver_8c" startline="119">PORT_FFB_TELEGRAMM</references>
+        <references refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" compoundref="_u_h_f___receiver_8c" startline="274">u8rawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" compoundref="_u_h_f___receiver_8c" startline="400">u8UHFSignalstaerke</references>
+        <references refid="_u_h_f___receiver_8c_1a668165b99a1911d8d2f13dd49e3539d4" compoundref="_u_h_f___receiver_8c" startline="74">SENSOR_INIT_COUNTER</references>
+        <referencedby refid="_u_h_f___receiver_8c_1aaec16b6af62f3334d9332d6c16f0948b" compoundref="_u_h_f___receiver_8c" startline="733" endline="736">UHF_Call_Ev_UHFRFMsg1fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1ac5f9aec14e2f396955c5df3f59455edc" compoundref="_u_h_f___receiver_8c" startline="743" endline="746">UHF_Call_Ev_UHFRFMsg2fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1af2d8bf862792df85e0b8c547011fc325" compoundref="_u_h_f___receiver_8c" startline="754" endline="757">UHF_Call_Ev_UHFRFMsg3fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a4318fa745aae0b244672e4c285438f89" compoundref="_u_h_f___receiver_8c" startline="764" endline="767">UHF_Call_Ev_UHFRFMsg4fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a2f6ca1be082b841ae6d460ab9d306d35" compoundref="_u_h_f___receiver_8c" startline="774" endline="777">UHF_Call_Ev_UHFRFMsg5fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1aaba21df58835b49bce27cdf973131910" compoundref="_u_h_f___receiver_8c" startline="784" endline="787">UHF_Call_Ev_UHFRFMsg6fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a0853f19e080a1d2b184c7600b2e7dcbf" compoundref="_u_h_f___receiver_8c" startline="794" endline="797">UHF_Call_Ev_UHFRFMsg7fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a154b53a1bcd54a5e0dbdbd2131f12fc2" compoundref="_u_h_f___receiver_8c" startline="804" endline="807">UHF_Call_Ev_UHFRFMsg8fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a694c9aeed1d8b2c4a9efb2b62522d7b9" compoundref="_u_h_f___receiver_8c" startline="814" endline="817">UHF_Call_Ev_UHFRFMsg9fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1af6b2aec7f5a9dd703302557b3940b084" compoundref="_u_h_f___receiver_8c_8test" startline="214" endline="234">TEST_UHF_Call_Ev_UHFRFMsg1fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a94fd1e6e3a06d1272a3a9dd3bd2002a9" compoundref="_u_h_f___receiver_8c_8test" startline="246" endline="266">TEST_UHF_Call_Ev_UHFRFMsg2fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aefc59176abece1d0065a2a85c3a20e86" compoundref="_u_h_f___receiver_8c_8test" startline="278" endline="298">TEST_UHF_Call_Ev_UHFRFMsg3fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aaf8386dd49fabb21ab05db9a681b56cd" compoundref="_u_h_f___receiver_8c_8test" startline="310" endline="330">TEST_UHF_Call_Ev_UHFRFMsg4fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1acceaca2531e39cefb782991971143cfc" compoundref="_u_h_f___receiver_8c_8test" startline="342" endline="362">TEST_UHF_Call_Ev_UHFRFMsg5fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ad954dc43211432f15d4518862b870934" compoundref="_u_h_f___receiver_8c_8test" startline="374" endline="394">TEST_UHF_Call_Ev_UHFRFMsg6fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1aeda3585e41475c9eb06a26884175a659" compoundref="_u_h_f___receiver_8c_8test" startline="406" endline="426">TEST_UHF_Call_Ev_UHFRFMsg7fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a738a16769a3ed61c64736e83635f5921" compoundref="_u_h_f___receiver_8c_8test" startline="438" endline="458">TEST_UHF_Call_Ev_UHFRFMsg8fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a270e2b94ebdbfa9e04f19c15df1b1e2d" compoundref="_u_h_f___receiver_8c_8test" startline="470" endline="490">TEST_UHF_Call_Ev_UHFRFMsg9fromSAM</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1ada810e94c317da92b5aac15cc7d85ff2" compoundref="_u_h_f___receiver_8c_8test" startline="502" endline="848">TEST_vread_UHFRFMsgfromSAM</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1ae056742ddbf71d6369f678ebe77004e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_Call_Ev_StUHFKY_evUHFEmpfang</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Call_Ev_StUHFKY_evUHFEmpfang</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function calls Client-Server Interface to send telegram to Kessy. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="963" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="963" bodyend="966"/>
+        <references refid="_u_h_f___receiver_8c_1a543e385836fea9a08c29a56db6088aa1" compoundref="_u_h_f___receiver_8c" startline="240">s_UHF_LogicalHeader_buf</references>
+        <references refid="structs___u_h_f___logical_header_1a2394ee831ca08f9284203987810e987a" compoundref="_u_h_f___data_types_8h" startline="642">s_UHF_LogicalHeader::Transponder_ID</references>
+        <references refid="_u_h_f___receiver_8c_1ab1f4f1eae5e69424655f5a4a7f8e0a2c" compoundref="_u_h_f___receiver_8c" startline="305">u8numUHFPortNumber</references>
+        <references refid="_u_h_f___receiver_8c_1a4aded70a2e446f615503dea83893eb5a" compoundref="_u_h_f___receiver_8c" startline="320">u8numUHFFunktionsnummer</references>
+        <references refid="_u_h_f___receiver_8c_1ad6fb18c080babd09b221cbfd10a6c8b4" compoundref="_u_h_f___receiver_8c" startline="335">u8numBatteryLevel</references>
+        <references refid="_u_h_f___receiver_8c_1a443dde7218ba0d78a1e09ce758e25b4f" compoundref="_u_h_f___receiver_8c" startline="274">u8rawUHFPayload</references>
+        <references refid="_u_h_f___receiver_8c_1a8b0a4eec79b28759226a717ae7a482e6" compoundref="_u_h_f___receiver_8c" startline="351">bCRCValid</references>
+        <references refid="_u_h_f___receiver_8c_1aaeb104c8165695ba10d026f81ec4cbd6" compoundref="_u_h_f___receiver_8c" startline="400">u8UHFSignalstaerke</references>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a9d447b44b65875f99ade0d0cedc5dd01" compoundref="_u_h_f___receiver_8c_8test" startline="860" endline="889">TEST_UHF_Call_Ev_StUHFKY_evUHFEmpfang</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1aff395d4c78fdcb658b99e16462e9ee5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 UHF_Receiver_Get_BatteryLevel</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Receiver_Get_BatteryLevel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function return BatteryLevel value. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="973" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="973" bodyend="976"/>
+        <references refid="_u_h_f___receiver_8c_1a543e385836fea9a08c29a56db6088aa1" compoundref="_u_h_f___receiver_8c" startline="240">s_UHF_LogicalHeader_buf</references>
+        <references refid="structs___u_h_f___logical_header_1a3eccd9082eec9197cb218d57ef0909a8" compoundref="_u_h_f___data_types_8h" startline="645">s_UHF_LogicalHeader::BatteryLevel</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1abbbb703cc13d51fae7854f08b4464e88" compoundref="_u_h_f___receiver_8c_8test" startline="901" endline="922">TEST_UHF_Receiver_Get_BatteryLevel</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1ae3acdd1492786bdbd0b13cfbb7c8f38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 UHF_Receiver_Get_SchluesselNr</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Receiver_Get_SchluesselNr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function return SchluesselNr value. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="983" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="983" bodyend="986"/>
+        <references refid="_u_h_f___receiver_8c_1ad0ae4d805e49f951b1a467a9d89e4a23" compoundref="_u_h_f___receiver_8c" startline="367">u8SchluesselNr</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a04bd4c7b22b443eeb463977e3a577e59" compoundref="_u_h_f___receiver_8c_8test" startline="934" endline="955">TEST_UHF_Receiver_Get_SchluesselNr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___receiver_8c_1ad4d723b7c5c71e3e1174a1a039a8602e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean UHF_Receiver_Is_FirstMessageArrived</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_Receiver_Is_FirstMessageArrived</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function return true if FirstMessageArrived. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" line="993" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c" bodystart="993" bodyend="996"/>
+        <references refid="_u_h_f___receiver_8c_1aa3e5f3d7f153f9c5a22ec7c67d0e6075" compoundref="_u_h_f___receiver_8c" startline="382">FirstMessageArrived</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_8test_1a41e47018ee56a26dca637e4b2b5c447d" compoundref="_u_h_f___receiver_8c_8test" startline="967" endline="988">TEST_UHF_Receiver_Is_FirstMessageArrived</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for UHF SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___receiver_8c" kindref="compound">UHF_Receiver.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>24/05/2022 </para></simplesect>
+</para><para>detailed multiline description of the file <linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>Expected test coverage (100%) and type of test coverage (C1/CTC). Add software requirement IDs in the testcases. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Receiver.c"/>
+  </compounddef>
+</doxygen>

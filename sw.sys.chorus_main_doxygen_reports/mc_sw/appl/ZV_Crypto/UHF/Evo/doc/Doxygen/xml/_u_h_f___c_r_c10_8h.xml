@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___c_r_c10_8h" kind="file" language="C++">
+    <compoundname>UHF_CRC10.h</compoundname>
+    <includedby refid="_u_h_f___c_r_c10_8c" local="yes">UHF_CRC10.c</includedby>
+    <includedby refid="_u_h_f___receiver_8c" local="yes">UHF_Receiver.c</includedby>
+    <includedby refid="_u_h_f___sender_8c" local="yes">UHF_Sender.c</includedby>
+    <includedby refid="_u_h_f___task_8c" local="yes">UHF_Task.c</includedby>
+    <invincdepgraph>
+      <node id="35">
+        <label>UHF_CRC10.c</label>
+        <link refid="_u_h_f___c_r_c10_8c"/>
+      </node>
+      <node id="34">
+        <label>UHF_CRC10.h</label>
+        <link refid="_u_h_f___c_r_c10_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>UHF_Receiver.c</label>
+        <link refid="_u_h_f___receiver_8c"/>
+      </node>
+      <node id="37">
+        <label>UHF_Sender.c</label>
+        <link refid="_u_h_f___sender_8c"/>
+      </node>
+      <node id="38">
+        <label>UHF_Task.c</label>
+        <link refid="_u_h_f___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___c_r_c10_8h_1a073e5d29d66352964275530518756898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 CRC_Compute_CRC10</definition>
+        <argsstring>(const uint8 *lpu8_Buffer, uint16 lu16_NbOfBits, uint16 lu16_InitValue)</argsstring>
+        <name>CRC_Compute_CRC10</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>lpu8_Buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_NbOfBits</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_InitValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function called to calculate a CRC10 checksum.</para><para>Function called to calculate a CRC10 checksum over a given data range specified by parameter lpu8_Buffer (pointer to the buffer) and the number of bits lu16_NbOfBits to be considered for the computation. This function uses <ref refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" kindref="member">crc_Update_CRC10</ref> for the bit wise calculation. The initial value for the calculation is given in parameter lu8_InitVal. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* lpu8_Buffer - Pointer to the Data Buffer [in] uint16 lu16_NbOfBits - Number of Bits to consider for the Computation [in] uint16 lu16_InitValue - Initial Value for the Computation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 - calculated checksum </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___sender_8c_1a02c1a135b3c024a4855e985af154885c" kindref="member">u8RawUHF2SAM_Msg</ref> - Structure to be send to SAM </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="CRC_Compute_CRC10.png">Activity Diagram CRC_Compute_CRC10</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___c_r_c10_8c_8test_1a133c9f2a348e5e9f4bc2c4db214f89b2" kindref="member">TEST_CRC_Compute_CRC10</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_186 </para></xrefdescription></xrefsect></para><para>Function called to calculate a CRC10 checksum.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_CRC10.h" line="115" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="363" bodyend="378"/>
+        <referencedby refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" compoundref="_u_h_f___receiver_8c" startline="1076" endline="1092">bEvaluateCRC10</referencedby>
+        <referencedby refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" compoundref="_u_h_f___sender_8c" startline="740" endline="881">evUHFSenden</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the UHF SWC used in CRC Calculations. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___c_r_c10_8h" kindref="compound">UHF_CRC10.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie32362 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>17/03/2022 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_CRC10.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1845 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_centr_activation_net_diag_8c" kind="file" language="C++">
+    <compoundname>CentrActivationNetDiag.c</compoundname>
+    <includes refid="_centr_activation_net_diag_8h" local="yes">CentrActivationNetDiag.h</includes>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">hal.h</includes>
+    <includes local="yes">BusMonitor.h</includes>
+    <includes local="yes">Os.h</includes>
+    <includes local="yes">os_config.h</includes>
+    <includes local="yes">dem.h</includes>
+    <includes local="yes">Dem_Cfg.h</includes>
+    <includes local="yes">Rte_NetworkDiagnosisFlag.h</includes>
+    <includes local="yes">VoltageMeasurement.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Mm.h</label>
+      </node>
+      <node id="6">
+        <label>BusMonitor.h</label>
+      </node>
+      <node id="2">
+        <label>agw.h</label>
+      </node>
+      <node id="7">
+        <label>os_config.h</label>
+      </node>
+      <node id="9">
+        <label>Dem_Cfg.h</label>
+      </node>
+      <node id="10">
+        <label>Rte_NetworkDiagnosisFlag.h</label>
+      </node>
+      <node id="8">
+        <label>dem.h</label>
+      </node>
+      <node id="4">
+        <label>Os.h</label>
+      </node>
+      <node id="1">
+        <label>CentrActivationNetDiag.h</label>
+        <link refid="_centr_activation_net_diag_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>CentrActivationNetDiag.c</label>
+        <link refid="_centr_activation_net_diag_8c"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>VoltageMeasurement.h</label>
+      </node>
+      <node id="5">
+        <label>hal.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct___t_cent_a_n_d___data_ram" prot="public">_TCentAND_DataRam</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a375bf3f8b81f58f98233af71a2db9099" prot="public" static="no">
+        <name>K_ANA_RESOLUTION_MV_PER_DIGIT</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="63" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a729340a725419fd9268fd9a4d17a8969" prot="public" static="no">
+        <name>CentAND_Task</name>
+        <initializer><ref refid="_n_w_d_f___u_t___stub_8h_8test_1ab629d00e73d09db76b2b94605136238f" kindref="member">DiagTask</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="65" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a9e9c9f8f2b9f03f25bbf1b6b151c20df" prot="public" static="no">
+        <name>K_CentAND_TDIAG_START_TIME</name>
+        <initializer>500u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="71" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a08b5866f8401d675a38aa5e5ac2bd99c" prot="public" static="no">
+        <name>K_CentAND_CYCLETIME</name>
+        <initializer>1000u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="79" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a7b810e4e82dbb48f26afc8e3eaa9888a" prot="public" static="no">
+        <name>K_NWDF_VOLTAGE_LOW</name>
+        <initializer>(9400u/K_ANA_RESOLUTION_MV_PER_DIGIT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="86" column="10" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a55b09851ee3031290b7a0d806f11e3dd" prot="public" static="no">
+        <name>K_NWDF_VOLTAGE_HIGH</name>
+        <initializer>(17000u/K_ANA_RESOLUTION_MV_PER_DIGIT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="93" column="10" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a7c01afb791b098bb4c8da8a4e3e94e6a" prot="public" static="no">
+        <name>K_NWDF_EX_VOLTAGE_LOW</name>
+        <initializer>(9900u/K_ANA_RESOLUTION_MV_PER_DIGIT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="100" column="10" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a0db48f525be877d3809ec609db8707ba" prot="public" static="no">
+        <name>K_NWDF_EX_VOLTAGE_HIGH</name>
+        <initializer>(16500u/K_ANA_RESOLUTION_MV_PER_DIGIT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="107" column="10" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a84d9aadb657102092ca00fa2e43798cf" prot="public" static="no">
+        <name>CENT_AND_STATES_DEFAULT</name>
+        <initializer>{0u,0u,0u,0u}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="114" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_centr_activation_net_diag_8c_1a5670e415ec3605775593c2d6eead68dd" prot="public" static="no">
+        <name>KL15_ON</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="116" column="9" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_centr_activation_net_diag_8c_1acb3f010005fd0094b33634b4095cecdc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_TE_CNAD_MasterState</name>
+        <enumvalue id="_centr_activation_net_diag_8c_1acb3f010005fd0094b33634b4095cecdca54977ced964f662204d277a9c7777035" prot="public">
+          <name>E_CENT_ACT_ND_NWDF_INACTIVE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>E_CENT_ACT_ND_NWDF_INACTIVE. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1acb3f010005fd0094b33634b4095cecdca7f6cd7ebb00094df47bf6130200067d1" prot="public">
+          <name>E_CENT_ACT_ND_NWDF_ACTIVE</name>
+          <briefdescription>
+<para>E_CENT_ACT_ND_NWDF_ACTIVE. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>holds the status of the Master.</para><para>contains active and inactive states TE_CNAD_MasterState.Enumeration of Master algo states </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="140" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="139" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="enum" id="_centr_activation_net_diag_8c_1a96eb5a6764544a50e19b36f96c6989f9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_TE_CNAD_Startvorgang</name>
+        <enumvalue id="_centr_activation_net_diag_8c_1a96eb5a6764544a50e19b36f96c6989f9a8c53141dfa14a2a15326230f628c701d" prot="public">
+          <name>E_CENT_ACT_ND_STARTVORGANG_INACTIVE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1a96eb5a6764544a50e19b36f96c6989f9a7c793d46a4786bd6ac9dd1f017d28d88" prot="public">
+          <name>E_CENT_ACT_ND_STARTVORGANG_ACTIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>holds the status of the startvorgang state of the Master statemachine.</para><para>contains active and inactive states TE_CNAD_Startvorgang.Enumeration of Startvorgang algo states </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="151" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="150" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="enum" id="_centr_activation_net_diag_8c_1aa91eee1977d4e45af31cb737d7f3b5ab" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_TE_CNAD_VoltageException</name>
+        <enumvalue id="_centr_activation_net_diag_8c_1aa91eee1977d4e45af31cb737d7f3b5abab9a120da6dcad3b25124a603cda52576" prot="public">
+          <name>E_CENT_ACT_ND_VOLTAGE_NORMAL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1aa91eee1977d4e45af31cb737d7f3b5aba14edaf08d3d58d7ec799e183ed49b351" prot="public">
+          <name>E_CENT_ACT_ND_VOLTAGE_EXCEPTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of VoltageException algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="162" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="161" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="enum" id="_centr_activation_net_diag_8c_1ae322fa0277347dc6aef932bebbc64a65" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_TE_CNAD_Kl15</name>
+        <enumvalue id="_centr_activation_net_diag_8c_1ae322fa0277347dc6aef932bebbc64a65a60989e35b7348d3591b2153e4c9e501e" prot="public">
+          <name>E_CENT_ACT_ND_KL15_OFF_MASTER</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1ae322fa0277347dc6aef932bebbc64a65ae9690c8da8c03f5a6c0e400cd1c6bc75" prot="public">
+          <name>E_CENT_ACT_ND_KL15_ON_MASTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of Kl15 algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="173" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="enum" id="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_TE_CNAD_SlaveState</name>
+        <enumvalue id="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037a3476e8a4085905cba7741120aacd41a6" prot="public">
+          <name>E_CENT_ACT_ND_KL15_OFF</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037ab6a103648bf31b5ed3451ef94f3796f2" prot="public">
+          <name>E_CENT_ACT_ND_T_DIAG_START_ACTIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037abc149960f4d73f18d00c7852a7e715d0" prot="public">
+          <name>E_CENT_ACT_ND_NET_DIAG_ACTIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037ac615ec9aa86783f2bceed84fc6a83cdd" prot="public">
+          <name>E_CENT_ACT_ND_NET_DIAG_INACTIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of Slave algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="184" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="183" bodyend="189"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1af6f4a041dd3812bb91cf493fee9ebd2e" prot="public" static="no">
+        <type>enum <ref refid="_centr_activation_net_diag_8c_1acb3f010005fd0094b33634b4095cecdc" kindref="member">_TE_CNAD_MasterState</ref></type>
+        <definition>typedef enum _TE_CNAD_MasterState  TE_CNAD_MasterState</definition>
+        <argsstring></argsstring>
+        <name>TE_CNAD_MasterState</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>holds the status of the Master.</para><para>contains active and inactive states TE_CNAD_MasterState.Enumeration of Master algo states </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1aba933b7dd5dc0bdf41386917934bbdcb" prot="public" static="no">
+        <type>enum <ref refid="_centr_activation_net_diag_8c_1a96eb5a6764544a50e19b36f96c6989f9" kindref="member">_TE_CNAD_Startvorgang</ref></type>
+        <definition>typedef enum _TE_CNAD_Startvorgang  TE_CNAD_Startvorgang</definition>
+        <argsstring></argsstring>
+        <name>TE_CNAD_Startvorgang</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>holds the status of the startvorgang state of the Master statemachine.</para><para>contains active and inactive states TE_CNAD_Startvorgang.Enumeration of Startvorgang algo states </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1ae81f935b6cc3fe114a5466d9438fcc75" prot="public" static="no">
+        <type>enum <ref refid="_centr_activation_net_diag_8c_1aa91eee1977d4e45af31cb737d7f3b5ab" kindref="member">_TE_CNAD_VoltageException</ref></type>
+        <definition>typedef enum _TE_CNAD_VoltageException  TE_CNAD_VoltageException</definition>
+        <argsstring></argsstring>
+        <name>TE_CNAD_VoltageException</name>
+        <briefdescription>
+<para>Enumeration of VoltageException algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1ad18ae2404a17c46b909914ef4cf16a6c" prot="public" static="no">
+        <type>enum <ref refid="_centr_activation_net_diag_8c_1ae322fa0277347dc6aef932bebbc64a65" kindref="member">_TE_CNAD_Kl15</ref></type>
+        <definition>typedef enum _TE_CNAD_Kl15  TE_CNAD_Kl15</definition>
+        <argsstring></argsstring>
+        <name>TE_CNAD_Kl15</name>
+        <briefdescription>
+<para>Enumeration of Kl15 algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="176" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1a7358c2e802d60ade205cdb318a0016bc" prot="public" static="no">
+        <type>enum <ref refid="_centr_activation_net_diag_8c_1a531098e30de7bbefd000353e9040a037" kindref="member">_TE_CNAD_SlaveState</ref></type>
+        <definition>typedef enum _TE_CNAD_SlaveState  TE_CNAD_SlaveState</definition>
+        <argsstring></argsstring>
+        <name>TE_CNAD_SlaveState</name>
+        <briefdescription>
+<para>Enumeration of Slave algo states. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_centr_activation_net_diag_8c_1a5d564d6e421c66e1d839538bf75520b8" prot="public" static="no">
+        <type>struct _TCentAND_DataRam</type>
+        <definition>typedef struct _TCentAND_DataRam TCentAND_DataRam</definition>
+        <argsstring></argsstring>
+        <name>TCentAND_DataRam</name>
+        <briefdescription>
+<para>Structure to hold all volatile datas required to handle the CAND. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="222" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_centr_activation_net_diag_8c_1a21ba00312321c59e8cfb4e229c320d5c" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 ui8_IRQ_PowerFailCentAND_Nwdf</definition>
+        <argsstring></argsstring>
+        <name>ui8_IRQ_PowerFailCentAND_Nwdf</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="126" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_centr_activation_net_diag_8c_1a8dcd4c50f74a519f048bbba129b283f4" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean CentAND_TDiagStartExceededAlarm_active</definition>
+        <argsstring></argsstring>
+        <name>CentAND_TDiagStartExceededAlarm_active</name>
+        <briefdescription>
+<para><linebreak/>
+Don&apos;t cancel the alarm that if it is not started </para>        </briefdescription>
+        <detaileddescription>
+<para>Canceling an alarm not previously started will result will set an OS error </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="131" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_centr_activation_net_diag_8c_1a8b57cc14dc7091216a34f0d2cd550d5d" prot="public" static="yes" mutable="no">
+        <type><ref refid="_centr_activation_net_diag_8c_1a5d564d6e421c66e1d839538bf75520b8" kindref="member">TCentAND_DataRam</ref></type>
+        <definition>TCentAND_DataRam CentAND_DataRam</definition>
+        <argsstring></argsstring>
+        <name>CentAND_DataRam</name>
+        <briefdescription>
+<para>This is an example for a local data definition. </para>        </briefdescription>
+        <detaileddescription>
+<para><hruler/>
+ Structure containing all the data for CAND.</para><para>Structure containing all thr data for CAND. <simplesect kind="remark"><para>rentrant -NO </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="remark"><para>protection none - used by functions which are called from the same context. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="238" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_centr_activation_net_diag_8c_1ad21c9ef97fd2f76e041067af7cbbfa87" prot="public" static="yes" mutable="no">
+        <type><ref refid="_centr_activation_net_diag_8c_1ae81f935b6cc3fe114a5466d9438fcc75" kindref="member">TE_CNAD_VoltageException</ref></type>
+        <definition>volatile TE_CNAD_VoltageException VoltageState</definition>
+        <argsstring></argsstring>
+        <name>VoltageState</name>
+        <initializer>= <ref refid="_centr_activation_net_diag_8c_1aa91eee1977d4e45af31cb737d7f3b5abab9a120da6dcad3b25124a603cda52576" kindref="member">E_CENT_ACT_ND_VOLTAGE_NORMAL</ref></initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>voltage state initialised.</para><para>voltage state initialised. <simplesect kind="remark"><para>rentrant -NO </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="remark"><para>protection none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="250" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_centr_activation_net_diag_8c_1ac9a7023ff851525563fafab9df66134a" prot="public" static="no" mutable="no">
+        <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a5bb756ee5c58458b65422464aba4844a" kindref="member">TStdInterface</ref></type>
+        <definition>TStdInterface CentAND_StdInterface</definition>
+        <argsstring></argsstring>
+        <name>CentAND_StdInterface</name>
+        <initializer>=
+{
+   &amp;<ref refid="_centr_activation_net_diag_8c_1ae1683aca9ee9b4da84d4902883e29212" kindref="member">CentAND_Setup</ref>,
+   &amp;<ref refid="_centr_activation_net_diag_8c_1acc7b066d7cb72a6d7f19254ddc5e73d6" kindref="member">CentAND_StartStop</ref>,
+   &amp;<ref refid="_centr_activation_net_diag_8c_1ac18bea92bfc757f19d439607a790df59" kindref="member">CentAND_IsAlive</ref>,
+   <ref refid="_n_w_d_f___u_t___stub_8h_8test_1a400038e3c2a3ba2f2227e4e5a1478e4ca890f1ed62674419bc5165cd75a56aab9" kindref="member">_ApplicationCategory</ref>
+}</initializer>
+        <briefdescription>
+<para>Here we defines the standard interface for the CentAND_Signal. </para>        </briefdescription>
+        <detaileddescription>
+<para>CentAND_T_DIAG_START_ACTIVE. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="1980" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1980" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ae1683aca9ee9b4da84d4902883e29212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> <ref refid="_n_w_d_f___u_t___stub_8h_8test_1af0d62213b5185e5f3c598d6ddffc99c9" kindref="member">TsintR32</ref></type>
+        <definition>PRIVATE_FCT TsintR32 CentAND_Setup</definition>
+        <argsstring>(TModulIdent ModulIdentifier, TStartmode Startmode)</argsstring>
+        <name>CentAND_Setup</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a37ff62e1fa7fd0bb648b4ecef240fb25" kindref="member">TModulIdent</ref></type>
+          <declname>ModulIdentifier</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a93828c5c525c9a1536141c8d97652027" kindref="member">TStartmode</ref></type>
+          <declname>Startmode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard interface Setup Function</para><para>setup function that initialises when the startmode is WARMSTART <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>context task </para></simplesect>
+<simplesect kind="return"><para>TRUE On sucess or FALSE otherwise </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ModulIdentifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Module identifier. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Startmode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Startmode of the gateway.  TsintR32</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Start mode of the Gateway had to be read</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Setup.png">Activity diagram of the function &quot;CentAND_Setup&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. Setup function that initialises when the startmode is WARMSTART. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a84c5c189960abaa6f261db7a07cf6edd" kindref="member">TEST_CentrActivationNetDiag__CentAND_Setup</ref> <linebreak/>
+ standard interface Setup Function</para></simplesect>
+setup function that initialises when the startmode is WARMSTART <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>context task </para></simplesect>
+<simplesect kind="return"><para>TRUE On sucess or FALSE otherwise </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ModulIdentifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Module identifier. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Startmode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Startmode of the gateway.  TsintR32 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="299" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="839" bodyend="871"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1acc7b066d7cb72a6d7f19254ddc5e73d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> <ref refid="_n_w_d_f___u_t___stub_8h_8test_1af0d62213b5185e5f3c598d6ddffc99c9" kindref="member">TsintR32</ref></type>
+        <definition>PRIVATE_FCT TsintR32 CentAND_StartStop</definition>
+        <argsstring>(TStartStopNotify Notify)</argsstring>
+        <name>CentAND_StartStop</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a5e527360a8d69b2b68e409daa28a51af" kindref="member">TStartStopNotify</ref></type>
+          <declname>Notify</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard interface StartStop Function</para><para>starts or stops the Cent task depending upon the task status. <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>context task </para></simplesect>
+<simplesect kind="return"><para>FALSE always. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Notify</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Start notification. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Startmode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Startmode of the gateway.  TsintR32 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Based on the Task status function executes.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_StartStop.png">Activity diagram of the function &quot;CentAND_StartStop&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. Starts or Stops the CentAND_Task DiagTask depending upon the task status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ TEST_CentAND_StartStop <linebreak/>
+ standard interface StartStop Function</para></simplesect>
+starts or stops the Cent task depending upon the task status. <simplesect kind="remark"><para>reentrant No </para></simplesect>
+<simplesect kind="remark"><para>context task </para></simplesect>
+<simplesect kind="return"><para>FALSE always. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Notify</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Start notification. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Startmode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Startmode of the gateway.  TsintR32 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="330" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="883" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ac18bea92bfc757f19d439607a790df59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> <ref refid="_n_w_d_f___u_t___stub_8h_8test_1af0d62213b5185e5f3c598d6ddffc99c9" kindref="member">TsintR32</ref></type>
+        <definition>PRIVATE_FCT TsintR32 CentAND_IsAlive</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_IsAlive</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>CentAND_GetVoltageException. </para>        </briefdescription>
+        <detaileddescription>
+<para>This functions return the state of the voltage exception from the CAND task</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE or FALSE CentAND_T_DIAG_START_ACTIVE</para></simplesect>
+This functions return the state of the T Diag Start Time from the CAND task</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE or FALSE ************************************************************************** standard interface Alive Function. </para></simplesect>
+<simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>TRUE always. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">NONE.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NONE.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TsintR32. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="361" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1973" bodyend="1977"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ab04785b3baaf51cfe41eaf530852908d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>init function of the CAND module.</para><para>it initialises the variables with default values from ROM. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>NWDF should be initialzed.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Init.png">Activity diagram of the function &quot;CentAND_Init&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. To update the initial default values from ROM. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a24a9b7a6bab502b95e4eec0d9a26acc3" kindref="member">TEST_CentrActivationNetDiag__CentAND_Init</ref> <linebreak/>
+ init function of the CAND module.</para></simplesect>
+it initialises the variables with default values from ROM. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="392" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1898" bodyend="1910"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1aa735b0495d42ec46c184bb67c3a96164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>stop function.</para><para>cancels the base alarm and the TDiagStartexceeded alarm. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Diag Alram status need to read</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_TDiagStartExceededAlarm_active - cancel the alarm that if it is not started .Canceling an alarm not previously started will result will set an OS error</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Stop.png">Activity diagram of the function &quot;CentAND_Stop&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. Cancels/Stops the base alarm and the TDiagStartexceeded alarm <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1ae0455218c23c36053107cba3e741110e" kindref="member">TEST_CentrActivationNetDiag__CentAND_Stop</ref> <linebreak/>
+ stop function.</para></simplesect>
+cancels the base alarm and the TDiagStart�xceeded alarm. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="423" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1875" bodyend="1886"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ad5e07ed1bfe831d613cd4e242988fdd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>start function for CentAND_module.</para><para>initialize all output_values by ROM- default_values and distribute it into the system. It sets the base alarm of the CentAND_module and also starts the network diagnosis. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Network Diagnostics should be initialized.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Start.png">Activity diagram of the function &quot;CentAND_Start&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1ab7375893494003573e52dca9aa78322c" kindref="member">TEST_CentrActivationNetDiag__CentAND_Start</ref> <linebreak/>
+ start function for CentAND_module.</para></simplesect>
+initialize all output_values by ROM- default_values and distribute it into the system. It sets the base alarm of the CentAND_module and also starts the network diagnosis. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="457" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1846" bodyend="1863"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a97fcf7331f593805c3cde61f30414e21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> <ref refid="_centr_activation_net_diag_8c_1ae81f935b6cc3fe114a5466d9438fcc75" kindref="member">TE_CNAD_VoltageException</ref></type>
+        <definition>PRIVATE_FCT TE_CNAD_VoltageException CentANDCheckUbattRanges</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentANDCheckUbattRanges</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>computes the voltage exception needed for the master state machine.</para><para>computes the current voltage exception based on the battery voltage <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>battery voltage. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TE_CNAD_VoltageException </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Voltage excemption status has to be read</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>VoltageState -Voltage state intiliazed</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentANDCheckUbattRanges.png">Activity diagram of the function &quot;CentANDCheckUbattRanges&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1650; SWR_ICAS1_GW_1651; SWR_ICAS1_GW_1653; SWR_ICAS1_GW_1654; SWR_ICAS1_GW_1669; SWR_ICAS1_GW_1670}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1af3e6d22b7983d51f01ab7c7f176b212d" kindref="member">TEST_CentrActivationNetDiag__CentANDCheckUbattRanges</ref><linebreak/>
+ computes the voltage exception needed for the master state machine.</para></simplesect>
+computes the current voltage exception based on the battery voltage <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>battery voltage. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TE_CNAD_VoltageException </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="491" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1053" bodyend="1101"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a588708466f6ad9610a33be757325ec22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_Master</definition>
+        <argsstring>(EventMaskType ev)</argsstring>
+        <name>CentAND_Master</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the master state machine.</para><para>handles the master state machine. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Network Diagnostics should be initialized.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>ui8_IRQ_PowerFailCentAND_Nwdf - export trigger of IRQ for AI_UBATT in case of voltage drop below 6V</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Master.png">Activity diagram of the function &quot;CentAND_Master&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1621; SWR_ICAS1_GW_1620; SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a90b432b2dbc5867add7f6bb6e9f51fbd" kindref="member">TEST_CentrActivationNetDiag__CentAND_Master</ref><linebreak/>
+ handles the master state machine.</para></simplesect>
+handles the master state machine. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="524" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1394" bodyend="1477"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ab36f36939f35f6608cff77dfed1e4540" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_Slave</definition>
+        <argsstring>(EventMaskType ev)</argsstring>
+        <name>CentAND_Slave</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the slave state machine.</para><para>handles the slave state machine. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Network Diagnostics should be initialized.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_Slave.png">Activity diagram of the function &quot;CentAND_Slave&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a20df2dc316247c6ebd52da4712808102" kindref="member">TEST_CentrActivationNetDiag__CentAND_Slave</ref><linebreak/>
+ handles the slave state machine.</para></simplesect>
+handles the slave state machine. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="557" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1719" bodyend="1751"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a0ff679c444f4c48f8115e76768debe05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_MasterState_KL15</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_MasterState_KL15</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ s </para>        </briefdescription>
+        <detaileddescription>
+<para><hruler/>
+</para><para>chnages the state of CentAND_DataRam.Kl15 depending on whether ignition is ON or OFF.</para><para>handles the stateKL15 of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Ignition status should be read</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_MasterState_KL15.png">Activity diagram of the function &quot;CentAND_MasterState_KL15&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666 }</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1aa56fba34bfca486d5b69ee44dfac361f" kindref="member">TEST_CentrActivationNetDiag__CentAND_MasterState_KL15</ref><linebreak/>
+ chnages the state of CentAND_DataRam.Kl15 depending on whether ignition is ON or OFF.</para></simplesect>
+handles the stateKL15 of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="590" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1208" bodyend="1250"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ad75898c4eb2049e1500a34a5bc77b9b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_MasterState_Startvorgang</definition>
+        <argsstring>(EventMaskType *ev, const TCentAND_States NewIALStates, Tuint32 *EdgeEvent)</argsstring>
+        <name>CentAND_MasterState_Startvorgang</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref> *</type>
+          <declname>ev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_centr_activation_net_diag_8h_1af873f72ba8d38068a397d3867eaf6f03" kindref="member">TCentAND_States</ref></type>
+          <declname>NewIALStates</declname>
+        </param>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a477eade44a552fbf7b57d4d4f5d97640" kindref="member">Tuint32</ref> *</type>
+          <declname>EdgeEvent</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the startvorgangstate of master.</para><para>handles the startvorgangstate of master by evaluating several change conditions. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Tuint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* EdgeEvent. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TCentAND_States NewIALStates.  void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Vehicle engine status should be read.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_MasterState_Startvorgang.png">Activity diagram of the function &quot;CentAND_MasterState_Startvorgang&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1620; SWR_ICAS1_GW_1621; SWR_ICAS1_GW_1669; SWR_ICAS1_GW_1670}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a70c85626397bab1a75979b4abdbbdee3" kindref="member">TEST_CentrActivationNetDiag__CentAND_MasterState_Startvorgang</ref><linebreak/>
+ handles the startvorgangstate of master.</para></simplesect>
+handles the startvorgangstate of master by evaluating several change conditions. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Tuint32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* EdgeEvent. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TCentAND_States NewIALStates.  void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="624" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1116" bodyend="1196"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a8464c2ecf90600585a5d90c26b3cf8a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_MasterState_Nwdf</definition>
+        <argsstring>(TE_CNAD_VoltageException VoltageException)</argsstring>
+        <name>CentAND_MasterState_Nwdf</name>
+        <param>
+          <type><ref refid="_centr_activation_net_diag_8c_1ae81f935b6cc3fe114a5466d9438fcc75" kindref="member">TE_CNAD_VoltageException</ref></type>
+          <declname>VoltageException</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>nwdf state of the master</para><para>handles the nwdf state of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Network Diagnostics should be initialized. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_MasterState_Nwdf.png">Activity diagram of the function &quot;CentAND_MasterState_Nwdf&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1620; SWR_ICAS1_GW_1621; SWR_ICAS1_GW_1669; SWR_ICAS1_GW_1670; SWR_ICAS1_GW_1660}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a969b4f665aad4294d263880f6b86046e" kindref="member">TEST_CentrActivationNetDiag__CentAND_MasterState_Nwdf</ref><linebreak/>
+ nwdf state of the master</para></simplesect>
+handles the nwdf state of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="656" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1263" bodyend="1320"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a8f08939e22cf85198b6c5c65cbc81829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_MasterState_Nwdf2</definition>
+        <argsstring>(TE_CNAD_VoltageException VoltageException)</argsstring>
+        <name>CentAND_MasterState_Nwdf2</name>
+        <param>
+          <type><ref refid="_centr_activation_net_diag_8c_1ae81f935b6cc3fe114a5466d9438fcc75" kindref="member">TE_CNAD_VoltageException</ref></type>
+          <declname>VoltageException</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>nwdf2 state of the master</para><para>handles the nwdf2 state of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Network Diagnostics should be initialized.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_MasterState_Nwdf2.png">Activity diagram of the function &quot;CentAND_MasterState_Nwdf2&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1620; SWR_ICAS1_GW_1621; SWR_ICAS1_GW_1669; SWR_ICAS1_GW_1670; SWR_ICAS1_GW_1660}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a856d8371f634698371e22b8dcca2ddb4" kindref="member">TEST_CentrActivationNetDiag__CentAND_MasterState_Nwdf2</ref><linebreak/>
+ nwdf2 state of the master</para></simplesect>
+handles the nwdf2 state of master. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="690" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1333" bodyend="1383"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a65586776cac78b5bb239fc705ce2ec0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_SlaveState_KL15Off</definition>
+        <argsstring>(EventMaskType *ev)</argsstring>
+        <name>CentAND_SlaveState_KL15Off</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref> *</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the KLOff state of the slave.</para><para>handles the nwdf2 state of slave.If the ignition is ON, then it sets the alarms and timers and consumes the relevant events that have occured. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_TDiagStartExceededAlarm_active - cancel the alarm that if it is not started .Canceling an alarm not previously started will result will set an OS error</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_SlaveState_KL15Off.png">Activity diagram of the function &quot;CentAND_SlaveState_KL15Off&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a3edc1e8411ac8be2d4354d9d48af0094" kindref="member">TEST_CentrActivationNetDiag__CentAND_SlaveState_KL15Off</ref><linebreak/>
+ handles the KLOff state of the slave.</para></simplesect>
+handles the nwdf2 state of master.If the ignition is ON, then it sets the alarms and timers and consumes the relevant events that have occured. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TE_CNAD_VoltageException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- VoltageException. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="724" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1490" bodyend="1536"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a1a174a078da97227e35a4e01e36c4a99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_SlaveState_TDiagStartActive</definition>
+        <argsstring>(EventMaskType *ev)</argsstring>
+        <name>CentAND_SlaveState_TDiagStartActive</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref> *</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the TDiagStartActive state of the slave.</para><para>handles the TDiagStartActive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_SlaveState_TDiagStartActive.png">Activity diagram of the function &quot;CentAND_SlaveState_TDiagStartActive&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a143d830e3a56632879946704b0b6fc30" kindref="member">TEST_CentrActivationNetDiag__CentAND_SlaveState_TDiagStartActive</ref><linebreak/>
+ handles the TDiagStartActive state of the slave.</para></simplesect>
+handles the TDiagStartActive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="757" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1548" bodyend="1593"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ae57a214fa401d38d739da0bfc13bea61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_SlaveState_NetDiagActive</definition>
+        <argsstring>(EventMaskType *ev)</argsstring>
+        <name>CentAND_SlaveState_NetDiagActive</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref> *</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the NetDiagActive state of the slave.</para><para>handles the NetDiagActive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Ignition status should be read.</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_SlaveState_NetDiagActive.png">Activity diagram of the function &quot;CentAND_SlaveState_NetDiagActive&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a7c784114334fb9b643edc338a7889b6d" kindref="member">TEST_CentrActivationNetDiag__CentAND_SlaveState_NetDiagActive</ref><linebreak/>
+ handles the NetDiagActive state of the slave.</para></simplesect>
+handles the NetDiagActive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="791" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1605" bodyend="1643"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a36f1be1caa6b60b3ae9c46003ac041c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1a7b4a13dbe54d0015b6f5caadb05a971c" kindref="member">PRIVATE_FCT</ref> void</type>
+        <definition>PRIVATE_FCT void CentAND_SlaveState_NetDiagInactive</definition>
+        <argsstring>(EventMaskType *ev)</argsstring>
+        <name>CentAND_SlaveState_NetDiagInactive</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref> *</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>handles the NetDiagInactive state of the slave.</para><para>handles the NetDiagInactive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_TDiagStartExceededAlarm_active - cancel the alarm that if it is not started .Canceling an alarm not previously started will result will set an OS error</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_SlaveState_NetDiagInactive.png">Activity diagram of the function &quot;CentAND_SlaveState_NetDiagInactive&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.NetworkDiagnosisFlag.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_1659; SWR_ICAS1_GW_1660; SWR_ICAS1_GW_1666}</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1a3b2f3ee9e4f18abbf51a506adf3e7488" kindref="member">TEST_CentrActivationNetDiag__CentAND_SlaveState_NetDiagInactive</ref><linebreak/>
+ handles the NetDiagInactive state of the slave.</para></simplesect>
+handles the NetDiagInactive state of slave. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* ev. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="824" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1656" bodyend="1708"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1ad462ba4fae3631131d06a63c66aa3036" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CentAND_TaskFunc</definition>
+        <argsstring>(EventMaskType ev)</argsstring>
+        <name>CentAND_TaskFunc</name>
+        <param>
+          <type><ref refid="_n_w_d_f___u_t___stub_8h_8test_1a2168addaf4bf342bd34690e437d11b72" kindref="member">EventMaskType</ref></type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>event driven task that evaluates and calculates CAND purposes.</para><para>event driven task that evaluates and calculates CAND purposes. It starts or stops the CentAND_module based on the occurence of event obtained from OS. further also activates the slave or master state machine accordingly. <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EventMaskType-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ev (OSEK event). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="949" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="949" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1acdccbd2ffe23f1bb8beb9798b7104d76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CentAnd_SetVoltageException</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAnd_SetVoltageException</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>function is called when power drop occurs.</para><para>It shall set the VoltageState to E_CENT_ACT_ND_VOLTAGE_EXCEPTION in order to avoid that during a fail the nwdf is activated again till drop is over <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="1033" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1033" bodyend="1036"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1a2dfa158e3dfe39c636261b2cbd9d790e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1ac0f4615ef52e5795602b168698a23dd5" kindref="member">TE_CentAND_NwdfState</ref></type>
+        <definition>TE_CentAND_NwdfState CentAND_GetNwdf</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_GetNwdf</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CentAND_GetVoltageException.</para><para>returns state of nwdf</para><para>his functions returns the state of the NWDF <simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>nwdf state </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TE_CentAND_NwdfState </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_GetNwdf.png">Activity diagram of the function &quot;CentAND_GetNwdf&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. Used to return NWDF State. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1abb546c08efc1f1084a5f4a3cbf3a500e" kindref="member">TEST_CentrActivationNetDiag__CentAND_GetNwdf</ref><linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="1781" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1781" bodyend="1784"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1aae8c8dc381705d249b3012deac353064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_centr_activation_net_diag_8h_1ac0f4615ef52e5795602b168698a23dd5" kindref="member">TE_CentAND_NwdfState</ref></type>
+        <definition>TE_CentAND_NwdfState CentAND_GetNwdf2</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_GetNwdf2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>returns state of nwdf2</para><para>his functions returns the state of the NWDF2 ( ignoring KL15) <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>nwdf2 state </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TE_CentAND_NwdfState </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>N/A</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>CentAND_DataRam - Structure containing all the data for CAND.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="CentAND_GetNwdf2.png">Activity diagram of the function &quot;CentAND_GetNwdf2&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helperfunction. No requirements are satisfied. Used to return NWDF2 State. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_centr_activation_net_diag_8c_8test_1abb546c08efc1f1084a5f4a3cbf3a500e" kindref="member">TEST_CentrActivationNetDiag__CentAND_GetNwdf</ref><linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="1814" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1814" bodyend="1817"/>
+      </memberdef>
+      <memberdef kind="function" id="_centr_activation_net_diag_8c_1af4551b1f8b7019b6169dd3f334890180" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CentAND_SetNwdfInactive</definition>
+        <argsstring>(void)</argsstring>
+        <name>CentAND_SetNwdfInactive</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>sets nwdf to inactive</para><para>This functions set the NWDF to inactive ( after power fail ) <simplesect kind="remark"><para>reentrant No. </para></simplesect>
+<simplesect kind="remark"><para>context task. </para></simplesect>
+<simplesect kind="return"><para>void. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" line="1829" column="1" bodyfile="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c" bodystart="1829" bodyend="1833"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Handles Activation or deactivation of Network Diagnosis based the Flag set. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>File</title><para>//VW_MEB_19_ICAS1/CHORUS/CHORUS_DEV/CHORUS/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c </para></simplesect>
+<simplesect kind="rcs"><title>Change</title><para>165235 </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#8 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic36422 </para></simplesect>
+<simplesect kind="rcs"><title>DateTime</title><para>2021/02/10 16:19:49 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/NetworkDiagnosisFlag/c/src/CentrActivationNetDiag.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_diagnostic_timers_8h" kind="file" language="C++">
+    <compoundname>DiagnosticTimers.h</compoundname>
+    <includes local="yes">DiagUtils.h</includes>
+    <includedby refid="_diagnostic_timers_8c" local="yes">DiagnosticTimers.c</includedby>
+    <incdepgraph>
+      <node id="18">
+        <label>DiagnosticTimers.h</label>
+        <link refid="_diagnostic_timers_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>DiagUtils.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="20">
+        <label>DiagnosticTimers.h</label>
+        <link refid="_diagnostic_timers_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>DiagnosticTimers.c</label>
+        <link refid="_diagnostic_timers_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_diagnostic_timers_8h_1a0535182aa788581f2fd447ace195f609" prot="public" static="no">
+        <name>SI_DIAGNOSEAKTIV_TIMER_START_VALUE</name>
+        <initializer>400u</initializer>
+        <briefdescription>
+<para>4000ms/10ms UdsTask cycle </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="59" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TimerState</name>
+        <enumvalue id="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725ae7fa8ba17d660a7fab0d84c5786ee181" prot="public">
+          <name>TIMER_ELAPSED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>0 - Timer elapsed in the last cyclic processing </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725abc4495967cdeae935ea31fa8c3992139" prot="public">
+          <name>TIMER_RUNNING</name>
+          <briefdescription>
+<para>1 - Timer is running and decremented cyclically </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725a43e3cac5581da1706bdddb64c93bbe12" prot="public">
+          <name>TIMER_STOPPED</name>
+          <briefdescription>
+<para>2 - Timer is stopped </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725a0b0a1aa1c812a7c813c705922f57d0e1" prot="public">
+          <name>TIMER_RESTARTED</name>
+          <briefdescription>
+<para>3 - Timer was set to start value in the last cyclic processing </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="62" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" bodystart="61" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="enum" id="_diagnostic_timers_8h_1a31a9e4f62abf9ad8102e2d75cdb00661" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ConditionVehicleSpeed</name>
+        <enumvalue id="_diagnostic_timers_8h_1a31a9e4f62abf9ad8102e2d75cdb00661a9e1b634c4e09fb9309c8e242fa8d0413" prot="public">
+          <name>PASSED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>0 - Velocity preconditions for execution of diagnosis services are fulfilled </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_diagnostic_timers_8h_1a31a9e4f62abf9ad8102e2d75cdb00661aecedb56d1405a60c6069f4a0139bdec5" prot="public">
+          <name>FAILED</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>1 - Velocity preconditions for execution of diagnosis services are NOT fulfilled </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="71" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" bodystart="70" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_diagnostic_timers_8h_1a077ec44a69cd85f6b81126b62f6cd85d" prot="public" static="no" mutable="no">
+        <type>uint16</type>
+        <definition>uint16 SI_DiagnoseAktivTimer</definition>
+        <argsstring></argsstring>
+        <name>SI_DiagnoseAktivTimer</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The &quot;si_Diagnose_Activ timer&quot; value</para><para>&quot;si_Diagnose_Activ timer&quot; is processed cyclically every 10 ms. <linebreak/>
+ The timer shall be (re)started when diagnostic messages (CAN/100BaseTx) are received and thus a diagnostic is active. <linebreak/>
+ <linebreak/>
+ As long as this timer is running Chorus shall set the signal Systeminfo_01.SI_Diagnose_Aktiv = 1. <linebreak/>
+ If the timer is expired Chorus shall set the signal Systeminfo_01.SI_Diagnose_Aktiv = 0. <linebreak/>
+ <linebreak/>
+ This timer variable is a global variable and exported to be used by DoIP_DCM, RoutingTask, GwAdaptor, WakeupSleep SW Units. <simplesect kind="remark"><para>range 0 - 400<linebreak/>
+ unit NA <linebreak/>
+ resolution NA <linebreak/>
+ context task <linebreak/>
+ protection none - used from one context <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="79" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_diagnostic_timers_8h_1ab954fd25de6ab2a574a979895963b393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_diagnostic_timers_8h_1ad4f8bb5e646e709aafeed7b8436ce725" kindref="member">TimerState</ref></type>
+        <definition>TimerState getStateKL15TimerForDrivingCycle</definition>
+        <argsstring>(void)</argsstring>
+        <name>getStateKL15TimerForDrivingCycle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>getStateKL15TimerForDrivingCycle</bold> just returns the status of the &quot;KL15 timer for driving cycle&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TimerState - Status of the &quot;KL15 timer for driving cycle&quot; which is counted every 10 ms <linebreak/>
+</para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>TIMER_ELAPSED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Timer elapsed in the last cyclic 10 ms processing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TIMER_RUNNING</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Timer is running and decremented every 10 ms </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TIMER_STOPPED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Timer is stopped </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TIMER_RESTARTED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Timer was set to DRIVING_CYCLE_TIMER_START_VALUE (200 = 2 s) in the last cyclic 10ms processing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="getStateKL15TimerForDrivingCycle.png">Activity diagram of the function &quot;getStateKL15TimerForDrivingCycle&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the function returns the value of the struct element &quot;Status&quot; from the static struct variable &quot;KL15TimerForDCY&quot;. <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1a5a86a82c73e63ee0825f11020b1b8ae4" kindref="member">TEST_DiagnosticTimers__getStateKL15TimerForDrivingCycle</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+<bold>??? AnMa ????: </bold> Description and SW architecture of requirements regarding &quot;KL15 timer for driving cycle&quot; (DCY = Driving CYcle) are completely missing in EA SW requirements are: {SWR_ICAS1_Diag_793; SWR_ICAS1_Diag_791}</para></simplesect>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_793; SWR_ICAS1_Diag_791} <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="121" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1145" bodyend="1148"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1a99435893ecdcf2570cda96d7b58f8c2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_diagnostic_timers_8h_1a31a9e4f62abf9ad8102e2d75cdb00661" kindref="member">ConditionVehicleSpeed</ref></type>
+        <definition>ConditionVehicleSpeed getConditionVehicleSpeed</definition>
+        <argsstring>(void)</argsstring>
+        <name>getConditionVehicleSpeed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>getConditionVehicleSpeed</bold> just returns the validation status of vehicle speed processing which is verified cyclically (every 100 ms) <linebreak/>
+ Background: Some diagnosis services require preconditions to be fulfilled, in order to allow their execution. </para>        </briefdescription>
+        <detaileddescription>
+<para>One of the preconditions is that the velocity (vehicle speed) is within a certain range. This function returns the result of this velocity precondition check. <linebreak/>
+ Remark: Whether the preconditions shall be checked or not when receiving a diagnositc request depends on the State &quot;OBD Driving Cycle&quot; (see SWR_ICAS1_Diag_115) <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ConditionVehicleSpeed - Result of the velocity precondition check done cyclically every 100 ms <linebreak/>
+</para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PASSED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Velocity preconditions are fulfilled </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FAILED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Velocity preconditions are NOT fulfilled</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="getConditionVehicleSpeed.png">Activity diagram of the function &quot;getConditionVehicleSpeed&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the function returns the value of the struct element &quot;si_Status&quot; from the static struct variable &quot;VehicleSpeedValidation&quot;. <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1a691e35e2a2e370499c7b7a518a5260cb" kindref="member">TEST_DiagnosticTimers__getConditionVehicleSpeed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+<bold>??? AnMa ????: </bold> Description and SW architecture of requirements regarding &quot;velocity preconditions for diagnosis services&quot; are completely missing in EA SW requirements are: {SWR_ICAS1_Diag_118}</para></simplesect>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_118, SWR_ICAS1_Diag_115} <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="161" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1152" bodyend="1155"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1abb8bda9524bc2ad46335af38f5ecb4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DiagnosticTimersSetDefaultSessionState</definition>
+        <argsstring>(boolean state)</argsstring>
+        <name>DiagnosticTimersSetDefaultSessionState</name>
+        <param>
+          <type>boolean</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>The function <bold>DiagnosticTimersSetDefaultSessionState</bold> is called when the diagnosis session changes, for example due to request of Service &quot;Diagnostic Session Control&quot; (SID 10hex) by the diagnosis tester (client). </para>        </briefdescription>
+        <detaileddescription>
+<para>It stores the information, if the the new diagnosis session is the DefaultSession or not, in a static variable for further use by other internal functions. This information is given via the boolean function parameter &quot;state&quot; by the caller of this function.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Description </para></entry><entry thead="no"><para>Information if new diagnosis session is the DefaultSession </para></entry></row>
+<row>
+<entry thead="yes"><para>Expected Value Range </para></entry><entry thead="no"><para>TRUE: New diagnosis session is the DefaultSession ; FALSE: New diagnosis session is a NonDefaultSession </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="DiagnosticTimersSetDefaultSessionState.png">Activity diagram of the function &quot;DiagnosticTimersSetDefaultSessionState&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the static variable &quot;isDefaultSession&quot; is set to the value of the argument passed in function parameter &quot;state&quot; <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1ace79ee8bb30e501d00070fbfb23c5ac3" kindref="member">TEST_DiagnosticTimers__DiagnosticTimersSetDefaultSessionState</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, Interaction Diagram: &quot;DiagnosticTimers_Retriggers&quot; <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_866; SWR_ICAS1_Diag_864; SWR_ICAS1_Diag_863; SWR_ICAS1_Diag_856; SWR_ICAS1_Diag_873} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="200" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1048" bodyend="1051"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1a33c2f4ab26568847fa7914f9808c8f5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RetriggerTDiagEnableTimer</definition>
+        <argsstring>(void)</argsstring>
+        <name>RetriggerTDiagEnableTimer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>RetriggerTDiagEnableTimer</bold> just sets the timer variable &quot;T_Diag_Enable&quot; to &quot;DIAG_ENABLE_TIMER_START_VALUE_ON_KL15OFF&quot; (9000 <ndash/>&gt; 900 s = 15 minutes). </para>        </briefdescription>
+        <detaileddescription>
+<para>It shall be called if transition from KL15_ON to KL15_OFF is detected.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="RetriggerTDiagEnableTimer.png">Activity diagram of the function &quot;RetriggerTDiagEnableTimer&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the static variable &quot;T_Diag_Enable&quot; is set to the value given in DIAG_ENABLE_TIMER_START_VALUE_ON_KL15OFF. <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1afe645f63318f678d31b61f274eca7aac" kindref="member">TEST_DiagnosticTimers__RetriggerTDiagEnableTimer</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, StateMachine Diagram: &quot;Timers State Machine&quot; <linebreak/>
+ <bold>??? AnMa ????: </bold> Call of this interface function is not shown in any sequence chart in EA. Will this be added? The given reference to the StateMachine Diagram: &quot;Timers State Machine&quot; may need to modified after EA was reworked. <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_875, SWR_ICAS1_Diag_860} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="237" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1053" bodyend="1056"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1a22b321880f1f4c379d21e7bfa39671fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RetriggerNMDiagActiveTimer</definition>
+        <argsstring>(void)</argsstring>
+        <name>RetriggerNMDiagActiveTimer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>RetriggerNMDiagActiveTimer</bold> sets the timer T_NM_DiagActive to either 40 s or 4 s - depending on the variable &quot;Trasition35Requested&quot; - if the preconditions for retriggering the timer T_NM_DiagActive (as stored in the variable &quot;DiagEnableStatus&quot;) are fulfilled. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is shall be called if<itemizedlist>
+<listitem><para>a transition to the default diagnosis session happens</para></listitem><listitem><para>for all diagnosis requests and responses within the DefaultSession</para></listitem></itemizedlist>
+</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="RetriggerNMDiagActiveTimer.png">Activity diagram of the function &quot;RetriggerNMDiagActiveTimer&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Equivalence class analysis (test of representative values from input range) <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1ac714d1cad1b07c15c83e2f33d266bdbe" kindref="member">TEST_DiagnosticTimers__RetriggerNMDiagActiveTimer</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, StateMachine Diagram: &quot;Timers State Machine&quot; <linebreak/>
+ <linebreak/>
+ <bold>??? AnMa ????: </bold> Call of this interface function is not shown in any sequence chart in EA. Will this be added? The given reference to the StateMachine Diagram: &quot;Timers State Machine&quot; may need to modified after EA was reworked. <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_867; SWR_ICAS1_Diag_864; SWR_ICAS1_Diag_876, SWR_ICAS1_Diag_860} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="277" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1058" bodyend="1076"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1aef22b7fd5ea0d9c10ec2026352698069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DiagnosticTimersNotifyTransition35</definition>
+        <argsstring>(boolean TransitionProcessed)</argsstring>
+        <name>DiagnosticTimersNotifyTransition35</name>
+        <param>
+          <type>boolean</type>
+          <declname>TransitionProcessed</declname>
+        </param>
+        <briefdescription>
+<para>The function <bold>DiagnosticTimersNotifyDiagnoseActiveStatus</bold> is called due to the so called &quot;Transition 35&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para>&quot;Transition 35&quot; = Change from NonDefaultSession to DefaultSession due to KL15_OFF to KL15_ON (see SWR_ICAS_Diag_99). In the function parameter &quot;TransitionProcessed&quot; the transition status is given.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TransitionProcessed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Description </para></entry><entry thead="no"><para>Status of &quot;Transition 35&quot; </para></entry></row>
+<row>
+<entry thead="yes"><para>Expected Value Range </para></entry><entry thead="no"><para>TRUE: Tansition 35 has been processed; FALSE: Transition 35 has not been completed </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="DiagnosticTimersNotifyTransition35.png">Activity diagram of the function &quot;DiagnosticTimersNotifyTransition35&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the static variable &quot;Trasition35Requested&quot; is set to the value of the argument passed in function parameter &quot;TransitionProcessed&quot; <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1a605d351148b46a364b9033c784af1a85" kindref="member">TEST_DiagnosticTimers__DiagnosticTimersNotifyTransition35</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, Interaction Diagram: &quot;DiagnosticTimers_Retriggers&quot; <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_876; SWR_ICAS1_Diag_874} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="314" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1078" bodyend="1081"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1a50516030e17bb2ff1c9a45e92ed3f97b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DiagnosticTimersNotifyDiagnoseActiveStatus</definition>
+        <argsstring>(boolean NewStatus)</argsstring>
+        <name>DiagnosticTimersNotifyDiagnoseActiveStatus</name>
+        <param>
+          <type>boolean</type>
+          <declname>NewStatus</declname>
+        </param>
+        <briefdescription>
+<para>The function <bold>DiagnosticTimersNotifyDiagnoseActiveStatus</bold> is called if the diagnosis activation status changes (becomes active and incative) and the new activation status is passed as argument in the function parameter &quot;NewStatus&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para>It checks the precondition &quot;Default diagnosis session is active&quot;, and if it&apos;s true, it calls the function &quot;RetriggerNMDiagActiveTimerOnDiagnosticRequest&quot; in order to to update the timer &quot;NM_DiagActive&quot; and the status &quot;DiagnosticActive&quot; (as long as further conditions are fulfilled)</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">NewStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Description </para></entry><entry thead="no"><para>New diagnosis acitvation status </para></entry></row>
+<row>
+<entry thead="yes"><para>Expected Value Range </para></entry><entry thead="no"><para>TRUE (diagnosis active), FALSE (diagnosis inactive) </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <bold>??? AnMa ????: </bold> Do static global variables need to be listed here? Assumption: No</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="DiagnosticTimersNotifyDiagnoseActiveStatus.png">Activity diagram of the function &quot;DiagnosticTimersNotifyDiagnoseActiveStatus&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Equivalence class analysis (test of representative values from input range) <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1a2df51ff6f433402ee97884abee2a316f" kindref="member">TEST_DiagnosticTimers__DiagnosticTimersNotifyDiagnoseActiveStatus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, Interaction Diagram: &quot;DiagnosticTimers_Retriggers&quot; <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_864; SWR_ICAS1_Diag_863} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="353" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1083" bodyend="1092"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1a7ae7eeda3fd2299e044c75ab6bcfd8ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DiagnosticTimersCyclic</definition>
+        <argsstring>(TClamp15StateChange clamp15Change)</argsstring>
+        <name>DiagnosticTimersCyclic</name>
+        <param>
+          <type>TClamp15StateChange</type>
+          <declname>clamp15Change</declname>
+        </param>
+        <briefdescription>
+<para>The function <bold>DiagnosticTimersCyclic</bold> shall be called cyclically every 10ms. </para>        </briefdescription>
+        <detaileddescription>
+<para>It processes the timers &quot;T_NM_DiagActive&quot; and &quot;T_Diag_Enable&quot; as well as the related status informations every 100 ms (using a prescaler). <linebreak/>
+ Besides the &quot;si_Diagnose_Activ timer&quot; and the &quot;KL15 timer for driving cycle&quot; are both processed every 10 ms. <linebreak/>
+ The Kl.15 (change) status - as given in function parameter clamp15Change - is forwarded to the processing functions of timer &quot;T_Diag_Enable&quot; and &quot;KL15 timer for driving cycle&quot;, which both are depending on Kl.15 status.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">clamp15Change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Description </para></entry><entry thead="no"><para>Kl.15 (change) status </para></entry></row>
+<row>
+<entry thead="yes"><para>Expected Value Range </para></entry><entry thead="no"><para>DIAG_CLAMP15_ON, DIAG_CLAMP15_OFF, DIAG_CLAMP15_ON_TO_OFF, DIAG_CLAMP15_OFF_TO_ON </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="DiagnosticTimersCyclic.png">Activity diagram of the function &quot;DiagnosticTimersCyclic&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Equivalence class analysis (test of representative values from input range) <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1af39fafcd6c25b80375873024166c9018" kindref="member">TEST_DiagnosticTimers__DiagnosticTimersCyclic</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, Interaction Diagram: &quot;DiagnosticTimers_Cyclic&quot; <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_857; SWR_ICAS1_Diag_856; SWR_ICAS1_Diag_859; SWR_ICAS1_Diag_875; SWR_ICAS1_Diag_873; SWR_ICAS1_Diag_876; SWR_ICAS1_Diag_874} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="393" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1095" bodyend="1143"/>
+      </memberdef>
+      <memberdef kind="function" id="_diagnostic_timers_8h_1ade90a0a06b5845e757e11aa66aeecc6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RetriggerSI_DiagnoseAktivTimer</definition>
+        <argsstring>(void)</argsstring>
+        <name>RetriggerSI_DiagnoseAktivTimer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function <bold>RetriggerSI_DiagnoseAktivTimer</bold> just sets the timer variable &quot;SI_DiagnoseAktivTimer&quot; to &quot;SI_DIAGNOSEAKTIV_TIMER_START_VALUE&quot; (400 <ndash/>&gt; 4 s). </para>        </briefdescription>
+        <detaileddescription>
+<para>It shall be called in order to retrigger the timer when diagnostic messages (CAN/100BaseTx) are received and thus a diagnostic is active. (see EA)</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="RetriggerSI_DiagnoseAktivTimer.png">Activity diagram of the function &quot;RetriggerSI_DiagnoseAktivTimer&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+Test if the static variable &quot;SI_DiagnoseAktivTimer&quot; is set to the value given in SI_DIAGNOSEAKTIV_TIMER_START_VALUE. <linebreak/>
+<ref refid="_diagnostic_timers_8c_8test_1ae3fe3feef303e1473d30c9d2d970d97d" kindref="member">TEST_DiagnosticTimers__RetriggerSI_DiagnoseAktivTimer</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, Interaction Diagram: &quot;DiagnosticTimers_Retriggers&quot; <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic&quot;, StateMachine Diagram: &quot;Timers State Machine&quot; <linebreak/>
+ <bold>??? AnMa ????: </bold> The given reference to the StateMachine Diagram: &quot;Timers State Machine&quot; may need to modified after EA was reworked. <linebreak/>
+ <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_Diag_911; SWR_ICAS1_Diag_917; SWR_ICAS1_Diag_918; SWR_ICAS1_Diag_916} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h" line="431" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/src/DiagnosticTimers.c" bodystart="1042" bodyend="1046"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>short description in one sentence end with dot. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>File</title><para><ref refid="_diagnostic_timers_8h" kindref="compound">DiagnosticTimers.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Change</title><para>168833 </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#7 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic36422 </para></simplesect>
+<simplesect kind="rcs"><title>DateTime</title><para>2021/03/02 14:00:55 </para></simplesect>
+detailed multiline description of the file </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/DiagnosticTimers/c/inc/DiagnosticTimers.h"/>
+  </compounddef>
+</doxygen>

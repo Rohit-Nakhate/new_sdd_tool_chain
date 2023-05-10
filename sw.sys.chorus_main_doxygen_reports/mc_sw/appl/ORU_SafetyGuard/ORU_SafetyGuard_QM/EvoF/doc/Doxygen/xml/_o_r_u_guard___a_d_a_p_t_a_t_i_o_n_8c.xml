@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c" kind="file" language="C++">
+    <compoundname>ORUGuard_ADAPTATION.c</compoundname>
+    <includes local="yes">RteLight_Definitions.h</includes>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <includes refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8h" local="yes">ORUGuard_ADAPTATION.h</includes>
+    <incdepgraph>
+      <node id="23">
+        <label>RteLight_Definitions.h</label>
+      </node>
+      <node id="26">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="25">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="29">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="24">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="22">
+        <label>ORUGuard_ADAPTATION.c</label>
+        <link refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ORUGuard_ADAPTATION.h</label>
+        <link refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>For SWATT testing</para><para>SWATT bypassing used for testing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" line="63" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_1ad6ff363a8a08955ec1ecbbae5b56c632" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean validate_signal_range</definition>
+        <argsstring>(Tuint32 a_pu32Signalname, uint8 a_u8MinValue, uint8 a_u8MaxValue)</argsstring>
+        <name>validate_signal_range</name>
+        <param>
+          <type>Tuint32</type>
+          <declname>a_pu32Signalname</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>a_u8MinValue</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>a_u8MaxValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Validate the signal values by its range values before writing signal value <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_pu32Signalname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal value.<linebreak/>
+ range .<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit .<linebreak/>
+ [in] a_u8MinValue min signal value.<linebreak/>
+ range .<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit .<linebreak/>
+ [in] a_u8MaxValue max signal value.<linebreak/>
+ range .<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit .<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean TRUE if signal value is in range, else FALSE range .<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit .<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para></para></simplesect>
+This functions handles the range check for input signals (coming from DIAG). <simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="validate_signal_range.png"></image>
+   Design is easy to test. For different input parameters, check if returns TRUE when a_u8MinValue8 &lt;= a_pu32Signalname &lt;= a_u8MaxValue, else FALSE. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1a3821b69c1bba8d5aa3db51e5425e2f12" kindref="member">TEST_validate_signal_range</ref>. <linebreak/>
+ more details are available by following the reference. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification..<linebreak/>
+ Helper function that handles the range check. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" line="126" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_1a1cb247bf25037e52be37d89f2cfe219b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ORUGuard_Read_Adaption_0x03FC</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>ORUGuard_Read_Adaption_0x03FC</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x03FC</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName s_blNvE2ETestmode, StartBit 0, Length 1<linebreak/>
+ SignalName reserved1, StartBit 1, Length 7<linebreak/>
+ SignalName reserved2, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ <image type="html" name="SWC_Read_Adaptation_Activity.png">Activity Diagram of  SWC_Read_Adaptation_Activity </image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1a5e77221a4c3081e03a1e80306b8233b6" kindref="member">TEST_ORUGuard_Read_Adaption_0x03FC_ParameterTest</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" line="149" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" bodystart="149" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_1add3024a6ebbe29d7846c426105933807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ORUGuard_Write_Adaption_0x03FC</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>ORUGuard_Write_Adaption_0x03FC</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x03FC</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName s_blNvE2ETestmode, StartBit 0, Length 1<linebreak/>
+ SignalName reserved1, StartBit 1, Length 7<linebreak/>
+ SignalName reserved2, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+  <image type="html" name="SWC_Write_Adaptation_Activity.png">Activity Diagram of  SWCWrite_Adaptation_Activity </image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1ab5bb2f10b109427f554a6bdb97b23a63" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_NullParameterTest</ref><linebreak/>
+ <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1aa52bc8b47283557297dfd6de12183152" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_errorCode_NULL_PTR</ref><linebreak/>
+ <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1afa1d0da4dfdc0e94e1d8be9039de0bfa" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_DWRS_PENDING_g_ADAPT_Status</ref><linebreak/>
+ <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1a64372e477f8c6942ce16f6430cbc41e0" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_errorCode_no_NULL_PTR</ref><linebreak/>
+ <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1a28e21347537bc6a78786e4e45fbf206f" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_ErrorCode_is_NULL_PTR_writeRetVal_E_NOT_OK</ref><linebreak/>
+ <ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c_8test_1a507e2ccde92c1219e61d7651d77c59b4" kindref="member">TEST_ORUGuard_Write_Adaption_0x03FC_Test_writeRetVal_E_NOT_OK_errorCode_no_NULL_PTR</ref><linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" line="187" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c" bodystart="187" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>source file for ORUGuard Adaptation </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_o_r_u_guard___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">ORUGuard_ADAPTATION.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>v1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>02/01/2023 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test each DID signal. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ORU_SafetyGuard/ORU_SafetyGuard_QM/c/gen/ORUGuard_ADAPTATION.c"/>
+  </compounddef>
+</doxygen>

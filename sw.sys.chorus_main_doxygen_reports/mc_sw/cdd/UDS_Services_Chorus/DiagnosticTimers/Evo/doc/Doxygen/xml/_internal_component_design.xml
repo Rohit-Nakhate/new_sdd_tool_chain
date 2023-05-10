@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component <bold>DiagnosticTimers</bold> consists of only the follwing SW unit: <bold>DiagnosticTimers</bold> <linebreak/>
+ The architectural overview of the component is described within the SWA at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.SW Architecture <linebreak/>
+ <linebreak/>
+ DiagnosticTimers module deals with the Timers for maintaining diagnostic activity. Hence it was decided to keep this module under High power mode under Core2 DiagTask.</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>DiagnosticTimers consist of only one unit <ref refid="_diagnostic_timers_8c" kindref="compound">DiagnosticTimers.c</ref>. All DiagnosticTimers requirement is satisfied by this unit.<linebreak/>
+DiagnosticTimers requirement can be found in Doors module path /VW_MEB_19_ICAS_ICAS1/5 SW/RE/5.1.1. SWR - L3_CRoute_Diagnostic/section 3.3.<linebreak/>
+<linebreak/>
+Requirements traceability in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.SW Requirements</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component consists of only one unit. There is no unit interface description needed. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The component consists of only one unit. There is no unit interaction description needed. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The function checks for DiagnosticTimers. <image type="html" name="Cyclic_Status.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+The intensity flow is presented in red. The state changes are presented in green. <image type="html" name="sample_DT.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>The component DiagnosticTimers provides only one interface that is called cyclically by OSTask &quot;DiagTask&quot; (period = 10ms): DiagnosticTimersCyclic <linebreak/>
+see also <bold>Interaction Diagram &quot;DiagnosticTimersCyclic&quot;</bold> at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.DiagnosticTimers.Dynamic Behaviour <linebreak/>
+ <heading level="2">Interrupts</heading>
+</para><para>IR are not used. <linebreak/>
+IR are suspended/resumed in function ProcessSI_DiagnoseActive</para><para><heading level="2">Events</heading>
+</para><para>There is no event-handling designed. <linebreak/>
+ <heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used. <linebreak/>
+ <heading level="2">Power Modes</heading>
+</para><para>High power. <linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para>A special exception or error handling is not necessary. <linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>A special synchronization method is not necessary. <linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>The operations are mentioned in the proper function description. <linebreak/>
+ <heading level="2">Macros</heading>
+</para><para>See the Macros list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not Applicable</para><para><heading level="2">Data Structures</heading>
+</para><para>N/A as structures are not used</para><para><heading level="2">Macros</heading>
+</para><para><ulink url="globals_defs.html">Macros</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>N/A <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para>N/A <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>High  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

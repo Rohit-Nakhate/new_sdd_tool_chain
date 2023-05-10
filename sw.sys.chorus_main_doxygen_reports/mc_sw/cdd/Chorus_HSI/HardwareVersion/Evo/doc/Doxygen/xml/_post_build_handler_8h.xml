@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_post_build_handler_8h" kind="file" language="C++">
+    <compoundname>PostBuildHandler.h</compoundname>
+    <includes local="yes">stdtypedef.h</includes>
+    <includedby refid="_post_build_handler_8c" local="yes">PostBuildHandler.c</includedby>
+    <incdepgraph>
+      <node id="34">
+        <label>stdtypedef.h</label>
+      </node>
+      <node id="33">
+        <label>PostBuildHandler.h</label>
+        <link refid="_post_build_handler_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="36">
+        <label>PostBuildHandler.c</label>
+        <link refid="_post_build_handler_8c"/>
+      </node>
+      <node id="35">
+        <label>PostBuildHandler.h</label>
+        <link refid="_post_build_handler_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_post_build_handler_8h_1a21e398b322d3a9254d8d1cadb923e533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PostBuildHandler_McalInit_LIN4_DWA_mode</definition>
+        <argsstring>(void)</argsstring>
+        <name>PostBuildHandler_McalInit_LIN4_DWA_mode</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Post build configuration function specific for DWA and LIN pooling mode. <linebreak/>
+</para><para>According to the HW version type, on MCAL (Microcontroller Abstraction Layer) level the Port Driver module <linebreak/>
+ is initialized. Then, on HAL (Hardware Abstraction Layer) level the HAL configuration is set, channel configuration is prepared and the Unit is setup and wakeuped before sleep. <linebreak/>
+ Only LIN4 pins are configured. <linebreak/>
+ This function is made for a specific case of configuration. It will be called in the context of LowPower_Main module and it represents the case of cyclic wakeup from low power mode. <linebreak/>
+ NOTE: This design was made in this way to take into consideration if there will be other configurations for specific HW versions. <linebreak/>
+<simplesect kind="pre"><para>System in low power mode. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca8c6385df3bf61cc8c79219c45a19f600" kindref="member">VW_MEB19_EVO_B1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca322270966bea8300202b413d7867b049" kindref="member">VW_MEB19_EVO_B1_MAX_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca539bc08cad902b771b3bf3022c19996f" kindref="member">VW_MEB19_EVO_B2_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca07a257673eb8da7c87567421389c9980" kindref="member">VW_MEB19_EVO_B2_TI_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca86a9a8b3d7baeaa6124497ca061860a7" kindref="member">VW_MEB19_EVO_C1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adcafa4015f9584a02c2c9b86b4054139dbd" kindref="member">VW_MEB19_EVO_C1_SERIAL</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca50653e8bf8a5154b05331a1b8de4e5b7" kindref="member">VW_MEB19_EVO_Cx_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca65544738fceae149ee79875a443d4fae" kindref="member">VW_MEB19_EVO_Cx_SERIAL</ref> [in] <linebreak/>
+ PortConfigSet_B1_LIN4_DWA_mode [in] - extern global variable from Port_Cfg.h <linebreak/>
+ HardwareVersion type is represented by either VW_MEB19_EVO_B1_DEV, VW_MEB19_EVO_B1_MAX_DEV,VW_MEB19_EVO_B2_DEV VW_MEB19_EVO_B2_TI_DEV, VW_MEB19_EVO_C1_DEV, VW_MEB19_EVO_C1_SERIAL, VW_MEB19_EVO_Cx_DEV, VW_MEB19_EVO_Cx_SERIAL. <linebreak/>
+ PortConfigSet_B1_LIN4_DWA_mode will be used to initialize the Port Driver module with the corresponding config set. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context LowPower_Main module <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="PostBuildHandler_McalInit_LIN4_DWA_mode.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if for every HardwareVersion type, the configuration is set accordingly. <linebreak/>
+ <ref refid="_post_build_handler_8c_8test_1a273be0f94df3f304523d2f9fc634a67e" kindref="member">TEST_PostBuildHandler_McalInit_LIN4_DWA_mode</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21680 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/inc/PostBuildHandler.h" line="111" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/PostBuildHandler.c" bodystart="79" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="_post_build_handler_8h_1a3c0d14552f436b564d6db83c24ba3e5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PostBuildHandler_McalInit</definition>
+        <argsstring>(void)</argsstring>
+        <name>PostBuildHandler_McalInit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Post build configuration function. <linebreak/>
+</para><para>According to the HW version type, on MCAL (Microcontroller Abstraction Layer) level the Port Driver, ADC Driver, ICU Driver modules are initialized. <linebreak/>
+ Then, on HAL (Hardware Abstraction Layer) level the KL30 voltage measurment is enabled, the HAL configuration is set, channel configuration is prepared and the Unit is setup and wakeuped before sleep. <linebreak/>
+ This function will be called in the context of EcuM module and the call is generated by the Configuration tool. <linebreak/>
+ NOTE: This design was made in this way to take into consideration if there will be other configurations for specific HW versions. <linebreak/>
+<simplesect kind="pre"><para>System in normal mode. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca8c6385df3bf61cc8c79219c45a19f600" kindref="member">VW_MEB19_EVO_B1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca322270966bea8300202b413d7867b049" kindref="member">VW_MEB19_EVO_B1_MAX_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca539bc08cad902b771b3bf3022c19996f" kindref="member">VW_MEB19_EVO_B2_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca07a257673eb8da7c87567421389c9980" kindref="member">VW_MEB19_EVO_B2_TI_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca86a9a8b3d7baeaa6124497ca061860a7" kindref="member">VW_MEB19_EVO_C1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adcafa4015f9584a02c2c9b86b4054139dbd" kindref="member">VW_MEB19_EVO_C1_SERIAL</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca50653e8bf8a5154b05331a1b8de4e5b7" kindref="member">VW_MEB19_EVO_Cx_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca65544738fceae149ee79875a443d4fae" kindref="member">VW_MEB19_EVO_Cx_SERIAL</ref> [in] <linebreak/>
+ PortConfigSet_B1 [in] - extern global variable from Port_Cfg.h <linebreak/>
+ AdcConfigSet_B1 [in] - extern global variable from Adc_Cfg.h <linebreak/>
+ IcuConfigSet_B1 [in] - extern global variable from Icu_Cfg.h <linebreak/>
+ PORT_PIN_LEVEL_HIGH [in] - extern global variable from hal_base.h <linebreak/>
+ VW_MEB19_EVO_B1_DEV, VW_MEB19_EVO_B1_MAX_DEV,VW_MEB19_EVO_B2_DEV, VW_MEB19_EVO_B2_TI_DEV, VW_MEB19_EVO_C1_DEV, VW_MEB19_EVO_C1_SERIAL, VW_MEB19_EVO_Cx_DEV, VW_MEB19_EVO_Cx_SERIAL represents the HW version type. <linebreak/>
+ PortConfigSet_B1 will be used to initialize the Port Driver module with the corresponding config set. <linebreak/>
+ AdcConfigSet_B1 will be used to initialize the ADC Driver module with the corresponding config set. <linebreak/>
+ IcuConfigSet_B1 will be used to initialize the ICU Driver module with the corresponding config set. <linebreak/>
+ PORT_PIN_LEVEL_HIGH will be used to set the KL30 pin to high. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context EcuM module <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="PostBuildHandler_McalInit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if for every HardwareVersion type, the configuration is set accordingly. <linebreak/>
+ <ref refid="_post_build_handler_8c_8test_1a45c0b1b8361de607f2639c59e5c0d369" kindref="member">TEST_PostBuildHandler_McalInit</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_16226 SWR_ICAS1_GW_21680 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/inc/PostBuildHandler.h" line="161" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/PostBuildHandler.c" bodystart="106" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file for <ref refid="_post_build_handler_8c" kindref="compound">PostBuildHandler.c</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_post_build_handler_8h" kindref="compound">PostBuildHandler.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidv2773 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>15.02.2017 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/inc/PostBuildHandler.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_d_i_d__f1a8_8c" kind="file" language="C++">
+    <compoundname>DID_f1a8.c</compoundname>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <includes refid="_identification_8h" local="yes">Identification.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <incdepgraph>
+      <node id="52">
+        <label>ConfigUdsIdentifiers.h</label>
+      </node>
+      <node id="49">
+        <label>Identification.h</label>
+        <link refid="_identification_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>Identification_gen.h</label>
+      </node>
+      <node id="48">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="54">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="53">
+        <label>typedefs.h</label>
+      </node>
+      <node id="51">
+        <label>RoutingVersion_CfgGen.h</label>
+      </node>
+      <node id="47">
+        <label>DID_f1a8.c</label>
+        <link refid="_d_i_d__f1a8_8c"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_d_i_d__f1a8_8c_1a4111dc01b79072464e715c7043362514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f1a8_ConditionCheckRead</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DCM_f1a8_ConditionCheckRead</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ We can read DID 0xF1A8 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- negative response codes <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DCM_f1a8_ConditionCheckRead.png">DCM_f1a8_ConditionCheckRead Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ <ref refid="_d_i_d__f1a8_8c_8test_1a54b958e956cd3d314510b69521aa31a1" kindref="member">TEST_DCM_f1a8_ConditionCheckRead</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on opstatus <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability. <linebreak/>
+ This is only a preleminary implementation. To be clarified, whether 0xf1a4 must be supported or not * <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/DID_f1a8.c" line="107" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/DID_f1a8.c" bodystart="107" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_i_d__f1a8_8c_1a265612d45695b50b172834310cd630b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f1a8_Read</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>DCM_f1a8_Read</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ We can read DID 0xF1A8 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-0xF1A8 data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DCM_f1a8_Read.png">DCM_f1a8_Read Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ <ref refid="_d_i_d__f1a8_8c_8test_1a0f38d13dc59081a9fc5109e2017a3332" kindref="member">TEST_DCM_f1a8_Read</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on opstatus and Data <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability. <linebreak/>
+ This is only a preleminary implementation. To be clarified, whether 0xf1a4 must be supported or not * <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/DID_f1a8.c" line="154" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/DID_f1a8.c" bodystart="154" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/DID_f1a8.c"/>
+  </compounddef>
+</doxygen>

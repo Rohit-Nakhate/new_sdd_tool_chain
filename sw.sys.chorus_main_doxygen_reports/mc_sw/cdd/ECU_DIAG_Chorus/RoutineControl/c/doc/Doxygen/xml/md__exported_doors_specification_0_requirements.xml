@@ -1,0 +1,1076 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_0_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_0_requirements</compoundname>
+    <title>ExportedDoorsSpecification_0_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_0_requirements_1ExportedDoorsSpecification_0">
+<title>ExportedDoorsSpecification_0</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_21440">
+<title>SWR_ICAS1_GW_21440</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ the Chorus receives the request 0xC012 - Reset Customer Parameters with RoutineControlOption is 0x02 Cancel_writing_of_secured_data <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ The Chorus shall provide a positive response <linebreak/>
+ 0x71 0x01 0xC012 &lt;RoutineInfo&gt; &lt;RoutineStatusRecord&gt; <linebreak/>
+ <linebreak/>
+ with RoutineInfo = 0x24 according to Q-LAH_80124-8971 (CorrectResults, RoutineFinishedCorrectly) and <linebreak/>
+ RoutineStatusRecord = 0x01 End_of_writing_of_secured_data_canceled_successfull. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21440 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_21441">
+<title>SWR_ICAS1_GW_21441</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ the calculated SHA-256 hash is different from the Hash received in &quot;Absicherungsinformation&quot; <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ The Chorus shall provide a positive response <linebreak/>
+ 0x71 0x01 0xC012 &lt;RoutineInfo&gt; &lt;RoutineStatusRecord&gt; <linebreak/>
+ <linebreak/>
+ with RoutineInfo = 0x14 according to Q-LAH_80124-8971 (IncorrectResults, RoutineFinishedCorrectly) and <linebreak/>
+ RoutineStatusRecord = 0x02 End_of_writing_of_secured_data_not_successful <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21441 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_21442">
+<title>SWR_ICAS1_GW_21442</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ the an error occurred in the cache processing loop <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ The Chorus shall provide a positive response 0x71 0x01 0xC012 &lt;RoutineInfo&gt; &lt;RoutineStatusRecord&gt; <linebreak/>
+ <linebreak/>
+ with RoutineInfo = 0x14 according to Q-LAH_80124-8971 (IncorrectResults, RoutineFinishedCorrectly) and <linebreak/>
+ RoutineStatusRecord = 0x02 End_of_writing_of_secured_data_not_successful <linebreak/>
+ <linebreak/>
+ Additional Information: <linebreak/>
+ Errors are e.g. <linebreak/>
+ - writing a DID to a subsystem failed <linebreak/>
+ - writing 0x0250 to a subsystem failed <linebreak/>
+ - DID 0x0251 was incorrect <linebreak/>
+ - DID 0x0250 contained DIDs not marked as Configuration Hash relevant <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21442 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_21443">
+<title>SWR_ICAS1_GW_21443</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+IF <linebreak/>
+ no error occurred in the cache processing loop <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ The Chorus shall provide a positive response 0x71 0x01 0xC012 &lt;RoutineInfo&gt; &lt;RoutineStatusRecord&gt; <linebreak/>
+ <linebreak/>
+ with RoutineInfo = 0x24 according to Q-LAH_80124-8971 (CorrectResults, RoutineFinishedCorrectly) <linebreak/>
+ and <linebreak/>
+ RoutineStatusRecord = 0x00 End_of_writing_of_secured_data_finished_successful <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21443 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4859">
+<title>SWR_ICAS1_GW_4859</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a97ef647b9fed55b218fb9df5c767beee" kindref="member">areRoutine0x0580OptionsValid</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 112 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a949c8a5541843326942e08cc8259fe12" kindref="member">GW_Routine_0x03E7_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 384 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aa9890dce99962447a91dfacceb840e01" kindref="member">GW_Routine_0x03E7_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 457 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1af3f52047c3dc41b3665b1d784a175785" kindref="member">GW_Routine_0x03E7_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 502 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x03E7 - Rücksetzen von Kundenparametern <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response : <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,3) <linebreak/>
+ Routine Result (Bit start-stop: 0,4 - 0,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4859 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_11917">
+<title>SWR_ICAS1_GW_11917</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aa65ab99bb2058545be0fd36eabab5183" kindref="member">GW_Routine_0x0203_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1981 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x0203 - Check Programming PreConditions <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Routine Control Type: (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: <linebreak/>
+ Programming PreConditions List (Bit Start - Stop: 0,0 - 6,7) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ 0x02 stop routine and 0x03 request result are not used in this rutine <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_11917 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7414">
+<title>SWR_ICAS1_GW_7414</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1ab9b395890196c2ddb74437bd4b807930" kindref="member">GW_Routine_0x068F_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 558 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1ab16a3e9dff65124e28803f1e98de673c" kindref="member">GW_Routine_0x068F_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 582 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a59b0dab511311bad35264171a5efb469" kindref="member">GW_Routine_0x068F_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 606 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x068F - Rücksetzen, Ethernet Zähler Verbindungsunterbrechungen <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7414 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7416">
+<title>SWR_ICAS1_GW_7416</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1afc99ea2c91b5b8a2d8983f3d88dbcdd8" kindref="member">GW_Routine_0x0690_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 658 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a7b4612a75a6c2ff5267832f87b0cb887" kindref="member">GW_Routine_0x0690_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 682 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a9972fdd0d0fa0762a12de73edb6b1598" kindref="member">GW_Routine_0x0690_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 706 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x0690 - Rücksetzen, Ethernet Zähler Checksummenfehler <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 3,0 - 5,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7416 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7418">
+<title>SWR_ICAS1_GW_7418</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a43e663e306a340a290db18624cf7f821" kindref="member">GW_Routine_0x0580_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 561 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1adfd3eaa37ece868947738a68b8344f0f" kindref="member">GW_Routine_0x0580_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 695 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a2579d69157a6bd7a01c8915d83ca8cfc" kindref="member">GW_Routine_0x0580_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 741 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x0580 - PHY-Testmodus <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: SFD: Extended + Superuser <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7418 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4847">
+<title>SWR_ICAS1_GW_4847</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a5e0808b93f938d3e292813b81805b8db" kindref="member">GW_Routine_0x057C_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 866 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1afde4cd600b2d70bfd3b7c4748db727e9" kindref="member">GW_Routine_0x057C_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 890 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a4a9182b0af0096dfec15997fa9249464" kindref="member">GW_Routine_0x057C_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 920 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x057C - Kommunikationsbeziehungen testen <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01- VW Default Diagnostic Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4847 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4845">
+<title>SWR_ICAS1_GW_4845</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1ad34bfb961d951008a33053f108d82596" kindref="member">GW_Routine_0x05E3_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 812 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aa547f1c4cdbf5030f0abfb58672f6568" kindref="member">GW_Routine_0x05E3_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 878 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aebf1407d370577e9da369fbedbd8c5c4" kindref="member">GW_Routine_0x05E3_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 931 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x05E3 - Rücksetzen, Zähler Nachrichten mit unzulässigen VLANs <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01- VW Default Diagnostic Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response : <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4845 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4843">
+<title>SWR_ICAS1_GW_4843</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1ad61d4089efef7c967027e6fce3378ee6" kindref="member">GW_Routine_0x05E4_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1066 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a86a42cf107ab71b19bc75736dab412d8" kindref="member">GW_Routine_0x05E4_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1118 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x05E4 - Rücksetzen, Zähler Nachrichten mit unzulässigen IPv6-Adressen <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01- VW Default Diagnostic Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4843 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4841">
+<title>SWR_ICAS1_GW_4841</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a0daf85c0b9e384e55c621e8630be7e33" kindref="member">GW_Routine_0x05E5_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1187 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a3b6ad271ef5925bc066b21f0b45cc86a" kindref="member">GW_Routine_0x05E5_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1254 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a1fa0b0b78ede7d3b44c82c638838b65a" kindref="member">GW_Routine_0x05E5_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1307 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x05E5 - Rücksetzen, Zähler Nachrichten mit unzulässigen TCP-Ports <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01- VW Default Diagnostic Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4841 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4839">
+<title>SWR_ICAS1_GW_4839</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1af713342f3c30b0c92e941906805831fa" kindref="member">GW_Routine_0x05EB_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2593 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a9300e0498674e5d171ea7b468f169af3" kindref="member">GW_Routine_0x05EB_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2670 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a14780d6822cab91d9265ad2a4a9543fc" kindref="member">GW_Routine_0x05EB_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2718 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x05EB - Rücksetzen, Zähler Nachrichten mit unzulässigen UDP-Ports <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01- VW Default Diagnostic Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4839 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4837">
+<title>SWR_ICAS1_GW_4837</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a0c4c6709b06aaef367c3c0dc1b2c775a" kindref="member">GW_Routine_0x057E_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1378 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a0ba775e3d366de445aa78a265aa77b98" kindref="member">GW_Routine_0x057E_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1446 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aa041354c11aaeca209f1eb467682d075" kindref="member">GW_Routine_0x057E_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1498 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x057E - Ethernet-Testability-Dienst aktivieren <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4837 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4835">
+<title>SWR_ICAS1_GW_4835</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1ac0a1db5fc4d33df3a10a3a2e44ee8e81" kindref="member">GW_Routine_0x057F_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1638 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a1428a804e3ca155cfe8b44b7feb28873" kindref="member">GW_Routine_0x057F_RequestResult</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 1690 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x057F - Ethernet-Testability-Dienst deaktivieren <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Routine Control Option (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,7) <linebreak/>
+ Routine Result (Bit start-stop: 1,0 - 2,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4835 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7422">
+<title>SWR_ICAS1_GW_7422</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1abd94b9beab681b844d8dd2928abd1fde" kindref="member">GW_Routine_0x0F03_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 769 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1ab427fe83703074ea597d805cb03d140b" kindref="member">GW_Routine_0x0F03_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 793 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines___eth_diag_8c_1a59bd4898c497a59e70abbcb1e7e57b29" kindref="member">GW_Routine_0x0F03_RequestResults</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines_EthDiag.c line 818 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x0F03 - Rücksetzen, Zähler Firewall und Statistik am Ethernet-Port <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response: <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,3) <linebreak/>
+ Routine Result (Bit start-stop: 0,4 - 0,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7422 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4831">
+<title>SWR_ICAS1_GW_4831</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the documents GW_Routinen_Grundeinstellung &amp; LAH.DUM.907.BD_Schutz der Fahrzeugdiagnose_V1.0 : <linebreak/>
+ 0xC004 - Freischalten Schutz der Fahrzeugdiagnose <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (ref: Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Unlock token (Bit Start - Stop: 0,0 - 469,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record (Bit Start - Stop: 1,0 - 1,7) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ Values of configuration are also taken from SecDiag_releasenotes_and_documentation.pdf delivered within SFD package from client. Module release 1.3.5. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4831 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4829">
+<title>SWR_ICAS1_GW_4829</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the documents GW_Routinen_Grundeinstellung &amp; LAH.DUM.907.BD_Schutz der Fahrzeugdiagnose_V1.0 : <linebreak/>
+ 0xC005 - Request - Abschließen Schutz der Fahrzeugdiagnose <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record (Bit Start - Stop: 1,0 - 1,7) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ Values of configuration are also taken from SecDiag_releasenotes_and_documentation.pdf delivered within SFD package from client. Module release 1.3.5. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4829 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4827">
+<title>SWR_ICAS1_GW_4827</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the documents GW_Routinen_Grundeinstellung &amp; LAH.DUM.907.BD_Schutz der Fahrzeugdiagnose_V1.0 : <linebreak/>
+ 0xC007 - Zurücksetzen Schutz der Fahrzeugdiagnose <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Reset token (Bit Start - Stop: 0,0 - 466,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record (Bit Start - Stop: 1,0 - 1,7) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ Values of configuration are also taken from SecDiag_releasenotes_and_documentation.pdf delivered within SFD package from client. Module release 1.3.5. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4827 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4825">
+<title>SWR_ICAS1_GW_4825</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the documents GW_Routinen_Grundeinstellung &amp; LAH.DUM.907.BD_Schutz der Fahrzeugdiagnose_V1.0 : <linebreak/>
+ 0xC008 - Abfrage Daten Schutz der Fahrzeugdiagnose <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Request Structure/Anfrage-Struktur (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record/Anfrage-Struktur (Bit Start - Stop: 1,0 - 442,7) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ Values of configuration are also taken from SecDiag_releasenotes_and_documentation.pdf delivered within SFD package from client. Module release 1.3.5. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4825 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_4823">
+<title>SWR_ICAS1_GW_4823</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the documents GW_Routinen_Grundeinstellung &amp; LAH.DUM.907.BD_Schutz der Fahrzeugdiagnose_V1.0 : <linebreak/>
+ 0xC009 - Abfrage Protokollisierungsdaten Schutz der Fahrzeugdiagnose <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: SFD_Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Log Entry Offset (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ NumberOfReturnedLogEntries (Bit Start - Stop: 1,0 - 2,7) <linebreak/>
+ DataOut_LogData (Bit Start: 3,0; size in bytes: NumberOfReturnedLogEntries*14) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ Max value of NumberOfReturnedLogEntries is 5. <linebreak/>
+ Values of configuration are also taken from SecDiag_releasenotes_and_documentation.pdf delivered within SFD package from client. Module release 1.3.11. <linebreak/>
+ ID: SWR_ICAS1_GW_4823 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7424">
+<title>SWR_ICAS1_GW_7424</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a221418e49fcf05b15e8b13ecf7a4908a" kindref="member">GW_Routine_0x0300_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2120 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1aa9b3cf906c678f8a0b3a752b6a40bdef" kindref="member">GW_Routine_0x0300_Stop</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2177 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a8b85d3ef92aa2d456446e478b9f374ca" kindref="member">GW_Routine_0x0300_RequestResults</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2233 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x0300 - Unlock Diagnostic Logging <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ SFD: Basic + Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x02 - Stop Routine <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params: none <linebreak/>
+ 0x03 - Request Routine Results <linebreak/>
+ Input Params: none <linebreak/>
+ Output Params, Response : <linebreak/>
+ Routine Status (Bit start-stop: 0,0 - 0,3) <linebreak/>
+ Routine Result (Bit start-stop: 0,4 - 0,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7424 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_9572">
+<title>SWR_ICAS1_GW_9572</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a55f92e572098d8abaee890074f45247b" kindref="member">GW_Routine_0x065E_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2392 <linebreak/>
+Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a3da455408e7cf46ca8fef2b28705a166" kindref="member">GW_Routine_0xC00E_SetInfo</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2454 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0x065E - Clear_downgrade_protection_data <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: SFD: Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Request Structure/Anfrage-Struktur (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record/Anfrage-Struktur (Bit Start - Stop: 1,0 - 442,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_9572 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_17952">
+<title>SWR_ICAS1_GW_17952</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document ICAS1 Services - Chorus DKH4: 0xF003 <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default Session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: None <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: [Bit Start - Stop: 0,0 - 49,7] <linebreak/>
+ Output Params: [Bit Start - Stop: 0,0 - 399,7] <linebreak/>
+ <linebreak/>
+ Note: F003/F004 are a set of Ethernet-related developer jobs. Stop routine and Request Routine are not supported. <linebreak/>
+ ID: SWR_ICAS1_GW_17952 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_18016">
+<title>SWR_ICAS1_GW_18016</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs : 0xF004 <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - End of Line Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: SFD Extended + Superuser <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: [Bit Start - Stop: 0,0 - 49,7] <linebreak/>
+ Output Params: [Bit Start - Stop: 0,0 - 399,7] <linebreak/>
+ <linebreak/>
+ Note: F003/F004 are a set of Ethernet-related developer jobs. Stop routine and Request Routine are not supported. <linebreak/>
+ ID: SWR_ICAS1_GW_18016 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_21437">
+<title>SWR_ICAS1_GW_21437</title>
+<para>Requirement is satisfied here: <ref refid="_g_w_routines_8c_1a714cfec3194b4bb2f82b45219d4949f5" kindref="member">GW_Routine_EndWriteSecData_0xC012_Start</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/RoutineControl/c/src/GWRoutines.c line 2790 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow the user of the tester tool to trigger the routine with following Data IDs as defined in the document GW_Routinen_Grundeinstellung: <linebreak/>
+ 0xC012 - End_of_writing_of_secured_data_of_protection_of_vehicle_diagnosis <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Routine Control Type (Bit Start-Stop: 0,0 - 0,7), where: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ The use of the sub-functions <linebreak/>
+ StopRoutine (0x02) <linebreak/>
+ RequestRoutineResults (0x03) <linebreak/>
+ is not allowed for this routine (Q-LAH_SFD_105) <linebreak/>
+ <linebreak/>
+ Additional parameters for subfunctions: <linebreak/>
+ 0x01 - Start Routine <linebreak/>
+ Input Params: <linebreak/>
+ Request Structure/Anfrage-Struktur (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Output Params: <linebreak/>
+ Routine info (Bit Start - Stop: 0,0 - 0,7) <linebreak/>
+ Routine Status Record/Anfrage-Struktur (Bit Start - Stop: 1,0 - 1,7) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21437 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+</para></simplesect>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

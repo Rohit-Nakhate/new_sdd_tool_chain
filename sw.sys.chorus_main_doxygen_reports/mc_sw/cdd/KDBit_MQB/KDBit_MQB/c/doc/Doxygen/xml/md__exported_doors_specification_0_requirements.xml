@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_0_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_0_requirements</compoundname>
+    <title>ExportedDoorsSpecification_0_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_0_requirements_1ExportedDoorsSpecification_0">
+<title>ExportedDoorsSpecification_0</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_8270">
+<title>SWR_ICAS1_GW_8270</title>
+<para>Requirement is satisfied here: <ref refid="_kd_bit_8c_1aefcad0a595be0eb5b4ae0dc9a1961d0a" kindref="member">ComputeKDBitInfo</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/KDBit_MQB/KDBit_MQB/c/src/KdBit.c line 220 <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+0x2A28 - KD_Bit <linebreak/>
+ <linebreak/>
+ This service reads from the Built-in list the list of KD_bit parameter. <linebreak/>
+ <linebreak/>
+ Possible Values: <linebreak/>
+ [Error] = 1 <linebreak/>
+ [no Error] = 0 <linebreak/>
+ <linebreak/>
+ The ICAS1 shall set the KD_Bit bit of each Built-in list entry as follows: <linebreak/>
+ <linebreak/>
+ - Init Values: <linebreak/>
+ All positions = [no Error] <linebreak/>
+ <linebreak/>
+ - [Error] <linebreak/>
+ - If the KD_Bit for a KN_frame is received with [Error], the ICAS1 sets the corresponding KD_Bit in the Built-in List to [Error] <linebreak/>
+ <linebreak/>
+ - [no Error] <linebreak/>
+ - If the KD_Bit for a KN_frame is received with [no Error], <linebreak/>
+ the ICAS1 shall set the corresponding KD_Bit in the Built-in List to [no Error] <linebreak/>
+ OR <linebreak/>
+ - If the Istverbaut is [is not built-in], the KD_Bit is set to [no Error] <linebreak/>
+ <linebreak/>
+ Note: The fist bit of 0x2A28 is the ICAS1 KD_Bit. <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ Configuration requirements for this identification are part of this document: in chapter 2.18.5.3.2 (Diagnostics -&gt;Identification -&gt; Built-in List -&gt; Configuration) under Object SWR_ICAS1_GW_11480 <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_8270 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_8271">
+<title>SWR_ICAS1_GW_8271</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+KD_Fehler in the ICAS1 KN frame <linebreak/>
+ <linebreak/>
+ The ICAS1 shall output the signal so_ICAS1_KD_Fehler of KN_Gateway according to the Datenfestlegung with the content <linebreak/>
+ - [Error] if at least one bit in 0x2A28 is equal to [Error] <ndash/>&gt; (&quot;OR&quot; operation of all bits in 0x2A28) <linebreak/>
+ - [No Error] if all the bits in 0x2A28 are equal to [No Error] <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ KN_Gateway.ICAS1_KD_Fehler is different from Systeminfo_01.ICAS1_KD_Fehler. <linebreak/>
+ Systeminfo_01.ICAS1_KD_Fehler = First bit of 0x2A28 <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_8271 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+</para></simplesect>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

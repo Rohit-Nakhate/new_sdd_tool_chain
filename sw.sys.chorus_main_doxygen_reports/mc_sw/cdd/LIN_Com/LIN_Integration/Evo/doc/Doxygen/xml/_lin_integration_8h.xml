@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_lin_integration_8h" kind="file" language="C++">
+    <compoundname>LinIntegration.h</compoundname>
+    <includes local="yes">Lin.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes refid="_lin_integration_8h" local="yes">LinIntegration.h</includes>
+    <includedby refid="_config_lin_8h" local="yes">ConfigLin.h</includedby>
+    <includedby refid="_lin_integration_8h" local="yes">LinIntegration.h</includedby>
+    <includedby refid="_lin_schedule_8h" local="yes">LinSchedule.h</includedby>
+    <includedby refid="_lin_integration_8c" local="yes">LinIntegration.c</includedby>
+    <incdepgraph>
+      <node id="67">
+        <label>Lin.h</label>
+      </node>
+      <node id="66">
+        <label>LinIntegration.h</label>
+        <link refid="_lin_integration_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="69">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="76">
+        <label>LinSchedule.h</label>
+        <link refid="_lin_schedule_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>LinSchedule.c</label>
+        <link refid="_lin_schedule_8c"/>
+      </node>
+      <node id="70">
+        <label>LinIntegration.h</label>
+        <link refid="_lin_integration_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>LinIntegration.c</label>
+        <link refid="_lin_integration_8c"/>
+      </node>
+      <node id="75">
+        <label>LinTask.c</label>
+        <link refid="_lin_task_8c"/>
+      </node>
+      <node id="71">
+        <label>ConfigLin.h</label>
+        <link refid="_config_lin_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>ConfigLin.c</label>
+        <link refid="_config_lin_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_lin_integration_8h_1a7839f54be3c1bdc6d3bc89a4707ef5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>LinInt_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function allows the application to initialize before the LIN task is started. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+</para><para><verbatim>The application will set the initial schedule table, and will initialize the IccFifos for LIN flash routing.
+</verbatim> <simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_Init.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_Init <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is the initialization function for the Lin Integration component <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="125" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1462" bodyend="1485"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1aee6481a67004aebae0dc0247731729e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_Cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>LinInt_Cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function will handle LIN cyclic functions. </para>        </briefdescription>
+        <detaileddescription>
+<para>Called from LIN TASK.</para><para><verbatim>It&apos;s called cyclically from the LinTask. 
+</verbatim></para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context LinTask <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_Cyclic.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_Cyclic <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to handle the calling of all cyclic function for Lin Integration. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="170" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1487" bodyend="1503"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1a67275e9a8f5c9959f7de1dbbf00a6a50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean LinInt_ComChannel_IsActive</definition>
+        <argsstring>(const TComChannel linComChannel)</argsstring>
+        <name>LinInt_ComChannel_IsActive</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <briefdescription>
+<para>This function will check if a specific LIN channel is active. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function it&apos;s used by other SW units of Lin Integration component.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - only reads memory<linebreak/>
+ multicore safe: Yes - only reads memory <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE or FALSE</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Function will return TRUE if given LIN channel is active and FALSE if not.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ComChannel_IsActive.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ComChannel_IsActive <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function to check if a provided LIN channel is active. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="217" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1393" bodyend="1412"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1a91687bf7ff1258150aa78eb2776e2c2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ComChannel_RequestOnlineMode</definition>
+        <argsstring>(const TComChannel linComChannel)</argsstring>
+        <name>LinInt_ComChannel_RequestOnlineMode</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <briefdescription>
+<para>This function will request initialization of the LIN channel. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an external function to be used by other components.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>For the provided LIN channel the onlineModeRequested flag in the <ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] array will be set to TRUE.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ComChannel_RequestOnlineMode.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The testing method is described on TEST_LinInt_ComChannel_RequestOnlineMode <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to request initialization of the LIN channel. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="261" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1414" bodyend="1424"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1a2fc9fd7a95af693a1d16611df67dca5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ComChannel_RequestOfflineMode</definition>
+        <argsstring>(const TComChannel linComChannel)</argsstring>
+        <name>LinInt_ComChannel_RequestOfflineMode</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the switch of the LIN to offline mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an external function to be used by other components.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>For the provided LIN channel the offlineModeRequested flag in the <ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] array will be set to TRUE.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ComChannel_RequestOfflineMode.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ComChannel_RequestOfflineMode <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to request the switch of a provided LIN channel to offline mode. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="304" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1426" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1ac9fe486a60c1f7021d9c6bb0821e94a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ComChannel_RequestNormalMode</definition>
+        <argsstring>(const TComChannel linComChannel)</argsstring>
+        <name>LinInt_ComChannel_RequestNormalMode</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the switch of the LIN to Normal mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an external function to be used by other components.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: Yes <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>For the provided LIN channel the normalModeRequested flag in the <ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] array will be set to TRUE.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ComChannel_RequestNormalMode.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ComChannel_RequestNormalMode <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to request the switch of a provided LIN channel to normal mode. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="347" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1438" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_integration_8h_1a85080c5b0f97edaa159459c52ba7df46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinInt_ComChannel_RequestSleepMode</definition>
+        <argsstring>(const TComChannel linComChannel)</argsstring>
+        <name>LinInt_ComChannel_RequestSleepMode</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <briefdescription>
+<para>This function will request the switch of the LIN to sleep mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an external function to be used by other components.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: any task <linebreak/>
+ thread safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ multicore safe: Yes - atomic memory write (<emphasis>when cache is not enabled</emphasis>)<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of LIN bus </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>For the provided LIN channel the sleepModeRequested flag in the <ref refid="_lin_integration_8c_1a7a45abd8277dde81d08b65b4da897de7" kindref="member">LinChannelModeRequests</ref>[] array will be set to TRUE.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinInt_ComChannel_RequestSleepMode.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinInt_ComChannel_RequestSleepMode <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to request the switch of a provided LIN channel to sleep mode. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h" line="390" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIntegration.c" bodystart="1450" bodyend="1460"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><linebreak/>
+ Declarations of interfaces for Lin Integration component. </para>    </briefdescription>
+    <detaileddescription>
+<para>This file can be included by other modules and components. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/inc/LinIntegration.h"/>
+  </compounddef>
+</doxygen>

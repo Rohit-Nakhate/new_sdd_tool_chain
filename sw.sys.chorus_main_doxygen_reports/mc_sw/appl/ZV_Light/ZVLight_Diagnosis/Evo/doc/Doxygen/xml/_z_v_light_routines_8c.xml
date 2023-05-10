@@ -1,0 +1,559 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_z_v_light_routines_8c" kind="file" language="C++">
+    <compoundname>ZVLightRoutines.c</compoundname>
+    <includes refid="_z_v_light_routines_8h" local="yes">ZVLightRoutines.h</includes>
+    <includes local="yes">Adaptation.h</includes>
+    <includes local="yes">RoutineControl.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">Dcm.h</includes>
+    <incdepgraph>
+      <node id="15">
+        <label>Dcm.h</label>
+      </node>
+      <node id="12">
+        <label>RoutineControl.h</label>
+      </node>
+      <node id="14">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="9">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="10">
+        <label>ZVLight_Task.h</label>
+      </node>
+      <node id="8">
+        <label>agw.h</label>
+      </node>
+      <node id="11">
+        <label>Adaptation.h</label>
+      </node>
+      <node id="6">
+        <label>ZVLightRoutines.c</label>
+        <link refid="_z_v_light_routines_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="7">
+        <label>ZVLightRoutines.h</label>
+        <link refid="_z_v_light_routines_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_z_v_light_routines_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>For SWATT testing</para><para>SWATT bypassing used for testing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="124" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_z_v_light_routines_8c_1a575f3701eee69e23388d2f4941d831cc" prot="public" static="yes" mutable="no">
+        <type>TRoutineResult</type>
+        <definition>TRoutineResult ZVLight_RoutineResult</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_RoutineResult</name>
+        <initializer>= RC_ROUTINE_RESULT_NO_RESULTS_AVAILABLE</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used for routine result status. <linebreak/>
+ <simplesect kind="remark"><para>values RC_ROUTINE_RESULT_NO_RESULTS_AVAILABLE - no results <linebreak/>
+ RC_ROUTINE_RESULT_INCORRECT_RESULTS - incorrect results <linebreak/>
+ RC_ROUTINE_RESULT_CORRECT_RESULTS - correct result <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Start routine <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="71" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light_routines_8c_1a6c9e7643f4fff018a3bfbd7817cb9e5c" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>volatile boolean ZVLight_SigCalc</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_SigCalc</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for signature calculation status. <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - ZV signature not calculated <linebreak/>
+ TRUE - ZV signature calculated <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context start routine <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="87" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light_routines_8c_1aea61864941629be69ba86a4ce9d15601" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>volatile uint8 ZVLight_Error</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_Error</name>
+        <initializer>= 0x00U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used to output error in case of routine result not ok. <linebreak/>
+ <simplesect kind="remark"><para>values default <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Start routine <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="102" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light_routines_8c_1a293ac148e4a6b883b094224c328f8bd4" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZVLight_retValNotOk</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_retValNotOk</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used to return status of starting routine. <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - return value not ok <linebreak/>
+ TRUE - return value ok <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Start routine <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_z_v_light_routines_8c_1ae0e6556da9003c02ae696f7071d99cf6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean ZVLight_areRoutine0x0530OptionsValid</definition>
+        <argsstring>(uint32 inParam0)</argsstring>
+        <name>ZVLight_areRoutine0x0530OptionsValid</name>
+        <param>
+          <type>uint32</type>
+          <declname>inParam0</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to check if routine is in valid range options. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Std_ReturnType ZVLight_Routine_0x0530_Start context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inParam0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- option validation <linebreak/>
+ range - uint32 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_areRoutine0x0530OptionsValid.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking routine valid options. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light_routines_8c_8test_1a83568ed4cd9e093fb9bf3e70e155c94e" kindref="member">TEST_ZVLightRoutines__ZVLight_areRoutine0x0530OptionsValid</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used as a precondition to start the routine. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="179" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="271" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light_routines_8c_1a2dda114abd7158731a3ad983b50e12b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType ZVLight_CheckError</definition>
+        <argsstring>(uint8 *ErrorCode)</argsstring>
+        <name>ZVLight_CheckError</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to check routine result. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_Routine_0x0530_Start context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stores the code type in case of negative response <linebreak/>
+ range - pointer to uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a575f3701eee69e23388d2f4941d831cc" kindref="member">ZVLight_RoutineResult</ref> [in] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1aea61864941629be69ba86a4ce9d15601" kindref="member">ZVLight_Error</ref> [out] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a293ac148e4a6b883b094224c328f8bd4" kindref="member">ZVLight_retValNotOk</ref> [in] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a6c9e7643f4fff018a3bfbd7817cb9e5c" kindref="member">ZVLight_SigCalc</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_CheckError.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking status of ZVLight_RoutineResult. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light_routines_8c_8test_1ae72904dac2286e9a88838cb8888679f6" kindref="member">TEST_ZVLightRoutines__ZVLight_CheckError</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to check the routine result. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="224" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="226" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga00ce82b732c6dc32572c6cb4d7620c89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ZVLight_Routine_0x0530_Start</definition>
+        <argsstring>(uint32 inParam0, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>ZVLight_Routine_0x0530_Start</name>
+        <param>
+          <type>uint32</type>
+          <declname>inParam0</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the start for the ZVLight routine 0x0530.</para><para><simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_GW_21451</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inParam0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data provided in the routine control response.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A, offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode Error state of the function.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RC_ROUTINE_INDEX_ZVLight_Routine_0x0530 [in] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a6c9e7643f4fff018a3bfbd7817cb9e5c" kindref="member">ZVLight_SigCalc</ref> [out] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a575f3701eee69e23388d2f4941d831cc" kindref="member">ZVLight_RoutineResult</ref> [out] <linebreak/>
+ RC_NRC_0x24_REQUEST_SEQUENCE_ERROR [out] <linebreak/>
+ RC_NRC_0x31_REQUEST_OUT_OF_RANGE [out] <linebreak/>
+ RC_ROUTINE_RESULT_INCORRECT_RESULTS [out] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1aea61864941629be69ba86a4ce9d15601" kindref="member">ZVLight_Error</ref> [out] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a293ac148e4a6b883b094224c328f8bd4" kindref="member">ZVLight_retValNotOk</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_Routine_0x0530_Start.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking start routine function. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  <ref refid="_z_v_light_routines_8c_8test_1af6434d2419e2b515a012fa1d9940f75b" kindref="member">TEST_ZVLightRoutines__ZVLight_Routine_0x0530_Start_T1</ref> <linebreak/>
+ <ref refid="_z_v_light_routines_8c_8test_1ac93af3b541a2a80d2eb68ad937368869" kindref="member">TEST_ZVLightRoutines__ZVLight_Routine_0x0530_Start_T2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21451, SWR_ICAS1_GW_8891, SWR_ICAS1_L3_ZV_Light_74 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="291" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="291" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga39d94641bfffef74241fe92538876aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ZVLight_Routine_0x0530_Stop</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>ZVLight_Routine_0x0530_Stop</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the stop of the ZVLight routine 0x0530.</para><para><simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000002"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_GW_21451</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode Error state of the function.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RC_ROUTINE_INDEX_ZVLight_Routine_0x0530 [in] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a6c9e7643f4fff018a3bfbd7817cb9e5c" kindref="member">ZVLight_SigCalc</ref> [out] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a575f3701eee69e23388d2f4941d831cc" kindref="member">ZVLight_RoutineResult</ref> [out] <linebreak/>
+ RC_NRC_0x24_REQUEST_SEQUENCE_ERROR [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking the routine stop function<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_Routine_0x0530_Stop.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  <ref refid="_z_v_light_routines_8c_8test_1ad1651e1e20ea976242f9efe31bb4e6fd" kindref="member">TEST_ZVLightRoutines__ZVLight_Routine_0x0530_Stop</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21451<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="386" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="386" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab4d9f26ec735af2189a4f43da6448f29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ZVLight_Routine_0x0530_RequestResults</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *outParam0, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>ZVLight_Routine_0x0530_RequestResults</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>outParam0</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the request results for the ZVLight routine 0x0530.</para><para><simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000003"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_GW_21451</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] outParam0 Data provided in the routine control response.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A, offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode Error state of the function.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RC_ROUTINE_INDEX_ZVLight_Routine_0x0530 [in] <linebreak/>
+ <ref refid="_z_v_light_routines_8c_1a575f3701eee69e23388d2f4941d831cc" kindref="member">ZVLight_RoutineResult</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_Routine_0x0530_RequestResults.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking routine request result. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  <ref refid="_z_v_light_routines_8c_8test_1a5231313ba6fd46df75c4221d0a175f0f" kindref="member">TEST_ZVLightRoutines__ZVLight_Routine_0x0530_RequestResults</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21451 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="421" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="421" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga41f8c7287882e7392a65737eb1e28c1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ZVLight_Routine_0x0530_Abort</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_Routine_0x0530_Abort</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the routine abort for 0x0530. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000004"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_GW_21451</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RC_ROUTINE_INDEX_ZVLight_Routine_0x0530 [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_Routine_0x0530_Abort.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking if function gets called.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light_routines_8c_8test_1ad79a9c259cd1c5171bae2bd2ea1a5726" kindref="member">TEST_ZVLightRoutines__ZVLight_Routine_0x0530_Abort</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21451 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" line="435" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c" bodystart="435" bodyend="451"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File contains implementation of routine control for ZVLight module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_z_v_light_routines_8c" kindref="compound">ZVLightRoutines.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib09733 </para></simplesect>
+<heading level="1"></heading>
+</para><para>Expected test coverage (100%) and type of test coverage (C1/CTC). Add software requirement IDs in the testcases. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight_Diagnosis/c/src/ZVLightRoutines.c"/>
+  </compounddef>
+</doxygen>

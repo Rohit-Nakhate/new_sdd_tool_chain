@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has the following files that are developed by Continental:<itemizedlist>
+<listitem><para><ref refid="_d_w_a_x___task_8c" kindref="compound">DWAX_Task.c</ref> - This file will init, start run and stop the DWA Sensor Sirene functionality</para></listitem><listitem><para><ref refid="_d_w_a_x___task_8h" kindref="compound">DWAX_Task.h</ref> - Header file for <ref refid="_d_w_a_x___task_8c" kindref="compound">DWAX_Task.c</ref></para></listitem><listitem><para><ref refid="_d_w_a_x___nv_ram_8h" kindref="compound">DWAX_NvRam.h</ref> - Header file is needed for connecting memory and lib</para></listitem><listitem><para><ref refid="_d_w_a_x___extra_definitions_8h" kindref="compound">DWAX_ExtraDefinitions.h</ref> - This headerfile controls the overwriting of generated S/R autosar_functions</para></listitem><listitem><para><ref refid="_d_w_a_x___data_types_8h" kindref="compound">DWAX_DataTypes.h</ref> - This headerfile provides the datatypes used to provide the S/R Autosar functions for coding, fault memory, etc.</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>All the software requirements assigned to DWA Sensor Sirene are satisfied by <ref refid="_d_w_a_x___task_8c" kindref="compound">DWAX_Task.c</ref> . The software requirements can be traced on function level !.<linebreak/>
+For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+ There are no non-functional requirements for DWAX.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in DWA Sensor Sirene.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>Since DWA Sensor Sirene is made up of only one unit, there are no interfaces between software units to describe.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><bold>The diagram below depicts the dynamic behavior of the cyclic task of DWA Sensor Sirene component.</bold> <linebreak/>
+ <image type="html" name="DWAX_TaskCyclicEvent_DynamicBehaviour.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>No data flow chart for DWA Sensor Sirene. Instead, there is a control flow diagram that represents the Master Code generation: <image type="html" name="controlFlow_DWAX.png">MasterCode Generation </image>
+ <linebreak/>
+<heading level="2">Tasks</heading>
+</para><para>No OSEK Tasks needs to be configured by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because DWA Sensor Sirene component runs in high-power mode. Currently, the component does not require a special power modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>Error status signals are provided by DWA Sensor Sirene to the the 3rd party libraries used to handle various error scenarios related to CAN messages. DWA Sensor Sirene component reports internal errors on DTC level. For more details, see <ref refid="_d_w_a_x___task_8c" kindref="compound">DWAX_Task.c</ref> <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the concurrent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para>DWA Sensor Sirene operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>No complex data structures used. A structure that stores internal DWA Sensor Sirene data is used. For more details, please see <ulink url="annotated.html">structure page</ulink>.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Interoperability is set to low because <bold>DWAX</bold> depends on other components.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Interaction is set to low because the component has a reduced number of non RTE dependencies.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Since <bold>DWAX</bold> is non-safety component, the interaction is Low and the component was not integrated recently, criticality is rated low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>The technical complexity of <bold>DWAX</bold> is Low since the interaction is on Low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>The component <bold>DWAX</bold> is composed of only one unit and no complex alghoritms are implemented therefore the risk is Low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>The component <bold>DWAX</bold> requires other tools (like PLAST) besides SWATT for 100% tests coverage but all tests can be automated. So, testability is high.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

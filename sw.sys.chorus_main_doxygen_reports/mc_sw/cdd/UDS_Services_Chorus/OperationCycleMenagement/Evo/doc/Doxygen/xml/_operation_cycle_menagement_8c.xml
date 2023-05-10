@@ -1,0 +1,721 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_operation_cycle_menagement_8c" kind="file" language="C++">
+    <compoundname>OperationCycleMenagement.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includes local="yes">Rte_NvM_Type.h</includes>
+    <includes refid="_operation_cycle_menagement_8h" local="yes">OperationCycleMenagement.h</includes>
+    <includes local="yes">DiagnosticTimers.h</includes>
+    <includes local="yes">Rte_OperationCycleMenagement.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>Rte_NvM_Type.h</label>
+      </node>
+      <node id="14">
+        <label>Dem.h</label>
+      </node>
+      <node id="10">
+        <label>OperationCycleMenagement.h</label>
+        <link refid="_operation_cycle_menagement_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>DiagnosticTimers.h</label>
+      </node>
+      <node id="8">
+        <label>NvM.h</label>
+      </node>
+      <node id="7">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="6">
+        <label>OperationCycleMenagement.c</label>
+        <link refid="_operation_cycle_menagement_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Rte_OperationCycleMenagement.h</label>
+      </node>
+      <node id="11">
+        <label>NvM_Types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_operation_cycle_menagement_8c_1ab0a49c7f894372f9f7c137246dba32b7" prot="public" static="no">
+        <name>AGINGCOUNTER_ERROR_VALUE</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para>Aging counter error value. </para>        </briefdescription>
+        <detaileddescription>
+<para>AGINGCOUNTER_ERROR_VALUE is initialized to 0xFFu <simplesect kind="remark"><para>values 0xFF <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="78" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_operation_cycle_menagement_8c_1ac4a65b4c1b2805bced33b08bf1af5fcb" prot="public" static="no">
+        <name>AGINGCOUNTER_MAX_NORMAL_VALUE</name>
+        <initializer>0xFEu</initializer>
+        <briefdescription>
+<para>The aging counter max normal value. </para>        </briefdescription>
+        <detaileddescription>
+<para>AGINGCOUNTER_MAX_NORMAL_VALUE is initialized to 0xFEu <simplesect kind="remark"><para>values 0xFE <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="90" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_operation_cycle_menagement_8c_1a49213cd4735b7e53756782502b82296d" prot="public" static="no">
+        <name>ZERO_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para>The zero value <linebreak/>
+. </para>        </briefdescription>
+        <detaileddescription>
+<para>zero value <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="102" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_operation_cycle_menagement_8c_1a60d14111c387ebd62fb21fb1bacf865b" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 AgingCounter</definition>
+        <argsstring></argsstring>
+        <name>AgingCounter</name>
+        <initializer>=  0xFFu</initializer>
+        <briefdescription>
+<para>AgingCounter. </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable holds the AgingCounter vaule.</para><para>AgingCounter is initialized with AGINGCOUNTER_ERROR_VALUE (0xFFu). It holds aging counter value. <linebreak/>
+<simplesect kind="remark"><para>range 0 to 255<linebreak/>
+ values AGINGCOUNTER_ERROR_VALUE <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {initAgingCounterForDiagnose_01, UpadateAgingCounterForDiagnose_01, NVM_AgingCounter_SingleCbk } <linebreak/>
+ protection global <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="125" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_operation_cycle_menagement_8c_1a615a6a25eabb8bf9150e65067211d7d1" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 OBD_Driving_Cycle_InitiallySet</definition>
+        <argsstring></argsstring>
+        <name>OBD_Driving_Cycle_InitiallySet</name>
+        <briefdescription>
+<para>OBD_Driving_Cycle_InitiallySet. </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable holds the OBD_Driving_Cycle vaule.</para><para>OBD_Driving_Cycle_InitiallySet is boolean type. It is used to store the OBD_Driving_Cycle State value . <simplesect kind="remark"><para>range 0 to 255 <linebreak/>
+ values True (1) or False (0) <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {OBD_DrivingCyclePreconditionsStateNvM, OperationCyclesMonitoring10ms, getDrivingCycleState, NVM_OBDDrivingCycleInitiallySet_SingleCbk } <linebreak/>
+ protection global </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="142" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a64ee57f600c39e0eaa276d4410155152" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType DecrementAgingCounterForDTCs</definition>
+        <argsstring>(void)</argsstring>
+        <name>DecrementAgingCounterForDTCs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>DecrementAgingCounterForDTCs function decrements aging counter for DTCs. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function decrements aging counter for DTCs stored in DEM. This action shall be done once in lifecycle.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant - No <linebreak/>
+ context- { OperationCyclesRecognition } <linebreak/>
+ thread safe - Yes <linebreak/>
+ multicore safe - No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType E_OK <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DecrementAgingCounterForDTCs.png">DecrementAgingCounterForDTCs Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to check the decrementing of Aging counter for DTC <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1ac6bcbfc921806fae725e883be642411a" kindref="member">TEST_OperationCycleMenagement__DecrementAgingCounterForDTCs</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_832</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="192" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="559" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a4c5f75d4929f9f226397fc18dbb8b09c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType UpadateAgingCounterForDiagnose_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>UpadateAgingCounterForDiagnose_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>UpadateAgingCounterForDiagnose_01 increments aging counter. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function incremets aging counter for CAN massege Diagnose_01. This action shall be done once in lifecycle. <simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant - No<linebreak/>
+ context - {OperationCyclesRecognition } <linebreak/>
+ thread safe - Yes <linebreak/>
+ multicore safe - No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType E_OK or Aging Counter result <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>AgingCounter: uint8 type, used in Diagnose_01 can message as agingcounter value <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="UpadateAgingCounterForDiagnose_01.png">UpadateAgingCounterForDiagnose_01 Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to check the Aging Counter increments for CAN message Diagnose_01 <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a8fb5e045411906946981945b5aaedd23" kindref="member">TEST_OperationCycleMenagement__UpadateAgingCounterForDiagnose_01</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_898; SWR_ICAS1_Diag_895; SWR_ICAS1_Diag_897; SWR_ICAS1_Diag_374; SWR_ICAS1_Diag_831; SWR_ICAS1_Diag_819; SWR_ICAS1_Diag_373</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="231" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="579" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a81a9f36bb7bf739c27fa60f369cdf490" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DrivingCycleValidation</definition>
+        <argsstring>(void)</argsstring>
+        <name>DrivingCycleValidation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>DrivingCycleValidation validates driving cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function validates Driving cycle, is called after 2s of KL15 ON. <simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant - No<linebreak/>
+ context - {OperationCyclesRecognition } <linebreak/>
+ thread safe - yes <linebreak/>
+ multicore safe - No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean return type, TRUE: when OBD_DrvingCycle_State changes to 1, FALSE: when OBD_DrvingCycle_State is 0 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DrivingCycleValidation.png">DrivingCycleValidation Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to check the behavior of Driving Cycle Validation function <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a9799c7491b2a181bad561a00201b822d" kindref="member">TEST_OperationCycleMenagement__DrivingCycleValidation</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_827; SWR_ICAS1_Diag_793; SWR_ICAS1_Diag_791</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="272" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="503" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a0f217d5ab2a8950ee6d53b4cf6069422" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean WarmUpCycleValidation</definition>
+        <argsstring>(void)</argsstring>
+        <name>WarmUpCycleValidation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>WarmUpCycleValidation function validates warm up cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function validates warm up cycle, is called after Driving Cycle has been confirmed.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant - No <linebreak/>
+ context - {OperationCyclesRecognition } <linebreak/>
+ thread safe - yes <linebreak/>
+ multicore safe - {No/Yes} <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean return type, TRUE: when Warm_Up_Cycle is validated, FALSE: WUC is not validated <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WarmUpCycleValidation.png">WarmUpCycleValidation Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to check the behavior WarmUpCycle validation function <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a61cdfb734a28e05a38acd90ce9caf588" kindref="member">TEST_OperationCycleMenagement__WarmUpCycleValidation</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_833; SWR_ICAS1_Diag_797</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="313" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="487" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a0d7416969db72ba1393ee35b322ee354" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void OperationCyclesRecognition</definition>
+        <argsstring>(void)</argsstring>
+        <name>OperationCyclesRecognition</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>OperationCyclesRecognition function recognizes Driving Cycle and Warm Up Cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is function is called 2s after KL15 is on, recognizes Driving Cycle and Warm Up Cycle.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant- No <linebreak/>
+ context - {OperationCyclesMonitoring10ms } <linebreak/>
+ thread safe - yes <linebreak/>
+ multicore safe - No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="OperationCyclesRecognition.png">OperationCyclesRecognition Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to recognize the Driving Cycle &amp; WarmUp Cycle <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1ac258a9b1a4db560a95ce6c73eb63bc90" kindref="member">TEST_OperationCycleMenagement__OperationCyclesRecognition</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_827; SWR_ICAS1_Diag_833</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="354" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="463" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a57629cefa6ddd65667eeb3406f958491" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void OBD_DrivingCyclePreconditionsStateNvM</definition>
+        <argsstring>(void)</argsstring>
+        <name>OBD_DrivingCyclePreconditionsStateNvM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>OBD_DrivingCyclePreconditionsStateNvM function checking diagnostic preconditions. </para>        </briefdescription>
+        <detaileddescription>
+<para>Function first check if OBD_Driving_Cycle_InitiallySet form NvM to check if is equal FALSE which mean that diagnostic preconditions should not be checked, after that periodically we checking if si_OBD_Driving_Cycle signal form Moto_54 will be set for the first time to &apos;1&apos;. In this case we change state value of variable OBD_Driving_Cycle_InitiallySet in NvM to TRUE, and diagnostic preconditions are checked always in this lifecycle.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant- No <linebreak/>
+ context - {OperationCyclesMonitoring10ms} <linebreak/>
+ thread safe - yes <linebreak/>
+ multicore safe - No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>OBD_Driving_Cycle_InitiallySet: boolean type, used to store the OBD_Driving_Cycle State value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="OBD_DrivingCyclePreconditionsStateNvM.png">OBD_DrivingCyclePreconditionsStateNvM Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to test read the OBD_Driving_Cycle sate &amp; write the same to NvM block <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a93b0a66a649019c124a1eaaebca2684c" kindref="member">TEST_OperationCycleMenagement__OBD_DrivingCyclePreconditionsStateNvM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_886; SWR_ICAS1_Diag_888; SWR_ICAS1_Diag_115; SWR_ICAS1_Diag_371</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="400" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="531" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1aa4d3d725b0cdf7e5baa28d5e18badac2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void initAgingCounterForDiagnose_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>initAgingCounterForDiagnose_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>InitAgingCounterForDiagnose_01. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used to initialize Diagnose_01 signal. <simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant- No <linebreak/>
+ context- {OperationCyclesMonitoring10ms} <linebreak/>
+ thread safe - No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>AgingCounter: uint8 type, used in Diagnose_01 can message as agingcounter value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="initAgingCounterForDiagnose_01.png">initAgingCounterForDiagnose_01 Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) to check the initialization of Diagnose_01 CAN signal <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1ac31b655c7c395c95091fa9e0f21c9ec5" kindref="member">TEST_OperationCycleMenagement__initAgingCounterForDiagnose_01</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_369</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="444" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="444" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1aecb44de6b021745a7e3f13542863d782" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OperationCyclesMonitoring10ms</definition>
+        <argsstring>(void)</argsstring>
+        <name>OperationCyclesMonitoring10ms</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Triggers DEM to increment the AgingCycle for all DTCs which have Aging allowed. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal variables are initialized with the default values. cycle time is 10 ms. Aging Counter shall be decremented when after at least 2 s of KL15 on Driving Cycle and WARM UP cycle are recognized Aging Counter shall be decremented only once per ICAS operation cycle</para><para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task/isr, function name, &quot;e.g. same context as the main function.&quot; } <linebreak/>
+ thread safe {No} <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>OBD_Driving_Cycle_InitiallySet: boolean type, used to store the OBD_Driving_Cycle State value <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="OperationCyclesMonitoring10ms.png">OperationCyclesMonitoring10ms Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) test of boundary values <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a9515c538c46e65f58cdc898b57cc6ecd" kindref="member">TEST_OperationCycleMenagement__OperationCyclesMonitoring10ms</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_Diag_791; SWR_ICAS1_Diag_793; SWR_ICAS1_Diag_797; SWR_ICAS1_Diag_833; SWR_ICAS1_Diag_831; SWR_ICAS1_Diag_373} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="627" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="627" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1ad6aaec03779b0719b4d2045f3a80a1d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean getDrivingCycleState</definition>
+        <argsstring>(void)</argsstring>
+        <name>getDrivingCycleState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function return velue of OBD_Driving_Cycle_InitiallySet stored in NvM. </para>        </briefdescription>
+        <detaileddescription>
+<para>Diagnostic preconditions should be checked and function will return TRUE <simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task/isr, function name, &quot;e.g. same context as the main function.&quot; } <linebreak/>
+ thread safe {No} <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean type, return TRUE: TRUE in case of Driving Cycle set once FALSE: FALSE in case of Driving Cycle has not been set in this lifecycle <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>OBD_Driving_Cycle_InitiallySet: boolean type, used to store the OBD_Driving_Cycle State value <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="getDrivingCycleState.png">getDrivingCycleState Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) test of boundary values <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1afba397c631dfdd006dbe854af2b08389" kindref="member">TEST_OperationCycleMenagement__getDrivingCycleState</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_Diag_887} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="670" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="670" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a9f4880142869b9c8c0df260beb105b6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NVM_AgingCounter_SingleCbk</definition>
+        <argsstring>(NvM_ServiceIdType serv, NvM_RequestResultType request)</argsstring>
+        <name>NVM_AgingCounter_SingleCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>serv</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+<para>This function is called after NVM operation on Forget Counter block. </para>        </briefdescription>
+        <detaileddescription>
+<para>In this function, If request is not equal to E_OK, then it set aging counter to 0xFF.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task/isr, function name, &quot;e.g. same context as the main function.&quot; } <linebreak/>
+ thread safe {yes} <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>NvM_ServiceIdType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>serv: uint8 <linebreak/>
+ NvM_RequestResultType request : uint8 <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType, return E_OK <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>AgingCounter: uint8 type, used in Diagnose_01 can message as agingcounter value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<image type="html" name="NVM_AgingCounter_SingleCbk.png">NVM_AgingCounter_SingleCbk Activity Diagram </image>
+</para><para><simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1ae4a81f72c4da9e8a2903ae5aed155cdf" kindref="member">TEST_OperationCycleMenagement__NVM_AgingCounter_SingleCbk</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_Diag_819} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="683" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="683" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="_operation_cycle_menagement_8c_1a4de6dd4c5493277f890ba0ba176d8090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NVM_OBDDrivingCycleInitiallySet_SingleCbk</definition>
+        <argsstring>(NvM_ServiceIdType serv, NvM_RequestResultType request)</argsstring>
+        <name>NVM_OBDDrivingCycleInitiallySet_SingleCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>serv</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+<para>Function is called after NVM operation on OBD_Driving_Cycle_InitiallySet block. </para>        </briefdescription>
+        <detaileddescription>
+<para>In this function, If request is not equal to E_OK, then it set OBD_Driving_Cycle_Initiallyset to default.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task/isr, function name, &quot;e.g. same context as the main function.&quot; } <linebreak/>
+ thread safe {No} <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>NvM_ServiceIdType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>serv: uint8 <linebreak/>
+ NvM_RequestResultType request : uint8 <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType, return E_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>OBD_Driving_Cycle_InitiallySet: boolean type, used to store the OBD_Driving_Cycle State value <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NVM_OBDDrivingCycleInitiallySet_SingleCbk.png">NVM_OBDDrivingCycleInitiallySet_SingleCbk Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test methods: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ 2) test of boundary values <linebreak/>
+ <ref refid="_operation_cycle_menagement_8c_8test_1a8c7c81b1765bd4943894cc395788bbf4" kindref="member">TEST_OperationCycleMenagement__NVM_OBDDrivingCycleInitiallySet_SingleCbk</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OperationCycleManagement.Dynamic Behaviour <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_Diag_909} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" line="705" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c" bodystart="705" bodyend="727"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The OperationCycleMenagement module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_operation_cycle_menagement_8c" kindref="compound">OperationCycleMenagement.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#5 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie90984 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/04/06 </para></simplesect>
+</para><para>The function of OperationCycleMenagement module is to recognize &amp; validate Driving Cycle(DCY) and Warm Up Cycle(WUC). OperationCycleMenagement module decrement Aging Counter for DTCs and to increment aging counter for CAN message Diagnose_01. and it will monitor the OBD_DrivingCycle until first Set &amp; returns/writes the OBD_DrivingCycle State which is stored in NvM. <linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>SW Unit testing is accomplished through SWATT. The test case are based on this design, and shall also cover the configuration options. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OperationCycleMenagement/c/src/OperationCycleMenagement.c"/>
+  </compounddef>
+</doxygen>

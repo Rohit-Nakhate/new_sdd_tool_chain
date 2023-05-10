@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_g_w___a_n_p__2_e_8c" kind="file" language="C++">
+    <compoundname>GW_ANP_2E.c</compoundname>
+    <includes local="yes">AdaptationsNvM.h</includes>
+    <includes local="yes">NvM_Cfg.h</includes>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includes local="yes">BuiltInList.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <incdepgraph>
+      <node id="90">
+        <label>NvM_Cfg.h</label>
+      </node>
+      <node id="88">
+        <label>GW_ANP_2E.c</label>
+        <link refid="_g_w___a_n_p__2_e_8c"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="94">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="93">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="92">
+        <label>BuiltInList.h</label>
+      </node>
+      <node id="89">
+        <label>AdaptationsNvM.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_g_w___a_n_p__2_e_8c_1a83df51c111c12bb69c756d2731cb1f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="test_2swut_2_g_w___conti___a_n_p_8c_8test_1a0dd21d42d27e290971902a475cab9835" kindref="member">Tuint32</ref></type>
+        <definition>__asmleaf Tuint32 LoadSignal</definition>
+        <argsstring>(const Tuint32 *adr)</argsstring>
+        <name>LoadSignal</name>
+        <param>
+          <type>const <ref refid="test_2swut_2_g_w___conti___a_n_p_8c_8test_1a0dd21d42d27e290971902a475cab9835" kindref="member">Tuint32</ref> *</type>
+          <declname>adr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Adaptations/c/src/GW_ANP_2E.c" line="67" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Adaptations/c/src/GW_ANP_2E.c" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="_g_w___a_n_p__2_e_8c_1a23bc2548af474ecd529f39717298e6fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="test_2swut_2_g_w___conti___a_n_p_8c_8test_1a6c47636b29561e4822d1001aef7f7550" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType GW_Write_Adaption_0x0502</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>GW_Write_Adaption_0x0502</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type><ref refid="test_2swut_2_g_w___conti___a_n_p_8c_8test_1a77bc4cbb3fc8d352f7489bab4a04e773" kindref="member">Dcm_OpStatusType</ref></type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type><ref refid="test_2swut_2_g_w___conti___a_n_p_8c_8test_1a6fae8532ad81d8119fc1bb38c78f5a4d" kindref="member">Dcm_NegativeResponseCodeType</ref> *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function write the data and status whenever tester requested DID 0x2E0502 to the BuiltinList Chorus <linebreak/>
+Configuartions related to the DIDS has done in EB Tresos,adaptation Did having all basic configurations. <linebreak/>
+1.DATA length <linebreak/>
+2.Sessions <linebreak/>
+ 3.Security access <linebreak/>
+ 4.READ/WRITE access <linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant : No <linebreak/>
+context task: this function is event based called from Dcm <linebreak/>
+thread safe : Yes <linebreak/>
+multicore safe No - All APIs needs to be called from the same core[Core2] <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance  Not Security-Relevant. </title><para></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operation status </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>writing data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error code which is forwarded to CAN.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType; Returns E_OK in case of success, otherwise E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="GW_Write_Adaption_0x0502.png">GW_Write_Adaption_0x0502 Activity Diagram </image>
+</para></simplesect>
+(optional) Test the returen value when the tester requested write request with DID 0x0502 if not it shell return E_NOT_OK.</para><para><simplesect kind="par"><title>Test Method</title><para>This function can be verified using one of the following test methods: <linebreak/>
+ <ref refid="_g_w___a_n_p__2_e_8c_8test_1afa7b1f80ca25906edc5d52bd94559646" kindref="member">TEST_GW_Write_Adaption_0x0502</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Adaptations.Adaptations.Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11193 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Adaptations/c/src/GW_ANP_2E.c" line="131" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Adaptations/c/src/GW_ANP_2E.c" bodystart="131" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file provides the Write (Service 0x2E) functions for adaptations. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>File</title><para><ref refid="_g_w___a_n_p__2_e_8c" kindref="compound">GW_ANP_2E.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#7 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif53538 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/29/11 </para></simplesect>
+for GW module. Supported messages are : 0x061A 0x04A3 0x0502 Not supported messages are: 0x2A3C 0x0902 0x0505  Include own header files of GW_ANP_2E module in the testcase file (SWATT) if requried, no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Adaptations/c/src/GW_ANP_2E.c"/>
+  </compounddef>
+</doxygen>

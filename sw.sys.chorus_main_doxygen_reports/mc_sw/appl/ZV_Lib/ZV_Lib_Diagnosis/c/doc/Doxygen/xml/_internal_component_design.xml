@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component ZV_Lib_Diagnosis has five units: CPD_ADAPTATION, ZV_ADAPTATION, ZvDiagControl, ZV_Routines, ZV_MeasurementValues.<linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_c_p_d___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">CPD_ADAPTATION.c</ref> - source file for CPD Adaptation</para></listitem><listitem><para><ref refid="_c_p_d___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">CPD_ADAPTATION.h</ref> - header file for CPD Adaptation</para></listitem><listitem><para><ref refid="_z_v___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">ZV_ADAPTATION.c</ref> - source file for ZV Adaptation</para></listitem><listitem><para><ref refid="_z_v___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">ZV_ADAPTATION.h</ref> - header file for ZV Adaptation</para></listitem><listitem><para><ref refid="_zv_diag_control_8c" kindref="compound">ZvDiagControl.c</ref> - Zv diagnostic wrapper to check if diagnostics services are allowed.</para></listitem><listitem><para><ref refid="_zv_diag_control_8h" kindref="compound">ZvDiagControl.h</ref> - header file for ZvDiagControl</para></listitem><listitem><para><ref refid="_z_v___routines_8c" kindref="compound">ZV_Routines.c</ref> - file contains implementation of routine control</para></listitem><listitem><para><ref refid="_z_v___routines_8h" kindref="compound">ZV_Routines.h</ref> - header file for ZV_Routines</para></listitem><listitem><para><ref refid="_z_v___measurement_values_8c" kindref="compound">ZV_MeasurementValues.c</ref> - source file for ZV Measurement Values</para></listitem><listitem><para><ref refid="_z_v___measurement_values_8h" kindref="compound">ZV_MeasurementValues.h</ref> - header file for ZV Measurement Values</para></listitem></itemizedlist>
+</para><para><image type="html" name="ZV_Lib_Diagnosis_InternalComponentDesign.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level. <linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="2" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1129  </para></entry><entry thead="no"><para>ZV_Lib requires blocks in NVM block to store ZV_Lib states, ZV_Lib histories and ZV_Lib Monitor.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><bold>Adaptation</bold> is composed from two units: CPD_ADAPTATION, ZV_ADAPTATION. Both are referred as SWC_ADAPTATION.<linebreak/>
+Both of them handle the implementation of the read-write operations for certain DIDs.<linebreak/>
+<bold>DiagControl</bold> has one unit: ZvDiagControl. <linebreak/>
+The unit ZvDiagControl check if diagnostics services are allowed.<linebreak/>
+<bold>RoutineControl</bold> has one unit: ZV_Routines. <linebreak/>
+The unit ZV_Routines handles the implementation of abort routines.<linebreak/>
+<bold>MeasurementValues</bold> has one unit: ZV_MeasurementValues. <linebreak/>
+The unit ZV_MeasurementValues handles the measurement configuration parameters written via Diagnosis and it is triggered by DCM in order to read requested data.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between software units belonging to ZV_Lib_Diagnosis.<linebreak/>
+<image type="html" name="ZV_Lib_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The module interractions can be split into four parts. There are interactions with SWC_Adaptation, ZvDiagControl, ZV_Routines and ZV_MeasurementValues.<linebreak/>
+<linebreak/>
+<bold>Interraction with SWC_Adaptation.</bold></para><para>The corresponding diagnostic service(read or write) is executed first.<linebreak/>
+The next diagram will depict the desired procedure.</para><para><image type="html" name="SWC_Adaptation_Dynamic_Behavior_StartUp.png"></image>
+ </para><para><bold>Interraction with ZvDiagControl.</bold> <linebreak/>
+ The corresponding diagnostic routine service(start or stop or request result) is executed first.<linebreak/>
+<linebreak/>
+ <image type="html" name="ZvDiagControl_Dynamic_Behavior_RequestState.png"></image>
+  <linebreak/>
+ <bold>Interraction with ZV_MeasurementValues.</bold> <linebreak/>
+The corresponding read diagnostic service is executed first.<linebreak/>
+<linebreak/>
+ <image type="html" name="ZV_MeasurementValues_Dynamic_Behavior_RequestState.png"></image>
+  <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the dataflow from DiagControl and RoutineControl modules.<linebreak/>
+ <image type="html" name="data_flow_routines.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured for by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because ZV_Lib_Diagnosis component runs in high-power mode. At the moment, ZV_Lib_Diagnosis does not require a special power modes, it only integrates library functions.</para><para><heading level="2">Power Modes</heading>
+</para><para>The current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The negative response codes are passed to the DCM using the following output parameter: <bold>ErrorCode</bold>.<linebreak/>
+If the vehicle is in externally locked state then the trigger write operation for the DIDs will return <bold>DCM_E_NOT_OK</bold> and ErrorCode <bold>DCM_E_GENERALREJECT</bold>.<linebreak/>
+If the diagnostic session or payload is not according to DCM configuration based on the requirements then the diagnostic READ/WRITE request will be rejected with ErrorCode <bold>GENERAL_REJECT</bold> or <bold>GENERAL_PROGRAMMING_FAILURE</bold>.<linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>ZV_Lib_Diagnosis operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>ZV_Lib_Diagnosis macros are available in the Functions section - see macro list.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>This component does not use data structures.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para><heading level="2">Interoperability</heading>
+</para><para>Interoperability is set to <bold>low</bold> because ZV_Lib_diagnosis depends on other components.</para><para><heading level="2">Interaction</heading>
+</para><para>Interaction is set to <bold>medium</bold> because the component has an increased number of non RTE dependencies. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.ZV_Lib_Diagnosis.SW Architecture.ZV_Lib Diagnosis Static.ZV_Lib Diagnosis Adaption Context</emphasis> and <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.ZV_Lib_Diagnosis.SW Architecture.ZV_Lib Diagnosis Static.ZV_Lib Diagnosis Routine Context</emphasis>.</para><para><heading level="2">Criticality</heading>
+</para><para>Criticality is set to <bold>low</bold> because ZV_Lib_Diagnosis is a QM component. Also, this component has been recently integrated.</para><para><heading level="2">Technical complexity</heading>
+</para><para>Technical complexity is set to <bold>low</bold> because so far ZV_Lib_Diagnosis does not implement any algorithm, only integrates the library functions.</para><para><heading level="2">Risks</heading>
+</para><para>Risks is set to <bold>medium</bold> because ZV_Lib_diagnosis has more than one SW unit. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.ZV_Lib_Diagnosis.SW Architecture.ZV_Lib Diagnosis Dynamic.ZV_Lib Diagnosis - Adaption</emphasis> and <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.ZV_Lib_Diagnosis.SW Architecture.ZV_Lib Diagnosis Dynamic.ZV_Lib Diagnosis - Routines</emphasis>.</para><para><heading level="2">Testability</heading>
+</para><para>Testability is set to <bold>high</bold> because ZV_Lib_Diagnosis can be tested completely on SWATT. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

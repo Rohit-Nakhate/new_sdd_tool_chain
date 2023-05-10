@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>Middleware between RL78(SPI) and other diagnose related components on Chorus. <linebreak/>
+ The module forwards the request from RL78 to different services that it needs and provides response back to RL78. <linebreak/>
+Similar, if Chorus needs some information from RL78 it can request it using this component. <linebreak/>
+For example this module checks the DiagInfo frame received from RL78, process and forward the data to other components related to: <linebreak/>
+<itemizedlist>
+<listitem><para>DTC(s): Process the DTC(s) related data and forwards the requests to set the DTC(s) to DEM. Sends DTC feedback to RL78 <linebreak/>
+</para></listitem><listitem><para>CRC32: requests the CRC32 calculation of the RL78 blocks and provides the data further to CRC manager. <linebreak/>
+</para></listitem><listitem><para>Sends the HW version to RL78 and keeps track of the feedback. <linebreak/>
+</para></listitem><listitem><para>SW and FBL version identification. <linebreak/>
+</para></listitem><listitem><para>Temperature and Voltage measurements. <linebreak/>
+</para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

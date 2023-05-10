@@ -1,0 +1,928 @@
+[
+    {
+        "symbol": "ComponentDesign.markdown - ",
+        "kind": "file",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "ComponentDesign.markdown",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "DesignCoverage.markdown - ",
+        "kind": "file",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "DesignCoverage.markdown",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "ExportedDoorsSpecification_0_requirements.markdown - ",
+        "kind": "file",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "ExportedDoorsSpecification_0_requirements.markdown",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "ORU_STATUS_0 - ",
+        "kind": "define",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "66"
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "ORU_STATUS_RUNNING - ",
+        "kind": "define",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "82"
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "ORU_STATUS_RUNNING_HV - ",
+        "kind": "define",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "92"
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "LOAD_TIMER_200_MS - ",
+        "kind": "define",
+        "brief": "",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "102"
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "boolean OBD_locking_active - ",
+        "kind": "variable",
+        "brief": "",
+        "detailed": "Variable for storing Diag routing lock status",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": true,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "118"
+            ]
+        },
+        "trace": [
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_90",
+                "additional_description": "",
+                "design_decision": false
+            }
+        ],
+        "return": {
+            "type": "boolean",
+            "desc": []
+        }
+    },
+    {
+        "symbol": "boolean Routine_0300_State - ",
+        "kind": "variable",
+        "brief": "",
+        "detailed": "variable to keep the status of the 0x0300 routine.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": true,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "132"
+            ]
+        },
+        "trace": [],
+        "return": {
+            "type": "boolean",
+            "desc": []
+        }
+    },
+    {
+        "symbol": "uint8 Routine_0300_Timer - ",
+        "kind": "variable",
+        "brief": "",
+        "detailed": "timer for timeout monitoring of 0x0300 routine",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": true,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "146"
+            ]
+        },
+        "trace": [],
+        "return": {
+            "type": "uint8",
+            "desc": []
+        }
+    },
+    {
+        "symbol": "static boolean processRoutine0x0300 - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": "The function process OBD Locking request",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": true,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "200"
+            ]
+        },
+        "return": {
+            "type": "boolean",
+            "desc": [
+                {
+                    "param_name": "",
+                    "param_desc": "boolean - returns TRUE if OBD locking should be deactivated"
+                }
+            ]
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [
+                {
+                    "test_name": "TEST_processRoutine0x0300",
+                    "has_valid_ref": true
+                }
+            ],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "static void processOBDLocking - (boolean deactivationRequestedBy0x0300)",
+        "kind": "function",
+        "brief": "",
+        "detailed": "This function is used to check the status of ORU and based on the state, diagnosis routing state is changed.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": true,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                "249"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": [
+                {
+                    "param_name": "",
+                    "param_desc": "void"
+                }
+            ]
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "deactivationRequestedBy0x0300",
+                    "param_def": "",
+                    "param_type": "boolean"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [
+                {
+                    "test_name": "TEST_processOBDLocking",
+                    "has_valid_ref": true
+                }
+            ],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "OBDLocking.c - ",
+        "kind": "file",
+        "brief": "Checks the OBD status, based on which activation of diagnosis request takes place.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/src/OBDLocking.c",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "void OBD_locking_update - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": "Cyclic function for checking OBD lock status. This function cyclicity is 10 ms",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h",
+                "107"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": [
+                {
+                    "param_name": "",
+                    "param_desc": "void"
+                }
+            ]
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [
+                {
+                    "test_name": "TEST_OBD_locking_update",
+                    "has_valid_ref": true
+                }
+            ],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": [
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_90",
+                "additional_description": "",
+                "design_decision": false
+            },
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_94",
+                "additional_description": "",
+                "design_decision": false
+            },
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_77",
+                "additional_description": "",
+                "design_decision": false
+            }
+        ]
+    },
+    {
+        "symbol": "boolean Get_OBD_locking_active - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": "The function ",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h",
+                "162"
+            ]
+        },
+        "return": {
+            "type": "boolean",
+            "desc": [
+                {
+                    "param_name": "",
+                    "param_desc": "boolean - OBD lock status from the static variable \"OBD_locking_active\" \n TRUE - ODB lock is active FALSE - ODB lock isn't active"
+                }
+            ]
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [
+                {
+                    "test_name": "TEST_Get_OBD_locking_active",
+                    "has_valid_ref": true
+                }
+            ],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": [
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_141",
+                "additional_description": "",
+                "design_decision": false
+            },
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_142",
+                "additional_description": "",
+                "design_decision": false
+            }
+        ]
+    },
+    {
+        "symbol": "boolean OBD_Locking_Start_0x0300_routine - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": "Function to start routine 0x0300. After calling this function OBD Unlocking by routine 0x0300 is handled in cyclic function",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h",
+                "214"
+            ]
+        },
+        "return": {
+            "type": "boolean",
+            "desc": [
+                {
+                    "param_name": "",
+                    "param_desc": "boolean - if obdlocking is active or not."
+                }
+            ]
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [
+                {
+                    "test_name": "TEST_OBD_Locking_Start_0x0300_routine",
+                    "has_valid_ref": true
+                }
+            ],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": [
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_80",
+                "additional_description": "",
+                "design_decision": false
+            },
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_81",
+                "additional_description": "",
+                "design_decision": false
+            },
+            {
+                "req_id": "SWR_ICAS1_L3_CRoute_SWL_IT_79",
+                "additional_description": "",
+                "design_decision": false
+            }
+        ]
+    },
+    {
+        "symbol": "OBDLocking.h - ",
+        "kind": "file",
+        "brief": "Contains the public interfaces of the OBDLocking functionality.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "void TEST_Get_OBD_locking_active - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": null,
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                "94"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": []
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "void TEST_OBD_Locking_Start_0x0300_routine - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": null,
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                "141"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": []
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "void TEST_OBD_locking_update - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": null,
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                "202"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": []
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "void TEST_processRoutine0x0300 - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": null,
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                "258"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": []
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "void TEST_processOBDLocking - (void)",
+        "kind": "function",
+        "brief": "",
+        "detailed": null,
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                "361"
+            ]
+        },
+        "return": {
+            "type": "void",
+            "desc": []
+        },
+        "params": {
+            "def": [
+                {
+                    "param_decl": "",
+                    "param_def": "",
+                    "param_type": "void"
+                }
+            ],
+            "desc": []
+        },
+        "globals": [],
+        "test": {
+            "test_cases": [],
+            "vc_info": [],
+            "code_review": []
+        },
+        "security": [],
+        "trace": []
+    },
+    {
+        "symbol": "ODBLocking.c.test - ",
+        "kind": "file",
+        "brief": "Checks the OBD status, based on which activation of diagnosis request takes place.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking.c.test",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "symbol": "ODBLocking_UT_Stub.h.test - ",
+        "kind": "file",
+        "brief": "Supports SWATT Unit Test files with the mock types.",
+        "meta": {
+            "virtual": false,
+            "const": false,
+            "static": false,
+            "inline": false,
+            "explicit": false,
+            "mutable": false,
+            "location": [
+                "D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/test/swut/ODBLocking_UT_Stub.h.test",
+                1
+            ]
+        },
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "DocumentInformation - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "TermsAndAbbreviations - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "ComponentDescription - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "ExternalInterfacesDependencies - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "InternalComponentDesign - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "Configuration - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "FunctionalSafety - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "ResourcesConsumptionObjectives - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "RationalesandAlternatives - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "VerificationCriteria - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "Traceability - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "md_DesignCoverage - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "md_ExportedDoorsSpecification_0_requirements - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "test - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "satisfy - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    },
+    {
+        "meta": {
+            "location": [
+                "index - Markdown",
+                0
+            ]
+        },
+        "kind": "page",
+        "trace": []
+    }
+]

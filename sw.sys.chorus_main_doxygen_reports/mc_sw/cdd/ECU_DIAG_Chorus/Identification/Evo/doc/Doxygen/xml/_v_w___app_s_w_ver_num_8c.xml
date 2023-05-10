@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_v_w___app_s_w_ver_num_8c" kind="file" language="C++">
+    <compoundname>VW_AppSWVerNum.c</compoundname>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <includes refid="_identification_8h" local="yes">Identification.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <incdepgraph>
+      <node id="443">
+        <label>ConfigUdsIdentifiers.h</label>
+      </node>
+      <node id="440">
+        <label>Identification.h</label>
+        <link refid="_identification_8h"/>
+        <childnode refid="441" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+        <childnode refid="443" relation="include">
+        </childnode>
+        <childnode refid="444" relation="include">
+        </childnode>
+      </node>
+      <node id="441">
+        <label>Identification_gen.h</label>
+      </node>
+      <node id="439">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="445">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="438">
+        <label>VW_AppSWVerNum.c</label>
+        <link refid="_v_w___app_s_w_ver_num_8c"/>
+        <childnode refid="439" relation="include">
+        </childnode>
+        <childnode refid="440" relation="include">
+        </childnode>
+        <childnode refid="445" relation="include">
+        </childnode>
+      </node>
+      <node id="444">
+        <label>typedefs.h</label>
+      </node>
+      <node id="442">
+        <label>RoutingVersion_CfgGen.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_v_w___app_s_w_ver_num_8c_1aab17aa63967a884ef26a8aad82155f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f189_ConditionCheckRead</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DCM_f189_ConditionCheckRead</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0xF189 will give VW Application Software Version Number. We can read DID 0xF189 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- negative response code <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="DCM_f189_ConditionCheckRead.png">DCM_f189_ConditionCheckRead Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_v_w___app_s_w_ver_num_8c_8test_1a2e4fcceba1bce0e763026283cd1f685a" kindref="member">TEST_DCM_f189_ConditionCheckRead</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on OpStatus and Data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000061"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11965 <linebreak/>
+ </para><para>SWR_ICAS1_GW_7942 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_AppSWVerNum.c" line="111" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_AppSWVerNum.c" bodystart="111" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="_v_w___app_s_w_ver_num_8c_1a1c44c20136fb838fb5f4da23faaa2797" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f189_Read</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>DCM_f189_Read</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0xF189 will give VW Application Software Version Number. We can read DID 0xF189 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- 0xF189 data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="DCM_f189_Read.png">DCM_f189_Read Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_v_w___app_s_w_ver_num_8c_8test_1aaecb86fbc2dd58cc295059082073e981" kindref="member">TEST_DCM_f189_Read</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on OpStatus and Data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000062"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11965 <linebreak/>
+ </para><para>SWR_ICAS1_GW_7942 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_AppSWVerNum.c" line="161" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_AppSWVerNum.c" bodystart="161" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_AppSWVerNum.c"/>
+  </compounddef>
+</doxygen>

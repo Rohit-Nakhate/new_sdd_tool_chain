@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>This module implements the generation, storage and transmission of the ZV Signature. <linebreak/>
+ The system &quot;CDL protection light&quot; is a function which implies a &quot;CDL master&quot; and the door ECUs.<linebreak/>
+Relevant messages are provided with a CDL signature that is stored by the door ECUs during the safing process and compared during the unsafing process. <linebreak/>
+The reaction of the door ECU to the reception of the CDL signature differs depending on the state in which the door ECU is and on the CDL request that is transmitted with the message: <linebreak/>
+⦁ If the door ECU is in an unsafed state and a safing command is received, the door ECU is learned with the CDL signature, meaning that the lock will be safed and the CDL signature will be stored in the EEPROM. <linebreak/>
+⦁ If the door ECU is in a safed state and an unsafing command is received, the received CDL signature is compared with the stored CDL signature. If they match, the latch is unsafed.<linebreak/>
+If they do not match, then a locking time within which every unsafing process is rejected is set.<linebreak/>
+<linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

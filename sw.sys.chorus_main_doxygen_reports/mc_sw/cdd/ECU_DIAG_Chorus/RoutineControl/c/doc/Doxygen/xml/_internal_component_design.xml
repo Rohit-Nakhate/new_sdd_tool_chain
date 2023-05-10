@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:</para><para>-GWRoutines_EthDiag - GWRoutines_EthDiag process the start, stop and request result request for Ethernet. <linebreak/>
+-GWRoutines_Util - GWRoutines_Util sets the mode for the Ethernet physical Test. <linebreak/>
+-GWRoutines - GWRoutines process start, stop and request result requests and provides the relevant results. <linebreak/>
+-RoutineControl - RoutineControl provides the status information of the routine which includes, &quot;was routine executed&quot;, &quot;is routine finished&quot;,&quot;is routine running&quot;. <linebreak/>
+ It also used to set the Notification status of the started,stopped,aborted and finished routines. <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>RoutineControl component covers requirement present in the module 5.SWR_ICAS1_BSW and 5.1.1.SWR-L3_CRoute_Diagnostic. The requirements are present in chapter 2.18.7(Routines) of 5.SWR_ICAS1_BSW and chapter 3.4.2.10(RoutineControl) of 5.1.1.SWR-L3_CRoute_Diagnostic.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Routine Control component provides the interfaces which are used by other SW Units.</para><para>RoutineControl SW unit provides the following interfaces which are used by GWRoutines_EthDiag Sw Unit.<linebreak/>
+ -RC_WasRoutineExecuted :Called to check if requested routine was executed.<linebreak/>
+ -RC_IsRoutineRunning: Called to check if requested routine is running.<linebreak/>
+ -RC_StartRoutine: Called to start requested Routine.<linebreak/>
+ -RC_StopRoutine:Called to stop requested Routine.<linebreak/>
+ -RC_AbortRoutine:Called to abort requested Routine.<linebreak/>
+ -RC_GetRoutineInfoByte:Called to get requested Routine result.<linebreak/>
+ -RC_GetRoutineInfoOutReqStatus:Called to get requested Routine result status.<linebreak/>
+</para><para>RoutineControl SW unit provides the following interfaces which are used by GWRoutines Sw Unit.<linebreak/>
+ -RC_GetRoutineInfoOutReqStatus:Called to get requested Routine result status.<linebreak/>
+ -RC_GetRoutineInfoByte:Called to get requested Routine result.<linebreak/>
+ -RC_AbortRoutine:Called to abort requested Routine.<linebreak/>
+ -RC_FinishRoutine::Called to finish the current Routine.<linebreak/>
+ -RC_StopRoutine:Called to stop requested Routine.<linebreak/>
+ -RC_StartRoutine: Called to start requested Routine.<linebreak/>
+ -RC_IsRoutineRunning: Called to check if requested routine is running.<linebreak/>
+ -RC_WasRoutineExecuted:Called to check if requested routine was executed.<linebreak/>
+</para><para>GWRoutines SW unit provides the following interfaces which are used by RoutineControl Sw Unit.<linebreak/>
+ -GW_Routine_0xC00E_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x057F_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x057E_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x05EB_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x05E4_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x05E3_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x0300_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x0580_Abort:Called to abort the requested routine.<linebreak/>
+ -GW_Routine_0x03E7_Abort:Called to abort the requested routine.<linebreak/>
+ Detailed description of the interfaces can be found on the function level and in the SWA.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>In RoutineControl component the Interfaces are triggered by the Call backs from the DCM module when the service request is received. You can find more detailed description of each interaction below. <linebreak/>
+ <heading level="2">Start Ethernet Diag Routine</heading>
+</para><para>This interaction take place when start diag ethernet routine event(GW_Routine_0x068F_Start) is triggered from DCM callback.</para><para><image type="html" name="Software_Unit_Interaction_Ethernent_Diag_Start_Routine.png"></image>
+ </para><para><heading level="2">Stop Ethernet Diag Routine</heading>
+</para><para>This interaction take place when stop diag ethernet routine event(GW_Routine_0x068F_Stop) is triggered from DCM callback. <image type="html" name="Software_Unit_Interaction_Ethernent_Diag_Stop_Routine.png"></image>
+ </para><para><heading level="2">Ethernet Diag RequestResult Extended</heading>
+</para><para>This interaction take place when ethernet diag routine request result event is triggered(GW_Routine_EthDiag_RequestResultExtended). <image type="html" name="Software_Unit_Interaction_GW_Routine_EthDiag_RequestResultExtended.png"></image>
+ </para><para><heading level="2">Ethernet Diag Request result Normal</heading>
+</para><para>This interaction take place when ethernet diag routine request result event is triggered(GW_Routine_EthDiag_RequestResultNormal). <image type="html" name="Software_Unit_Interaction_GW_Routine_EthDiag_RequestResultNormal.png"></image>
+ </para><para><heading level="2">Abort Routine</heading>
+</para><para>This interaction take place when ethernet diag routine abort event is triggered(GW_Routine_EthDiag_Abort). <image type="html" name="Software_Unit_Interaction_GW_Routine_EthDiag_Abort.png"></image>
+ </para><para><heading level="2">Start Routine</heading>
+</para><para>This interaction take place when start event is triggered(GW_Routine_0x03E7_Start). <image type="html" name="Software_Unit_Interaction_GW_Routine_EthDiag_Abort.png"></image>
+ </para><para><heading level="2">Stop Routine</heading>
+</para><para>This interaction take place when stop event is triggered(GW_Routine_0x03E7_Stop). <image type="html" name="Software_Unit_Interaction_GW_Routine_0x03E7_Stop.png"></image>
+ </para><para><heading level="2">Request Result</heading>
+</para><para>This interaction take place when request routine result event is triggered(GW_Routine_0x03E7_RequestResult). <image type="html" name="Software_Unit_Interaction_GW_Routine_0x03E7_RequestResult.png"></image>
+ </para><para><heading level="2">Abort Routine</heading>
+</para><para>This interaction take place when abort routine request event is triggered(GW_Routine_0x03E7_Abort). <image type="html" name="Software_Unit_Interaction_GW_Routine_EthDiag_Abort.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><heading level="2">Tasks</heading>
+</para><para>The interfaces in the component RoutineControl are called by DCM callbacks when the diagnostic routine request is made. Refer following path in Enterprise Architect for more details: VW_ICAS1.Chorus_6M.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.RoutineControl.Dynamic Behaviour. <heading level="2">Interrupts</heading>
+</para><para>There are no interrupts directly handled by RoutineControl. <heading level="2">Events</heading>
+</para><para>Some of the Routine operations are performed based on the following Events,<linebreak/>
+-Session change to Default.<linebreak/>
+-KL15 state change from ON to OFF.<linebreak/>
+-KL15 state change from OFF to ON.<linebreak/>
+ <heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The Error Handling is explained in Software Unit Interaction diagram.</para><para><heading level="2">Synchronization</heading>
+</para><para>Not applicable.</para><para><heading level="2">Operations</heading>
+</para><para>See the Software Unit Interaction section.</para><para>\</para><para><heading level="2">Macros</heading>
+</para><para>See the macro list.</para><para><heading level="2">Data Structures</heading>
+</para><para>See the structure list.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>The subcomponent has defined interfaces that can be easy accessed from different modules. The design of this subcomponent was created with testablity in mind. Proposed solutions can be tested by unit tests with 100% MC/DC coverage. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

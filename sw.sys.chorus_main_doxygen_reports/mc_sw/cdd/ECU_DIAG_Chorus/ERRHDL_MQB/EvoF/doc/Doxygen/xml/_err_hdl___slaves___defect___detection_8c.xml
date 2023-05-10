@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___slaves___defect___detection_8c" kind="file" language="C++">
+    <compoundname>ErrHdl_Slaves_Defect_Detection.c</compoundname>
+    <includes refid="_err_hdl___slaves___defect___detection_8h" local="yes">ErrHdl_Slaves_Defect_Detection.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes refid="_err_hdl___d_e_m___interface_8h" local="yes">ErrHdl_DEM_Interface.h</includes>
+    <includes local="yes">ErrHdl_Types.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_err_hdl___if_8h" local="yes">ErrHdl_If.h</includes>
+    <includes local="yes">Rte_ERRHDL_MQB.h</includes>
+    <incdepgraph>
+      <node id="653">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="651">
+        <label>ErrHdl_Slaves_Defect_Detection.c</label>
+        <link refid="_err_hdl___slaves___defect___detection_8c"/>
+        <childnode refid="652" relation="include">
+        </childnode>
+        <childnode refid="653" relation="include">
+        </childnode>
+        <childnode refid="654" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="660" relation="include">
+        </childnode>
+        <childnode refid="662" relation="include">
+        </childnode>
+      </node>
+      <node id="658">
+        <label>ErrHdl_Types.h</label>
+      </node>
+      <node id="662">
+        <label>Rte_ERRHDL_MQB.h</label>
+      </node>
+      <node id="655">
+        <label>BusMonitor.h</label>
+      </node>
+      <node id="659">
+        <label>Rte.h</label>
+      </node>
+      <node id="661">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="660">
+        <label>ErrHdl_If.h</label>
+        <link refid="_err_hdl___if_8h"/>
+        <childnode refid="653" relation="include">
+        </childnode>
+        <childnode refid="655" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+      </node>
+      <node id="657">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="654">
+        <label>ErrHdl_DEM_Interface.h</label>
+        <link refid="_err_hdl___d_e_m___interface_8h"/>
+        <childnode refid="653" relation="include">
+        </childnode>
+        <childnode refid="655" relation="include">
+        </childnode>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+      </node>
+      <node id="656">
+        <label>Dem_Types.h</label>
+      </node>
+      <node id="652">
+        <label>ErrHdl_Slaves_Defect_Detection.h</label>
+        <link refid="_err_hdl___slaves___defect___detection_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_err_hdl___slaves___defect___detection_8c_1ae6d03ed41b33b4ba6f2f8cbc7c00e809" prot="public" static="no">
+        <type>Std_ReturnType</type>
+        <definition>typedef Std_ReturnType fErrHdl_u8_parm(uint8 *recvSignal)</definition>
+        <argsstring>(uint8 *recvSignal)</argsstring>
+        <name>fErrHdl_u8_parm</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Pointer on function used as a function argument. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="61" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1acdda1c8c981dbb3ad291e977b83c95a1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrSlavesCheckSignal</definition>
+        <argsstring>(const Dem_EventIdType EventNumber, fErrHdl_u8_parm *pfRte_Interface, const uint8 SetValue)</argsstring>
+        <name>ErrSlavesCheckSignal</name>
+        <param>
+          <type>const Dem_EventIdType</type>
+          <declname>EventNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="_err_hdl___slaves___defect___detection_8c_1ae6d03ed41b33b4ba6f2f8cbc7c00e809" kindref="member">fErrHdl_u8_parm</ref> *</type>
+          <declname>pfRte_Interface</declname>
+        </param>
+        <param>
+          <type>const uint8</type>
+          <declname>SetValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks value obtained from RTE interface and sets proper DTC event state only when Bus off/Electrical failure, global timeout and node timeout not occurred. If received signal value is equals to treshold value, DTC is set to active.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, called to set slave DTC} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dem_EventIdType EventNumber - Id of DTC event whose state is to be set. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fErrHdl_bool_parm* pfRte_Interface - Pointer to function of RTE interface used to read signal value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8 SetValue - Value for which we should set a DTC.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrSlavesCheckSignal.png">Activity Diagram of function ErrSlavesCheckSignal </image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>check if RTE doesnt point to NULL pointer</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1aba7bd8c26a353ec57224e8f1d31d0f37" kindref="member">TEST_ErrSlavesCheckSignal</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000096"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18369 </para><para>SWR_ICAS1_GW_18372 </para><para>SWR_ICAS1_GW_18374 </para><para>SWR_ICAS1_GW_18375 </para><para>SWR_ICAS1_GW_18377 </para><para>SWR_ICAS1_GW_18378 </para><para>SWR_ICAS1_GW_18380 </para><para>SWR_ICAS1_GW_18384 </para><para>SWR_ICAS1_GW_18382 </para><para>SWR_ICAS1_GW_18385 </para><para>SWR_ICAS1_GW_3431 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="455" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a3c993f2e109b6f39e1da898aa5dd3d9b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveEMHLRHandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveEMHLRHandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles EMHLR signals.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveEMHLRHandleDemEvents.png">Activity Diagram of function ErrLinSlaveEMHLRHandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1ab34a569680f88a142969bd615cdced6e" kindref="member">TEST_ErrLinSlaveEMHLRHandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000097"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10295 </para><para>SWR_ICAS1_GW_10297. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="156" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="495" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1aec65ce77429efb862645ec2690293f23" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveMFLHandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveMFLHandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function set DTC of MFL Lin signals based on the signal value.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a69a280a8dfb757c98645d09a886fc8a4" kindref="member">ErrMFLhandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveMFLHandleDemEvents.png">Activity Diagram of function ErrLinSlaveMFLHandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1af871d9ad35e451c48b0fdd4b423f2f78" kindref="member">TEST_ErrLinSlaveMFLHandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000098"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10289 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="193" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="519" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a55596250b255ff62a657f472906ac413" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveKLRHandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveKLRHandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function set DTC of KLR signals based on the signal value.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveKLRHandleDemEvents.png">Activity Diagram of function ErrLinSlaveKLRHandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1a6bea70d5d441a9336ab3f2950e583258" kindref="member">TEST_ErrLinSlaveKLRHandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000099"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18361 </para><para>SWR_ICAS1_GW_18362. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="231" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="546" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a621ee9c382f697aa822f422e1a03c744" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveVIPHandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveVIPHandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function set DTC of VIP signals based on the signals.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveVIPHandleDemEvents.png">Activity Diagram of function ErrLinSlaveVIPHandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1a62f7cc44bf3eb69604681b3ee43616dd" kindref="member">TEST_ErrLinSlaveVIPHandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000100"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10289 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="268" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="555" bodyend="581"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a757814f12cecfff42980231444cb2ac3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveVIP_HFS_HandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveVIP_HFS_HandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Based on the slave input we get from RTE related to VIP HFS node we are setting the corresponding DTC.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveVIP_HFS_HandleDemEvents.png">Activity Diagram of function ErrLinSlaveVIP_HFS_HandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TB <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000101"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_23189 </para><para>SWR_ICAS1_GW_23190 </para><para>SWR_ICAS1_GW_23191 </para><para>SWR_ICAS1_GW_23192 </para><para>SWR_ICAS1_GW_23193 </para><para>SWR_ICAS1_GW_23194 </para><para>SWR_ICAS1_GW_23195 </para><para>SWR_ICAS1_GW_23196 </para><para>SWR_ICAS1_GW_23197 </para><para>SWR_ICAS1_GW_23198 </para><para>SWR_ICAS1_GW_23199 </para><para>SWR_ICAS1_GW_23200 </para><para>SWR_ICAS1_GW_23201 </para><para>SWR_ICAS1_GW_23202 </para><para>SWR_ICAS1_GW_23203 </para><para>SWR_ICAS1_GW_23204 </para><para>SWR_ICAS1_GW_23205 </para><para>SWR_ICAS1_GW_23230 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="322" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="582" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1aa177b233ea546ee95a771e39d4350b24" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrLinSlaveVIP_HBFS_HandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlaveVIP_HBFS_HandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Based on the slave input we get from RTE related to VIP HBFS node we are setting the corresponding DTC.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlaveVIP_HBFS_HandleDemEvents.png">Activity Diagram of function ErrLinSlaveVIP_HBFS_HandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TB <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000102"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_23236 </para><para>SWR_ICAS1_GW_23237 </para><para>SWR_ICAS1_GW_23238 </para><para>SWR_ICAS1_GW_23239 </para><para>SWR_ICAS1_GW_23240 </para><para>SWR_ICAS1_GW_23241 </para><para>SWR_ICAS1_GW_23242 </para><para>SWR_ICAS1_GW_23243 </para><para>SWR_ICAS1_GW_23244 </para><para>SWR_ICAS1_GW_23245 </para><para>SWR_ICAS1_GW_23246 </para><para>SWR_ICAS1_GW_23247 </para><para>SWR_ICAS1_GW_23248 </para><para>SWR_ICAS1_GW_23249 </para><para>SWR_ICAS1_GW_23250 </para><para>SWR_ICAS1_GW_23251 </para><para>SWR_ICAS1_GW_23252 </para><para>SWR_ICAS1_GW_23253 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="376" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="610" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a3d808d0df08386739efd675e7d3d1d2b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrCanSlaveMFLhandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrCanSlaveMFLhandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function set DTC of CAN signals based on the signals.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a69a280a8dfb757c98645d09a886fc8a4" kindref="member">ErrMFLhandleDemEvents</ref> } thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCanSlaveMFLhandleDemEvents.png">Activity Diagram of function ErrCanSlaveMFLhandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1adf2ca03d2e6546a86c7ee6c99aec12d1" kindref="member">TEST_ErrCanSlaveMFLhandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000103"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10092 </para><para>SWR_ICAS1_GW_10093. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="414" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="532" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a69a280a8dfb757c98645d09a886fc8a4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrMFLhandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrMFLhandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the MFL is connected to LIN or CAN. And then checks the signal based on LIN or CAN.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" kindref="member">ErrLinSlavesHandleDemEvents</ref> }<linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrMFLhandleDemEvents.png">Activity Diagram of function ErrMFLhandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1a2fc84df5cefdcb66bc673de0cf9169eb" kindref="member">TEST_ErrMFLhandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which Handles the MFL DEM events, based on MFL is configured on LIN or CAN. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="452" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="654" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___slaves___defect___detection_8c_1a720778093eb6b3c26bd5e9c5f46033d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrLinSlavesHandleDemEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrLinSlavesHandleDemEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks whether adaptation 061a is now being processed. When condition is met, DTC will be handled.</para><para>reentrant No <linebreak/>
+ context {isr, ErrHandlerTask - called cyclically every 10ms} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrLinSlavesHandleDemEvents.png">Activity Diagram of function ErrLinSlavesHandleDemEvents </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___slaves___defect___detection_8c_8test_1ae0a0d89c322a149c24f0d1648d1085f7" kindref="member">TEST_ErrLinSlavesHandleDemEvents</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000056"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10294. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" line="480" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c" bodystart="480" bodyend="493"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>$Source: <ref refid="_err_hdl___slaves___defect___detection_8c" kindref="compound">ErrHdl_Slaves_Defect_Detection.c</ref> </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Revision</title><para>7 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>UIF56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/17/2023 </para></simplesect>
+Error Handler - Handales DTC of DK2 slaves. <simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Slaves_Defect_Detection.c"/>
+  </compounddef>
+</doxygen>

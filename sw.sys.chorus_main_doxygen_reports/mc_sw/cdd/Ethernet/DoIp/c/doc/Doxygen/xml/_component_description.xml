@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The DoIP functionality has been realized to implement the DoIP ISO protocol ISO 13400-2:2012 and the VW DoIP specific supplement LAH.DUM.907.AQ v2.6, required for diagnostic routing with DoIP_Edge. <linebreak/>
+ The main diagnostic routing paths handled by DoIP component are: <itemizedlist>
+<listitem>
+<para><bold>DoIP &lt;-&gt; CAN </bold> <emphasis> - route the diagnostic messages to corresponding CAN target (except AFS_CAN bus) </emphasis> </para></listitem>
+<listitem>
+<para><bold>DoIP &lt;-&gt; LIN </bold> <emphasis> - route the diagnostic messages to corresponding LIN target </emphasis> </para></listitem>
+<listitem>
+<para><bold>DoIP &lt;-&gt; DCM </bold> <emphasis> - route the diagnostic messages to internal DCM instance </emphasis> </para></listitem>
+</itemizedlist>
+</para><para><image type="html" name="DoIP_ComponentDescription.png">DoIP component description</image>
+</para><para><blockquote><para>Note: Even if the MFL_CAN bus is physically connected to RCar, the diagnostic routing to this bus is performed by the DoIP component of Chorus because some ECUs of DK2/DK2F could be connected on this bus, and diagnostic routing to this type of ECUs is implemented only in Chorus side.</para></blockquote></para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

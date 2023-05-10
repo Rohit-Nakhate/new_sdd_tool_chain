@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_code_generation" kind="page">
+    <compoundname>CodeGeneration</compoundname>
+    <title>Code Generation - HAL_GEN</title>
+    <tableofcontents/>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="2">HAL_GEN general</heading>
+</para><para>The HAL_GEN tool uses the Port.xdm and Adc.xdm files to generate code.</para><para>The items to be generated need to be specified in <bold>hal_cfg.xml</bold> files.</para><para><heading level="2">HAL_GEN config</heading>
+</para><para>The <bold>hal_cfg.xml</bold> configuration file contains:</para><para><itemizedlist>
+<listitem><para>CAN mappings to ports from Port.xdm and ADC channels from Adc.xdm</para></listitem><listitem><para>LIN mappings to ports from Port.xdm</para></listitem><listitem><para>GPIO pins mappings to Port.xdm</para></listitem><listitem><para>Wakeup reasons mappings to Port.xdm</para></listitem><listitem><para>mapping of ADC channels from ADC.xdm</para></listitem></itemizedlist>
+</para><para><blockquote><para>There can be multiple mappins for the same item.<linebreak/>
+All the map elements will be used to search in the *.xdm files.<linebreak/>
+The first map will be used a name for generated files.<linebreak/>
+The CAN and LIN channels need to have the same mapping as in the enum TComChannel from ConfigChannels.h. </para></blockquote></para><para><heading level="2">HAL_GEN code generation</heading>
+</para><para>Use the <bold>HAL_GEN CMake target</bold> to generate the code.</para><para><heading level="2">HAL_GEN diagram</heading>
+</para><para><image type="html" name="HAL_GEN.png">HAL GEN diagram</image>
+ </para><para><heading level="2">HAL_GEN scripts</heading>
+</para><para>The HAL_GEN tool used <bold>XQyery</bold> scripts to filter *.xml files and generate source code.</para><para>For more information and tutorials see:</para><para><itemizedlist>
+<listitem><para><ulink url="https://www.w3schools.com/xml/xquery_intro.asp">XQuery tutorial</ulink></para></listitem><listitem><para><ulink url="https://www.w3.org/TR/2010/REC-xquery-20101214/#id-flwor-expressions">XQuery reference</ulink> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

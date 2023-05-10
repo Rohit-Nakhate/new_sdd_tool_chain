@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" kind="file" language="C++">
+    <compoundname>CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a0bc4bd58c15509b4f57c8da59e06a5ea" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TFiFoMC *</type>
+        <definition>static TFiFoMC* getFifoAdr_SWATT</definition>
+        <argsstring>(volatile TFiFoMC *Ptr)</argsstring>
+        <name>getFifoAdr_SWATT</name>
+        <param>
+          <type>volatile TFiFoMC *</type>
+          <declname>Ptr</declname>
+        </param>
+        <briefdescription>
+<para>this inline function encapsulates the getting of a TFiFoMC from a volatile TFiFoMC* </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TFiFoMC* </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="275" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="275" bodyend="283"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1af3c90cb331953f1a19629f36f29c0333" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="467" endline="518">TEST_Init_SomeIP_Fifos_0001</referencedby>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a693b60f374d3331e3567bc80dcd32488" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="583" endline="649">TEST_Process_SomeIpTxReqCore1_0003</referencedby>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a42964d2626704c71a967e233f8dd81de" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="715" endline="782">TEST_Process_SomeIpTxReqCore0_0005</referencedby>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1afda1007e90227bfb768e4dbfe401a093" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="794" endline="1057">TEST_SoAd_IfTransmit_Wrapper_0006</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a80175766714a8b182ffe2fc20107602a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean FiFoMCGet_Core1_Mock_Wrapper</definition>
+        <argsstring>(TFiFoMC *pFiFoMC, void *pElemData)</argsstring>
+        <name>FiFoMCGet_Core1_Mock_Wrapper</name>
+        <param>
+          <type>TFiFoMC *</type>
+          <declname>pFiFoMC</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pElemData</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for FiFoMCGet. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>Update elements of pElemData with values .SoAdPduId = 0Xffff, .SduLength = 0Xffff, .MessagePayload = {0xff} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SomeIp_TxPdu_Reduced</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><emphasis>pElemData [out] TFiFoMC</emphasis>:: pFiFoMC </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="299" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="299" bodyend="311"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a693b60f374d3331e3567bc80dcd32488" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="587" endline="654">TEST_Process_SomeIpTxReqCore1_0003</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1ac23feb95b581a1a2416c1cf6da365f29" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType SoAd_IfTransmit_Core1_Mock_Wrapper</definition>
+        <argsstring>(PduIdType SoAdSrcPduId, const PduInfoType *SoAdSrcPduInfoPtr)</argsstring>
+        <name>SoAd_IfTransmit_Core1_Mock_Wrapper</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>SoAdSrcPduId</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>SoAdSrcPduInfoPtr</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for SoAd_IfTransmit. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used to check values of elements in parameter SoAdSrcPduInfoPtr <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">PduIdType</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SoAdSrcPduId [in] PduInfoType*:: SoAdSrcPduInfoPtr </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="326" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="326" bodyend="336"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a693b60f374d3331e3567bc80dcd32488" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="587" endline="654">TEST_Process_SomeIpTxReqCore1_0003</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a22208a648c5966fad5d82371d3ceb521" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType SoAd_IfTransmit_Core0_Mock_Wrapper</definition>
+        <argsstring>(PduIdType SoAdSrcPduId, const PduInfoType *SoAdSrcPduInfoPtr)</argsstring>
+        <name>SoAd_IfTransmit_Core0_Mock_Wrapper</name>
+        <param>
+          <type>PduIdType</type>
+          <declname>SoAdSrcPduId</declname>
+        </param>
+        <param>
+          <type>const PduInfoType *</type>
+          <declname>SoAdSrcPduInfoPtr</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for SoAd_IfTransmit. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used to check values of elements in parameter SoAdSrcPduInfoPtr <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">PduIdType</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SoAdSrcPduId [in] PduInfoType*:: SoAdSrcPduInfoPtr </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="351" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="351" bodyend="362"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a42964d2626704c71a967e233f8dd81de" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="720" endline="788">TEST_Process_SomeIpTxReqCore0_0005</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1ae5aa94bea82fed996de9b49faabac16d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean FiFoMCGet_Core0_Mock_Wrapper</definition>
+        <argsstring>(TFiFoMC *pFiFoMC, void *pElemData)</argsstring>
+        <name>FiFoMCGet_Core0_Mock_Wrapper</name>
+        <param>
+          <type>TFiFoMC *</type>
+          <declname>pFiFoMC</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pElemData</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for FiFoMCGet. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>Update elements of pElemData with values .SoAdPduId = 0Xffff, .SduLength = 0Xffff, .MessagePayload = {0xff} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SomeIp_TxPdu</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><emphasis>pElemData [out] TFiFoMC</emphasis>:: pFiFoMC </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="379" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="379" bodyend="391"/>
+        <references refid="serializing__util_8h_1a2e9ebd0ff5918145276ffd82d2b13b47" compoundref="serializing__util_8h" startline="491">SOMEIP_HEADER_SIZE</references>
+        <references refid="serializing__util_8h_1a6b20d41d6252e9871430c242cb1a56e7" compoundref="serializing__util_8h" startline="492">BUFFER_SIZE</references>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a42964d2626704c71a967e233f8dd81de" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="720" endline="788">TEST_Process_SomeIpTxReqCore0_0005</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a876cc722822d9590b7b3148b4b4c5a87" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean FiFoMCPut_Core1_Wrapper</definition>
+        <argsstring>(TFiFoMC *pFiFoMC, void *pElemData)</argsstring>
+        <name>FiFoMCPut_Core1_Wrapper</name>
+        <param>
+          <type>TFiFoMC *</type>
+          <declname>pFiFoMC</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pElemData</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for FiFoMCPut. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used to check values of elements in parameter pElemData <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TFiFoMC</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pFiFoMC [in] void*:: pElemData </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="406" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="406" bodyend="421"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1afda1007e90227bfb768e4dbfe401a093" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="801" endline="1033">TEST_SoAd_IfTransmit_Wrapper_0006</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1abaec0ffc3a8cf5a76ff5c70ef040ac58" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean FiFoMCPut_Core0_Wrapper</definition>
+        <argsstring>(TFiFoMC *pFiFoMC, void *pElemData)</argsstring>
+        <name>FiFoMCPut_Core0_Wrapper</name>
+        <param>
+          <type>TFiFoMC *</type>
+          <declname>pFiFoMC</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pElemData</declname>
+        </param>
+        <briefdescription>
+<para>Helper function that wraps the mock function for FiFoMCPut. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used to check values of elements in parameter pElemData <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">TFiFoMC</parametername>
+<parametername direction="in">:</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pFiFoMC [in] void*:: pElemData </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="436" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="436" bodyend="451"/>
+        <referencedby refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1afda1007e90227bfb768e4dbfe401a093" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="801" endline="1033">TEST_SoAd_IfTransmit_Wrapper_0006</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1af3c90cb331953f1a19629f36f29c0333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_Init_SomeIP_Fifos_0001</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_Init_SomeIP_Fifos_0001</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000087"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a136df112b2c41610366a7b7bf517cf3c" kindref="member">Init_SomeIP_Fifos</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>SomeIp_TxFifo_Core0, SomeIp_TxFifo_Core1_Reduced, SomeIp_FifoBufferCore1_Backup, SomeIp_FifoBufferCore1_Reduced and SomeIp_FifoBufferCore0 are globals</para></listitem><listitem><para>Mock functions FiFoMCInit() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+<orderedlist>
+<listitem><para>Check that FiFoMCInit() called to initilaize buffers SomeIp_FifoBufferCore1_Backup, SomeIp_FifoBufferCore0 and SomeIp_FifoBufferCore1_Reduced<linebreak/>
+</para></listitem></orderedlist>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="468" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="468" bodyend="520"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a0bc4bd58c15509b4f57c8da59e06a5ea" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="275" endline="283">getFifoAdr_SWATT</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1adb34011a507b9bee388a7319b44afb8c" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="121">SomeIp_TxFifo_Core0</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a39c014177848576810f4c87bc734f308" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="117">SomeIp_FifoBufferCore0</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a28a6bac25a8c1b554fe352d88062ab85" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="90">SomeIp_FIfoCore0Size</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a9834162f2df5d76c53cb02696df0b9de" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="120">SomeIp_TxFifo_Core1_Reduced</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1abbb93c3b6e486e90d2d35d0b82045c37" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="113">SomeIp_FifoBufferCore1_Reduced</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a2ccd5e6ddd2dcc190d9d4577ed69f2c3" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="89">SomeIp_FIfoCore1ReducedSize</references>
+        <references refid="_cross_core___some_ip___tx_req_8h_1a136df112b2c41610366a7b7bf517cf3c" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="162" endline="167">Init_SomeIP_Fifos</references>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1aca4956002605cf4bb1114d90e460596a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_OS_ISR_SomeIpTxReqCore1_0002</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_OS_ISR_SomeIpTxReqCore1_0002</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000088"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a58356f1c76429845e9c1f8218493fa89" kindref="member">OS_ISR_SomeIpTxReqCore1</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>INTC_1 is gloabl of type INTC_tag, EthTask has value 2u, and Ev_SomeIpTxReqCore1 has value 0x0080u</para></listitem><listitem><para>Mock function SetEvent() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+<orderedlist>
+<listitem><para>Check that the correct bit in INTC_1 is set<linebreak/>
+</para></listitem><listitem><para>Check that the event Ev_SomeIpTxReqCore1 on Ethernet Task is set<linebreak/>
+</para></listitem></orderedlist>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="536" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="536" bodyend="573"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a58356f1c76429845e9c1f8218493fa89" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="208" endline="218">OS_ISR_SomeIpTxReqCore1</references>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a693b60f374d3331e3567bc80dcd32488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_Process_SomeIpTxReqCore1_0003</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_Process_SomeIpTxReqCore1_0003</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000089"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a573df02670dc928fb979584b9e5a90f2" kindref="member">Process_SomeIpTxReqCore1</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>SomeIp_TxFifo_Core1_Reduced is a global varaible. cc_someip_TxReq_debug is gloal intialized with zeros</para></listitem><listitem><para>Mock functions SoAd_IfTransmit(), FiFoMCGet() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+ Check that ehternet messeges are transmitted from core 1 to core 2<linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="587" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="587" bodyend="654"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a9834162f2df5d76c53cb02696df0b9de" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="120">SomeIp_TxFifo_Core1_Reduced</references>
+        <references refid="_cross_core___some_ip___tx_req_8h_1a573df02670dc928fb979584b9e5a90f2" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="262" endline="279">Process_SomeIpTxReqCore1</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a80175766714a8b182ffe2fc20107602a" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="299" endline="311">FiFoMCGet_Core1_Mock_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a0bc4bd58c15509b4f57c8da59e06a5ea" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="275" endline="283">getFifoAdr_SWATT</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1ac23feb95b581a1a2416c1cf6da365f29" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="326" endline="336">SoAd_IfTransmit_Core1_Mock_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1aff29bff54ee8ea9351464e18f4c5c5f1" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="87">cc_someip_TxReq_debug</references>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a7f3d8f25909d54f49e75bc2e7a787a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_OS_ISR_SomeIpTxReqCore0_0004</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_OS_ISR_SomeIpTxReqCore0_0004</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000090"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a6e06274c9cd84ddcfce28c5687ee49a5" kindref="member">OS_ISR_SomeIpTxReqCore0</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>INTC_1 is gloabl of type INTC_tag, EthTask has value 2u, and Ev_SomeIpTxReqCore0 has value 0x0040u</para></listitem><listitem><para>Mock fucntion SetEvent() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+<orderedlist>
+<listitem><para>Check that the correct bit in INTC_1 is set<linebreak/>
+</para></listitem><listitem><para>Check that the event Ev_SomeIpTxReqCore0 on Ethernet Task is set<linebreak/>
+</para></listitem></orderedlist>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="669" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="669" bodyend="705"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a6e06274c9cd84ddcfce28c5687ee49a5" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="317" endline="327">OS_ISR_SomeIpTxReqCore0</references>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a42964d2626704c71a967e233f8dd81de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_Process_SomeIpTxReqCore0_0005</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_Process_SomeIpTxReqCore0_0005</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000091"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1afc370e37b0aa9827f479fd0245f49f05" kindref="member">Process_SomeIpTxReqCore0</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>SomeIp_TxFifo_Core0 is a global varaible. cc_someip_TxReq_debug is gloal intialized with zeros</para></listitem><listitem><para>Mock fucntion FiFoMCGet(), SoAd_IfTransmit() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+ Check that ehternet messeges are transmitted from core 0 to core 2<linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="720" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="720" bodyend="788"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1adb34011a507b9bee388a7319b44afb8c" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="121">SomeIp_TxFifo_Core0</references>
+        <references refid="_cross_core___some_ip___tx_req_8h_1afc370e37b0aa9827f479fd0245f49f05" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="370" endline="387">Process_SomeIpTxReqCore0</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1ae5aa94bea82fed996de9b49faabac16d" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="379" endline="391">FiFoMCGet_Core0_Mock_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a0bc4bd58c15509b4f57c8da59e06a5ea" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="275" endline="283">getFifoAdr_SWATT</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a22208a648c5966fad5d82371d3ceb521" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="351" endline="362">SoAd_IfTransmit_Core0_Mock_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1aff29bff54ee8ea9351464e18f4c5c5f1" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="87">cc_someip_TxReq_debug</references>
+      </memberdef>
+      <memberdef kind="function" id="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1afda1007e90227bfb768e4dbfe401a093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_SoAd_IfTransmit_Wrapper_0006</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_SoAd_IfTransmit_Wrapper_0006</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000092"><xreftitle>Test</xreftitle><xrefdescription><para>Unit test verifies: <ref refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a2f47c99c78c70bf5e62fa119771b1c09" kindref="member">SoAd_IfTransmit_Wrapper</ref> </para></xrefdescription></xrefsect><simplesect kind="pre"><para><orderedlist>
+<listitem><para>Define an auxiliaray array aux_MessagePayload[5] as unit8 and initilaized with 0xff. SomeIp_TxFifo_Core1_Reduced, cc_someip_TxReq_debug and INTC_1 are globals</para></listitem><listitem><para>Mock functions OS_GetMyCoreId(), SuspendAllInterrupts(), ResumeAllInterrupts(), and FiFoMCPut() </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="post"><para><itemizedlist>
+<listitem><para>N/A </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Description</title><para><itemizedlist>
+<listitem><para>Link to Jenkins build, which contains the SWATT Documentation: ( <ulink url="https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/">https://icas1-ci.conti.de/job/VW_MEB_19_ICAS1_CHORUS_DEV_CONAN_SWATT/</ulink> ) <linebreak/>
+ test types: decision testing<linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" line="801" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test" bodystart="801" bodyend="1033"/>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a876cc722822d9590b7b3148b4b4c5a87" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="406" endline="421">FiFoMCPut_Core1_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1a0bc4bd58c15509b4f57c8da59e06a5ea" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="275" endline="283">getFifoAdr_SWATT</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1a9834162f2df5d76c53cb02696df0b9de" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="120">SomeIp_TxFifo_Core1_Reduced</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test_1abaec0ffc3a8cf5a76ff5c70ef040ac58" compoundref="_cross_core___s_o_m_e_i_p___tx_req__variant___n_o___f_i_f_o___f_u_l_l___t_e_s_t_i_n_g_8c_8test" startline="436" endline="451">FiFoMCPut_Core0_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1adb34011a507b9bee388a7319b44afb8c" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="121">SomeIp_TxFifo_Core0</references>
+        <references refid="_cross_core___some_ip___tx_req_8h_1a2f47c99c78c70bf5e62fa119771b1c09" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="392" endline="462">SoAd_IfTransmit_Wrapper</references>
+        <references refid="_cross_core___s_o_m_e_i_p___tx_req_8c_1aff29bff54ee8ea9351464e18f4c5c5f1" compoundref="_cross_core___s_o_m_e_i_p___tx_req_8c" startline="87">cc_someip_TxReq_debug</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/test/swut/CrossCore_SOMEIP_TxReq_variant_NO_FIFO_FULL_TESTING.c.test"/>
+  </compounddef>
+</doxygen>

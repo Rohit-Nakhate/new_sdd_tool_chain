@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is split into the following SW units: <linebreak/>
+<itemizedlist>
+<listitem><para><bold>SoMgr</bold> - implements the main interfaces which interact with TCP/IP.</para></listitem><listitem><para><bold>SoMgr_Cbk</bold> - contains the callbacks from TCP/IP stack.</para></listitem><listitem><para><bold>SoMgr_Def</bold> - contains the definition and default settings of the sockets provided by SoMgr functionality <linebreak/>
+ <image type="html" name="SoMgr_Chorus_UnitComposition.png">Socket Manager decomposition</image>
+</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The SW requirements are defined in chapter <bold>2.17.2 - Socket Manager</bold> from <bold>SWR_ICAS1_BSW</bold>. All the software requirements assigned to Socket Manager are satisfied by mentioned subcomponents. The software requirements can be traced on function level and it does not have any non functional requiremets.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The interfaces used internally between the SW units of this SW component are described in the following diagram: <image type="html" name="SoMgr_InternalSoftwareUnitInterfaces.png">Component internal SW unit internal interaction and interfaces</image>
+</para><para>The interaction btw the Socket Manager unit and external components from Chorus is described in the next diagram: <image type="html" name="SoMgr_ExternalSoftwareUnitInterfaces.png">SocketManager SW unit external interaction and interfaces</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The software unit interaction is mentioned in the above diagram where is described the interaction of the SW units within the component and also the interaction of each SW unit with external components.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The behavior of the initialization function, <ref refid="_so_mgr_8h_1a128c74720b5b926ee850db9abe41c6d2" kindref="member">SoMgr_Init</ref> , is: <image type="html" name="seq_diagram_SoMgr_Init.png">Dynamic Behavior for SoMgr_Init </image>
+</para><para>Each socket has a state machine, described below: <image type="html" name="act_diagram_SocketStateMachine.png">Socket State machine</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.</para><para><image type="html" name="data_flow_Doip_Req_sock_connection.png">DoIP Request data flow for a socket connection</image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="data_flow_DoIP_resp_sock_connection.png">DoIP Response data flow for a socket connection</image>
+</para><para><heading level="2">Tasks</heading>
+</para><para>Component has one task, <ref refid="_so_mgr_8h_1a26b08ec264892fc6112b7e1ab2911e36" kindref="member">SoMgr_MainFunction</ref>, which for the moment is EMPTY.</para><para><heading level="2">Interrupts</heading>
+</para><para>The SoMgr module is not using any interrupts.</para><para><heading level="2">Shared Variables Analysis</heading>
+</para><para>The analysis of the shared variables used inside this functionality can be opened <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/cdd/Ethernet/SoMgr/c/doc/Doxygen/Shared_Variable_SoMgr.docx">here</ulink> .</para><para><heading level="2">Events</heading>
+</para><para>The events present at SoMgr level are reveived from lower layer (TcpIP) through SoMgr_TcpIpEvent:<itemizedlist>
+<listitem><para>TCPIP_TCP_RESET <linebreak/>
+</para></listitem><listitem><para>TCPIP_TCP_CLOSED <linebreak/>
+</para></listitem><listitem><para>TCPIP_TCP_FIN_RECEIVED <linebreak/>
+</para></listitem><listitem><para>TCPIP_UDP_CLOSED <linebreak/>
+<linebreak/>
+ <linebreak/>
+The callbacks from the component are the following:</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1a8641fe6f39fd32ac239714ffa80eb59e" kindref="member">SoMgr_RxIndication</ref> - Indicates the reception of a new TCP segment or UDP datagram and provides all data and peer information via parameters. <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1ad161565956e1d9d3ab9b3a71ffb4fb3f" kindref="member">SoMgr_CopyTxData</ref> - This service requests to copy data for transmission to the indicated buffer. <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1af8ead95f438278f1e90fb54d92eb6d8b" kindref="member">SoMgr_TxConfirmation</ref> - The TCP/IP stack calls this function after the data has been acknowledged by the peer for TCP or was sent to the lower layer driver using UDP. <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" kindref="member">SoMgr_TcpAccepted</ref> - Indicates an incoming TCP connection on a server socket. Callback gets called if the stack put a socket into the listen mode before (as server) and a peer connected to it (as client). <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1a271cc0ca220220dc2f65e97f0998a1ef" kindref="member">SoMgr_TcpConnected</ref> - Indicates a successful connection from client sight. <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1ae4a2dfa0374da2efccdcc6d8ccd0e7ab" kindref="member">SoMgr_TcpIpEvent</ref> - Indicates an event in the TCP/IP stack referred to the passed socket. <linebreak/>
+</para></listitem><listitem><para><ref refid="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" kindref="member">SoMgr_LocalIpAddrAssignmentChg</ref> - Indicates an IP address change. This service gets called by the TCP/IP stack if an IP address changes (i.e. new address assigned or assigned address becomes invalid).</para></listitem></itemizedlist>
+</para><para><heading level="2">Operating Modes</heading>
+</para><para>The Socket Manager is operating only in high-power mode, while the bus communication is ongoing. There are no dependencies with other operating mode(s).</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value (e.g. E_NOT_OK) The error handling is described in the description of each function. Also the global variable <ref refid="_so_mgr_8c_1a09d036426e0cce8d48a0e21216fa47d6" kindref="member">SoMgr_Statistics</ref> is defined and used to count when an error is detected. <linebreak/>
+The error codes for SoMgr component are the following:</para><para><table rows="17" cols="2"><row>
+<entry thead="yes"><para>Error code  </para></entry><entry thead="yes"><para>Explanation   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_INVALID_SOCKET_ID  </para></entry><entry thead="no"><para>Invalid socket id.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_INVALID_CONNECT  </para></entry><entry thead="no"><para>Invalid connection.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_INVALID_ACCEPT  </para></entry><entry thead="no"><para>Error for invalid acceptance.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_DOIP_HEADER_LENGTH  </para></entry><entry thead="no"><para>DoIP header length out of range.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_INVALID_DOIP_VERSION  </para></entry><entry thead="no"><para>Invalid DoIP version.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_INVALID_DOIP_PAYLOADTYPE  </para></entry><entry thead="no"><para>Invalid DoIP payload.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_CHANGE_PARAMS_FAILED  </para></entry><entry thead="no"><para>Change parameters failed.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_LOCAL_IP_ADDR_ERROR  </para></entry><entry thead="no"><para>Local IP address error.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_OPEN_FAILED  </para></entry><entry thead="no"><para>Open socket failed.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_CLOSE_FAILED  </para></entry><entry thead="no"><para>Closed socket failed.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_UNKNOWN_UDP_MSG  </para></entry><entry thead="no"><para>Unknown UDP message.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_UNKNOWN_TCP_MSG  </para></entry><entry thead="no"><para>Unknown TCP message.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_OUT_OF_MEMORY  </para></entry><entry thead="no"><para>Out of memory error.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_TX_ERR  </para></entry><entry thead="no"><para>Tx error   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_PHYS_ADDR_MISS  </para></entry><entry thead="no"><para>Phisical address missed error.   </para></entry></row>
+<row>
+<entry thead="no"><para>SOMGR_ERR_GENERAL  </para></entry><entry thead="no"><para>General error.   </para></entry></row>
+</table>
+</para><para><heading level="2">Synchronization</heading>
+</para><para>Because the diagnose responses coming from Chorus DCM/ CAN ECUs/LIN ECUs are handled in different task (Diag TASK) there is the need to protect the sensitive data from corruption. <linebreak/>
+A sollution is under analysis, see <ulink url="https://jira-ibs.zone2.agileci.conti.de/browse/VWICAS23-21819">[VWICAS23-21819]</ulink> <linebreak/>
+</para><para><heading level="2">Operations</heading>
+</para><para>The description of the operations done by SoMgr are detailed in the header of each function. A list of methods defined inside this functionality can be accessed <ulink url="globals_func.html">here</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The functionality doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>List of the currently defined data structures types can be seen <ulink url="annotated.html">here</ulink>.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium   </para></entry></row>
+</table>
+<heading level="2">Interoperability</heading>
+</para><para>Interoperability is set to <bold>Medium</bold> because it is required to exchange data with other components from the ICAS. <heading level="2">Interaction</heading>
+</para><para>Interaction is set to <bold>Medium</bold> because the number of dependencies from interfaces and dependencies equals 4. See <ref refid="_external_interfaces_dependencies" kindref="compound">External Interfaces and Dependencies</ref>. <heading level="2">Criticality</heading>
+</para><para>Criticality is set to <bold>high</bold> because a failure in this component can impact other functionalities which can be recognized by driver/ passenger, causing strong annoyance and it is an Communication Stack component. In addition, the functionality has a high customer visibility. <heading level="2">Technical complexity</heading>
+</para><para>Technical Complexity is set to <bold>Medium</bold> due to the fact that the component implements different callbacks from TCP/IP. <heading level="2">Risks</heading>
+</para><para>Risk is set to <bold>High</bold> because any bugs can influence the flashing of the car. <heading level="2">Testability</heading>
+</para><para>At software level the testability is set to <bold>Medium</bold> because input and outputs of this component cannot be manipulated/seen only at system level. Most of the requirements needs to be tested at software level without needing of a complex setup in order test it. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

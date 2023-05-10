@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___ethernet___communication_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Ethernet_Communication.h</compoundname>
+    <includes local="yes">EthMain.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___ethernet___communication_8c" local="yes">ErrHdl_Ethernet_Communication.c</includedby>
+    <incdepgraph>
+      <node id="484">
+        <label>ErrHdl_Ethernet_Communication.h</label>
+        <link refid="_err_hdl___ethernet___communication_8h"/>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="485">
+        <label>EthMain.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="487">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="488">
+        <label>ErrHdl_Ethernet_Communication.c</label>
+        <link refid="_err_hdl___ethernet___communication_8c"/>
+      </node>
+      <node id="486">
+        <label>ErrHdl_Ethernet_Communication.h</label>
+        <link refid="_err_hdl___ethernet___communication_8h"/>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_err_hdl___ethernet___communication_8h_1a172c1f2b7575657e6d02e70cf5c889eb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>IsErrorOccurred</name>
+        <enumvalue id="_err_hdl___ethernet___communication_8h_1a172c1f2b7575657e6d02e70cf5c889ebacd07155933e7942799bec88a70102ed4" prot="public">
+          <name>ERROROCCURED</name>
+          <initializer>= 0x01u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enums contains error value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h" line="60" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h" bodystart="60" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___ethernet___communication_8h_1a25a31a91f5d0da524e088b91bc7acf55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType ErrEthernetIPMonitoring</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrEthernetIPMonitoring</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This is cyclic function which monitors and notifies about logical errors on ethernet buses. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retVal : E_OK in case of success, otherwise E_NOT_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___ethernet___communication_8h_1a172c1f2b7575657e6d02e70cf5c889ebacd07155933e7942799bec88a70102ed4" kindref="member">ERROROCCURED</ref> <linebreak/>
+<ref refid="_err_hdl___ethernet___communication_8c_1a0039504ae408b2f39c2d8bd8db7a72cf" kindref="member">tErrEthernet</ref> <linebreak/>
+<ref refid="_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a5904695be183f9c2b4353e618375e43d" kindref="member">LastBusIP</ref> <linebreak/>
+<ref refid="_err_hdl_8c_1a362b045057d4b0fef30897fd21e1c0e0" kindref="member">channelMapingEthernetBusIP</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrEthernetIPMonitoring.png">Activity Diagram of function ErrEthernetIPMonitoring </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+TEST_ErrEthernetIPMonitoring <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+It satisfies the following DOORS Requirements: <linebreak/>
+{SWR_ICAS1_GW_3464,SWR_ICAS1_GW_3455}. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___ethernet___communication_8h_1a82c5ea0e860888d6f245404c3ae4d7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType ErrEthernetHardwareMonitoring</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrEthernetHardwareMonitoring</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This is cyclic function which monitors and notifies about hardware errors on ethernet buses. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retVal : E_OK in case of success, otherwise E_NOT_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a47b89ddda937b7bf4c9725c26e029af5" kindref="member">LastBusHW</ref> <linebreak/>
+ <ref refid="_err_hdl___ethernet___communication_8h_1a172c1f2b7575657e6d02e70cf5c889ebacd07155933e7942799bec88a70102ed4" kindref="member">ERROROCCURED</ref> <linebreak/>
+ <ref refid="_err_hdl___ethernet___communication_8c_1a0039504ae408b2f39c2d8bd8db7a72cf" kindref="member">tErrEthernet</ref> <linebreak/>
+ <ref refid="_err_hdl_8c_1a6a6c0db95c33b28b2f5155b92ddfeffc" kindref="member">channelMapingEthernetBusHW</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrEthernetHardwareMonitoring.png">Activity Diagram of function ErrEthernetHardwareMonitoring </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrEthernetHardwareMonitoring <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ {SWR_ICAS1_GW_3446,SWR_ICAS1_GW_3447,SWR_ICAS1_GW_3448,SWR_ICAS1_GW_3450,SWR_ICAS1_GW_3451,SWR_ICAS1_GW_3452, SWR_ICAS1_GW_7363,SWR_ICAS1_GW_7364,SWR_ICAS1_GW_7365,SWR_ICAS1_GW_7366,}. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h" line="134" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>short description in one sentence end with dot. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>File</title><para>//VW_MEB_19_ICAS1/CHORUS/CHORUS_DEV/CHORUS/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h </para></simplesect>
+<simplesect kind="rcs"><title>Change</title><para>162655 </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#3 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib99730 </para></simplesect>
+<simplesect kind="rcs"><title>DateTime</title><para>2021/01/29 06:26:08 </para></simplesect>
+detailed multiline description of the file </para>    </detaileddescription>
+    <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Ethernet_Communication.h"/>
+  </compounddef>
+</doxygen>

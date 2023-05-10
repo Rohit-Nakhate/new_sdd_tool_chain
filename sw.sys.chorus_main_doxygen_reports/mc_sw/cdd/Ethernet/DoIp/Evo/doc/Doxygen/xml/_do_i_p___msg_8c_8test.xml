@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___msg_8c_8test" kind="file" language="C++">
+    <compoundname>DoIP_Msg.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a63933fa1ae20b63794b685de7d4138e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_MakeGenericHeader</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_MakeGenericHeader</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000071"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_MakeGenericHeader </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if mem area for DoIP message is prepared as expected </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a334dd3a7806ceb55c3da8fc377940e69" kindref="member">DoIP_MakeGenericHeader</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set buffer to a random value and call the function <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Payload type and lenght are being writen using function DoIP_WriteBuf16 and DoIP_WriteBuf32 <linebreak/>
+ buffer[0] == DOIP_PR_VERSION <linebreak/>
+ buffer[1] == DOIP_PR_INV_VERSION <linebreak/>
+ buffer[DOIP_GEN_HEADER_SIZE]=0 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="74" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="74" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ac48425cfdb21b922d85963e903d873f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_MakeGenericHeaderNoDefaultInit</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_MakeGenericHeaderNoDefaultInit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000072"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_MakeGenericHeaderNoDefaultInit </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the diagnostic message Nack is send </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a11d1ad08b99c1a3bca2cfa20a03b0e68" kindref="member">DoIP_MakeGenericHeaderNoDefaultInit</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Call the function <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>- expected results from condition 1: payloadTyp is written with the help of function DoIP_WriteBuf16 starting at the offset 2 <linebreak/>
+ buffer[0] == DOIP_PR_VERSION <linebreak/>
+ buffer[1] == DOIP_PR_INV_VERSION <linebreak/>
+ Function DoIP_WriteBuf32 is called <linebreak/>
+ Function DoIP_WriteBuf16 is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="122" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="122" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a6fbeb1669fcb5ab8bad930d8b025112c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000073"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDoipHeaderNack_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the DoIP Gen NACK is sent </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a90f1962741d2e4708a8a94103f0c53d1" kindref="member">DoIP_SendDoipHeaderNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc to !=NULL <linebreak/>
+ Set: Return value of SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="165" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="165" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1adafc84a6317bb8c35025824b41c071c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000074"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDoipHeaderNack_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the DoIP Gen NACK is sent </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a90f1962741d2e4708a8a94103f0c53d1" kindref="member">DoIP_SendDoipHeaderNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc to null <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="212" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="212" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ac77286325a674f67205f36653d237e44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsgAck_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsgAck_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000075"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsgAck_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the diagnostic message ack is send </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a7fd3063ed2e938eba962ac41bc88efc1" kindref="member">DoIP_SendDiagMsgAck</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: Return value of SoMgr_TcpTransmit to E_OK <linebreak/>
+ Set: mem_to_pbuf_header value to !NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function DoIP_MakeGenericHeaderNoDefaultInit is called <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+ Function DoIP_WriteBuf16 is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="254" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="254" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a62d5cbe4411520d4f673ed3dec41f32a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsgAck_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsgAck_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000076"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsgAck_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the diagnostic message ack is send </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a7fd3063ed2e938eba962ac41bc88efc1" kindref="member">DoIP_SendDiagMsgAck</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: Return value of mem_to_pbuf_header to NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="308" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="308" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a4783b85889dc7eed34058fc895232f12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsgNack_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsgNack_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000077"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsgNack_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the diagnostic message Nack is send </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1abb6c45ec3c61aeb5534438d29469d8ec" kindref="member">DoIP_SendDiagMsgNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: mem_to_pbuf_header value to !NULL <linebreak/>
+ Set: SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function DoIP_MakeGenericHeaderNoDefaultInit is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+ Function DoIP_WriteBuf16 is called 2 times<linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="357" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="357" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a546ab2a725ece8d0bad59bb7a1cdcbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsgNack_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsgNack_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000078"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsgNack_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the diagnostic message Nack is send </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1abb6c45ec3c61aeb5534438d29469d8ec" kindref="member">DoIP_SendDiagMsgNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: mem_to_pbuf_header value to NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="411" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="411" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ad9958069c870a1f4a62d410b047ded34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsg_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsg_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000079"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsg_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the diagnostic message is prepared and send </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1abb6c45ec3c61aeb5534438d29469d8ec" kindref="member">DoIP_SendDiagMsgNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: mem_to_pbuf_header value to !NULL <linebreak/>
+ Set: SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function DoIP_MakeGenericHeaderNoDefaultInit is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+ Function DoIP_WriteBuf16 is called 2 times <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="459" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="459" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ae404ea0ac7509f8f700b5a65914c63af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendDiagMsg_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendDiagMsg_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000080"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendDiagMsg_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the diagnostic message is prepared and ssend </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1abb6c45ec3c61aeb5534438d29469d8ec" kindref="member">DoIP_SendDiagMsgNack</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: mem_to_pbuf_header value to NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function mem_to_pbuf_header is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="512" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="512" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1abc05104a74baa83fde00f50fa994c11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendVehicleIdentificatonRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendVehicleIdentificatonRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000081"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendVehicleIdentificatonRes </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check the transmission of the UDP vehicle identification response </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1abdff3ffe1d24733f95cebcb5905522ae" kindref="member">DoIP_SendVehicleIdentificatonRes</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set SoMgr_UdpTransmit return value to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function SoMgr_UdpTransmit is called <linebreak/>
+ Function DoIP_Client_GetTesterUdpSockAddr is called <linebreak/>
+ Function DoIP_WriteBuf16 is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="557" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="557" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1aba4f90f4f64a8c59b0f6da268e9cc736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000082"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendRoutingActivationRes_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check the transmission of Routing Activation Response </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a2b56160dedc1c4976deb773f59d8a09f" kindref="member">DoIP_SendRoutingActivationRes</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc value to !NULL <linebreak/>
+ Set: SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+ Function DoIP_WriteBuf16 is called 2 times <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="603" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="603" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1aa5f8dd2b55cb635100de0f4bf8013462" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000083"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendRoutingActivationRes_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check the transmission of Routing Activation Response </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a2b56160dedc1c4976deb773f59d8a09f" kindref="member">DoIP_SendRoutingActivationRes</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc value to NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="656" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="656" bodyend="684"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ad50158f40b095e8ec87e93caa6b7480e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendEntityStatusRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendEntityStatusRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000084"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendEntityStatusRes </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the DoIP Entity Status Response message is build and send </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a886b8302e346bfeab6e92d6f4ae31c48" kindref="member">DoIP_SendEntityStatusRes</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SoMgr_UdpTransmit return value = E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function DoIP_Client_GetNumberOfActiveSockets is called <linebreak/>
+ Function SoMgr_UdpTransmit is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="697" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="697" bodyend="726"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a58bacad0698129ce2c3dd4b4642c4e85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendPowerModeRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendPowerModeRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000085"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendPowerModeRes </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the transmission of the Power Mode Response is realized </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a91bc3d577b3c7bc46ae2fdcdbca92e7a" kindref="member">DoIP_SendPowerModeRes</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SoMgr_UdpTransmit return value = E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function SoMgr_UdpTransmit is called <linebreak/>
+ Function DoIP_Client_GetTesterUdpSockAddr is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="741" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="741" bodyend="767"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a21b94c127bd4947482f3305863ca16aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendAliveCheckRes_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendAliveCheckRes_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000086"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendAliveCheckRes_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the transmission of Alive Check Response is realized </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a82cd1018fcd98cc20ae1b0c03af5982c" kindref="member">DoIP_SendAliveCheckRes</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc value to !NULL <linebreak/>
+ Set: SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+ Function SoMgr_TcpTransmit is called <linebreak/>
+ Function DoIP_MakeGenericHeader is called <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+ Function DoIP_Client_GetTcpTesterLogAddrFromSocketHdl is called <linebreak/>
+ Function DoIP_WriteBuf16 is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="786" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="786" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a3426fbeec70a05376e109bb083bfbfa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendAliveCheckRes_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendAliveCheckRes_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000087"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendAliveCheckRes_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the transmission of Alive Check Response is realized </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a82cd1018fcd98cc20ae1b0c03af5982c" kindref="member">DoIP_SendAliveCheckRes</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: pbuf_alloc value to NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="839" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="839" bodyend="864"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1ad7eb922181e898f9794f90a5c2e136f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendComParamsAck_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendComParamsAck_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000088"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendComParamsAck_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the transmission of ComParam ACK is realized </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a57597a8c6415a3eb05219e42c71b6e66" kindref="member">DoIP_SendComParamsAck</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_TpComParam.ComParamIdCount=11 <linebreak/>
+ Set: pbuf_alloc != NULL <linebreak/>
+ Set: SoMgr_TcpTransmit to E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_SendComParamsAck returns E_OK <linebreak/>
+ SoMgr_TcpTransmit is called <linebreak/>
+ DoIP_MakeGenericHeader is called <linebreak/>
+ DoIP_WriteBuf16 number of calls = 2+DoIP_TpComParam.ComParamIdCount <linebreak/>
+ DoIP_WriteBuf32 number of calls = DoIP_TpComParam.ComParamIdCount <linebreak/>
+ Function pbuf_alloc is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="884" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="884" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8c_8test_1a24143f6b8bb9cfa37b995dad33402437" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Msg__DoIP_SendComParamsAck_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Msg__DoIP_SendComParamsAck_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000089"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Msg__DoIP_SendComParamsAck_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the transmission of ComParam ACK is realized </title><para>Test type: 1. Statement testing <linebreak/>
+<orderedlist>
+<listitem><para>Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___msg_8h_1a57597a8c6415a3eb05219e42c71b6e66" kindref="member">DoIP_SendComParamsAck</ref> </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_TpComParam.ComParamIdCount=10 <linebreak/>
+ Set: pbuf_alloc = NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_SendComParamsAck returns E_NOT_OK <linebreak/>
+ DoIP_SetError is called <linebreak/>
+ pbuf_alloc is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" line="940" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test" bodystart="940" bodyend="968"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Test case specification file for <ref refid="_do_i_p___msg_8c" kindref="compound">DoIP_Msg.c</ref> module. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="_do_i_p___msg_8c_8test" kindref="compound">DoIP_Msg.c.test</ref>.</para><para><simplesect kind="author"><para>Patras, Ionela - uidn1598 / Zagan, Andrei - uie55532 </para></simplesect>
+<simplesect kind="date"><para>21 Jul 2020 15:43:51</para></simplesect>
+Testcase specification file for <ref refid="_do_i_p___msg_8c" kindref="compound">DoIP_Msg.c</ref>. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Msg.c.test"/>
+  </compounddef>
+</doxygen>

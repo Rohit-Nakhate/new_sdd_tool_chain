@@ -1,0 +1,642 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___safe_handling_a_s_i_l_8h" kind="file" language="C++">
+    <compoundname>RteLight_SafeHandlingASIL.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <incdepgraph>
+      <node id="72">
+        <label>RteLight_SafeHandlingASIL.h</label>
+        <link refid="_rte_light___safe_handling_a_s_i_l_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_rte_light___safe_handling_a_s_i_l_8h_1af0898077030c797e96945b8449e750dc" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 SAFE_Mask_PDU[Length]</definition>
+        <argsstring>[Length]</argsstring>
+        <name>SAFE_Mask_PDU</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used for signal access for the Pdu . Used when the SWC having different ASILs are writing to the same PDU.</para><para><simplesect kind="remark"><para>values [0x00 - 0xFF] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task<linebreak/>
+ protection none - constant.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="72" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___safe_handling_a_s_i_l_8h_1aab29098423ccb7518f3e2409607204ed" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 SAFE_Msg_PDU[Lenagth]</definition>
+        <argsstring>[Lenagth]</argsstring>
+        <name>SAFE_Msg_PDU</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Array used for handling signal data for the Pdu BEM_06 from the partition QM. Used when the SWC having different ASILs are writing to the same PDU.</para><para><simplesect kind="remark"><para>values [0x00 - 0xFF] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task<linebreak/>
+ protection none .<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="85" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___safe_handling_a_s_i_l_8h_1af6c81febc84e4f6ed7ff7d728dca51c7" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 SAFE_Msg_PDU_GrCh[Length]</definition>
+        <argsstring>[Length]</argsstring>
+        <name>SAFE_Msg_PDU_GrCh</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the gray channel buffer of the Pdu . This buffer contains an updated alive counter and crc. <simplesect kind="remark"><para>values [0x00 - 0xFF] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task<linebreak/>
+ protection full. Protected with the cross core transmit mechanism<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="97" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaad0f47a5e22cf9b71db6dcede3c7c9ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_InitSafeTxPdus</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_InitSafeTxPdus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The function initializes the Gray Channel Pdu with Init values, and triggers the update of the alive counter and CRC. This operation is currently done for the LIN pdus only.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task Level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ range N/A.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_InitSafeTxPdus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check initilization of LIN PDU .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1ace67910b8631ffba06137e928a757c3f" kindref="member">TEST_RteLight_InitSafeTxPdus</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the function RteLight_InitSafeTxPdus.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000015"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_297 SWR_ICAS1_RteLight_304.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga76a6d6d4a0caa5e29ed61448cf89cb41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_UpdateSafeTxPdus</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_UpdateSafeTxPdus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the transmited PDUs with CRC and Alive counter Used for both CAN and LIN Pdus.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_UpdateSafeTxPdus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1ae2bccb7c0d438e51e9d9dbb10e7d3b1f" kindref="member">TEST_RteLight_UpdateSafeTxPdus</ref></para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall tests Safe LIN PDU payload update.<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the function RteLight_UpdateSafeTxPdus.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_297, SWR_ICAS1_RteLight_304,SWR_ICAS1_RteLight_214.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="216" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga85a968141f043d695411644620c0f6e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SAFE_UpdateTxPdus</definition>
+        <argsstring>(void)</argsstring>
+        <name>SAFE_UpdateTxPdus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates and potentially sends the E2E PDUs. The function must run on FuSi core. Only there it can benefit from the MPU protection. This is an ASIL B function.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task Level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ range N/A.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_UpdateTxPdus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of e2ePw_Protect function according to the return type of GET_DatasetDownloadBlocksSWC function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a93e9040ce21bfbd51e8a1f75da37784a" kindref="member">TEST_SAFE_UpdateTxPdus</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the function SAFE_UpdateTxPdus.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_214, SWR_ICAS1_RteLight_297, SWR_ICAS1_RteLight_304, SWR_ICAS1_RteLight_325.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="283" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1ae928d6056356502b20d36be38a0364ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_SafeUpdate_Msg_LINPDU</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_SafeUpdate_Msg_LINPDU</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the content of the Lin Pdu. In case more then one ASIL swc or ASIL and QM SWCs are writing the pdu a merge process is required.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context RteLight_UpdateSafeTxPdus <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ range N/A.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_SafeUpdate_Msg_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the transmission of Safe LIN pdu .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a030551f0603c60b8347a5cc90d26fa5b" kindref="member">TEST_RteLight_SafeUpdate_Msg_LINPDU</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_SafeUpdate_Msg_&lt;LinPDU&gt;.<linebreak/>
+ Design Decision - Justification. Helper function used to update and merge the safety buffers before transmission and call E2E protect function <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="349" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1abb50f3505e4cd75202cf8bceb29a68d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_SafeInit_Msg_LINPDU</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_SafeInit_Msg_LINPDU</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the content of the Lin Pdu. In case more then one ASIL swc or ASIL and QM SWCs are writing the pdu a merge process is required.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context RteLight_InitSafeTxPdus <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ range N/A.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_SafeInit_Msg_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of e2ePw_Protect function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1ac3a95378938bb5c6f544a45f70b2d275" kindref="member">TEST_RteLight_SafeInit_Msg_LINPDU</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function RteLight_SafeInit_Msg_&lt;LinPDU&gt;.<linebreak/>
+ Design Decision - Justification. Helper function used initialize and merge the safety buffers before transmission and call E2E protect function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="404" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a1eb6660bda158e7df0ee539a4cc82cb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean SAFE_Update_Msg_PDU</definition>
+        <argsstring>(void)</argsstring>
+        <name>SAFE_Update_Msg_PDU</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the content of the CAN pdu. In case more then one ASIL swc or ASIL and QM SWCs are writing the pdu a merge process is required.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task Level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+ range 0-1.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_Update_Msg_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the handling of Safe CAN pdu .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1aad07c414890c14343eada55999bc2393" kindref="member">TEST_SAFE_Update_Msg_PDU</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function SAFE_Update_Msg_&lt;PDU&gt; .<linebreak/>
+ Design Decision - Justification. Helper function used to update and merge the safety buffers before transmission and call E2E protect function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="471" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a6089e40a0b78f00dd3c4a335d6c82ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_SetPduFlag</definition>
+        <argsstring>(uint32 u32LinPduIndex)</argsstring>
+        <name>RteLight_SetPduFlag</name>
+        <param>
+          <type>uint32</type>
+          <declname>u32LinPduIndex</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Inline function that sets the bit of the flag of a specific PDU to 1. Sets a specific bit (given by u32LinPduIndex) from RteLight_u32LinPduFlags to 1. Created to increase readability of code.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context RteLight_SafeUpdate_Msg_&lt;LinPdu&gt; <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint32 u32LinPduIndex <linebreak/>
+ range 0-4,294,967,295.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[IN/OUT] RteLight_u32LinPduFlags. <linebreak/>
+ <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_SetPduFlag.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the LIN PDU flag is set or not .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing.<linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1ae2bccb7c0d438e51e9d9dbb10e7d3b1f" kindref="member">TEST_RteLight_UpdateSafeTxPdus</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This inline functions is created to increase code readability <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="519" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a258824c4cc190e047a3947a06ed3c1c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SAFE_memset</definition>
+        <argsstring>(uint8 *dest, uint8 u8FillByte, uint16 length)</argsstring>
+        <name>SAFE_memset</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>u8FillByte</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>fills a buffer with a specified value. Safe implementation of the memset function.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] destination buffer u8FillByte [in] byte to be written in the array length [in] number of bytes to be written</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: None</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_memset.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the fills a buffer with a specified value.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing. <linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a93e9040ce21bfbd51e8a1f75da37784a" kindref="member">TEST_SAFE_UpdateTxPdus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Safe implementation of the memset function. This is needed in order not to call QM functions from ASIL code<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="573" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a9322a059eebbae8015cd3495e3b7caff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SAFE_memcpy</definition>
+        <argsstring>(uint8 *dest, const uint8 *src, uint16 length)</argsstring>
+        <name>SAFE_memcpy</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the data src to dest byte by byte. Safe implementation of the memcpy function.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] destination buffer src [in] source buffer length [in] number of bytes to be written </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: None</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_memcpy.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the buffer is copied to the destination<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing. <linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a93e9040ce21bfbd51e8a1f75da37784a" kindref="member">TEST_SAFE_UpdateTxPdus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Safe implementation of the memcpy function. This is needed in order not to call QM functions from ASIL code<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="626" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a679d31c7f9e6640287a523e03acaf6d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SAFE_masked_memcpy</definition>
+        <argsstring>(uint8 *dest, const uint8 *src, const uint8 *mask, uint16 length)</argsstring>
+        <name>SAFE_masked_memcpy</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the bits from src to dest if the mask contains a 1 on the same bit position. This function allows is used to merge the Pdu buffers into the gray channel signal wise.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] destination buffer src [in] source buffer mask [in] mask buffer length [in] number of bytes to be written </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: None</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_masked_memcpy.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the buffer is copied according to mask<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing. <linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a93e9040ce21bfbd51e8a1f75da37784a" kindref="member">TEST_SAFE_UpdateTxPdus</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Smart safe implementation of the memcpy function. This is needed in order not to call QM functions from ASIL code<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="683" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_rte_light___safe_handling_a_s_i_l_8h_1a417596ec6add95b5c1221dfc9a9f1090" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean SAFE_transmissionCheck</definition>
+        <argsstring>(uint16 u16Handle, const uint8 *src)</argsstring>
+        <name>SAFE_transmissionCheck</name>
+        <param>
+          <type>uint16</type>
+          <declname>u16Handle</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Checks if the data change should trigger a transmission.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u16Handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] pdu handle src [in] source buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean TRUE -&gt; transmission is required</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: None</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SAFE_transmissionCheck.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of calculate_one_TT_by_app function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves:error guessing, statement testing, decision testing. <linebreak/>
+ Tested in <ref refid="_rte_light___safe_handling_a_s_i_l_8h_8test_1a93e9040ce21bfbd51e8a1f75da37784a" kindref="member">TEST_SAFE_UpdateTxPdus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Smart safe implementation of the memcpy function. This is needed in order not to call QM functions from ASIL code<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h" line="730" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interfaces related to the E2E protection for the Tx Pdus. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para>RteLight_SafeHandling.h </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+ Expected test coverage (100%) and type of test coverage MCDC.<linebreak/>
+ Review of test cases with roles outside the process definition (SWA,PES).<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SafeHandlingASIL.h"/>
+  </compounddef>
+</doxygen>

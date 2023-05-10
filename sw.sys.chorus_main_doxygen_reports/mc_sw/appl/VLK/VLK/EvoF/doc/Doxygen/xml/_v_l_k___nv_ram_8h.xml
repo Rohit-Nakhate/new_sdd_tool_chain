@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_v_l_k___nv_ram_8h" kind="file" language="C++">
+    <compoundname>VLK_NvRam.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includedby refid="_v_l_k___data_types_8h" local="yes">VLK_DataTypes.h</includedby>
+    <includedby refid="_v_l_k___extra_definitions_8h" local="yes">VLK_ExtraDefinitions.h</includedby>
+    <includedby refid="_v_l_k___b_f__13_8c" local="yes">VLK_BF_13.c</includedby>
+    <incdepgraph>
+      <node id="99">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="100">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="101">
+        <label>NvM.h</label>
+      </node>
+      <node id="98">
+        <label>VLK_NvRam.h</label>
+        <link refid="_v_l_k___nv_ram_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="103">
+        <label>VLK_DataTypes.h</label>
+        <link refid="_v_l_k___data_types_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>VLK_RollAway_Protection.c</label>
+        <link refid="_v_l_k___roll_away___protection_8c"/>
+      </node>
+      <node id="104">
+        <label>VLK_BF_13.c</label>
+        <link refid="_v_l_k___b_f__13_8c"/>
+      </node>
+      <node id="102">
+        <label>VLK_NvRam.h</label>
+        <link refid="_v_l_k___nv_ram_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>VLK_ExtraDefinitions.h</label>
+        <link refid="_v_l_k___extra_definitions_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_v_l_k___nv_ram_8h_1a7a84d809b840b37ff5e68d4b7b541cc1" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 VLK_s_popup_deaktiviert_confirm_NVM</definition>
+        <argsstring></argsstring>
+        <name>VLK_s_popup_deaktiviert_confirm_NVM</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to indicate NVM RAM image. <linebreak/>
+Used in: <linebreak/>
+readPopupDeactivated <linebreak/>
+handlePopupSM_CONF_POPUP_INIT <linebreak/>
+VLK_BF_13_Init <simplesect kind="remark"><para>range: [0,8] unit: N/A resolution: N/A context: task protection: none storage class: normal ram </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/inc/VLK_NvRam.h" line="75" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/src/VLK_BF_13.c" bodystart="492" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_v_l_k___nv_ram_8h_1a9bc07b6ab0ee24c182c44873c58434e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType VLKPopupDeaktiviertConfirmNVM_SBCallback</definition>
+        <argsstring>(uint8 serviceID, NvM_RequestResultType result)</argsstring>
+        <name>VLKPopupDeaktiviertConfirmNVM_SBCallback</name>
+        <param>
+          <type>uint8</type>
+          <declname>serviceID</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to update NVM block status.</para><para>If serviceID is NVM_WRITE_BLOCK, NVM_PopupDeaktiviertBlockStatus is set to result. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8 serviceID <linebreak/>
+ [in] - NvM_RequestResultType result </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NVM_PopupDeaktiviertBlockStatus </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NVM_PopupDeaktiviertBlockStatus is updated  <image type="html" name="VLKPopupDeaktiviertConfirmNVM_SBCallback.png">Activity Diagram of  VLKPopupDeaktiviertConfirmNVM_SBCallback </image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para><ref refid="_v_l_k___b_f__13_8c_8test_1ab143378fe8ab57f9d6ccd4504108f59a" kindref="member">TEST_VLK_BF_13__VLKPopupDeaktiviertConfirmNVM_SBCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfy following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification.. Used to update NVM block status <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/inc/VLK_NvRam.h" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/src/VLK_BF_13.c" bodystart="1652" bodyend="1663"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>VLK_NvRam Header file. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_v_l_k___nv_ram_8h" kindref="compound">VLK_NvRam.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/inc/VLK_NvRam.h"/>
+  </compounddef>
+</doxygen>

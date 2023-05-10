@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___can___vlan___node___timeouts___detection_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Can_Vlan_Node_Timeouts_Detection.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">ErrHdl_Types.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___can___global___timeout___detection_8c" local="yes">ErrHdl_Can_Global_Timeout_Detection.c</includedby>
+    <includedby refid="_err_hdl___can___vlan___node___timeouts___detection_8c" local="yes">ErrHdl_Can_Vlan_Node_Timeouts_Detection.c</includedby>
+    <includedby refid="_err_hdl___if_8c" local="yes">ErrHdl_If.c</includedby>
+    <includedby refid="_err_hdl___vlan___bus___port___enable___conditions_8c" local="yes">ErrHdl_Vlan_Bus_Port_Enable_Conditions.c</includedby>
+    <includedby refid="src_2_err_hdl___can___bus___enable___conditions_8c" local="yes">ErrHdl_Can_Bus_Enable_Conditions.c</includedby>
+    <includedby refid="_2src_2_err_hdl___can___bus___enable___conditions_8c" local="yes">ErrHdl_Can_Bus_Enable_Conditions.c</includedby>
+    <incdepgraph>
+      <node id="218">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="220">
+        <label>ErrHdl_Types.h</label>
+      </node>
+      <node id="216">
+        <label>ErrHdl_Can_Vlan_Node_Timeouts_Detection.h</label>
+        <link refid="_err_hdl___can___vlan___node___timeouts___detection_8h"/>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="217">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="225">
+        <label>ErrHdl_If.c</label>
+        <link refid="_err_hdl___if_8c"/>
+      </node>
+      <node id="222">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="223">
+        <label>ErrHdl_Can_Global_Timeout_Detection.c</label>
+        <link refid="_err_hdl___can___global___timeout___detection_8c"/>
+      </node>
+      <node id="226">
+        <label>ErrHdl_Vlan_Bus_Port_Enable_Conditions.c</label>
+        <link refid="_err_hdl___vlan___bus___port___enable___conditions_8c"/>
+      </node>
+      <node id="221">
+        <label>ErrHdl_Can_Vlan_Node_Timeouts_Detection.h</label>
+        <link refid="_err_hdl___can___vlan___node___timeouts___detection_8h"/>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.c</label>
+        <link refid="src_2_err_hdl___can___bus___enable___conditions_8c"/>
+      </node>
+      <node id="224">
+        <label>ErrHdl_Can_Vlan_Node_Timeouts_Detection.c</label>
+        <link refid="_err_hdl___can___vlan___node___timeouts___detection_8c"/>
+      </node>
+      <node id="228">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.c</label>
+        <link refid="_2src_2_err_hdl___can___bus___enable___conditions_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga4810652071a9f4652f1422a493dfb20f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrNodesTimeoutMonitor</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrNodesTimeoutMonitor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if node timeout has taken place. And sets DTC if timeout has taken place.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {isr, ErrHandlerTask - Called cyclically every 10ms} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_2inc_2_err_hdl___types_8h_1ac88f0d7511df4ce38314f1848786a686" kindref="member">ERR_NUMB_OF_MONITORED_BUSES</ref> <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1a684dc5d783493317ef1f921153926ba7" kindref="member">ErrCodedNodes</ref> <linebreak/>
+ <ref refid="_2inc_2_err_hdl__variant_8h_1a26f542990ecbb688756d494a2a9f995c" kindref="member">SupervisedBuses</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrNodesTimeoutMonitor.png">Activity Diagram of function ErrNodesTimeoutMonitor </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1abed4711849dd635e61aa1b3443afd188" kindref="member">TEST_ErrNodesTimeoutMonitor</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000015"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 </para><para>SWR_ICAS1_GW_7388 </para><para>SWR_ICAS1_GW_7389 </para><para>SWR_ICAS1_GW_7385 </para><para>SWR_ICAS1_GW_3396 </para><para>SWR_ICAS1_GW_3395 </para><para>SWR_ICAS1_GW_3394 </para><para>SWR_ICAS1_GW_3393 </para><para>SWR_ICAS1_GW_3392 </para><para>SWR_ICAS1_GW_3391 </para><para>SWR_ICAS1_GW_3390 </para><para>SWR_ICAS1_GW_3389 </para><para>SWR_ICAS1_GW_3388 </para><para>SWR_ICAS1_GW_3387 </para><para>SWR_ICAS1_GW_3386 </para><para>SWR_ICAS1_GW_3385 </para><para>SWR_ICAS1_GW_3383 </para><para>SWR_ICAS1_GW_3381 </para><para>SWR_ICAS1_GW_3380 </para><para>SWR_ICAS1_GW_3379 </para><para>SWR_ICAS1_GW_3378 </para><para>SWR_ICAS1_GW_3377 </para><para>SWR_ICAS1_GW_3376 </para><para>SWR_ICAS1_GW_3375 </para><para>SWR_ICAS1_GW_3374 </para><para>SWR_ICAS1_GW_3373 </para><para>SWR_ICAS1_GW_3372 </para><para>SWR_ICAS1_GW_3371 </para><para>SWR_ICAS1_GW_3370 </para><para>SWR_ICAS1_GW_3369 </para><para>SWR_ICAS1_GW_3368 </para><para>SWR_ICAS1_GW_3367 </para><para>SWR_ICAS1_GW_3366 </para><para>SWR_ICAS1_GW_3365 </para><para>SWR_ICAS1_GW_3364 </para><para>SWR_ICAS1_GW_3363 </para><para>SWR_ICAS1_GW_3362 </para><para>SWR_ICAS1_GW_3361 </para><para>SWR_ICAS1_GW_3360 </para><para>SWR_ICAS1_GW_3359 </para><para>SWR_ICAS1_GW_3358 </para><para>SWR_ICAS1_GW_3357 </para><para>SWR_ICAS1_GW_3356 </para><para>SWR_ICAS1_GW_3355 </para><para>SWR_ICAS1_GW_3354 </para><para>SWR_ICAS1_GW_3353 </para><para>SWR_ICAS1_GW_3352 </para><para>SWR_ICAS1_GW_3351 </para><para>SWR_ICAS1_GW_3350 </para><para>SWR_ICAS1_GW_3349 </para><para>SWR_ICAS1_GW_3348 </para><para>SWR_ICAS1_GW_3347 </para><para>SWR_ICAS1_GW_3346 </para><para>SWR_ICAS1_GW_3345 </para><para>SWR_ICAS1_GW_7350 </para><para>SWR_ICAS1_GW_7351 </para><para>SWR_ICAS1_GW_7352 </para><para>SWR_ICAS1_GW_7353 </para><para>SWR_ICAS1_GW_7354 </para><para>SWR_ICAS1_GW_7355 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="162" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="456" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab6c14f24ec8f43c313af532c09995c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetNodeTimeoutCounterAndDTC</definition>
+        <argsstring>(const TComChannel Channel, const uint16 BillIndex)</argsstring>
+        <name>ErrResetNodeTimeoutCounterAndDTC</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type>const uint16</type>
+          <declname>BillIndex</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function reset node timeout counter and DTC if message has been received.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, ErrHandlerTask - Called cyclically every 10ms} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16 BillIndex - Built in list index.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1a8de7c5ba21eee0fd40c01d4d56d7a60d" kindref="member">TimeoutCounter</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetNodeTimeoutCounterAndDTC.png">Activity Diagram of function ErrResetNodeTimeoutCounterAndDTC </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1a6a6692fdc30c4a870f6304c202445402" kindref="member">TEST_ErrResetNodeTimeoutCounterAndDTC</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="204" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="607" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaca2431f1680049bab980f191ba344a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 ErrGetNumOfCodedNodesOnBus</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrGetNumOfCodedNodesOnBus</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns number of coded nodes on channel.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___can___global___timeout___detection_8c_1af66ff90f7df989c7089db527299b5805" kindref="member">ErrIsCanBusNachnlaufTypeKl30</ref>, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab034569e861b326a93261d9ae8bc1aeb" kindref="member">ErrIsCanGlobalTimeoutAllowed</ref>, <ref refid="_err_hdl___vlan___bus___port___enable___conditions_8c_1a2992d620af5e3eda00764ad6cf25620d" kindref="member">ErrCalcNodePerPort</ref>} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 RetVal : Number of coded nodes on channel.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1a684dc5d783493317ef1f921153926ba7" kindref="member">ErrCodedNodes</ref> <linebreak/>
+ _IncorrectComChannel - Has value of invalid channel. If the channel ID is above this value then the ID can be rejected.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetNumOfCodedNodesOnBus.png">Activity Diagram of function ErrGetNumOfCodedNodesOnBus </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1a6a6692fdc30c4a870f6304c202445402" kindref="member">TEST_ErrResetNodeTimeoutCounterAndDTC</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="245" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="666" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga23c2532744e9bf975da5f550cf2d141f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ErrGetBillIndexFromErrCodedNodesArr</definition>
+        <argsstring>(const TComChannel Channel, const uint16 Index, uint16 *const BillIndex)</argsstring>
+        <name>ErrGetBillIndexFromErrCodedNodesArr</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type>const uint16</type>
+          <declname>Index</declname>
+        </param>
+        <param>
+          <type>uint16 *const</type>
+          <declname>BillIndex</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns built in index from ErrCodedNodes array.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___can___global___timeout___detection_8c_1af66ff90f7df989c7089db527299b5805" kindref="member">ErrIsCanBusNachnlaufTypeKl30</ref>, <ref refid="_err_hdl___vlan___bus___port___enable___conditions_8c_1a41a8c91ef11adc685fb3a4136782eb57" kindref="member">ErrCheckNodeExistsOnPort</ref>} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16 Index - Index of ErrCodedNodes array. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16* BillIndex - pointer to a Built in list index.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType RetVal : E_OK in case of success, otherwise E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_2inc_2_err_hdl___types_8h_1a4f3d5e24e228a8e547ddc5369ed5191f" kindref="member">ERR_NUMB_OF_NODES</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetBillIndexFromErrCodedNodesArr.png">Activity Diagram of function ErrGetBillIndexFromErrCodedNodesArr </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1aa19f105f79274ac480343c7c3c4ef1f3" kindref="member">TEST_ErrGetBillIndexFromErrCodedNodesArr</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="288" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="680" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaed2593e9475d3ff8d1ae3b648ef38276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrHdlListNodeCodingUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrHdlListNodeCodingUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates ErrCodedNodes array and sets node coded enable conditions.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga43859568f43dba4dd9512627938d83a3" kindref="member">ErrHdlEnableConditionsRelatedToCodingUpdate</ref>, <ref refid="_err_hdl_8c_1a3cf7db4040249e38845d790f0b375efa" kindref="member">ErrInit</ref>} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_2inc_2_err_hdl___types_8h_1a4f3d5e24e228a8e547ddc5369ed5191f" kindref="member">ERR_NUMB_OF_NODES</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1ad21f26531820964c18dd7a7398e1803d" kindref="member">UNKNOWN_BUS_ID</ref> <linebreak/>
+ _IncorrectComChannel - Has value of invalid channel. If the channel ID is above this value then the ID can be rejected.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrHdlListNodeCodingUpdate.png">Activity Diagram of function ErrHdlListNodeCodingUpdate </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1a00eec824f43606102f935ca9525c8ce4" kindref="member">TEST_ErrHdlListNodeCodingUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="330" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="695" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga66b5117e1866a60b95bcf1a1d8244a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrHdlCodingUpdate</definition>
+        <argsstring>(uint16 IndexBIL)</argsstring>
+        <name>ErrHdlCodingUpdate</name>
+        <param>
+          <type>uint16</type>
+          <declname>IndexBIL</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates ErrCodedNodes array and sets node coded enable conditions.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga3b4f5f6e3c6483c2b52af287c25be380" kindref="member">ErrHdlEnableConditionsUpdate</ref>} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[In]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16 IndexBIL - Built in list index.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>_IncorrectComChannel - Has value of invalid channel. If the channel ID is above this value then the ID can be rejected. <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1a684dc5d783493317ef1f921153926ba7" kindref="member">ErrCodedNodes</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrHdlCodingUpdate.png">Activity Diagram of function ErrHdlCodingUpdate </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_8test_1a750b425afa5549f3acf584162dc9ec08" kindref="member">TEST_ErrHdlCodingUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h" line="368" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Vlan_Node_Timeouts_Detection.c" bodystart="727" bodyend="752"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_Can_Vlan_Node_Timeouts_Detection functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___can___vlan___node___timeouts___detection_8h" kindref="compound">ErrHdl_Can_Vlan_Node_Timeouts_Detection.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>6 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>6/1/2023 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Vlan_Node_Timeouts_Detection.h"/>
+  </compounddef>
+</doxygen>

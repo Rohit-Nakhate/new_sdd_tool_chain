@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___channel___operation___cycle_8c" kind="file" language="C++">
+    <compoundname>ErrHdl_Channel_Operation_Cycle.c</compoundname>
+    <includes refid="_err_hdl___channel___operation___cycle_8h" local="yes">ErrHdl_Channel_Operation_Cycle.h</includes>
+    <includes local="yes">Dem_IntEvtId.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes refid="_err_hdl___types_8h" local="yes">ErrHdl_Types.h</includes>
+    <includes refid="_err_hdl___can___bus___enable___conditions_8h" local="yes">ErrHdl_Can_Bus_Enable_Conditions.h</includes>
+    <includes refid="_err_hdl___if_8h" local="yes">ErrHdl_If.h</includes>
+    <includes refid="_err_hdl___d_e_m___interface_8h" local="yes">ErrHdl_DEM_Interface.h</includes>
+    <incdepgraph>
+      <node id="286">
+        <label>DK2_CanBuiltInList.h</label>
+      </node>
+      <node id="284">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="292">
+        <label>ErrHdl_DEM_Interface.h</label>
+        <link refid="_err_hdl___d_e_m___interface_8h"/>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+      </node>
+      <node id="289">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.h</label>
+        <link refid="_err_hdl___can___bus___enable___conditions_8h"/>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>ErrHdl_If.h</label>
+        <link refid="_err_hdl___if_8h"/>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+      </node>
+      <node id="280">
+        <label>Dem.h</label>
+      </node>
+      <node id="278">
+        <label>ErrHdl_Channel_Operation_Cycle.h</label>
+        <link refid="_err_hdl___channel___operation___cycle_8h"/>
+      </node>
+      <node id="291">
+        <label>BusMonitor.h</label>
+      </node>
+      <node id="283">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="281">
+        <label>ErrHdl_Types.h</label>
+        <link refid="_err_hdl___types_8h"/>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+      </node>
+      <node id="288">
+        <label>Dem_Cfg.h</label>
+      </node>
+      <node id="279">
+        <label>Dem_IntEvtId.h</label>
+      </node>
+      <node id="277">
+        <label>ErrHdl_Channel_Operation_Cycle.c</label>
+        <link refid="_err_hdl___channel___operation___cycle_8c"/>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="287">
+        <label>BuiltInList.h</label>
+      </node>
+      <node id="285">
+        <label>DK2_LinBuiltInList.h</label>
+      </node>
+      <node id="294">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="282">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="293">
+        <label>Dem_Types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_err_hdl___channel___operation___cycle_8c_1afeb4fa8838be53360228b17f3174cc5e" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl_8c_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean OperationCyclePreviousState[ERR_NUMB_OF_BUSES]</definition>
+        <argsstring>[ERR_NUMB_OF_BUSES]</argsstring>
+        <name>OperationCyclePreviousState</name>
+        <briefdescription>
+<para>This array storages previous state of operation cycle for each bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>Bus operation cycle depends from bus state. When bus changes status from inavtive to active operation cycle starts, when bus change status from active to inactive operation cycle ends. TRUE means bus operation cycle is active, FALSE operation cycle is not active. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" line="74" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___channel___operation___cycle_8c_1a5f7ffa35982337ccf622bb29feed40ba" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl_8c_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean MFLNodeOperationCyclePreviousState</definition>
+        <argsstring></argsstring>
+        <name>MFLNodeOperationCyclePreviousState</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para>This array storages previous state of operation cycle for MFL node. </para>        </briefdescription>
+        <detaileddescription>
+<para>Bus operation cycle depends from bus state. When bus changes status from inavtive to active operation cycle starts, when bus change status from active to inactive operation cycle ends. TRUE means bus operation cycle is active, FALSE operation cycle is not active. MFL node can be coded on CAN or LIN bus. Coding on both busses is not possible. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" line="81" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___channel___operation___cycle_8c_1a7f736e8f5e315177a8f237f55675d0ea" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="_err_hdl_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>const uint8 OperationCyclesIDs[ERR_NUMB_OF_BUSES]</definition>
+        <argsstring>[ERR_NUMB_OF_BUSES]</argsstring>
+        <name>OperationCyclesIDs</name>
+        <initializer>=
+{
+    DEM_OPCYC_CHANNEL_1,
+    <ref refid="_err_hdl___types_8h_1ad127cca2bd013b08b21ce5e3c9f3f7dd" kindref="member">OP_CYC_NOT_EXISTS</ref>,
+    DEM_OPCYC_CHANNEL_3,
+    DEM_OPCYC_CHANNEL_4,
+    DEM_OPCYC_CHANNEL_5,
+    DEM_OPCYC_CHANNEL_6,
+    DEM_OPCYC_CHANNEL_7,
+    DEM_OPCYC_CHANNEL_8,
+    DEM_OPCYC_CHANNEL_9,
+    DEM_OPCYC_CHANNEL_10,
+    DEM_OPCYC_CHANNEL_11,
+    DEM_OPCYC_CHANNEL_12,
+    DEM_OPCYC_CHANNEL_13,
+    DEM_OPCYC_CHANNEL_14,
+    DEM_OPCYC_CHANNEL_15,
+    DEM_OPCYC_CHANNEL_16,
+    DEM_OPCYC_CHANNEL_17,
+    <ref refid="_err_hdl___types_8h_1ad127cca2bd013b08b21ce5e3c9f3f7dd" kindref="member">OP_CYC_NOT_EXISTS</ref>,
+    DEM_OPCYC_CHANNEL_19,
+    <ref refid="_err_hdl___types_8h_1ad127cca2bd013b08b21ce5e3c9f3f7dd" kindref="member">OP_CYC_NOT_EXISTS</ref>,
+    DEM_OPCYC_CHANNEL_21,
+    DEM_OPCYC_CHANNEL_22,
+    DEM_OPCYC_CHANNEL_23,
+    DEM_OPCYC_CHANNEL_24,
+    DEM_OPCYC_CHANNEL_25,
+    DEM_OPCYC_CHANNEL_26
+}</initializer>
+        <briefdescription>
+<para>This array contains operation cycle ID per bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>Those IDs are part of DEM DTC configuration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" line="90" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/src/ErrHdl_Channel_Operation_Cycle.c"/>
+  </compounddef>
+</doxygen>

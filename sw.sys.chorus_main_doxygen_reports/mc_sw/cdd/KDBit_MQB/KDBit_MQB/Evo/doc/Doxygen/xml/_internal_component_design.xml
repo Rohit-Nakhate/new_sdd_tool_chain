@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component <bold>KDBit_MQB</bold> consists of only the following SW unit: <bold><ref refid="_kd_bit_8c" kindref="compound">KdBit.c</ref></bold> <linebreak/>
+ The architectural overview of the component is described within the SWA at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KDBit_MQB.SW Architecture</para><para>The SW unit contains an API <bold>ComputeKDBitInfo</bold> which is cyclically called by UdsTask under the API SystemInfo_Cyclic. This collects and computes the KD error bit flag. The signals SI_Sammel_SG_Fehler,SI_Sammelfehler, GW_KD_Fehler under Systeminfo_01 is updated based on KL15 status and GW failure present value. Setting or clearing of first bit of response of 0x2A28 is also done in this API. <linebreak/>
+The API <bold>KdBitNodemessageReceived</bold> notifies reception of node message when called.<linebreak/>
+ The static and dynamic SW architecture can be found in EA <linebreak/>
+ VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.KDBit_MQB.SW Architecture.Static VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.KDBit_MQB.SW Architecture.Dynamic</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>KDBit_MQB is composed of only one unit, namely KdBit, which satisfies all requirements allocated to KDBit_MQB within SWA. <linebreak/>
+see <bold>Component Diagram &quot;Requirements traceability&quot;</bold> in SWA at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KDBit_MQB.SW Architecture.Components <linebreak/>
+ <linebreak/>
+For more details on functional requirements please refere to Requirement Implementation chapter.<linebreak/>
+ Non functional requirements are traced here: <table rows="4" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_GW_8270  </para></entry><entry thead="no"><para>This function collects and computes the KDBit error flag and transmits on bus   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_GW_8271  </para></entry><entry thead="no"><para>This function collects and computes the KDBit error flag and transmits on bus   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_Diag_430  </para></entry><entry thead="no"><para>The ICAS1 shall set the first bit in 0x2A28 and the output signal so_ICAS1_KD_Fehler in Systeminfo_01 to [Error]/[No Error]   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component consists of only one unit:KdBit This unit handels: Realize the Kd-Bit collection <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>This component interacts with BuiltInList. It receives the KDbitscount and structure BuiltInListExt from BuiltInList. The architecture path given below can be referred to - <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KDBit_MQB.SW Architecture <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.BuiltInList.SW Architecture.Static.Dependencies <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="KDBit_MQB_ActivityDiagram_Dynamicbehaviour.png"></image>
+ </para><para>For detailed Dynamic Behavior between KDBit_MQB and external modules, the Dynamic Behavior at the following location in EA can be referred - <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.KDBit_MQB.SW Architecture.Dynamic</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The immediate data flow of the KDBit SW unit is described here. <linebreak/>
+The data flows from KDBit are depicted with green arrows and the data flows to KDBit are depicted with the red arrows.</para><para><image type="html" name="KDBit_DFD0.png"></image>
+ </para><para>For detailed data flow between KDBit_MQB and external modules, the data flow diagram at the following location in EA can be referred - <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.KDBit_MQB.SW Architecture.Dynamic</para><para><heading level="2">Tasks</heading>
+</para><para>The component KDbit has one interface that is called cyclically by &quot;DiagTask&quot; via function SystemInfo_Cyclic : ComputeKDBitInfo. <linebreak/>
+see also the below location in Enterprise Architect: VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KDBit_MQB.SW Architecture</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <linebreak/>
+ <heading level="2">Events</heading>
+</para><para>There is no event-handling designed. <linebreak/>
+ <heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used. <linebreak/>
+</para><para><heading level="2">Power Modes</heading>
+</para><para>There is no special power mode used. <linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para>A special exception or error handling is not necessary. <linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>A special synchronization method is not necessary. <linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>See function list : <ulink url="globals_func.html">Functions</ulink></para><para>The operations are mentioned in the proper function description. <linebreak/>
+</para><para><heading level="2">Macros</heading>
+</para><para>See macro list: <ulink url="globals_defs.html">Macros</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable. <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para>Not applicable.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

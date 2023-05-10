@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The VLK component is splitted into the following SW units:<itemizedlist>
+<listitem><para><ref refid="_v_l_k___automatic___terminal___deactivation_8c" kindref="compound">VLK_Automatic_Terminal_Deactivation.c</ref> - Implementation of Automatic Terminal Deactivation subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___b_f__12_8c" kindref="compound">VLK_BF_12.c</ref> - Implementation of BF_12 Subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___b_f__13_8c" kindref="compound">VLK_BF_13.c</ref> - Implementation of BF_13 Subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___ign_deac_due_to_ext_lock_req_8c" kindref="compound">VLK_IgnDeacDueToExtLockReq.c</ref> - VLK sub-function Ignition deactivation due to external lock request implementation.</para></listitem><listitem><para><ref refid="_v_l_k___roll_away___protection_8c" kindref="compound">VLK_RollAway_Protection.c</ref> - Implementation of Roll-Away Protection.</para></listitem><listitem><para><ref refid="_v_l_k___subfunction___interface_8c" kindref="compound">VLK_Subfunction_Interface.c</ref> - Subfunction Interface implementation.</para></listitem><listitem><para><ref refid="_v_l_k___task_8c" kindref="compound">VLK_Task.c</ref> - Exported functions for VLK SWC.</para></listitem><listitem><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">VLK_MEB_ADAPTATION.c</ref> - Source file for VLK_MEB Adaptation.</para></listitem><listitem><para><ref refid="_v_l_k___automatic___terminal___deactivation_8h" kindref="compound">VLK_Automatic_Terminal_Deactivation.h</ref> - Header file for Implementation of Automatic Terminal Deactivation subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___b_f__12_8h" kindref="compound">VLK_BF_12.h</ref> - Header file of BF_12 Subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___b_f__13_8h" kindref="compound">VLK_BF_13.h</ref> - Header file of BF_13 Subfunction.</para></listitem><listitem><para><ref refid="_v_l_k___ign_deac_due_to_ext_lock_req_8h" kindref="compound">VLK_IgnDeacDueToExtLockReq.h</ref> - Header file for VLK sub-function Ignition deactivation due to external lock request.</para></listitem><listitem><para><ref refid="_v_l_k___roll_away___protection_8h" kindref="compound">VLK_RollAway_Protection.h</ref> - Roll-Away Protection header.</para></listitem><listitem><para><ref refid="_v_l_k___subfunction___interface_8h" kindref="compound">VLK_Subfunction_Interface.h</ref> - Subfunction Interface header.</para></listitem><listitem><para><ref refid="_v_l_k___task_8h" kindref="compound">VLK_Task.h</ref> - Header for exported functions for VLK SWC.</para></listitem><listitem><para><ref refid="_v_l_k___extra_definitions_8h" kindref="compound">VLK_ExtraDefinitions.h</ref> - Controls the overwriting of generated S/R autosar_functions.</para></listitem><listitem><para><ref refid="_v_l_k___nv_ram_8h" kindref="compound">VLK_NvRam.h</ref> - Header for NVRam operations.</para></listitem><listitem><para><ref refid="_v_l_k___data_types_8h" kindref="compound">VLK_DataTypes.h</ref> - Contains data structures used for VLK .</para></listitem><listitem><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">VLK_MEB_ADAPTATION.h</ref> - Header file for VLK_MEB Adaptation.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="33" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1463  </para></entry><entry thead="no"><para>The ICAS1::VLK shall provide a cyclic runnable scheduled by ICAS1 every 10 ms..   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_637  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_636  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_743  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_742  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1582  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1585  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1530  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1537  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1539  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1225  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1224  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1591  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_746  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1381  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_303  </para></entry><entry thead="no"><para>Invalid from A178evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+</table>
+| SWR_L3_CRoute_VLC_1762 | Invalid from A175evo. | | | :--------------------<mdash/> | :----------------------------------------------------------------------------------------------------------------------------------------------<mdash/> | <table rows="60" cols="2"><row>
+<entry thead="yes"><para>SWR_L3_CRoute_VLC_1763  </para></entry><entry thead="yes"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1770  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_903  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1384  </para></entry><entry thead="no"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1772  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1369  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1385  </para></entry><entry thead="no"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1773  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1628  </para></entry><entry thead="no"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1719  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1720  </para></entry><entry thead="no"><para>Invalid from 0060evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1766  </para></entry><entry thead="no"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1774  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1564  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1388  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1389  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1392  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1391  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1390  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1587  </para></entry><entry thead="no"><para>Invalid from 0060evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1718  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1704  </para></entry><entry thead="no"><para>Invalid from A175evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_916  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1642  </para></entry><entry thead="no"><para>Invalid from 0086evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1711  </para></entry><entry thead="no"><para>Invalid from A164evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1712  </para></entry><entry thead="no"><para>Invalid from A164evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1713  </para></entry><entry thead="no"><para>Invalid from A164evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1665  </para></entry><entry thead="no"><para>Invalid from 0082evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1480  </para></entry><entry thead="no"><para>Invalid from 0060evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1761  </para></entry><entry thead="no"><para>Invalid from A126evo.   </para></entry></row>
+<row>
+<entry thead="no"><para>:--------------------<mdash/>  </para></entry><entry thead="no"><para>:----------------------------------------------------------------------------------------------------------------------------------------------<mdash/>   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_VLC_1478  </para></entry><entry thead="no"><para>Invalid from 0038evo.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Detailed description of the interfaces is done within the corresponding Files of the Unit. Only generated functions are described in detail within this chapter.</para><para><itemizedlist>
+<listitem><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">VLK_MEB_ADAPTATION.c</ref> / <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">VLK_MEB_ADAPTATION.h</ref>  This unit handles some read/write request of the VLK specific adaptions. Following the skeleton of the generated function is described.<linebreak/>
+<linebreak/>
+</para></listitem></itemizedlist>
+</para><para><bold>Std_ReturnType <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a12173ef98443864899b0de64a2926e91" kindref="member">VLK_MEB_Read_Adaption_0x05D0(Dcm_OpStatusType OpStatus, uint8* Data)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the read request 0x22 0x05D0 belonging to VLK Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully read <linebreak/>
+ E_NOT_OK - Failure while reading the adaption </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="VLK_MEB_Read_Adaption_0x05D0.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000030"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_3300; <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para><bold>Std_ReturnType <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a376e4960a7aa9becdb153da47930b461" kindref="member">VLK_MEB_Read_Adaption_0x05D1(Dcm_OpStatusType OpStatus, uint8* Data)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the read request 0x22 0x05D1 belonging to VLK Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully read <linebreak/>
+ E_NOT_OK - Failure while reading the adaption </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="VLK_MEB_Read_Adaption_0x05D1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000031"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_3302; <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para><bold>Std_ReturnType <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1ae8a2e31a07128a121325f01385c615a6" kindref="member">VLK_MEB_Write_Adaption_0x05D0(const uint8* Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType* ErrorCode)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the write request 0x2E 0x05D0 belonging to VLK Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Error state of the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully written <linebreak/>
+ E_NOT_OK - Failure while writing the adaption <linebreak/>
+ DCM_E_PENDING - Dcm is busy </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] g_eADAPT_Status - Used to handle status of adaption </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="VLK_MEB_Write_Adaption_0x05D0.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000032"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21495;  <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para><bold>Std_ReturnType <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a7dbadc7037eed0690fb94ea1b8e138b4" kindref="member">VLK_MEB_Write_Adaption_0x05D1(const uint8* Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType* ErrorCode)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the write request 0x2E 0x05D1 belonging to VLK Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Error state of the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully written <linebreak/>
+ E_NOT_OK - Failure while writing the adaption <linebreak/>
+ DCM_E_PENDING - Dcm is busy </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] g_eADAPT_Status - Used to handle status of adaption </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="VLK_MEB_Write_Adaption_0x05D1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000033"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21496;  <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_VLK.png">Software_Unit_Interaction_VLK</image>
+ </para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>VLK SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/VLK/SW Architecture/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para> VLK SWC is assigned to <bold> CORE 1 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core1</bold>. <linebreak/>
+VLK component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/VLK/SW Architecture/Dynamic/VLK Cyclic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para> No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para> No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para> Till VLK operates in low power mode, specific CAN signals and internal signals shall keep their previous value.</para><para><heading level="2">Power Modes</heading>
+</para><para> VLK requires low power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para> No DTC or DEM events are set.</para><para><heading level="2">Synchronization</heading>
+</para><para> Since <bold>VLK</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para> <bold>VLK</bold> operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para> No complex macros or function like macros used. Following macros are used: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para> <bold>VLK</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para> See <ulink url="files.html">File section</ulink>.</para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of units is 7.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of dependencies is greater then 7.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>QM   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>No complex algorithms but interaction is rated high.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of units greater then 5.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>SWATT FTL and PLAST tools.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

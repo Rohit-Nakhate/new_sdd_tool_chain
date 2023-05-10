@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___voltage___out___of___range___error_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Voltage_Out_Of_Range_Error.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___dataset_8c" local="yes">ErrHdl_Dataset.c</includedby>
+    <includedby refid="_err_hdl___steuergeraet___defekt_8c" local="yes">ErrHdl_Steuergeraet_Defekt.c</includedby>
+    <includedby refid="_err_hdl___voltage___out___of___range___error_8c" local="yes">ErrHdl_Voltage_Out_Of_Range_Error.c</includedby>
+    <incdepgraph>
+      <node id="577">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="575">
+        <label>ErrHdl_Voltage_Out_Of_Range_Error.h</label>
+        <link refid="_err_hdl___voltage___out___of___range___error_8h"/>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+      </node>
+      <node id="576">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="579">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="578">
+        <label>ErrHdl_Voltage_Out_Of_Range_Error.h</label>
+        <link refid="_err_hdl___voltage___out___of___range___error_8h"/>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+      </node>
+      <node id="582">
+        <label>ErrHdl_Voltage_Out_Of_Range_Error.c</label>
+        <link refid="_err_hdl___voltage___out___of___range___error_8c"/>
+      </node>
+      <node id="581">
+        <label>ErrHdl_Steuergeraet_Defekt.c</label>
+        <link refid="_err_hdl___steuergeraet___defekt_8c"/>
+      </node>
+      <node id="580">
+        <label>ErrHdl_Dataset.c</label>
+        <link refid="_err_hdl___dataset_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___voltage___out___of___range___error_8h_1abd016cb2ee5eb00bbcae33905b7b4cc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType ErrBatteryVoltageOutOfRange</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrBatteryVoltageOutOfRange</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handle battery out of range errors. </para>        </briefdescription>
+        <detaileddescription>
+<para>Battery has three states(E_NORMAL_VOLTAGE, E_UNDER_VOLTAGE, E_OVER_VOLTAGE). For each of the states appropriate DTCs and DEM condition state should be set. <linebreak/>
+<itemizedlist>
+<listitem><para>less then 5.5V - Under voltage <linebreak/>
+</para></listitem><listitem><para>6v to 18v - Normal voltage <linebreak/>
+</para></listitem><listitem><para>above 18.5v - over voltage <simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retVal : E_OK in case of positive operation or else E_NOK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl_8c_1a78086918080fb58cc16fc1a60c4b7d2f" kindref="member">ErrData</ref> <linebreak/>
+ ERR_UNDER_VOLTAGE_THRESHOLD <linebreak/>
+ <ref refid="_err_hdl_8c_8test_1ae3b193624ac3a90dd4513f41a333e089abbf88422da79c432c7903c39fb1ebbaf" kindref="member">E_UNDER_VOLTAGE</ref> <linebreak/>
+ ERR_LOWER_NORMAL_VOLTAGE_THRESHOLD <linebreak/>
+ ERR_UPPER_NORMAL_VOLTAGE_THRESHOLD <linebreak/>
+ <ref refid="_err_hdl_8c_8test_1ae3b193624ac3a90dd4513f41a333e089a69ceb75b5f8ee5d2b94429206775bf8a" kindref="member">E_NORMAL_VOLTAGE</ref> <linebreak/>
+ ERR_OVER_VOLTAGE_THRESHOLD <linebreak/>
+ <ref refid="_err_hdl_8c_8test_1ae3b193624ac3a90dd4513f41a333e089a4cb3b14cbd951aee4de47be1c05be3bb" kindref="member">E_OVER_VOLTAGE</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrBatteryVoltageOutOfRange.png">Activity Diagram of function ErrBatteryVoltageOutOfRange </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrBatteryVoltageOutOfRange <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+ {SWR_ICAS1_GW_16269}. </para></simplesect>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Voltage_Out_Of_Range_Error.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___voltage___out___of___range___error_8h_1a3048234047676984ae518e2540773b18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType ErrIsVoltageOutOfRange</definition>
+        <argsstring>(boolean *voltageStatus)</argsstring>
+        <name>ErrIsVoltageOutOfRange</name>
+        <param>
+          <type><ref refid="_err_hdl_8c_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref> *</type>
+          <declname>voltageStatus</declname>
+        </param>
+        <briefdescription>
+<para>This function is used to get current battery voltage status. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean * voltageStatus : points towards voltage range. True if voltage is out of range or else false.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retVal : E_OK in case of positive operation, otherwise E_NOT_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___voltage___out___of___range___error_8c_1a613e7130e60746b670d7ebcbc1fe5395" kindref="member">voltageOutOfRange</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrIsVoltageOutOfRange.png">Activity Diagram of function ErrIsVoltageOutOfRange </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrIsVoltageOutOfRange <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which return the voltage out of range status. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Voltage_Out_Of_Range_Error.h" line="136" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>short description in one sentence end with dot. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>File</title><para>//VW_MEB_19_ICAS1/CHORUS/CHORUS_DEV/CHORUS/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Voltage_Out_Of_Range_Error.h </para></simplesect>
+<simplesect kind="rcs"><title>Change</title><para>162655 </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#3 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib99730 </para></simplesect>
+<simplesect kind="rcs"><title>DateTime</title><para>2021/01/29 06:26:08 </para></simplesect>
+detailed multiline description of the file </para>    </detaileddescription>
+    <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Voltage_Out_Of_Range_Error.h"/>
+  </compounddef>
+</doxygen>

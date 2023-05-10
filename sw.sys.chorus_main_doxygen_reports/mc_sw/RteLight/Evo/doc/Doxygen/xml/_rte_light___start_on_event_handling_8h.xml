@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___start_on_event_handling_8h" kind="file" language="C++">
+    <compoundname>RteLight_StartOnEventHandling.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <incdepgraph>
+      <node id="83">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="82">
+        <label>RteLight_StartOnEventHandling.h</label>
+        <link refid="_rte_light___start_on_event_handling_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_rte_light___start_on_event_handling_8h_1a262363db27355596534c01791c383d06" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 Rte_DreCounterRead_&lt; Runnable &gt;</definition>
+        <argsstring></argsstring>
+        <name>Rte_DreCounterRead_&lt; Runnable &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Data Receive Event check variable for the runnable.<linebreak/>
+</para><para>The variable is checked on the receiver&apos;s core if is different to the Rte_DreCounterWrite_&lt;Runnable&gt;. If this is true, then the new value is stored and the runnable is called.<linebreak/>
+<simplesect kind="remark"><para>range [0x00 - 0xFF]<linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context the core where the sender is configured to run. <linebreak/>
+ protection none. For this micro-controller uint8 access is atomic.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h" line="71" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___start_on_event_handling_8h_1aa6add61e7a422e37f02392db67807f64" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 Rte_DreCounterWrite&lt; Runnable &gt;</definition>
+        <argsstring></argsstring>
+        <name>Rte_DreCounterWrite&lt; Runnable &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Data Receive Event check variable for the runnable.<linebreak/>
+</para><para>The variable is updated when the <linebreak/>
+<simplesect kind="remark"><para>range [0x00 - 0xFF]<linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context the core where the sender is configured to run. <linebreak/>
+ protection none. For this micro-controller uint8 access is atomic.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h" line="85" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gad6751ae967b5e3285ef17e4f69dd85fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_DreUpdateCore_CORE</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_DreUpdateCore_CORE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Dispatcher for the Start On Event runnables. There is one dispatch function for each core in order not to interrupt the already running SWC&apos;s runnable by an &quot;callback&quot; of the same SWC. The functionality is also refered as DRE (Data Receive Event) <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ range N/A.<linebreak/>
+ resolution factor = N/A.<linebreak/>
+ offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ range N/A. <linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Variable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_DreUpdateCore_CORE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of runnables associated to a data receive event for the core .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte_light___start_on_event_handling_8h_8test_1ae68e7459eaee6c33964c572d43e0b4f9" kindref="member">TEST_Rte_DreUpdateCore_CORE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_DreUpdateCore&lt;Core&gt; from architecture Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_261.<linebreak/>
+<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h" line="153" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The file contains the dispatcher of the start on event runnables. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_rte_light___start_on_event_handling_8h" kindref="compound">RteLight_StartOnEventHandling.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_StartOnEventHandling.h"/>
+  </compounddef>
+</doxygen>

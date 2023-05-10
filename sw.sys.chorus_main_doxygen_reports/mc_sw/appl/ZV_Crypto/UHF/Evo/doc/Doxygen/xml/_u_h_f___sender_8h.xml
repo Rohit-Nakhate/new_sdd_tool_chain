@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___sender_8h" kind="file" language="C++">
+    <compoundname>UHF_Sender.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includedby refid="_u_h_f___sender_8c" local="yes">UHF_Sender.c</includedby>
+    <incdepgraph>
+      <node id="102">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="101">
+        <label>UHF_Sender.h</label>
+        <link refid="_u_h_f___sender_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="103">
+        <label>UHF_Sender.h</label>
+        <link refid="_u_h_f___sender_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>UHF_Sender.c</label>
+        <link refid="_u_h_f___sender_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___sender_8h_1aa3e06429ed1acb8c4a655c3611abd35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evUHFSenden</definition>
+        <argsstring>(const uint8 *rawUHFTransponderID, uint8 numUHFPortNumber, uint8 numUHFFunktionsnummer, const uint8 *rawUHFPayload, uint16 numUHFPayloadLength, uint8 numPreambleLength, uint8 numChannelSelect, uint8 numNextChannelSelect, uint8 tChannelSwitchTime)</argsstring>
+        <name>evUHFSenden</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>rawUHFTransponderID</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numUHFPortNumber</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numUHFFunktionsnummer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>rawUHFPayload</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>numUHFPayloadLength</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numPreambleLength</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numChannelSelect</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>numNextChannelSelect</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>tChannelSwitchTime</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Server UHF function used to send messages to SAM</para><para>Used to send CAN messages to SAM using Rte functions. It splits merged payload to valid format for CAN messages, then calls proper Rte Calls in order to send messages over CCAN to SAM. <simplesect kind="pre"><para>UHF-Master receives the StAnfUHFTrigger.evUHFSenden call from KESSY-SW </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="_u_h_f___c_r_c10_8c_8test_1a1cbecab281ec270e3ae1f0fb71d02b16" kindref="member">P2CONST(uint8</ref></parametername>
+<parametername direction="in">AUTOMATIC</parametername>
+<parametername direction="in">RTE_APPL_DATA)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rawUHFTransponderID - pointer to TransponderId array [in] uint8 numUHFPortNumber - UHF Telegram Port number [in] <ref refid="_u_h_f___c_r_c10_8c_8test_1a1cbecab281ec270e3ae1f0fb71d02b16" kindref="member">P2CONST(uint8, AUTOMATIC, RTE_APPL_DATA)</ref> rawUHFPayload - pointer of TransponderId array [in] uint16 numUHFPayloadLength - Payload length [in] uint8 numPreambleLength - length of preamble [in] uint8 numChannelSelect - selected channel [in] uint8 numNextChannelSelect - next selected channel [in] uint8 tChannelSwitchTime - channel switch time </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType Rte Status </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___sender_8c_1a02c1a135b3c024a4855e985af154885c" kindref="member">u8RawUHF2SAM_Msg</ref> - Buffer structure of UHF Message to be send to SAM <ref refid="_u_h_f___sender_8c_1a66a9425c1243e61db4a07c01cad36799" kindref="member">u8UHF_Zaehler</ref> - UHF Telegram Message counter </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Payload stored and formatted in UHF is sent to SAM over Rte  <image type="html" name="evUHFSenden.png">Activity Diagram evUHFSenden</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described on: <linebreak/>
+ <ref refid="_u_h_f___sender_8c_8test_1aacf885b64387bfa776ed6b50668b4b43" kindref="member">TEST_evUHFSenden</ref> <linebreak/>
+ <ref refid="_u_h_f___sender_8c_8test_1a1de405c83a32ce4be34df642e2b671b3" kindref="member">TEST_evUHFSenden_nullptr</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_327 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_371 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_372 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_330 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_331 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_332 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_333 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_334 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_335 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_353 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_351 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_338 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_339 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_340 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_341 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_342 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_345 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_343 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_344 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_369 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_370 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_380 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_326 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_172 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_347 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>UHF init function called by scheduler.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_Sender.h" line="218" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Sender.c" bodystart="740" bodyend="881"/>
+        <references refid="_u_h_f___sender_8c_1a66a9425c1243e61db4a07c01cad36799" compoundref="_u_h_f___sender_8c" startline="513">u8UHF_Zaehler</references>
+        <references refid="_u_h_f___sender_8c_1a02c1a135b3c024a4855e985af154885c" compoundref="_u_h_f___sender_8c" startline="532">u8RawUHF2SAM_Msg</references>
+        <references refid="_u_h_f___data_types_8h_1a1b845bc26a70738722ab9c0cea984bd6" compoundref="_u_h_f___data_types_8h" startline="442">MAX_UHF_RF_MSG_SIZE</references>
+        <references refid="_u_h_f___sender_8c_1abd43fca5445ecd150845ef4e04cf5ddc" compoundref="_u_h_f___sender_8c" startline="74">EV_UHF_SENDEN_VALUE_1</references>
+        <references refid="_u_h_f___sender_8c_1af7a35dd67e11c686f4177c56739b6d96" compoundref="_u_h_f___sender_8c" startline="84">EV_UHF_SENDEN_VALUE_2</references>
+        <references refid="_u_h_f___sender_8c_1a4522bc4e542d1fd47d475d82a37620d3" compoundref="_u_h_f___sender_8c" startline="94">EV_UHF_SENDEN_VALUE_3</references>
+        <references refid="_u_h_f___sender_8c_1a28d1d28cd20bc7116b5628d67754aaa0" compoundref="_u_h_f___sender_8c" startline="104">EV_UHF_SENDEN_VALUE_4</references>
+        <references refid="_u_h_f___sender_8c_1adcf9bcb52fe00cda0788130177655aae" compoundref="_u_h_f___sender_8c" startline="184">EV_UHF_SENDEN_VALUE_HEX_F0</references>
+        <references refid="_u_h_f___sender_8c_1acc73b9824eaf964a0a3cdb8092d80fc1" compoundref="_u_h_f___sender_8c" startline="174">EV_UHF_SENDEN_VALUE_HEX_0F</references>
+        <references refid="_u_h_f___sender_8c_1a2a8ea87871fc789a6d9364c79eee0137" compoundref="_u_h_f___sender_8c" startline="212">BITSPERBYTE</references>
+        <references refid="_u_h_f___data_types_8h_1a99f8aa287a0baee64d89d6b897cddd24" compoundref="_u_h_f___data_types_8h" startline="401">UHF_SENSOR_01_DATA_CAN_LEN</references>
+        <references refid="_u_h_f___sender_8c_1ae8a42c1e6cb37c6fa0d1d4bf5788af63" compoundref="_u_h_f___sender_8c" startline="194">EV_UHF_SENDEN_VALUE_HEX_FF</references>
+        <references refid="_u_h_f___sender_8c_1a9c8a7017a419fa85b534457b4eddeb7f" compoundref="_u_h_f___sender_8c" startline="114">EV_UHF_SENDEN_VALUE_8</references>
+        <references refid="_u_h_f___c_r_c10_8h_1a073e5d29d66352964275530518756898" compoundref="_u_h_f___c_r_c10_8c" startline="363" endline="378">CRC_Compute_CRC10</references>
+        <references refid="_u_h_f___data_types_8h_1aff68fc03f7b053b38d6a3d72c80fb7a4" compoundref="_u_h_f___data_types_8h" startline="165">UHF_SENSOR_MIN_LENGTH</references>
+        <references refid="_u_h_f___data_types_8h_1a00c591cf83934377bfa8bfe84de8f85c" compoundref="_u_h_f___data_types_8h" startline="596">RFCOMINT_PASE_CHECKSUM_CRC10_INIT_VAL</references>
+        <references refid="_u_h_f___sender_8c_1a9ba7d26e563eeb746d2b484bca9151f3" compoundref="_u_h_f___sender_8c" startline="911" endline="959">storeCrcEnd_UHF</references>
+        <references refid="_u_h_f___sender_8c_1a38065ba633fc27931475928256eab4d9" compoundref="_u_h_f___sender_8c" startline="967" endline="977">prepareMessageSixBytesUHF</references>
+        <references refid="_u_h_f___sender_8c_1a2bd002dfabcbaf76886831807e8c1a28" compoundref="_u_h_f___sender_8c" startline="204">CRC10BITLENGTH</references>
+        <references refid="_u_h_f___sender_8c_1ad4577a20df836719e3f4e32ff1b389bd" compoundref="_u_h_f___sender_8c" startline="154">EV_UHF_SENDEN_VALUE_HEX_6</references>
+        <references refid="_u_h_f___sender_8c_1ab82cc415c4d138f4b9bf18b92dd18bfb" compoundref="_u_h_f___sender_8c" startline="1007" endline="1018">prepareMessageSevenBytesUHF</references>
+        <references refid="_u_h_f___sender_8c_1aed934f5a102560f9c7ff2dcead988ff2" compoundref="_u_h_f___sender_8c" startline="223">UHF_MESSAGE_2_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1a74e220a0dee3c8ecbed07ac912cccc95" compoundref="_u_h_f___sender_8c" startline="984" endline="999">checkByteAndPrepareMessageUHF</references>
+        <references refid="_u_h_f___sender_8c_1acf480fbb2e946fa72b63c22b7daf5487" compoundref="_u_h_f___sender_8c" startline="234">UHF_MESSAGE_3_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1ab2b350ef41ec80081c35b3870c69faae" compoundref="_u_h_f___sender_8c" startline="245">UHF_MESSAGE_4_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1a2178b468a4f46efdb8963a97e9a9298f" compoundref="_u_h_f___sender_8c" startline="256">UHF_MESSAGE_5_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1a69f835e66278bb9a903ae7a8cab846b0" compoundref="_u_h_f___sender_8c" startline="267">UHF_MESSAGE_6_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1aea82ea888fb8976957995a25101879dd" compoundref="_u_h_f___sender_8c" startline="278">UHF_MESSAGE_7_ADDRESS</references>
+        <references refid="_u_h_f___sender_8c_1a97d4edeb534e8e29fe247d888c88684a" compoundref="_u_h_f___sender_8c" startline="289">UHF_MESSAGE_8_ADDRESS</references>
+        <referencedby refid="_u_h_f___sender_8c_8test_1aacf885b64387bfa776ed6b50668b4b43" compoundref="_u_h_f___sender_8c_8test" startline="142" endline="323">TEST_evUHFSenden</referencedby>
+        <referencedby refid="_u_h_f___sender_8c_8test_1a1de405c83a32ce4be34df642e2b671b3" compoundref="_u_h_f___sender_8c_8test" startline="670" endline="766">TEST_evUHFSenden_nullptr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___sender_8h_1ab6478ffedda9d0ba129463818780b0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void updateUHFConfig</definition>
+        <argsstring>(void)</argsstring>
+        <name>updateUHFConfig</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function to trigger update Kessy Data on CAN.</para><para>At first it reads data from ICAS1::KESSY-SW via Rte then it updates UHF Config using Rte calls. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="updateUHFConfig.png">Activity Diagram updateUHFConfig</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___sender_8c_8test_1ac4911f789595a54037a66ca0a44a719c" kindref="member">TEST_updateUHFConfig</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_338 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>UHF init function called by scheduler.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_Sender.h" line="264" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_Sender.c" bodystart="889" bodyend="899"/>
+        <referencedby refid="_u_h_f___sender_8c_8test_1ac4911f789595a54037a66ca0a44a719c" compoundref="_u_h_f___sender_8c_8test" startline="335" endline="377">TEST_updateUHFConfig</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the UHF SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___sender_8h" kindref="compound">UHF_Sender.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>24/05/2022 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_Sender.h"/>
+  </compounddef>
+</doxygen>

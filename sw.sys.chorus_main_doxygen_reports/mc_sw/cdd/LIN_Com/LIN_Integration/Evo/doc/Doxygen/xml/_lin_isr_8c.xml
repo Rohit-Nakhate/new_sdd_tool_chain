@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_lin_isr_8c" kind="file" language="C++">
+    <compoundname>LinIsr.c</compoundname>
+    <includes local="yes">lin.h</includes>
+    <includes local="yes">lin_cfg_types.h</includes>
+    <includes local="yes">lin_cfg.h</includes>
+    <includes local="yes">Os.h</includes>
+    <incdepgraph>
+      <node id="101">
+        <label>lin_cfg.h</label>
+      </node>
+      <node id="102">
+        <label>Os.h</label>
+      </node>
+      <node id="99">
+        <label>lin.h</label>
+      </node>
+      <node id="98">
+        <label>LinIsr.c</label>
+        <link refid="_lin_isr_8c"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>lin_cfg_types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_lin_isr_8c_1a008954def48e3db00ac22700fd60dd2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin0RxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin0RxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN1 (LinEnergie) rx notification (BDM , DC/AC). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin0RxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI0 parameter <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para></para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin0RxIsr </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="105" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a4f72e468be46789e02bc55694ff123bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin0TxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin0TxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN1 (LinEnergie) tx notification (BDM , DC/AC). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin0TxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_tx() notification function with the LIN_IFC_SCI0 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin0TxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="138" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a9fa6d45b9348bee0e8cdf0b04d22cd48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin0ErrIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin0ErrIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN1 (LinEnergie) error frame (BDM , DC/AC). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin0ErrIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI0 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin0ErrIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="168" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1ae9c43432f97659e6b6e0f32dd5458d5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin1RxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin1RxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>\1. </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin1RxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI1 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin1RxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="200" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="200" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a121f4476cafe0580d103a266a24a915b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin1TxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin1TxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN2 (LinMFL) tx notification (MFL, KLR). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin1TxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_tx() notification function with the LIN_IFC_SCI1 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin1TxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="230" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a03b8c4929c81638b02ae634e0fb42ffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin1ErrIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin1ErrIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN2 (LinMFL) error frame (MFL, KLR). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin1ErrIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI1 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin1ErrIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="260" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="260" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1ad221591ec430048f8582910df1d50ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin2RxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin2RxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN3 (SHL_LIN) rx notification (AlcInt, SHL_li1, SHL_li2, SHL_re1s_01, SHL_re2s_01). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin2RxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI2 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin2RxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="292" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a365ef78765853e17da16364d9c11da4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin2TxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin2TxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN3 (SHL_LIN) tx notification (AlcInt, SHL_li1, SHL_li2, SHL_re1s_01, SHL_re2s_01). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin2TxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_tx() notification function with the LIN_IFC_SCI2 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin2TxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="322" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1ae3b1aef8dbf18c68506b70618fbeb9b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin2ErrIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin2ErrIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN2 (SHL_LIN) error frame (AlcInt, SHL_li1, SHL_li2, SHL_re1s_01, SHL_re2s_01). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin2ErrIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI2 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin2ErrIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="352" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="352" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a1c164386f9f8f4d7edbac16827e0d5ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin3RxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin3RxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN4 (LinDWA) rx notification (Sounder, DWA Sensor). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin3RxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the DWA Sounder is armed check if there is a wakeup request from a DWA LIN bus. <linebreak/>
+ Call l_ifc_rx() notification function with the LIN_IFC_SCI3 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin3RxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="385" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="385" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a0d001936a8968859c4baca9a18000321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin3TxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin3TxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN4 (LinDWA) tx notification (Sounder, DWA Sensor). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin3TxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_tx() notification function with the LIN_IFC_SCI3 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin3TxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="420" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a95f6ff785de7fe2783b10aead64e4c68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin3ErrIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin3ErrIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN4 (LinDWA) error frame (Sounder, DWA Sensor). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin3ErrIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI3 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin3ErrIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="450" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="450" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a9c1a6565873ee5d7aa698980c17b698f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin5RxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin5RxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN6 (VIP_LIN) rx notification (VIP HFS/HFBS). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin5RxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI5 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin5RxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="580" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="580" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1a89f26bd7e66787b8d583ce667d653a52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin5TxIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin5TxIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN6 (VIP_LIN) tx notification (VIP HFS/HFBS). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin5TxIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_tx() notification function with the LIN_IFC_SCI5 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin5TxIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="610" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="610" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="_lin_isr_8c_1afc49c3b63a80834608fbebb498d4cbab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OS_ISR_Lin5ErrIsr</definition>
+        <argsstring>(void)</argsstring>
+        <name>OS_ISR_Lin5ErrIsr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Interrupt routine for LIN6 (VIP_LIN) error frame (VIP HFS/HFBS). </para>        </briefdescription>
+        <detaileddescription>
+<para>See Tresos tool for the configuration of the interrupt. <simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Lin5ErrIsr interrupt <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals N/A.</title><para></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Call l_ifc_rx() notification function with the LIN_IFC_SCI5 parameter <linebreak/>
+ This is standard API provided by Elektrobit </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_OS_ISR_Lin5ErrIsr </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Needed for the integration with the LINFlex driver. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" line="640" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c" bodystart="640" bodyend="643"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This module implements the LIN ISR functions. </para>    </briefdescription>
+    <detaileddescription>
+<para>There are 3 types of interrupts for each LIN interface: Lin[x]RxIsr - interrupt for reception Lin[x]ErrIsr - interrupt for error frame Lin[x]TxIsr - interrupt for transmit Where x represents the interface identifier: starts from 0 and goes till LIN_IFC_NR_MAX </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/LinIsr.c"/>
+  </compounddef>
+</doxygen>

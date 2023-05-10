@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component DWAX_Diagnosis has two units: DWAX_Adaptions and DWAX_MeasurementValues.<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level. <linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+This module does not have non functional requirements.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><bold>Adaptions</bold> has one unit: DWAX_Adaptions.<linebreak/>
+The unit DWAX_Adaptions handle the implementation of the read-write operations for certain DIDs.<linebreak/>
+<bold>MeasurementValues</bold> has one unit: DWAX_MeasurementValues. <linebreak/>
+The unit DWAX_MeasurementValues handles the measurement configuration parameters written via Diagnosis and it is triggered by DCM in order to read requested data.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between software units belonging to DWAX_Diagnosis.<linebreak/>
+<image type="html" name="DWAX_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The module interactions can be split into two parts. There are interactions with DWAX_Adaptions and DWAX_MeasurementValues.<linebreak/>
+<linebreak/>
+<bold>Interaction with DWAX_Adaptions.</bold></para><para>The corresponding diagnostic service(read or write) is executed first.<linebreak/>
+The next diagram will depict the desired procedure.</para><para><image type="html" name="DWAX_Adaptions_Dynamic_Behavior_StartUp.png"></image>
+  <linebreak/>
+ <bold>Interaction with DWAX_MeasurementValues.</bold> <linebreak/>
+The corresponding read diagnostic service is executed first.<linebreak/>
+<linebreak/>
+ <image type="html" name="DWAX_MeasurementValues_Dynamic_Behavior_RequestState.png"></image>
+  <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the dataflow from <bold>Adaptions</bold> module for write service request from <bold>Tester</bold>.<linebreak/>
+Each data flow is illustrated through a colored line, as below:<linebreak/>
+Execute write service - black<linebreak/>
+Positive case - green<linebreak/>
+Negative case - red<linebreak/>
+ <image type="html" name="data_flow_routines.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>DWAX_Diagnosis component is reacting at DCM trigger.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because DWAX_Diagnosis component runs in high-power mode.</para><para><heading level="2">Power Modes</heading>
+</para><para>The current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The negative response codes are passed to the DCM using the following output parameter: <bold>ErrorCode</bold>.<linebreak/>
+If the vehicle is in externally locked state then the trigger write operation for the DIDs will return <bold>DCM_E_NOT_OK</bold> and ErrorCode <bold>DCM_E_GENERALREJECT</bold>.<linebreak/>
+If the diagnostic session or payload is not according to DCM configuration based on the requirements then the diagnostic READ/WRITE request will be rejected with ErrorCode <bold>GENERAL_REJECT</bold> or <bold>GENERAL_PROGRAMMING_FAILURE</bold>.<linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>DWAX_Diagnosis operations are available in the <ulink url="globals_func.html"><bold>Functions section</bold></ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>DWAX_Diagnosis macros are available in the Functions section - see macro list.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>This component does not use data structures.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low   </para></entry></row>
+</table>
+</para><para>Evaluation is done according to criteria described in <ulink url="https://confluence-ibs.zone2.agileci.conti.de/display/public/VWE3ICAS1/3.+Doxygen+Guidelines+-+Software+Detailed+Design#id-3.DoxygenGuidelinesSoftwareDetailedDesign-EvaluationofSoftwareDetailedDesign"><bold>Evaluation of Software Detailed Design</bold></ulink>.</para><para><heading level="2">Interoperability</heading>
+</para><para>Interoperability is set to <bold>low</bold> because DWAX_Diagnosis depends on other components. <heading level="2">Interaction</heading>
+</para><para>Interaction is set to <bold>medium</bold> because the component has an increased number of non RTE dependencies. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.DWASensorSirene.SW Architecture.DWAX_Diagnosis.SW Architecture - Adaptions</emphasis> and <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.DWASensorSirene.SW Architecture.DWAX_Diagnosis.SW Architecture - MeasurementValues</emphasis>. <heading level="2">Criticality</heading>
+</para><para>Criticality is set to <bold>low</bold> because DWAX_Diagnosis is a QM component. Also, this component has been recently integrated. <heading level="2">Technical complexity</heading>
+</para><para>Technical complexity is set to <bold>low</bold> because so far DWAX_Diagnosis does not implement any algorithm. <heading level="2">Risks</heading>
+</para><para>Risks is set to <bold>medium</bold> because DWAX_Diagnosis has more than one SW unit. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.DWASensorSirene.SW Architecture.DWAX_Diagnosis.SW Architecture - Adaptions</emphasis> and <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.DWASensorSirene.SW Architecture.DWAX_Diagnosis.SW Architecture - MeasurementValues</emphasis>. <heading level="2">Testability</heading>
+</para><para>Testability is set to <bold>low</bold> because some tests have to be tested by hand on test bench. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

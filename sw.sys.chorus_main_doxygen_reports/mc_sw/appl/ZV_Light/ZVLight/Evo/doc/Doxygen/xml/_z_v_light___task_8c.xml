@@ -1,0 +1,1943 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_z_v_light___task_8c" kind="file" language="C++">
+    <compoundname>ZVLight_Task.c</compoundname>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_z_v_light___task_8h" local="yes">ZVLight_Task.h</includes>
+    <includes local="yes">Rte_ZVLight.h</includes>
+    <includes local="yes">Rte_NvM_Type.h</includes>
+    <includes local="yes">Dcm.h</includes>
+    <includes refid="_z_v_light___nv_ram_8h" local="yes">ZVLight_NvRam.h</includes>
+    <incdepgraph>
+      <node id="27">
+        <label>Dcm.h</label>
+      </node>
+      <node id="26">
+        <label>Rte_NvM_Type.h</label>
+      </node>
+      <node id="19">
+        <label>ZVLight_Task.c</label>
+        <link refid="_z_v_light___task_8c"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Rte.h</label>
+      </node>
+      <node id="23">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="22">
+        <label>agw.h</label>
+      </node>
+      <node id="29">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="25">
+        <label>Rte_ZVLight.h</label>
+      </node>
+      <node id="24">
+        <label>Rte_Ks.h</label>
+      </node>
+      <node id="21">
+        <label>ZVLight_Task.h</label>
+        <link refid="_z_v_light___task_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ZVLight_NvRam.h</label>
+        <link refid="_z_v_light___nv_ram_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_z_v_light___counter" prot="public">ZVLight_Counter</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_z_v_light___task_8c_1a7969e49507a92c24c7704802c56e32e9" prot="public" static="no">
+        <name>MAX_SIZE_ZVL</name>
+        <initializer>16U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>maximum size of CONSTANT_CDL_SECURING <simplesect kind="remark"><para>value 16u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="78" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a38e11c173de369733ca1214bc4011e3d" prot="public" static="no">
+        <name>COUNTER_POLL_ACHIEVE</name>
+        <initializer>50U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>maximum of return requests via KS function in the state &quot;busy&quot; <simplesect kind="remark"><para>value 50u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="86" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a47dc9b93f84125efcb511229542229d3" prot="public" static="no">
+        <name>COUNTER_NVM_SAVE_LIMIT</name>
+        <initializer>50U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>maximum of return requests received by ZVLight in state &quot;pending&quot; <simplesect kind="remark"><para>values 50u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="94" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a4c83fdeb4bc2f6001ef092e815c7bb07" prot="public" static="no">
+        <name>GENERAL_REJECT</name>
+        <initializer>(Dcm_NegativeResponseCodeType)0x10U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>negative response code when the CDL signature cannot be stored in NvM <simplesect kind="remark"><para>values 0x10U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="102" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a80fcc52819dd1ba112bad1f3e2ba49be" prot="public" static="no">
+        <name>BUSY_REPEAT_REQUEST</name>
+        <initializer>(Dcm_NegativeResponseCodeType)0x21U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>negative response code when the CDL securing function receives &quot;busy&quot; <simplesect kind="remark"><para>values 0x21U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="110" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a8191c7f3311dd05de2e893f33d86f775" prot="public" static="no">
+        <name>CONDITION_NOT_CORRECT</name>
+        <initializer>(Dcm_NegativeResponseCodeType)0x22U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>negative response code when the CDL securing function receives &quot;nok&quot; <simplesect kind="remark"><para>values 0x22U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="118" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1ab19e48b24d7628996e9f7d4853192175" prot="public" static="no">
+        <name>AESGFAKEYPOLL_RESULT</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>return request result via (KS) function <simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="126" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1a8e419b3b14bfbfceca76525b83c929b7" prot="public" static="no">
+        <name>COUNTER_ZVL_SEND</name>
+        <initializer>23U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>count the reception of these messages for which the signal is set <simplesect kind="remark"><para>value 23u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="134" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1aa72fee198c9f9033a3518ceecacf0210" prot="public" static="no">
+        <name>SIGNATURE_MASK_ZVL</name>
+        <initializer>0x07FFU</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>mask used for signature calculation <simplesect kind="remark"><para>value 0x07FFU <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="142" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_z_v_light___task_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>For SWATT testing</para><para>SWATT bypassing used for testing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="152" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_z_v_light___task_8c_1abfa3d03b6dfb52823637ce81db07fe7d" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 EncryptedConst[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>EncryptedConst</name>
+        <initializer>= {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used to store the encryption result <linebreak/>
+. <simplesect kind="remark"><para>range - array of uint8 unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZVLight_GenSignAndErrorHandling, ZVLight_InitVarFunc <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="172" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1acb92096613b1a639971e1d7209988b41" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean EncryptionDone</definition>
+        <argsstring></argsstring>
+        <name>EncryptionDone</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for status of encryption <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - encryption not done <linebreak/>
+ TRUE - encryption done <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context EncryptData, ZVLight_WriteSignatureToNVM <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="188" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a835387755c32b6aa74bc15f80015a1cb" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean calculationFinished</definition>
+        <argsstring></argsstring>
+        <name>calculationFinished</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for status of calculation ZV signature <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - ZV signature calculation not finished <linebreak/>
+ TRUE - ZV signature calculation finished <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context EncryptData <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="204" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a9871deb87706da7ea4aaffc1f7ebb09f" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZVLight_SignatureSendToNV</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_SignatureSendToNV</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ZV signature sent to NvM <linebreak/>
+. Flag used for status of storing ZV signature <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - ZV signature was not sent to NVM <linebreak/>
+ TRUE - ZV signature was sent to NVM <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context EncryptData, ZVLight_WriteSignatureToNVM <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="221" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1aacfa1bc914fa6cca0c8dbd1e37dc9dbb" prot="public" static="yes" mutable="no">
+        <type>uint16</type>
+        <definition>uint16 ZVLight_Signature</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_Signature</name>
+        <initializer>= 0U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable contains ZV Signature value <linebreak/>
+ <simplesect kind="remark"><para>range - uint16 unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZVLight_GenSignAndErrorHandling, ZVLight_WriteSignatureToNVM <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="236" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a878f83d85b5ec567cd76106b2e568776" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 CounterPoll</definition>
+        <argsstring></argsstring>
+        <name>CounterPoll</name>
+        <initializer>= 0U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Counter used during ZV signature calculation. <linebreak/>
+ Variable used to count &quot;Busy&quot; response received from Rte_Call_ZVLight_CompProt_AesGfaKeyPoll. <linebreak/>
+<simplesect kind="remark"><para>range [0...51] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZVLight_StartEncryption, ZVLight_GenSignAndErrorHandling <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000002"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_199 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="251" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1af2ba81bad9281a00c8f764af8465104d" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 CounterNvmCycles</definition>
+        <argsstring></argsstring>
+        <name>CounterNvmCycles</name>
+        <initializer>= 0U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Counter used for NvM write operation <linebreak/>
+ Variable used to count &quot;Pending&quot; response received from NVM. <linebreak/>
+ <simplesect kind="remark"><para>range - [0...51] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context EncryptData, ZVLight_WriteSignatureToNVM <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="267" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1ae480ddf4e644f74df3039465ab808390" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 locEnc</definition>
+        <argsstring></argsstring>
+        <name>locEnc</name>
+        <initializer>= 0U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable that indicates if the encryption could be started <linebreak/>
+ <simplesect kind="remark"><para>values - [E_OK, E_NOT_OK, E_BUSY] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context EncryptData, ZVLight_InitVarFunc <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000003"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_124 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="281" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a2cc6972c20a63ff152e24d8238ba32b7" prot="public" static="no" mutable="no">
+        <type>uint16</type>
+        <definition>uint16 PIM_ZVLight_Signature</definition>
+        <argsstring></argsstring>
+        <name>PIM_ZVLight_Signature</name>
+        <initializer>= 0x0000U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>PIM used for NVM storage. <linebreak/>
+ Variable contains ZV Signature <linebreak/>
+ <simplesect kind="remark"><para>range - uint16 unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context NVM operations, ZVLight_SetSignals, ZVLight_SetDtcIfNotActiveAndSignatureNotSet <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000004"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_134 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="296" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a531fced2ae3aca3f859c73c1cdafe9a7" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZVLight_VerifyReadAll</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_VerifyReadAll</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used to check if readAll() function was successful<linebreak/>
+ <simplesect kind="remark"><para>values FALSE - read was not succeed and request canceled <linebreak/>
+ TRUE - read was succeed unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZVLight_ReadSignatureFromNVM, ZVLight_InitVarFunc <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="312" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a1a2cc30a6f6c150d5d0ba92a59d282f4" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZVlight_ResetSignature</definition>
+        <argsstring></argsstring>
+        <name>ZVlight_ResetSignature</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag from callback of the KS function <linebreak/>
+ <simplesect kind="remark"><para>values TRUE - when no available key in NvM <linebreak/>
+ FALSE - otherwise <linebreak/>
+ <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZVLight_ResetSignature, NVM operation <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000005"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_134 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="327" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a386167fcc91aef25d639c666cf6c68a0" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZVLight_VerifyWriteToNvm</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_VerifyWriteToNvm</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used to check if the ZV signature is stored successfully from NvM <linebreak/>
+ <simplesect kind="remark"><para>values FALSE - ZV signature cannot be stored to NVM <linebreak/>
+ TRUE - ZV signature successfully stored <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context NVM operations <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="344" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" prot="public" static="yes" mutable="no">
+        <type>ZVLight_Counter</type>
+        <definition>ZVLight_Counter ZVL_C</definition>
+        <argsstring></argsstring>
+        <name>ZVL_C</name>
+        <initializer>= {.CounterRun =  0, .Set = 0u, .ActualValue = 0u}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ZVLight_Counter structure variable <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range see ZVLight_Counter structure <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="359" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_z_v_light___task_8c_1ade905f4e575fc10cd86b3a3836bc47fd" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>volatile boolean ZVLight_boRun</definition>
+        <argsstring></argsstring>
+        <name>ZVLight_boRun</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This flag shows that the module was initialized <linebreak/>
+ <simplesect kind="remark"><para><linebreak/>
+ range TRUE if ZVLight_InitVarFunc is called <linebreak/>
+ FALSE otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="377" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_z_v_light___task_8c_1ad60c52b62d28db258eaaa26dd61b1e94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType ZVLight_CalculateSignature</definition>
+        <argsstring>(const uint8 Data[16], uint16 *Signature)</argsstring>
+        <name>ZVLight_CalculateSignature</name>
+        <param>
+          <type>const uint8</type>
+          <declname>Data</declname>
+          <array>[16]</array>
+        </param>
+        <param>
+          <type>uint16 *</type>
+          <declname>Signature</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that models the encryption result. <linebreak/>
+ The generated signature will contain the last 11 bits of the encryption and if it has the value 0, it will be set to 1. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_EncryptData function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- encryption result <linebreak/>
+ range - const array of uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] Signature - signature obtained after the calculations <linebreak/>
+ range - uint16 pointer <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType: the signature was calculated <linebreak/>
+ range - value E_OK <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable:<linebreak/>
+ <ref refid="_z_v_light___task_8c_1aa72fee198c9f9033a3518ceecacf0210" kindref="member">SIGNATURE_MASK_ZVL</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_CalculateSignature.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the calculated signature.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1af7bdda221de6d7f7836e91c93190b531" kindref="member">TEST_ZVLight_Task__ZVLight_CalculateSignature</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_73 SWR_ICAS1_L3_ZV_Light_79 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="433" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1578" bodyend="1615"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1af542cb23597e2f965726f7e1c761ae60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_WriteSignatureToNVM</definition>
+        <argsstring>(volatile uint8 *ErrorCode)</argsstring>
+        <name>ZVLight_WriteSignatureToNVM</name>
+        <param>
+          <type>volatile uint8 *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to writed the ZV signature in the NVM. <linebreak/>
+ In this function, NVM error status will be taken into account, based on which it will be decided whether the signature can be stored in NVM. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_EncryptData context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stores the code type in case of negative response <linebreak/>
+ range - pointer to uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1acb92096613b1a639971e1d7209988b41" kindref="member">EncryptionDone</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1af2ba81bad9281a00c8f764af8465104d" kindref="member">CounterNvmCycles</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1aacfa1bc914fa6cca0c8dbd1e37dc9dbb" kindref="member">ZVLight_Signature</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a2cc6972c20a63ff152e24d8238ba32b7" kindref="member">PIM_ZVLight_Signature</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a9871deb87706da7ea4aaffc1f7ebb09f" kindref="member">ZVLight_SignatureSendToNV</ref> [in, out] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+ NVM_REQ_CANCELED [in] <linebreak/>
+ NVM_REQ_PENDING [in] <linebreak/>
+ NVM_REQ_BLOCK_SKIPPED [in] <linebreak/>
+ NVM_REQ_RESTORED_FROM_ROM [in] <linebreak/>
+ NVM_REQ_INTEGRITY_FAILED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_WriteSignatureToNVM.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the nvm error status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a8f04648505986d7e7251c3d2ce45bd92" kindref="member">TEST_ZVLight_Task__ZVLight_WriteSignatureToNVM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_43 SWR_ICAS1_L3_ZV_Light_99 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="486" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1617" bodyend="1668"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a81d64d5905ef226a9f6bec77d2296403" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_ReadSignatureFromNVM</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_ReadSignatureFromNVM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to check if ReadAll() function was succeeded <linebreak/>
+ In this function, NVM error status will be taken into account, based on which it will be set to 0 the signature and will activate the DTC. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a531fced2ae3aca3f859c73c1cdafe9a7" kindref="member">ZVLight_VerifyReadAll</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a2cc6972c20a63ff152e24d8238ba32b7" kindref="member">PIM_ZVLight_Signature</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a386167fcc91aef25d639c666cf6c68a0" kindref="member">ZVLight_VerifyWriteToNvm</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a1a2cc30a6f6c150d5d0ba92a59d282f4" kindref="member">ZVlight_ResetSignature</ref> [out] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+ NVM_REQ_CANCELED [in] <linebreak/>
+ NVM_REQ_PENDING [in] <linebreak/>
+ NVM_REQ_RESTORED_FROM_ROM [in] <linebreak/>
+ NVM_REQ_BLOCK_SKIPPED [in] <linebreak/>
+ NVM_REQ_INTEGRITY_FAILED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_ReadSignatureFromNVM.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the nvm error status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1aa0d2d190725f808a23a643b361949822" kindref="member">TEST_ZVLight_Task__ZVLight_ReadSignatureFromNVM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_76 SWR_ICAS1_L3_ZV_Light_97 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="534" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1670" bodyend="1715"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a3be95f8f263a388452227f6c229d9329" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_WriteZeroToNVM</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_WriteZeroToNVM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function to set to 0 the signature in NVM <linebreak/>
+ In this function, NVM error status will be taken into account, based on which it will be set to 0 the signature and will activate the DTC. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000006"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_134</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a1a2cc30a6f6c150d5d0ba92a59d282f4" kindref="member">ZVlight_ResetSignature</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a2cc6972c20a63ff152e24d8238ba32b7" kindref="member">PIM_ZVLight_Signature</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a386167fcc91aef25d639c666cf6c68a0" kindref="member">ZVLight_VerifyWriteToNvm</ref> [out] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+ NVM_REQ_CANCELED [in] <linebreak/>
+ NVM_REQ_PENDING [in] <linebreak/>
+ NVM_REQ_RESTORED_FROM_ROM [in] <linebreak/>
+ NVM_REQ_BLOCK_SKIPPED [in] <linebreak/>
+ NVM_REQ_INTEGRITY_FAILED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_WriteZeroToNVM.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the nvm error status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a233680df7b4a1aefe484e7d5a3dd8687" kindref="member">TEST_ZVLight_Task__ZVLight_WriteZeroToNVM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_134 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="580" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1717" bodyend="1769"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a0bd9df857bba757bff9d7ed3b0ec62e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_VerifyNVM</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_VerifyNVM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to check if NVM write operation was successfull <linebreak/>
+ In this function, NVM error status will be taken into account, based on which it will be set ZVLight_VerifyWriteToNvm and will activate the DTC. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a386167fcc91aef25d639c666cf6c68a0" kindref="member">ZVLight_VerifyWriteToNvm</ref> [in, out] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+ NVM_REQ_CANCELED [in] <linebreak/>
+ NVM_REQ_PENDING [in] <linebreak/>
+ NVM_REQ_RESTORED_FROM_ROM [in] <linebreak/>
+ NVM_REQ_BLOCK_SKIPPED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_VerifyNVM.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the nvm error status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a18f905743b3e26a7928791f23c8b5890" kindref="member">TEST_ZVLight_Task__ZVLight_VerifyNVM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_97 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="624" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1771" bodyend="1809"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a397e01d84351b7ef4bb760b649d4b6ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetDtcStatusPrepassed</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_SetDtcStatusPrepassed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set DTC 0x0100E3 to passive <linebreak/>
+ This function will be used when the ZVLight signature has been stored successfully or if signature has been calculated and not equal to 0. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context void ZVLight_EncryptData, ZVLight_SetDtcIfNotActiveAndSignatureNotSet context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ DEM_EVENT_STATUS_PREPASSED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetDtcStatusPrepassed.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the DTC status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1ae69b03dd12b67110c14fe2778751b0db" kindref="member">TEST_ZVLight_Task__ZVLight_SetDtcStatusPrepassed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="662" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1811" bodyend="1822"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a5739f1f1567fc9e2a116cdca475a7bf1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetDtcStatusPrefailed</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_SetDtcStatusPrefailed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set DTC 0x0100E3 to active <linebreak/>
+ This function will be used when there is no available signature in NVM OR if signature is 0 and dtc status not ok. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context void ZVLight_ReadSignatureFromNVM, ZVLight_WriteZeroToNVM, ZVLight_SetDtcIfNotActiveAndSignatureNotSet context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ DEM_EVENT_STATUS_PREFAILED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetDtcStatusPrefailed.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the DTC status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a68b979c4ba42d4800b9aba5b62e44b9d" kindref="member">TEST_ZVLight_Task__ZVLight_SetDtcStatusPrefailed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="700" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1824" bodyend="1832"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a303fa86ec0e5610fa51a061dde28e533" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetDtcNvmDefectStatusPrefailed</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_SetDtcNvmDefectStatusPrefailed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set DTC 0x000103 to active <linebreak/>
+ This function will be used when there is a issue with NVM (ECU defect). <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context void ZVLight_VerifyNVM, ZVLight_WriteZeroToNVM context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ DEM_EVENT_STATUS_PREFAILED [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetDtcNvmDefectStatusPrefailed.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the DTC status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a72975a465af51b1584959ea45d889564" kindref="member">TEST_ZVLight_Task__ZVLight_SetDtcNvmDefectStatusPrefailed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="738" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1854" bodyend="1862"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1abf409bf2bb60ea731bb950877c6d5230" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType ZVLight_CheckDtcStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_CheckDtcStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function check status of DTC 0x0100E3 <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_CheckDtcStatus.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking DTC status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1ac67a11fc4f71aef67dd9555c2baffc48" kindref="member">TEST_ZVLight_Task__ZVLight_CheckDtcStatus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to check DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="775" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1864" bodyend="1880"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a089c1d83b3b51d9eca558adafe941592" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>static Std_ReturnType ZVLight_CheckDtcStatusFromKS</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_CheckDtcStatusFromKS</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function checks statuses of DTC from KS Master <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>Std_ReturnType</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_CheckDtcStatusFromKS.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking DTCs from KS master <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a5ba7a6a35e4013b6c161e2ef09ba848e" kindref="member">TEST_ZVLight_Task__ZVLight_CheckDtcStatusFromKS</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to check DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="812" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1882" bodyend="1903"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a3f4949a720c45e714ce6a387144ef5c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetDtcIfNotActiveAndSignatureNotSet</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_SetDtcIfNotActiveAndSignatureNotSet</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function set DTC 0x0100E3 to active if not active yet and <linebreak/>
+ signature is equal to zero or set to passive this DTC if signature is calculated and not equal to zero. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables:<linebreak/>
+ <ref refid="_z_v_light___task_8c_1a2cc6972c20a63ff152e24d8238ba32b7" kindref="member">PIM_ZVLight_Signature</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SetDtcIfNotActiveAndSignatureNotSet.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the PIM_ZVLight_Signature possible values. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1ae8b31bbde2c0f74b8ea0d8bc3d70bb64" kindref="member">TEST_ZVLight_Task__ZVLight_SetDtcIfNotActiveAndSignatureNotSet</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="852" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1834" bodyend="1852"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a8a3b9163c1be01671a20aebea30ce453" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetSignals</definition>
+        <argsstring>(boolean so_evZentSafenSoll, boolean so_evZentEntsSoll, boolean send_SignatureEqualToZero)</argsstring>
+        <name>ZVLight_SetSignals</name>
+        <param>
+          <type>boolean</type>
+          <declname>so_evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>so_evZentEntsSoll</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>send_SignatureEqualToZero</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function prepare answer to output signal. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>boolean so_evZentSafenSoll <linebreak/>
+ boolean so_evZentEntsSoll <linebreak/>
+ boolean send_SignatureEqualToZero <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetSignals.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking DTCs from KS master<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1ac9efa95f7796642dd5ae7518b0d0fe59" kindref="member">TEST_ZVLight_Task__ZVLight_SetSignals</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set output signals <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="891" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1905" bodyend="1938"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a8ac6deb9cf4dd8cfaf2375e00f655a08" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_StartEncryption</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_StartEncryption</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to start the encryption process <linebreak/>
+ In this function the encryption function is called and the variables used to calculate and store the signature are reset. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_EncryptData context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000007"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_74, SWR_ICAS1_L3_ZV_Light_75</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1ae480ddf4e644f74df3039465ab808390" kindref="member">locEnc</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a878f83d85b5ec567cd76106b2e568776" kindref="member">CounterPoll</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1af2ba81bad9281a00c8f764af8465104d" kindref="member">CounterNvmCycles</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1acb92096613b1a639971e1d7209988b41" kindref="member">EncryptionDone</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a835387755c32b6aa74bc15f80015a1cb" kindref="member">calculationFinished</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a9871deb87706da7ea4aaffc1f7ebb09f" kindref="member">ZVLight_SignatureSendToNV</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_StartEncryption.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on EncryptionDone value. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1aa889fee8a58a066f20bfafa66ddbc1e3" kindref="member">TEST_ZVLight_Task__ZVLight_StartEncryption</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_74 SWR_ICAS1_L3_ZV_Light_75 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="934" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1440" bodyend="1466"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a4f457163b73918f1452513d9b70a8528" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_GenSignAndErrorHandling</definition>
+        <argsstring>(volatile uint8 *ErrorCode)</argsstring>
+        <name>ZVLight_GenSignAndErrorHandling</name>
+        <param>
+          <type>volatile uint8 *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to generate the signature and to handle the errors during generation. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_EncryptData context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000008"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_131, SWR_ICAS1_L3_ZV_Light_124, SWR_ICAS1_L3_ZV_Light_199, SWR_ICAS1_L3_ZV_Light_130</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stores the code type in case of negative response <linebreak/>
+ range - pointer to uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1ae480ddf4e644f74df3039465ab808390" kindref="member">locEnc</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1abfa3d03b6dfb52823637ce81db07fe7d" kindref="member">EncryptedConst</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1aacfa1bc914fa6cca0c8dbd1e37dc9dbb" kindref="member">ZVLight_Signature</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a878f83d85b5ec567cd76106b2e568776" kindref="member">CounterPoll</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1af2ba81bad9281a00c8f764af8465104d" kindref="member">CounterNvmCycles</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1acb92096613b1a639971e1d7209988b41" kindref="member">EncryptionDone</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a835387755c32b6aa74bc15f80015a1cb" kindref="member">calculationFinished</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1ab19e48b24d7628996e9f7d4853192175" kindref="member">AESGFAKEYPOLL_RESULT</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a38e11c173de369733ca1214bc4011e3d" kindref="member">COUNTER_POLL_ACHIEVE</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a8191c7f3311dd05de2e893f33d86f775" kindref="member">CONDITION_NOT_CORRECT</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a80fcc52819dd1ba112bad1f3e2ba49be" kindref="member">BUSY_REPEAT_REQUEST</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a8191c7f3311dd05de2e893f33d86f775" kindref="member">CONDITION_NOT_CORRECT</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_GenSignAndErrorHandling.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on calculationFinished and locEnc value. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a6c5431dfe52c78ee45573833c7035832" kindref="member">TEST_ZVLight_Task__ZVLight_GenSignAndErrorHandling</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_131, SWR_ICAS1_L3_ZV_Light_124, SWR_ICAS1_L3_ZV_Light_199, SWR_ICAS1_L3_ZV_Light_130 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="986" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1468" bodyend="1536"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1aab35b405b1de5bda4d3f6d3a4c542bef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SendSignatureToNvm</definition>
+        <argsstring>(volatile boolean *SignatureCalculated, volatile uint8 *ErrorCode)</argsstring>
+        <name>ZVLight_SendSignatureToNvm</name>
+        <param>
+          <type>volatile boolean *</type>
+          <declname>SignatureCalculated</declname>
+        </param>
+        <param>
+          <type>volatile uint8 *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to sent the signature to NVM <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_EncryptData context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">SignatureCalculated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- indicates that signature has been stored in NVM <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] ErrorCode - stores the code type in case of negative response <linebreak/>
+ range - pointer to uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1af2ba81bad9281a00c8f764af8465104d" kindref="member">CounterNvmCycles</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1acb92096613b1a639971e1d7209988b41" kindref="member">EncryptionDone</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a835387755c32b6aa74bc15f80015a1cb" kindref="member">calculationFinished</ref> [in, out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a9871deb87706da7ea4aaffc1f7ebb09f" kindref="member">ZVLight_SignatureSendToNV</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a47dc9b93f84125efcb511229542229d3" kindref="member">COUNTER_NVM_SAVE_LIMIT</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a4c83fdeb4bc2f6001ef092e815c7bb07" kindref="member">GENERAL_REJECT</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SendSignatureToNvm.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on calculationFinished and CounterNvmCycles value. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a9a00d15482fcee553249ec0a819a6809" kindref="member">TEST_ZVLight_Task__ZVLight_SendSignatureToNvm</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_85 SWR_ICAS1_L3_ZV_Light_83 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1037" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1538" bodyend="1576"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1ac9778967f63aa622a7588e1dda92041d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_ZVLight_CompProt_AesGfaKeyEncrypt</definition>
+        <argsstring>(const uint8 Source[16])</argsstring>
+        <name>Rte_Call_ZVLight_CompProt_AesGfaKeyEncrypt</name>
+        <param>
+          <type>const uint8</type>
+          <declname>Source</declname>
+          <array>[16]</array>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE function used to encrypt the constant given as a parameter with the GFA key <linebreak/>
+ Encryption is provided by the KS component. This function cannot be covered by RTE because the KS component does not have an SST. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_StartEncryption context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000009"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_74</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- constant used for encryption <linebreak/>
+ range - array of uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType: the signature was calculated <linebreak/>
+ range - [E_OK,E_NOT_OK,E_BUSY] - explanations in ks_rte.c <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_ZVLight_CompProt_AesGfaKeyEncrypt.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on Ks_RteAesGfaKeyEncrypt call. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a3483afb8d1cb4b07459177be0b9a1816" kindref="member">TEST_ZVLight_Task__Rte_Call_ZVLight_CompProt_AesGfaKeyEncrypt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_74 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1081" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1382" bodyend="1389"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a2fc7b08b66f83d1f44338c12b74871fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_ZVLight_CompProt_AesGfaKeyPoll</definition>
+        <argsstring>(uint8 Result[16])</argsstring>
+        <name>Rte_Call_ZVLight_CompProt_AesGfaKeyPoll</name>
+        <param>
+          <type>uint8</type>
+          <declname>Result</declname>
+          <array>[16]</array>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE function that gets the encryption result <linebreak/>
+ Encryption result is provided by the KS component. This function cannot be covered by RTE because the KS component does not have an SST. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_GenSignAndErrorHandling context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000010"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_131</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">Result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- encryption result <linebreak/>
+ range - array of uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType: the signature was calculated <linebreak/>
+ range - [E_OK,E_NOT_OK,E_BUSY] - explanations in ks_rte.c <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_ZVLight_CompProt_AesGfaKeyPoll.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on Ks_RteAesGfaKeyPoll call. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a20076a54183f436a90fcd56e70a30353" kindref="member">TEST_ZVLight_Task__Rte_Call_ZVLight_CompProt_AesGfaKeyPoll</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_131 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1125" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1391" bodyend="1398"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a76b343d6922119945a32b02074809fd4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_CheckSignals</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_CheckSignals</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to transmit output signals based on time and DTCs status <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" kindref="member">ZVL_C</ref> [in, out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_CheckSignals.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on ZVL_C.CounterRun and function calls <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1ab6803bfaec398c4b8187ae32763281ab" kindref="member">TEST_ZVLight_Task__ZVLight_CheckSignals</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_227, SWR_ICAS1_L3_ZV_Light_228, SWR_ICAS1_L3_ZV_Light_229, SWR_ICAS1_L3_ZV_Light_230 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1163" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1940" bodyend="1987"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a7e78c56f98187837c328f15cdfac3b3a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SettingTransmissionTime</definition>
+        <argsstring>(boolean evZentSafenSoll, boolean evZentEntsSoll)</argsstring>
+        <name>ZVLight_SettingTransmissionTime</name>
+        <param>
+          <type>boolean</type>
+          <declname>evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>evZentEntsSoll</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set the transmission time for ZV_zentral_safen and ZV_zentral_safen <linebreak/>
+ More details in SWR_ICAS1_L3_ZV_Light_227, SWR_ICAS1_L3_ZV_Light_228. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_CheckSignals context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">evZentSafenSoll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [in] evZentEntsSoll - input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" kindref="member">ZVL_C</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SettingTransmissionTime.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on evZentSafenSoll and evZentEntsSoll value. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a9c3b89da8ef1198d2af9e302060ab190" kindref="member">TEST_ZVLight_Task__ZVLight_SettingTransmissionTime</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set transmission time for output signals <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1210" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1989" bodyend="2011"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a2de842d63e30b87c1839821191f5c992" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetSignalsBasedDTCs</definition>
+        <argsstring>(boolean evZentSafenSoll, boolean evZentEntsSoll, boolean *so_evZentSafenSoll, boolean *so_evZentEntsSoll, boolean *send_SignatureEqualToZero)</argsstring>
+        <name>ZVLight_SetSignalsBasedDTCs</name>
+        <param>
+          <type>boolean</type>
+          <declname>evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>evZentEntsSoll</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>so_evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>so_evZentEntsSoll</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>send_SignatureEqualToZero</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set the output signals based on the DTC status <linebreak/>
+ More details in SWR_ICAS1_L3_ZV_Light_229, SWR_ICAS1_L3_ZV_Light_230. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_CheckSignals context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">evZentSafenSoll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [in] evZentEntsSoll - input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] so_evZentSafenSoll - output signal sent to CDL <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] so_evZentEntsSoll - output signal sent to CDL <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] send_SignatureEqualToZero - indicates if signature will be 0 <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" kindref="member">ZVL_C</ref> [in, out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetSignalsBasedDTCs.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on evZentSafenSoll, evZentEntsSoll and ZVL_C.ActualValue. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a51e1806e8dda7b0ba3262ae95112d4fb" kindref="member">TEST_ZVLight_Task__ZVLight_SetSignalsBasedDTCs</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set the output signals based on the DTC status <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1269" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="2013" bodyend="2039"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a9cac8db028eb5ae3a2b19675465dbe30" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ZVLight_SetOutputSignals</definition>
+        <argsstring>(boolean evZentSafenSoll, boolean evZentEntsSoll, boolean *so_evZentSafenSoll, boolean *so_evZentEntsSoll)</argsstring>
+        <name>ZVLight_SetOutputSignals</name>
+        <param>
+          <type>boolean</type>
+          <declname>evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>evZentEntsSoll</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>so_evZentSafenSoll</declname>
+        </param>
+        <param>
+          <type>boolean *</type>
+          <declname>so_evZentEntsSoll</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set the output signals <linebreak/>
+ More details in SWR_ICAS1_L3_ZV_Light_227, SWR_ICAS1_L3_ZV_Light_228. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_CheckSignals context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">evZentSafenSoll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [in] evZentEntsSoll - input signal received from CDL <linebreak/>
+ range - boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] so_evZentSafenSoll - output signal sent to CDL <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] so_evZentEntsSoll - output signal sent to CDL <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" kindref="member">ZVL_C</ref> [in, out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_SetOutputSignals.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on evZentSafenSoll, evZentEntsSoll and ZVL_C.ActualValue. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a8d61b5a027242b98e9edc3fa38d06be9" kindref="member">TEST_ZVLight_Task__ZVLight_SetOutputSignals</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to set the output signals <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1324" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="2041" bodyend="2073"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1ace8767fa0f035d4a5248d20ab0ad80ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVLight_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initalize the variables for the ZVLight module <linebreak/>
+ This function is called by ModelsTask (Scheduler) before starting the model. The code here must be short. <linebreak/>
+ <simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_light___task_8c_1ade905f4e575fc10cd86b3a3836bc47fd" kindref="member">ZVLight_boRun</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_InitVarFunc.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking the init function <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v_light___task_8c_8test_1ae8193bbbd660f16c5537337ea15eb27d" kindref="member">TEST_ZVLight_Task__ZVLight_InitVarFunc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which sets the value of the ZVLight_boRun <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1344" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1344" bodyend="1363"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1aa292fcfd8826b86f8f983ce8deb992e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVLight_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVLight_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the ZVLight module <linebreak/>
+ This function is called by ModelsTask (Scheduler) when the model&apos;s recurrence occurs. This function should be performed with a cycle time of 10 ms. <linebreak/>
+ <simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_light___task_8c_1ade905f4e575fc10cd86b3a3836bc47fd" kindref="member">ZVLight_boRun</ref> [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a531fced2ae3aca3f859c73c1cdafe9a7" kindref="member">ZVLight_VerifyReadAll</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a000c6ac2aae7b41689d2806bd93d7dc5" kindref="member">ZVL_C</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1ae480ddf4e644f74df3039465ab808390" kindref="member">locEnc</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a878f83d85b5ec567cd76106b2e568776" kindref="member">CounterPoll</ref> [out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1abfa3d03b6dfb52823637ce81db07fe7d" kindref="member">EncryptedConst</ref>[out] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a7969e49507a92c24c7704802c56e32e9" kindref="member">MAX_SIZE_ZVL</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_TaskCyclicEvent.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on checking the cyclic function <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><ref refid="_z_v_light___task_8c_8test_1a4cbf69c186d82acdf30999a8a0e25389" kindref="member">TEST_ZVLight_Task__ZVLight_TaskCyclicEvent</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which is called cyclically every 10 ms. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1365" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1365" bodyend="1380"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a725b0b13af5e6afffe290b77066422b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVLight_ResetSignature</definition>
+        <argsstring>(Ks_RteMainKeyTypeType KeyType)</argsstring>
+        <name>ZVLight_ResetSignature</name>
+        <param>
+          <type>Ks_RteMainKeyTypeType</type>
+          <declname>KeyType</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to set ZVlight_ResetSignature to TRUE if the GFA or IKA key was downloaded successfully <linebreak/>
+ This function is called inside the Rte_Ks.c file. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte_Ks context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_Light_134</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">KeyType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the key type (GFA or IKA) <linebreak/>
+ range - uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variable: <linebreak/>
+ KS_RTE_MAIN_KEY_TYPE_IKA [in] <linebreak/>
+ KS_RTE_MAIN_KEY_TYPE_GFA [in] <linebreak/>
+ <ref refid="_z_v_light___task_8c_1a1a2cc30a6f6c150d5d0ba92a59d282f4" kindref="member">ZVlight_ResetSignature</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_ResetSignature.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the KeyType. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a17cf5e504aa07ee1c7897e220436b438" kindref="member">TEST_ZVLight_Task__ZVLight_ResetSignature</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_Light_134 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1400" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1400" bodyend="1409"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_light___task_8c_1a524316846a625ef3203fd0f3cef1b3b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVLight_EncryptData</definition>
+        <argsstring>(volatile boolean *SignatureCalculated, volatile uint8 *ErrorCode)</argsstring>
+        <name>ZVLight_EncryptData</name>
+        <param>
+          <type>volatile boolean *</type>
+          <declname>SignatureCalculated</declname>
+        </param>
+        <param>
+          <type>volatile uint8 *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to generate and store the signature to NVM. <linebreak/>
+ Function triggered when the routine 05 30 is started. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context ZVLight_Routine_0x0530_Start context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">SignatureCalculated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- indicates that signature has been stored in NVM <linebreak/>
+ range - pointer to boolean <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ [out] ErrorCode - stores the code type in case of negative response <linebreak/>
+ range - pointer to uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals N </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVLight_EncryptData.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shell be based on the functions calls <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_z_v_light___task_8c_8test_1a8071ed0af76524ab85d212f56de014d6" kindref="member">TEST_ZVLight_Task__ZVLight_EncryptData</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following Design Decision: <linebreak/>
+ Design Decision - Justification. Helper function used to generate and store the signature to NVM <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" line="1411" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c" bodystart="1411" bodyend="1438"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for ZVLight SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_z_v_light___task_8c" kindref="compound">ZVLight_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic43108 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2023/01/20 </para></simplesect>
+Expected test coverage (100%) and type of test coverage (C1/CTC). Add software requirement IDs in the testcases. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Light/ZVLight/c/src/ZVLight_Task.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_hardware_version_8c" kind="file" language="C++">
+    <compoundname>HardwareVersion.c</compoundname>
+    <includes refid="_hardware_version_8h" local="yes">HardwareVersion.h</includes>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">ConfigUdsIdentifiers.h</includes>
+    <includes local="yes">hal.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>ConfigUdsIdentifiers.h</label>
+      </node>
+      <node id="8">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="9">
+        <label>agw.h</label>
+      </node>
+      <node id="6">
+        <label>HardwareVersion.c</label>
+        <link refid="_hardware_version_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>HardwareVersion.h</label>
+        <link refid="_hardware_version_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>hal.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_hardware_version_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="67" column="9" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_hardware_version_8c_1a77cce987b1d16f5ef86f3db6434d3d47" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean HardwareVersionAlreadyReady</definition>
+        <argsstring></argsstring>
+        <name>HardwareVersionAlreadyReady</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Boolean variable. <linebreak/>
+</para><para>This flag shows if HardwareVersion was read from OTP memory or not. <linebreak/>
+<simplesect kind="remark"><para>range True if HardwareVersion was read. <linebreak/>
+ False otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="84" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_hardware_version_8c_1aeed32cb9b39fbb2a96e1afaec4b269ad" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct_t_hardware_version_struct" kindref="compound">THardwareVersionStruct</ref></type>
+        <definition>THardwareVersionStruct HardwareVersionCopy</definition>
+        <argsstring></argsstring>
+        <name>HardwareVersionCopy</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>THardwareVersionStructThis struct variable. <linebreak/>
+</para><para>Variable that copies bytes to RAM for easier handling as struct elements. All the HardwareVersion informations are read and saved. <linebreak/>
+<simplesect kind="remark"><para>range True HardwareVersion was read. <linebreak/>
+ False otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="100" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_hardware_version_8c_1a47c2a857c9207bf31b923c4501b4baf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardwareVersion_GetHardwareVersion</definition>
+        <argsstring>(HardwareVersionType *hwVersion)</argsstring>
+        <name>HardwareVersion_GetHardwareVersion</name>
+        <param>
+          <type><ref refid="_hardware_version_8h_1a52ff261ebee0558cc4933fc454372f75" kindref="member">HardwareVersionType</ref> *</type>
+          <declname>hwVersion</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that selects and stores the corresponding hardware version based on hardware version information. <linebreak/>
+</para><para>Based on the OTP data (hardware version information) read from OTP flash memory, this function creates an 32 bit\ integer by combining HW version IDs and based on this integer, it will select the corresponding hardware version type. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">hwVersion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to enum used for saving the hardware version type <linebreak/>
+ range HardwareVersionType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adcabca4682f782f7f33d6746bda04406b71" kindref="member">NOT_DEFINED_HW</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8c_1aeed32cb9b39fbb2a96e1afaec4b269ad" kindref="member">HardwareVersionCopy</ref> [out] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca8c6385df3bf61cc8c79219c45a19f600" kindref="member">VW_MEB19_EVO_B1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca322270966bea8300202b413d7867b049" kindref="member">VW_MEB19_EVO_B1_MAX_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca539bc08cad902b771b3bf3022c19996f" kindref="member">VW_MEB19_EVO_B2_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca07a257673eb8da7c87567421389c9980" kindref="member">VW_MEB19_EVO_B2_TI_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca86a9a8b3d7baeaa6124497ca061860a7" kindref="member">VW_MEB19_EVO_C1_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adcafa4015f9584a02c2c9b86b4054139dbd" kindref="member">VW_MEB19_EVO_C1_SERIAL</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca50653e8bf8a5154b05331a1b8de4e5b7" kindref="member">VW_MEB19_EVO_Cx_DEV</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8h_1aeb975d468926fd5cc35014b8e2424adca65544738fceae149ee79875a443d4fae" kindref="member">VW_MEB19_EVO_Cx_SERIAL</ref> [in] <linebreak/>
+ NOT_DEFINED_HW initializez the hardware version. <linebreak/>
+ HardwareVersionCopy struct used to calculate the 32bit integer by combining HW version IDs. This integer will further help in finding the corresponding HW version type. <linebreak/>
+ HardwareVersion type is represented by either VW_MEB19_EVO_B1_DEV, VW_MEB19_EVO_B1_MAX_DEV,VW_MEB19_EVO_B2_DEV VW_MEB19_EVO_B2_TI_DEV, VW_MEB19_EVO_C1_DEV, VW_MEB19_EVO_C1_SERIAL, VW_MEB19_EVO_Cx_DEV, VW_MEB19_EVO_Cx_SERIAL. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HardwareVersion_GetHardwareVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the correct hardware version type is selected and stored according to the integer that was made by combining the HW version IDs. <linebreak/>
+ TEST_PostBuildHandler__HardwareVersion_GetHardwareVersion <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21680 SWR_ICAS1_GW_7072 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="162" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="250" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="_hardware_version_8c_1aa103215079537ae95c604a9091b8cbca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardwareVersion_GetBaseVariant</definition>
+        <argsstring>(BaseVariantType *baseVariant)</argsstring>
+        <name>HardwareVersion_GetBaseVariant</name>
+        <param>
+          <type><ref refid="_hardware_version_8h_1a250b10d1c068aee9ffd8871978662f71" kindref="member">BaseVariantType</ref> *</type>
+          <declname>baseVariant</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that selects and stores the corresponding base variant based on OTP data (hardware version information). <linebreak/>
+</para><para>Based on the OTP data (hardware version information) read from OTP flash memory, this function creates will select the corresponding base variant. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">baseVariant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to enum used for saving the base variant type <linebreak/>
+ range BaseVariantType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8h_1a9f60640fa66d8b85666caf1e8776882aacbd701f17ef6a22a98d8b84e1d55927d" kindref="member">VARIANT_HIGH</ref> [in] <linebreak/>
+ VARIANT_HIGH used to sed the base variant to high. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HardwareVersion_GetBaseVariant.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the correct base variant is selected and stored according to OTP data. <linebreak/>
+ TEST_PostBuildHandler__HardwareVersion_GetBaseVariant <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_XXX <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="197" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="324" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="_hardware_version_8c_1a1a096ff9eb58bada8c2a5f669c1450f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardwareVersion_GetHardwareVersionNumber</definition>
+        <argsstring>(HardwareVersionNumber *hwVersionNumber)</argsstring>
+        <name>HardwareVersion_GetHardwareVersionNumber</name>
+        <param>
+          <type><ref refid="struct_hardware_version_number" kindref="compound">HardwareVersionNumber</ref> *</type>
+          <declname>hwVersionNumber</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that stores the hardware version number. <linebreak/>
+</para><para>Hardware version number is stored based on hardware platform, hardware high version and hardware low version numbers. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">hwVersionNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to enum used for saving the hardware version number. <linebreak/>
+ range <ref refid="struct_hardware_version_number" kindref="compound">HardwareVersionNumber</ref> <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8c_1aeed32cb9b39fbb2a96e1afaec4b269ad" kindref="member">HardwareVersionCopy</ref> [in] <linebreak/>
+ HardwareVersionCopy struct used to give information regarding hardware platform. hardware high version and hardware low version in order to store the hardware version number. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HardwareVersion_GetHardwareVersionNumber.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the hardware version number is stored. <linebreak/>
+ TEST_PostBuildHandler__HardwareVersion_GetHardwareVersionNumber <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21680, SWR_ICAS1_GW_7072, SWR_ICAS1_GW_7952, SWR_ICAS1_GW_4789, SWR_ICAS1_GW_11970 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="232" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="335" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="_hardware_version_8c_1af7014d5d5c5d97e076026fbda1758db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardwareVersion_ReadOtp</definition>
+        <argsstring>(void)</argsstring>
+        <name>HardwareVersion_ReadOtp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that reads the hardware version information from the OTP (one time programmable memory) flash memory. <linebreak/>
+</para><para>If the hardware version wasn&apos;t read before, all the necessary informations will be read and stored into a struct. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_hardware_version_8c_1a77cce987b1d16f5ef86f3db6434d3d47" kindref="member">HardwareVersionAlreadyReady</ref> [in] <linebreak/>
+ <ref refid="_hardware_version_8c_1aeed32cb9b39fbb2a96e1afaec4b269ad" kindref="member">HardwareVersionCopy</ref> [out] <linebreak/>
+ HardwareVersionAlreadyReady represents if the hardware version was or wasn&apos;t read before from the OTP flash memory. If is FALSE, the informations regarding hardware version will be read again if is TRUE, they will not be read again. <linebreak/>
+ HardwareVersionCopy struct used to store all the information regarding hardware version from OTP flash memory. <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context HardwareVersion_GetHardwareVersion, HardwareVersion_GetBaseVariant, HardwareVersion_GetHardwareVersionNumber <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HardwareVersion_ReadOtp.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the hardware version information will be read if it wasn&apos;t read before or if it was read before, the hardware informations will not be read again. <linebreak/>
+ TEST_PostBuildHandler__HardwareVersion_ReadOtp <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21680 SWR_ICAS1_GW_7072 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" line="235" column="1" bodyfile="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c" bodystart="235" bodyend="247"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Source file for HardwareVersion subcomponent of Chorus_HSI component. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_hardware_version_8h" kindref="compound">HardwareVersion.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>gusanp </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>12/12/2018 </para></simplesect>
+<linebreak/>
+</para><para>This module reads current HW version and base variant from defined OTP flash area (set in .pdr/.vpdr). APIs are available for other SW modules to request the HW version and base variant in a readable format. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/ICASNEW/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HardwareVersion/Evo/src/HardwareVersion.c"/>
+  </compounddef>
+</doxygen>

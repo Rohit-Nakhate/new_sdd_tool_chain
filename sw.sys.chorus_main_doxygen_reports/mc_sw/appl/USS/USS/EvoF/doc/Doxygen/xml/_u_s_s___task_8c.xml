@@ -1,0 +1,775 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_s_s___task_8c" kind="file" language="C++">
+    <compoundname>USS_Task.c</compoundname>
+    <includes refid="_u_s_s___data_types_8h" local="yes">USS_DataTypes.h</includes>
+    <includes local="yes">DataSetPostSeq.h</includes>
+    <includes refid="_u_s_s___task_8h" local="yes">USS_Task.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">DataSet.h</includes>
+    <includes refid="_u_s_s___extra_definitions_8h" local="yes">USS_ExtraDefinitions.h</includes>
+    <incdepgraph>
+      <node id="65">
+        <label>DataSetPostSeq.h</label>
+      </node>
+      <node id="71">
+        <label>USS_ExtraDefinitions.h</label>
+        <link refid="_u_s_s___extra_definitions_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>USS_Task.h</label>
+        <link refid="_u_s_s___task_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>Dem.h</label>
+      </node>
+      <node id="68">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="67">
+        <label>agw.h</label>
+      </node>
+      <node id="70">
+        <label>DataSet.h</label>
+      </node>
+      <node id="61">
+        <label>USS_Task.c</label>
+        <link refid="_u_s_s___task_8c"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>Rte_USS_Type.h</label>
+      </node>
+      <node id="63">
+        <label>SWCO_Identification.h</label>
+      </node>
+      <node id="62">
+        <label>USS_DataTypes.h</label>
+        <link refid="_u_s_s___data_types_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_s_s___task_8c_1abde11a6ee98560227d0d3889da0408e4" prot="public" static="no">
+        <name>ASCII_ZERO</name>
+        <initializer>((int) 48)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ASCII code of 0.</para><para>Used in Rte_Call_UserStateServer_C_Read_DS_USS_Read_TypeX. <simplesect kind="remark"><para>Value 48u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="64" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_s_s___task_8c_1a9eeb79ed10ba6c32471a43a3867e0576" prot="public" static="no">
+        <name>DS_VERSION_BYTE_STOP</name>
+        <initializer>((uint32) 3)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop byte of DS version.</para><para>Used in Rte_Call_UserStateServer_C_Read_DS_USS_Read_TypeX. <simplesect kind="remark"><para>Value 3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="74" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_s_s___task_8c_1af6e601d91c9e5c64e70b21fa25181222" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>volatile boolean USS_boRun</definition>
+        <argsstring></argsstring>
+        <name>USS_boRun</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Allows the lib&apos;s functions to run. <linebreak/>
+ Used in: <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gafa4c6f14a0c7b47003148ca336dc5815" kindref="member">USS_TaskCyclicEvent</ref> <simplesect kind="remark"><para>range: [0,1] unit: N/A resolution: N/A context: task protection: none storage class: normal ram  </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="81" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_s_s___task_8c_1ae01b95e0146b60539087032278528760" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_InitCall</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_InitCall</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Lib provided init function. <linebreak/>
+ Its called in <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab657a3afc7b05fe09ab10ee45ab88056" kindref="member">USS_Start</ref>. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a4c7fd91e954629d9656acdf7710571b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_OperationCall</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_OperationCall</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Lib provided function. <linebreak/>
+ Its called in <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gafa4c6f14a0c7b47003148ca336dc5815" kindref="member">USS_TaskCyclicEvent</ref>. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a2c86ee637ae9c5fe514c497569e3f478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_ShutdownCall</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_ShutdownCall</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Lib provided stop function. <linebreak/>
+ Its called in <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga511677858bdfb71f9fdb4c28bd443058" kindref="member">USS_Stop</ref>. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="148" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a56b2d07f14cf0c685e122fb8b9b9ae12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_Prepare_RteBuffer</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_Prepare_RteBuffer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Lib provided runnable function. This is the required usage of the external declaration for this function according to Rte_light responsible prepares the rte buffers for signals having range check activated <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task SchM_ICAS1_Main_C0 <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Shall be called each 10ms before the cyclic task. </para></simplesect>
+<simplesect kind="post"><para>USS RTE buffers processed. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="170" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1ab836b7f983f6960f037bc34c35a7f01e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType USS_Val0x1AF_GetVersion</definition>
+        <argsstring>(T_0x1AF_SwCoIdentification *arg)</argsstring>
+        <name>USS_Val0x1AF_GetVersion</name>
+        <param>
+          <type>T_0x1AF_SwCoIdentification *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to get the version information. Called in <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga44f35b14bd38e4f6c4660531832d8a81" kindref="member">Rte_Call_UserStateServer_val0x1AF_GetVersion</ref>. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No </para></simplesect>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T_0x1AF_SwCoIdentification* arg  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return the version information if <linebreak/>
+ the pointer to information structure is not null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a51cac9ccb0b2ad13ca34510103f3f48a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint32</definition>
+        <argsstring>(sint32 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint32</name>
+        <param>
+          <type>sint32 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a sint32 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sint32 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint32.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint32 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="197" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="197" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a65cd63ad576a01f638ffbda2ff2492c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint16</definition>
+        <argsstring>(sint16 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint16</name>
+        <param>
+          <type>sint16 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a sint16 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sint16 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint16.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint16 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint16 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="223" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="223" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1ac3b2c4cbca00918ab40588e11536911b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint8</definition>
+        <argsstring>(sint8 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint8</name>
+        <param>
+          <type>sint8 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a sint8 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sint8 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint8.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint8 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values.s </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_sint8 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="249" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="249" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1afc2f201ce632ee718debe22e0cd784e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint32</definition>
+        <argsstring>(uint32 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint32</name>
+        <param>
+          <type>uint32 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a uint32 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint32 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint32.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint32 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="275" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="275" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1a5b26746caefe598712f51864cf30c68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint16</definition>
+        <argsstring>(uint16 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint16</name>
+        <param>
+          <type>uint16 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a uint16 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint16.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint16 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint16 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="301" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="301" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_s___task_8c_1adc1fc97caadaecfeba18774d225434e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint8</definition>
+        <argsstring>(uint8 *value, uint32 offset)</argsstring>
+        <name>Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint8</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for reading datasets of USS library. <linebreak/>
+ Dataset will be copied into a uint8 value type.</para><para>Called to read datasets of USS library. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8 *value <linebreak/>
+ [in] - uint32 offset  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return RTE_E_OK if function is called correctly </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint8.png">Activity Diagram of  Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint8 </image>
+   Testing should be based on value <linebreak/>
+ offset <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_C_Read_DS_USS_Read_uint8 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_221 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="327" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="327" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga44f35b14bd38e4f6c4660531832d8a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_UserStateServer_val0x1AF_GetVersion</definition>
+        <argsstring>(T_0x1AF_SwCoIdentification *const pptIdentificationData)</argsstring>
+        <name>Rte_Call_UserStateServer_val0x1AF_GetVersion</name>
+        <param>
+          <type>T_0x1AF_SwCoIdentification *const</type>
+          <declname>pptIdentificationData</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for cyclic execution of USS library and supporting functions needed for core functionality. <linebreak/>
+</para><para>Function calls USS_val0x1AF_GetVersion function for calling the version information. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T_0x1AF_SwCoIdentification* const pptIdentificationData  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - return version information if function is called correctly otherwise RTE_E_INVALID </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="Rte_Call_UserStateServer_val0x1AF_GetVersion.png">Activity Diagram of  Rte_Call_UserStateServer_val0x1AF_GetVersion </image>
+   Testing should be based on pptIdentificationData possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__Rte_Call_UserStateServer_val0x1AF_GetVersion <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_171 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="356" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="356" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gacc328baea668068f826cc7aad6357d59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init function for the USS module</para><para>This function is called by ModelsTask before starting the model <linebreak/>
+ (MmDoSetup is called). The code here must be short. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described in TEST_USS_Task__USS_InitVarFunc <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfy following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification.. Init function for the USS module<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="377" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="377" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab657a3afc7b05fe09ab10ee45ab88056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Start-up/init the USS module</para><para>Called my modeltask in order to start-up/init the USS module. <linebreak/>
+ USS_Start function used for cyclic execution of USS library and supporting functions needed for core functionality. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="USS_Start.png">Activity Diagram of  USS_Start </image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__USS_Start <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_156 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="383" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="383" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga511677858bdfb71f9fdb4c28bd443058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>USS_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop callback for the USS module</para><para>This function is called by ModelsTask when the StopEv is set <linebreak/>
+ (MmDoStop is called). Here is a good place to save data to NvRAM. <linebreak/>
+ USS_Stop function used for cyclic execution of USS library and supporting functions needed for core functionality. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="USS_Stop.png">Activity Diagram of  USS_Stop </image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__USS_Stop <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_167 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="391" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="391" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gafa4c6f14a0c7b47003148ca336dc5815" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USS_TaskCyclicEvent</definition>
+        <argsstring>(EventMaskType ev)</argsstring>
+        <name>USS_TaskCyclicEvent</name>
+        <param>
+          <type>EventMaskType</type>
+          <declname>ev</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the USS module</para><para>This function is called by ModelsTask when the model&apos;s recurrence occurs. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EventMaskType ev - not used  </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None  <image type="html" name="USS_TaskCyclicEvent.png">Activity Diagram of  USS_TaskCyclicEvent </image>
+   Testing should be based on <ref refid="_u_s_s___task_8c_1af6e601d91c9e5c64e70b21fa25181222" kindref="member">USS_boRun</ref> <linebreak/>
+ possible values. </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TEST_USS_Task__USS_TaskCyclicEvent <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_USS_157; </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" line="397" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c" bodystart="397" bodyend="408"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for USS SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_s_s___task_8c" kindref="compound">USS_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/USS/USS/c/src/USS_Task.c"/>
+  </compounddef>
+</doxygen>

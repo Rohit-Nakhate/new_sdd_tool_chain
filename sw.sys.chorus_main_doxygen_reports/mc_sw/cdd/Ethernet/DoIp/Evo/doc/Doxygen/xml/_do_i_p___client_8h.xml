@@ -1,0 +1,938 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___client_8h" kind="file" language="C++">
+    <compoundname>DoIP_Client.h</compoundname>
+    <includes local="yes">TcpIp_Api.h</includes>
+    <includes local="yes">SoMgr_Def.h</includes>
+    <includes local="yes">TcpIp_Socket_Api.h</includes>
+    <includedby refid="_do_i_p___client_8c" local="yes">DoIP_Client.c</includedby>
+    <includedby refid="_do_i_p___int_8h" local="yes">DoIP_Int.h</includedby>
+    <incdepgraph>
+      <node id="36">
+        <label>TcpIp_Socket_Api.h</label>
+      </node>
+      <node id="34">
+        <label>TcpIp_Api.h</label>
+      </node>
+      <node id="33">
+        <label>DoIP_Client.h</label>
+        <link refid="_do_i_p___client_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>SoMgr_Def.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="43">
+        <label>DoIP_Msg.c</label>
+        <link refid="_do_i_p___msg_8c"/>
+      </node>
+      <node id="41">
+        <label>DoIP_LIN.c</label>
+        <link refid="_do_i_p___l_i_n_8c"/>
+      </node>
+      <node id="40">
+        <label>DoIP_Dcm.c</label>
+        <link refid="_do_i_p___dcm_8c"/>
+      </node>
+      <node id="45">
+        <label>DoIP_TP.c</label>
+        <link refid="_do_i_p___t_p_8c"/>
+      </node>
+      <node id="38">
+        <label>DoIP_Client.c</label>
+        <link refid="_do_i_p___client_8c"/>
+      </node>
+      <node id="37">
+        <label>DoIP_Client.h</label>
+        <link refid="_do_i_p___client_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>DoIP_Server.c</label>
+        <link refid="_do_i_p___server_8c"/>
+      </node>
+      <node id="39">
+        <label>DoIP_Int.h</label>
+        <link refid="_do_i_p___int_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>DoIP_Utils.c</label>
+        <link refid="_do_i_p___utils_8c"/>
+      </node>
+      <node id="42">
+        <label>DoIP_Main.c</label>
+        <link refid="_do_i_p___main_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_do_i_p___tester" prot="public">DoIP_Tester</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_do_i_p___client_8h_1a506294e559ddce5a363bb7cd0cbd4770" prot="public" static="no">
+        <name>DOIP_MAX_NUM_TESTERS</name>
+        <initializer>(2u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Testers supported: OnBoard and OffBoard tester <simplesect kind="remark"><para>values 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="62" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_do_i_p___client_8h_1a4a2add5fff756f474a5379b4bb10706f" prot="public" static="no">
+        <name>INVALID_TESTER</name>
+        <initializer>(0xFFFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Invalid tester address <simplesect kind="remark"><para>values 0xFFFF <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="70" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_do_i_p___client_8h_1a4c41d1fe0cad329c0eba900a66f85ca9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DOIP_TESTER_STATE_TYPE</name>
+        <enumvalue id="_do_i_p___client_8h_1a4c41d1fe0cad329c0eba900a66f85ca9ace90a9e5eaaa1b030bd9b51ad0dbf649" prot="public">
+          <name>DOIP_TESTER_STATE_UNUSED</name>
+          <briefdescription>
+<para>initial state </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_do_i_p___client_8h_1a4c41d1fe0cad329c0eba900a66f85ca9a7495f3611cd824bd10ef44f5253b14fc" prot="public">
+          <name>DOIP_TESTER_STATE_IDENTIFIED</name>
+          <briefdescription>
+<para>&apos;vehicle-identification-req&apos; from Tester received </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_do_i_p___client_8h_1a4c41d1fe0cad329c0eba900a66f85ca9a911331e374411e916226e57ee009c7ba" prot="public">
+          <name>DOIP_TESTER_STATE_ACCEPTED</name>
+          <briefdescription>
+<para>server socket from Tester accepted (&apos;TcpAccepted&apos;) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_do_i_p___client_8h_1a4c41d1fe0cad329c0eba900a66f85ca9a0d2d3b4a72e361a6c13300ec043a38f7" prot="public">
+          <name>DOIP_TESTER_STATE_ROUTING</name>
+          <briefdescription>
+<para>&apos;routing-activation-request&apos; from Tester received </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Tester states</para><para>Contains the definition of the states for a Tester </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="83" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" bodystart="82" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_do_i_p___tester" kindref="compound">DoIP_Tester</ref></type>
+        <definition>DoIP_Tester DoIP_TesterTable[(2u)]</definition>
+        <argsstring>[(2u)]</argsstring>
+        <name>DoIP_TesterTable</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains the list of connected testers</para><para>Save the information regarding connected testers <simplesect kind="remark"><para>range see <ref refid="_do_i_p___client_8h_1a506294e559ddce5a363bb7cd0cbd4770" kindref="member">DOIP_MAX_NUM_TESTERS</ref> <linebreak/>
+ values see <ref refid="struct_do_i_p___tester" kindref="compound">DoIP_Tester</ref> <linebreak/>
+ context {task} <linebreak/>
+ protection {see shared vars analysis} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="123" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/src/DoIP_Client.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___client_8h_1a5f7095ae6aa8b949709107737ad7dce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_Client_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the global data for this sub-module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_Init.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria </title><para>Check if global data is properly initialized <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a60f946a4e56f6dcd5759b9127731234e" kindref="member">TEST_DoIP_Client__DoIP_Client_Init</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Init function of the module </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1af48284c4734bdc3ccb57ddfd6636dd5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 GetTesterID</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl)</argsstring>
+        <name>GetTesterID</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <briefdescription>
+<para>Get the tester ID based on the socket handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handler identifying the local socket resource <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the tester ( 0 -OnBoard, 1 - Offboard) </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_GetTesterID.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each case <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a6c4ed2b4110681aede9fafabe6992236" kindref="member">TEST_DoIP_Client__GetTesterID_1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used in order to get the tester ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a421ae6394f28c3248ff30b11e1beebf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean DoIP_Client_IsOnboardTesterActivated</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_IsOnboardTesterActivated</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if OnBoard tester is activated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The activation/deactivation of OnBoard tester </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>TRUE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- if routing activation was performed for OnBoard tester and is connected </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FALSE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_IsOnboardTesterActivated.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach return value <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a69389954b26c631de532d86ef0e6820d" kindref="member">TEST_DoIP_Client__DoIP_Client_IsOnboardTesterActivated</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18610 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="200" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a30f0ea05d4c9670ec4b33dcf52d16da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean DoIP_Client_IsOffboardTesterActivated</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_IsOffboardTesterActivated</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if OffBoard tester is activated. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The activation/deactivation of OffBoard tester </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>TRUE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- if routing activation was performed for OffBoard tester and is connected </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FALSE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_IsOffboardTesterActivated.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach return value <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a0c68582a1b249b8a5bf7a064c59a57e5" kindref="member">TEST_DoIP_Client__DoIP_Client_IsOffboardTesterActivated</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18610 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="225" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a0ab6ed5870c319e21383826ad472dc55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_GetNumberOfActiveSockets</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_GetNumberOfActiveSockets</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the total number of active sockets connections. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of TCP active sockets connections </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetNumberOfActiveSockets.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the number of active socket connections <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a45322580a8add37f652e54c05c4c7f10" kindref="member">TEST_DoIP_Client__DoIP_Client_GetNumberOfActiveSockets_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1afa0958fa5ce13e1eb8767fbda0cedf65" kindref="member">TEST_DoIP_Client__DoIP_Client_GetNumberOfActiveSockets_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19041 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="249" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a927e4c3486d6febdad9b77a591c1dbd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TcpIp_SockAddrType *</type>
+        <definition>TcpIp_SockAddrType* DoIP_Client_GetTesterUdpSockAddr</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_GetTesterUdpSockAddr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the pointer to UDP socket address from global variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetTesterUdpSockAddr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the validity of the pointer to global variable <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a22a38bc2a3a76cb8aa7e43451ae7cb22" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTesterUdpSockAddr_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a58c27e0bb2be4c0b93384d68104d235a" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTesterUdpSockAddr_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used in order to get the pointer to UDP socket address from global variable </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="275" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a9ee69db449569191e426f94d1a4fdcff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_GetTcpTesterLogAddrFromSocketHdl</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl)</argsstring>
+        <name>DoIP_Client_GetTcpTesterLogAddrFromSocketHdl</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <briefdescription>
+<para>Get the TCP tester logical address for a socket Handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handler identifying the local socket resource <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetTcpTesterLogAddrFromSocketHdl.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the getter function <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1ad8adca735ef83570c3e07a2a551ced73" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterLogAddrFromSocketHdl_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a602e5f02d2c692eb43c89c2eee3df34e" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterLogAddrFromSocketHdl_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to get the logical address from socket handler </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="299" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1abfa2d5c63f692cd170e4e5b02d38a1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_GetTcpTesterLogAddr</definition>
+        <argsstring>(uint8 enTester)</argsstring>
+        <name>DoIP_Client_GetTcpTesterLogAddr</name>
+        <param>
+          <type>uint8</type>
+          <declname>enTester</declname>
+        </param>
+        <briefdescription>
+<para>Get TCP tester logical address. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enTester</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tester entity </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Tester logical address </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetTcpTesterLogAddr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the getter function <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1aedaf85b70dd0239303e9da477e76c016" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterLogAddr_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1ad5fd2841e280b69f8a8d91239b96480c" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterLogAddr_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to extract the tester logical address </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="323" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1aa3cd435177f252b9318d8d301270d4e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_GetTcpTesterSocketHdl</definition>
+        <argsstring>(uint8 enTester)</argsstring>
+        <name>DoIP_Client_GetTcpTesterSocketHdl</name>
+        <param>
+          <type>uint8</type>
+          <declname>enTester</declname>
+        </param>
+        <briefdescription>
+<para>Get TCP socket handler for tester from global variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetTcpTesterSocketHdl.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the getter function <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a7bf77eafbfcb363bbdbf5d4eb16ef62f" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterSocketHdl_1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to extract the tester TCP socket handler </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="346" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1ae3ff7d2bff509a321de4137057bdbe6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_GetTcpTesterSocketHdlFromLogAddr</definition>
+        <argsstring>(uint16 LogAddr)</argsstring>
+        <name>DoIP_Client_GetTcpTesterSocketHdlFromLogAddr</name>
+        <param>
+          <type>uint16</type>
+          <declname>LogAddr</declname>
+        </param>
+        <briefdescription>
+<para>Get the TCP socket handler from logical address. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">LogAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- terster logical address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The TCP socket handler </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_GetTcpTesterSocketHdlFromLogAddr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the getter function <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1abbc20959949c915b5f7ea36e053b74cd" kindref="member">TEST_DoIP_Client__DoIP_Client_GetTcpTesterSocketHdlFromLogAddr</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to extract the tester TCP socket handler </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="369" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1ae75bea7fa3236ccf618b53dc3670ff41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 DoIP_Client_AddTesterUdp</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, const TcpIp_SockAddrType *RemoteAddrPtr)</argsstring>
+        <name>DoIP_Client_AddTesterUdp</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>const TcpIp_SockAddrType *</type>
+          <declname>RemoteAddrPtr</declname>
+        </param>
+        <briefdescription>
+<para>Add tester UDP socket address by updating the according fields in global var. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handler identifying the local socket resource </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RemoteAddrPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to IP address and port of the remote host </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 </para></simplesect>
+<simplesect kind="remark"><para>As arranged with edge-node we will have only one Vehicle-announcement procedure even if we have more testers in parallel, so we copy the UDP-data to all tester data-sets; </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_AddTesterUdp.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each case <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1ad7276efe0d2b8011cc1fceeb0e98ab72" kindref="member">TEST_DoIP_Client__DoIP_Client_AddTesterUdp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19023 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="395" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1ac218d0b1d9d741fd39b46dd1fd6ac3c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_Client_TcpAccepted</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, TcpIp_SockAddrType *RemoteAddrPtr)</argsstring>
+        <name>DoIP_Client_TcpAccepted</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>TcpIp_SockAddrType *</type>
+          <declname>RemoteAddrPtr</declname>
+        </param>
+        <briefdescription>
+<para>Establish socket connection with the tester. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handler identifying the local socket resource <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RemoteAddrPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to IP address and port of the remote host </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The satate of the connection </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- connection established succesfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- ptherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>Callback from SoMgr component </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_TcpAccepted.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a90cbc9b6bf85cdf99983481be49347dd" kindref="member">TEST_DoIP_Client__DoIP_Client_TcpAccepted_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a36eb8159822be2c9dec0d295c786e800" kindref="member">TEST_DoIP_Client__DoIP_Client_TcpAccepted_2</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a360a0326d3cbd68d78e64d9b61bbaaf6" kindref="member">TEST_DoIP_Client__DoIP_Client_TcpAccepted_3</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a1313f52592de1af7f46f2711e496223e" kindref="member">TEST_DoIP_Client__DoIP_Client_TcpAccepted_4</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19024 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="424" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a121ea9fb34ab936a7a53a98ee9f303ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_Client_RoutingActivation</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, TcpIp_SockAddrType *RemoteAddrPtr, const uint8 *BufPtr, uint16 Length)</argsstring>
+        <name>DoIP_Client_RoutingActivation</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>TcpIp_SockAddrType *</type>
+          <declname>RemoteAddrPtr</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>BufPtr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>Length</declname>
+        </param>
+        <briefdescription>
+<para>Processing function for the routing activation request. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket handler identifying the local socket resource </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RemoteAddrPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to IP address and port of the remote host </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">BufPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Routing Activation response </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-length of response (parameter will never be referenced) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_RoutingActivation.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the routing activation procedure <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1abcab83ea0a996efb2aaa4faf04ea98aa" kindref="member">TEST_DoIP_Client__DoIP_Client_RoutingActivation_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a2ed55817082793d577d05c11c4d704a7" kindref="member">TEST_DoIP_Client__DoIP_Client_RoutingActivation_2</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a28cf475f459fd62e73bd51068c719650" kindref="member">TEST_DoIP_Client__DoIP_Client_RoutingActivation_3</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a11adf1a63cc74e5fd091797fc29a988f" kindref="member">TEST_DoIP_Client__DoIP_Client_RoutingActivation_4</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a69c9ad257a8cff17702bc0cf6c0ff574" kindref="member">TEST_DoIP_Client__DoIP_Client_RoutingActivation_5</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_14473 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="454" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1aedc92d5142a29eb7ffb737311e84c887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_Client_TcpIp_Event</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, TcpIp_EventType Event)</argsstring>
+        <name>DoIP_Client_TcpIp_Event</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>TcpIp_EventType</type>
+          <declname>Event</declname>
+        </param>
+        <briefdescription>
+<para>Module&apos;s callback triggered by the SoMgr as result of event detected on reffered socket by TCP/IP stack. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- socket on which the event occurred </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- type of the event </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_TcpIp_Event.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check incoming TcpIp events <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1ac83e3c9384037fbc2a12af2b9a376fe7" kindref="member">TEST_DoIP_Client__DoIP_Client_TcpIp_Event</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19042 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="479" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1a0da64a19cae2a563ed8afbcd8ae0ed15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_Client_Terminate</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_Terminate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Called in order to close the TCP server socket. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_Terminate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check the state of the socket <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1adf99ec5cad730772489dce4866cc7e51" kindref="member">TEST_DoIP_Client__DoIP_Client_Terminate</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19043 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="502" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___client_8h_1aed58caffb1d28a03446cd7b38a2c5883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_Client_MainFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_Client_MainFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Cyclic routine of the DoIP Client. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___client_8h_1a0d5689e366365a9ba36548fada8a7789" kindref="member">DoIP_Tester::DoIP_TesterTable</ref> </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="diagram_DoIP_Client_MainFunction.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each case <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a2a424660676ab539c17277d81a919d15" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_1</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a1c09133807dd60d220c6001f7dce241d" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_2</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1abda7b861a364a20b187e47405badbf16" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_3</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1abe7fc46fe71b43cbdd3f1ac7428ccf27" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_4</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1a9af0312e158609406943ddad47a43b97" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_5</ref> <linebreak/>
+ <ref refid="_do_i_p___client_8c_8test_1ada0719144e24e71def54309997d3503b" kindref="member">TEST_DoIP_Client__DoIP_Client_MainFunction_6</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. The cyclic function of the module </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h" line="530" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Public interfaces for connection handling. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_do_i_p___client_8h" kindref="compound">DoIP_Client.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>See <ref refid="_do_i_p__version_8h" kindref="compound">DoIP_version.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn1598 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>01.09.2022 </para></simplesect>
+</para><para>The variables, macros and typedef defined in this module are used for DoIP connection handling </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Client.h"/>
+  </compounddef>
+</doxygen>

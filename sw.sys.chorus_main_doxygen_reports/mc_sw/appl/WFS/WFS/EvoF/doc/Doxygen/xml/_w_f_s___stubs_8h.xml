@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_w_f_s___stubs_8h" kind="file" language="C++">
+    <compoundname>WFS_Stubs.h</compoundname>
+    <includes local="yes">CrossCoreTransmit.h</includes>
+    <includedby refid="_w_f_s___stubs_8c" local="yes">WFS_Stubs.c</includedby>
+    <includedby refid="_w_f_s___extra_definitions_8h" local="yes">WFS_ExtraDefinitions.h</includedby>
+    <incdepgraph>
+      <node id="171">
+        <label>CrossCoreTransmit.h</label>
+      </node>
+      <node id="170">
+        <label>WFS_Stubs.h</label>
+        <link refid="_w_f_s___stubs_8h"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="177">
+        <label>WFS_Task.c</label>
+        <link refid="_w_f_s___task_8c"/>
+      </node>
+      <node id="176">
+        <label>WFS_dem.c</label>
+        <link refid="_w_f_s__dem_8c"/>
+      </node>
+      <node id="175">
+        <label>WFS_com.c</label>
+        <link refid="_w_f_s__com_8c"/>
+      </node>
+      <node id="173">
+        <label>WFS_Stubs.c</label>
+        <link refid="_w_f_s___stubs_8c"/>
+      </node>
+      <node id="172">
+        <label>WFS_Stubs.h</label>
+        <link refid="_w_f_s___stubs_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>Rte_WFS_extended.h</label>
+        <link refid="_rte___w_f_s__extended_8h"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>WFS_ExtraDefinitions.h</label>
+        <link refid="_w_f_s___extra_definitions_8h"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1a85b81b0cbc3d1cdaa95c41adc1adfb6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_PostStubHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>WFS_PostStubHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to send WFS lib data to WFS Slaves. <linebreak/>
+ Since the data format between lib WFS and slave are different, data conversion is required.<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>EventMaskType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ev - not used</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_PostStubHook.png"></image>
+ </para></simplesect>
+During test design, following defines should be considered: <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1af438b1a2f079ef8377be22c9ea0e682d" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSOCUANTWORT_STRUCTWFSOCUANTWORT_NUMRND</ref> <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1a889bf2edf45d7662ef496af107af7642" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSOCUANTWORT_STRUCTWFSOCUANTWORT_NUMCRC</ref> <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1a6f48c032a9de3d0583169842b8190f03" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSELVANTWORT_STRUCTWFSELVANTWORT_NUMRND</ref> <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1a69d27fb9e993d0f15e565ed080442387" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSELVANTWORT_STRUCTWFSELVANTWORT_NUMCRC</ref> <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1a18fddecb3f6e0b2babd355b2c1ee26c2" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSMSG3ANTWORT_STRUCTWFSMSG3ANTWORT_NUMCRC</ref> <linebreak/>
+ <ref refid="_w_f_s___extra_definitions_8h_1a96bf35ba492596826a464ce9520534da" kindref="member">REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSMSG4ANTWORT_STRUCTWFSMSG4ANTWORT_NUMCRC</ref> <linebreak/>
+ <simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_WFS_PostStubHook <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000038"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_125 <linebreak/>
+ </para><para>SWR_ICAS1_L3_WFS_127 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="139" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="156" bodyend="195"/>
+        <references refid="_w_f_s___stubs_8c_1a31c5153832fabf5c3f7cb8618cd1dff9">WFS_DES_StWfsOcuAntwort_structWfsOcuAntwort</references>
+        <references refid="_w_f_s___stubs_8c_1a1bfdc2b81ad1fa1c4f371c504562595a">WFS_DES_StWfsElvAntwort_structWfsElvAntwort</references>
+        <references refid="_w_f_s___stubs_8c_1aac8193e4b7b5f56429a4093d160bd76d">WFS_DES_StWfsMsg3Antwort_structWfsMsg3Antwort</references>
+        <references refid="_w_f_s___stubs_8c_1a3d63fcffc03541dcf228149552f7e9ef">WFS_DES_StWfsMsg4Antwort_structWfsMsg4Antwort</references>
+        <referencedby refid="_w_f_s___task_8h_1aeb671962b8685e9809d7581d60609a09" compoundref="_w_f_s___task_8c" startline="273" endline="289">WFS_TaskCyclicEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1a416079d0b9c83004fa49092d277195b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_Transmit_StructWfsOcuAntwortNumCrc</definition>
+        <argsstring>(uint8 *rteSignalValue)</argsstring>
+        <name>WFS_Transmit_StructWfsOcuAntwortNumCrc</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>rteSignalValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to add new Tx request for Ocu Slave. <linebreak/>
+ Function used as a trigger on new data and adding a new Tx cross core request. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rteSignalValue</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_Transmit_StructWfsOcuAntwortNumCrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_WFS_Transmit_StructWfsOcuAntwortNumCrc <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000031"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_129 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="142" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="240" bodyend="244"/>
+        <references refid="_w_f_s___stubs_8c_1a7ce319fa8cf56bbd1c5ee9c31e495343" compoundref="_w_f_s___stubs_8c" startline="846" endline="856">WFS_TransmitIfCRCIsUpdated</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1acfee7f242e28094c7813229ae36e42cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_Transmit_StructWfsElvAntwortNumCrc</definition>
+        <argsstring>(uint8 *rteSignalValue)</argsstring>
+        <name>WFS_Transmit_StructWfsElvAntwortNumCrc</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>rteSignalValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to add new Tx request for Elv Slave. <linebreak/>
+ Function used as a trigger on new data and adding a new Tx cross core request. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rteSignalValue</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_Transmit_StructWfsElvAntwortNumCrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_WFS_Transmit_StructWfsElvAntwortNumCrc <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000032"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_129 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="143" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="287" bodyend="291"/>
+        <references refid="_w_f_s___stubs_8c_1a7ce319fa8cf56bbd1c5ee9c31e495343" compoundref="_w_f_s___stubs_8c" startline="846" endline="856">WFS_TransmitIfCRCIsUpdated</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1ac6af597bfdcd966316465e5e0491e2f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_Transmit_StructWfsMsg3AntwortNumCrc</definition>
+        <argsstring>(uint8 *rteSignalValue)</argsstring>
+        <name>WFS_Transmit_StructWfsMsg3AntwortNumCrc</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>rteSignalValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to add new Tx request for Msg3 Slave. <linebreak/>
+ Function used as a trigger on new data and adding a new Tx cross core request. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rteSignalValue</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_Transmit_StructWfsMsg3AntwortNumCrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_WFS_Transmit_StructWfsMsg3AntwortNumCrc <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000033"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_129 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="144" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="334" bodyend="338"/>
+        <references refid="_w_f_s___stubs_8c_1a7ce319fa8cf56bbd1c5ee9c31e495343" compoundref="_w_f_s___stubs_8c" startline="846" endline="856">WFS_TransmitIfCRCIsUpdated</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1ae3792416bfece6ce83d987f64f2c39a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_Transmit_StructWfsMsg4AntwortNumCrc</definition>
+        <argsstring>(uint8 *rteSignalValue)</argsstring>
+        <name>WFS_Transmit_StructWfsMsg4AntwortNumCrc</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>rteSignalValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to add new Tx request for Msg4 Slave. <linebreak/>
+ Function used as a trigger on new data and adding a new Tx cross core request. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rteSignalValue</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_Transmit_StructWfsMsg4AntwortNumCrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_WFS_Transmit_StructWfsMsg4AntwortNumCrc <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000034"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_129 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="145" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="381" bodyend="385"/>
+        <references refid="_w_f_s___stubs_8c_1a7ce319fa8cf56bbd1c5ee9c31e495343" compoundref="_w_f_s___stubs_8c" startline="846" endline="856">WFS_TransmitIfCRCIsUpdated</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1ad30d88eab94ce2177f5b8052b7278fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TransmitRawVIN</definition>
+        <argsstring>(void)</argsstring>
+        <name>TransmitRawVIN</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to transmit rawVin. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="TransmitRawVIN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_TransmitRawVIN <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000035"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_330 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="146" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="442" bodyend="479"/>
+        <references refid="_w_f_s___stubs_8c_1a1f60e394e2db5d9fab4bead3c72cd538">WFS_DES_StWegfahrsperre_rawVIN</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___stubs_8h_1a2202cffa85797b191f26f17b6a174fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EnableDebugMessages</definition>
+        <argsstring>(void)</argsstring>
+        <name>EnableDebugMessages</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to enable debug messages. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: none <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EnableDebugMessages.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ TEST_EnableDebugMessages <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000036"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_WFS_120 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h" line="147" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/src/WFS_Stubs.c" bodystart="521" bodyend="528"/>
+        <references refid="_w_f_s___stubs_8c_1a20b8e68b1ba40c838580c534f92e8e7b">WFS_DES_StDebug_bEntwicklerbotschaften</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><verbatim>According to project guidelines the stub file is a temporary file which
+contains variables / functions / defines which are not available yet
+in the project and they are needed in order compile / link.</verbatim> </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_w_f_s___stubs_8h" kindref="compound">WFS_Stubs.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>3.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidj1856, uic55299, Leszek Rafinski (uie99376) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2023-03-27 </para></simplesect>
+<linebreak/>
+ Include own header files in the testcase file (SWATT).<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+ Expected test coverage (100%).<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evof/inc/WFS_Stubs.h"/>
+  </compounddef>
+</doxygen>

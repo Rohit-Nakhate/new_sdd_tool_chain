@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component CRC32_Mng_CrcHsm comprises of one component which uses the interfaces from the HSM to get the hash value, and then use the Autosar CRC library to calculate the CRC from the received hash. The component informs CRC32_Mng about the current status and returns the calculated CRC</para><para>So far the component is only made up of one C module: <ref refid="_c_r_c32___mng___crc_hsm_8c" kindref="compound">CRC32_Mng_CrcHsm.c</ref> and <ref refid="_c_r_c32___mng___crc_hsm_8h" kindref="compound">CRC32_Mng_CrcHsm.h</ref></para><para><image type="html" name="UnitComposition.png">CRC32_Mng_CrcHsm decomposition</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+</sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The SW unit interfaces are described in SWA in EA : VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.IVD_Chorus.CRC32_Mng_CrcHsm.SW Architecture.Static.Interfaces</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction of CRC32_Mng_CrcHsm.<linebreak/>
+<image type="html" name="CRC32_Mng_CrcHsm_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>Sequence Diagram for <bold>Initialization sequence </bold>:The CRC32_Mng_Init function is called by a Background Task C2 which in turn calls CRC32_Mng_InitializeSubComponents which Initializes CRC recalculation services in auxliary components CRC32_Mng_InitializeSubComponents calls CRC32_Mng_CrcHsm_Init function to initialize all the local variables required by CRC32_Mng_CrcHsm module .</para><para><image type="html" name="CRC32_Mng_CrcHsm_InitializationSeq.png"></image>
+ </para><para>Sequence Diagram for handling <bold>CRC Calculation requests</bold>:Based on the request type and the current status for the HSM, this function initializes or requests the response from the HSM hash request.Reports an error in case of an incorrect request type or invalid data.<linebreak/>
+<linebreak/>
+<image type="html" name="CRC32_Mng_CrcHsm_CalcReqSeq.png"></image>
+ </para><para>Sequence Diagram for handling <bold>CRC Calculation response handling</bold>:Based on the status of Hsm hash request, it updates the CrcHsm status. If hash request returns status COMPLETE, then CRC calculation is requested via crc.h library.<linebreak/>
+<linebreak/>
+ <image type="html" name="CRC32_Mng_CrcHsm_CalcResponseHandling.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>Not required for this component as the complete data flow is taken care in the parent component CRC32_Mng and complete sequence for this component is covered in the section Dynamic Behaviour.</para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>CRC32_Mng_CrcHsm uses no interrupts</para><para><heading level="2">Events</heading>
+</para><para>CRC32_Mng_CrcHsm uses no events.</para><para><heading level="2">Operating Modes</heading>
+</para><para>CRC32_Mng_CrcHsm does not have mode dependent requirements.</para><para><heading level="2">Power Modes</heading>
+</para><para>CRC32_Mng_CrcHsm does not have power mode dependent requirements.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value .</para><para><heading level="2">Synchronization</heading>
+</para><para>N/A</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>High  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

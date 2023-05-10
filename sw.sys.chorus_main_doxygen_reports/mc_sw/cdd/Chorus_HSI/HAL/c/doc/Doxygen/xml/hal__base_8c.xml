@@ -1,0 +1,1407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="hal__base_8c" kind="file" language="C++">
+    <compoundname>hal_base.c</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">SPC58XX.h</includes>
+    <includes local="yes">hal_defines_gen.h</includes>
+    <includes refid="hal__base_8h" local="yes">hal_base.h</includes>
+    <includes refid="hal__common_8h" local="yes">hal_common.h</includes>
+    <includes local="yes">Reg_eSys_MagicCarpet.h</includes>
+    <incdepgraph>
+      <node id="57">
+        <label>hal_common.h</label>
+        <link refid="hal__common_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>hal_base.c</label>
+        <link refid="hal__base_8c"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>Reg_eSys_MagicCarpet.h</label>
+      </node>
+      <node id="54">
+        <label>SPC58XX.h</label>
+      </node>
+      <node id="53">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="55">
+        <label>hal_defines_gen.h</label>
+      </node>
+      <node id="56">
+        <label>hal_base.h</label>
+        <link refid="hal__base_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hal__base_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="56" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__base_8c_1a2a3e8ff2b3cf973819aac44b55fc92bb" prot="public" static="no">
+        <name>HAL_LIN_TRCV_HOLD_TIME_50US</name>
+        <initializer>(50u /*us*/ * HAL_RTC_FREQ_MHZ)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>HAL LIN Hold Time</para><para>Minimum hold time for LIN transceiver transition request <simplesect kind="remark"><para>Value is equal to 50 multiplyed by HAL_RTC_FREQ_MHZ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="68" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="hal__base_8c_1a3a0b19e9e76fe5b8ed8a3cb9fc7bb8d0" prot="public" static="yes" mutable="no">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 HAL_RTCValLINActStartPoint</definition>
+        <argsstring></argsstring>
+        <name>HAL_RTCValLINActStartPoint</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UINT32 Type</para><para>Used to save RTC value required for time tracking of short LIN activation in case of POR, see SWR_ICAS1_GW_23019. <simplesect kind="remark"><para><linebreak/>
+ range uint32 <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context HAL_LinTrcvGoToNormalAfterPOR, HAL_LinTrcvGoToSleepAfterPOR <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="86" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hal__base_8c_1a98a93f0a52cae695908c9b943369e7cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> volatile struct <ref refid="struct_s_a_r_a_d_c__tag" kindref="compound">SARADC_tag</ref> *</type>
+        <definition>HAL_LOCAL_INLINE volatile struct SARADC_tag * Board_Peripheral_SAR_ADC_12BIT_B0</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_Peripheral_SAR_ADC_12BIT_B0</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get pointer to the &quot;12-bit Fast SAR ADC B0&quot;. <linebreak/>
+</para><para>This function is used to get pointer to the &quot;12-bit Fast SAR ADC B0&quot; (Sigma-Delta Analog-to-Digital Converter) peripheral. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&amp;SAR_ADC_12BIT_B0 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context HAL_BASE - Board_AdcUnit_ReadChannelValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_Peripheral_SAR_ADC_12BIT_B0.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned pointer. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a3024931f07da0b2379bc9bb23e5dc540" kindref="member">TEST_Board_Peripheral_SAR_ADC_12BIT_B0</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Board_AdcUnit_ReadChannelValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="119" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="500" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a5725d865aca6f219f4baaef413d6071a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> volatile struct <ref refid="struct_s_a_r_a_d_c__tag" kindref="compound">SARADC_tag</ref> *</type>
+        <definition>HAL_LOCAL_INLINE volatile struct SARADC_tag * Board_Peripheral_SAR_ADC_12BIT_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_Peripheral_SAR_ADC_12BIT_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get pointer to the &quot;12-bit Fast SAR ADC B2&quot;. <linebreak/>
+</para><para>This function is used to get pointer to the &quot;12-bit SAR ADC B2&quot; (Sigma-Delta Analog-to-Digital Converter) peripheral. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&amp;SAR_ADC_12BIT_2 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - Board_AdcUnit_ReadChannelValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_Peripheral_SAR_ADC_12BIT_2.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned pointer. <linebreak/>
+ <ref refid="hal__base_8c_8test_1ada2110b7833b69d70344343dc6566d70" kindref="member">TEST_Board_Peripheral_SAR_ADC_12BIT_2</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Board_AdcUnit_ReadChannelValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="148" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="506" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a6753d4c4ee18196d5613a5a05dd5c245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> volatile struct <ref refid="struct_s_a_r_a_d_c__tag" kindref="compound">SARADC_tag</ref> *</type>
+        <definition>HAL_LOCAL_INLINE volatile struct SARADC_tag * Board_Peripheral_SAR_ADC_10BIT_STDBY</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_Peripheral_SAR_ADC_10BIT_STDBY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get pointer to the 10-bit &quot;SAR ADC Standby&quot;. <linebreak/>
+</para><para>This function is used to get pointer to the 10-bit &quot;SAR ADC Standby&quot; (Sigma-Delta Analog-to-Digital Converter) peripheral. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&amp;SAR_ADC_10BIT_STDBY <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - Board_AdcUnit_ReadChannelValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_Peripheral_SAR_ADC_10BIT_STDBY.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned pointer. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a833ae921f078e6b4dbd6afa05b5d32ad" kindref="member">TEST_Board_Peripheral_SAR_ADC_10BIT_STDBY</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Board_AdcUnit_ReadChannelValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="177" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="512" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1ad11147ccfcfb9919a03790f64e0dd6ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> volatile struct <ref refid="struct_s_i_u_l2__tag" kindref="compound">SIUL2_tag</ref> *</type>
+        <definition>HAL_LOCAL_INLINE volatile struct SIUL2_tag * Board_Peripheral_SIUL2</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_Peripheral_SIUL2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get pointer to the &quot;SIUL1&quot; (System Integration Unit Lite2) peripheral.</para><para>Get pointer to the &quot;SIUL2&quot; (System Integration Unit Lite2) peripheral. <linebreak/>
+</para><para>This function is used to get pointer to the &quot;SIUL2&quot; (System Integration Unit Lite2) peripheral. <linebreak/>
+The Buddy Device—System Integration Unit Lite2 (BD_SIUL2) provides control over the electrical pads of the buddy device (BD), <linebreak/>
+ as well as implementing various SoC functions that are not included in other modules. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&amp;SIUL2 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - Board_DigitalPort_SetValue <linebreak/>
+ HAL_BASE - Board_DigitalInput_GetValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_Peripheral_SIUL2.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned pointer. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a87ef5048b1697c982335e7af582ae1ff" kindref="member">TEST_Board_Peripheral_SIUL2</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Board_DigitalPort_SetValue and Board_DigitalInput_GetValue functions.</para></simplesect>
+The Buddy Device-System Integration Unit Lite1 (BD_SIUL2) provides control over the electrical pads of the buddy device (BD), as well as implementing various SoC functions that are not included in other modules. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="209" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="518" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a7865f4fd9a1f0c5b7bf4d1788b6bbd5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> volatile struct <ref refid="struct_r_t_c___a_p_i__tag" kindref="compound">RTC_API_tag</ref> *</type>
+        <definition>HAL_LOCAL_INLINE volatile struct RTC_API_tag * Board_Peripheral_RTC_API</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_Peripheral_RTC_API</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get pointer to the &quot;RTC_API&quot;. <linebreak/>
+</para><para>This function is used to get pointer to the &quot;RTC_API&quot; (Real Time Clock / Autonomous Periodic Interrupt) peripheral. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&amp;RTC_API <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - Board_RTC_GetCounter <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_Peripheral_RTC_API.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned pointer. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ab64b9fb1d4a96d975343295873fe2899" kindref="member">TEST_Board_Peripheral_RTC_API</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Board_RTC_GetCounter function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="238" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="524" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a30bfb463eeed927ee472a5d87ce0fe01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> void</type>
+        <definition>HAL_LOCAL_INLINE void Board_DigitalPort_SetValue</definition>
+        <argsstring>(Board_DigitalPortId_Type portId, HAL_DigitalPinLevel_Type value)</argsstring>
+        <name>Board_DigitalPort_SetValue</name>
+        <param>
+          <type><ref refid="hal__base_8h_1af7e67665c65789cbd914ebe9c1c48b68" kindref="member">Board_DigitalPortId_Type</ref></type>
+          <declname>portId</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7" kindref="member">HAL_DigitalPinLevel_Type</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the GPDO Pad Data Output value. <linebreak/>
+</para><para>This function is used to set the value (LOW / HIGH) of GPD0. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">portId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- GPIO index <linebreak/>
+ range Board_DigitalPortId_Type <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- PORT_PIN_LEVEL_LOW = 0x0u, PORT_PIN_LEVEL_HIGH = 0x1u <linebreak/>
+ range uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_DigitalPin_SetValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_DigitalPort_SetValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the value of GPDO after calling this function. <linebreak/>
+ <ref refid="hal__base_8c_8test_1abccb2da04182f83f2fe96f665c1a19c1" kindref="member">TEST_Board_DigitalPort_SetValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by HAL_DigitalPin_SetValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="276" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="534" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1aa3081b5ae017ec1f21ae7fdcf7fbd700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7" kindref="member">HAL_DigitalPinLevel_Type</ref></type>
+        <definition>HAL_LOCAL_INLINE HAL_DigitalPinLevel_Type Board_DigitalInput_GetValue</definition>
+        <argsstring>(Board_DigitalPortId_Type portId)</argsstring>
+        <name>Board_DigitalInput_GetValue</name>
+        <param>
+          <type><ref refid="hal__base_8h_1af7e67665c65789cbd914ebe9c1c48b68" kindref="member">Board_DigitalPortId_Type</ref></type>
+          <declname>portId</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the value of the GPIO Pad Data Input. <linebreak/>
+</para><para>This function is used to get the value of the GPIO Pad Data Input by checking if the Pad Data Input is 0. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">portId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- GPIO index <linebreak/>
+ range Board_DigitalPortId_Type <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>PORT_PIN_LEVEL_LOW = 0x0u, PORT_PIN_LEVEL_HIGH = 0x1u <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_DigitalPin_GetValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_DigitalInput_GetValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the value of GPIO after calling this function. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a5571352433fab574a12523a1cb60faae" kindref="member">TEST_Board_DigitalInput_GetValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by HAL_DigitalPin_GetValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="309" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="543" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a0f0e173d6c9fee2d2071dfd6c07ecdb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_1aa3dfb8267e76e10fe6ef56c023f6515c" kindref="member">HAL_AdcRawValue_Type</ref></type>
+        <definition>HAL_LOCAL_INLINE HAL_AdcRawValue_Type Board_AdcUnit_ReadChannelValue</definition>
+        <argsstring>(Board_AdcHwUnit_Type peripheral, Board_AdcChannelId_Type channel)</argsstring>
+        <name>Board_AdcUnit_ReadChannelValue</name>
+        <param>
+          <type><ref refid="hal__base_8h_1ac8364296d28d0531562a1252eab1f99b" kindref="member">Board_AdcHwUnit_Type</ref></type>
+          <declname>peripheral</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_1a7ad545050a8a9eeca35f98e9308501ae" kindref="member">Board_AdcChannelId_Type</ref></type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Read the ADC raw value. <linebreak/>
+</para><para>This function is used to read the ADC raw value for each case of peripheral (ADC_HW_UNIT_SARADC_12BIT_SUP, ADC_HW_UNIT_SARADC_12BIT_2, ADC_HW_UNIT_SARADC_10BIT_STDBY and ADC_HW_UNIT_INVALID). <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">peripheral</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- 0 - SAR_ADC_12BIT_B0, 1 - SAR_ADC_12BIT_2, 2 - SAR_ADC_10BIT_STDBY <linebreak/>
+ range Board_AdcHwUnit_Type <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range Board_AdcChannelId_Type <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>HAL_AdcRawValue_Type <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_AnalogInput_GetRawValue <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_AdcUnit_ReadChannelValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned value for each case. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a99d410707f35ddbfc865b62832bccb42" kindref="member">TEST_Board_AdcUnit_ReadChannelValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by HAL_AnalogInput_GetRawValue function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="347" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="560" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a3c4801f70d9a06ee31acddab5b7fe590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_1adddfc1276f7821f05828fb66d33e4d40" kindref="member">HAL_RTC_TicksValueType</ref></type>
+        <definition>HAL_LOCAL_INLINE HAL_RTC_TicksValueType Board_RTC_GetCounter</definition>
+        <argsstring>(void)</argsstring>
+        <name>Board_RTC_GetCounter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the RTC counter. <linebreak/>
+</para><para>This function is used to get the RTC counter. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>HAL_RTC_TicksValueType - RTC Counter <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_WaitBlocking_MicroSeconds <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Board_RTC_GetCounter.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the returned value for each case. <linebreak/>
+ <ref refid="hal__base_8c_8test_1aac42508f46bd1371ce4c902221ec9907" kindref="member">TEST_Board_RTC_GetCounter</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by HAL_WaitBlocking_MicroSeconds function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="376" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="586" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a3a8af2545e3cf0d9564115a98b69f245" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>HAL_LOCAL_INLINE boolean ComChannel_IsCAN</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>ComChannel_IsCAN</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if ComChannel is CAN. <linebreak/>
+</para><para>This function check if ComChannel is CAN by checking if the input communication channel is between communication channels dedicated for CAN. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a019cce9afd6020af922f8a61ce9f6662" kindref="member">_ComChannelCanFirst</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452abcefd32864009699b3a1a00dc7c39395" kindref="member">_ComChannelCanLast</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_ComChannel_SetNormalMode <linebreak/>
+ HAL_BASE - HAL_ComChannel_SetSleepMode <linebreak/>
+ HAL_BASE - ComChannel_IsCANOrLIN <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ These globals are used to check if the input communication channel is between communication channels dedicated for CAN. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ComChannel_IsCAN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function returns correctly that the input is a CAN or not. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ada3765b0caaeee6e0a29539e3c705b45" kindref="member">TEST_ComChannel_IsCAN</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by all context functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="412" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="595" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1ab3b7788b3c2cba4f2b39b7234e11475e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>HAL_LOCAL_INLINE boolean ComChannel_IsLIN</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>ComChannel_IsLIN</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if ComChannel is LIN <linebreak/>
+</para><para>This function check if ComChannel is LIN by checking if the input communication channel is between communication channels dedicated for LIN. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a2dabbbca57aee2c84ac9d9a8e15b21ba" kindref="member">_ComChannelLinFirst</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a49d0388d68b6e9239bce34c86f233af3" kindref="member">_ComChannelLinLast</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_ComChannel_SetNormalMode <linebreak/>
+ HAL_BASE - HAL_ComChannel_SetSleepMode <linebreak/>
+ HAL_BASE - ComChannel_IsCANOrLIN <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ These globals are used to check if the input communication channel is between communication channels dedicated for LIN. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ComChannel_IsLIN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function returns correctly that the input is a LIN or not. <linebreak/>
+ <ref refid="hal__base_8c_8test_1aa21837c73a96d8574128c53d651dfb4f" kindref="member">TEST_ComChannel_IsLIN</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by all context functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="448" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="615" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a1f951d352c9faa30955815f0f24ca5d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__variant_8h_8test_1a224ebf135446540288a4f5be6d06bd00" kindref="member">HAL_LOCAL_INLINE</ref> <ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>HAL_LOCAL_INLINE boolean ComChannel_IsCANOrLIN</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>ComChannel_IsCANOrLIN</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if ComChannel is CAN or LIN. <linebreak/>
+</para><para>This function check if the communication channel is CAN or LIN using ComChannel_IsCAN and ComChannel_IsLIN functions. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a2dabbbca57aee2c84ac9d9a8e15b21ba" kindref="member">_ComChannelLinFirst</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a49d0388d68b6e9239bce34c86f233af3" kindref="member">_ComChannelLinLast</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_ComChannel_CheckAndClearWakeupBit <linebreak/>
+ HAL_BASE - HAL_ComChannel_SetWakeupBit <linebreak/>
+ HAL_BASE - HAL_ComChannel_ClearWakeupBit <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ These globals are used for an assert needed for compile time. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ComChannel_IsCANOrLIN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function returns correctly that the input is a LIN or LIN. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a99f85d170828b29f521385f52ee3eebd" kindref="member">TEST_ComChannel_IsCANOrLIN</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by all context functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="484" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="630" bodyend="646"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a58e14552996a775125b2ad01daa4b348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_WaitBlocking_MicroSeconds</definition>
+        <argsstring>(uint32 delay_us)</argsstring>
+        <name>HAL_WaitBlocking_MicroSeconds</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+          <declname>delay_us</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Block the task for the defined <bold>delay</bold> in microsencods. <linebreak/>
+</para><para>This function blocks the task for the defined <bold>delay</bold> in microsencods, using a counter that has a limit delay_us multiplied by HAL_RTC_FREQ_MHZ. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delay_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delay period in <bold>microseconds</bold> <linebreak/>
+ range uint32 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__cfg_8h_1af166e43bf8520df78696e19ce61ce0a1" kindref="member">HAL_RTC_FREQ_MHZ</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_BASE - HAL_ComChannel_SetSleepMode <linebreak/>
+ HAL_VARIANT - Prepare_Ports_ForSleepMode <linebreak/>
+ HAL - HalusTimedelay <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_RTC_FREQ_MHZ is used in the counter, being multiplied by delay_us. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_WaitBlocking_MicroSeconds.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the task is blocked for the defined delay time. <linebreak/>
+ <ref refid="hal__base_8c_8test_1abd3e8760e6243275d9930d87960f64b6" kindref="member">TEST_HAL_WaitBlocking_MicroSeconds</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper API to delay the execution for a short period of time. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="656" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="656" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a0bb6580cc7b7095712b97189986ea3a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ComChannel_SetNormalMode</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HAL_ComChannel_SetNormalMode</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set CAN or LIN transceiver to normal mode. <linebreak/>
+</para><para>This function check if the communication channel is mounted, if it is CAN or LIN and for each of them it set the pin to normal mode. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1aea83d14848221113d836038a7fcea4de" kindref="member">HAL_CAN_NORMAL_MODE_STB_PIN_VALUE</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1adcf835285261e141483589a2d1fd18a0" kindref="member">HAL_LIN_NORMAL_MODE_NSLP_PIN_VALUE</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_VARIANT - Prepare_Ports_ForSleepMode <linebreak/>
+ ConfigNmLin - LinNmOnline <linebreak/>
+ DWA_LowPower - DWA_LowPower_Cyclic <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_CAN_NORMAL_MODE_STB_PIN_VALUE used to set pin to sleep mode (Level Low) <linebreak/>
+ HAL_LIN_NORMAL_MODE_NSLP_PIN_VALUE used to set pin to sleep mode (Level High) <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_ComChannel_SetNormalMode.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function set CAN or LIN transceiver to normal mode. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a6d05546cf9de066f3aad5cbdf26dcbaa" kindref="member">TEST_HAL_ComChannel_SetNormalMode</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="667" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="667" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a1b0ccf300f5f8b974d0900dad987200e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ComChannel_SetSleepMode</definition>
+        <argsstring>(TComChannel Channel, uint32 delay_us)</argsstring>
+        <name>HAL_ComChannel_SetSleepMode</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+          <declname>delay_us</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set CAN or LIN transceiver to sleep mode. <linebreak/>
+</para><para>This function check if the communication channel is CAN or LIN and for each of them it set the pin to sleep. After that it clear wakeup bit. <linebreak/>
+<simplesect kind="warning"><para>The task execution will be blocked for the <bold>delay_us</bold> microseconds. <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">delay_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delay between setting the transceier to sleep and clearing the WKP <linebreak/>
+ range uint32 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a40eead26024727b959ecd76c1df0c84e" kindref="member">HAL_CAN_SLEEP_MODE_STB_PIN_VALUE</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a945b315cf6f8202f40de280203b753bd" kindref="member">HAL_LIN_SLEEP_MODE_NSLP_PIN_VALUE</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_VARIANT - Prepare_Ports_ForSleepMode <linebreak/>
+ ConfigNmLin - ApplNmLinBusSleep <linebreak/>
+ DWA_LowPower - DWA_LowPower_Cyclic <linebreak/>
+ <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_CAN_SLEEP_MODE_STB_PIN_VALUE used to set pin to sleep mode (Level High) <linebreak/>
+ HAL_LIN_SLEEP_MODE_NSLP_PIN_VALUE used to set pin to sleep mode (Level Low) <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_ComChannel_SetSleepMode.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function set CAN or LIN transceiver to sleep mode. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a3f8a783716c38530f8adc70ade4f6b7a" kindref="member">TEST_HAL_ComChannel_SetSleepMode</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18926 </para><para>SWR_ICAS1_GW_19870 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="684" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="684" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1ad1d61e34e6a8113e0ed9566846b04886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7" kindref="member">HAL_DigitalPinLevel_Type</ref></type>
+        <definition>HAL_DigitalPinLevel_Type HAL_DigitalPin_GetValue</definition>
+        <argsstring>(const HAL_DigitalPort_Type *port)</argsstring>
+        <name>HAL_DigitalPin_GetValue</name>
+        <param>
+          <type>const <ref refid="struct_h_a_l___digital_port___type" kindref="compound">HAL_DigitalPort_Type</ref> *</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the value of a GPIO pin. <linebreak/>
+</para><para>This function check if the port is valid and then get the value of a GPIO pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- digital port from <ref refid="hal__base_8h_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> <linebreak/>
+ range <ref refid="struct_h_a_l___digital_port___type" kindref="compound">HAL_DigitalPort_Type</ref> <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- PORT_PIN_LEVEL_LOW <linebreak/>
+<itemizedlist>
+<listitem><para>PORT_PIN_LEVEL_HIGH <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a9e3e2c742f968c86058a26f2c0588055" kindref="member">GPIO_INVALID</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_VARIANT - HalWakeupOBDActive <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ GPIO_INVALID is used to check if the port is valid. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_DigitalPin_GetValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function return the value of a GPIO pin when the port is valid. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a7f69b12e165d52423f3848d1ebbb3ead" kindref="member">TEST_HAL_DigitalPin_GetValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to read a digital pin according to the HSI. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="703" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="703" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1ad83f68a72a8c5f78808bd2c4b931e55e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_DigitalPin_SetValue</definition>
+        <argsstring>(const HAL_DigitalPort_Type *port, HAL_DigitalPinLevel_Type value)</argsstring>
+        <name>HAL_DigitalPin_SetValue</name>
+        <param>
+          <type>const <ref refid="struct_h_a_l___digital_port___type" kindref="compound">HAL_DigitalPort_Type</ref> *</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7" kindref="member">HAL_DigitalPinLevel_Type</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the value of a GPIO pin. <linebreak/>
+</para><para>This function check if the port is valid and then set the value of a GPIO pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- digital port from <ref refid="hal__base_8h_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> <linebreak/>
+ range <ref refid="struct_h_a_l___digital_port___type" kindref="compound">HAL_DigitalPort_Type</ref> <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- <ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7a7d3465ca037b4c360f6c5e4eb33d7b3e" kindref="member">PORT_PIN_LEVEL_LOW</ref> or <ref refid="hal__base_8h_1a3372537f6ef328b191213cc99994cdc7a1a32bce2f80000d544847a48dca98637" kindref="member">PORT_PIN_LEVEL_HIGH</ref> <linebreak/>
+ range HAL_DigitalPinLevel_Type <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a9e3e2c742f968c86058a26f2c0588055" kindref="member">GPIO_INVALID</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ GPIO_INVALID is used to check if the port is valid. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_DigitalPin_SetValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function set the value of a GPIO pin when the port is valid. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a75eb0d352895df0f97965e96fc30d404" kindref="member">TEST_HAL_DigitalPin_SetValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to set a digital pin according to the HSI. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="713" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="713" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a4b597d85e7c79a96cf3833c664386d64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_1aa3dfb8267e76e10fe6ef56c023f6515c" kindref="member">HAL_AdcRawValue_Type</ref></type>
+        <definition>HAL_AdcRawValue_Type HAL_AnalogInput_GetRawValue</definition>
+        <argsstring>(const HAL_AdcPort_Type *adc_port)</argsstring>
+        <name>HAL_AnalogInput_GetRawValue</name>
+        <param>
+          <type>const <ref refid="struct_h_a_l___adc_port___type" kindref="compound">HAL_AdcPort_Type</ref> *</type>
+          <declname>adc_port</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the raw value from an ADC port. <linebreak/>
+</para><para>This function return the raw value from an ADC port. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">adc_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Adc port from <ref refid="hal__base_8h_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> <linebreak/>
+ range <ref refid="struct_h_a_l___adc_port___type" kindref="compound">HAL_AdcPort_Type</ref> <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>ADC raw value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>HW_unit, ADC_channel [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HW_unit, ADC_channel represents an ADC port and are used to have the index of the value in the ADC channel. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_AnalogInput_GetRawValue.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the raw value returned. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a4c72615e39494111ecb5a7e72a562120" kindref="member">TEST_HAL_AnalogInput_GetRawValue</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to read an analog pin according to the HSI. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="723" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="723" bodyend="726"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1ae371348c711dfc2455438408ba3d47c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean HAL_ComChannel_CheckAndClearWakeupBit</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HAL_ComChannel_CheckAndClearWakeupBit</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check and clear new wakeup event. <linebreak/>
+</para><para>This function checks if a CAN or LIN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>- TRUE if wakeup was detected <linebreak/>
+<itemizedlist>
+<listitem><para>FALSE if no wakeup was detected <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> [in] <linebreak/>
+ wakeup_bit_CAN_LIN [in/out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL - HalWakeupIs <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_active_config_set is used to active HAL config set depending on the HW version. <linebreak/>
+ wakeup_bit_CAN_LIN is part of configuration set of the ports used in the HAL module. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_ComChannel_CheckAndClearWakeupBit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function clear the HW wakeup bit when a CAN or LIN wakeup was detected by the HW wakeup unit for the coresponding Channel. <linebreak/>
+ <ref refid="hal__base_8c_8test_1acd01df287d44ad6848811fc61230d1bc" kindref="member">TEST_HAL_ComChannel_CheckAndClearWakeupBit</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19868 </para><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="728" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="728" bodyend="738"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a81187a9e038c84300956543909af9d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ComChannel_SetWakeupBit</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HAL_ComChannel_SetWakeupBit</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wakeup a CAN or LIN channel from SW. <linebreak/>
+</para><para>This function checks if the communication channel is CAN or LIN, it checks if a channel is mounted and then set new wakeup event. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> [in] <linebreak/>
+ wakeup_bit_CAN_LIN [in/out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_active_config_set is used to active HAL config set depending on the HW version. <linebreak/>
+ wakeup_bit_CAN_LIN is part of configuration set of the ports used in the HAL module. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_ComChannel_SetWakeupBit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function set new wakeup event for CAN or LIN channel when CAN or LIN is mounted. <linebreak/>
+ <ref refid="hal__base_8c_8test_1aef42231789aa72a67c8f54cdccf35381" kindref="member">TEST_HAL_ComChannel_SetWakeupBit</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to set a simulate a CAN/LIN wakeup. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="740" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="740" bodyend="749"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a767dfba13c13b4a861b2465aa8d8f043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ComChannel_ClearWakeupBit</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HAL_ComChannel_ClearWakeupBit</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Clear the wakeup event from CAN or LIN channel. <linebreak/>
+</para><para>This function checks if the communication channel is CAN or LIN, it checks if a channel is mounted and then clear the wakeup event from CAN or LIN channel. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> [in] <linebreak/>
+ wakeup_bit_CAN_LIN [in/out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ HAL_active_config_set is used to active HAL config set depending on the HW version. <linebreak/>
+ wakeup_bit_CAN_LIN is part of configuration set of the ports used in the HAL module. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_ComChannel_ClearWakeupBit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function clear the wakeup event from CAN or LIN channel when CAN or LIN is mounted. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a4396b275efc0c883bf6004a9b3c98fec" kindref="member">TEST_HAL_ComChannel_ClearWakeupBit</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function clear the wakeup event from CAN/LIN. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="751" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="751" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a86f708c7bd16141f0ecc1557aaaa8bf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_LinTrcvGoToNormalAfterPOR</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_LinTrcvGoToNormalAfterPOR</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Service to activate all available LIN transceivers if booting from POR. <linebreak/>
+</para><para>This function checks if the boot is from POR and sets all available LIN transceivers to normal (activate). <linebreak/>
+<simplesect kind="pre"><para>shall be called after PostBuildHandler_McalInit <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__base_8h_8test_1a811f6975df60e5410519f849325beb5b" kindref="member">MC_RGM_DES_POR_MASK</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a2dabbbca57aee2c84ac9d9a8e15b21ba" kindref="member">_ComChannelLinFirst</ref> [in] <linebreak/>
+ <ref refid="hal__base_8c_1a3a0b19e9e76fe5b8ed8a3cb9fc7bb8d0" kindref="member">HAL_RTCValLINActStartPoint</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module, but no need for protection since is called in startup phase <linebreak/>
+ multicore safe No, but not applicable since called from startup phase <linebreak/>
+ synchronous <linebreak/>
+ MC_RGM_DES_POR_MASK - MC_RGM Memory Map for POR. <linebreak/>
+ _ComChannelLinFirst - needed to use the communication channel for LIN. <linebreak/>
+ HAL_RTCValLINActStartPoint - Used to save RTC value required for time tracking of short LIN activation in case of POR. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_LinTrcvGoToNormalAfterPOR.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if all available LIN transceivers are activated in case of booting from POR. <linebreak/>
+ <ref refid="hal__base_8c_8test_1aaf3213220971c28ee2dac3cf60b01d40" kindref="member">TEST_HAL_LinTrcvGoToNormalAfterPOR</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_23019 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="765" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="765" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__base_8c_1a9d104f6c0be485b31387aa5cc20fb048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_LinTrcvGoToSleepAfterPOR</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_LinTrcvGoToSleepAfterPOR</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Service to quit the short activation time after POR of all available LIN transceivers. <linebreak/>
+</para><para>This function checks if the boot is from POR and quit the short activation time after POR of all available LIN transceivers. <linebreak/>
+<simplesect kind="pre"><para>shall be called after <ref refid="hal__base_8h_8test_1a86f708c7bd16141f0ecc1557aaaa8bf7" kindref="member">HAL_LinTrcvGoToNormalAfterPOR</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__base_8h_8test_1a811f6975df60e5410519f849325beb5b" kindref="member">MC_RGM_DES_POR_MASK</ref> [in] <linebreak/>
+ <ref refid="hal__base_8c_1a2a3e8ff2b3cf973819aac44b55fc92bb" kindref="member">HAL_LIN_TRCV_HOLD_TIME_50US</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a2dabbbca57aee2c84ac9d9a8e15b21ba" kindref="member">_ComChannelLinFirst</ref>, _ComChannelLinLast [in] <linebreak/>
+ <ref refid="hal__base_8c_1a3a0b19e9e76fe5b8ed8a3cb9fc7bb8d0" kindref="member">HAL_RTCValLINActStartPoint</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context EcuM startup before OS activation (EcuM_AL_DriverInitOne) <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module, but no need for protection since is called in startup phase <linebreak/>
+ multicore safe No, but not applicable since called from startup phase <linebreak/>
+ synchronous <linebreak/>
+ MC_RGM_DES_POR_MASK - MC_RGM Memory Map for POR. <linebreak/>
+ HAL_LIN_TRCV_HOLD_TIME_50US - Minimum hold time for LIN transceiver transition request. <linebreak/>
+ _ComChannelLinFirst, _ComChannelLinLast - needed to use the communication channel for LIN. <linebreak/>
+ HAL_RTCValLINActStartPoint - Used to save RTC value required for time tracking of short LIN activation in case of POR. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_LinTrcvGoToSleepAfterPOR.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function quit the short activation time after POR of all available LIN transceivers. <linebreak/>
+ <ref refid="hal__base_8c_8test_1a3f76f744b6ca39b3c6df1361d6415b75" kindref="member">TEST_HAL_LinTrcvGoToSleepAfterPOR</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_23019 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" line="781" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c" bodystart="781" bodyend="800"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the implementation of the functions used as basis for other modules. </para>    </briefdescription>
+    <detaileddescription>
+<para>The implementation is based on the active configuration. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_base.c"/>
+  </compounddef>
+</doxygen>

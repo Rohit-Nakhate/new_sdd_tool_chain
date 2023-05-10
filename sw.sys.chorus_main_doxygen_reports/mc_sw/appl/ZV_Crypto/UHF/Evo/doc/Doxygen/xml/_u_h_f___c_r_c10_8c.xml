@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___c_r_c10_8c" kind="file" language="C++">
+    <compoundname>UHF_CRC10.c</compoundname>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_u_h_f___c_r_c10_8h" local="yes">UHF_CRC10.h</includes>
+    <incdepgraph>
+      <node id="26">
+        <label>UHF_CRC10.c</label>
+        <link refid="_u_h_f___c_r_c10_8c"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>UHF_CRC10.h</label>
+        <link refid="_u_h_f___c_r_c10_8h"/>
+      </node>
+      <node id="28">
+        <label>Rte.h</label>
+      </node>
+      <node id="27">
+        <label>tl_basetypes.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_h_f___c_r_c10_8c_1af6124c92c392568c1b64bb5c35cf0856" prot="public" static="no">
+        <name>CRC_BITS_PER_BYTE</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as number of Bits in one Byte</para><para>This macro defines the Number of Bits in one Byte. <simplesect kind="remark"><para>values 8u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="64" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___c_r_c10_8c_1aafe3046c3622292c680658802f01acbf" prot="public" static="no">
+        <name>CRC_UPROUNDING_INCREMENT</name>
+        <initializer>7u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of Bits to be added for rounding up to next Byte</para><para>This macro defines the Number of Bits to be added for rounding up to next Byte. <simplesect kind="remark"><para>values 7u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="74" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___c_r_c10_8c_1a76dbd5a58ddf13c490edf0e61e5c85d4" prot="public" static="no">
+        <name>CRC_MSB_MASK</name>
+        <initializer>0x80u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as MSBit Mask</para><para>This macro defines the MSBit Mask. <simplesect kind="remark"><para>values 0x80u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="84" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___c_r_c10_8c_1a5e7e09a9d8d9fb52f4d60178c2b7bd8d" prot="public" static="no">
+        <name>CRC_MSB_CRC10_MASK</name>
+        <initializer>0x8000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as MSBit Mask for CRC10</para><para>This macro defines the MSBit Mask for CRC10. <simplesect kind="remark"><para>values 0x8000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="94" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_h_f___c_r_c10_8c_1a7eba49311d94c8589c46f172082e75f7" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>const uint8 cau8_CRC10_LowNibbleArray[16u]</definition>
+        <argsstring>[16u]</argsstring>
+        <name>cau8_CRC10_LowNibbleArray</name>
+        <initializer>=
+{
+        0x00u, 0xC0u, 0x80u, 0x40u, 0x00u, 0xC0u, 0x80u, 0x40u,
+        0xC0u, 0x00u, 0x40u, 0x80u, 0xC0u, 0x00u, 0x40u, 0x80u
+
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Array for High nibble CRC10 checksum calculation</para><para>CRC Polynomial = 0x08F = x^10+x^7+x^3+x^2+x^1+1 &lt;&lt;6 -&gt; polynom 23C0 <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {used in <ref refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" kindref="member">crc_Update_CRC10</ref> as reference for function <ref refid="_u_h_f___c_r_c10_8c_8test_1a29ee33934d65364d6aec651964a802c1" kindref="member">crc_LookUpTableNibble_CRC10</ref>} <linebreak/>
+ protection {static global array variable for <ref refid="_u_h_f___c_r_c10_8c" kindref="compound">UHF_CRC10.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="111" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="111" bodyend="-1"/>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" compoundref="_u_h_f___c_r_c10_8c" startline="312" endline="355">crc_Update_CRC10</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___c_r_c10_8c_1ab1512d82c06c673e309edc9ee0631fbd" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>const uint8 cau8_CRC10_HighNibbleArray[16u]</definition>
+        <argsstring>[16u]</argsstring>
+        <name>cau8_CRC10_HighNibbleArray</name>
+        <initializer>=
+{
+        0x00u, 0x23u, 0x47u, 0x64u, 0x8Fu, 0xACu, 0xC8u, 0xEBu,
+        0x3Du, 0x1Eu, 0x7Au, 0x59u, 0xB2u, 0x91u, 0xF5u, 0xD6u
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Array for High nibble CRC10 checksum calculation</para><para>CRC Polynom = 0x08F = x^10+x^7+x^3+x^2+x^1+1 &lt;&lt;6 -&gt; Polynom 0x23C0 <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {used in <ref refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" kindref="member">crc_Update_CRC10</ref> as reference for function <ref refid="_u_h_f___c_r_c10_8c_8test_1a29ee33934d65364d6aec651964a802c1" kindref="member">crc_LookUpTableNibble_CRC10</ref>} <linebreak/>
+ protection {static global array variable for <ref refid="_u_h_f___c_r_c10_8c" kindref="compound">UHF_CRC10.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="131" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="131" bodyend="-1"/>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" compoundref="_u_h_f___c_r_c10_8c" startline="312" endline="355">crc_Update_CRC10</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___c_r_c10_8c_1a1c445e3cf766b24152c244ac024b0651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 crc_LookUpTableNibble_CRC10</definition>
+        <argsstring>(uint16 lu16_Checksum, uint8 lu8_DataByte, const uint8 *const lpu8_HighNibble, const uint8 *const lpu8_LowNibble)</argsstring>
+        <name>crc_LookUpTableNibble_CRC10</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_Checksum</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>lu8_DataByte</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>lpu8_HighNibble</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>lpu8_LowNibble</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used for bit operations in CRC calculation. <simplesect kind="pre"><para>Triggered in <ref refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" kindref="member">crc_Update_CRC10</ref> </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lu16_Checksum - The Current Checksum (or Initial Value for the first Computation) [in] uint8 lu8_DataByte - Data Byte to be added to the Checksum [in] uint8* lpu8_HighNibble - Table of polynom data [in] uint8* lpu8_LowNibble - Table of polynom data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 - checksum after bit operations </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="crc_LookUpTableNibble_CRC10.png">Activity Diagram crc_LookUpTableNibble_CRC10</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___c_r_c10_8c_8test_1a170c43ec59a7a7fd256f51bd7dc6233a" kindref="member">TEST_crc_LookUpTableNibble_CRC10</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000029"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_186 </para></xrefdescription></xrefsect></para><para>Function used for bit operations in CRC calculation.</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="194" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="283" bodyend="304"/>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a25c0cb02afa502c4e85abd165e09d111" compoundref="_u_h_f___c_r_c10_8c" startline="312" endline="355">crc_Update_CRC10</referencedby>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a170c43ec59a7a7fd256f51bd7dc6233a" compoundref="_u_h_f___c_r_c10_8c_8test" startline="92" endline="143">TEST_crc_LookUpTableNibble_CRC10</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___c_r_c10_8c_1a4ed2eba072a3a911f65dda2789aa2b52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 crc_Update_CRC10</definition>
+        <argsstring>(uint16 lu16_Checksum, uint8 lu8_DataByte, uint16 lu16_RemainingBits, uint16 lu16_Polynom)</argsstring>
+        <name>crc_Update_CRC10</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_Checksum</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>lu8_DataByte</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_RemainingBits</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_Polynom</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to calculate a CRC10 checksum basing on the current checksum (or initial value).</para><para>Function used to calculate a CRC10 checksum basing on the current checksum (or initial value) the data byte and the number of remaining bits. If the number of the remaining bits is at least 8 bytewise calculation approach is used ( <ref refid="_u_h_f___c_r_c10_8c_8test_1a29ee33934d65364d6aec651964a802c1" kindref="member">crc_LookUpTableNibble_CRC10</ref> ) otherwise bitwise calculation is used. <simplesect kind="pre"><para>Is called by <ref refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" kindref="member">CRC_Compute_CRC10</ref> </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lu16_Checksum - The Current Checksum (or Initial Value for the first Computation) [in] uint8 lu8_DataByte - Data Byte to be added to the Checksum [in] uint16 lu16_RemainingBits - Number of remaining Bits in the lu8_DataByte [in]uint16 lu16_Polynom - Polynom to be used in CRC calculation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 - checksum after bit operations </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="crc_Update_CRC10.png">Activity Diagram crc_Update_CRC10</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___c_r_c10_8c_8test_1a22cde39cbf4f0c861aee1e4b11e00449" kindref="member">TEST_crc_Update_CRC10</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000030"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_186 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function used to calculate a CRC10 checksum basing on the current checksum (or initial value).</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="265" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="312" bodyend="355"/>
+        <references refid="_u_h_f___c_r_c10_8c_1a7eba49311d94c8589c46f172082e75f7" compoundref="_u_h_f___c_r_c10_8c" startline="111">cau8_CRC10_LowNibbleArray</references>
+        <references refid="_u_h_f___c_r_c10_8c_1ab1512d82c06c673e309edc9ee0631fbd" compoundref="_u_h_f___c_r_c10_8c" startline="131">cau8_CRC10_HighNibbleArray</references>
+        <references refid="_u_h_f___c_r_c10_8c_1af6124c92c392568c1b64bb5c35cf0856" compoundref="_u_h_f___c_r_c10_8c" startline="64">CRC_BITS_PER_BYTE</references>
+        <references refid="_u_h_f___c_r_c10_8c_1a1c445e3cf766b24152c244ac024b0651" compoundref="_u_h_f___c_r_c10_8c" startline="283" endline="304">crc_LookUpTableNibble_CRC10</references>
+        <references refid="_u_h_f___c_r_c10_8c_1a76dbd5a58ddf13c490edf0e61e5c85d4" compoundref="_u_h_f___c_r_c10_8c" startline="84">CRC_MSB_MASK</references>
+        <references refid="_u_h_f___c_r_c10_8c_1a5e7e09a9d8d9fb52f4d60178c2b7bd8d" compoundref="_u_h_f___c_r_c10_8c" startline="94">CRC_MSB_CRC10_MASK</references>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a58eae3b591f38050222fe6ded46d7574" compoundref="_u_h_f___c_r_c10_8c" startline="363" endline="378">CRC_Compute_CRC10</referencedby>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a22cde39cbf4f0c861aee1e4b11e00449" compoundref="_u_h_f___c_r_c10_8c_8test" startline="155" endline="197">TEST_crc_Update_CRC10</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___c_r_c10_8c_1a073e5d29d66352964275530518756898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 CRC_Compute_CRC10</definition>
+        <argsstring>(const uint8 *lpu8_Buffer, uint16 lu16_NbOfBits, uint16 lu16_InitValue)</argsstring>
+        <name>CRC_Compute_CRC10</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>lpu8_Buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_NbOfBits</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>lu16_InitValue</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function called to calculate a CRC10 checksum.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" line="363" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c" bodystart="363" bodyend="378"/>
+        <references refid="_u_h_f___c_r_c10_8c_1aafe3046c3622292c680658802f01acbf" compoundref="_u_h_f___c_r_c10_8c" startline="74">CRC_UPROUNDING_INCREMENT</references>
+        <references refid="_u_h_f___c_r_c10_8c_1af6124c92c392568c1b64bb5c35cf0856" compoundref="_u_h_f___c_r_c10_8c" startline="64">CRC_BITS_PER_BYTE</references>
+        <references refid="_u_h_f___c_r_c10_8c_1a4ed2eba072a3a911f65dda2789aa2b52" compoundref="_u_h_f___c_r_c10_8c" startline="312" endline="355">crc_Update_CRC10</references>
+        <referencedby refid="_u_h_f___c_r_c10_8c_8test_1a133c9f2a348e5e9f4bc2c4db214f89b2" compoundref="_u_h_f___c_r_c10_8c_8test" startline="209" endline="252">TEST_CRC_Compute_CRC10</referencedby>
+        <referencedby refid="_u_h_f___receiver_8c_1a9bb7944a897c446cd1325e6edc2214d6" compoundref="_u_h_f___receiver_8c" startline="1076" endline="1092">bEvaluateCRC10</referencedby>
+        <referencedby refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" compoundref="_u_h_f___sender_8c" startline="740" endline="881">evUHFSenden</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for UHF SWC CRC calculation. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___c_r_c10_8c" kindref="compound">UHF_CRC10.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie32362 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>11/04/2022 </para></simplesect>
+</para><para>detailed multiline description of the file <linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_CRC10.c"/>
+  </compounddef>
+</doxygen>

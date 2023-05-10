@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="configandrunnable" kind="page">
+    <compoundname>configandrunnable</compoundname>
+    <title>Config and runnable files</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="configandrunnable_1configpage">
+<title>config.bat</title>
+<sect2 id="configandrunnable_1configGeneral">
+<title>General</title>
+<para>Whenever new BAP Config is to be integrated into the system, or new RTT Routing table is required to be integrated this file have to be updated.</para></sect2>
+<sect2 id="configandrunnable_1variantcfg">
+<title>Variant Configuration</title>
+<para>Locate <emphasis>ICAS_VERSION</emphasis> variable and update it dependignly on needed variant.</para><para><itemizedlist>
+<listitem><para>c - common</para></listitem><listitem><para>1 - ICAS1</para></listitem><listitem><para>Evo - ICASEvo</para></listitem><listitem><para>EvoF - ICASEvo Full</para></listitem></itemizedlist>
+</para><para><programlisting><codeline><highlight class="normal">rem<sp/>-[VARIANT<sp/>CONFIGURATION]-------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">rem<sp/>This<sp/>variable<sp/>is<sp/>used<sp/>below<sp/>in<sp/>paths,<sp/>therefore<sp/>it<sp/>should<sp/>be<sp/>set<sp/>to<sp/>the<sp/>same</highlight></codeline>
+<codeline><highlight class="normal">rem<sp/>name<sp/>as<sp/>directory<sp/>is<sp/>named<sp/>of<sp/>specific<sp/>variant<sp/>(c/1/Evo/EvoF)</highlight></codeline>
+<codeline><highlight class="normal">SET<sp/>ICAS_VERSION=Evo</highlight></codeline>
+</programlisting></para></sect2>
+<sect2 id="configandrunnable_1inputcfg">
+<title>Input Configuration</title>
+<para>Locate <emphasis>BAP_CONFIG_NAME</emphasis> or <emphasis>KMATRIX_FILE_NAME</emphasis> in order to update inputs for the generator</para><para><programlisting><codeline><highlight class="normal">rem<sp/>-[CONFIG<sp/>AREA]-----------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">rem<sp/>Update<sp/>these<sp/>each<sp/>time<sp/>new<sp/>BAP<sp/>Config<sp/>is<sp/>to<sp/>be<sp/>integrated<sp/>or<sp/>new<sp/>routing<sp/>table</highlight></codeline>
+<codeline><highlight class="normal">rem<sp/>is<sp/>present<sp/>in<sp/>the<sp/>system.</highlight></codeline>
+<codeline><highlight class="normal">rem<sp/>-------------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">rem<sp/>BAP<sp/>Configuration<sp/>xml<sp/>file<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">SET<sp/>BAP_CONFIG_NAME=BAP_SW1.10_ICAS1.X_Chorus_E3_1_1_UNECE_V3_30_F.xml</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">rem<sp/>Exported<sp/>RTT<sp/>Routing<sp/>table</highlight></codeline>
+<codeline><highlight class="normal">SET<sp/>KMATRIX_FILE_NAME=E3_1_1_UNECE_Routing_Documented_patched_V15.02.02F_20210802_MB.xml</highlight></codeline>
+</programlisting></para></sect2>
+</sect1>
+<sect1 id="configandrunnable_1generate">
+<title>generate.bat</title>
+<para>This is actual runnable of the tool. This script is to be called in order to generate files.<linebreak/>
+This file require update only if there is a change in names/paths of the output files.<linebreak/>
+Generation is splitted into 3 parts:</para><para><itemizedlist>
+<listitem><para>callbacks</para></listitem><listitem><para>rte</para></listitem><listitem><para>unit tests</para></listitem></itemizedlist>
+</para><para>Each part will create a log in console that certain part have started or finished.</para><sect2 id="configandrunnable_1generateUpdate">
+<title>Changing name/path of the output files</title>
+<para>There might be a need to update names or paths of the output files. Below you can see a snip from the script which is responsible to generate bap_rte.c file.</para><para><programlisting><codeline><highlight class="normal">%JAVA%<sp/>-Xmx512M<sp/>%XALANPATH%<sp/>%XINCLUDE%<sp/>%XALAN%<sp/>-s:%FILE_NAME%<sp/>-xsl:..\xsl\bap_rte.c.xsl<sp/><sp/>-o:%BUILD_PATH%%BAP_PATH%\inc\rte\bap_rte.c<sp/>dateOfGeneration=&quot;%TODAY%&quot;<sp/>fileName=&quot;%BAP_CONFIG_NAME%&quot;</highlight></codeline>
+</programlisting> Let&apos;s break this code into parts.<linebreak/>
+<linebreak/>
+ <programlisting><codeline><highlight class="normal">%JAVA%<sp/>-Xmx512M<sp/>%XALANPATH%<sp/>%XINCLUDE%<sp/>%XALAN%</highlight></codeline>
+</programlisting> This part is regarding calling the actual java tooling in order to interpret XSL stylesheet.<linebreak/>
+<linebreak/>
+ <programlisting><codeline><highlight class="normal">-s:%FILE_NAME%</highlight></codeline>
+</programlisting> The -s is used to provide input XML<linebreak/>
+<linebreak/>
+ <programlisting><codeline><highlight class="normal">-xsl:..\xsl\bap_rte.c.xsl</highlight></codeline>
+</programlisting> -xsl is used to provide stylesheet (base file), which will provide instructions how output file should look like. Note that it has relative path to the place where XSL file is located. Update this whenever path or name of the XSL file has changed.<linebreak/>
+<linebreak/>
+ <programlisting><codeline><highlight class="normal">-o:%BUILD_PATH%%BAP_PATH%\inc\rte\bap_rte.c</highlight></codeline>
+</programlisting> -o is used to provide name and path of the output file. It uses variables BUILD_PATH% and BAP_PATH% located in <ref refid="config_8bat" kindref="compound">config.bat</ref>.<linebreak/>
+<linebreak/>
+ <programlisting><codeline><highlight class="normal">dateOfGeneration=&quot;%TODAY%&quot;<sp/>fileName=&quot;%BAP_CONFIG_NAME%&quot;</highlight></codeline>
+</programlisting> Rest are additional arguments provided into the stylesheet to help with generation. Eg. <emphasis>dateOfGeneration</emphasis> is used to provide the date on which file is generated. <emphasis>fileName</emphasis> is used to provide name of BAP Config XML to mention this in generated file to clearly show for which config files were generated.</para><para>In case of generation for bap_com_gw_adaption.c/h, there is another argument <emphasis>KMATRIX</emphasis> which provides details regarding routing table. </para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

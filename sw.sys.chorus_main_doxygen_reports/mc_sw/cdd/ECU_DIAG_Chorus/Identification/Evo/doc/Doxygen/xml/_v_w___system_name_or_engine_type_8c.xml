@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_v_w___system_name_or_engine_type_8c" kind="file" language="C++">
+    <compoundname>VW_SystemNameOrEngineType.c</compoundname>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <includes refid="_identification_8h" local="yes">Identification.h</includes>
+    <includes local="yes">ConfigEcu.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <incdepgraph>
+      <node id="557">
+        <label>ConfigUdsIdentifiers.h</label>
+      </node>
+      <node id="554">
+        <label>Identification.h</label>
+        <link refid="_identification_8h"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>Identification_gen.h</label>
+      </node>
+      <node id="553">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="560">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="558">
+        <label>typedefs.h</label>
+      </node>
+      <node id="556">
+        <label>RoutingVersion_CfgGen.h</label>
+      </node>
+      <node id="559">
+        <label>ConfigEcu.h</label>
+      </node>
+      <node id="552">
+        <label>VW_SystemNameOrEngineType.c</label>
+        <link refid="_v_w___system_name_or_engine_type_8c"/>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_v_w___system_name_or_engine_type_8c_1ab9e01410046463a62ac89cbd7a7f2c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f197_ConditionCheckRead</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DCM_f197_ConditionCheckRead</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0xF197 will give VW System Name Or Engine Type. We can read DID 0xF197 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- negative response code <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="DCM_f197_ConditionCheckRead.png">DCM_f197_ConditionCheckRead Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_v_w___system_name_or_engine_type_8c_8test_1a3413336eccba39615ca54b5a50c766e6" kindref="member">TEST_DCM_f197_ConditionCheckRead</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on OpStatus. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000075"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_4723 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c" line="109" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c" bodystart="109" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="_v_w___system_name_or_engine_type_8c_1a9b81ec118bc0fa25b1c53638af06429d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DCM_f197_Read</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>DCM_f197_Read</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0xF197 will give VW System Name Or Engine Type. We can read DID 0xF197 by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- 0xF197 data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="DCM_f197_Read.png">DCM_f197_Read Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_v_w___system_name_or_engine_type_8c_8test_1ac8d802a44cf1f4355f6b9cfa2020218c" kindref="member">TEST_DCM_f197_Read</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on OpStatus and Data. <linebreak/>
+ <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000076"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_4723 <linebreak/>
+ </para><para>SWR_ICAS1_GW_11771 <linebreak/>
+ </para><para>SWR_ICAS1_GW_11773 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c" line="157" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c" bodystart="157" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c"/>
+  </compounddef>
+</doxygen>

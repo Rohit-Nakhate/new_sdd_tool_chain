@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_z_v_a_d___interface_test_manual_8c" kind="file" language="C++">
+    <compoundname>ZVAD_InterfaceTestManual.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Nvm.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>Nvm.h</label>
+      </node>
+      <node id="11">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="10">
+        <label>ZVAD_InterfaceTestManual.c</label>
+        <link refid="_z_v_a_d___interface_test_manual_8c"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_z_v_a_d___interface_test_manual_8c_1a44554115891780603f413fd3a32ea4c2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="_z_v_a_d___task_8c_8test_1a5725248398811c35e520b47e90ce78d5" kindref="member">uint8</ref></type>
+        <definition>const uint8 Pim_ZVAD_PIM_Fahrstufe_ROM</definition>
+        <argsstring></argsstring>
+        <name>Pim_ZVAD_PIM_Fahrstufe_ROM</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ZVAD Pim Fahrstufe read only memory block</para><para>Used to store read only memory regarding Fahrstufe PIM <simplesect kind="remark"><para>range Initialized at startup with value 0x01U from init ram <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram and reset proof area <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+Pim ZVAD PIM Fahrstufe ROM</para><para>Pim ZVAD PIM Fahrstufe ROM is set to ZVAD_GE_FAHRSTUFE_INIT value. <simplesect kind="remark"><para>range N/A <linebreak/>
+ value ZVAD_GE_FAHRSTUFE_INIT <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="45" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a2925c58bab96562b5c73ad42c3874e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_z_v_a_d___task_8c_8test_1affb89937ab9ff082f875029b3fa9da54" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType NvmSingleZVAD_FahrstufeCbk</definition>
+        <argsstring>(NvM_ServiceIdType a_uServ, NvM_RequestResultType a_uRequest)</argsstring>
+        <name>NvmSingleZVAD_FahrstufeCbk</name>
+        <param>
+          <type><ref refid="_z_v_a_d___task_8c_8test_1ad3f249e9314fb71c36faad088d488908" kindref="member">NvM_ServiceIdType</ref></type>
+          <declname>a_uServ</declname>
+        </param>
+        <param>
+          <type><ref refid="_z_v_a_d___task_8c_8test_1a5537a9d047cddd68d429a53f14e4be94" kindref="member">NvM_RequestResultType</ref></type>
+          <declname>a_uRequest</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Nvm function used at system startup.</para><para>Function which is used during start up of system where stored in NVM value shall be sent to last stored value of GE_Fahrstufe at very beginig phase for ZVAD to proper initialization after awake.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>NvM_ServiceIdType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a_uServ [in] <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NvM_RequestResultType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a_uRequest [in] <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType E_OK <linebreak/>
+ value (Std_ReturnType)E_OK. <linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_a_d___task_8c_1af5edeb8fbefb33310c3b44ed0df1dc60" kindref="member">Pim_ZVAD_PIM_Fahrstufe_FirstVal</ref> [out] <linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1a1adce51138e9916ee6bf13f25ea79102" kindref="member">Pim_ZVAD_PIM_Fahrstufe</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvmSingleZVAD_FahrstufeCbk.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall be based on value of a_uServ. <linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1aa897adf8413ffb47b4a65c714ba1605b" kindref="member">TEST_ZVAD_Task__NvmSingleZVAD_FahrstufeCbk</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1304 <linebreak/>
+ <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="47" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1af035122507bde882a245901dace672fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cyclic_zvad</definition>
+        <argsstring>(void)</argsstring>
+        <name>cyclic_zvad</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a34901dbe8bfbd75e9993882c0f2e4a68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void no</definition>
+        <argsstring>(void)</argsstring>
+        <name>no</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a0bd57c4b05639364e0ef063bdcb21790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_preZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_preZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1ae33efd9222f9169bb09412081187ed5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1aceccae6c69be0739b53f3706350e82e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_postZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_postZV_LIB_ANSWER_SOK_HFS_BCM_Resp_03Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1ae3acb53be770a8d865ae1073a12648fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_preZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_preZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1aa9e918713e7a3208c451faad4086f9e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1acee8b05652742e127db152ebca66fd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_postZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_postZV_LIB_ANSWER_SOK_HBFS_BCM_Resp_04Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a86d75663e3e34e19747a30e5848563b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_preZV_LIB_ANSWER_SOK_HW_BCM_Resp_02Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_preZV_LIB_ANSWER_SOK_HW_BCM_Resp_02Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a34e7480f6a9bcc3d6aacf802109df758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_LIB_ANSWER_SOK_HW_BCM_Resp_02</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_LIB_ANSWER_SOK_HW_BCM_Resp_02</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1ab2446de7c030c643708d06855e336754" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_postZV_LIB_ANSWER_SOK_HW_BCM_Resp_02Hook</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_postZV_LIB_ANSWER_SOK_HW_BCM_Resp_02Hook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a0a218d0e632562f9bd3b6f9ece2591e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_SOK_HW_Gateway_Resp_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_SOK_HW_Gateway_Resp_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Providing authenticated signals on RTE.</para><para>Function which is runnable called on reception of PDU from SOK-FM with authenticated signals. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_ZV_1290 </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_SOK_HW_Gateway_Resp_01.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall be based on values of HD_Hauptraste_Auth, HD_Vorraste_Aut, HW_Drehfalle_Tuer_HL_Auth, HW_Drehfalle_Tuer_HR_Auth, <linebreak/>
+ HW_Status_Schloss_safed_HL_Auth, HW_Status_Schloss_safed_HR_Auth, HW_Status_Schloss_verr_HL_Auth and HW_Status_Schloss_verr_HR_Auth.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1ac88a2f4bb282d2c3c7b05be43bb65c5f" kindref="member">TEST_ZVAD_Task__ZV_SOK_HW_Gateway_Resp_01</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1290 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="61" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/src/ZVAD_Task.c" bodystart="3208" bodyend="3239"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1aa169185d005a7969829255bb29f7dd6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a2953f7e7bc1157682a279a40aea88aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_SOK_HW_BCM_Resp_02</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_SOK_HW_BCM_Resp_02</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set timer function for SOK challange.</para><para>Runnable called on reception of SOK challenge, timeout timer is set.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_a_d___task_8c_1a0d869fd347e8aa2c11fa62ec5039fa38" kindref="member">ZV_SOK_Resp_02_timeout_u8</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_SOK_HW_BCM_Resp_02.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Check value of ZV_SOK_Resp_02_timeout.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1ab241ef255c4524f54d597b3e148e1318" kindref="member">TEST_ZVAD_Task__ZV_SOK_HW_BCM_Resp_02</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1146 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="63" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/src/ZVAD_Task.c" bodystart="3241" bodyend="3245"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a8d7d206230df9b4dd246b83773221e8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_SOK_HFS_BCM_Resp_03</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_SOK_HFS_BCM_Resp_03</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set timer function for SOK challange.</para><para>Runnable called on reception of SOK challenge, timeout timer is set.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_a_d___task_8c_1a9f9dad23a8aa23371338e081e491c962" kindref="member">ZV_SOK_Resp_03_timeout_u8</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_SOK_HFS_BCM_Resp_03.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Check value of ZV_SOK_Resp_03_timeout.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1a4463792b55e5bf8eceb140e0a2118165" kindref="member">TEST_ZVAD_Task__ZV_SOK_HFS_BCM_Resp_03</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1147 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="64" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/src/ZVAD_Task.c" bodystart="3253" bodyend="3257"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a1400da78e79a8ee52b819e2e223cdca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZV_SOK_HBFS_BCM_Resp_04</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZV_SOK_HBFS_BCM_Resp_04</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set timer function for SOK challange.</para><para>Runnable called on reception of SOK challenge, timeout timer is set. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_a_d___task_8c_1a92037825e56d40e54273ded0a5712df2" kindref="member">ZV_SOK_Resp_04_timeout_u8</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZV_SOK_HBFS_BCM_Resp_04.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Check value of ZV_SOK_Resp_04_timeout.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1a010ac87e484b3de2888d19a95f768466" kindref="member">TEST_ZVAD_Task__ZV_SOK_HBFS_BCM_Resp_04</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_ZV_1020 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="65" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/src/ZVAD_Task.c" bodystart="3272" bodyend="3276"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1aae1fb6dc07565e8c6ae0b43f1d3d0161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init the variables for the ZVAD module.</para><para>This function is called by ModelsTask before starting the model (MmDoSetup is called).</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ The code here must be short. </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_z_v_a_d___task_8c_1aae3b123909a598a5c16afdcfebe64be0" kindref="member">isTimerSOKactive_bo</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVAD_InitVarFunc.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check values of isTimerSOKactive, timeoutDelayElapsed and msgInitDelayCounter. <linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1a8fae02861d257456d4664ad1fc2c92c6" kindref="member">TEST_ZVAD_Task__ZVAD_InitVarFunc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: Design Decision - Justification. According to the architecture, this helper function will call the init function. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="67" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1a6442c86558d4e6bd3c6bcf6a0ab64d44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the ZVAD module.</para><para>This function is called by ModelsTask when the model&apos;s recurrence occurs. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVAD_TaskCyclicEvent.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Verify function call.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1a303ea33f884d1c07ae7b4012d3224df7" kindref="member">TEST_ZVAD_Task__ZVAD_TaskCyclicEvent</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_20015, SWR_ICAS1_GW_9768, SWR_ICAS1_GW_9770 <linebreak/>
+ ZV requirements were used because ZVAD cyclic runnable is called in ZV <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="70" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" bodystart="71" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_v_a_d___interface_test_manual_8c_1aa2c86756f151bd7482937f6854930bb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZVAD_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZVAD_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop callback for the ZVAD module.</para><para>Called my modeltask in order to start-up/init the ZVAD module. Here is a good place to save data to NvRAM.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ Set the RAM Block status to TRUE. </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZVAD_Stop.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Verify function call.<linebreak/>
+ <ref refid="_z_v_a_d___task_8c_8test_1aaa025a646cc77e919a4806bcb6519f4b" kindref="member">TEST_ZVAD_Task__ZVAD_Stop</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: Design Decision - Justification. According to the architecture, this helper function will call the stop function. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" line="95" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c" bodystart="96" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>interface test for bus signals. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_z_v_a_d___interface_test_manual_8c" kindref="compound">ZVAD_InterfaceTestManual.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZVAD/Evo/test/interfaceTest/ZVAD_InterfaceTestManual.c"/>
+  </compounddef>
+</doxygen>

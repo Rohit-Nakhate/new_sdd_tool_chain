@@ -1,0 +1,816 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="hal__common_8h" kind="file" language="C++">
+    <compoundname>hal_common.h</compoundname>
+    <includes refid="hal__base_8h" local="yes">hal_base.h</includes>
+    <includedby refid="hal__base_8c" local="yes">hal_base.c</includedby>
+    <includedby refid="hal__common_8c" local="yes">hal_common.c</includedby>
+    <includedby refid="hal_8h" local="yes">hal.h</includedby>
+    <includedby refid="hal__variant_8h" local="yes">hal_variant.h</includedby>
+    <incdepgraph>
+      <node id="102">
+        <label>hal_common.h</label>
+        <link refid="hal__common_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>hal_defines_gen.h</label>
+      </node>
+      <node id="103">
+        <label>hal_base.h</label>
+        <link refid="hal__base_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="105">
+        <label>hal_common.h</label>
+        <link refid="hal__common_8h"/>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>hal_common.c</label>
+        <link refid="hal__common_8c"/>
+      </node>
+      <node id="108">
+        <label>hal.h</label>
+        <link refid="hal_8h"/>
+      </node>
+      <node id="111">
+        <label>hal_variant.c</label>
+        <link refid="hal__variant_8c"/>
+      </node>
+      <node id="106">
+        <label>hal_base.c</label>
+        <link refid="hal__base_8c"/>
+      </node>
+      <node id="109">
+        <label>hal_variant.h</label>
+        <link refid="hal__variant_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>gw_dev_msg.c</label>
+        <link refid="gw__dev__msg_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hal__common_8h_1a65527564280b3dfcb7095b8220bdab53" prot="public" static="no">
+        <name>INTERNAL_RTC_WKP_MASK</name>
+        <initializer>0x3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Internal RTC wakeup mask.</para><para>RTC_INT used the last 2 bits from the WKPU <simplesect kind="remark"><para>values 0x3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="61" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="hal__common_8h_1a7a9f1b7b3871abab308f4191b8df4e3a" prot="public" static="no" mutable="no">
+        <type><ref refid="hal__base_8h_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 UBSampleLow</definition>
+        <argsstring></argsstring>
+        <name>UBSampleLow</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Ubatt sample representing that Ubatt is in low value. <linebreak/>
+</para><para>Used in the context of computing the voltage exception needed for the master state machine and computing the current voltage exception based on the battery voltage. <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range uint8 <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context CentANDCheckUbattRanges <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="77" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hal__common_8h_1af17d8c280f70456881b89ad6315c2095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NvM_StandbyData_UpdateStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>NvM_StandbyData_UpdateStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if NvM data stored in Standby RAM is valid. <linebreak/>
+</para><para>The NvM state needs to be consistent after wakeup with previous pending jobs finalized. <linebreak/>
+ The NvM data is being stored in standby RAM for faster wakeup. <linebreak/>
+ NvM state needs to be consistent during initialization. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>The ECU goes to sleep. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NvM_Manager.MultiJob [in] <linebreak/>
+ NvM_Manager.Std.State [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1a4be3056328042626097f150f2667f569" kindref="member">NVM_MULTIBLOCK_NOJOB</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1a02126dfbf37d5c2d8e41f6e0bfcb9530af961a282ceb6f9440cc47c346131afb5" kindref="member">NVM_NO_REQ</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1ab8cf587af3232eba74e53a2ace955e87" kindref="member">Fee_NvmJob</ref> [out] <linebreak/>
+ NvM_Manager.MultiJob and NvM_Manager.Std.State are Nvm data and will be checked if they are valid by comparing them to NVM_MULTIBLOCK_NOJOB and NVM_NO_REQ. <linebreak/>
+ Fee_NvmJob is the job for NvM Request and at the end of the function it will be initialized to 0. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvM_StandbyData_UpdateStatus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if Nvm data stored in Standby RAM is valid or not. <linebreak/>
+ <ref refid="hal__common_8c_8test_1acf0465313c39d82d9c1947fa59e97f59" kindref="member">TEST_NvM_StandbyData_UpdateStatus</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to check if Nvm data stored is valid. <linebreak/>
+ the NvM data to beis stored in standby RAM for faster wakeup. <linebreak/>
+ NvM state is needs to be consistent during initialization. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="117" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="617" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a19e2af8428f4baa9e8b9ccf32a614eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 HalGetRandomNumber</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalGetRandomNumber</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function for getting a random number. <linebreak/>
+</para><para>HAL function for getting a random number. Useful in the context of seed generation. <linebreak/>
+ In case of OSEK, it returns the osekTickTime. Otherwise it returns the content of a timer_register. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RTCCNT.R [in] <linebreak/>
+ RTCCNT.R used to get the random number. It is a register that is part of RTC_API (Real Time Clock) module. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Seed generation <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalGetRandomNumber.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if a random number is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a83dda389d621199c671dea6242a7ff45" kindref="member">TEST_HalGetRandomNumber</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed to generate an random number. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="148" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="531" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a779393d153a153da3532354f47c4f737" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 GetHalStopWatch_RTC</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetHalStopWatch_RTC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTC (Real Time Clock) HAL stop watch function. <linebreak/>
+</para><para>Function that gets the internal RTC counter value (ticks at 16MHz). <linebreak/>
+<simplesect kind="warning"><para>RTC_API clock frequence is 16MHz. <linebreak/>
+ It <bold>overflows</bold> in about 4 minutes. <linebreak/>
+ Please make sure the overflow is considered. <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RTCCNT.R [in] <linebreak/>
+ RTCCNT.R used to get the value of the real time clock. This represents the RTC counter ticks. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="GetHalStopWatch_RTC.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if a random number is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a4b66cfa60d97bdf980599cfee5a19281" kindref="member">TEST_GetHalStopWatch_RTC</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to read the value of the Real Time Clock. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="181" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="525" bodyend="528"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a3f537ece02547c8640c0087f8933a5ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HalReadCanVoltage</definition>
+        <argsstring>(TComChannel CanChannel, uint16 *ui16_CanHigh, uint16 *ui16_CanLow)</argsstring>
+        <name>HalReadCanVoltage</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>CanChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref> *</type>
+          <declname>ui16_CanHigh</declname>
+        </param>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref> *</type>
+          <declname>ui16_CanLow</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>HAL read CAN voltage. <linebreak/>
+</para><para>This function reads the CAN Low and CAN High input voltage values. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">CanChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index of CAN bus. <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ui16_CanHigh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to buffer which receives the CAN High voltage (raw value). <linebreak/>
+ range uint16* <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ui16_CanLow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to buffer which receives the CAN Low voltage (raw value). <linebreak/>
+ range uint16* <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> [in] <linebreak/>
+ can_AI_CANs_L can_AI_CANs_H  HAL_active_config_set activates HAL config set depending on the HW version. <linebreak/>
+ can_AI_CANs_L and can_AI_CANs_H represent configuration set of the ports used in HAL module, more exactly CAN low and CAN high ADC Port type. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalReadCanVoltage.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the ComChannel is a CAN channel, then the CAN low and high voltage values will be stored in the function&apos;s parameters. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a82f2d3a77e4c9f151d0d33f8816b7b27" kindref="member">TEST_HalReadCanVoltage</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18934 SWR_ICAS1_GW_18935 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="230" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="546" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a7f786eee8dd5e33ea59db55b78162695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hal_StoreRegDestResetReason</definition>
+        <argsstring>(void)</argsstring>
+        <name>Hal_StoreRegDestResetReason</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function for storing reset reason from register. <linebreak/>
+</para><para>Copy the reset reason - from Destructive/Functional Event Status Register. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="hal__common_8c_1ab1c746af2dbd4915c7ec940c585ff6ba" kindref="member">HAL_destructive_reset_reason</ref> [out] <linebreak/>
+ <ref refid="hal__common_8c_1aea85f9bf6a7eda688c9178e56be9f897" kindref="member">HAL_functional_reset_reason</ref> [out] <linebreak/>
+ DES.R [in] <linebreak/>
+ FES.R [in] <linebreak/>
+ HAL_destructive_reset_reason used to store the reason for HAL destructive reset. <linebreak/>
+ HAL_functional_reset_reason used to store the reason for HAL functional reset. <linebreak/>
+ DES.R and FES.R is a register from MC_RGM module (Reset Generation Module). <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Hal_StoreRegDestResetReason.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if in HAL_destructive_reset_reason and HAL_functional_reset_reason are stored the reset reasons from MC_RGM (Reset Generation Module) register. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a55bc7811c315271fdafeb828cec64d72" kindref="member">TEST_Hal_StoreRegDestResetReason</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by MirrorMode_Deactivate_Mirroring to implement {SWR_ICAS1_GW_3831}. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="266" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="555" bodyend="559"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1ae1dc799bfe7b9f43bce3da9922f1ea8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 Hal_GetDestResetReason</definition>
+        <argsstring>(void)</argsstring>
+        <name>Hal_GetDestResetReason</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function that returns the HAL destructive reset reason. <linebreak/>
+</para><para>Get the copy of the destructive reset reason. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="hal__common_8c_1ab1c746af2dbd4915c7ec940c585ff6ba" kindref="member">HAL_destructive_reset_reason</ref> [out] <linebreak/>
+ HAL_destructive_reset_reason used to store the reason for HAL destructive reset. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Hal_GetDestResetReason.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if HAL_destructive_reset_reason is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a90073ae16218061796d4f765b24827a1" kindref="member">TEST_Hal_GetDestResetReason</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by MirrorMode_Deactivate_Mirroring to implement {SWR_ICAS1_GW_3831}. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="296" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="561" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a71391d0ecaa5ad989ed659c567af9e31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 Hal_GetFunctionalResetReason</definition>
+        <argsstring>(void)</argsstring>
+        <name>Hal_GetFunctionalResetReason</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function that returns the HAL functional reset reason. <linebreak/>
+</para><para>Get the copy of the functional reset reason. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="hal__common_8c_1aea85f9bf6a7eda688c9178e56be9f897" kindref="member">HAL_functional_reset_reason</ref> [out] <linebreak/>
+ HAL_functional_reset_reason used to store the reason for HAL functional reset. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Hal_GetFunctionalResetReason.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if HAL_functional_reset_reason is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ab65ab2d20c5a6237ef4fa4e7ae83b012" kindref="member">TEST_Hal_GetFunctionalResetReason</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed to read the data stored in Hal_StoreRegDestResetReason. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="326" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="566" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1ade0d86d21735e87892cea87def337e41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartIDSTime</definition>
+        <argsstring>(void)</argsstring>
+        <name>StartIDSTime</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Start the timers for IDS. <linebreak/>
+</para><para>PIT Channels 4 and 5 are chained. <linebreak/>
+ The first one makes a prescaling to 1 ms. The second one counts the ms. <linebreak/>
+ It is used to record the timestamp for the UDP Tunnel. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="hal__common_8h_8test_1ac3a434baed2c83c8e7f2fd54cbb281a3" kindref="member">IDS_PIT_CHANNEL_Prescaler</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1aadd2f2794cc6b607c68e831c68b6e46d" kindref="member">OS_CLOCK_VALUE</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1adadea9044aff5d0afebfae6a0e1b3da2" kindref="member">IDS_PIT_CHANNEL</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1ac8eb0ec4dc17be0c706233c856959d4a" kindref="member">PIT_LDVAL_MAX_VALUE</ref> [in] <linebreak/>
+ <ref refid="hal__common_8h_8test_1ae461b1f99de16ad12a529b0bc188de2c" kindref="member">PIT_CHAIN</ref> [in] <linebreak/>
+ Channel IDS_PIT_CHANNEL_Prescaler makes a prescaling to 1ms and OS_CLOCK_VALUE represents the value that will be loaded in the OSTM couter register. <linebreak/>
+ Channel IDS_PIT_CHANNEL counts the ms. <linebreak/>
+ PIT_LDVAL_MAX_VALUE is the highest possible loading value for PIT channels. <linebreak/>
+ PIT_CHAIN is a mask and is applied to the register address for IDS_PIT_CHANNEL channel and used for setting 32bits address. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="StartIDSTime.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the timers for IDS are started. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ae359507d68a5512a267dee84257d52f7" kindref="member">TEST_StartIDSTime</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed in the context of startup control for ICAS1. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="366" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="632" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a51356c588fb388af710017fb6ff78ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 hal_GetErrorCorrectionFactor</definition>
+        <argsstring>(void)</argsstring>
+        <name>hal_GetErrorCorrectionFactor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the error correction factor function. <linebreak/>
+</para><para>Returns the error correction factor that has the value 1000. GW_ECF = 1000 <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="hal_GetErrorCorrectionFactor.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the error correction factor is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a3a5bfe84200efdee6536e78b107459c1" kindref="member">TEST_hal_GetErrorCorrectionFactor</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed to implement {SWR_ICAS1_GW_18934, SWR_ICAS1_GW_18935}. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="394" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="541" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a76d98b55d13b01293cbd54e109051ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 GetHalStopWatch_Core0</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetHalStopWatch_Core0</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function for getting the HAL stop watch on Core0. <linebreak/>
+</para><para>Returns stopwatch (STM_0.CNT) . <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>CNT.R [in] <linebreak/>
+ CNT.R is a register from STM module (System Timer Module). <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="GetHalStopWatch_Core0.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if the stopwatch is returned. <linebreak/>
+ <ref refid="hal__common_8c_8test_1a74ea67b1a98c099d877c6331cd33c125" kindref="member">TEST_GetHalStopWatch_Core0</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by Rte_Write_GATICAS_Inport_Get_s_GW_Time_US to get the time. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="424" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="536" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a55eeccc4dbfb983bfac976f4da85d7d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_PIT_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_PIT_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function to stop PIT. <linebreak/>
+</para><para>Stop PIT peripheral/stop OS timers. <linebreak/>
+ Stop the PIT_0 - channels and clear possible active IR-flags in order to allow the ME to go to standby-mode. <linebreak/>
+<simplesect kind="warning"><para>The OS timers are stopped. The tasks on the core1, core0 will no longer be executed. </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>CH[0].TCTRL.R [in] <linebreak/>
+ CH[1].TCTRL.R [in] <linebreak/>
+ CH[2].TCTRL.R [in] <linebreak/>
+ CH[3].TCTRL.R [in] <linebreak/>
+ CH[4].TCTRL.R [in] <linebreak/>
+ CH[5].TCTRL.R [in] <linebreak/>
+ CH[6].TCTRL.R [in] <linebreak/>
+ CH[7].TCTRL.R [in] <linebreak/>
+ CH[0].TFLG.B.TIF [in] <linebreak/>
+ CH[1].TFLG.B.TIF [in] <linebreak/>
+ CH[2].TFLG.B.TIF [in] <linebreak/>
+ CH[3].TFLG.B.TIF [in] <linebreak/>
+ CH[4].TFLG.B.TIF [in] <linebreak/>
+ CH[5].TFLG.B.TIF [in] <linebreak/>
+ CH[6].TFLG.B.TIF [in] <linebreak/>
+ CH[7].TFLG.B.TIF [in] <linebreak/>
+ CH[].TCTRL.R and CH[].TFLG.B.TIF represent the channels for the registers for PIT module. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_PIT_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if PIT peripheral and OS timers are stopped. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ae49c5c847fb7abcb52086610fdc072af" kindref="member">TEST_HAL_PIT_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by Prepare_Ports_ForSleepMode to stop the PIT peripheral/stop OS timers. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="471" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="502" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__common_8h_1a42e63d457a3c28a713bc77b6f545be23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_SecondaryCores_Disable</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_SecondaryCores_Disable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function to disable secondary cores. <linebreak/>
+</para><para>Mark core1, core0 and HSM as inactive for the next Mcu mode transition. <linebreak/>
+ Before the transition to Standby is done, all cores except Core 2 are to be stopped. <linebreak/>
+ If this is not done sporadically on a wakeup from Standby Core1 or Core 0 are already starting while Core 2 is in initialization of the RAMs. Here obviously the DMA is disturbed and doesn&apos;t do it&apos;s work. The complete system doesn&apos;t startup properly. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>Call Mcu_SetMode <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>CCTL1.R [in] <linebreak/>
+ CCTL3.R [in] <linebreak/>
+ CCTL4.R [in] <linebreak/>
+ CCTL1.R represents the core_0. <linebreak/>
+ CCTL3.R represents the core_1. <linebreak/>
+ CCTL4.R represents the HSM core. <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context model Task <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_SecondaryCores_Disable.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check if core_0, core_1 and HSM core are stopped. <linebreak/>
+ <ref refid="hal__common_8c_8test_1ad3dbfeafa351d82fe883fc062aae78a5" kindref="member">TEST_HAL_SecondaryCores_Disable</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by Prepare_Ports_ForSleepMode to disable all secondary cores. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h" line="509" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/src/hal_common.c" bodystart="571" bodyend="581"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file for <ref refid="hal__common_8c" kindref="compound">hal_common.c</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Provides declaration of functions that need low level access common to all Chorus uC types. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/c/inc/hal_common.h"/>
+  </compounddef>
+</doxygen>

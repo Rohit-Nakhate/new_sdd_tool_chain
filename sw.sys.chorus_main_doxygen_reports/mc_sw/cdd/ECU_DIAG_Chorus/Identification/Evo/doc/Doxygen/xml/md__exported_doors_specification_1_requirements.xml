@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_1_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_1_requirements</compoundname>
+    <title>ExportedDoorsSpecification_1_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_1_requirements_1ExportedDoorsSpecification_1">
+<title>ExportedDoorsSpecification_1</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11966">
+<title>SWR_ICAS1_GW_11966</title>
+<para>Requirement is satisfied here: <ref refid="_e_c_u_serial_number_8c_1ae372420875618e1e5a60dd1235624654" kindref="member">DCM_f18c_ConditionCheckRead</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/ECUSerialNumber.c line 101 <linebreak/>
+Requirement is satisfied here: <ref refid="_e_c_u_serial_number_8c_1a356e1a8bbe8d23564ffa3e945f4c7821" kindref="member">DCM_f18c_Read</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/ECUSerialNumber.c line 147 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/ECUSerialNumber.c.test line 82 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/ECUSerialNumber.c.test line 110 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF18C - ECU Serial Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 20 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[ECU Serial Number] 20-Byte-ASCII (80125)&gt; <linebreak/>
+ ID: SWR_ICAS1_GW_11966 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_21000">
+<title>SWR_ICAS1_GW_21000</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF18C - ECU Serial Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 20 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[ECU Serial Number] 20-Byte-ASCII (80125)&gt; <linebreak/>
+ ID: SWR_ICAS1_GW_21000 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19467">
+<title>SWR_ICAS1_GW_19467</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 and to write, by means of WriteDataByIdentifier 0x2E the DID 0xF18F - Regulation_x_software_identification_numbers <linebreak/>
+ as defined in the document &apos;UNECE Softwareupdate - Allgemeine Diagnoseanforderungen&apos;. <linebreak/>
+ <linebreak/>
+ Size: 4092 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP Default Session <linebreak/>
+ 0x03 APP Extended Diagnostic Session (R/W) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Security Access Level (write): E2E <linebreak/>
+ Security Access Level (read): no access protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;n times <linebreak/>
+ &lt;[Length_of_RxSWIN] 1-byte hex&gt;+ <linebreak/>
+ &lt;[Regulation Identification] m-byte ASCII,variable&gt;+ <linebreak/>
+ &lt;[Separation_character] 1-byte ASCII&gt;+ <linebreak/>
+ &lt;[Software_Identification] 1...11-byte ASCII,variable&gt; <linebreak/>
+ &gt; <linebreak/>
+ (n: number of RxSWINs, variable; <linebreak/>
+ m: number of bytes for Regulation ID,variable) <linebreak/>
+ <linebreak/>
+ Default/Init value: <linebreak/>
+ 2D 2D 2D 2D 2Dhex... <linebreak/>
+ <linebreak/>
+ i <linebreak/>
+ ID: SWR_ICAS1_GW_19467 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11967">
+<title>SWR_ICAS1_GW_11967</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF190 - Vehicle Identification Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 17 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[Vehicle Identification Number] 17-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_11967 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_21001">
+<title>SWR_ICAS1_GW_21001</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF190 - Vehicle Identification Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 17 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[Vehicle Identification Number] 17-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21001 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11968">
+<title>SWR_ICAS1_GW_11968</title>
+<para>Requirement is satisfied here: <ref refid="_v_w___e_c_u_hardware_number_8c_1aab41b9449031559481a51e515d16898b" kindref="member">DCM_f191_ConditionCheckRead</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_ECUHardwareNumber.c line 105 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w___e_c_u_hardware_number_8c_1a845ddcf5f0d1d6d598412bf990c303eb" kindref="member">DCM_f191_Read</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_ECUHardwareNumber.c line 151 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_ECUHardwareNumber.c.test line 85 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_ECUHardwareNumber.c.test line 114 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF191 - VW ECU Hardware Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 11 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;&lt;(VNR) [front number] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(MGR) [middle group] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(ENR) [end number] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(IN) [part number suffix] 2-Byte-ASCII (80125)&gt;&gt; <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_11968 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19427">
+<title>SWR_ICAS1_GW_19427</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF191 - VW ECU Hardware Number as defined in the document ICAS1.X_Identifikation_-_Appendix and ICAS1.X_GW_Identifikation <linebreak/>
+ <linebreak/>
+ Size: 11 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;&lt;(VNR) [front number] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(MGR) [middle group] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(ENR) [end number] 3-Byte-ASCII (80125)&gt;+ <linebreak/>
+ &lt;(IN) [part number suffix] 2-Byte-ASCII (80125)&gt;&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_19427 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_7662">
+<title>SWR_ICAS1_GW_7662</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22, the DATA ID 0xF195 - System Supplier ECU Software Version Number. <linebreak/>
+ <linebreak/>
+ Size: 48 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP Default Session (R) <linebreak/>
+ 0x03 APP Extended Diagnostic Session (R) <linebreak/>
+ 0x4F APP Development Session (R) <linebreak/>
+ 0x40 APP EOL (R) <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - SW_VERSION (Bit start-stop: 0,0-0,7) <linebreak/>
+ - INTERMEDIATE_SW_VERSION (Bit start-stop: 1,0-1,7) <linebreak/>
+ - ASW_BUILD_YEAR_HI (Bit start-stop: 2,0-2,7) <linebreak/>
+ - ASW_BUILD_YEAR_LO (Bit start-stop: 3,0-3,7) <linebreak/>
+ - ASW_BUILD_MONTH (Bit start-stop: 4,0-4,7) <linebreak/>
+ - ASW_BUILD_DAY (Bit start-stop: 5,0-5,7) <linebreak/>
+ - ASW_BUILD_HOUR (Bit start-stop: 6,0-6,7) <linebreak/>
+ - ASW_BUILD_MINUTE (Bit start-stop: 7,0-7,7) <linebreak/>
+ - ASW_BUILD_SECOND (Bit start-stop: 8,0-8,7) <linebreak/>
+ - Reserved (Bit start-stop: 9,0-47,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_7662 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_21002">
+<title>SWR_ICAS1_GW_21002</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22, the DATA ID 0xF195 - System Supplier ECU Software Version Number. <linebreak/>
+ <linebreak/>
+ Size: 48 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP Default Session (R) <linebreak/>
+ 0x03 APP Extended Diagnostic Session (R) <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - SW_VERSION (Bit start-stop: 0,0-0,7) <linebreak/>
+ - INTERMEDIATE_SW_VERSION (Bit start-stop: 1,0-1,7) <linebreak/>
+ - ASW_BUILD_YEAR_HI (Bit start-stop: 2,0-2,7) <linebreak/>
+ - ASW_BUILD_YEAR_LO (Bit start-stop: 3,0-3,7) <linebreak/>
+ - ASW_BUILD_MONTH (Bit start-stop: 4,0-4,7) <linebreak/>
+ - ASW_BUILD_DAY (Bit start-stop: 5,0-5,7) <linebreak/>
+ - ASW_BUILD_HOUR (Bit start-stop: 6,0-6,7) <linebreak/>
+ - ASW_BUILD_MINUTE (Bit start-stop: 7,0-7,7) <linebreak/>
+ - ASW_BUILD_SECOND (Bit start-stop: 8,0-8,7) <linebreak/>
+ - Reserved (Bit start-stop: 9,0-47,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_21002 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_4723">
+<title>SWR_ICAS1_GW_4723</title>
+<para>Requirement is satisfied here: _val0x1AF_GetVersion <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/inc/SWCO_Identification.h line 65 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w___system_name_or_engine_type_8c_1ab9e01410046463a62ac89cbd7a7f2c60" kindref="member">DCM_f197_ConditionCheckRead</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c line 105 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w___system_name_or_engine_type_8c_1a9b81ec118bc0fa25b1c53638af06429d" kindref="member">DCM_f197_Read</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_SystemNameOrEngineType.c line 151 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_SystemNameOrEngineType.c.test line 101 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_SystemNameOrEngineType.c.test line 130 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF197 - VW System Name Or Engine Type as defined in the document LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme - UDS_80125_V5.5_Teil2 <linebreak/>
+ <linebreak/>
+ Size: 13 Bytes <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default session (APP) (R) <linebreak/>
+ 0x03 - Extended Session (APP) (R) <linebreak/>
+ 0x40 - EOL Session (APP) (R) <linebreak/>
+ 0x4F - Development Session (APP) (R) <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Parameters (For DK3/4): <linebreak/>
+ <linebreak/>
+ - VW System Name Or Engine Type (13 Byte ASCII) (BSS: 0,0 - 12,7) <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ <linebreak/>
+ DK3/4-Systeme: <linebreak/>
+ &lt;[VW System Name Or Engine Type] 13-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ <linebreak/>
+ This DataIdentifier marks the abbreviated system name or the engine type (e.g.: 3 code letters AFK). <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4723 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19429">
+<title>SWR_ICAS1_GW_19429</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF197 - VW System Name Or Engine Type as defined in the document ICAS1.X_Identifikation_-_Appendix and ICAS1.X_GW_Identifikation. <linebreak/>
+ <linebreak/>
+ Size: 13 Bytes <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default session (APP) (R) <linebreak/>
+ 0x03 - Extended Session (APP) (R) <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[VW System Name Or Engine Type] 13-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ Default/Init value: <linebreak/>
+ 0x2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2D 2Dhex <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ <linebreak/>
+ This DataIdentifier marks the abbreviated system name or the engine type (e.g.: 3 code letters AFK). <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_19429 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_4721">
+<title>SWR_ICAS1_GW_4721</title>
+<para>Requirement is satisfied here: <ref refid="_g_w___a_s_a_m___o_d_x___file_ident_8c_1aa5fbaa2b43cb8f65e9962160615060c1" kindref="member">GW_Read_Identification_0xF19E</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_ASAM_ODX_FileIdent.c line 106 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/GW_ASAM_ODX_FileIdent.c.test line 83 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF19E - ASAM ODX File Identifier as defined in the document LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme - UDS_80125_V5.5_Teil2 <linebreak/>
+ <linebreak/>
+ Size: 17 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ APP: 0x01 (R), 0x03 (R), 0x40 (R), 0x4F (R) <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - Prefix (String: &quot;EV_&quot;) (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ - ASAM ODX File Identifier (bit start-stop 0,0-16,7 <linebreak/>
+ - End of String (IF Size&lt;25 Bytes) (Last Byte - 0x00) <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ This DataIdentifier marks the name of an ODX data version which is required for the diagnostic communication of the ECU (server) with testing systems and diagnostic testers (client). <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4721 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19425">
+<title>SWR_ICAS1_GW_19425</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DATA ID 0xF19E - ASAM ODX File Identifier as defined in the document ICAS1.X_Identifikation_-_Appendix <linebreak/>
+ <linebreak/>
+ Size: 25 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - Prefix (String: &quot;EV_&quot;) (Bit start-stop: 0,0 - 2,7) <linebreak/>
+ - ASAM ODX File Identifier (bit start-stop 0,0 - 24,7 <linebreak/>
+ - End of String (IF Size&lt;25 Bytes) (Last Byte - 0x00) <linebreak/>
+ <linebreak/>
+ Note1: <linebreak/>
+ This DataIdentifier marks the name of an ODX data version which is required for the diagnostic communication of the ECU (server) with testing systems and diagnostic testers (client). <linebreak/>
+ Note2: <linebreak/>
+ The Length of ASAM ODX File Identifier for ICAS1_Evo is limited to 22 bytes however the maximum number of bytes is 25. <linebreak/>
+ the remaining three bytes is reserved. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_19425 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11969">
+<title>SWR_ICAS1_GW_11969</title>
+<para>Requirement is satisfied here: <ref refid="_a_s_a_m___o_d_x_file_version_8c_1a7c558ce55140149540ab812e143121c3" kindref="member">DCM_f1a2_ConditionCheckRead</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/ASAM_ODXFileVersion.c line 97 <linebreak/>
+Requirement is satisfied here: <ref refid="_a_s_a_m___o_d_x_file_version_8c_1a795a16f94cb429f868f398fe2cefc479" kindref="member">DCM_f1a2_Read</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/ASAM_ODXFileVersion.c line 146 <linebreak/>
+Requirement is satisfied here: UNREFERENCED_PARAMETER <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/ASAM_ODXFileVersion.c line 151 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/ASAM_ODXFileVersion.c.test line 85 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/ASAM_ODXFileVersion.c.test line 112 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1A2 - ASAM ODX File Version as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 6 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;&lt;[Primary version] 3-byte ASCII (80125)&gt; + <linebreak/>
+ &lt;[Secondary version] 3-byte ASCII (80125)&gt;&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ ID: SWR_ICAS1_GW_11969 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19431">
+<title>SWR_ICAS1_GW_19431</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1A2 - ASAM ODX File Version as defined in the document ICAS1.X_Identifikation_-_Appendix and ICAS1.X_GW_Identifikation. <linebreak/>
+ <linebreak/>
+ Size: 6 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Default/Init Value: 0x30 30 31 30 30 31hex <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;&lt;[Primary version] 3-byte ASCII (80125)&gt; + <linebreak/>
+ &lt;[Secondary version] 3-byte ASCII (80125)&gt;&gt; <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_19431 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11970">
+<title>SWR_ICAS1_GW_11970</title>
+<para>Requirement is satisfied here: <ref refid="_g_w___v_w___e_c_u___hw_version_num_8c_1a432d61529ec697270db5bf92a7431beb" kindref="member">GW_Read_IdentificationData_0xF1A3</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_VW_ECU_HwVersionNum.c line 99 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/GW_VW_ECU_HwVersionNum.c.test line 84 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1A3 - VW ECU Hardware Version Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 3 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[VW ECU Hardware Version Number] 3-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ ID: SWR_ICAS1_GW_11970 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_21003">
+<title>SWR_ICAS1_GW_21003</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1A3 - VW ECU Hardware Version Number as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 3 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;[VW ECU Hardware Version Number] 3-Byte-ASCII (80125)&gt; <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ ID: SWR_ICAS1_GW_21003 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_4711">
+<title>SWR_ICAS1_GW_4711</title>
+<para>Requirement is satisfied here: <ref refid="_v_w___workshop_sys_name_8c_1aa187ee5ea3bb46195e170863b05726ee" kindref="member">DCM_f1aa_ConditionCheckRead</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_WorkshopSysName.c line 105 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w___workshop_sys_name_8c_1a322af533092e6389d13f26421ffdbb46" kindref="member">DCM_f1aa_Read</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_WorkshopSysName.c line 150 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_WorkshopSysName.c.test line 85 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_WorkshopSysName.c.test line 115 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22, the DATA ID 0xF1AA - VW Workshop System Name as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme - UDS_80125_V5.5_Teil2. <linebreak/>
+ <linebreak/>
+ Size: 5 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ 0x40 - EOL Session <linebreak/>
+ 0x4F - Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - VW Workshop System Name (Bit start-stop: 0,0 - 4,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_4711 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_19416">
+<title>SWR_ICAS1_GW_19416</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22, the DATA ID 0xF1AA - VW Workshop System Name as defined in the document ICAS1.X_Identifikation_-_Appendix. <linebreak/>
+ <linebreak/>
+ Size: 5 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ <linebreak/>
+ Security Access Level: <linebreak/>
+ No Access Protection <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ - VW Workshop System Name (Bit start-stop: 0,0 - 4,7) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_19416 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_20019">
+<title>SWR_ICAS1_GW_20019</title>
+<para>Requirement is satisfied here: <ref refid="_v_w__system__firmware__versions_8c_1a8aaaa44695cc571801772a462a4e8fd5" kindref="member">GW_Read_IdentificationData_F1B8_EthSwt_GetMarvellFwVer</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/inc/VW_system_firmware_versions.h line 136 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w__system__firmware__versions_8c_1a23f662907a07a9943e5064cf4fc18915" kindref="member">GW_Read_IdentificationData_F1AB_CSAI_GetCoreVersion_Hsm_Bootloader</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/inc/VW_system_firmware_versions.h line 173 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w__system__firmware__versions_8c_1ac25245efa60a7565963f54eba992e057" kindref="member">GW_Read_IdentificationData_F1AB_CSAI_GetCoreVersion_Hsm_Appl</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/inc/VW_system_firmware_versions.h line 210 <linebreak/>
+Requirement is satisfied here: TOOL_NUMBER <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/GW_LogSoftBlockVersion.c line 109 <linebreak/>
+Requirement is satisfied here: <ref refid="_v_w__system__firmware__versions_8c_1a5e82ab65d1ca48c64e1901fce8acdca2" kindref="member">HSM_CSAI_GetCoreVersion</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/VW_system_firmware_versions.c line 202 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/GW_LogSoftBlockVersion.c.test line 110 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/GW_LogSoftBlockVersion.c.test line 135 <linebreak/>
+Requirement is verified here: TEST <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/test/swut/VW_system_firmware_versions.c.test line 377 <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1AB - VW Logical Software Block Version as defined in the documentICAS1.X_Identifikation_-_Appendix.and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 80 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;n-times&lt;[Software Block] 4-byte ASCII (80125)&gt;&gt; <linebreak/>
+ (n: Number of logical software blocks, variable) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ The order of 20 SW logical blocks: <linebreak/>
+ Chorus Bootloader <linebreak/>
+ Chorus Application/BootloaderUpdater <linebreak/>
+ Marvell #1 Pconfiguration <linebreak/>
+ Marvell #1 Pfirmware <linebreak/>
+ Marvell #1 pTIM <linebreak/>
+ Marvell #2 Pconfiguration <linebreak/>
+ Marvell #2 Pfirmware <linebreak/>
+ Marvell #2 pTIM <linebreak/>
+ RL78 bootloader <linebreak/>
+ RL78 application/BootloaderUpdater <linebreak/>
+ HSM Bootloader <linebreak/>
+ Marvell #1 Sconfiguration <linebreak/>
+ Marvell #1 Sfirmware <linebreak/>
+ Marvell #1 STIM <linebreak/>
+ Marvell #2 Sconfiguration <linebreak/>
+ Marvell #2 Sfirmware <linebreak/>
+ Marvell #2 STIM <linebreak/>
+ HSM Code (application) <linebreak/>
+ Reserved3_DK4 <linebreak/>
+ Reserved4_DK4 <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BLF Default Session <linebreak/>
+ 0x03 APP,BLF Extended Diagnostic Session <linebreak/>
+ 0x02 BLF ECU Programming Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ HSM-Version information: <linebreak/>
+ In the F1AB array is return 1 Byte of software minor version(lowest byte from 0-9) and 3 bytes of software revision (3 lowest bytes 0-999) <linebreak/>
+ <linebreak/>
+ The new HSM update version is V1.17.28: major number = 1, minor version = 17 and software revision = 28. <linebreak/>
+ In the F1AB array(12) = “7028” and F1AB(19) = “1728” <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_20019 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: not_SPR_reviewed <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_11962">
+<title>SWR_ICAS1_GW_11962</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22 the DID 0xF1AB - VW Logical Software Block Version as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme. <linebreak/>
+ <linebreak/>
+ Size: 80 Bytes <linebreak/>
+ <linebreak/>
+ Format: <linebreak/>
+ &lt;n-times&lt;[Software Block] 4-byte ASCII (80125)&gt;&gt; <linebreak/>
+ (n: Number of logical software blocks, variable) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ The order of 20 SW logical blocks: <linebreak/>
+ Chorus Bootloader <linebreak/>
+ Chorus Application/BootloaderUpdater <linebreak/>
+ Marvell #1 Pconfiguration <linebreak/>
+ Marvell #1 Pfirmware <linebreak/>
+ Marvell #1 pTIM <linebreak/>
+ Marvell #2 Pconfiguration <linebreak/>
+ Marvell #2 Pfirmware <linebreak/>
+ Marvell #2 pTIM <linebreak/>
+ RL78 bootloader <linebreak/>
+ RL78 application/BootloaderUpdater <linebreak/>
+ HSM Bootloader <linebreak/>
+ Marvell #1 Sconfiguration <linebreak/>
+ Marvell #1 Sfirmware <linebreak/>
+ Marvell #1 STIM <linebreak/>
+ Marvell #2 Sconfiguration <linebreak/>
+ Marvell #2 Sfirmware <linebreak/>
+ Marvell #2 STIM <linebreak/>
+ HSM Code (application) <linebreak/>
+ Reserved3_DK4 <linebreak/>
+ Reserved4_DK4 <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 APP, BL Default Session <linebreak/>
+ 0x02 BL ECU Programming Session <linebreak/>
+ 0x03 APP, BL Extended Diagnostic Session <linebreak/>
+ 0x40 APP VW EOL Session <linebreak/>
+ 0x4F APP Development Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ HSM-Version information: <linebreak/>
+ In the F1AB array is return 1 Byte of software minor version(lowest byte from 0-9) and 3 bytes of software revision (3 lowest bytes 0-999) <linebreak/>
+ <linebreak/>
+ The new HSM update version is V1.6.400: major number = 1, minor version = 6 and software revision = 400. <linebreak/>
+ In the F1AB array(12) = “6400” and F1AB(19) = “6400” <linebreak/>
+ In the F1AB array[12][0] = 0x36 <linebreak/>
+ In the F1AB array[12][1] = 0x34 <linebreak/>
+ In the F1AB array[12][3] = 0x30 <linebreak/>
+ In the F1AB array[12][0] = 0x30 <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_11962 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ SPR: #TBD# <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_GW_21004">
+<title>SWR_ICAS1_GW_21004</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The software shall allow user of the tester tool to read, by the means of ReadDataByIdentifier 0x22, the DATA ID 0xF1AF - AUTOSAR_standard_application_software_identification as defined in the document GW_Identifikation and LAH.DUM.909.H_Identifikation elektronischer Fahrzeugsysteme - UDS_80125_V5.5_Teil2. <linebreak/>
+ <linebreak/>
+ Size: max. 343 Bytes <linebreak/>
+ <linebreak/>
+ Session Control: <linebreak/>
+ 0x01 - Default session <linebreak/>
+ 0x03 - Extended Session <linebreak/>
+ <linebreak/>
+ Security Access Level: No Access Protection <linebreak/>
+ <linebreak/>
+ Data Input: <linebreak/>
+ Request: 22 F1 AF <linebreak/>
+ Response: 62 F1 AF n*&lt;SSW-Module ID&gt; &lt;Vendor-ID&gt; &lt;SSW-Version&gt; </para></simplesect>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

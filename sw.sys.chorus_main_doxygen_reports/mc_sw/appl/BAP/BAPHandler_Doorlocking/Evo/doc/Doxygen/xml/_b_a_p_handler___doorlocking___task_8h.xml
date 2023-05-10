@@ -1,0 +1,1001 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_b_a_p_handler___doorlocking___task_8h" kind="file" language="C++">
+    <compoundname>BAPHandler_Doorlocking_Task.h</compoundname>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includes refid="_b_a_p_handler___doorlocking___data_handler_8h" local="yes">BAPHandler_Doorlocking_DataHandler.h</includes>
+    <includedby refid="_b_a_p_handler___doorlocking___task_8c" local="yes">BAPHandler_Doorlocking_Task.c</includedby>
+    <incdepgraph>
+      <node id="94">
+        <label>BAPHandler_Doorlocking_DataTypes.h</label>
+        <link refid="_b_a_p_handler___doorlocking___data_types_8h"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>Rte.h</label>
+      </node>
+      <node id="87">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="86">
+        <label>agw.h</label>
+      </node>
+      <node id="88">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="91">
+        <label>BAPHandler_Doorlocking_DataHandler.h</label>
+        <link refid="_b_a_p_handler___doorlocking___data_handler_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>BAPHandler_PSO_ImExport.h</label>
+      </node>
+      <node id="95">
+        <label>Rte_BAPHandler_Doorlocking_Type.h</label>
+      </node>
+      <node id="90">
+        <label>NvM.h</label>
+      </node>
+      <node id="92">
+        <label>BAPHandler_UtilityLib.h</label>
+      </node>
+      <node id="85">
+        <label>BAPHandler_Doorlocking_Task.h</label>
+        <link refid="_b_a_p_handler___doorlocking___task_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="96">
+        <label>BAPHandler_Doorlocking_Task.h</label>
+        <link refid="_b_a_p_handler___doorlocking___task_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>BAPHandler_Doorlocking_Task.c</label>
+        <link refid="_b_a_p_handler___doorlocking___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a265e6799f50eaa7e17dccee1da57c12c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType get_doorlockingAdaptAndCoding</definition>
+        <argsstring>(modificationStateBH_e *modificationFlag, const T_DL_AdaptAndCoding_b *const pRte_Read_AdaptCoding_b_s, const T_DL_AdaptAndCoding_u8 *const pRte_Read_AdaptCoding_u8_s)</argsstring>
+        <name>get_doorlockingAdaptAndCoding</name>
+        <param>
+          <type>modificationStateBH_e *</type>
+          <declname>modificationFlag</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_t___d_l___adapt_and_coding__b" kindref="compound">T_DL_AdaptAndCoding_b</ref> *const</type>
+          <declname>pRte_Read_AdaptCoding_b_s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_t___d_l___adapt_and_coding__u8" kindref="compound">T_DL_AdaptAndCoding_u8</ref> *const</type>
+          <declname>pRte_Read_AdaptCoding_u8_s</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper to check the adaptation and coding and store it appropriately. <linebreak/>
+</para><para>If a different adaptation or coding was discovered, it is stored, <linebreak/>
+ and the modification flag is set accordingly. <linebreak/>
+ Invoked in <ref refid="_b_a_p_handler___doorlocking___task_8c_1a37132450488d9b73dce25404d72ac70a" kindref="member">BAPHandler_Doorlocking_TaskCyclicEvent</ref> <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking___task_8c_1a3f968f9cd58c5da43f7ca985289da5c9" kindref="member">bapi_Doorlocking_VerifyAdaptAndCoding</ref> <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">modificationStateBH_e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>*modificationFlag <linebreak/>
+ range 0u - 3u <linebreak/>
+ 0u - no modification <linebreak/>
+ 1u - modified <linebreak/>
+ 2u - function list modified <linebreak/>
+ 3u - init ATN <linebreak/>
+ [in, out] const <ref refid="struct_t___d_l___adapt_and_coding__b" kindref="compound">T_DL_AdaptAndCoding_b</ref> * const pRte_Read_AdaptCoding_b_s <linebreak/>
+ Stores the adaptation and coding for corresponding RTE read function list, limited to a boolean value. <linebreak/>
+ [in, out] const <ref refid="struct_t___d_l___adapt_and_coding__u8" kindref="compound">T_DL_AdaptAndCoding_u8</ref> * const pRte_Read_AdaptCoding_u8_s <linebreak/>
+ Stores the adaptation and coding for corresponding RTE read function list, limited to an uint8 value. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+ RTE_E_INVALID - there was an error in processing the function <linebreak/>
+ RTE_E_OK - function processed correctly <linebreak/>
+ RTE_E_NEVER_RECEIVED - at least one adaption was not written yet in current power cycle <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The funcion is used to check if there were any changes to the adaption or coding for any of the functions on the provided function list. <linebreak/>
+ If there was no change, modificationFlag is set to &apos;no modification&apos;. <linebreak/>
+ If there was a change, modificationFlag is set to &apos;modified&apos;, and the new data is stored accordingly in pRte_Read_AdaptCoding_b_s.data_b or pRte_Read_AdaptCoding_u8_s.data_u8. <linebreak/>
+ If everything went correctly, RTE_E_OK is returned. If during the check, it is revealed that at least one adaption was not written yet in current power cycle, RTE_E_NEVER_RECEIVED is returned instead <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="get_doorlockingAdaptAndCoding.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a18829db120a5da2a9d7804edaa552ea8" kindref="member">TEST_get_doorlockingAdaptAndCoding_T1</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a5a341e8d23eb59124ff534518e7d1931" kindref="member">TEST_get_doorlockingAdaptAndCoding_T2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. A wrapper function was needed for adaptation and coding checking <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="196" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="215" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a03029fdad7f12644da1ce2f1a6fccea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_CyclicVerification</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_Doorlocking_CyclicVerification</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Controls the verification of adaption and coding every 3s. <linebreak/>
+</para><para>Invoked in <ref refid="_b_a_p_handler___doorlocking___task_8c_1af0be94826a24ccbc3fd411085eb50a9a" kindref="member">bapi_BH_DoorlockingState_functionsReady</ref>. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is 0, it is set to <ref refid="_b_a_p_handler___doorlocking___data_types_8h_1ab41a682d380314d75102d3092f15b968" kindref="member">DL_COUNTER</ref> <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking___task_8c_1a3f968f9cd58c5da43f7ca985289da5c9" kindref="member">bapi_Doorlocking_VerifyAdaptAndCoding</ref> is invoked. <linebreak/>
+ Else <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is decreased by 1. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_CyclicVerification.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a1a08033fa3b3272eb760ef5e1dbfa3fb" kindref="member">TEST_bapi_Doorlocking_CyclicVerification</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function was needed for cyclic adaptation and coding verification <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="256" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="292" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a3f968f9cd58c5da43f7ca985289da5c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_VerifyAdaptAndCoding</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_Doorlocking_VerifyAdaptAndCoding</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Verifies the adaptation and coding. <linebreak/>
+</para><para>Invoked every 300ms by <ref refid="_b_a_p_handler___doorlocking___task_8c_1a03029fdad7f12644da1ce2f1a6fccea8" kindref="member">bapi_Doorlocking_CyclicVerification</ref>. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>Checks if there was a change in adaption and/or coding by invoking <ref refid="_b_a_p_handler___doorlocking___task_8c_1a265e6799f50eaa7e17dccee1da57c12c" kindref="member">get_doorlockingAdaptAndCoding</ref>. <linebreak/>
+ If there is a change, <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref>, <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> and <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+ are set accordingly. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_VerifyAdaptAndCoding.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ad567f3a02c2bd65aff1cb4e07ae8c3a4" kindref="member">TEST_bapi_Doorlocking_VerifyAdaptAndCoding</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function was needed for cyclic adaptation and coding verification <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="323" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="312" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1ab13711443c3a5726075a6451c5c74363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_UpdateAdaptAndCoding</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_Doorlocking_UpdateAdaptAndCoding</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Invokes the initialization of BAP specific functions and function updates. <linebreak/>
+</para><para>Checks if the initialization and update was executed correctly. <linebreak/>
+ Invoked in <ref refid="_b_a_p_handler___doorlocking___task_8c_1a95f5ce32158ee53e630787d49db07b2e" kindref="member">bapi_BH_DoorlockingState_adaptAndCodingUpdate</ref>. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>Initalization of BAP specific functions and function updates is invoked. <linebreak/>
+ If it is comleted successfully, <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is set to <ref refid="_b_a_p_handler___doorlocking___data_types_8h_1ab41a682d380314d75102d3092f15b968" kindref="member">DL_COUNTER</ref> <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_BAPfunctions_ready. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_UpdateAdaptAndCoding.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1acc2cbe2ea0797fc51f42e8bed1178bae" kindref="member">TEST_bapi_Doorlocking_UpdateAdaptAndCoding</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_DoorL_1210 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="377" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="349" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a8b3be4410fa2d27cb5a3c2f2fdcc1f2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_ResetToDefaults</definition>
+        <argsstring>(BAPHandlerState_e const state)</argsstring>
+        <name>bapi_Doorlocking_ResetToDefaults</name>
+        <param>
+          <type>BAPHandlerState_e const</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Resets Doorlocking PSO to default or factory settings. <linebreak/>
+</para><para>Invoked in <ref refid="_b_a_p_handler___doorlocking___task_8c_1a0a159b2e6c5029a6fd65cc4e3072cc6e" kindref="member">bapi_BH_DoorlockingState_resetToDefaultSettings</ref>. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">BAPHandlerState_e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>const state - not used in function <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a272cf11882b770eaacd6ad5a0f5c75fc" kindref="member">NvMPim_BAPHandler_DL_PSO_prop_ps</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is zero, <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a272cf11882b770eaacd6ad5a0f5c75fc" kindref="member">NvMPim_BAPHandler_DL_PSO_prop_ps</ref> is set to factory settings. <linebreak/>
+ If <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is equal to <ref refid="_b_a_p_handler___doorlocking___data_types_8h_1ae2067650114262f6439ed8b62712314d" kindref="member">DL_RESETCOUNTER</ref>, <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a272cf11882b770eaacd6ad5a0f5c75fc" kindref="member">NvMPim_BAPHandler_DL_PSO_prop_ps</ref> is <linebreak/>
+ set to default settings, and <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is decreased by 1. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_ResetToDefaults.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a6a14a967184529a5bc08df4ab729f48f" kindref="member">TEST_bapi_Doorlocking_ResetToDefaults</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_DoorL_174 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_893 <linebreak/>
+ </para><para>SWR_L3_CRoute_PSO_AP_335 <linebreak/>
+ </para><para>SWR_L3_CRoute_PSO_AP_463 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_927 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_928 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_929 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="471" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="368" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a66795dea353d01931c3fd6cd1b311205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_NvM_DataUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_Doorlocking_NvM_DataUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the personalized Doorlocking attributes stored in non-volatile memory. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1af0be94826a24ccbc3fd411085eb50a9a" kindref="member">bapi_BH_DoorlockingState_functionsReady</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a95f5ce32158ee53e630787d49db07b2e" kindref="member">bapi_BH_DoorlockingState_adaptAndCodingUpdate</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1adb1a78882b283893bb5068165872e289" kindref="member">BAPHandler_Doorlocking_Stop</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a8b3be4410fa2d27cb5a3c2f2fdcc1f2f" kindref="member">bapi_Doorlocking_ResetToDefaults</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1aa4b560c01fed2fe81af2818fa25c2720" kindref="member">NvMPim_BAPHandler_DL_prop_ps</ref> <linebreak/>
+ [in] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a39098ad3ff40c89c4855fe12ee539c80" kindref="member">Pim_BAPHandler_Doorlocking_Pim_BAPHandler_DL_LastValid_properties</ref> <linebreak/>
+ [in] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a676a066a12e99f05de9dab0faa1507e3" kindref="member">Pim_BAPHandler_Doorlocking_Pim_BAPHandler_DL_LastValid_PSO_properties</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_NvM_DataUpdate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ad697bf3b24e1786bc8635eadd6dd560a" kindref="member">TEST_bapi_Doorlocking_NvM_DataUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_DoorL_176 <linebreak/>
+ </para><para>SWR_L3_CRoute_PSO_AP_464 <linebreak/>
+ </para><para>SWR_L3_CRoute_PSO_AP_135 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="539" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="438" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a6d78800dc53adacc42703bf59dd589c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_Doorlocking_processPSOverification</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_Doorlocking_processPSOverification</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets personalization per user or per vehicle. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1af0be94826a24ccbc3fd411085eb50a9a" kindref="member">bapi_BH_DoorlockingState_functionsReady</ref> and <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a95f5ce32158ee53e630787d49db07b2e" kindref="member">bapi_BH_DoorlockingState_adaptAndCodingUpdate</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a4e1be459b7a75fc84b5d5809c4b06026" kindref="member">BAPHandlerDL_PSO_s</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If PSO_ImExport is available and the STPerso_Status is correct, <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ae62753b7faaee88ea504a94cb0258b8d" kindref="member">bapi_PSO_ImExport_processPSOverification</ref> is invoked. <linebreak/>
+ If PSO_ImExport is unavailable, per vehicle rather than per user personalization is set. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_Doorlocking_processPSOverification.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a67a59eaa5574ed4d9440243e77ef3eb3" kindref="member">TEST_bapi_Doorlocking_processPSOverification</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_DoorL_1423 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_1424 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_1425 <linebreak/>
+ </para><para>SWR_L3_CRoute_PSO_AP_590 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="596" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="466" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a923b6054b4eacc72e16fc9b508b10325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_BH_DoorlockingState_bapPostpone</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_BH_DoorlockingState_bapPostpone</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Postpones BAP communication and updates the <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> accordingly. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a37132450488d9b73dce25404d72ac70a" kindref="member">BAPHandler_Doorlocking_TaskCyclicEvent</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is not 0, it is decremented by 1. <linebreak/>
+ If <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> is 0, it is set to <ref refid="_b_a_p_handler___doorlocking___data_types_8h_1ab41a682d380314d75102d3092f15b968" kindref="member">DL_COUNTER</ref> <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_BAPfunctions_ready. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_BH_DoorlockingState_bapPostpone.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a754c79f33e64c5db70e4bc5009c91cef" kindref="member">TEST_bapi_BH_DoorlockingState_bapPostpone</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function was needed for updating the <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="652" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="488" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1af0be94826a24ccbc3fd411085eb50a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_BH_DoorlockingState_functionsReady</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_BH_DoorlockingState_functionsReady</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for BAP functions preparation. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a37132450488d9b73dce25404d72ac70a" kindref="member">BAPHandler_Doorlocking_TaskCyclicEvent</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If Bap_Doorlocking is not started, <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_Start <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> is set to FALSE. <linebreak/>
+ If BAP has already started for remote services, the following functions are invoked: <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga3ed66698e187e0bd576d7dcac4d5b596" kindref="member">bapi_Doorlocking_handleRemoteControlAuthentication</ref> <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab0b49c7c12ba04dacee3db6707696f18" kindref="member">bapi_Doorlocking_RemoteControlChallenge_Check</ref> <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga2933a81dfa5e78b15560d74b56d708e4" kindref="member">bapi_Doorlocking_TheftProtectionSensorSetup_Check</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a6d78800dc53adacc42703bf59dd589c7" kindref="member">bapi_Doorlocking_processPSOverification</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a66795dea353d01931c3fd6cd1b311205" kindref="member">bapi_Doorlocking_NvM_DataUpdate</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a03029fdad7f12644da1ce2f1a6fccea8" kindref="member">bapi_Doorlocking_CyclicVerification</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_BH_DoorlockingState_functionsReady.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a9ed5c099d5ac1bb1a07333ad1c7cb7e9" kindref="member">TEST_bapi_BH_DoorlockingState_functionsReady</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_PSO_AP_449 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="721" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="508" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a95f5ce32158ee53e630787d49db07b2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_BH_DoorlockingState_adaptAndCodingUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_BH_DoorlockingState_adaptAndCodingUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for adaptation and coding updates. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a37132450488d9b73dce25404d72ac70a" kindref="member">BAPHandler_Doorlocking_TaskCyclicEvent</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If Bap_Doorlocking is not started, <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_Start <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> is set to FALSE. <linebreak/>
+ If BAP has already started for remote services, the following functions are invoked: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1ab13711443c3a5726075a6451c5c74363" kindref="member">bapi_Doorlocking_UpdateAdaptAndCoding</ref> <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga3ed66698e187e0bd576d7dcac4d5b596" kindref="member">bapi_Doorlocking_handleRemoteControlAuthentication</ref> <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab0b49c7c12ba04dacee3db6707696f18" kindref="member">bapi_Doorlocking_RemoteControlChallenge_Check</ref> <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga2933a81dfa5e78b15560d74b56d708e4" kindref="member">bapi_Doorlocking_TheftProtectionSensorSetup_Check</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a6d78800dc53adacc42703bf59dd589c7" kindref="member">bapi_Doorlocking_processPSOverification</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a66795dea353d01931c3fd6cd1b311205" kindref="member">bapi_Doorlocking_NvM_DataUpdate</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_BH_DoorlockingState_adaptAndCodingUpdate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a5082b6d8ad0667d3ea7346474be9ff00" kindref="member">TEST_bapi_BH_DoorlockingState_adaptAndCodingUpdate</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_PSO_AP_449 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="790" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="541" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a0a159b2e6c5029a6fd65cc4e3072cc6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_BH_DoorlockingState_resetToDefaultSettings</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_BH_DoorlockingState_resetToDefaultSettings</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for resetting BAP_Doorlocking to defaults. <linebreak/>
+</para><para>Invoked in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a37132450488d9b73dce25404d72ac70a" kindref="member">BAPHandler_Doorlocking_TaskCyclicEvent</ref> <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>If Bap_Doorlocking is not started, <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_Start <linebreak/>
+ and <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> is set to FALSE. <linebreak/>
+ If BAP has already started for remote services, the following function is invoked: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_1a8b3be4410fa2d27cb5a3c2f2fdcc1f2f" kindref="member">bapi_Doorlocking_ResetToDefaults</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_BH_DoorlockingState_resetToDefaultSettings.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ac0ce2f6a19e293791ef8467b3dd3319e" kindref="member">TEST_bapi_BH_DoorlockingState_resetToDefaultSettings</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This wrapper function was needed for resetting to default settings <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="851" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="574" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1ab78dc361ceaf31b46f88117c45f4fd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_Doorlocking_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_Doorlocking_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the variables for BAPHandler_Doorlocking module. <linebreak/>
+</para><para>This function is called by Model Task before starting the model <linebreak/>
+ (MmDoSetup is called). The code here must be short. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>This function doesn&apos;t affect any globals by itself <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_Doorlocking_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a55c3b9a5e38011625b409bf8341a8f3c" kindref="member">TEST_empty_BAPHandler_Doorlocking_InitVarFunc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This function is needed for variable initialization. Not used yet. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="893" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="601" bodyend="604"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a3773b43dea0c12431e880346c0d0fdaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_Doorlocking_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_Doorlocking_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts-up/initializes the BAPHandler_Doorlocking module. <linebreak/>
+</para><para>Called by Model Task in order to start-up/init the BAPHandler_Doorlocking module. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1aeb034428ba9d61568cbb023aa0b1db0e" kindref="member">AdaptAndCod_DL_s</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1acf90545957827b55301520f710fde39b" kindref="member">DL_AdaptAndCoding_b_s</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1a925b8956e7d58626fdfc65c5faf60b80" kindref="member">DL_AdaptAndCoding_u8_s</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1aa4b560c01fed2fe81af2818fa25c2720" kindref="member">NvMPim_BAPHandler_DL_prop_ps</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a272cf11882b770eaacd6ad5a0f5c75fc" kindref="member">NvMPim_BAPHandler_DL_PSO_prop_ps</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>The BapHandler_Doorlocking lib is initialized. <linebreak/>
+ Adaptations and codings are read. <linebreak/>
+ a copy of NvM data is prepared. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_Doorlocking_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ab4a2c04c7f1f60071e5a171ae3087e11" kindref="member">TEST_BAPHandler_Doorlocking_Start</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a function needed for the initialization of the BAPHandler_Doorlocking module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="963" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="606" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1adb1a78882b283893bb5068165872e289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_Doorlocking_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_Doorlocking_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stops callbacks for the BAPHandler_Doorlocking module. <linebreak/>
+</para><para>This function is called by Model Task when StopEv is set <linebreak/>
+ (MmDoStop is called). Here is a good place to save data to NvRAM. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>StopEv is set. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Affected variables: [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_8test_1a4e1be459b7a75fc84b5d5809c4b06026" kindref="member">BAPHandlerDL_PSO_s</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><ref refid="_b_a_p_handler___doorlocking___task_8c_1a66795dea353d01931c3fd6cd1b311205" kindref="member">bapi_Doorlocking_NvM_DataUpdate</ref> is invoked. <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> is set to stateBH_Start, <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> is set to FALSE <linebreak/>
+ and BAPHandlerDL_PSO_s.psoStatus.verifyAvailability_u8 is set to modStateBH_NoModification. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_Doorlocking_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1aef5901820b5f71134171298da75b081e" kindref="member">TEST_BAPHandler_Doorlocking_Stop</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a function needed to stop callbacks for the BAPHandler_Doorlocking module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="1016" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="639" bodyend="650"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___doorlocking___task_8h_1a37132450488d9b73dce25404d72ac70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_Doorlocking_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_Doorlocking_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the BAPHandler_Doorlocking module. <linebreak/>
+</para><para>This function is called by Model Task when the model&apos;s recurrence occurs. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: [in, out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8h_1aca1dc7437b98a114c611afc2524c5248" kindref="member">BAPHandler_DL_Freigabe_b</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1aec07608a6b02c1d5336076d03764d5ce" kindref="member">counterDoorlocking_u16</ref> <linebreak/>
+ [out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1aeb034428ba9d61568cbb023aa0b1db0e" kindref="member">AdaptAndCod_DL_s</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1acf90545957827b55301520f710fde39b" kindref="member">DL_AdaptAndCoding_b_s</ref> <linebreak/>
+ [in, out] <ref refid="_b_a_p_handler___doorlocking___data_handler_8c_1a925b8956e7d58626fdfc65c5faf60b80" kindref="member">DL_AdaptAndCoding_u8_s</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The modules functions are called cyclicly, depending on the <ref refid="_b_a_p_handler___doorlocking__callbacks_8c_8test_1a276896dab32e4d6ff9767b1f297615c5" kindref="member">BAPHandler_DL_state</ref> state. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_Doorlocking_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1af0d95ec455195d3a0306e09acd727342" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_Start</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1abf123a6b0d8b8d1bd5f9590147aa7f82" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_AdaptAndCoding_ready</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a6cbbd9e8710e01f15a7651696c901c51" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_check_BAP_state</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a7b10c79ecd51119dcce934348878e9cc" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_BAP_postpone</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a0fa71339cd7fe3aa76169f2c16970129" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_BAPfunctions_ready</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1ac7b87f5fbaf05c3226d0927452e6cb98" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_AdaptAndCoding_update</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a7865c386c1df3a40b41aadf69ed77822" kindref="member">TEST_BAPHandler_Doorlocking_TaskCyclicEvent_stateBH_FactorySettings</ref> <linebreak/>
+ <ref refid="_b_a_p_handler___doorlocking___task_8c_8test_1a2a4757af6a210e4c8c17f0d30202f760" kindref="member">TEST_empty_BAPHandler_Doorlocking_TaskCyclicEvent_stateUndefined</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_DoorL_1232 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_173 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_172 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_1206 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_1212 <linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_DoorL_1209 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h" line="1156" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/src/BAPHandler_Doorlocking_Task.c" bodystart="652" bodyend="748"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for BAPHandler_Doorlocking SWC <linebreak/>
+(Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_b_a_p_handler___doorlocking___extra_definitions_8h" kindref="compound">BAPHandler_Doorlocking_ExtraDefinitions.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>5.0 </para></simplesect>
+$Author: Artur Redosz (uidp7980), Pawel Choloda (uidr1198), Leszek Rafinski (uie99376), Mateusz Lesniak (uif05416) $ <simplesect kind="rcs"><title>Date</title><para>2022-09-16 </para></simplesect>
+<linebreak/>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_Doorlocking/c/inc/BAPHandler_Doorlocking_Task.h"/>
+  </compounddef>
+</doxygen>

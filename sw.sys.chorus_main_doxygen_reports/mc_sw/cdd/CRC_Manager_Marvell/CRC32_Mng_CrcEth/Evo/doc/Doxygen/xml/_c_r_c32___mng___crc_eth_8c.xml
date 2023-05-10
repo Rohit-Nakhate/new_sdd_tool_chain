@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_c_r_c32___mng___crc_eth_8c" kind="file" language="C++">
+    <compoundname>CRC32_Mng_CrcEth.c</compoundname>
+    <includes refid="_c_r_c32___mng___crc_eth_8h" local="yes">CRC32_Mng_CrcEth.h</includes>
+    <includes local="yes">Crc.h</includes>
+    <includes refid="_eth_swt___api_8h" local="yes">EthSwt_Api.h</includes>
+    <includes local="yes">EthSwt_1_Marvell_Api.h</includes>
+    <includes local="yes">EthMain.h</includes>
+    <includes refid="_eth_swt__88_q5050___callback_8h" local="yes">EthSwt_88Q5050_Callback.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>EthSwt_1_Marvell_Api.h</label>
+      </node>
+      <node id="10">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="13">
+        <label>EthSwt_88Q5050_Callback.h</label>
+        <link refid="_eth_swt__88_q5050___callback_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="9">
+        <label>agw.h</label>
+      </node>
+      <node id="7">
+        <label>Crc.h</label>
+      </node>
+      <node id="2">
+        <label>CRC32_Mng_CrcEth.c</label>
+        <link refid="_c_r_c32___mng___crc_eth_8c"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>EthSwt_Utils.h</label>
+      </node>
+      <node id="8">
+        <label>EthSwt_Api.h</label>
+        <link refid="_eth_swt___api_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Rte_CRC32_Mng_Type.h</label>
+      </node>
+      <node id="12">
+        <label>EthMain.h</label>
+      </node>
+      <node id="3">
+        <label>CRC32_Mng_CrcEth.h</label>
+        <link refid="_c_r_c32___mng___crc_eth_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_t___crc_eth___context__s" prot="public">T_CrcEth_Context_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_c_r_c32___mng___crc_eth_8c_1a9ca6b764d13f38800f9bef814c17e7d7" prot="public" static="no">
+        <name>NUMBER_OF_ETH_SWITCHES</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This Macro is used instance where the number of ethernet switch is required, we have 2 ethernet switches. <simplesect kind="remark"><para>The value of the Number of Switch is 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="65" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_eth_8c_1ac68b357c3c20c5a2d61b3934bac57ad6" prot="public" static="no">
+        <name>ETHSWT_88Q5050_NUMBER_OF_BLOCKS</name>
+        <initializer>12u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This Macro is used instance where the number of blocks is required.</para><para><simplesect kind="remark"><para>The value of the Number of Block is 12 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="73" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c32___mng___crc_eth_8c_1aa1880709180e681991aeb629b24f44f4" prot="public" static="no">
+        <name>ETHSWT_88Q5050_CALC_HASH_CBK_IDX</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the EthSWt hash call back ID .</para><para><simplesect kind="remark"><para>The value of the macro is 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="81" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_r_c32___mng___crc_eth_8c_1a3fa18dee0930986a3ce62aabd4c7ec75" prot="public" static="yes" mutable="no">
+        <type>T_CrcEth_Context_s</type>
+        <definition>T_CrcEth_Context_s CrcEth_Context[2u]</definition>
+        <argsstring>[2u]</argsstring>
+        <name>CrcEth_Context</name>
+        <initializer>=
+{
+    {
+        .CrcEth_Status = <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gga354a50993acd95a01c8fc30e4a16e7b5a05f229481c89109ad13ab1f10b93f54d" kindref="member">ENUM_CRC_ETH_STATUS_INIT</ref>
+    },
+    {
+        .CrcEth_Status = <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gga354a50993acd95a01c8fc30e4a16e7b5a05f229481c89109ad13ab1f10b93f54d" kindref="member">ENUM_CRC_ETH_STATUS_INIT</ref>
+    }
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="91" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_r_c32___mng___crc_eth_8c_1a785f168d0831f0191ceaec9799afc6c1" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct_eth_swt__88_q5050___logical_block_info_type" kindref="compound">EthSwt_88Q5050_LogicalBlockInfoType</ref></type>
+        <definition>EthSwt_88Q5050_LogicalBlockInfoType EthSwt_88Q5050_LogicalBlock_Map[12u]</definition>
+        <argsstring>[12u]</argsstring>
+        <name>EthSwt_88Q5050_LogicalBlock_Map</name>
+        <initializer>=
+{
+
+{    0x04u, ETHSWT_88Q5050_INDEX_SW1,     0x100000u,  0x131FFFu}, 
+{    0x05u, ETHSWT_88Q5050_INDEX_SW1,     0x0C0000u,  0x0FFFFFu}, 
+{    0x06u, ETHSWT_88Q5050_INDEX_SW1,     0x0B0000u,  0x0BFFFFu}, 
+{    0x07u, ETHSWT_88Q5050_INDEX_SW2,     0x100000u,  0x131FFFu}, 
+{    0x08u, ETHSWT_88Q5050_INDEX_SW2,     0x0C0000u,  0x0FFFFFu}, 
+{    0x09u, ETHSWT_88Q5050_INDEX_SW2,     0x0B0000u,  0x0BFFFFu}, 
+{    0x13u, ETHSWT_88Q5050_INDEX_SW1,     0x070000u,  0x0A1FFFu}, 
+{    0x14u, ETHSWT_88Q5050_INDEX_SW1,     0x030000u,  0x06FFFFu}, 
+{    0x15u, ETHSWT_88Q5050_INDEX_SW1,     0x020000u,  0x02FFFFu}, 
+{    0x16u, ETHSWT_88Q5050_INDEX_SW2,     0x070000u,  0x0A1FFFu}, 
+{    0x17u, ETHSWT_88Q5050_INDEX_SW2,     0x030000u,  0x06FFFFu}, 
+{    0x18u, ETHSWT_88Q5050_INDEX_SW2,     0x020000u,  0x02FFFFu}  
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="101" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga176ec922a4f1d00594810b45343cf5ee" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_eth_swt__88_q5050___flash_content_hash___type" kindref="compound">EthSwt_88Q5050_FlashContentHash_Type</ref></type>
+        <definition>EthSwt_88Q5050_FlashContentHash_Type EthSwt_FlashContentHash[ETHSWT_88Q5050_SWITCH_COUNT]</definition>
+        <argsstring>[ETHSWT_88Q5050_SWITCH_COUNT]</argsstring>
+        <name>EthSwt_FlashContentHash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_c_r_c32___mng___crc_eth_8c_1a5279f31543302040973faf93f05148c8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CRC32_Mng_CrcEth_HashGetResp</definition>
+        <argsstring>(const uint8 EthSwitch_Id, const uint16 EthSwitch_BlockId, uint32 *pCrcVal)</argsstring>
+        <name>CRC32_Mng_CrcEth_HashGetResp</name>
+        <param>
+          <type>const <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>EthSwitch_Id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>EthSwitch_BlockId</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref> *</type>
+          <declname>pCrcVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function which requests the response for hash request from Eth Swt.</para><para>Based on the status of EthSwt hash request, it updates the CrcEthstatus for the coresponding EthSwt ID. If hash request returns status COMPLETE, then CRC calculation is requested via crc.h library. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>NA. </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="post"><para>-NA. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EthSwitch_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Ethernet switch ID for which hash should be requested. type : uint8. [in]EthSwitch_BlockId : Ethernet switch block ID for which hash should be requested. type : uint16 [out] pCrcVal :Points to the address, the crc result is to be stored to. type : uint32 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-No return value.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>-CrcEth_Context.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_HashGetResp.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a7c427f42f6625768bd659e58b392eb63" kindref="member">TEST_CRC32_Mng_CrcEth_HashGetResp</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>DOORS_Req_ID: SWR_UNECE_992<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="122" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="172" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga8d29fd29814e4bcf57d8d7f3fff48e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC32_Mng_CrcEth_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>CRC32_Mng_CrcEth_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialization of the local variables for the CRC32_Mng_Eth module</para><para>This function is called by CRC32_Mng_Init function. <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous { asynchronous = data is not processed right away see NvM write}<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>-No pre Condition </para></simplesect>
+<simplesect kind="post"><para>-NO post condition. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>-No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input parameter.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-No return value.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>-CrcEth_Context.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_Init.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a2e9413cae7a58daa6a0f50b82b6f942f" kindref="member">TEST_CRC32_Mng_CrcEth_Init</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification.: This is the init function , where in for both switch the status is set to init <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="203" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="203" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga098d77a1af379c996c17b63761003f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga354a50993acd95a01c8fc30e4a16e7b5" kindref="member">T_CrcEth_Status</ref></type>
+        <definition>T_CrcEth_Status CRC32_Mng_CrcEth_CrcReq</definition>
+        <argsstring>(T_CrcEth_ReqType reqType, const T_CrcEth_EthSwitchId EthSwitch_Id, const uint16 EthSwitch_BlockId, uint32 *pCrcVal)</argsstring>
+        <name>CRC32_Mng_CrcEth_CrcReq</name>
+        <param>
+          <type><ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaba2a4d3a2e956aa1f57c02f65c568d38" kindref="member">T_CrcEth_ReqType</ref></type>
+          <declname>reqType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gad4a27260d87b2033a9e39d71938b6f49" kindref="member">T_CrcEth_EthSwitchId</ref></type>
+          <declname>EthSwitch_Id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>EthSwitch_BlockId</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref> *</type>
+          <declname>pCrcVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function which handles CRC calculation request.</para><para>Based on the request type and the current status for the corresponding ethernet switch ID, this function initializes or requests the response from the ethernet switch hash request. Reports an error in case of an incorrect request type or invalid data. <simplesect kind="remark"><para>reentrant {No} <linebreak/>
+ context task <linebreak/>
+ thread safe {No} <linebreak/>
+ multicore safe {No} <linebreak/>
+ synchronous/asynchronous {asynchronous = data is not processed right away see NvM write}<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>-No precondition. </para></simplesect>
+<simplesect kind="post"><para>-No post condition. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">reqType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Type of the request. type : T_CrcEth_ReqType. [in] EthSwitch_Id : Ethernet switch ID for which CRC should be calculated. type : uint8 [in] EthSwitch_BlockId : Ethernet switch block ID for which CRC should be calculated. [out] pCrcVal : Points to the address, the crc result is to be stored to. type : uint32.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>T_CrcEth_Status retVal - Status of CRC calculation</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>CrcEth_Context.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_CrcReq.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1afb5a048df08c546f03331f2311a3b873" kindref="member">TEST_CRC32_Mng_CrcEth_CrcReq</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification.: The function request for the calculation of the crcvalue for particular request type for particular Switch and block id. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="211" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="211" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gadaa724fd1fd449395bae6ae0bac0de3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a6c47636b29561e4822d1001aef7f7550" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashReq</definition>
+        <argsstring>(uint8 ETH_Switch_Id, uint16 ETH_Switch_Block_Id)</argsstring>
+        <name>CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashReq</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>ETH_Switch_Id</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>ETH_Switch_Block_Id</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used fro the Hash Calculation from the Ethernet switches.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>No Pre conditioin. </para></simplesect>
+<simplesect kind="post"><para>No post condition. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ETH_Switch_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:Identification to which EthSwith the request is going. type :uint8 [in] ETH_Switch_Block_Id :Identification which Logical Block is requested. type :uint16</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>It returna a retVal of type Std_ReturnType ,i.e E_OK or E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>EthSwt_88Q5050_LogicalBlock_Map.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashReq.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1ac93e2b02471091988f906c97d16b215b" kindref="member">TEST_CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashReq</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>DOORS_Req_ID: SWR_UNECE_991<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="250" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="250" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga3fbe199b7e98b13765e17105e2ae586f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a6c47636b29561e4822d1001aef7f7550" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashResp</definition>
+        <argsstring>(uint8 ETH_Switch_Id, uint16 ETH_Switch_Block_Id, EthSwt_HashRespStatusType *ptrStatus, uint8 *ptrHash)</argsstring>
+        <name>CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashResp</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>ETH_Switch_Id</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>ETH_Switch_Block_Id</declname>
+        </param>
+        <param>
+          <type><ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gab6597a2fe4ece80950bfe2f0c33b3161" kindref="member">EthSwt_HashRespStatusType</ref> *</type>
+          <declname>ptrStatus</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>ptrHash</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The Function checks status and/or provide calculated Hash</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>No pre condition. </para></simplesect>
+<simplesect kind="post"><para>No post condition. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ETH_Switch_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:Identification to which EthSwith the request is going. type :uint8. [in] ETH_Switch_Block_Id :Identification which Logical Block is requested. type :uint16. [out] ptrStatus :pointer to the status of the Ethernet Switch . type :EthSwt_HashRespStatusType. [out] ptrHash :pointer to uint8 array. type :uint8.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>It returna a retVal of type Std_ReturnType ,i.e E_OK or E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>EthSwt_FlashContentHash.</para></simplesect>
+</para><para><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashResp.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1aa8aec4ac86210523867663494860cfef" kindref="member">TEST_CRC32_Mng_CrcEth_EthSwt_88Q5050_CalcHashResp</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>decision : The function is used for the calculation of the hash value for particular EthSwt and block id. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="306" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="306" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32___mng___crc_eth_8c_1a4a1a9382528ca03ec1108d14d91b4a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a6c47636b29561e4822d1001aef7f7550" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType CRC32_Mng_CrcEth_EthSwt_88Q5050_FwCmd_Callback_FlashContentHash</definition>
+        <argsstring>(uint8 SwitchIdx, uint16 ResponseCode, uint8 SequenceNum, const uint8 *DataPtr, uint16 LenByte)</argsstring>
+        <name>CRC32_Mng_CrcEth_EthSwt_88Q5050_FwCmd_Callback_FlashContentHash</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>SwitchIdx</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>ResponseCode</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>SequenceNum</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>DataPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>LenByte</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>: This function copies the hash value calculated from the EthSwitch.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>-NA </para></simplesect>
+<simplesect kind="post"><para>-NA </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SwitchIdx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Ethernet switch ID . type : uint8. [in]ResponseCode : Response code from the Ethernet switch. type : uint16 [in]SequenceNum : Sequence number . type : uint8 [in]DataPtr : Data pointer. type : uint8 [in]LenByte : lenght of the data. type : uint16</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>It return a retval of E_Ok.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>EthSwt_FlashContentHash</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_EthSwt_88Q5050_FwCmd_Callback_FlashContentHash.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a2f222e792ee801369d5b9690fd4ffc8b" kindref="member">TEST_CRC32_Mng_CrcEth_EthSwt_88Q5050_FwCmd_Callback_FlashContentHash</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para>decision : This is call back function used for copying the hash value to memory. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="377" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="377" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaafc7cf3b095dfd6484b7716a3b91cdd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a6c47636b29561e4822d1001aef7f7550" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType CRC32_Mng_CrcEth_Get_Sw_Version</definition>
+        <argsstring>(TLogicalBlockSwVersion *swVersion, const T_CrcEth_EthSwitchId EthSwitch_Id)</argsstring>
+        <name>CRC32_Mng_CrcEth_Get_Sw_Version</name>
+        <param>
+          <type><ref refid="_c_r_c32___mng___crc_eth_8c_8test_1ad7c6aa17f730e1d54a09985b615625ce" kindref="member">TLogicalBlockSwVersion</ref> *</type>
+          <declname>swVersion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gad4a27260d87b2033a9e39d71938b6f49" kindref="member">T_CrcEth_EthSwitchId</ref></type>
+          <declname>EthSwitch_Id</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function which returns software version from CRC32_Mng_CrcEth module.</para><para><simplesect kind="remark"><para>reentrant {No} <linebreak/>
+ context {task<linebreak/>
+ thread safe {No}<linebreak/>
+ multicore safe {No} <linebreak/>
+ synchronous/asynchronous { asynchronous = data is not processed right away see NvM write}<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>No pre condition. </para></simplesect>
+<simplesect kind="post"><para>No post condition. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EthSwitch_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:Ethernet switch ID. type :T_CrcEth_EthSwitchId. [out]swVersion :Buffer to collect software version. type :TLogicalBlockSwVersion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType retVal - Result of operation.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>No global variable.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CRC32_Mng_CrcEth_Get_Sw_Version.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para></para></simplesect>
+The following function can be verified with following test: <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_c_r_c32___mng___crc_eth_8c_8test_1a8517101b90ad4e408afbedee4e74c637" kindref="member">TEST_CRC32_Mng_CrcEth_Get_Sw_Version</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>DOORS_Req_ID:SWR_UNECE_993<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" line="398" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c" bodystart="398" bodyend="456"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Realize CRC facilities for Ethernet Switches logical blocks. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Id</title><para><ref refid="_c_r_c32___mng___crc_eth_8c" kindref="compound">CRC32_Mng_CrcEth.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>v.0.1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie29435 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>28.05.2021 </para></simplesect>
+</para><para>It serves as a sub component for the CRC32_Mng. The main task is to use the interfaces from the ethernet switches to get the hash value, and then use the Autosar library Crc.h to calculate the CRC from the received hash. The component informs CRC32_Mng about the current status and returns the calculated CRC. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/CRC_Manager_Marvell/CRC32_Mng_CrcEth/c/src/CRC32_Mng_CrcEth.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_b_a_p_handler___e_l___task_8h" kind="file" language="C++">
+    <compoundname>BAPHandler_EL_Task.h</compoundname>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes local="yes">Rte_BAPHandler_EL.h</includes>
+    <includedby refid="_b_a_p_handler___e_l__callbacks_8h" local="yes">BAPHandler_EL_callbacks.h</includedby>
+    <includedby refid="_b_a_p_handler___e_l___task_8c" local="yes">BAPHandler_EL_Task.c</includedby>
+    <incdepgraph>
+      <node id="97">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="96">
+        <label>agw.h</label>
+      </node>
+      <node id="98">
+        <label>Rte_BAPHandler_EL.h</label>
+      </node>
+      <node id="95">
+        <label>BAPHandler_EL_Task.h</label>
+        <link refid="_b_a_p_handler___e_l___task_8h"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="101">
+        <label>BAPHandler_EL_callbacks.c</label>
+        <link refid="_b_a_p_handler___e_l__callbacks_8c"/>
+      </node>
+      <node id="100">
+        <label>BAPHandler_EL_callbacks.h</label>
+        <link refid="_b_a_p_handler___e_l__callbacks_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>BAPHandler_EL_Task.h</label>
+        <link refid="_b_a_p_handler___e_l___task_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>BAPHandler_EL_Task.c</label>
+        <link refid="_b_a_p_handler___e_l___task_8c"/>
+      </node>
+      <node id="102">
+        <label>BAPHandler_EL_DataHandler.c</label>
+        <link refid="_b_a_p_handler___e_l___data_handler_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_b_a_p_handler___e_l___task_8h_1a54ba2fbd92453405ef5a7c2ea3ca2ec3" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>volatile boolean BAPHandler_EL_boRun</definition>
+        <argsstring></argsstring>
+        <name>BAPHandler_EL_boRun</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Indicates if component is running. Variable is not used. It was taken from a template. <simplesect kind="remark"><para>values 0..1 <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+Indicator of BAPHandler_EL run state <simplesect kind="remark"><para>values TRUE/FALSE <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="69" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1a83af43a31faf369a3d4d418844127f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_EL_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_EL_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function for initialization of BAP_Stack and starting the communication.<linebreak/>
+ All the BAP properties and function list are initialized here. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <ref refid="_b_a_p_handler___e_l___task_8c_1ab8691346af86f0b0196cd9511ef31ab0" kindref="member">BAPHAndler_EL_Task_state</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_EL_Initialize.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1ab762269d83b779d369c17518da7982c0" kindref="member">TEST_bapi_EL_Initialize</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000096"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_Extlight_1142<linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_Extlight_168<linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_Extlight_1145<linebreak/>
+ </para><para>SWR_ICAS1_L3_BAPH_Extlight_1143<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="151" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="208" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1a570d313fddeb448536d00f38acb4463f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_EL_run</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_EL_run</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Main function of BAPHandler_EL component. It is being invoked in state EL_State_Run of the state machine. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <ref refid="_b_a_p_handler___e_l___task_8c_1ab8691346af86f0b0196cd9511ef31ab0" kindref="member">BAPHAndler_EL_Task_state</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_EL_run.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1a1f95d79267d866bf2678f8fb8cf5db69" kindref="member">TEST_bapi_EL_run</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function is a state machine call where other neccessary functions are called </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="229" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="314" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1a89fba87b66a01f1e2778dea77b99279d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bapi_EL_WaitForBAPTask</definition>
+        <argsstring>(void)</argsstring>
+        <name>bapi_EL_WaitForBAPTask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Checks the count of BAP_Stack cyclic tasks. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <ref refid="_b_a_p_handler___e_l___task_8c_1ab8691346af86f0b0196cd9511ef31ab0" kindref="member">BAPHAndler_EL_Task_state</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___task_8c_1a109352a9e576014ebce27d76931c6b89" kindref="member">BAPHandler_EL_Task_Counter</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="bapi_EL_WaitForBAPTask.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1addac4f08aa9121d79070ba219a5627ec" kindref="member">TEST_bapi_EL_WaitForBAPTask</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000097"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_Extlight_1144<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="276" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="257" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1af39ab7cec6db7ba91b76a83b0175c1db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_EL_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_EL_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init function called at the start of component and after DSDL download. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables:</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_EL_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1ae6eb1fa349c281fbe7fdc3a0d086cf64" kindref="member">TEST_BAPHandler_EL_InitVarFunc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000098"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_Extlight_391<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="318" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="268" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1a6fb034281777a44deb91df47f67af564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_EL_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_EL_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init function called at the start of component. It calls PSO init function to initialize buffers used in PSO functionality. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <ref refid="_b_a_p_handler___e_l___data_handler_8c_1abf240724730abeca432ef0373a904e43" kindref="member">el_Coding_Values</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1a547f6468612e716a36ec8eade3fb3fdd" kindref="member">BapHandlerEL_PSO_s</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1aef21ae443c158d1a01c5651a04352202" kindref="member">PSOUserEL_s</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1afa408df3b678d4d5edab7655c34c6455" kindref="member">BAPHandler_EL_PSO_ParameterMap</ref>. <linebreak/>
+ NvM_PSO_properties. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1a280951ecda9df1ff4dace60d19a0cb1f" kindref="member">el_NvM_Perso_Params_default</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1a1e774276daf47e22f3894d16b2f19be7" kindref="member">BAPHandlerEL_PSO_DataBuffer_pa</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1a70b8d93ccf960a700aef6fc16a26a0b2" kindref="member">BAPHandlerEL_ImExport_DataBuffer_pa</ref>. <linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1aaac1843e2aa4748aaca56e653d1183c9" kindref="member">BapHandlerEL_PSO_Functions_s</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_EL_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1a82bff2b29e6e7d5d2276f69ac575b040" kindref="member">TEST_BAPHandler_EL_Start</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Function is used to prepare the buffers for PSO. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="379" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="273" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1a6afc8560a32558d263438bd1f5fc10a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_EL_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_EL_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function called at shutdown. Function is empty. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables:</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para>No action is performed inside this function. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1ae6eb1fa349c281fbe7fdc3a0d086cf64" kindref="member">TEST_BAPHandler_EL_InitVarFunc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Function copied from template. No need for use in this component </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="417" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="288" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___e_l___task_8h_1ad6bb712ebf958dd95878baeaedb40900" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_EL_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_EL_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function called by scheduler. It invokes functions based on current state machine state. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+</para><para><simplesect kind="pre"><para>N/A. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A. <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <ref refid="_b_a_p_handler___e_l___task_8c_1ab8691346af86f0b0196cd9511ef31ab0" kindref="member">BAPHAndler_EL_Task_state</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_EL_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described in <ref refid="_b_a_p_handler___e_l___task_8c_8test_1add9a776d1f5536252c7879f4a1e8e131" kindref="member">TEST_BAPHandler_EL_TaskCyclicEvent</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000099"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_BAPH_Extlight_1144<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h" line="470" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/src/BAPHandler_EL_Task.c" bodystart="293" bodyend="312"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for BAPHandler_E(xterior)L(ight) SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_b_a_p_handler___e_l___task_8h" kindref="compound">BAPHandler_EL_Task.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>Artur Redosz (uidp7980), Pawel Choloda (uidr1198) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2018-09-11 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_EL/c/inc/BAPHandler_EL_Task.h"/>
+  </compounddef>
+</doxygen>

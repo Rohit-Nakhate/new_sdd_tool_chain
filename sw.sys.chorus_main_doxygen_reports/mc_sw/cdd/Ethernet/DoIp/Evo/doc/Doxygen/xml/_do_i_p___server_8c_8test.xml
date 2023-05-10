@@ -1,0 +1,682 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___server_8c_8test" kind="file" language="C++">
+    <compoundname>DoIP_Server.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1af8c711720c3053122cd5169f196ece4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_ForwardRequest_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_ForwardRequest_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000090"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_ForwardRequest_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1ac0d15dd47ed7b5f7c89cf4919ba9cb92" kindref="member">DoIP_Server_ForwardRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_GW <linebreak/>
+ Set: DoIP_DcmHandleDiagReq return value to NTFRSLT_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_GW <linebreak/>
+ Set: DoIP_DcmHandleDiagReq return value to NTFRSLT_OK+1 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_DcmHandleDiagReq is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Return value is E_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function DoIP_DcmHandleDiagReq is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="84" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="84" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1af232aba40a69ec186dd4cff4e2725093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_ForwardRequest_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_ForwardRequest_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000091"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_ForwardRequest_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1ac0d15dd47ed7b5f7c89cf4919ba9cb92" kindref="member">DoIP_Server_ForwardRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_EcuMonitor.FuncAddrReqCount=0 <linebreak/>
+ Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_FUNCTIONAL <linebreak/>
+ Set: length=19 <linebreak/>
+ Set: DoIP_DcmHandleDiagReq return value to NTFRSLT_OK+1 <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_EcuMonitor.FuncAddrReqCount=0 <linebreak/>
+ Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_FUNCTIONAL <linebreak/>
+ Set: length=19 <linebreak/>
+ Set: DoIP_DcmHandleDiagReq return value to NTFRSLT_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_FUNCTIONAL <linebreak/>
+ Set: length=20 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_DcmHandleDiagReq is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_TP_TransmitFunctionalRequest is called <linebreak/>
+ DoIP_EcuMonitor.FuncAddrReqCount = 1 <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function DoIP_DcmHandleDiagReq is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_TP_TransmitFunctionalRequest is called <linebreak/>
+ DoIP_EcuMonitor.FuncAddrReqCount = 1 <linebreak/>
+ Return value is E_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="173" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="173" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a608872a0f7685b1f8467263a10a53cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_ForwardRequest_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_ForwardRequest_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000092"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_ForwardRequest_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1ac0d15dd47ed7b5f7c89cf4919ba9cb92" kindref="member">DoIP_Server_ForwardRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_DK2F <linebreak/>
+ Set: DK2F_HandleDoIPRequest return value to DIAGR_ROUTING_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_DK2F <linebreak/>
+ Set: DK2F_HandleDoIPRequest return value to DIAGR_TARGET_UNREACHABLE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_DK2F <linebreak/>
+ Set: DK2F_HandleDoIPRequest return value to DIAGR_TP_PROTOCOL_ERROR <linebreak/>
+ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_SendDiagMsgAck is called <linebreak/>
+ Function DK2F_HandleDoIPRequest is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Return value is E_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Function DK2F_HandleDoIPRequest is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Function DK2F_HandleDoIPRequest is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="297" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="297" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a5a3b9490ceb4fd5e71c3c9d895656a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_ForwardRequest_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_ForwardRequest_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000093"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_ForwardRequest_4 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1ac0d15dd47ed7b5f7c89cf4919ba9cb92" kindref="member">DoIP_Server_ForwardRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_CANTP <linebreak/>
+ Set: DynTpDoIP_PduR_Transmit return value to DIAGR_ROUTING_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_CANFD <linebreak/>
+ Set: DynTpDoIP_PduR_Transmit return value to DOIP_ROUTING_BUS_CANFD <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_CANFD <linebreak/>
+ Set: DynTpDoIP_PduR_Transmit return value to DIAGR_TP_PROTOCOL_ERROR <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DynTpDoIP_PduR_Transmit is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_SendDiagMsgAck is called <linebreak/>
+ Return value is E_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function DynTpDoIP_PduR_Transmit is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: Function DynTpDoIP_PduR_Transmit is called <linebreak/>
+ Function DoIP_Server_GetEcuType_StaticRouting is called <linebreak/>
+ Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Return value is E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="413" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="413" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a95075990c08aa72f492eda85419c255e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_ForwardRequest_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_ForwardRequest_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000094"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_ForwardRequest_5 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1ac0d15dd47ed7b5f7c89cf4919ba9cb92" kindref="member">DoIP_Server_ForwardRequest</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Server_GetEcuType_StaticRouting return value to DOIP_ROUTING_BUS_INVALID <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="509" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="509" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1abac5b498fe00ad415bd656e9884ce750" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_GetEcuType_StaticRouting</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_GetEcuType_StaticRouting</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000095"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_GetEcuType_StaticRouting </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the expected value is returned </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8c_1a4fc4ad4de360cac10341b25a3de9ae8a" kindref="member">DoIP_Server_GetEcuType_StaticRouting</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: LogAddr to DOIP_LOG_ADDR_GW <linebreak/>
+ Set: DoIP_IsFunctionalAddressing return value to FALSE <linebreak/>
+ Set: DoIP_LIN_IsDK2FEcu return value to FALSE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: LogAddr to DOIP_FUNCTIONAL_ADDRESS <linebreak/>
+ Set: DoIP_IsFunctionalAddressing return value to FALSE <linebreak/>
+ Set: DoIP_LIN_IsDK2FEcu return value to TRUE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set: LogAddr to DOIP_FUNCTIONAL_ADDRESS <linebreak/>
+ Set: DoIP_IsFunctionalAddressing return value to TRUE <linebreak/>
+ Set: DoIP_LIN_IsDK2FEcu return value to FALSE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 4: Set: LogAddr to DOIP_FUNCTIONAL_ADDRESS+1 <linebreak/>
+ Set: DoIP_IsFunctionalAddressing return value to FALSE <linebreak/>
+ Set: DoIP_LIN_IsDK2FEcu return value to FALSE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Return value is DOIP_ROUTING_BUS_GW</para></listitem><listitem><para>expected results from condition 2: Return value is DOIP_ROUTING_BUS_FUNCTIONAL</para></listitem><listitem><para>expected results from condition 3: Return value is DOIP_ROUTING_BUS_DK2F</para></listitem><listitem><para>expected results from condition 4: Return value is DOIP_ROUTING_BUS_CANTP </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="563" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="563" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1aff086d4b0d99a4437e288449dce49257" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000096"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_VEHICLE_ID_REQ <linebreak/>
+ Set function DoIP_IsUdpTester to return TRUE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_VEHICLE_ID_EID_REQ <linebreak/>
+ Set function DoIP_IsUdpTester to return FALSE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_VEHICLE_ID_VIN_REQ <linebreak/>
+ Set function DoIP_IsUdpTester to return FALSE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Client_AddTesterUdp is called <linebreak/>
+ Function DoIP_SendVehicleIdentificatonRes is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Client_AddTesterUdp is not called <linebreak/>
+ Function DoIP_SendVehicleIdentificatonRes is not called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Client_AddTesterUdp is not called <linebreak/>
+ Function DoIP_SendVehicleIdentificatonRes is not called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="651" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="651" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a0937666b53e76843932b335f9bb4f60d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000097"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_ROUTE_ACT_REQ <linebreak/>
+ Set function DoIP_IsTcpTester to return TRUE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_ROUTE_ACT_REQ <linebreak/>
+ Set function DoIP_IsTcpTester to return FALSE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Client_RoutingActivation is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Client_RoutingActivation is not called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="730" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="730" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1aad84c970f6f8830312b0ebc042228ec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000098"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_ALIVE_REQ <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_ENTITY_STATUS_REQ <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_POWERMODE_REQ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_SendAliveCheckRes is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_SendEntityStatusRes is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_SendPowerModeRes is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="795" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="795" bodyend="850"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a79ea85dd2ac5dc3281b7bd4e3fe9f761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000099"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_4 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_COM_PARAMS_REQ <linebreak/>
+ Set function GetTesterID to return INVALID_TESTER <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_COM_PARAMS_REQ <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+ Set function pbuf_Size to return 21 (Lenght has to be &gt;=20 to be a valid lenght) <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_COM_PARAMS_REQ <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+ Set function pbuf_Size to return 19 (Lenght has to be &gt;=20 to be a valid lenght) <linebreak/>
+</para></listitem><listitem><para>condition 4: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_COM_PARAMS_REQ <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING+1 <linebreak/>
+<linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_TP_ComParamRequest is called <linebreak/>
+ Function DoIP_SendComParamsAck is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function DoIP_SendDoipHeaderNack is called <linebreak/>
+ <linebreak/>
+- expected results from condition 4: DoIP_Server_RxIndication returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="881" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="881" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1afbba287d682452448ca63222d0a915a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000100"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_5 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_ENABLE <linebreak/>
+ Set function GetTesterID to return INVALID_TESTER <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_ENABLE <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_ENABLE <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING+1 <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Mirror_Enable is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="991" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="991" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a99c832a9cf0c7dbafd56d5bdf9048c05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_6</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_6</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000101"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_6 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_DISABLE <linebreak/>
+ Set function GetTesterID to return INVALID_TESTER <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_DISABLE <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_DISABLE <linebreak/>
+ Set function GetTesterID to return 0 <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING+1 <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Mirror_Enable is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1070" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1070" bodyend="1127"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1ac66a5086a71c97fc17a55fc612a2c176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_7</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_7</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000102"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_7 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_MIRROR_DATA <linebreak/>
+ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1139" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1139" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1a36a1894cd17f0a3408a177663747ab19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_8</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_8</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000103"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_8 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return INVALID_TESTER <linebreak/>
+</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return a valid tester <linebreak/>
+ Set function DoIP_IsTcpTester to return FALSE <linebreak/>
+</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return a valid tester <linebreak/>
+ Set function DoIP_IsTcpTester to return TRUE <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING+1 <linebreak/>
+ <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1187" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1187" bodyend="1242"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1ad3b9bb2b71937fa8c47546da1a7d491d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_9</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_9</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000104"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_9 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return a valid tester <linebreak/>
+ Set function DoIP_IsTcpTester to return TRUE <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+ Set function DoIP_IsOffboardTester to return TRUE <linebreak/>
+ Set function pbuf_Size to return DOIP_MAX_DOIP_TP_MSG_LENGTH+1"</para></listitem><listitem><para>condition 2: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return a valid tester <linebreak/>
+ Set function DoIP_IsTcpTester to return TRUE <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+ Set function DoIP_IsOffboardTester to return FALSE <linebreak/>
+ Set function DoIP_IsObboardTester to return TRUE <linebreak/>
+ Set function pbuf_Size to return DOIP_MAX_DOIP_TP_MSG_LENGTH-1"</para></listitem><listitem><para>condition 3: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_DIAG_MSG <linebreak/>
+ Set function GetTesterID to return a valid tester <linebreak/>
+ Set function DoIP_IsTcpTester to return TRUE <linebreak/>
+ Set DoIP_TesterTable[0].State = DOIP_TESTER_STATE_ROUTING <linebreak/>
+ Set function DoIP_IsOffboardTester to return FALSE <linebreak/>
+ Set function DoIP_IsObboardTester to return FALSE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+ Function DoIP_SendDiagMsgNack is called <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Server_RxIndication returns E_OK <linebreak/>
+ Function DoIP_Server_ForwardRequest is called <linebreak/>
+</para></listitem><listitem><para>expected results from condition 3: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ <linebreak/>
+ Function DoIP_SendDiagMsgNack is called <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1278" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1278" bodyend="1381"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1ac328dcbc90319d11271b2d2cac741d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_10</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_10</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000105"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_10 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return DOIP_PL_TYPE_GEN_HEADER_NACK/DOIP_PL_TYPE_VEHICLE_ID_RESP_ANN/DOIP_PL_TYPE_ROUTE_ACT_RESP/DOIP_PL_TYPE_ALIVE_RESP/DOIP_PL_TYPE_ENTITY_STATUS_RESP/DOIP_PL_TYPE_POWERMODE_RESP <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1392" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1392" bodyend="1429"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___server_8c_8test_1acdede289a61fd16647d72399f76a995f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Server__DoIP_Server_RxIndication_11</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Server__DoIP_Server_RxIndication_11</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000106"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Server__DoIP_Server_RxIndication_11 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Check if the returned value is the expected one </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___server_8h_1a6ca808ed9388fe2ecc16b6c35ba5b3c4" kindref="member">DoIP_Server_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set function DoIP_Get_UInt16 to return a invalid Payload type <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Server_RxIndication returns E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" line="1440" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test" bodystart="1440" bodyend="1468"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Test case specification file for <ref refid="_do_i_p___server_8c" kindref="compound">DoIP_Server.c</ref> module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Tasca,Bianca-Maria - uic15083 </para></simplesect>
+<simplesect kind="date"><para>Aug 3, 2020 11:05:23 AM </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Server.c.test"/>
+  </compounddef>
+</doxygen>

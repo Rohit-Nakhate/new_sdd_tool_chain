@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_q_t_g___task_8c" kind="file" language="C++">
+    <compoundname>QTG_Task.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_q_t_g___task_8h" local="yes">QTG_Task.h</includes>
+    <includes refid="_q_t_g___ecu_m_8h" local="yes">QTG_EcuM.h</includes>
+    <includes refid="_q_t_g___extra_definitions_8h" local="yes">QTG_ExtraDefinitions.h</includes>
+    <incdepgraph>
+      <node id="18">
+        <label>QTG_Task.c</label>
+        <link refid="_q_t_g___task_8c"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>QTG_Task.h</label>
+        <link refid="_q_t_g___task_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Rte.h</label>
+      </node>
+      <node id="22">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="24">
+        <label>QTG_ExtraDefinitions.h</label>
+        <link refid="_q_t_g___extra_definitions_8h"/>
+      </node>
+      <node id="19">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="23">
+        <label>QTG_EcuM.h</label>
+        <link refid="_q_t_g___ecu_m_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_q_t_g___task_8c_1a61644ef4861d3258e3aafc2145bd5abd" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean QTG_boRun</definition>
+        <argsstring></argsstring>
+        <name>QTG_boRun</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for initialization <linebreak/>
+</para><para>Allows the lib&apos;s function to run. <linebreak/>
+<simplesect kind="remark"><para>range - see values values <linebreak/>
+ TRUE if the QTG_InitVarFunc is called <linebreak/>
+ FALSE otherwise <linebreak/>
+ unit n.a <linebreak/>
+ resolution n.a <linebreak/>
+ context QTG_InitVarFunc, QTG_Stop and QTG_TaskCyclicEvent <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="74" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_q_t_g___task_8c_1a018fb7d29e53d545c3f113977f470cd6" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean QTG_EcuM_Run_requested</definition>
+        <argsstring></argsstring>
+        <name>QTG_EcuM_Run_requested</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ECU_StateRequest for QTG component <linebreak/>
+<simplesect kind="remark"><para>range - see values <linebreak/>
+ values FALSE - Release state run from QTG library <linebreak/>
+ TRUE - Request state run from QTG library <linebreak/>
+ unit n.a <linebreak/>
+ resolution n.a <linebreak/>
+ context task context <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="76" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_q_t_g___task_8c_1a6974742783609a0a18cc744bd8ef13a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QTG_PreAllRunnablesHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_PreAllRunnablesHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates the value and status of the input signals configured as implicit.</para><para>This function prohibits input signal to change their value while the SWC runnable is executed. <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation N/A </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_PreAllRunnablesHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1a8d1a70d03dd738de575b29aaa6a3bf5b" kindref="member">TEST_QTG_Task__QTG_PreAllRunnablesHook</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function required by RTE_Light to update the signals configured as implicit </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="107" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="144" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="_q_t_g___task_8c_1a5ace5ae4b2ceeb2fc608b5be0c8263f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QTG_PostAllRunnablesHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_PostAllRunnablesHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the value and status of the output signals configured as implicit.</para><para><verbatim>This function prohibits output signal to change their value while the SWC runnable is executed.
+</verbatim> <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation N/A </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_PostAllRunnablesHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1a258ddc480dda9d9c84e2f0e8e4badb9d" kindref="member">TEST_QTG_Task__QTG_PostAllRunnablesHook</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function required by RTE_Light to update the signals configured as implicit </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="136" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="150" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="_q_t_g___task_8c_1a5382d5fec4378e97b2501c8cc3513382" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QTG_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialize the variables for the QTG module.</para><para><verbatim>This function is called by ModelsTask(Scheduler) before starting the model (MmDoSetup is called). The code here must be short.
+</verbatim> <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_q_t_g___task_8c_1a61644ef4861d3258e3aafc2145bd5abd" kindref="member">QTG_boRun</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>QTG_boRun is set to TRUE <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call and to check the variable QTG_boRun. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1a9acb7d73d209574d9a68f4d2264977dd" kindref="member">TEST_QTG_Task__QTG_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which set the value of the QTG_boRun. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="160" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="160" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="_q_t_g___task_8c_1af3c254bfa71b9f2439dd6f07009db802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QTG_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Start-up/init the QTG module.</para><para><verbatim>Called by modeltask(Scheduler) in order to start-up/init the QTG module.
+</verbatim> <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation N/A </title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1abf0f6b947155aac5f78d6c60ce7ea69f" kindref="member">TEST_QTG_Task__QTG_Start</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture, this helper function will call the init function of the library. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="166" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="166" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="_q_t_g___task_8c_1a02f37144e4ac2fd05db38255d27b3a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QTG_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop callback for the QTG module.</para><para><verbatim>This function is called by ModelsTask(Scheduler) when the StopEv is set (MmDoStop is called). Here is a good place to save data to NvRAM.
+</verbatim> <simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_q_t_g___task_8c_1a61644ef4861d3258e3aafc2145bd5abd" kindref="member">QTG_boRun</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>QTG_boRun is set to FALSE <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call and to check the variable QTG_boRun. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1ab880cd67fdb8e562d574c8f229bed38e" kindref="member">TEST_QTG_Task__QTG_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which set the value of the QTG_boRun </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="172" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="_q_t_g___task_8c_1a37c96193005f03e0e5d41a13a1ea0836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QTG_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>QTG_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the QTG module.</para><para>This function is called by ModelsTask(Scheduler) when the model&apos;s recurrence occurs. This function should be performed with a cycle time of 10 ms. <simplesect kind="pre"><para>Must be called after QTG_Start. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+context task Model Task <linebreak/>
+thread safe No <linebreak/>
+multicore safe No <linebreak/>
+synchronous <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_q_t_g___task_8c_1a61644ef4861d3258e3aafc2145bd5abd" kindref="member">QTG_boRun</ref> [in]] <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="QTG_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to verify the function call. <linebreak/>
+ <ref refid="_q_t_g___task_8c_8test_1aa7ef942ddf278dc148e5161c96451163" kindref="member">TEST_QTG_Task__QTG_TaskCyclicEvent</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_9768,SWR_ICAS1_GW_9770,SWR_ICAS1_GW_22045 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" line="178" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c" bodystart="178" bodyend="198"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for QTG SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_q_t_g___task_8c" kindref="compound">QTG_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn1604 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/04/04 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Expected test coverage (100%) and type of test coverage (C1/CTC).<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/QTG/Evo/src/QTG_Task.c"/>
+  </compounddef>
+</doxygen>

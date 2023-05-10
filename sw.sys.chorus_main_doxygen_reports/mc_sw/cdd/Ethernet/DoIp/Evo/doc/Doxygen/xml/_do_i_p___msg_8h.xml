@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___msg_8h" kind="file" language="C++">
+    <compoundname>DoIP_Msg.h</compoundname>
+    <includes local="yes">SoMgr.h</includes>
+    <includedby refid="_do_i_p___msg_8c" local="yes">DoIP_Msg.c</includedby>
+    <includedby refid="_do_i_p___int_8h" local="yes">DoIP_Int.h</includedby>
+    <incdepgraph>
+      <node id="239">
+        <label>DoIP_Msg.h</label>
+        <link refid="_do_i_p___msg_8h"/>
+        <childnode refid="240" relation="include">
+        </childnode>
+      </node>
+      <node id="240">
+        <label>SoMgr.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="242">
+        <label>DoIP_Msg.c</label>
+        <link refid="_do_i_p___msg_8c"/>
+      </node>
+      <node id="246">
+        <label>DoIP_LIN.c</label>
+        <link refid="_do_i_p___l_i_n_8c"/>
+      </node>
+      <node id="245">
+        <label>DoIP_Dcm.c</label>
+        <link refid="_do_i_p___dcm_8c"/>
+      </node>
+      <node id="249">
+        <label>DoIP_TP.c</label>
+        <link refid="_do_i_p___t_p_8c"/>
+      </node>
+      <node id="244">
+        <label>DoIP_Client.c</label>
+        <link refid="_do_i_p___client_8c"/>
+      </node>
+      <node id="248">
+        <label>DoIP_Server.c</label>
+        <link refid="_do_i_p___server_8c"/>
+      </node>
+      <node id="243">
+        <label>DoIP_Int.h</label>
+        <link refid="_do_i_p___int_8h"/>
+        <childnode refid="244" relation="include">
+        </childnode>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="242" relation="include">
+        </childnode>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+      </node>
+      <node id="241">
+        <label>DoIP_Msg.h</label>
+        <link refid="_do_i_p___msg_8h"/>
+        <childnode refid="242" relation="include">
+        </childnode>
+        <childnode refid="243" relation="include">
+        </childnode>
+      </node>
+      <node id="250">
+        <label>DoIP_Utils.c</label>
+        <link refid="_do_i_p___utils_8c"/>
+      </node>
+      <node id="247">
+        <label>DoIP_Main.c</label>
+        <link refid="_do_i_p___main_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a334dd3a7806ceb55c3da8fc377940e69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_MakeGenericHeader</definition>
+        <argsstring>(uint8 *buf, uint16 payloadType, uint32 length)</argsstring>
+        <name>DoIP_MakeGenericHeader</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>payloadType</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Builds a generic DoIP header at the indicated mem area (1st param), the payload mem area is zeroed. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the mem area where the header must be stored </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the type of the DoIP message specified by the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the length of the data following the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>The area where the DoIP payload will be stored is zeroed </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_14462 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_MakeGenericHeader.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check memory area <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a63933fa1ae20b63794b685de7d4138e1" kindref="member">TEST_DoIP_Msg__DoIP_MakeGenericHeader</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a11d1ad08b99c1a3bca2cfa20a03b0e68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DoIP_MakeGenericHeaderNoDefaultInit</definition>
+        <argsstring>(uint8 *buf, uint16 payloadType, uint32 length)</argsstring>
+        <name>DoIP_MakeGenericHeaderNoDefaultInit</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>payloadType</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Builds a generic DoIP header at the area indicated by 1st param. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the mem area where the header must be stored </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the type of the DoIP message specified by the header </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the length of the data following the header </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_14462 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_MakeGenericHeaderNoDefaultInit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to check memory area <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ac48425cfdb21b922d85963e903d873f1" kindref="member">TEST_DoIP_Msg__DoIP_MakeGenericHeaderNoDefaultInit</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a90f1962741d2e4708a8a94103f0c53d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendDoipHeaderNack</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, uint8 NackCode)</argsstring>
+        <name>DoIP_SendDoipHeaderNack</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>NackCode</declname>
+        </param>
+        <briefdescription>
+<para>Builds and transmits a generic DoIP negative acknowledge message (DoIP NACK) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NackCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the reason of the negative acknowledgement that shall be embedded in the frame </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function, used to create a generic DoIP NACK </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendDoipHeaderNack.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a6fbeb1669fcb5ab8bad930d8b025112c" kindref="member">TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1adafc84a6317bb8c35025824b41c071c7" kindref="member">TEST_DoIP_Msg__DoIP_SendDoipHeaderNack_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a7fd3063ed2e938eba962ac41bc88efc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendDiagMsgAck</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, uint16 srcAddr, uint16 dstAddr, uint8 AckCode, uint8 *pPayload, uint16 payloadLength)</argsstring>
+        <name>DoIP_SendDiagMsgAck</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>srcAddr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>dstAddr</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>AckCode</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>pPayload</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>payloadLength</declname>
+        </param>
+        <briefdescription>
+<para>Builds and transmits a DoIP diagnostic message positive acknowledge. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srcAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the source address (of the originator) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dstAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the destination address (target) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">AckCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the positive code that shall be embedded in the frame </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pPayload</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the data that shall be contained by the msg </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">payloadLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the payload data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_14462 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendDiagMsgAck.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ac77286325a674f67205f36653d237e44" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsgAck_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a62d5cbe4411520d4f673ed3dec41f32a" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsgAck_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1abb6c45ec3c61aeb5534438d29469d8ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendDiagMsgNack</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, uint16 srcAddr, uint16 dstAddr, uint8 NackCode, uint8 *pPayload, uint16 payloadLength)</argsstring>
+        <name>DoIP_SendDiagMsgNack</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>srcAddr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>dstAddr</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>NackCode</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>pPayload</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>payloadLength</declname>
+        </param>
+        <briefdescription>
+<para>Builds and transmits a DoIP diagnostic message negative acknowledge. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srcAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the source address (of the originator) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dstAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the destination address (target) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">NackCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the negative code that shall be embedded in the frame </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pPayload</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the data that shall be contained by the msg </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">payloadLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the payload data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the API operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function, used to create a DoIP generic header </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendDiagMsgNack.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a4783b85889dc7eed34058fc895232f12" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsgNack_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a546ab2a725ece8d0bad59bb7a1cdcbe9" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsgNack_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a3b722ae339664438fee332ca2cc00f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendDiagMsg</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, uint16 srcAddr, uint16 dstAddr, uint8 *pPayload, uint16 payloadLength)</argsstring>
+        <name>DoIP_SendDiagMsg</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>srcAddr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>dstAddr</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>pPayload</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>payloadLength</declname>
+        </param>
+        <briefdescription>
+<para>Builds and transmits a DoIP diagnostic message. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srcAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the source address (of the originator) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dstAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the destination address (target) of the message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pPayload</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the data that shall be contained by the msg </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">payloadLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the payload data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the API operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function, used to create a DoIP diagnostic message </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendDiagMsg.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ad9958069c870a1f4a62d410b047ded34" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsg_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ae404ea0ac7509f8f700b5a65914c63af" kindref="member">TEST_DoIP_Msg__DoIP_SendDiagMsg_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="218" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1abdff3ffe1d24733f95cebcb5905522ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendVehicleIdentificatonRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_SendVehicleIdentificatonRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP Vehicle Identification Response, payload type 0x0004. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___main_8h_1af19732eef2f02e4e672c38096aeee45a" kindref="member">DoIP_StatusType::DoIP_Status</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_19023 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendVehicleIdentificatonRes.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1abc05104a74baa83fde00f50fa994c11d" kindref="member">TEST_DoIP_Msg__DoIP_SendVehicleIdentificatonRes</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="241" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a2b56160dedc1c4976deb773f59d8a09f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendRoutingActivationRes</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl, uint16 TesterLogAddr, uint8 respCode)</argsstring>
+        <name>DoIP_SendRoutingActivationRes</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>TesterLogAddr</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>respCode</declname>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP Routing Activation Response, DoIP payload type 0x0006. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">TesterLogAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- logical address of the tester that sent rout act req </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">respCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- response code of the rout act resp </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>None </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19026 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendRoutingActivationRes.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para><orderedlist>
+<listitem><para>Statement testing <linebreak/>
+</para></listitem><listitem><para>Decision testing <linebreak/>
+ </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1aba4f90f4f64a8c59b0f6da268e9cc736" kindref="member">TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1aa5f8dd2b55cb635100de0f4bf8013462" kindref="member">TEST_DoIP_Msg__DoIP_SendRoutingActivationRes_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="268" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a886b8302e346bfeab6e92d6f4ae31c48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendEntityStatusRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_SendEntityStatusRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP Entity Status Response, payload type 0x4002. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___main_8h_1af19732eef2f02e4e672c38096aeee45a" kindref="member">DoIP_StatusType::DoIP_Status</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_19041 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendEntityStatusRes.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ad50158f40b095e8ec87e93caa6b7480e" kindref="member">TEST_DoIP_Msg__DoIP_SendEntityStatusRes</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="291" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a91bc3d577b3c7bc46ae2fdcdbca92e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendPowerModeRes</definition>
+        <argsstring>(void)</argsstring>
+        <name>DoIP_SendPowerModeRes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP Power Mode Response, payload type 0x4004. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___main_8h_1af19732eef2f02e4e672c38096aeee45a" kindref="member">DoIP_StatusType::DoIP_Status</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19072 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendPowerModeRes.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Statement testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a58bacad0698129ce2c3dd4b4642c4e85" kindref="member">TEST_DoIP_Msg__DoIP_SendPowerModeRes</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="314" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a82cd1018fcd98cc20ae1b0c03af5982c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendAliveCheckRes</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl)</argsstring>
+        <name>DoIP_SendAliveCheckRes</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP Alive Check Response, payload type 0x0008. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___main_8h_1af19732eef2f02e4e672c38096aeee45a" kindref="member">DoIP_StatusType::DoIP_Status</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Helper function, used to create and transmit the DoIP specific frame </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendAliveCheckRes.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para><orderedlist>
+<listitem><para>Statement testing <linebreak/>
+</para></listitem><listitem><para>Decision testing <linebreak/>
+ </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a21b94c127bd4947482f3305863ca16aa" kindref="member">TEST_DoIP_Msg__DoIP_SendAliveCheckRes_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a3426fbeec70a05376e109bb083bfbfa1" kindref="member">TEST_DoIP_Msg__DoIP_SendAliveCheckRes_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="339" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___msg_8h_1a57597a8c6415a3eb05219e42c71b6e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DoIP_SendComParamsAck</definition>
+        <argsstring>(SoMgr_SocketHdlType SocketHdl)</argsstring>
+        <name>DoIP_SendComParamsAck</name>
+        <param>
+          <type>SoMgr_SocketHdlType</type>
+          <declname>SocketHdl</declname>
+        </param>
+        <briefdescription>
+<para>Preparation and transmission of the DoIP ComParam ACK, payload type 0xF002. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketHdl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the SoMgr socket that shall be used for msg transmission </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>State of the operation call </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- message prepared and sent successfully </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_do_i_p___main_8h_1af19732eef2f02e4e672c38096aeee45a" kindref="member">DoIP_StatusType::DoIP_Status</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_16015, SWR_ICAS1_GW_16012, SWR_ICAS1_GW_16014 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="act_diagram_DoIP_SendComParamsAck.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para><orderedlist>
+<listitem><para>Statement testing <linebreak/>
+</para></listitem><listitem><para>Decision testing <linebreak/>
+ </para></listitem></orderedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide different inputs in order to reach each return value and each case <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1ad7eb922181e898f9794f90a5c2e136f7" kindref="member">TEST_DoIP_Msg__DoIP_SendComParamsAck_1</ref> <linebreak/>
+ <ref refid="_do_i_p___msg_8c_8test_1a24143f6b8bb9cfa37b995dad33402437" kindref="member">TEST_DoIP_Msg__DoIP_SendComParamsAck_2</ref> <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h" line="364" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Public interfaces for creation and transmission of DoIP specific frames required by the local DoIP instance <linebreak/>
+ </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_do_i_p___msg_8h" kindref="compound">DoIP_Msg.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>See <ref refid="_do_i_p__version_8h" kindref="compound">DoIP_version.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn1598 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>01.09.2022 </para></simplesect>
+</para><para>The variables, macros and typedef defined in this module are used for building DoIP messages with different payload types </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/inc/DoIP_Msg.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___routing_engine_8h" kind="file" language="C++">
+    <compoundname>RteLight_RoutingEngine.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <incdepgraph>
+      <node id="68">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="67">
+        <label>RteLight_RoutingEngine.h</label>
+        <link refid="_rte_light___routing_engine_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga782fe4bbb0b06dc6d89b0e6da52bcd05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_CopyToTxBuffer</definition>
+        <argsstring>(uint16 idx)</argsstring>
+        <name>RteLight_CopyToTxBuffer</name>
+        <param>
+          <type>uint16</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the gray channel PDU into the RoutingEngine&apos;s Tx buffer.<linebreak/>
+ Called on event from the GW Core when an CAN E2E protected Pdu is prepared for transmission. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_CopyToTxBuffer.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether TX buffer is updated .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in <ref refid="_rte_light___routing_engine_8h_8test_1ab0b24c41d4e42082103ef86973d11f3f" kindref="member">TEST_RteLight_CopyToTxBuffer</ref> <linebreak/>
+ more details are available by following the reference.</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>DOORS_Req_ID.<linebreak/>
+ or Design Decision Design Decision - Justification..<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_RoutingEngine.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga75e29da0c78bfa38a7d7fb3bec920fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void transmit_e2e_cyc_message</definition>
+        <argsstring>(uint16 idx)</argsstring>
+        <name>transmit_e2e_cyc_message</name>
+        <param>
+          <type>uint16</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Alias for RteLight_CopyToTxBuffer Depricated interface</para><para>Called on event from the GW Core when an CAN E2E protected Pdu is prepared for transmission. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="transmit_e2e_cyc_message.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of transmitCycMessage_triggered_by_coreX function .<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in <ref refid="_rte_light___routing_engine_8h_8test_1a852804e4f5030ae9ab983ae01ea40bbb" kindref="member">TEST_transmit_e2e_cyc_message</ref>. <linebreak/>
+ more details are available by following the reference.</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000014"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>DOORS_Req_ID.<linebreak/>
+ or Design Decision Design Decision - Justification..<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_RoutingEngine.h" line="186" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interfaces related to the E2E protection for the Tx Pdus. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_rte_light___routing_engine_8h" kindref="compound">RteLight_RoutingEngine.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+ Expected test coverage (100%) and type of test coverage C1.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_RoutingEngine.h"/>
+  </compounddef>
+</doxygen>

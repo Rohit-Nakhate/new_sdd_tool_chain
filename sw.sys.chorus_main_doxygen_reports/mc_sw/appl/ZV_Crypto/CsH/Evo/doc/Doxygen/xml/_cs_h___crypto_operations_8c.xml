@@ -1,0 +1,1726 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_cs_h___crypto_operations_8c" kind="file" language="C++">
+    <compoundname>CsH_CryptoOperations.c</compoundname>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes local="yes">Rte_CsH.h</includes>
+    <includes refid="_cs_h___crypto_operations_8h" local="yes">CsH_CryptoOperations.h</includes>
+    <includes refid="_cs_h___nv_ram_8h" local="yes">CsH_nvram.h</includes>
+    <includes local="yes">CsmPi.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">KY_KessyEvMngr.h</includes>
+    <includes local="yes">UHF_DataTypes.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>KY_KessyEvMngr.h</label>
+      </node>
+      <node id="2">
+        <label>CsH_CryptoOperations.c</label>
+        <link refid="_cs_h___crypto_operations_8c"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Dem.h</label>
+      </node>
+      <node id="12">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="11">
+        <label>CsmPi.h</label>
+      </node>
+      <node id="8">
+        <label>CsH_nvram.h</label>
+        <link refid="_cs_h___nv_ram_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Rte_CsH_Type.h</label>
+      </node>
+      <node id="4">
+        <label>Rte.h</label>
+      </node>
+      <node id="7">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="3">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="15">
+        <label>UHF_DataTypes.h</label>
+      </node>
+      <node id="5">
+        <label>Rte_CsH.h</label>
+      </node>
+      <node id="9">
+        <label>CsH_DataTypes.h</label>
+        <link refid="_cs_h___data_types_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>CsH_CryptoOperations.h</label>
+        <link refid="_cs_h___crypto_operations_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1ae881cdbe5fa5c4b9815d7472f38e07c0" prot="public" static="no">
+        <name>CSH_EN_SKC_RAW</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as a value for Custom Key value</para><para>Used in the switch case in <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq</ref> <linebreak/>
+ when determining type of Key used for encryption. <linebreak/>
+ Represents Custom Key value. <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a469bfd135fe285316a151e20b1cf47b4" prot="public" static="no">
+        <name>CSH_EN_SKC_FFB</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as a value for FFB-SKC</para><para>Used in the switch case in <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq</ref> <linebreak/>
+ when determining type of Key used for encryption. <linebreak/>
+ Represents FFB-SKC value. <linebreak/>
+<simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="84" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1ad8806829812cba871e8ef9cfe7d042eb" prot="public" static="no">
+        <name>CSH_EN_SKC_RSAD</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as a value for RSAD-SKC</para><para>Used in the switch case in <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq</ref> <linebreak/>
+ when determining type of Key used for encryption. <linebreak/>
+ Represents RSAD-SKC value. <linebreak/>
+<simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="96" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a87feb6db1f09428bd73553de41681297" prot="public" static="no">
+        <name>CSH_ENCRYPTION_NOTPOSSIBLE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as a value in RSAD Signature and Encryption check</para><para>Used as initial value for: <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a0337c94d5d7cd3c5f9da64665edd0b99" kindref="member">numCalcChallengeStatus</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a266f6a1fff9f8e078a27ef9fb9a005c0" kindref="member">numCalcSignatureStatus</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1afef4597bd971d899c929a94a10bd1426" kindref="member">numCheckRSASignatureStatus</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ab6919b35351594ba1fdfd56127cdd4ce" kindref="member">numCheckSignatureStatus</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a533e4dc6554532619f92910bc6f8f414" kindref="member">numrawEncryptStatus</ref> <linebreak/>
+ Used when checking signatures and encryption in: <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq</ref> <linebreak/>
+<simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="115" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1ae046c061f3bd84fde75509c790f1d0a3" prot="public" static="no">
+        <name>CSH_ENCRYPTION_INIT</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as intial value for ZKA Signature Status</para><para>Used as initial value for ZKA Signature Status in <ref refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" kindref="member">CheckSignature_ZKA</ref> <linebreak/>
+<simplesect kind="remark"><para>values 3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="125" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a3dc71e1d3504a0e8cdee6bffecfe143c" prot="public" static="no">
+        <name>CSH_ENCRYPTION_BUFFER_SIZE</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing size of a buffer for CsH Encryption</para><para>Determines length of array <ref refid="_cs_h___crypto_operations_8c_1a3dc71e1d3504a0e8cdee6bffecfe143c" kindref="member">CSH_ENCRYPTION_BUFFER_SIZE</ref> <linebreak/>
+ Used in <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq</ref> and <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> <linebreak/>
+<simplesect kind="remark"><para>values 16u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="136" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a2e8bd524b48c6273d1e5d61d8e5107de" prot="public" static="no">
+        <name>CSH_MARKERDIRECTION_SIZE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describes marker direction size</para><para>Used in : <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" kindref="member">CheckSignature_ZKA</ref> <linebreak/>
+<simplesect kind="remark"><para>values 1u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="149" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a80381559db031f796bdce81ec442bd6d" prot="public" static="no">
+        <name>CSH_REFRESHNESS_BUFFER_SIZE</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describes refreshness buffer size for CsH</para><para>Used in : <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" kindref="member">CheckSignature_ZKA</ref> <linebreak/>
+<simplesect kind="remark"><para>values 8u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="162" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a53d18816685f166f77d5111762d33560" prot="public" static="no">
+        <name>CSH_INPUTVECTOR_SIZE</name>
+        <initializer>128u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant used as size of input vector</para><para>Determines length of <ref refid="_cs_h___crypto_operations_8c_1a28b3371c1a2c3c72ea739356e9a9e6a0" kindref="member">u8CalcSignatureReqBuffer</ref> and <ref refid="_cs_h___crypto_operations_8c_1a4ad54d7b63cb091a076421905362d515" kindref="member">u8CheckSignatureReqBuffer</ref> <linebreak/>
+ Is used in <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> when clearing buffer for signature calculations. <linebreak/>
+ <simplesect kind="remark"><para>values 128u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="173" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a14fa824bf994f0e193fdf507563cfc50" prot="public" static="no">
+        <name>KEY_BUFFER_SIZE</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing size of buffer for a key</para><para>Used in : <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" kindref="member">CheckSignature_ZKA</ref> <linebreak/>
+ During Key extraction from Csmpi <simplesect kind="remark"><para>values 16u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="187" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a96ae350e0d84240905d874ae28ec4301" prot="public" static="no">
+        <name>CSMPI_RESULT_LENGTH</name>
+        <initializer>6u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing length of Csmpi result</para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" kindref="member">getRandomNumber</ref> and <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq</ref> when <linebreak/>
+<simplesect kind="remark"><para>values 3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="197" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a8e6fdef0daff270826d85d8f73d02636" prot="public" static="no">
+        <name>CSH_NUM_NUTZDATEN_LENGHT_MAX</name>
+        <initializer>33u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing maximum length of payload for signature</para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> when checking the signature <linebreak/>
+<simplesect kind="remark"><para>values 33u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="209" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a0872dec4f56ffc8a647669422fca3628" prot="public" static="no">
+        <name>CSH_NUM_SIGNATURE_LENGTH_MAX</name>
+        <initializer>6u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing maximum length signature</para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq</ref> when checking the RSAD signature <linebreak/>
+<simplesect kind="remark"><para>values 6u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="219" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cs_h___crypto_operations_8c_1a289d66b6008639b4564e72d29b28b43b" prot="public" static="no">
+        <name>CSH_NUM_SIGNATURE_LENGTH_MIN</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Constant describing minimal length of payload for signature</para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq</ref> and <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> when checking the signature <linebreak/>
+<simplesect kind="remark"><para>values 4u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="229" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a4c7705d0af7837530f61c9146c57bbbe" prot="public" static="no" mutable="no">
+        <type>const Rte_PimType_CsH_CsH_Ffb</type>
+        <definition>const Rte_PimType_CsH_CsH_Ffb Pim_CsH_CsH_Ffb_ROM</definition>
+        <argsstring></argsstring>
+        <name>Pim_CsH_CsH_Ffb_ROM</name>
+        <initializer>=
+{ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+{ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+  0,
+  0,
+  0 }</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CsH ROM Block</para><para>Structure for a default NVM Values located in Pim <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_324 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_325 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_328 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_329 <linebreak/>
+ </para><para>SWR_ICAS1_L3_CRY_636 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="256" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="256" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a38d22833a5ca7e6290cb54fabb91ab77" compoundref="_cs_h___crypto_operations_8c_8test" startline="1379" endline="1425">TEST_CsH_CryptoOperations_NvM_Init_Values</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a7be50405f0fbea72818bc9c6577ede1f" prot="public" static="yes" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 u32rawEncryptResultLength</definition>
+        <argsstring></argsstring>
+        <name>u32rawEncryptResultLength</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of the Encryption Process Result</para><para>Describes length of the data stored in the buffers used for Encryption <ref refid="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" kindref="member">u8rawEncryptResult</ref> <linebreak/>
+<simplesect kind="remark"><para>range {0u - 16u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="283" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="283" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" compoundref="_cs_h___crypto_operations_8c" startline="647" endline="715">evEncryptReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a03be6b6523faf35b61a42e40ee863cd5" prot="public" static="yes" mutable="no">
+        <type>IDT_CRYPTO_uint8_DIM6</type>
+        <definition>IDT_CRYPTO_uint8_DIM6 rawChallengeResult</definition>
+        <argsstring></argsstring>
+        <name>rawChallengeResult</name>
+        <initializer>= {0u, 0u, 0u, 0u, 0u, 0u}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer used for a raw Challenge generation</para><para>6 bytes containing the Challenge generated in evCalcChallengeResp <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1aa26b6a371936c5242ea149680befe1f9" kindref="member">CsH_Call_Ev_StCryptoKY_evCalcChallengeResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="298" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="298" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1aa26b6a371936c5242ea149680befe1f9" compoundref="_cs_h___crypto_operations_8c" startline="617" endline="620">CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a0337c94d5d7cd3c5f9da64665edd0b99" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 numCalcChallengeStatus</definition>
+        <argsstring></argsstring>
+        <name>numCalcChallengeStatus</name>
+        <initializer>=  1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Status of a raw Challenge generation</para><para>Variable passed to Kessy informing about a Status of the Challenge generation function. <simplesect kind="remark"><para>range {0u - 3u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1aa26b6a371936c5242ea149680befe1f9" kindref="member">CsH_Call_Ev_StCryptoKY_evCalcChallengeResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="313" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="313" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1aa26b6a371936c5242ea149680befe1f9" compoundref="_cs_h___crypto_operations_8c" startline="617" endline="620">CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a3bf9b21ef48163d3b49d3c93ed143bb7" compoundref="_cs_h___crypto_operations_8c_8test" startline="475" endline="569">TEST_evCalcChallengeReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1ab8542d820eafd47e891a783b82843386" prot="public" static="yes" mutable="no">
+        <type>IDT_CRYPTO_uint8_DIM6</type>
+        <definition>IDT_CRYPTO_uint8_DIM6 rawSignatureResult</definition>
+        <argsstring></argsstring>
+        <name>rawSignatureResult</name>
+        <initializer>= {0u, 0u, 0u, 0u, 0u, 0u}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer for a Signature Check result</para><para>Pointer to the output where CSM returns result of the signature check. <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a6f0b73cee45f155c2fc0ca02898ae63f" kindref="member">CsH_Call_Ev_StCryptoKY_evCalcSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="328" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="328" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a6f0b73cee45f155c2fc0ca02898ae63f" compoundref="_cs_h___crypto_operations_8c" startline="622" endline="625">CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a266f6a1fff9f8e078a27ef9fb9a005c0" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 numCalcSignatureStatus</definition>
+        <argsstring></argsstring>
+        <name>numCalcSignatureStatus</name>
+        <initializer>=  1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Status of a Signature Check result</para><para>Variable passed to Kessy informing about a Status of the Signature Check function result. <simplesect kind="remark"><para>range {0u - 3u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a6f0b73cee45f155c2fc0ca02898ae63f" kindref="member">CsH_Call_Ev_StCryptoKY_evCalcSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="343" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="343" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a6f0b73cee45f155c2fc0ca02898ae63f" compoundref="_cs_h___crypto_operations_8c" startline="622" endline="625">CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a37e15ed8e63a07e810cc76db3ef3475b" compoundref="_cs_h___crypto_operations_8c_8test" startline="581" endline="700">TEST_evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1ac2af97d18fe223eb32b2bf1c2a23239d" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bRSASignatureValid</definition>
+        <argsstring></argsstring>
+        <name>bRSASignatureValid</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Boolean value denoting RSAD Signature validness</para><para>Denotes if Signature received in <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq</ref> is valid. <linebreak/>
+<simplesect kind="remark"><para>range {0u - 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a845341656464916f26ec9bc5216be002" kindref="member">CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="358" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="358" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a845341656464916f26ec9bc5216be002" compoundref="_cs_h___crypto_operations_8c" startline="627" endline="630">CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" compoundref="_cs_h___crypto_operations_8c" startline="800" endline="827">evCheckRSADSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1ad2226b7a9ac8421b252a9167ccd8618a" compoundref="_cs_h___crypto_operations_8c_8test" startline="712" endline="830">TEST_evCheckRSADSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1afef4597bd971d899c929a94a10bd1426" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 numCheckRSASignatureStatus</definition>
+        <argsstring></argsstring>
+        <name>numCheckRSASignatureStatus</name>
+        <initializer>=  1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Status of a RSAD Signature Check result</para><para>Variable passed to Kessy as response about the result of checking RSAD Signature. <simplesect kind="remark"><para>range {0u - 3u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a845341656464916f26ec9bc5216be002" kindref="member">CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" kindref="member">evCheckRSADSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="373" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="373" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a845341656464916f26ec9bc5216be002" compoundref="_cs_h___crypto_operations_8c" startline="627" endline="630">CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" compoundref="_cs_h___crypto_operations_8c" startline="800" endline="827">evCheckRSADSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1afb729fedea4cf864ef6a8feabefbf3c4" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bSignatureValid</definition>
+        <argsstring></argsstring>
+        <name>bSignatureValid</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Boolean value denoting Signature validness</para><para>Denotes if Signature received in <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> is valid. <simplesect kind="remark"><para>range {0u - 1u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a090477eb976539da8bb476914782d365" kindref="member">CsH_Call_Ev_StCryptoKY_evCheckSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="388" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="388" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a090477eb976539da8bb476914782d365" compoundref="_cs_h___crypto_operations_8c" startline="632" endline="635">CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" compoundref="_cs_h___crypto_operations_8c" startline="880" endline="922">evCheckSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aaabbca92bf7301dec8a426669c1738cd" compoundref="_cs_h___crypto_operations_8c_8test" startline="994" endline="1139">TEST_evCheckSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1ab6919b35351594ba1fdfd56127cdd4ce" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 numCheckSignatureStatus</definition>
+        <argsstring></argsstring>
+        <name>numCheckSignatureStatus</name>
+        <initializer>=  1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Status of a Signature Check result</para><para>Variable passed to Kessy as response about the result of Signature check in <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref>. <linebreak/>
+<simplesect kind="remark"><para>range {0u - 3u } <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a090477eb976539da8bb476914782d365" kindref="member">CsH_Call_Ev_StCryptoKY_evCheckSignatureResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="403" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="403" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a090477eb976539da8bb476914782d365" compoundref="_cs_h___crypto_operations_8c" startline="632" endline="635">CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" compoundref="_cs_h___crypto_operations_8c" startline="880" endline="922">evCheckSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aaabbca92bf7301dec8a426669c1738cd" compoundref="_cs_h___crypto_operations_8c_8test" startline="994" endline="1139">TEST_evCheckSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a533e4dc6554532619f92910bc6f8f414" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 numrawEncryptStatus</definition>
+        <argsstring></argsstring>
+        <name>numrawEncryptStatus</name>
+        <initializer>=  1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Status for data encryption request</para><para>Variable passed to Kessy informing about a Status of the data encryption function. <simplesect kind="remark"><para>range {0u - 3u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1acbff0621d16a408e04d56e6ff1022bd7" kindref="member">CsH_Call_Ev_StCryptoKY_evEncryptResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="418" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="418" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1acbff0621d16a408e04d56e6ff1022bd7" compoundref="_cs_h___crypto_operations_8c" startline="637" endline="640">CsH_Call_Ev_StCryptoKY_evEncryptResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" compoundref="_cs_h___crypto_operations_8c" startline="647" endline="715">evEncryptReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a306827f6f84ca550322b431bc8c135b5" compoundref="_cs_h___crypto_operations_8c_8test" startline="346" endline="463">TEST_evEncryptReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 u8rawEncryptResult[16u]</definition>
+        <argsstring>[16u]</argsstring>
+        <name>u8rawEncryptResult</name>
+        <initializer>= {0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u, 0u}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer for the Encryption Process Result</para><para>Stores max 16 bytes of the Encryption Process Result. <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1acbff0621d16a408e04d56e6ff1022bd7" kindref="member">CsH_Call_Ev_StCryptoKY_evEncryptResp()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" kindref="member">evEncryptReq()</ref>, <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="433" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="433" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1acbff0621d16a408e04d56e6ff1022bd7" compoundref="_cs_h___crypto_operations_8c" startline="637" endline="640">CsH_Call_Ev_StCryptoKY_evEncryptResp</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" compoundref="_cs_h___crypto_operations_8c" startline="647" endline="715">evEncryptReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a28b3371c1a2c3c72ea739356e9a9e6a0" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 u8CalcSignatureReqBuffer[128u]</definition>
+        <argsstring>[128u]</argsstring>
+        <name>u8CalcSignatureReqBuffer</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer for CalcSignature Req</para><para>Stores 16 bytes of a signature prepared for a usage in <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq</ref> . <linebreak/>
+<simplesect kind="remark"><para>range N/A values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" kindref="member">evCalcSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="448" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="448" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" compoundref="_cs_h___crypto_operations_8c" startline="762" endline="793">evCalcSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a37e15ed8e63a07e810cc76db3ef3475b" compoundref="_cs_h___crypto_operations_8c_8test" startline="581" endline="700">TEST_evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a4ad54d7b63cb091a076421905362d515" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 u8CheckSignatureReqBuffer[128u]</definition>
+        <argsstring>[128u]</argsstring>
+        <name>u8CheckSignatureReqBuffer</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer for CheckSignature Req</para><para>Stores 16 bytes of a signature prepared for a usage in <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq</ref> . <linebreak/>
+<simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" kindref="member">CheckSignature_ZKA()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" kindref="member">evCheckSignatureReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="463" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="463" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" compoundref="_cs_h___crypto_operations_8c" startline="834" endline="873">CheckSignature_ZKA</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" compoundref="_cs_h___crypto_operations_8c" startline="880" endline="922">evCheckSignatureReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a2977cda1c8e0d5ffac6d06f3d80b358a" compoundref="_cs_h___crypto_operations_8c_8test" startline="842" endline="982">TEST_CheckSignature_ZKA</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aaabbca92bf7301dec8a426669c1738cd" compoundref="_cs_h___crypto_operations_8c_8test" startline="994" endline="1139">TEST_evCheckSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1adea0948402e5fe9fc91ca7f97be34f6f" prot="public" static="yes" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 RANDOM_NUMBER_COUNT</definition>
+        <argsstring></argsstring>
+        <name>RANDOM_NUMBER_COUNT</name>
+        <initializer>= 2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Size of <ref refid="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" kindref="member">randomGenereted_Standby</ref></para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" kindref="member">getRandomNumber</ref> to limit number of invokes of Rte_Call_CsH_RandomGenerate_CSH_RandomGenerateSync <simplesect kind="remark"><para>range {2u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" kindref="member">getRandomNumber()</ref>, <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="478" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="478" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" compoundref="_cs_h___crypto_operations_8c" startline="957" endline="973">getRandomNumber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a16cf1843c08afd7bbc1bfe69f4a2dd8c" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 randomNumberUsed_counter</definition>
+        <argsstring></argsstring>
+        <name>randomNumberUsed_counter</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Counter of random number usage times</para><para>Used in <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq</ref> during crypto calculation process. <linebreak/>
+<simplesect kind="remark"><para>range {0u-2u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="493" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="493" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a3bf9b21ef48163d3b49d3c93ed143bb7" compoundref="_cs_h___crypto_operations_8c_8test" startline="475" endline="569">TEST_evCalcChallengeReq</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 randomGenereted_Standby[2][6]</definition>
+        <argsstring>[2][6]</argsstring>
+        <name>randomGenereted_Standby</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Random Generated number variables stored in Standby RAM</para><para>Stores variables related to Random Generated number in the Standby RAM to enable quick extraction of <linebreak/>
+ the data on the wake up. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="511" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="511" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" compoundref="_cs_h___crypto_operations_8c" startline="957" endline="973">getRandomNumber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1ae088a71909a34048d00461c1418dd43f" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 randomGenereted_Standby_Status[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>randomGenereted_Standby_Status</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Random Generated number status variables stored in Standby RAM</para><para>Stores variables related to Random Generated number status in the Standby RAM to enable quick extraction of <linebreak/>
+ the data on the wake up. <simplesect kind="remark"><para>range {0u-2u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="527" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="527" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" compoundref="_cs_h___crypto_operations_8c" startline="722" endline="755">evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" compoundref="_cs_h___crypto_operations_8c" startline="957" endline="973">getRandomNumber</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a3bf9b21ef48163d3b49d3c93ed143bb7" compoundref="_cs_h___crypto_operations_8c_8test" startline="475" endline="569">TEST_evCalcChallengeReq</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a47b110d8aa9a63f38b021c7158d0f7c6" compoundref="_cs_h___crypto_operations_8c_8test" startline="1301" endline="1367">TEST_getRandomNumber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_cs_h___crypto_operations_8c_1a763ae597627d3e158ee2a8e6ac64adea" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean bIsRandomInitialized</definition>
+        <argsstring></argsstring>
+        <name>bIsRandomInitialized</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag denoting if Standby RAM section for Random Generated number has been initialized</para><para>Stores variables related to FFB SKC in the Standby RAM to enable quick extraction of <linebreak/>
+ the data on the wake up. <simplesect kind="remark"><para>range {0u-2u} <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used inside <ref refid="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" kindref="member">evCalcChallengeReq()</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="543" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="543" bodyend="-1"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" compoundref="_cs_h___crypto_operations_8c" startline="957" endline="973">getRandomNumber</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a47b110d8aa9a63f38b021c7158d0f7c6" compoundref="_cs_h___crypto_operations_8c_8test" startline="1301" endline="1367">TEST_getRandomNumber</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void getRandomNumber</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRandomNumber</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function responsible for StanbyRAM random numbers storage <linebreak/>
+</para><para>Function responsible for getting and storage to StanbyRAM random numbers used during wakeup <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>none <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" kindref="member">randomGenereted_Standby</ref> - Random Generated number variables stored in Standby RAM <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ae088a71909a34048d00461c1418dd43f" kindref="member">randomGenereted_Standby_Status</ref> - Random Generated number status variables stored in Standby RAM <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a763ae597627d3e158ee2a8e6ac64adea" kindref="member">bIsRandomInitialized</ref> - Flag denoting if Standby RAM section for Random Generated number has been initialized <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1adea0948402e5fe9fc91ca7f97be34f6f" kindref="member">RANDOM_NUMBER_COUNT</ref> - Size of <ref refid="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" kindref="member">randomGenereted_Standby</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="getRandomNumber.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a47b110d8aa9a63f38b021c7158d0f7c6" kindref="member">TEST_getRandomNumber</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Helper function for StanbyRAM random numbers storage. <linebreak/>
+ Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para></simplesect>
+Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="604" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="957" bodyend="973"/>
+        <references refid="_cs_h___crypto_operations_8c_1a763ae597627d3e158ee2a8e6ac64adea" compoundref="_cs_h___crypto_operations_8c" startline="543">bIsRandomInitialized</references>
+        <references refid="_cs_h___crypto_operations_8c_1ae088a71909a34048d00461c1418dd43f" compoundref="_cs_h___crypto_operations_8c" startline="527">randomGenereted_Standby_Status</references>
+        <references refid="_cs_h___crypto_operations_8c_1a87feb6db1f09428bd73553de41681297" compoundref="_cs_h___crypto_operations_8c" startline="115">CSH_ENCRYPTION_NOTPOSSIBLE</references>
+        <references refid="_cs_h___crypto_operations_8c_1adea0948402e5fe9fc91ca7f97be34f6f" compoundref="_cs_h___crypto_operations_8c" startline="478">RANDOM_NUMBER_COUNT</references>
+        <references refid="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" compoundref="_cs_h___crypto_operations_8c" startline="511">randomGenereted_Standby</references>
+        <references refid="_cs_h___crypto_operations_8c_1a96ae350e0d84240905d874ae28ec4301" compoundref="_cs_h___crypto_operations_8c" startline="197">CSMPI_RESULT_LENGTH</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_1a160da28c17c82efe68e13018fe55974a" compoundref="_cs_h___crypto_operations_8c" startline="611" endline="615">CsH_CryptoOperations_Cyclic</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a764a0b14e46abb28be8b28683fa97dff" compoundref="_cs_h___crypto_operations_8c_8test" startline="1268" endline="1289">TEST_CsH_CryptoOperations_Cyclic</referencedby>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a47b110d8aa9a63f38b021c7158d0f7c6" compoundref="_cs_h___crypto_operations_8c_8test" startline="1301" endline="1367">TEST_getRandomNumber</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a160da28c17c82efe68e13018fe55974a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_CryptoOperations_Cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_CryptoOperations_Cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>one major subtasks is referenced periodically: <linebreak/>
+ <linebreak/>
+ -getRandomNumber <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by the Scheduler in a predefined cycle </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Communicates and exchanges Data with UHF and FFB Data Handler during Key learning process </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_CryptoOperations_Cyclic.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a764a0b14e46abb28be8b28683fa97dff" kindref="member">TEST_CsH_CryptoOperations_Cyclic</ref><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_725 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="611" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="611" bodyend="615"/>
+        <references refid="_cs_h___crypto_operations_8c_1afec158420c7ad1eae8500dbdd9b6c5dd" compoundref="_cs_h___crypto_operations_8c" startline="957" endline="973">getRandomNumber</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a764a0b14e46abb28be8b28683fa97dff" compoundref="_cs_h___crypto_operations_8c_8test" startline="1268" endline="1289">TEST_CsH_CryptoOperations_Cyclic</referencedby>
+        <referencedby refid="_cs_h___task_8c_1adc7f727b511861cae8e27795bc0b3e9a" compoundref="_cs_h___task_8c" startline="108" endline="116">CsH_TaskCyclicEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1aa26b6a371936c5242ea149680befe1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to Kessy for Challenge Generation request. <linebreak/>
+</para><para>This function is called by KessyEventMngr to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the result of challenge generation to the calling application on the client-server interface <linebreak/>
+ by triggering Rte_Call_CsH_KYBCM_Ev_StCryptoKY_evCalcChallengeResp. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte layer <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>Function is called by Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1a03be6b6523faf35b61a42e40ee863cd5" kindref="member">rawChallengeResult</ref> - Buffer used for a raw Challenge generation <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a0337c94d5d7cd3c5f9da64665edd0b99" kindref="member">numCalcChallengeStatus</ref> - Status of a raw Challenge generation <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Result of challenge generation gets provided via RTE to Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Call_Ev_StCryptoKY_evCalcChallengeResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1ae9983993ed5ed2540f2d9ff130f129a5" kindref="member">TEST_CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_554 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="617" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="617" bodyend="620"/>
+        <references refid="_cs_h___crypto_operations_8c_1a03be6b6523faf35b61a42e40ee863cd5" compoundref="_cs_h___crypto_operations_8c" startline="298">rawChallengeResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1a0337c94d5d7cd3c5f9da64665edd0b99" compoundref="_cs_h___crypto_operations_8c" startline="313">numCalcChallengeStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1ae9983993ed5ed2540f2d9ff130f129a5" compoundref="_cs_h___crypto_operations_8c_8test" startline="197" endline="214">TEST_CsH_Call_Ev_StCryptoKY_evCalcChallengeResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a6f0b73cee45f155c2fc0ca02898ae63f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to Kessy for Signature Calculation request. <linebreak/>
+</para><para>This function is called by KessyEventMngr to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the result of Signature calculation to the calling application on the client-server interface <linebreak/>
+ by triggering Rte_Call_CsH_KYBCM_Ev_StCryptoKY_evCalcSignatureResp. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte layer <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>Function is called by Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1ab8542d820eafd47e891a783b82843386" kindref="member">rawSignatureResult</ref> - Buffer for a Signature Check result <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a266f6a1fff9f8e078a27ef9fb9a005c0" kindref="member">numCalcSignatureStatus</ref> - Status of a Signature Check result <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Result of Signature calculation gets provided via RTE to Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Call_Ev_StCryptoKY_evCalcSignatureResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a5b8e8ec6fa3d3c670d643910ce5416af" kindref="member">TEST_CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_409 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="622" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="622" bodyend="625"/>
+        <references refid="_cs_h___crypto_operations_8c_1ab8542d820eafd47e891a783b82843386" compoundref="_cs_h___crypto_operations_8c" startline="328">rawSignatureResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1a266f6a1fff9f8e078a27ef9fb9a005c0" compoundref="_cs_h___crypto_operations_8c" startline="343">numCalcSignatureStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a5b8e8ec6fa3d3c670d643910ce5416af" compoundref="_cs_h___crypto_operations_8c_8test" startline="226" endline="243">TEST_CsH_Call_Ev_StCryptoKY_evCalcSignatureResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a845341656464916f26ec9bc5216be002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to Kessy for Checking the RSAD Signature request. <linebreak/>
+</para><para>This function is called by KessyEventMngr to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the result of checking RSAD Signature to the calling application on the client-server interface <linebreak/>
+ by triggering Rte_Call_CsH_KYBCM_Ev_StCryptoKY_evCheckRSADSignatureResp. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte layer <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>Function is called by Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1ac2af97d18fe223eb32b2bf1c2a23239d" kindref="member">bRSASignatureValid</ref> - Boolean value denoting RSAD Signature validness <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1afef4597bd971d899c929a94a10bd1426" kindref="member">numCheckRSASignatureStatus</ref> - Status of a RSAD Signature Check result <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Result of checking RSAD Signature gets provided via RTE to Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a8fb3c7fad7facd25dc0307d804585a03" kindref="member">TEST_CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_539 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="627" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="627" bodyend="630"/>
+        <references refid="_cs_h___crypto_operations_8c_1ac2af97d18fe223eb32b2bf1c2a23239d" compoundref="_cs_h___crypto_operations_8c" startline="358">bRSASignatureValid</references>
+        <references refid="_cs_h___crypto_operations_8c_1afef4597bd971d899c929a94a10bd1426" compoundref="_cs_h___crypto_operations_8c" startline="373">numCheckRSASignatureStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a8fb3c7fad7facd25dc0307d804585a03" compoundref="_cs_h___crypto_operations_8c_8test" startline="255" endline="274">TEST_CsH_Call_Ev_StCryptoKY_evCheckRSADSignatureResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a090477eb976539da8bb476914782d365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to Kessy for Checking the Signature request. <linebreak/>
+</para><para>This function is called by KessyEventMngr to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the Status of checking Signature to the calling application on the client-server interface <linebreak/>
+ by triggering Rte_Call_CsH_KYBCM_Ev_StCryptoKY_evCheckSignatureResp. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte layer <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>Function is called by Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1afb729fedea4cf864ef6a8feabefbf3c4" kindref="member">bSignatureValid</ref> - Boolean value denoting Signature validness <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1ab6919b35351594ba1fdfd56127cdd4ce" kindref="member">numCheckSignatureStatus</ref> - Status of a Signature Check result <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Status of checking Signature gets provided via RTE to Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Call_Ev_StCryptoKY_evCheckSignatureResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1abf5b215adb11fd1de60617a91cbde4e1" kindref="member">TEST_CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_401 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="632" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="632" bodyend="635"/>
+        <references refid="_cs_h___crypto_operations_8c_1afb729fedea4cf864ef6a8feabefbf3c4" compoundref="_cs_h___crypto_operations_8c" startline="388">bSignatureValid</references>
+        <references refid="_cs_h___crypto_operations_8c_1ab6919b35351594ba1fdfd56127cdd4ce" compoundref="_cs_h___crypto_operations_8c" startline="403">numCheckSignatureStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1abf5b215adb11fd1de60617a91cbde4e1" compoundref="_cs_h___crypto_operations_8c_8test" startline="286" endline="305">TEST_CsH_Call_Ev_StCryptoKY_evCheckSignatureResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1acbff0621d16a408e04d56e6ff1022bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Call_Ev_StCryptoKY_evEncryptResp</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Call_Ev_StCryptoKY_evEncryptResp</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Event function of the CsH module. The function provides the response to Kessy for Encryption request. <linebreak/>
+</para><para>This function is called by KessyEventMngr to minimize the overhead on reaction for the function call. <linebreak/>
+ CryptoHandler shall report the Response for data encryption request to the calling application on the client-server interface <linebreak/>
+ by triggering Rte_Call_CsH_KYBCM_Ev_StCryptoKY_evEncryptResp. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Rte layer <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>Function is called by Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" kindref="member">u8rawEncryptResult</ref> - Buffer for the Encryption Process Result <linebreak/>
+ <ref refid="_cs_h___crypto_operations_8c_1a533e4dc6554532619f92910bc6f8f414" kindref="member">numrawEncryptStatus</ref> - Status for data encryption request <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Status of data encryption request gets provided via RTE to Kessy SWC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Call_Ev_StCryptoKY_evEncryptResp.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1ae3f50f9ceedad9177e51b9f56cfd0781" kindref="member">TEST_CsH_Call_Ev_StCryptoKY_evEncryptResp</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_544 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="637" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="637" bodyend="640"/>
+        <references refid="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" compoundref="_cs_h___crypto_operations_8c" startline="433">u8rawEncryptResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1a533e4dc6554532619f92910bc6f8f414" compoundref="_cs_h___crypto_operations_8c" startline="418">numrawEncryptStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1ae3f50f9ceedad9177e51b9f56cfd0781" compoundref="_cs_h___crypto_operations_8c_8test" startline="317" endline="334">TEST_CsH_Call_Ev_StCryptoKY_evEncryptResp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ae323532d0f2b724ccf50824e5fcbe406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evEncryptReq</definition>
+        <argsstring>(const uint8 *rawInputData, uint8 enSKC, const uint8 *rawKey)</argsstring>
+        <name>evEncryptReq</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawInputData</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>enSKC</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawKey</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the Encryption request from Kessy <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="647" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="647" bodyend="715"/>
+        <references refid="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" compoundref="_rte___cs_h___c_s_8h" startline="155">Rte_Call_CsH_KessyEvMngr_setEvRequest</references>
+        <references refid="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" compoundref="_cs_h___crypto_operations_8c" startline="433">u8rawEncryptResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1ae881cdbe5fa5c4b9815d7472f38e07c0" compoundref="_cs_h___crypto_operations_8c" startline="72">CSH_EN_SKC_RAW</references>
+        <references refid="_cs_h___crypto_operations_8c_1a3dc71e1d3504a0e8cdee6bffecfe143c" compoundref="_cs_h___crypto_operations_8c" startline="136">CSH_ENCRYPTION_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a14fa824bf994f0e193fdf507563cfc50" compoundref="_cs_h___crypto_operations_8c" startline="187">KEY_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a7be50405f0fbea72818bc9c6577ede1f" compoundref="_cs_h___crypto_operations_8c" startline="283">u32rawEncryptResultLength</references>
+        <references refid="_cs_h___crypto_operations_8c_1a469bfd135fe285316a151e20b1cf47b4" compoundref="_cs_h___crypto_operations_8c" startline="84">CSH_EN_SKC_FFB</references>
+        <references refid="_cs_h___nv_ram_8h_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <references refid="_cs_h___crypto_operations_8c_1ad8806829812cba871e8ef9cfe7d042eb" compoundref="_cs_h___crypto_operations_8c" startline="96">CSH_EN_SKC_RSAD</references>
+        <references refid="_cs_h___crypto_operations_8c_1a533e4dc6554532619f92910bc6f8f414" compoundref="_cs_h___crypto_operations_8c" startline="418">numrawEncryptStatus</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a306827f6f84ca550322b431bc8c135b5" compoundref="_cs_h___crypto_operations_8c_8test" startline="346" endline="463">TEST_evEncryptReq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a00dfe1802961bc20cbfbf1f8de278801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evCalcChallengeReq</definition>
+        <argsstring>(void)</argsstring>
+        <name>evCalcChallengeReq</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the Challenge Generation request from Kessy <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="722" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="722" bodyend="755"/>
+        <references refid="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" compoundref="_rte___cs_h___c_s_8h" startline="155">Rte_Call_CsH_KessyEvMngr_setEvRequest</references>
+        <references refid="_cs_h___crypto_operations_8c_1a03be6b6523faf35b61a42e40ee863cd5" compoundref="_cs_h___crypto_operations_8c" startline="298">rawChallengeResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1a0337c94d5d7cd3c5f9da64665edd0b99" compoundref="_cs_h___crypto_operations_8c" startline="313">numCalcChallengeStatus</references>
+        <references refid="_cs_h___nv_ram_8h_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <references refid="_cs_h___crypto_operations_8c_1a96ae350e0d84240905d874ae28ec4301" compoundref="_cs_h___crypto_operations_8c" startline="197">CSMPI_RESULT_LENGTH</references>
+        <references refid="_cs_h___crypto_operations_8c_1a16cf1843c08afd7bbc1bfe69f4a2dd8c" compoundref="_cs_h___crypto_operations_8c" startline="493">randomNumberUsed_counter</references>
+        <references refid="_cs_h___crypto_operations_8c_1adea0948402e5fe9fc91ca7f97be34f6f" compoundref="_cs_h___crypto_operations_8c" startline="478">RANDOM_NUMBER_COUNT</references>
+        <references refid="_cs_h___crypto_operations_8c_1ae088a71909a34048d00461c1418dd43f" compoundref="_cs_h___crypto_operations_8c" startline="527">randomGenereted_Standby_Status</references>
+        <references refid="_cs_h___crypto_operations_8c_1a840ef6362e544aad533bc14332fd643f" compoundref="_cs_h___crypto_operations_8c" startline="511">randomGenereted_Standby</references>
+        <references refid="_cs_h___crypto_operations_8c_1a87feb6db1f09428bd73553de41681297" compoundref="_cs_h___crypto_operations_8c" startline="115">CSH_ENCRYPTION_NOTPOSSIBLE</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a3bf9b21ef48163d3b49d3c93ed143bb7" compoundref="_cs_h___crypto_operations_8c_8test" startline="475" endline="569">TEST_evCalcChallengeReq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ae46d7e1cbf86263cd388a614474ec1c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evCalcSignatureReq</definition>
+        <argsstring>(boolean bMarkerDirection, const uint8 *rawFreshnessValue, const uint8 *rawNutzdaten, uint8 numNutzdatenLength)</argsstring>
+        <name>evCalcSignatureReq</name>
+        <param>
+          <type>boolean</type>
+          <declname>bMarkerDirection</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFreshnessValue</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawNutzdaten</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numNutzdatenLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the Signature Calculation request from Kessy <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="762" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="762" bodyend="793"/>
+        <references refid="_cs_h___crypto_operations_8c_1a266f6a1fff9f8e078a27ef9fb9a005c0" compoundref="_cs_h___crypto_operations_8c" startline="343">numCalcSignatureStatus</references>
+        <references refid="_cs_h___crypto_operations_8c_1a87feb6db1f09428bd73553de41681297" compoundref="_cs_h___crypto_operations_8c" startline="115">CSH_ENCRYPTION_NOTPOSSIBLE</references>
+        <references refid="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" compoundref="_rte___cs_h___c_s_8h" startline="155">Rte_Call_CsH_KessyEvMngr_setEvRequest</references>
+        <references refid="_cs_h___crypto_operations_8c_1ab8542d820eafd47e891a783b82843386" compoundref="_cs_h___crypto_operations_8c" startline="328">rawSignatureResult</references>
+        <references refid="_cs_h___crypto_operations_8c_1a28b3371c1a2c3c72ea739356e9a9e6a0" compoundref="_cs_h___crypto_operations_8c" startline="448">u8CalcSignatureReqBuffer</references>
+        <references refid="_cs_h___crypto_operations_8c_1a53d18816685f166f77d5111762d33560" compoundref="_cs_h___crypto_operations_8c" startline="173">CSH_INPUTVECTOR_SIZE</references>
+        <references refid="_cs_h___nv_ram_8h_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <references refid="_cs_h___crypto_operations_8c_1a2e8bd524b48c6273d1e5d61d8e5107de" compoundref="_cs_h___crypto_operations_8c" startline="149">CSH_MARKERDIRECTION_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a80381559db031f796bdce81ec442bd6d" compoundref="_cs_h___crypto_operations_8c" startline="162">CSH_REFRESHNESS_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a14fa824bf994f0e193fdf507563cfc50" compoundref="_cs_h___crypto_operations_8c" startline="187">KEY_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a7be50405f0fbea72818bc9c6577ede1f" compoundref="_cs_h___crypto_operations_8c" startline="283">u32rawEncryptResultLength</references>
+        <references refid="_cs_h___crypto_operations_8c_1a3dc71e1d3504a0e8cdee6bffecfe143c" compoundref="_cs_h___crypto_operations_8c" startline="136">CSH_ENCRYPTION_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a22573a9ad78b1e4ed2501cadb4c2e4af" compoundref="_cs_h___crypto_operations_8c" startline="433">u8rawEncryptResult</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a37e15ed8e63a07e810cc76db3ef3475b" compoundref="_cs_h___crypto_operations_8c_8test" startline="581" endline="700">TEST_evCalcSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ad3c49398a536c312f37822d64da7d672" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evCheckRSADSignatureReq</definition>
+        <argsstring>(const uint8 *rawInputData, uint8 numInputDataLength, const uint8 *rawSignatureToCheck, uint8 numSignatureLength)</argsstring>
+        <name>evCheckRSADSignatureReq</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawInputData</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numInputDataLength</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawSignatureToCheck</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numSignatureLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the RSAD Signature Check request from Kessy <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="800" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="800" bodyend="827"/>
+        <references refid="_cs_h___crypto_operations_8c_1afef4597bd971d899c929a94a10bd1426" compoundref="_cs_h___crypto_operations_8c" startline="373">numCheckRSASignatureStatus</references>
+        <references refid="_cs_h___crypto_operations_8c_1a87feb6db1f09428bd73553de41681297" compoundref="_cs_h___crypto_operations_8c" startline="115">CSH_ENCRYPTION_NOTPOSSIBLE</references>
+        <references refid="_cs_h___crypto_operations_8c_1ac2af97d18fe223eb32b2bf1c2a23239d" compoundref="_cs_h___crypto_operations_8c" startline="358">bRSASignatureValid</references>
+        <references refid="_cs_h___crypto_operations_8c_1a289d66b6008639b4564e72d29b28b43b" compoundref="_cs_h___crypto_operations_8c" startline="229">CSH_NUM_SIGNATURE_LENGTH_MIN</references>
+        <references refid="_cs_h___crypto_operations_8c_1a0872dec4f56ffc8a647669422fca3628" compoundref="_cs_h___crypto_operations_8c" startline="219">CSH_NUM_SIGNATURE_LENGTH_MAX</references>
+        <references refid="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" compoundref="_rte___cs_h___c_s_8h" startline="155">Rte_Call_CsH_KessyEvMngr_setEvRequest</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1ad2226b7a9ac8421b252a9167ccd8618a" compoundref="_cs_h___crypto_operations_8c_8test" startline="712" endline="830">TEST_evCheckRSADSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ac74a8ddb05ff5b96a72cd4d67d91c69e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType CheckSignature_ZKA</definition>
+        <argsstring>(boolean bMarkerDirection, const uint8 *rawFreshnessValue, const uint8 *rawNutzdaten, uint8 numNutzdatenLength, const uint8 *rawSignatureToCheck, uint8 numSignatureLength)</argsstring>
+        <name>CheckSignature_ZKA</name>
+        <param>
+          <type>boolean</type>
+          <declname>bMarkerDirection</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFreshnessValue</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawNutzdaten</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numNutzdatenLength</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawSignatureToCheck</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numSignatureLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the Signature Check request from FDH <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="834" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="834" bodyend="873"/>
+        <references refid="_cs_h___crypto_operations_8c_1ae046c061f3bd84fde75509c790f1d0a3" compoundref="_cs_h___crypto_operations_8c" startline="125">CSH_ENCRYPTION_INIT</references>
+        <references refid="_cs_h___nv_ram_8h_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <references refid="_cs_h___crypto_operations_8c_1a4ad54d7b63cb091a076421905362d515" compoundref="_cs_h___crypto_operations_8c" startline="463">u8CheckSignatureReqBuffer</references>
+        <references refid="_cs_h___crypto_operations_8c_1a2e8bd524b48c6273d1e5d61d8e5107de" compoundref="_cs_h___crypto_operations_8c" startline="149">CSH_MARKERDIRECTION_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a80381559db031f796bdce81ec442bd6d" compoundref="_cs_h___crypto_operations_8c" startline="162">CSH_REFRESHNESS_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a14fa824bf994f0e193fdf507563cfc50" compoundref="_cs_h___crypto_operations_8c" startline="187">KEY_BUFFER_SIZE</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a2977cda1c8e0d5ffac6d06f3d80b358a" compoundref="_cs_h___crypto_operations_8c_8test" startline="842" endline="982">TEST_CheckSignature_ZKA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a2df19b96d59a8f9c66f43bb42eb71a1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType evCheckSignatureReq</definition>
+        <argsstring>(boolean bMarkerDirection, const uint8 *rawFreshnessValue, const uint8 *rawNutzdaten, uint8 numNutzdatenLength, const uint8 *rawSignatureToCheck, uint8 numSignatureLength)</argsstring>
+        <name>evCheckSignatureReq</name>
+        <param>
+          <type>boolean</type>
+          <declname>bMarkerDirection</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawFreshnessValue</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawNutzdaten</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numNutzdatenLength</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>rawSignatureToCheck</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>numSignatureLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the server function for handling the Signature Check request from Kessy <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="880" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="880" bodyend="922"/>
+        <references refid="_cs_h___crypto_operations_8c_1afb729fedea4cf864ef6a8feabefbf3c4" compoundref="_cs_h___crypto_operations_8c" startline="388">bSignatureValid</references>
+        <references refid="_cs_h___crypto_operations_8c_1ab6919b35351594ba1fdfd56127cdd4ce" compoundref="_cs_h___crypto_operations_8c" startline="403">numCheckSignatureStatus</references>
+        <references refid="_cs_h___crypto_operations_8c_1a8e6fdef0daff270826d85d8f73d02636" compoundref="_cs_h___crypto_operations_8c" startline="209">CSH_NUM_NUTZDATEN_LENGHT_MAX</references>
+        <references refid="_cs_h___crypto_operations_8c_1a289d66b6008639b4564e72d29b28b43b" compoundref="_cs_h___crypto_operations_8c" startline="229">CSH_NUM_SIGNATURE_LENGTH_MIN</references>
+        <references refid="_cs_h___crypto_operations_8c_1a0872dec4f56ffc8a647669422fca3628" compoundref="_cs_h___crypto_operations_8c" startline="219">CSH_NUM_SIGNATURE_LENGTH_MAX</references>
+        <references refid="_rte___cs_h___c_s_8h_1a06f9d9900fb8eba9de716e4c9dae8fda" compoundref="_rte___cs_h___c_s_8h" startline="155">Rte_Call_CsH_KessyEvMngr_setEvRequest</references>
+        <references refid="_cs_h___nv_ram_8h_1a2a4f2de819419c31a3e31951ffb8c555" compoundref="_cs_h___key_learning_8c" startline="365">Standby_CsH_FfbSkc</references>
+        <references refid="_cs_h___crypto_operations_8c_1a4ad54d7b63cb091a076421905362d515" compoundref="_cs_h___crypto_operations_8c" startline="463">u8CheckSignatureReqBuffer</references>
+        <references refid="_cs_h___crypto_operations_8c_1a2e8bd524b48c6273d1e5d61d8e5107de" compoundref="_cs_h___crypto_operations_8c" startline="149">CSH_MARKERDIRECTION_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a80381559db031f796bdce81ec442bd6d" compoundref="_cs_h___crypto_operations_8c" startline="162">CSH_REFRESHNESS_BUFFER_SIZE</references>
+        <references refid="_cs_h___crypto_operations_8c_1a14fa824bf994f0e193fdf507563cfc50" compoundref="_cs_h___crypto_operations_8c" startline="187">KEY_BUFFER_SIZE</references>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aaabbca92bf7301dec8a426669c1738cd" compoundref="_cs_h___crypto_operations_8c_8test" startline="994" endline="1139">TEST_evCheckSignatureReq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ae4bb06652125dcf08e386f13bc9a75a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSH_CsmKeyExtractCallback</definition>
+        <argsstring>(Std_ReturnType retVal)</argsstring>
+        <name>CSH_CsmKeyExtractCallback</name>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>retVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Call-back function CSH_CsmKeyExtractCallback of the CsH module <linebreak/>
+</para><para>This function is called by CsmPi <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsmPi </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Std_ReturnType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>retVal <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_CsmKeyExtractCallback.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a0967ed188726777b66e78322600e118e" kindref="member">TEST_CSH_CsmKeyExtractCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Required Callback function for Csm Key Extraction. Function required by Csm. Currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="923" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="923" bodyend="926"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a0967ed188726777b66e78322600e118e" compoundref="_cs_h___crypto_operations_8c_8test" startline="1151" endline="1161">TEST_CSH_CsmKeyExtractCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1a70cb9c960515d992e836bfc75a6664b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSH_CsmRandomCallback</definition>
+        <argsstring>(Std_ReturnType retVal)</argsstring>
+        <name>CSH_CsmRandomCallback</name>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>retVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Call-back function CSH_CsmRandomCallback of the CsH module <linebreak/>
+</para><para>This function is called by CsmPi in Asyncmode <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsmPi in Asyncmode <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Std_ReturnType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>retVal <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_CsmRandomCallback.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a2c1921f97fb38bbf5b656c0817929f60" kindref="member">TEST_CSH_CsmRandomCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Required Callback function for Csm Random. Function required by Csm. Currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="928" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="928" bodyend="931"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a2c1921f97fb38bbf5b656c0817929f60" compoundref="_cs_h___crypto_operations_8c_8test" startline="1173" endline="1184">TEST_CSH_CsmRandomCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1aab71db9efe34d2d908915d7bc1de2d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSH_CsmMacVerifyCallback</definition>
+        <argsstring>(Std_ReturnType retVal)</argsstring>
+        <name>CSH_CsmMacVerifyCallback</name>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>retVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Call-back function CSH_CsmMacVerifyCallback of the CsH module <linebreak/>
+</para><para>This function is called by CsmPi in Asyncmode <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsmPi in Asyncmode <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Std_ReturnType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>retVal <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_CsmMacVerifyCallback.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a87c4829bd9f74323f0d37900728eca86" kindref="member">TEST_CSH_CsmMacVerifyCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Required Callback function for Csm Mac Verify. Function required by Csm. Currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="933" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="933" bodyend="936"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a87c4829bd9f74323f0d37900728eca86" compoundref="_cs_h___crypto_operations_8c_8test" startline="1196" endline="1208">TEST_CSH_CsmMacVerifyCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1af8471655256a25a5162a936654dc4da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSH_CsmMacGenerateCallback</definition>
+        <argsstring>(Std_ReturnType retVal)</argsstring>
+        <name>CSH_CsmMacGenerateCallback</name>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>retVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Call-back function CSH_CsmMacGenerateCallback of the CsH module <linebreak/>
+</para><para>This function is called by CsmPi in Asyncmode <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsmPi in Asyncmode <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Std_ReturnType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>retVal <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CSH_CsmMacGenerateCallback.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1a6038bb37ba54913e5df16a6bbfe6a0c2" kindref="member">TEST_CSH_CsmMacGenerateCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Required Callback function for Csm Mac Generate. Function required by Csm. Currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="938" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="938" bodyend="941"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1a6038bb37ba54913e5df16a6bbfe6a0c2" compoundref="_cs_h___crypto_operations_8c_8test" startline="1220" endline="1232">TEST_CSH_CsmMacGenerateCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___crypto_operations_8c_1ad3f374157e2023e9800ded521b02efe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_CsmBlockEncryptCallback</definition>
+        <argsstring>(Std_ReturnType retVal)</argsstring>
+        <name>CsH_CsmBlockEncryptCallback</name>
+        <param>
+          <type>Std_ReturnType</type>
+          <declname>retVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Call-back function CsH_CsmBlockEncryptCallback of the CsH module <linebreak/>
+</para><para>This function is called by CsmPi in Asyncmode <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ asynchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by CsmPi in Asyncmode <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Std_ReturnType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>retVal <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_CsmBlockEncryptCallback.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___crypto_operations_8c_8test_1aeecfbd7926f28637c517494d3338e327" kindref="member">TEST_CsH_CsmBlockEncryptCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: Required Callback function for Csm Block Encrypt. Function required by Csm. Currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" line="943" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c" bodystart="943" bodyend="946"/>
+        <referencedby refid="_cs_h___crypto_operations_8c_8test_1aeecfbd7926f28637c517494d3338e327" compoundref="_cs_h___crypto_operations_8c_8test" startline="1244" endline="1256">TEST_CsH_CsmBlockEncryptCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for CsH SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_cs_h___crypto_operations_8c" kindref="compound">CsH_CryptoOperations.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+$Author: Mateusz Witon (uic39591), Robert Mastalerz (uidm5889), Rudolf Paula (uib65373), Pawel Dymowski (uib46966), Leszek Rafinski (uie99376), Maciej Lankow (uie32362) $ <simplesect kind="rcs"><title>Date</title><para>02.06.2022 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_CryptoOperations.c"/>
+  </compounddef>
+</doxygen>

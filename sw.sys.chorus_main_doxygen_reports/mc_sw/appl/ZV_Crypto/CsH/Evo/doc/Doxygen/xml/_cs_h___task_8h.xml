@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_cs_h___task_8h" kind="file" language="C++">
+    <compoundname>CsH_Task.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includedby refid="_cs_h___task_8c" local="yes">CsH_Task.c</includedby>
+    <incdepgraph>
+      <node id="91">
+        <label>CsH_Task.h</label>
+        <link refid="_cs_h___task_8h"/>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>Rte_Type.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="93">
+        <label>CsH_Task.h</label>
+        <link refid="_cs_h___task_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>CsH_Task.c</label>
+        <link refid="_cs_h___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cs_h___task_8h_1ab6f4b75a8edbff193cb1a00a43d0dc6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CsH init function called by scheduler. <linebreak/>
+</para><para>On Entrance calls init function from other unit <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>System after wake up/reset, in EnterRUN. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_cs_h___key_learning_8c_1a3ada4d149ec33bd97c6b3cec9750a541" kindref="member">bIsCsH_Stanby_Initializated</ref> - Standby RAM Initialization Flag <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If Standby RAM hadn&apos;t been previously initialized - CsH performs initialization with data for <linebreak/>
+ FFB SKC and FFB Data </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_InitVarFunc.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___task_8c_8test_1ab82b479419f3e6f3dfec0661faafe9bf" kindref="member">TEST_CsH_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: component init function to be called by scheduler.<linebreak/>
+ CsH init function called by scheduler. <linebreak/>
+</para></simplesect>
+Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/CsH_Task.h" line="108" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_Task.c" bodystart="88" bodyend="91"/>
+        <references refid="_cs_h___key_learning_8h_1a4fc4edf6fc5e8310b52e068d2b3633eb" compoundref="_cs_h___key_learning_8c" startline="1272" endline="1282">CsH_KeyHandler_Init</references>
+        <referencedby refid="_cs_h___task_8c_8test_1ab82b479419f3e6f3dfec0661faafe9bf" compoundref="_cs_h___task_8c_8test" startline="104" endline="119">TEST_CsH_InitVarFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___task_8h_1a9f62446f08892c45dd273488c2d068f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialization routine, called once on each EnterRun event by scheduler <linebreak/>
+</para><para>No functionality, required by architecture. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>System after wake up/reset, in EnterRUN. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Start.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___task_8c_8test_1ace6a5e98343f383eaa3e1418c6c27df2" kindref="member">TEST_CsH_Start</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: component init function to be called by scheduler. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/CsH_Task.h" line="148" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_Task.c" bodystart="93" bodyend="96"/>
+        <referencedby refid="_cs_h___task_8c_8test_1ace6a5e98343f383eaa3e1418c6c27df2" compoundref="_cs_h___task_8c_8test" startline="131" endline="142">TEST_CsH_Start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___task_8h_1a8f8f1002b898998642f1d377ea7363e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>De-Initialization routine, to be called once on each ExitRun event.</para><para>This function is called by ModelsTask when the StopEv is set <linebreak/>
+ (MmDoStop is called). Here is a good place to save data to NvRAM. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>System leaves RUN mode, prepares to sleep. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_Stop.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___task_8c_8test_1ac17b76b0b177113e4418262fed7c1b08" kindref="member">TEST_CsH_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+ Design Decision - Justification. Design decision: component de-init function called by scheduler, currently not used. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/CsH_Task.h" line="189" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_Task.c" bodystart="98" bodyend="101"/>
+        <referencedby refid="_cs_h___task_8c_8test_1ac17b76b0b177113e4418262fed7c1b08" compoundref="_cs_h___task_8c_8test" startline="154" endline="164">TEST_CsH_Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_cs_h___task_8h_1adc7f727b511861cae8e27795bc0b3e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CsH_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>CsH_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Calls CsH_Prepare_RteBuffer and cyclic function from other units<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Called by the Scheduler in a predefined cycle </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Communicates and exchanges Data with UHF and FFB Data Handler during Key learning process </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="CsH_TaskCyclicEvent.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test <ref refid="_cs_h___task_8c_8test_1ad40b3a67ef0e7b77f5ebe4d6dc19c581" kindref="member">TEST_CsH_TaskCyclicEvent</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements or Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRY_725 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/CsH_Task.h" line="231" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/src/CsH_Task.c" bodystart="108" bodyend="116"/>
+        <references refid="_cs_h___task_8c_1aeca3cf8977c9a4700ec1526673f6dfd9">CsH_Prepare_RteBuffer</references>
+        <references refid="_cs_h___key_learning_8h_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" compoundref="_cs_h___key_learning_8c" startline="1246" endline="1265">CsH_KeyHandler_Cyclic</references>
+        <references refid="_cs_h___crypto_operations_8h_1a160da28c17c82efe68e13018fe55974a" compoundref="_cs_h___crypto_operations_8c" startline="611" endline="615">CsH_CryptoOperations_Cyclic</references>
+        <referencedby refid="_cs_h___task_8c_8test_1ad40b3a67ef0e7b77f5ebe4d6dc19c581" compoundref="_cs_h___task_8c_8test" startline="176" endline="199">TEST_CsH_TaskCyclicEvent</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for CsH SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_cs_h___task_8h" kindref="compound">CsH_Task.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.4 </para></simplesect>
+$Author: Robert Mastalerz (uidm5889), Leszek Rafinski (uie99376), Maciej Lankow(uie32362) $ <simplesect kind="rcs"><title>Date</title><para>30.05.2022 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/CsH/c/inc/CsH_Task.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The scope of the UHF SWC covers the following functionality: <linebreak/>
+<linebreak/>
+<itemizedlist>
+<listitem><para>Sending and Receiving UHF-Telegram from SAM over CCAN. It is realised with given interfaces: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> - Function to merge payload sent from SAM on CCAN, called until payload is in one structure. <linebreak/>
+ Checks if key learning process was successful as condition before merging payload. <linebreak/>
+</para></listitem><listitem><para><ref refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" kindref="member">evUHFSenden</ref> - Function used to send CAN messages to SAM using RTE Functions <linebreak/>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Configuration of the UHF Transceiver. Basic flow for this functionality is : <linebreak/>
+<itemizedlist>
+<listitem><para>UHF-Master receives the StAnfUHFTrigger.evUHFSenden ( <ref refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" kindref="member">evUHFSenden</ref> ) call from KESSY-SW containing the UHF Telegram data and UHF Transceiver configuration data. <linebreak/>
+</para></listitem><listitem><para>UHF-Master increments the UHF Telegram counter signal ( <ref refid="_u_h_f___sender_8c_1a66a9425c1243e61db4a07c01cad36799" kindref="member">u8UHF_Zaehler</ref> ). <linebreak/>
+</para></listitem><listitem><para>UHF-Master evaluates the UHF Telegram data provided in <ref refid="_u_h_f___sender_8c_1aa3e06429ed1acb8c4a655c3611abd35d" kindref="member">evUHFSenden</ref>. <linebreak/>
+</para></listitem><listitem><para>UHF-Master sends the UHF Telegram data via Rte to SAM using UHF_01 - UHF-08 messages. <linebreak/>
+</para></listitem><listitem><para>UHF-Master sends the UHF Transceiver configuration data to SAM using UHF_Konfig message ( <ref refid="_u_h_f___sender_8c_1ab6478ffedda9d0ba129463818780b0a5" kindref="member">updateUHFConfig</ref> ). <linebreak/>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Evaluating the Battery Voltage Level based on data provided in UHF Telegram. Realized in given interface: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" kindref="member">PerformBatteryUpdateOnClamp15</ref> <linebreak/>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Routing UHF Telegram to respective application (FFBDataHandler or KESSY-SW): <linebreak/>
+<itemizedlist>
+<listitem><para>After merging payload in <ref refid="_u_h_f___receiver_8c_1aa0a9ab8e928bf11480b7fc6a2b9397aa" kindref="member">vread_UHFRFMsgfromSAM</ref> depending on s_UHF_LogicalHeader_buf.Port_Number <linebreak/>
+ UHF Master routes UHF Telegram to FFBDataHandler or KESSY-SW. <linebreak/>
+</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

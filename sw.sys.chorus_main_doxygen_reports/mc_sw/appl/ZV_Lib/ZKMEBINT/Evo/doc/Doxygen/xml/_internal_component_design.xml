@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para><ref refid="_z_k_m_e_b_i_n_t___task_8c" kindref="compound">ZKMEBINT_Task.c</ref> - This file will init, run cyclicaly and stop the ZKMEBINT functionality.</para></listitem><listitem><para><ref refid="_z_k_m_e_b_i_n_t___task_8h" kindref="compound">ZKMEBINT_Task.h</ref> - Header file for <ref refid="_z_k_m_e_b_i_n_t___task_8c" kindref="compound">ZKMEBINT_Task.c</ref>.</para></listitem><listitem><para><ref refid="_z_k_m_e_b_i_n_t___nv_ram_8h" kindref="compound">ZKMEBINT_NvRam.h</ref> - Header file needed for connecting memory and lib.</para></listitem><listitem><para><ref refid="_z_k_m_e_b_i_n_t___mem_map_8h" kindref="compound">ZKMEBINT_MemMap.h</ref> - Header file used during RTE generation.</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>All the software requirements assigned to ZKMEBINT are satisfied by <ref refid="_z_k_m_e_b_i_n_t___task_8c" kindref="compound">ZKMEBINT_Task.c</ref>. <linebreak/>
+The software requirements can be traced on function level!<linebreak/>
+For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Non functional requirements are traced here: <linebreak/>
+<table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1494  </para></entry><entry thead="no"><para>ZKMEBINT requires one block in the NVM, according to the definition in the ARXML-file.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_GW_22048  </para></entry><entry thead="no"><para>The ZKMEBINT application shall be located on Core 1.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in ZKMEBINT.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The ZKMEBINT has only one unit ZKMEBINT_Task. There are no interractions with other units. Nevertheless the next diagram depicts the interfaces.<linebreak/>
+<image type="html" name="ZKMEBINT_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="ZKMEBINT_DynamicBehavior.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+The NvM data flow is presented in red.</para><para><image type="html" name="ZKMEBINT_DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para><bold>ZKMEBINT</bold> operates only on <emphasis>high-power</emphasis> mode. Since ZKMEBINT is only a wrapper, the 3rd party lib it doesn&apos;t require special power modes.</para><para><heading level="2">Power Modes</heading>
+</para><para><bold>ZKMEBINT</bold> runs only in high power mode since it doesn&apos;t request special power modes, as mentioned above.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>ZKMEBINT does not handle errors via return value or a return param. There are also no DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since <bold>ZKMEBINT</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para><bold>ZKMEBINT</bold> operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para><bold>ZKMEBINT</bold> macros are available in the <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para><bold>ZKMEBINT</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para><bold>ZKMEBINT</bold> doesn&apos;t use complex data structures.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para><bold>ZKMEBINT</bold> is just one software unit.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Interaction is set to low because the component has a reduced number of non RTE dependencies.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Since <bold>ZKMEBINT</bold> is non-safety and recently integrated, criticality is rated low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>The technical complexity of <bold>ZKMEBINT</bold> is Low since the interaction is on Low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>The component ZKMEBINT is composed of only one unit and no complex alghoritms are implemented therefore the risk is Low.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para><bold>ZKMEBINT</bold> is completely testable on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

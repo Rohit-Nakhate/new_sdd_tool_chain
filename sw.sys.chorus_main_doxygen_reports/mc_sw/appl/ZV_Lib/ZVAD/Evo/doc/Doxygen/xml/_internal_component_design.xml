@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para><ref refid="_z_v_a_d___task_8c" kindref="compound">ZVAD_Task.c</ref> - Code is called by scheduler which will init, start and stop the operation of ZVAD</para></listitem><listitem><para><ref refid="_z_v_a_d___task_8h" kindref="compound">ZVAD_Task.h</ref> - Header file for <ref refid="_z_v_a_d___task_8c" kindref="compound">ZVAD_Task.c</ref></para></listitem><listitem><para><ref refid="_z_v_a_d___nv_ram_8h" kindref="compound">ZVAD_NvRam.h</ref> - Header file is needed for connecting memory and lib</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>All the software requirements assigned to ZVAD are satisfied by <ref refid="_z_v_a_d___task_8c" kindref="compound">ZVAD_Task.c</ref>. <linebreak/>
+The software requirements can be traced on function level !.<linebreak/>
+For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="8" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1458  </para></entry><entry thead="no"><para>ZV_Lib shall utilize maximum 10.46 kB RAM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1459  </para></entry><entry thead="no"><para>ZV_Lib shall utilize maximum 300kB ROM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1463  </para></entry><entry thead="no"><para>ZV_Lib shall utilize maximum 600 bytes NVRAM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1460  </para></entry><entry thead="no"><para>Execution of ZV_Lib shall be done at Core1 of Chorus 6M for ICAS1 and Chorus 10M for ICAS1Evo   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1461  </para></entry><entry thead="no"><para>The CPU runtime for ZV_Lib is 1.35ms   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1464  </para></entry><entry thead="no"><para>ICAS shall schedule ZV_Lib each 10ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_ZV_1462  </para></entry><entry thead="no"><para>ZV_Lib shall be available 30 ms at the latest (&lt;=30 ms) after ICAS start-up.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>We have no interfaces between units because there is just one unit in ZVAD.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The ZVAD has only one unit ZVAD_Task. There are no interractions with other units. Nevertheless the next diagram depicts the interfaces.<linebreak/>
+<image type="html" name="ZVAD_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="ZVAD_DynamicBehavior.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+The NvM data flow is presented in red.</para><para><image type="html" name="ZVAD_DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK Tasks needs to be configured by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>ZVAD uses no interrupts.</para><para><heading level="2">Events</heading>
+</para><para>ZVAD uses no events.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because ZVAD component runs in high-power mode. At the moment, ZVAD doesn&apos;t require a special power mode.</para><para><heading level="2">Power Modes</heading>
+</para><para>ZVAD runs only in high power since it doesn&apos;t request special power modes.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>Error status signals are provided by ZVAD to the the 3rd party libraries used to handle various error scenarios related to CAN messages.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>Operation are available under the section: <ulink url="files.html">File section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>ZVAD macros are available in the Functions section: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>ZVAD component doesn&apos;t make use of or implements any particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>No complex data structures used apart from those imported from other functionalities. In such cases, descriptions are given at the coresponding function that uses them.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Interoperability is set to <bold>low</bold> because ZVAD depends on other components.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Interaction is set to <bold>low</bold> because the component has a reduced number of non RTE dependencies.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Criticality is set to <bold>low</bold> because ZVAD is a QM component, the level of interaction is low and component was not integrated recently.   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Technical complexity is set to <bold>low</bold> because so far ZVAD doesn&apos;t implement any algorithm.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>The component ZVAD is composed of only one unit and no complex alghoritms are implemented therefore the risk is <bold>Low</bold>.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Testability is set to <bold>medium</bold> because ZVAD can be tested on SWATT / PLAST and basic tests should be performed on the target.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

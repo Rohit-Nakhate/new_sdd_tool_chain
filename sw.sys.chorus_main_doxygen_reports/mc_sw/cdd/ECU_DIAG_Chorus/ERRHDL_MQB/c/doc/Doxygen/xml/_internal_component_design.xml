@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para>ErrHdl_Can_bus_Enable_condition - This is responsible for set/reset of enable condition of standard can and tDiagStartT</para></listitem><listitem><para>ErrHdl_Can_Bus_off_Detection - This is responsible for checking bus off condition and setting the related DTC.</para></listitem><listitem><para>ErrHdl_Can_Global_Timeout_Detection - This unit is responsible for monitoring Global timeout and than set/reset the corresponding DTC.</para></listitem><listitem><para>ErrHdl_Can_Single_Wire_Detection - This unit is responsible for monitoring Single wire error and than set/reset the corresponding DTC.</para></listitem><listitem><para>ErrHdl_Can_Vlan_Node_Timeouts_Detection - Responsible for checking if timeout has occured on each node and set the DTC. It also has an API to reset timeout when message is received.</para></listitem><listitem><para>ErrHdl_Can_Vlan_Nodes_Enable_Condition - Responsible for enable condition when MFL node is coded.</para></listitem><listitem><para>ErrHdl_Channel_Operation_Cycle - Cyclically checks for bus state change and handles operating cycles DTC of CAN, LIN nad remote CANS</para></listitem><listitem><para>ErrHdl_Dataset - Responsible to sets data set invalid DTCs at start of ICAS life cycle.</para></listitem><listitem><para>ErrHdl_DEM_Event_Map_Arrays - Provides node timemout DEM event ID.</para></listitem><listitem><para>ErrHdl_DEM_Interface - provides interface between Error handler and DEM component to set/reset DTC or enable condition. <linebreak/>
+</para></listitem><listitem><para>ErrHdl_DK2_Can_Timeout_Detection - Responsible for DK2 node timeout DTCs and enable condition.</para></listitem><listitem><para>ErrHdl_DTC_State_To_DLI - Responsible to notify DLI Library about state of timeout DTCs.</para></listitem><listitem><para>ErrHdl_Ethernet_Communication - Responsible to inform that the eletrical fault occurred,Timeout occured,MAC address conflicts on ethernet bus.</para></listitem><listitem><para>ErrHdl_High_Temperature - Responsible to monitor high temperature errors.</para></listitem><listitem><para>ErrHdl_If - Provides an interface between BuiltInList and error handler. It is used to notify error handler that rebuild has taken place or new message is received, and than handling of DTC.</para></listitem><listitem><para>ErrHdl_Lin_Electrical_Failure_Detection - Handles setting/reseting LIN electrical failure DTC according to given Status</para></listitem><listitem><para>ErrHdl_Lin_Enable_Conditions - Responsible for setting LIN node, bus, or Lin global timeout enable condition.</para></listitem><listitem><para>ErrHdl_Lin_Frame_Errors_Detection - Cyclically monitors LIN node timeout and global timeout error, and set the corresponding error.</para></listitem><listitem><para>ErrHdl_Reset_Counter - Responsible for clearing/writing unexpected resets counter value to NVM when new data is available.</para></listitem><listitem><para>ErrHdl_Start_Diag_Timer - Responsible for counting Diag timer, KL15 timer, KL30 timer. and reset the timer if state changes from off to on.</para></listitem><listitem><para>ErrHdl_Steuergeraet_Defekt - Responsible to check if Steuergeraet Error DTC should be set to active and also responsible to reset flag which indicate that any of Steuergeraet DTC is currently handled.</para></listitem><listitem><para>ErrHdl_Voltage_Out_Of_Range_Error - Responsible to handle battery out of range errors and also to chose appropriate DTCs and DEM condition state based on VoltageRange.</para></listitem><listitem><para>ErrHdl_Vlan_Bus_Port_Enable_Condition - Cyclically monitors Vlan bus status. If bus state is active than set enable condition and reset the diag timer.</para></listitem><listitem><para>ErrHdl - Responsible for providing cyclic task for other error handler unit.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The component covers requirement present in the module 5.SWR_ICAS1_BSW. The requirements present in chapter 2.18.2 Network Diagnostics and 2.18.6 Diagnostic Trouble Codes is covered by this component. The <bold>Requirements traceability</bold> in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus_6M.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components.ErrHdl_MQB.Requirements traceability</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>There is interface between ErrHdl and other software unit in this component. ErrHdl provides cyclic task to other software unit. <linebreak/>
+The ErrHdl_Can_bus_Enable_provides an interface (ErrSetCanGlobalTimeoutDEMCond) to <ref refid="_err_hdl___if_8c" kindref="compound">ErrHdl_if.c</ref> sets Can global timeout enable condition when at least one node is coded on bus.<linebreak/>
+ErrHdl_Can_Global_Timeout_Detection provides interface <ref refid="_err_hdl___can___global___timeout___detection_8h_1ab034569e861b326a93261d9ae8bc1aeb" kindref="member">ErrIsCanGlobalTimeoutAllowed()</ref> to ErrHdl_Can_bus_Enable_condition to check if global timemout is allowed.<linebreak/>
+ErrHdl_Can_Bus_off_Detection provides interface (ErrIsBusOffCounterGreaterThanZero) to ErrHdl_Can_Global_Timeout_Detection and ErrHdl_Can_Vlan_Node_Timeouts_Detection to check if bussoff error has occured. <linebreak/>
+ErrHdl_Can_Vlan_Node_Timeouts_Detection provides an interface ErrResetNodeTimeoutCounterAndDTC to reset DTC and timer when new message is received used by ErrHdl_if, ErrGetNumOfCodedNodesOnBus to check the number of coded nodes and ErrGetBillIndexFromErrCodedNodesArr to get index of nodes, used by Global timeout detection and VLAN bus port enable condition. <linebreak/>
+ErrHdl_DEM_Event_Map_Arrays provides an interface (ErrGetNodeTimeoutDEMEventId) used to get DEM event ID of node timeout which is used by ErrHdl_Can_Vlan_Node_Timeouts_Detection.<linebreak/>
+ErrHdl_If provides interface (ErrGetBusState) to other Error handler to check bus state.<linebreak/>
+ErrHdl_DEM_Interface provides interface between Error handler and DEM component to set/reset DTC or enable condition. <linebreak/>
+ErrHdl_Slaves_Defect_Detection is used to monitor if DK2 built in list rebuild takes place. and also to handle DK2 DTC. <linebreak/>
+ErrHdl_Start_Diag_Timer provides interface<itemizedlist>
+<listitem><para>ErrTDiagStartTKL15HasElapsed to get the status of KL15 Diag timer, which is used by ErrHdl_Can_Global_Timeout_Detection and ErrHdl_Can_Vlan_Node_Timeouts_Detection.</para></listitem><listitem><para>ErrTDiagStartTKL30HasElapsed to get the status of KL30 Diag timer, which is used by ErrHdl_Can_Global_Timeout_Detection, ErrHdl_Can_Vlan_Node_Timeouts_Detection, ErrHdl_Can_bus_Enable_condition and ErrHdl_Lin_Enable_Conditions.</para></listitem><listitem><para>ErrResetTDiagStartT to reset Diag timer, which is used by ErrHdl_Can_bus_Enable_condition, ErrHdl_DEM_Interface, ErrHdl_Lin_Enable_Conditions</para></listitem></itemizedlist>
+</para><para>ErrHdl_Can_Bus_off_Detection provides (ErrSetResetCanBusOffCounter) external interface to BusMonitorConfig to check if Bus off failed has occured.<linebreak/>
+ErrHdl_If provides an external interface between Built in list component and Error handler component. It is used to get information when message in received, solverbau or node list is updated.<linebreak/>
+ErrHdl_Lin_Electrical_Failure_Detection provides a external interface to set DTC when LIN electrical failure is detected.<linebreak/>
+ErrHdl_Lin_Enable_Conditions provides an interface to GW_SollvSubbTeiln to set LIN enable condition.<linebreak/>
+ErrHdl_Reset_Counter provides a interface to DiagAppl_DCM_Service14 to update reset counter value when SID 14 is requested.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The interaction digaram is related to check condition for CAN enable condition and Vlan enable condition.There is also condition set/reset DTC for single wire. <image type="html" name="Software_Unit_Interaction_Can_Bus_enable_condition.png"></image>
+ </para><para>The interaction digaram is related to set/reset DTC for Busoff, Global Timeout. <image type="html" name="Software_Unit_Interaction_Can_global_timeout_condition.png"></image>
+ </para><para>This sequence diagram is related to clearing global timeout and Node timeout when message is received <image type="html" name="BIL_UPDATE_ERROR.png"></image>
+ </para><para>This interaction diagram is related to handling single wire DTCs. <image type="html" name="Software_Unit_Interaction_Single_wire.png"></image>
+ </para><para>This interaction diagram is related to timeout of individual node. <image type="html" name="Software_Unit_Interaction_Can_Vlan_node.png"></image>
+ </para><para>This interaction diagram is related to Enable condition for MFL node. <image type="html" name="Software_Unit_Interaction_Can_Vlan_node_enable.png"></image>
+ </para><para>This interaction diagram is related to reseting of node DTC and network diagnostic DTC when built in list rebuild or code change takes place. <image type="html" name="Software_Unit_Interaction_ErrHdl_If.png"></image>
+ </para><para>This interaction diagram is related to DK2 node timeout detection and LIN enable conditions <image type="html" name="Software_Unit_Interaction_ErrHdl_Dk2_Can_Timeout_detection.png"></image>
+ </para><para>This interaction diagram is related to error handler reset counter <image type="html" name="reset_counter.png"></image>
+ </para><para>Checks if DK2 builtinlist rebuild has taken place. When condition is set DTC will be handled. <image type="html" name="DK2_DTC_handling.png"></image>
+ </para><para>Used for KL30 and KL15 tDiagStartT timers calculations <image type="html" name="tDiagStartT_timer.png"></image>
+ </para><para>The interaction digaram is related to set/reset DTC for Bus state change (CAN/LIN/MFL node) <image type="html" name="Software_Unit_Interaction_Channel_Operation_Cycle.png"></image>
+  The interaction digaram is related to set data set invalid DTCs at start of ICAS life cycle <image type="html" name="Software_Unit_Interaction_ErrHdl_Dataset.png"></image>
+  The interaction digaram is related to set data set invalid DTCs at start of ICAS life cycle <image type="html" name="Software_Unit_Interaction_ErrHdl_Voltage_Out_Of_Range_Error.png"></image>
+ </para><para>The interaction digaram is related to notify DLI Library about state of timeout DTCs. <image type="html" name="Software_Unit_Interaction_ErrHdl_DTC_State_To_DLI.png"></image>
+ </para><para>The interaction digaram is related to notify DLI Library about state of timeout DTCs. <image type="html" name="Software_Unit_Interaction_ErrHdl_DTC_State_To_DLI.png"></image>
+  The interaction digaram is related to monitor high temperature errors <image type="html" name="Software_Unit_Interaction_ErrHdl_High_Temperature.png"></image>
+ </para><para>The interaction digaram is related check if Steuergeraet Error DTC should be set to active <image type="html" name="Software_Unit_Interaction_ErrHdl_Steuergeraet_Defekt.png"></image>
+ </para><para>The interaction digaram is related to Ethernetcommunication <image type="html" name="Software_Unit_Interaction_ErrHdl_Ethernet_Communication.png"></image>
+ </para><para>This interaction diagram is related to interaction between<itemizedlist>
+<listitem><para>ErrHdl_DEM_Interface and external component</para></listitem><listitem><para>ErrHdl_DK2_Can_Timeout_Detection and external component</para></listitem><listitem><para>ErrHdl_Lin_Electrical_Failure_Detection and external component</para></listitem></itemizedlist>
+</para><para><image type="html" name="Software_Unit_Interaction_External.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><heading level="2">Tasks</heading>
+</para><para>The component Error Handler provides interface that is called cyclically by OSTask &quot;ErrHandlerTask&quot; (period = 10ms). The monitoring of error take place cyclically here. see also Interaction Diagram of Error handler cyclic at the following location in Enterprise Architect: VW_ICAS1.Chorus_6M.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Dynamic <heading level="2">Interrupts</heading>
+</para><para>There is no interrupts directly handled by Error handler. <heading level="2">Events</heading>
+</para><para>there is 2 events in Error Handler ErrStartEv - During start of a event and ErrCyclicEv - cyclic event called every 10ms. <heading level="2">Operating Modes</heading>
+</para><para>Operation modes are used by DTCs and network diagnoses. Each bus has his own operation cycle.<itemizedlist>
+<listitem><para>New operation cycle is started when bus change state from inactive to active.</para></listitem><listitem><para>Operation cycle ends when bus change state from active to inactive.</para></listitem></itemizedlist>
+</para><para><heading level="2">Power Modes</heading>
+</para><para>The component need to work in the following power modes:<itemizedlist>
+<listitem><para>under voltage is below 5500.</para></listitem><listitem><para>Normal voltage between 5500+500 to 18500-500.</para></listitem><listitem><para>over volatge is above 18500.</para></listitem></itemizedlist>
+</para><para>As it need to set DTC during under voltage and over voltage. <linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para>The Error Handling is explained in Software Unit Interaction diagram. <heading level="2">Synchronization</heading>
+</para><para>Between Built In List and Error handler we have synchronization. When new coding of 0x04a3 or 0x0502 is requested handling of the timeouts is stopped. There is no interrupts synchronization in Error Handler.</para><para><heading level="2">Operations</heading>
+</para><para>See the Software Unit Interaction section.</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><heading level="2">Macros</heading>
+</para><para>See the macro list.</para><para><heading level="2">Data Structures</heading>
+</para><para>See the structure list.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>The subcomponent has defined interfaces that can be easy accessed from different modules. The design of this subcomponent was created with testablity in mind. Proposed solutions can be tested by unit tests with 100% MC/DC coverage. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

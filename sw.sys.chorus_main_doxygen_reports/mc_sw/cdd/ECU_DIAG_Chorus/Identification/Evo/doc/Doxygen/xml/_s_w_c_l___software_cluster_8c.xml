@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_s_w_c_l___software_cluster_8c" kind="file" language="C++">
+    <compoundname>SWCL_SoftwareCluster.c</compoundname>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <includes local="yes">RoutineControl.h</includes>
+    <incdepgraph>
+      <node id="375">
+        <label>RoutineControl.h</label>
+      </node>
+      <node id="373">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="371">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="374">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="372">
+        <label>agw.h</label>
+      </node>
+      <node id="370">
+        <label>SWCL_SoftwareCluster.c</label>
+        <link refid="_s_w_c_l___software_cluster_8c"/>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="374" relation="include">
+        </childnode>
+        <childnode refid="375" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_w_c_l___software_cluster_8c_1ae28a0fe8ff9d2b31587e6ce16b50485b" prot="public" static="no">
+        <name>SWCL_EMBEDDED</name>
+        <initializer>0x0028u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>SWCL_EMBEDDED <simplesect kind="remark"><para>values 0x0028u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" line="77" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_w_c_l___software_cluster_8c_1af04429125f8bd3005e1c5e9958de0ea5" prot="public" static="no">
+        <name>SWCL_HOUSEKEEPING</name>
+        <initializer>0x0029u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>SWCL_HOUSEKEEPING <simplesect kind="remark"><para>values 0x0029u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" line="84" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_w_c_l___software_cluster_8c_1aa43578453aa314ebe28bf57cb06fb436" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType GW_Read_IdentificationData_0x01AB</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>GW_Read_IdentificationData_0x01AB</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function updates Identifications output. <linebreak/>
+ DID 0x01AB will give FunctionIdentifier der Software Cluster. We can read DID 0x01AB by using service 0x22. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called from Dcm_Cfg.c <linebreak/>
+ thread safe Yes - Can be interrupted. Not protected by resume and suspend interrupts. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core. <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of service being processed <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- 0x01AB data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType : Returns E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence </title><para><linebreak/>
+ <image type="html" name="GW_Read_IdentificationData_0x01AB.png">GW_Read_IdentificationData_0x01AB Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_s_w_c_l___software_cluster_8c_8test_1a610ecf787aebb1914b8f872f712f5ded" kindref="member">TEST_GW_Read_IdentificationData_0x01AB</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case is based on OpStatus and Data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.Identifcations.Identifications.Requirements traceability.<linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000058"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_4817 <linebreak/>
+ </para><para>SWR_ICAS1_GW_11694 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" line="133" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c" bodystart="133" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/Identification/c/src/SWCL_SoftwareCluster.c"/>
+  </compounddef>
+</doxygen>

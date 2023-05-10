@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_verification_criteria" kind="page">
+    <compoundname>VerificationCriteria</compoundname>
+    <title>Verification Criteria</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_verification_criteria_1ResourceConsumptionVerification">
+<title>Verification of Resource Consumption</title>
+<para><bold>Estimatied Resource consumption for component:</bold><linebreak/>
+ <table rows="2" cols="5"><row>
+<entry thead="yes"><para>Component  </para></entry><entry thead="yes"><para>CPU Load  </para></entry><entry thead="yes"><para>ROM  </para></entry><entry thead="yes"><para>RAM  </para></entry><entry thead="yes"><para>NVM   </para></entry></row>
+<row>
+<entry thead="no"><para>ComServer_CL  </para></entry><entry thead="no"><para>&lt;15%  </para></entry><entry thead="no"><para>230 KB  </para></entry><entry thead="no"><para>10 KB  </para></entry><entry thead="no"><para>0 Bytes   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_verification_criteria_1ReviewCriteria">
+<title>Verification by Review</title>
+<para>The verification of the SWDD is performed by review. <linebreak/>
+The full review can be found here <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/issues/3341">[Full Review]</ulink><linebreak/>
+According with the curent strategy the checklist for review is integrated inside GitHub,steps are described inside respective Confluence pages initially designed as working instructions for code.(<ulink url="https://confluence-ibs.zone2.agileci.conti.de/pages/releaseview.action?pageId=101455099">[Review Strategy]</ulink></para></sect1>
+<sect1 id="_verification_criteria_1TestingCriteria">
+<title>Verification by Testing</title>
+<para>SW Unit testing is accomplished through SWATT. The test cases are based on this design.Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes. Expected test coverage (100%) and type of test coverage (C1).</para><para>All the SW units except <ref refid="_com_serv__util_8c" kindref="compound">ComServ_util.c</ref> are verified by Full Code Review because according with the process, for the generated code (generator developed internally) it is enough to have either full code review for the generated code or MTS. (<ulink url="https://continental.sharepoint.com/:p:/r/teams/ext_10001932/_layouts/15/Doc.aspx?sourcedoc=%7B8C1BF0D6-E911-4957-B87E-0E92947BD074%7D&amp;file=Guideline%20for%20SW%20Development%20Dashboards%20ICAS1.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=ca897ca6-de3e-42dc-8eec-d97050f8ffb0">[Guidline for SW Development]</ulink> It was decided that full code review will be done for generated code and not MTS, due to maintainability reasons.<ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_build/milestone/13">[Full Code Review]</ulink> For <ref refid="_com_serv__util_8c" kindref="compound">ComServ_util.c</ref> the tests are made using SWATT and are available in *.c.test files.<linebreak/>
+For more details check the unit tests list and definition <ulink url="test.html">here</ulink>. <linebreak/>
+Static code analysis - CERT-C / MISRA / HIS / Compiler warnings - See jenkins jobs here: <ulink url="https://heat-swt-icas-staging-jenkins.eu1.agileci.conti.de/job/VW_MEB_19_ICAS1/view/quality/">[Link]</ulink> </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

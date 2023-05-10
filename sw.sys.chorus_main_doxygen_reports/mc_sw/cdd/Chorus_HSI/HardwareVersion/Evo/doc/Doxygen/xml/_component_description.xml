@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The <bold>HardwareVersion</bold> component is part of a bigger component <bold>Chorus_HSI</bold> and it acts like an interface. It implements the application logic of reading the current HW version information from defined OTP flash memory area. Furthermore, based on OTP data(HW version information) it also determinates the base variant, HW version number, and HW version type. <linebreak/>
+This is necessary because for other SW modules, APIs are available and they will request the HW version and base variant in a readable format. <linebreak/>
+ <linebreak/>
+ Also, the HardwareVersion subcomponent implements PostBuildHandler functionality that offers functions the possibility to select the required PB configuration during startup, according to the current ECU variant. <linebreak/>
+<linebreak/>
+ <bold>This component is split in 2 SW units:</bold> <linebreak/>
+<itemizedlist>
+<listitem><para>HardwareVersion: provides the implementation for getting the information needed regarding the OTP data (HW version information), base variant and hardware version number. Also, base on HW version number, the hardware version type is also determinated. <linebreak/>
+</para></listitem><listitem><para>PostBuildHandler: provides the implementation for the functions to choose the right post build configuration. <linebreak/>
+</para></listitem></itemizedlist>
+</para><para><image type="html" name="HardwareVersion_ComponentDescription.png"></image>
+ </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

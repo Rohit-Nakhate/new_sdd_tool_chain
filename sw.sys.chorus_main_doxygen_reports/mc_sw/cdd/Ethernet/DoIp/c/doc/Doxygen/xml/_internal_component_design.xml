@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the following SW units:<itemizedlist>
+<listitem><para><bold>DoIP_Main</bold>: handles the reception of the DoIP frames from a client</para></listitem><listitem><para><bold>DoIP_Server</bold>: provides the functionality of processing the payload types</para></listitem><listitem><para><bold>DoIP_Client</bold>: provides the information about DoIP testers</para></listitem><listitem><para><bold>DoIP_Msg</bold>: implements the APIs for transmision of DoIP specific frames</para></listitem><listitem><para><bold>DoIP_Dcm</bold>: implements the processing of DoIP frames that needs to be addressed to local DCM instance</para></listitem><listitem><para><bold>DoIP_TP</bold>: provides handling of DoIP frames that need to be addressed to the local CAN stack</para></listitem><listitem><para><bold>DoIP_Utils</bold>: contains miscellaneous services useful for debugging</para></listitem><listitem><para><bold>DoIP_LIN</bold>: provide the functionality for routing the frames to DK2F nodes</para></listitem><listitem><para><bold>DoIP_Int</bold>: contains the public common defines for DoIP</para></listitem></itemizedlist>
+</para><para><image type="html" name="UnitComposition.png">DoIP decomposition </image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>All the software requirements from the <bold> SWR_ICAS1_BSW - <emphasis> chapter 2.17.1 DoIP Application </emphasis> </bold> are assigned to DoIP from Chorus. SW requirements allocation is mentioned above, based on specific functionality of this module. All the software requirements assigned to DoIP are satisfied by subcomponentes mentioned. The software requirements can be traced on function level and it does not have any non functional requiremets.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The interfaces used internally between the SW units of this SW component are described in the following diagram: <linebreak/>
+<linebreak/>
+<image type="html" name="Packages.png"></image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="Package2.png"></image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="Package3.png"></image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="Package4.png">The internal interfaces between the SW units of this SW component </image>
+ <linebreak/>
+<linebreak/>
+ <image type="html" name="SoftwareUnitInterfacesExternalInteraction.png">Software Unit Interfaces External Interaction</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The software unit interaction is mentioned in the above diagrams where is described the interaction of the SW units of the component.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><heading level="2">Tasks</heading>
+</para><para>Component has one cyclic task, <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> <linebreak/>
+ <image type="html" name="DynamicBehaviourMainFunction.png">Cyclic function of DoIP component</image>
+ <linebreak/>
+<linebreak/>
+ The behavior of the initialization function <ref refid="_do_i_p___main_8h_1ab55dff640d015db2217e2eef6e86391d" kindref="member">DoIP_Init</ref> is described below: <linebreak/>
+</para><para><image type="html" name="DynamicBehaviourInitFunction.png">Init function of DoIP component</image>
+</para><para>The connection between local DoIP and DoIP_Edge Node is implemented according with the following state diagram: <linebreak/>
+<image type="html" name="DoIPTester_StateMachine.png">DoIP Tester state machine</image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="DoIP_StateMachine.png">DoIP state machine</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagrams below presents the major dataflow from the module.</para><para><image type="html" name="data_flow_Doip_Req.png">DoIP Diag Request data flow </image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="data_flow_Doip_Resp.png">DoIP Diag Response data flow </image>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>The DoIP module doesn&apos;t define or is using any interrupts.</para><para><heading level="2">Shared Variables analysis</heading>
+</para><para>The analysis of the shared variables used inside this functionality can be opened <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/tree/master/mc_sw/cdd/Ethernet/SoMgr/c/doc/Doxygen/Shared_Variable_SoMgr.docx">[here]</ulink> . <ulink url="https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/cdd/Ethernet/DoIp/c/doc/Doxygen/Shared_Variable_DoIP.docx">https://github-vni.geo.conti.de/bs-vw-meb-19-icas1-chorus/sw.sys.chorus_main_doc/blob/master/mc_sw/cdd/Ethernet/DoIp/c/doc/Doxygen/Shared_Variable_DoIP.docx</ulink></para><para><heading level="2">Events</heading>
+</para><para>The processing done inside DoIP component is based mainly on events, like: <itemizedlist>
+<listitem>
+<para>Reception of DoIP messages (requests) from <bold>R7 DoIP EdgeNode</bold>, which needs to be processed and routed to the destination  </para></listitem>
+<listitem>
+<para>Reception DoIP messages (responses) from UDS server (DoIP/DoCAN/LIN node) which need to be forwarded to <bold>R7</bold>  </para></listitem>
+</itemizedlist>
+The most complex processing is done for DoIP diagnostics data, payload type 0x8001 accordingly with ISO 13400-2 standard. <linebreak/>
+<image type="html" name="EventDiagRequestChorus.png">Reception of DoIP messages (requests)</image>
+ <linebreak/>
+<linebreak/>
+<image type="html" name="EventDiagResponseChorus.png">Reception of DoIP messages (response)</image>
+</para><para><heading level="2">Operating Modes</heading>
+</para><para>The DoIP component is available only in normal/high-power operation mode because network communication is required for diagnostics. <linebreak/>
+ Once the diagnostics session is established, then power management will be notified that is not allowed to leave the high-power mode until diagnostic communication is terminated. <linebreak/>
+ <heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value (e.g. E_NOT_OK). DoIp_Utils subcomponent has a global variable used to count each type of error, depending on the transmision/reception missbehavior in different usecases (<ref refid="_do_i_p___utils_8h_1a5edb3b2e311711510cfa35013da04750" kindref="member">DoIP_ErrorType::DoIP_Error</ref>). This variable is used just for error reporting side, so the error is detected and according error code incremented, without taking further actions.<linebreak/>
+ Regarding error handling, the component doesn&apos;t take specific actions based on this statistics and it doesn&apos;t react in any way to a error raised. <linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>As mentioned in the chapter <bold>Interrupts</bold> there is no processing done at interrupt level in which the DoIP is involved. <linebreak/>
+ Because the diagnose responses coming from Chorus DCM/ CAN ECUs/LIN ECUs are handled in different task (<bold>Diag TASK</bold>) there is the need to protect the sensitive data from corruption. A solution is under analysis, see <ulink url="https://jira-ibs.zone2.agileci.conti.de/browse/VWICAS23-21819">[VWICAS23-21819]</ulink> <linebreak/>
+</para><para><heading level="2">Operations</heading>
+</para><para>The description of the operations done by DoIP are detailed in the header of each function. A list of methods defined inside this functionality can be accessed <ulink url="globals_func.html">here</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The functionality doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>The more complex data structures used are provided at the following link <ulink url="annotated.html">Data structures </ulink> <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Can be used in different project but it has to be adapted   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>See Number of dependencies in <ref refid="_external_interfaces_dependencies" kindref="compound">External Interfaces and Dependencies</ref>.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Due to high customer visibility of the functionality   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Due to the fact that no complex algorithms are used in the implementation   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Because, for example, the car could not be flashed in case of malfunctions   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.Also,the requirements needs to be tested <linebreak/>
+ at software level without needing of a complex setup in order test it.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

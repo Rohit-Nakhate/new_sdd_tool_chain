@@ -1,0 +1,820 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="serializing__util_8c" kind="file" language="C++">
+    <compoundname>serializing_util.c</compoundname>
+    <includes refid="serializing__util_8h" local="yes">serializing_util.h</includes>
+    <includes local="yes">pointerHelpers.h</includes>
+    <includes local="yes">misraHelpers.h</includes>
+    <incdepgraph>
+      <node id="128">
+        <label>misraHelpers.h</label>
+      </node>
+      <node id="125">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="124">
+        <label>serializing_util.h</label>
+        <link refid="serializing__util_8h"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>serializing_util.c</label>
+        <link refid="serializing__util_8c"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>ComStack_Types.h</label>
+      </node>
+      <node id="127">
+        <label>pointerHelpers.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="serializing__util_8c_1af5509273966929f5bd78f029e2b0c458" prot="public" static="no" mutable="no">
+        <type>PduIdType</type>
+        <definition>PduIdType PduToTransmit</definition>
+        <argsstring></argsstring>
+        <name>PduToTransmit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="186" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="serializing__util_8c_1a114ae978876048580fec60c3c35a93e1" prot="public" static="no" mutable="no">
+        <type>PduInfoType</type>
+        <definition>PduInfoType ToBeSentBySoAd</definition>
+        <argsstring></argsstring>
+        <name>ToBeSentBySoAd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="187" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="serializing__util_8c_1a2b0da067eb2e52e82672df674690471a" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 NotifArray_core0[SOMEIP_HEADER_SIZE+BUFFER_SIZE]</definition>
+        <argsstring>[SOMEIP_HEADER_SIZE+BUFFER_SIZE]</argsstring>
+        <name>NotifArray_core0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="189" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="serializing__util_8c_1ac7e220ee6e7fa93a2dae2210fb5209e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromUint16</definition>
+        <argsstring>(uint16 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromUint16</name>
+        <param>
+          <type>uint16</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint16 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint16 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromUint16.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a9c0f558a1b4bd35bf43334615f3c2d39" kindref="member">TEST_ProxySerializer_SwapFromUint16_0001</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="64" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="64" bodyend="69"/>
+        <referencedby refid="serializing__util_8c_8test_1a9c0f558a1b4bd35bf43334615f3c2d39" compoundref="serializing__util_8c_8test" startline="122" endline="152">TEST_ProxySerializer_SwapFromUint16_0001</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1ae864a325170883420dce03ae2183f2af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromUint32</definition>
+        <argsstring>(uint32 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromUint32</name>
+        <param>
+          <type>uint32</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint32 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint32 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromUint32.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a4ccdeba6f78c8df26ce7f765164b10cb" kindref="member">TEST_ProxySerializer_SwapFromUint32_0002</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="70" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="70" bodyend="75"/>
+        <referencedby refid="_cdd___s_o_m_e_i_p_8c_1ac07b889691af526f958922bc6ed391ae" compoundref="_cdd___s_o_m_e_i_p_8c" startline="285" endline="292">get_sd_header</referencedby>
+        <referencedby refid="serializing__util_8c_8test_1a4ccdeba6f78c8df26ce7f765164b10cb" compoundref="serializing__util_8c_8test" startline="164" endline="198">TEST_ProxySerializer_SwapFromUint32_0002</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1aafb37c01fc9a0905d3a37a64f5ae3b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromint32</definition>
+        <argsstring>(sint32 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromint32</name>
+        <param>
+          <type>sint32</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the sint32 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sint32 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromint32.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a04d8da32e21416d348ce3e7e5cdf9d37" kindref="member">TEST_ProxySerializer_SwapFromint32_0003</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="77" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="77" bodyend="82"/>
+        <referencedby refid="serializing__util_8c_8test_1a04d8da32e21416d348ce3e7e5cdf9d37" compoundref="serializing__util_8c_8test" startline="209" endline="243">TEST_ProxySerializer_SwapFromint32_0003</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a6bcca290d8fc263aaf745a65adc96f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromUint64</definition>
+        <argsstring>(uint64 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromUint64</name>
+        <param>
+          <type>uint64</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint64 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint64 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromUint64.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a7fe3d1edc97e85c7bc1ec3f1818e4bcf" kindref="member">TEST_ProxySerializer_SwapFromUint64_0004</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="84" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="84" bodyend="89"/>
+        <referencedby refid="serializing__util_8c_8test_1a7fe3d1edc97e85c7bc1ec3f1818e4bcf" compoundref="serializing__util_8c_8test" startline="254" endline="296">TEST_ProxySerializer_SwapFromUint64_0004</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1aee69b0ed337fd8d06d074b21c5be59ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromFloat32</definition>
+        <argsstring>(float32 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromFloat32</name>
+        <param>
+          <type>float32</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Float32 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float32 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromFloat32.png">callsequence</image>
+  <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1afb6e6b0bf0337054a6e9bed164a7fa8b" kindref="member">TEST_ProxySerializer_SwapFromFloat32_0005</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="90" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="90" bodyend="102"/>
+        <referencedby refid="serializing__util_8c_8test_1afb6e6b0bf0337054a6e9bed164a7fa8b" compoundref="serializing__util_8c_8test" startline="307" endline="341">TEST_ProxySerializer_SwapFromFloat32_0005</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1aa13fd7b5a67910e42397ac45b00e723d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProxySerializer_SwapFromFloat64</definition>
+        <argsstring>(float64 val, uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapFromFloat64</name>
+        <param>
+          <type>float64</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Float64 data into Uint8 buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float64 input data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 output buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapFromFloat64.png">callsequence</image>
+  <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a28bca64d365f6e464710bb90d6f3773f" kindref="member">TEST_ProxySerializer_SwapFromFloat64_0006</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="104" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="104" bodyend="117"/>
+        <referencedby refid="serializing__util_8c_8test_1a28bca64d365f6e464710bb90d6f3773f" compoundref="serializing__util_8c_8test" startline="352" endline="394">TEST_ProxySerializer_SwapFromFloat64_0006</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a177039f5a49d0bd6cb308afd45ba7196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16</type>
+        <definition>uint16 ProxySerializer_SwapToUint16</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToUint16</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into Uint16. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Uint16 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToUint16.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a0f3fae67a4d98e433d03611fa5f1a98a" kindref="member">TEST_ProxySerializer_SwapToUint16_0007</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="119" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="119" bodyend="126"/>
+        <referencedby refid="serializing__util_8c_8test_1a0f3fae67a4d98e433d03611fa5f1a98a" compoundref="serializing__util_8c_8test" startline="405" endline="440">TEST_ProxySerializer_SwapToUint16_0007</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a1bb884167bb89764923159a74a90457b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32</type>
+        <definition>uint32 ProxySerializer_SwapToUint32</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToUint32</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into Uint32. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Uint32 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToUint32.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a826a200838297afc29a7a490a2649627" kindref="member">TEST_ProxySerializer_SwapToUint32_0008</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="128" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="128" bodyend="135"/>
+        <referencedby refid="serializing__util_8c_8test_1a826a200838297afc29a7a490a2649627" compoundref="serializing__util_8c_8test" startline="451" endline="486">TEST_ProxySerializer_SwapToUint32_0008</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1ac4be07fb162160b7f55438f1b61a7f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sint32</type>
+        <definition>sint32 ProxySerializer_SwapToint32</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToint32</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into sint32. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>sint32 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToint32.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1aba2a37ae9a70921ade29fb201358711d" kindref="member">TEST_ProxySerializer_SwapToint32_0009</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="137" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="137" bodyend="144"/>
+        <referencedby refid="serializing__util_8c_8test_1aba2a37ae9a70921ade29fb201358711d" compoundref="serializing__util_8c_8test" startline="497" endline="532">TEST_ProxySerializer_SwapToint32_0009</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a1422c02356e0549caa7c7b742d71d3c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 ProxySerializer_SwapToUint64</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToUint64</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into uint64. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint64 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToUint64.png">callsequence</image>
+  <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a3b521d46b3886bc18523059f909ce8bc" kindref="member">TEST_ProxySerializer_SwapToUint64_0010</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="146" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="146" bodyend="153"/>
+        <referencedby refid="serializing__util_8c_8test_1a3b521d46b3886bc18523059f909ce8bc" compoundref="serializing__util_8c_8test" startline="543" endline="578">TEST_ProxySerializer_SwapToUint64_0010</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a46211a8df985b0127f1a18d4eeb1da21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float32</type>
+        <definition>float32 ProxySerializer_SwapToFloat32</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToFloat32</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into float32. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float32 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToFloat32.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1ae2d5b36ff7144ef8aa7734c08a192c0b" kindref="member">TEST_ProxySerializer_SwapToFloat32_0011</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="155" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="155" bodyend="168"/>
+        <referencedby refid="serializing__util_8c_8test_1ae2d5b36ff7144ef8aa7734c08a192c0b" compoundref="serializing__util_8c_8test" startline="589" endline="627">TEST_ProxySerializer_SwapToFloat32_0011</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serializing__util_8c_1a86ff17d18e9530abe6e5a819e9b17396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float64</type>
+        <definition>float64 ProxySerializer_SwapToFloat64</definition>
+        <argsstring>(const uint8 buffer[], uint32 *pos)</argsstring>
+        <name>ProxySerializer_SwapToFloat64</name>
+        <param>
+          <type>const uint8</type>
+          <declname>buffer</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>uint32 *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Convert the Uint8 buffer into float64. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Get the SOMEIP payload for an eventgroup. </para></simplesect>
+<simplesect kind="post"><para>Request SOME/IP message transmission.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uint8 buffer <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The last position of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float64 data <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ProxySerializer_SwapToFloat64.png">callsequence</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following TEST: <linebreak/>
+ SWATT test: <linebreak/>
+ <ref refid="serializing__util_8c_8test_1a1d19e8f2a081a56c7fa27489bfbdf952" kindref="member">TEST_ProxySerializer_SwapToFloat64_0012</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>TBD </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" line="170" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c" bodystart="170" bodyend="183"/>
+        <referencedby refid="serializing__util_8c_8test_1a1d19e8f2a081a56c7fa27489bfbdf952" compoundref="serializing__util_8c_8test" startline="638" endline="684">TEST_ProxySerializer_SwapToFloat64_0012</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation file of Data Serializer/Deserializer. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="serializing__util_8c" kindref="compound">serializing_util.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uid94126 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>12/12/2018 </para></simplesect>
+</para><para>This unit is responsible for serilization and deserialization of payload data in the SomeIP buffer <linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/SomeIP/SomeIP/c/src/serializing_util.c"/>
+  </compounddef>
+</doxygen>

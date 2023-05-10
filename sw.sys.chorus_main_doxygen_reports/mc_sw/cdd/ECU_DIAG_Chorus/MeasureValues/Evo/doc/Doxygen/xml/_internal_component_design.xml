@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component MeasureValues consists of the following SW unit: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_g_w___conti___m_v_8c" kindref="compound">GW_Conti_MV.c</ref></para></listitem><listitem><para><ref refid="_g_w___m_e_a_s_u_r_e_v_a_l_u_e_s_8c" kindref="compound">GW_MEASUREVALUES.c</ref></para></listitem><listitem><para><ref refid="_g_w___measure_values___eth_diag_8c" kindref="compound">GW_MeasureValues_EthDiag.c</ref></para></listitem></itemizedlist>
+</para><para>This component provides interface to DCM to read Measurement Values.</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>MeasureValues requirement can be found in module 5. SWR_ICAS1_BSW. In the chapter 2.18.4 Measurement Values.<linebreak/>
+<linebreak/>
+Requirements traceability in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.MeasurementValues</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The units in this components only interact with DCM module. Therefore is no unit interface description needed.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The units in this components only interact with DCM module. Therefore is no unit interface description needed.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagram below depicts reading of DID 0xEFE0, 0xEFE1, 0xEFE2, 0xEFE3, 0xEFE4, 0xEFE5, 0xEFE6, 0xEFE7, 0xEFE7, 0xEFE8, 0xEFE9, 0xEFDD, 0xEFDE, 0xEFEA, 0xEFEC, 0xEFD4, 0xEFD2 when requested by tester. <image type="html" name="Measurevalues_readrequest_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below depicts reading of DID GW_Read_Measure_Values_EthDiag, 0x014E, 0x010D, 0x010E, 0x010F, 0xB001, 0xB002, 0xB003, 0xB004, 0xB005, 0xEFFA, 0x014F, 0x53B2, 0xEFEB, 0xEFF7, 0xEFF8, when requested by tester. <image type="html" name="GW_MeasureValues_EthDiag_readrequest_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below depicts reading of DID 0x014E, 0x010D, 0x010E, 0x010F, 0xB001, 0xB002, 0xB003, 0xB004, 0xB005, 0xEFFA, 0x014F, 0x53B2, 0xEFEB, 0xEFF7, 0xEFF8, when requested by tester. <image type="html" name="GW_MeasureValues_EthDiag_readrequest_Dynamicbehaviour.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The immediate data flow of the Measurevalues SW unit is described here. <linebreak/>
+The data flows from Measurevalues are depicted with green arrows.</para><para><image type="html" name="sample_DFD0.png"></image>
+ </para><para>For detailed data flow between Measure Values and external modules, the data flow diagram at the following location in EA can be referred - <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.MeasurementValues.Dynamic.Generic Read Measure Values</para><para><heading level="2">Tasks</heading>
+</para><para>see the Interaction Diagram at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.MeasurementValues.Dynamic</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupts are used by this component.</para><para><heading level="2">Events</heading>
+</para><para>There is no event-handling designed.</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used.</para><para><heading level="2">Power Modes</heading>
+</para><para>There is no special power mode used.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No error handling is required by this module.</para><para><heading level="2">Synchronization</heading>
+</para><para>A synchronization method is not necessary.</para><para><heading level="2">Operations</heading>
+</para><para>The operations are mentioned in the proper function description.</para><para><heading level="2">Macros</heading>
+</para><para>See macro list: <ulink url="globals_defs.html">Macros</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>Not Applicable. <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para>Not Applicable. <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just Three software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL and not a stack and not new and intraction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para><para><linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

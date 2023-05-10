@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The component DiagnosticTimers is responsible to enable a diagnosis-operation during KL15off for a specified time diagnostic timers are defined and need to be implemented by the component <linebreak/>
+One timer (T_NM_DiagActive) is used to indicate the reason for maintaining diagnostic activity within the DefaultSession <linebreak/>
+and a second timer (T_Diag_Enable) is used to force the suppression of diagnostic communication in the case of no further internal server reasons for <linebreak/>
+maintaining diagnostic activity. <linebreak/>
+The indication about an active diagnosis session is provided to other compoments via the signal NM_DiagActive.<linebreak/>
+ <linebreak/>
+ Additionally a timer (KL15TimerForDCY) to check the vehicle-speed is implemented to determine whether or no a driving-cycle is active. <linebreak/>
+ DiagnosticTimers has the following main tasks:<itemizedlist>
+<listitem><para>cyclically count the timers/counters</para></listitem><listitem><para>determine and provide the status of the diagnosis session via NM_DiagActive</para></listitem></itemizedlist>
+</para><para><image type="html" name="DiagnosticTimers_Class.png"></image>
+  </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

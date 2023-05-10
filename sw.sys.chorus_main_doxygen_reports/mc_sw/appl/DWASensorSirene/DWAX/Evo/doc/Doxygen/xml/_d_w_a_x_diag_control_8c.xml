@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_d_w_a_x_diag_control_8c" kind="file" language="C++">
+    <compoundname>DWAXDiagControl.c</compoundname>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includes local="yes">Rte_GATICAS.h</includes>
+    <includes local="yes">Dcm_API_Cfg.h</includes>
+    <includes refid="_d_w_a_x_diag_control_8h" local="yes">DWAXDiagControl.h</includes>
+    <incdepgraph>
+      <node id="54">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="58">
+        <label>DWAXDiagControl.h</label>
+        <link refid="_d_w_a_x_diag_control_8h"/>
+      </node>
+      <node id="55">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="57">
+        <label>Dcm_API_Cfg.h</label>
+      </node>
+      <node id="56">
+        <label>Rte_GATICAS.h</label>
+      </node>
+      <node id="53">
+        <label>DWAXDiagControl.c</label>
+        <link refid="_d_w_a_x_diag_control_8c"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a3fda72a1b6d2b58f8b93c2849d8d34da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean CheckZvDiagAvailable</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>CheckZvDiagAvailable</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CheckZvDiagAvailable is use to check in witch state is currently car. This check refers to VWMEB-41937</para><para>When car is being externelly locked diagnostics shall NOT be performed on listed in file header diagnostics request.</para><para>When diagnostics are reject NRC shall be set to DCM_E_GENERALREJECT. <simplesect kind="return"><para>boolean - TRUE when diagnostics are possible, FALSE if NOT possible </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Dcm_OpStatusType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OpStatus, Dcm_NegativeResponseCodeType* ErrorCode </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="59" column="1" bodyfile="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" bodystart="74" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a339cd5ac4c5a8aad8fc64b2056d2ef7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1A</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1A</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1ad4babc9fd4f65a263668e8e97077e242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1A_ZvStateCheck</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1A_ZvStateCheck</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="105" column="1" bodyfile="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" bodystart="105" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a74303901dc4f568273eeb0f85adc3b14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1B</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1B</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a2ef2e94a1fe1cb8a290414edd82f64bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1B_ZvStateCheck</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1B_ZvStateCheck</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="116" column="1" bodyfile="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" bodystart="116" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a98aaf35a31641566b3774b97aa04c796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1C</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1C</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1a1cb9dde647be24ab3cfcfe665bdc50f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x0D1C_ZvStateCheck</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x0D1C_ZvStateCheck</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="127" column="1" bodyfile="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" bodystart="127" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1ada68e5290c2119148a1c9754d9d6c150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x1532</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x1532</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x_diag_control_8c_1aa5cc9beb2148342aaa868d9c5787edee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DWA_Write_Adaption_0x1532_ZvStateCheck</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>DWA_Write_Adaption_0x1532_ZvStateCheck</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" line="138" column="1" bodyfile="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c" bodystart="138" bodyend="146"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>DWAX diagnostic wrapper to check if diagnostics services are allowed. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_d_w_a_x_diag_control_8c" kindref="compound">DWAXDiagControl.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic20816 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>Mar 30, 2022 </para></simplesect>
+This is to fulfill requirements that we shall reject diagnostics services when car is externally locked. All listed in file diagnostics request goes through addtional check CheckZvDiagAvailable. If car is currently in state externally locked there is NO diagnostics possible to perform and diagnostic shall return value DCM_E_NOT_OK with NRC DCM_E_GENERALREJECT </para>    </detaileddescription>
+    <location file="D:/conti-git/ICASnewnew/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAXDiagControl.c"/>
+  </compounddef>
+</doxygen>

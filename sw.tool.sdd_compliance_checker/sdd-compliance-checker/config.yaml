@@ -1,0 +1,44 @@
+cc_version: 0.2
+requirements:
+    prefix: "SWR_"
+filter-exclude: # for compliance check/metrics - not for parsing
+    directory:
+        - generated
+        - unittests
+        - googletest
+        - test
+
+    filetype:
+        - .cpp
+
+filter-include:
+    filename:
+        - main.cpp
+checks:
+    function:
+        - brief
+        - param
+        - return
+        - security
+        - trace
+        - test
+        - vc_info
+    enum:
+        - brief
+        - enum_vars
+    union:
+        - brief
+    struct:
+        - brief
+    class:
+        - brief
+    file:
+        - brief
+    namespace:
+        - brief
+    typedef:
+        - brief
+    define:
+        - brief
+    variable:
+        - brief

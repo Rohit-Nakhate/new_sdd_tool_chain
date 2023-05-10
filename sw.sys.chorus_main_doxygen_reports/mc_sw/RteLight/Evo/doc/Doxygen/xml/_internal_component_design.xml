@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component <bold>RteLight/RteLight ASIL</bold> is splitted into the follwing SW units:</para><para><orderedlist>
+<listitem><para>The Rte ASIL will contain only sender receiver operations. As a consequence only Rte_Read and Rte Write functions are part of it:<linebreak/>
+In order to implement the concept of freedom of intereference, each ASIL related SWC will have its&apos; interfaces generated in a Rte_&lt;SWC&gt;ASIL.c file. <image type="html" name="RteAsil_Class.png"></image>
+ </para></listitem><listitem><para>The RteLight_SafeHandlingASIL contain the infrastructure for the ASIL support. This unit handles the E2E protected PDU&apos;s which are written by SWCs.<linebreak/>
+In a way the this unit also extends the functionality of Com (In our case the RoutingEngine). In order to ensure that all the signals are sent with valid values even if the SWC did not ran yet, then the PDUs&apos; default values are the init value from dbc/ldf unless SST&apos;s init values are available. <image type="html" name="RteLight_SafeHandlingASIL_Class.png"></image>
+ </para></listitem><listitem><para>The unit Rte contains the standard AUTOSAR APIs :<linebreak/>
+<image type="html" name="Rte_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_TimeoutHandling handles the Timeout for the recieved PDUs.<linebreak/>
+<image type="html" name="RteLight_TimeoutHandling_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_PduNotification contains functions related to monitoring Pdu reception and transmission.<linebreak/>
+<image type="html" name="RteLight_PduNotification_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_SokHandling contains functions related to the secure onboard communication.<linebreak/>
+<image type="html" name="RteLight_SokHandling_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_GrayChannelPduDispatching dispatches the newly updated gray channel buffers to the communication stack.<linebreak/>
+<image type="html" name="RteLight_GrayChannelPduDispatching_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_LinHandling contains functions related to the LIN communication.<linebreak/>
+<image type="html" name="RteLight_LinHandling_Class.png"></image>
+ </para></listitem><listitem><para>The unit RteLight_RoutingEngine contains functions related to the routing engine interraction.<linebreak/>
+<image type="html" name="RteLight_RoutingEngine_Class.png"></image>
+ </para></listitem><listitem><para>The RteLight_StartOnEventHandling contains functions related to data receive event functionality. The uint provides the dispatcher of the start on event runnables<linebreak/>
+<image type="html" name="RteLight_StartOnEventHandling_Class.png"></image>
+ </para></listitem><listitem><para>The RteLight_SWC_Integration contains infrastructure for integration an SWC.<linebreak/>
+<image type="html" name="RteLight_SWC_Integration_Class.png"></image>
+ </para></listitem></orderedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The requirements as alocated directly to software elements like functions.<linebreak/>
+The non functional requirements are traced here: <table rows="4" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_RteLight_252  </para></entry><entry thead="no"><para>Nothing to do. This is the definition of Min/Max Digital   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_RteLight_295  </para></entry><entry thead="no"><para>Nothing to do. One time review of the Pdu Format is enough   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_RteLight_296  </para></entry><entry thead="no"><para>Nothing to do. One time review of the Gray Channel Pdu is enough   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><image type="html" name="RteLight_SoftwareUnitInterfaces.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>Please refere to: <linebreak/>
+<image type="html" name="RteLight_SoftwareUnitInterfaces.png"></image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The following section will also contain some parts of interractions between RteLight and external environment. The reason is to offer a better overview on the mechanims itself. <linebreak/>
+The interactions can be split into the next parts:<linebreak/>
+<linebreak/>
+<bold> Rte&apos;s ASIL interration.</bold> <linebreak/>
+The next diagram will depict the Read and Write of a signal to RteLight ASIL. In the existing context SWC can call the functions listed just before out of an runnable.<linebreak/>
+It is not the purpose of this diagram nor RteLight to depict how and when this runnable is called.<linebreak/>
+<linebreak/>
+<image type="html" name="RteLight_DynamicBehavior_ReadWrite_ASIL.png"></image>
+ </para><para><bold> Rte&apos;s interration.</bold> <linebreak/>
+The next diagram will depict the interfaces of Rte QM. In the existing context SWC can call the functions of an runnable.<linebreak/>
+It is not the purpose of this diagram nor RteLight to depict how and when this runnable is called.<linebreak/>
+<linebreak/>
+<image type="html" name="RteLight_DynamicBehavior_ReadWrite.png"></image>
+ </para><para><bold> Safe Handling out going signals.</bold> <linebreak/>
+The safe handling has similar behavior for CAN and LIN. However there are differences:<linebreak/>
+<linebreak/>
+The next diagram depicts the handling of the CAN signals:<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_SafeHandling_CAN.png"></image>
+ </para><para><linebreak/>
+The LIN diagram is slightly more complicated since an initalization part is required:<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_SafeHandling_LIN_Init.png"></image>
+ </para><para><linebreak/>
+When comparing the cyclic part of the CAN with LIN, the LIN one uses fifos and not software interrupts :<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_SafeHandling_LIN_Cyclic.png"></image>
+ </para><para><bold> Timeout Handling.</bold> <linebreak/>
+The next diagram will depict the Read and write of a signal to and from RTELight QM:<linebreak/>
+<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_TimeoutHandling.png"></image>
+ </para><para><bold> Lin Handling.</bold> <linebreak/>
+The next diagram will depict the receving part of the LIN. The tx part is arready explined in the Safe Handling section:<linebreak/>
+<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_LinHandling.png"></image>
+ </para><para><bold> Sok Handling.</bold> <linebreak/>
+The next diagram will depict Secure onboard communication mechanism:<linebreak/>
+<linebreak/>
+ <image type="html" name="RteLight_DynamicBehavior_SokHandling.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The data flow is of interest in RteLight for: <linebreak/>
+<bold> Safe Handling.</bold> The diagram below presents the e2e dataflow of the module.<linebreak/>
+1.) and 2.) The SWC1 and SWC2 update their signals in their own Pdu buffer. This ensures the freedom from interference between SWCs.<linebreak/>
+3.) The two PDUs are merged into one. (The PDu layout prevents signals from overlapping) 4.) If the new content of the PDU/ cycle time of the PDU requests it, then the Pdu is protected with Alive Counter (BZ) and CRC.</para><para><image type="html" name="RteLight_DataFlowDiagram_SafeHandling.png"></image>
+ </para><para><bold> Secure onboard communication.</bold> The diagram below presents the SoK dataflow of the module.<linebreak/>
+It is simmiliar to the E2E, however the buffers are not separated for different SWCs 1.) The SWC update its signals in a local Rtelight mirror of the PDU x. This prohibits the sending of the PDU without signature<linebreak/>
+2.) The Pdu is signed by the Sok functionality and then sent by the Routing engine.<linebreak/>
+Note: Sometimes the signature is send in a different PDU.</para><para><image type="html" name="RteLight_DataFlowDiagram_SecureOnboardCommunication.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable.</para><para><heading level="2">Power Modes</heading>
+</para><para>High Power</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The RteLight is just the glue layer. The error handling and the exception handling should be handled on the receiver/server side. <linebreak/>
+No DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>Not applicable.<linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>No wrapper between the software units is required.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of dependencies is more then 7   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>No connections between SWC will be posible without this module   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>The Interaction is rated greater then Medium   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>The number of Software units &gt;=5   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

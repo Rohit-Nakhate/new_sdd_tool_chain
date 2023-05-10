@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h" kind="file" language="C++">
+    <compoundname>VLK_MEB_ADAPTATION.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includedby refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c" local="yes">VLK_MEB_ADAPTATION.c</includedby>
+    <incdepgraph>
+      <node id="95">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="93">
+        <label>VLK_MEB_ADAPTATION.h</label>
+        <link refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="97">
+        <label>VLK_MEB_ADAPTATION.c</label>
+        <link refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c"/>
+      </node>
+      <node id="96">
+        <label>VLK_MEB_ADAPTATION.h</label>
+        <link refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1aef7deb8ab91f8c43ef5e0bffc68ff275" prot="public" static="no">
+        <name>MESSAGE_0x05D0_ARRAY_SIZE</name>
+        <initializer>15</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>size of DID 0x05D0</para><para>the DID size is based on requirements <simplesect kind="remark"><para>values 15 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="61" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a5504944f2bfa5106418ac481ad6389bc" prot="public" static="no">
+        <name>MESSAGE_0x05D1_ARRAY_SIZE</name>
+        <initializer>15</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>size of DID 0x05D1</para><para>the DID size is based on requirements <simplesect kind="remark"><para>values 15 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="70" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a12173ef98443864899b0de64a2926e91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType VLK_MEB_Read_Adaption_0x05D0</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>VLK_MEB_Read_Adaption_0x05D0</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x05D0</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 16<linebreak/>
+ SignalName p_v_stillstand, StartBit 0, Length 8<linebreak/>
+ SignalName p_v_erkennung_fahrt, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_erkennung_stillstand, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_verzoegerung_zuendung_sofortaus_engmnt, StartBit 0, Length 8<linebreak/>
+ SignalName cp_autom_abschalten_kls_kl15_energie_mngt_enable, StartBit 0, Length 1<linebreak/>
+ SignalName cp_vlw_aktiv, StartBit 1, Length 1<linebreak/>
+ SignalName reserved2, StartBit 2, Length 6<linebreak/>
+ SignalName reserved3, StartBit 0, Length 24<linebreak/>
+ SignalName pa_standlicht_nl_time, StartBit 0, Length 8<linebreak/>
+ SignalName pa_standlicht_nl_cfg, StartBit 0, Length 2<linebreak/>
+ SignalName p_t_anzeigedauer_lichtnachlauf, StartBit 2, Length 4<linebreak/>
+ SignalName pa_auto_Klemmenabschalt_bei_ext_Verriegelung, StartBit 6, Length 1<linebreak/>
+ SignalName cp_degradierte_vlw_aktiv, StartBit 7, Length 1<linebreak/>
+ SignalName p_t_zv_verriegeln_kl_15_ein, StartBit 0, Length 3<linebreak/>
+ SignalName reserved4, StartBit 3, Length 5<linebreak/>
+ SignalName p_t_anzeigedauer_kein_fahrer_erkannt, StartBit 0, Length 8<linebreak/>
+ SignalName reserved5, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Read_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a08edf76815c9c42250646cbaf59ee145" kindref="member">TEST_VLK_MEB_Read_Adaption_0x05D0_ParameterTest</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="148" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.c" bodystart="85" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a376e4960a7aa9becdb153da47930b461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType VLK_MEB_Read_Adaption_0x05D1</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>VLK_MEB_Read_Adaption_0x05D1</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x05D1</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 8<linebreak/>
+ SignalName p_n_max_zustandswechsel_popup, StartBit 0, Length 6<linebreak/>
+ SignalName cp_n_bestaetigt_verwenden, StartBit 6, Length 1<linebreak/>
+ SignalName cp_romo_zustandswechsel_begrenzt, StartBit 7, Length 1<linebreak/>
+ SignalName p_t_bestaetigung, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_N_entprellt, StartBit 0, Length 8<linebreak/>
+ SignalName p_v_fzg, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_entprellung_ersatz_romo, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_rangieren, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_Entprellung_HMS_Fehler, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_max_verzoegerung_verlassenswarnung_vlw_ersatz, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_vlw_in_n, StartBit 0, Length 8<linebreak/>
+ SignalName reserved2, StartBit 0, Length 8<linebreak/>
+ SignalName reserved3, StartBit 0, Length 8<linebreak/>
+ SignalName reserved4, StartBit 0, Length 8<linebreak/>
+ SignalName reserved5, StartBit 0, Length 8<linebreak/>
+ SignalName reserved6, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Read_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1ad992cebb36b561256bc8ef48d4116287" kindref="member">TEST_VLK_MEB_Read_Adaption_0x05D1_ParameterTest</ref>. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="216" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.c" bodystart="172" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1ae8a2e31a07128a121325f01385c615a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType VLK_MEB_Write_Adaption_0x05D0</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>VLK_MEB_Write_Adaption_0x05D0</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x05D0</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 16<linebreak/>
+ SignalName p_v_stillstand, StartBit 0, Length 8<linebreak/>
+ SignalName p_v_erkennung_fahrt, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_erkennung_stillstand, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_verzoegerung_zuendung_sofortaus_engmnt, StartBit 0, Length 8<linebreak/>
+ SignalName cp_autom_abschalten_kls_kl15_energie_mngt_enable, StartBit 0, Length 1<linebreak/>
+ SignalName cp_vlw_aktiv, StartBit 1, Length 1<linebreak/>
+ SignalName reserved2, StartBit 2, Length 6<linebreak/>
+ SignalName reserved3, StartBit 0, Length 24<linebreak/>
+ SignalName pa_standlicht_nl_time, StartBit 0, Length 8<linebreak/>
+ SignalName pa_standlicht_nl_cfg, StartBit 0, Length 2<linebreak/>
+ SignalName p_t_anzeigedauer_lichtnachlauf, StartBit 2, Length 4<linebreak/>
+ SignalName pa_auto_Klemmenabschalt_bei_ext_Verriegelung, StartBit 6, Length 1<linebreak/>
+ SignalName cp_degradierte_vlw_aktiv, StartBit 7, Length 1<linebreak/>
+ SignalName p_t_zv_verriegeln_kl_15_ein, StartBit 0, Length 3<linebreak/>
+ SignalName reserved4, StartBit 3, Length 5<linebreak/>
+ SignalName p_t_anzeigedauer_kein_fahrer_erkannt, StartBit 0, Length 8<linebreak/>
+ SignalName reserved5, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Write_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a6b836ca5ba1ed62178270e4b8be060d1" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_NullParameterTest</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a3ac8fea69cb04eac318c42d887b2e66f" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_errorCode_NULL_PTR</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a47b0dc736bd5b56bb7b9af2182fe259c" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_DWRS_PENDING_g_ADAPT_Status</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1ae85c29bca002440cbb4026d0393face2" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_errorCode_no_NULL_PTR</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1aac62de3547f52d00e09574eedbce5f51" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_ErrorCode_is_NULL_PTR_writeRetVal_E_NOT_OK</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a4818eeaeb57547a20cc13b6bc5ff814b" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D0_Test_writeRetVal_E_NOT_OK_errorCode_no_NULL_PTR</ref><linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="297" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.c" bodystart="251" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h_1a7dbadc7037eed0690fb94ea1b8e138b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType VLK_MEB_Write_Adaption_0x05D1</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>VLK_MEB_Write_Adaption_0x05D1</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x05D1</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 8<linebreak/>
+ SignalName p_n_max_zustandswechsel_popup, StartBit 0, Length 6<linebreak/>
+ SignalName cp_n_bestaetigt_verwenden, StartBit 6, Length 1<linebreak/>
+ SignalName cp_romo_zustandswechsel_begrenzt, StartBit 7, Length 1<linebreak/>
+ SignalName p_t_bestaetigung, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_N_entprellt, StartBit 0, Length 8<linebreak/>
+ SignalName p_v_fzg, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_entprellung_ersatz_romo, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_rangieren, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_Entprellung_HMS_Fehler, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_max_verzoegerung_verlassenswarnung_vlw_ersatz, StartBit 0, Length 8<linebreak/>
+ SignalName p_t_vlw_in_n, StartBit 0, Length 8<linebreak/>
+ SignalName reserved2, StartBit 0, Length 8<linebreak/>
+ SignalName reserved3, StartBit 0, Length 8<linebreak/>
+ SignalName reserved4, StartBit 0, Length 8<linebreak/>
+ SignalName reserved5, StartBit 0, Length 8<linebreak/>
+ SignalName reserved6, StartBit 0, Length 8<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Write_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a22023eb96583d35efa8c8f0e39923a70" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_NullParameterTest</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a776f39dfc1615a7f517d0003649d1661" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_errorCode_NULL_PTR</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1ac7925baa89e19680e03122edc2a05760" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_DWRS_PENDING_g_ADAPT_Status</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1ab8675f86a8b262daf175143e5c62b4fa" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_errorCode_no_NULL_PTR</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1a96dd90c72e9e61568504f417bfd4530e" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_ErrorCode_is_NULL_PTR_writeRetVal_E_NOT_OK</ref><linebreak/>
+ <ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8c_8test_1aca91d93a03f3bc37fdec8387a5b54ec1" kindref="member">TEST_VLK_MEB_Write_Adaption_0x05D1_Test_writeRetVal_E_NOT_OK_errorCode_no_NULL_PTR</ref><linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ Design Decision - Justification.. No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h" line="375" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.c" bodystart="372" bodyend="473"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>header file for VLK_MEB Adaptation </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_v_l_k___m_e_b___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">VLK_MEB_ADAPTATION.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>v2 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>11/18/2022 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/VLK/VLK/c/gen/VLK_MEB_ADAPTATION.h"/>
+  </compounddef>
+</doxygen>

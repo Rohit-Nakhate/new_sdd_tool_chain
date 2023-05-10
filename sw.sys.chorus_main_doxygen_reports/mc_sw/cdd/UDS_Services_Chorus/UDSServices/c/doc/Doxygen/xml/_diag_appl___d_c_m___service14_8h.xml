@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_diag_appl___d_c_m___service14_8h" kind="file" language="C++">
+    <compoundname>DiagAppl_DCM_Service14.h</compoundname>
+    <includes local="yes">NvM_Types.h</includes>
+    <includedby refid="_diag_appl___d_c_m___service14_8c" local="yes">DiagAppl_DCM_Service14.c</includedby>
+    <incdepgraph>
+      <node id="71">
+        <label>DiagAppl_DCM_Service14.h</label>
+        <link refid="_diag_appl___d_c_m___service14_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>NvM_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="74">
+        <label>DiagAppl_DCM_Service14.c</label>
+        <link refid="_diag_appl___d_c_m___service14_8c"/>
+      </node>
+      <node id="73">
+        <label>DiagAppl_DCM_Service14.h</label>
+        <link refid="_diag_appl___d_c_m___service14_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t___clear_diag_info_date" prot="public">T_ClearDiagInfoDate</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_diag_appl___d_c_m___service14_8h_1a073eb41fbc24bf836af3c196d8a21f92" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_t___clear_diag_info_date" kindref="compound">T_ClearDiagInfoDate</ref></type>
+        <definition>T_ClearDiagInfoDate ClearDiagInfoDate</definition>
+        <argsstring></argsstring>
+        <name>ClearDiagInfoDate</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable is used to store the date of the last successful DTC clear</para><para>This variable is used to store the date of the last successful DTC clear <simplesect kind="remark"><para>range 0 - 4,294,967,295<linebreak/>
+ unit NA <linebreak/>
+ resolution NA <linebreak/>
+ context functionname: <ref refid="_diag_appl___d_c_m___service14_8c_1a90bf13ad7e468db2ace933430774af7d" kindref="member">DCM_Update_Clearing_DTCs_Date( )</ref> <linebreak/>
+ protection none - used from one context <linebreak/>
+ This variable is used to store the date of the last successful DTC clear.</para></simplesect>
+This variable is used to store the date of the last successful DTC clear. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ASPICE_Legacy/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/inc/DiagAppl_DCM_Service14.h" line="83" column="1" bodyfile="D:/ASPICE_Legacy/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service14.c" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_diag_appl___d_c_m___service14_8h_1ae315d13a8d54f0629f555f6f8c2fd1b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DecClrDtc_DecCntr</definition>
+        <argsstring>(void)</argsstring>
+        <name>DecClrDtc_DecCntr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This is function is to keep value of Inport_Get_bDEMClearDTCAll previously set to 1 for a fixed time and then clear it.</para><para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant Yes <linebreak/>
+ context task: called from OS DiagTask every 10ms <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core[Core2]<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DecClrDtc_DecCntr.png">DecClrDtc_DecCntr Activity Diagram </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ Equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_diag_appl___d_c_m___service14_8c_8test_1a9ddda65b3e9177015071f83f31fb7de4" kindref="member">TEST_DiagAppl_DCM_Service14__DecClrDtc_DecCntr</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.UDSServiceHandler&quot; <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_Diag_167</para></xrefdescription></xrefsect></para><para><hruler/>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ASPICE_Legacy/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/inc/DiagAppl_DCM_Service14.h" line="130" column="1" bodyfile="D:/ASPICE_Legacy/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service14.c" bodystart="756" bodyend="772"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the Service14 functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_diag_appl___d_c_m___service14_8h" kindref="compound">DiagAppl_DCM_Service14.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib48595 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>11 cze 2019 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/ASPICE_Legacy/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/inc/DiagAppl_DCM_Service14.h"/>
+  </compounddef>
+</doxygen>

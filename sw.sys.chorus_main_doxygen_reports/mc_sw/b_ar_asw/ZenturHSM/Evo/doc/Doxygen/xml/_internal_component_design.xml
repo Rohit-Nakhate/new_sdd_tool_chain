@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component ZenturHSM comprises of one component which performs the following startup routine for HSM and the mechansim to write SHE keys and VKMS intial key into HSM memory</para><para>So far the component is only made up of one C module: <ref refid="_zentur_h_s_m_8c" kindref="compound">ZenturHSM.c</ref> and <ref refid="_zentur_h_s_m_8h" kindref="compound">ZenturHSM.h</ref></para><para><image type="html" name="UnitComposition.png">ZenturHSM decomposition</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refer to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: Non functional requirements are not there for this component</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The SW unit interfaces are described in SWA in EA : VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Static.Interfaces</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction of ZenturHSM.<linebreak/>
+<image type="html" name="ZenturHSM_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>Sequence diagram for SHE Key update: The function <ref refid="_zentur_h_s_m_8h_1a9f86eddddce2b82dc1751ded7d7aa77a" kindref="member">shewrite_Write_Adaption_0xEFC5()</ref>,<ref refid="_zentur_h_s_m_8h_1a0d470457b68aebe14b2d95ea35758e8d" kindref="member">shewrite_ReadLength_Adaption_0xEFC5()</ref> and <ref refid="_zentur_h_s_m_8h_1a836845403945329e8a0023145634e977" kindref="member">shewrite_Read_Adaption_0xEFC5()</ref> are called from GW Adaptation.It performs its activities and sets positive or negative response .It Copies M1 to M5 messages from Dcm buffers to local buffers. Set the shekeyrange_var to COMM_KEY_RANGE_STD, If the KeyID is &lt; KDM_EXTD_KEY_11 else set to COMM_KEY_RANGE_EXTEND.</para><para><image type="html" name="SHE_Key_Update_Dynamic_behaviour.png">SHE Key update dynamic behaviour</image>
+ </para><para>Sequence diagram for VKMS IS Key Provisioning: The function <ref refid="_zentur_h_s_m_8h_1ae7d8f97060c3fc9a7d4ae81c36094623" kindref="member">shewrite_Write_Adaption_0xEFF2()</ref>,<ref refid="_zentur_h_s_m_8h_1aa2ebe89c0355dbff3387387b14b81d1b" kindref="member">shewrite_ReadLength_Adaption_0xEFF2()</ref> and <ref refid="_zentur_h_s_m_8h_1a64ac9017169e77929923cfe2d6892b0a" kindref="member">shewrite_Read_Adaption_0xEFF2()</ref> are called from GW Adaptation.It performs its activities and sets positive or negative response .It Copies M1 to M5 messages from Dcm buffers to local buffers. Cyclic task shall use them to write the data to SHE slots.Set the state machine state variable to next appropriate state to execute the state machine in cyclic task.</para><para><image type="html" name="VKMS_IS_KeyProvisioning_Dynamic_behaviour.png">VKMS IS Key Provisioning dynamic behaviour</image>
+ </para><para>Sequence diagram for cyclic task to write new key into SHE slot: The function <ref refid="_zentur_h_s_m_8h_1ae5c2ae3318f78b3ac1a86dc0623df245" kindref="member">shewrite_cyclic()</ref>is called from Diagtask context with 10ms periodicity. Then ZenturHSM calls <ref refid="_zentur_h_s_m_8c_1a099152b0bea4cf3d6948b642a1c5cf04" kindref="member">shewrite_writenewkey()</ref> function to write the SHE key based on the state conditions</para><para><image type="html" name="Cyclictask_to_write_newkey_dynamicbehaviour.png">Cyclic task to write new key into SHE slot dynamic behaviour</image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+</para><para><image type="html" name="ZenturHSM_DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured for by the module. <heading level="2">Interrupts</heading>
+</para><para>ZenturHSM uses no interrupts</para><para><heading level="2">Events</heading>
+</para><para>ZenturHSM uses no events.</para><para><heading level="2">Operating Modes</heading>
+</para><para>ZenturHSM does not have mode dependent requirements.</para><para><heading level="2">Power Modes</heading>
+</para><para>ZenturHSM does not have power mode dependent requirements.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value .</para><para><heading level="2">Synchronization</heading>
+</para><para>N/A</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>N/A</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just one software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Number of dependencies is greater than 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>QM component and Interaction &lt;= Medium   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Interaction &lt;= Medium   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

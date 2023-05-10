@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rationalesand_alternatives" kind="page">
+    <compoundname>RationalesandAlternatives</compoundname>
+    <title>Rationales, Alternatives and Constraints</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><bold> Rationales </bold> <linebreak/>
+ Chorus PU must address received diagnostics messages over ETH, which needs to be processed by itself or routed to at the ECU connected to a network in which the Chorus is also a node. <linebreak/>
+ <linebreak/>
+<linebreak/>
+<bold> Alternatives </bold> <linebreak/>
+ There were 2 possible alternatives regarding the routing algorithm: <linebreak/>
+ <itemizedlist>
+<listitem>
+<para>Cut-Through - without intermediary buffers. <linebreak/>
+  </para></listitem>
+<listitem>
+<para>Store and forward  - with intermediate storage. <linebreak/>
+  </para></listitem>
+</itemizedlist>
+  In theory the 1st option brings bigger routing speed, but it was not possible to be used as the diagnostic frames needs to be first stored and processed and afterwards routed to a specific node.<linebreak/>
+ Therefore the second option was used (Store and Forward).<linebreak/>
+ <linebreak/>
+<linebreak/>
+<bold> Constraints </bold> <linebreak/>
+ According with the VW IP network requirements all the communication is done over IPv6, including DoIP messages. <linebreak/>
+ DoIP from Chorus contains an exception to this requirement, raised from the limitation of Chorus GW Bootloader to handle only IPv4 format. As a consequence, DoIP Chorus requires a local IPv4 address and socket(s) to bind at, for DoIP communication with the bootloader. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

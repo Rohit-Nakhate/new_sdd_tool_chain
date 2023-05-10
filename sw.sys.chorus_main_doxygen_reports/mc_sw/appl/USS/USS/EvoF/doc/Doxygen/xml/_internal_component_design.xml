@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1sec_InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The USS component is splitted into the following SW units:<itemizedlist>
+<listitem><para><ref refid="_u_s_s___measurement_values_8c" kindref="compound">USS_MeasurementValues.c</ref> - Implementation for USS measure values.</para></listitem><listitem><para><ref refid="_u_s_s___task_8c" kindref="compound">USS_Task.c</ref> - Exported functions for USS SWC.</para></listitem><listitem><para><ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">USS_ADAPTATION.c</ref> - Source file for USS Adaptation.</para></listitem><listitem><para><ref refid="_u_s_s___measurement_values_8h" kindref="compound">USS_MeasurementValues.h</ref> - Header for USS measure values.</para></listitem><listitem><para><ref refid="_u_s_s___task_8h" kindref="compound">USS_Task.h</ref> - Header for exported functions for USS SWC.</para></listitem><listitem><para><ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">USS_ADAPTATION.h</ref> - Header file for USS Adaptation.</para></listitem><listitem><para><ref refid="_u_s_s___extra_definitions_8h" kindref="compound">USS_ExtraDefinitions.h</ref> - USS_ExtraDefinitions Header file.</para></listitem><listitem><para><ref refid="_u_s_s___data_types_8h" kindref="compound">USS_DataTypes.h</ref> - Contains data structures used for USS.</para></listitem><listitem><para><ref refid="_u_s_s___version_8h" kindref="compound">USS_Version.h</ref> - USS version header file.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="13" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_184  </para></entry><entry thead="no"><para>The total RAM capacity for the USS library shall never exceed 2 kilobytes.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_185  </para></entry><entry thead="no"><para>The total ROM capacity for the USS library shall never exceed 24 kilobytes.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_188  </para></entry><entry thead="no"><para>The total non-volatile memory (NVRAM) capacity for the USS library shall never exceed 932 bytes.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_186  </para></entry><entry thead="no"><para>The USS library shall be scheduled every 20 ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_176  </para></entry><entry thead="no"><para>The software should apply the signal timeout definitions which are described in the SST file.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_162  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from ICAS1 via ACANFD.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_163  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from ICAS1 via FCANFD.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_164  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from ICAS1 via KCAN.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_158  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from Data Dictionary.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_165  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from ICAS1 via ABCANFD.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_159  </para></entry><entry thead="no"><para>In order to ensure communication with other modules, the following input signals need to be received from Data Dictionary.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_USS_171  </para></entry><entry thead="no"><para>External function.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Detailed description of the interfaces is done within the corresponding Files of the Unit. Only generated functions are described in detail within this chapter.</para><para><itemizedlist>
+<listitem><para><ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">USS_ADAPTATION.c</ref> / <ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">USS_ADAPTATION.h</ref>  This unit handles some read/write request of the USS specific adaptions. Following the skeleton of the generated function is described.<linebreak/>
+<linebreak/>
+</para></listitem></itemizedlist>
+</para><para><bold>Std_ReturnType <ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8h_1a9e0c4a282a2e367bf843290cf8cd1bf9" kindref="member">USS_Read_Adaption_0x0C7B(Dcm_OpStatusType OpStatus, uint8* Data)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the read request 0x22 0x0C7B belonging to USS Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully read <linebreak/>
+ E_NOT_OK - Failure while reading the adaption </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="USS_Read_Adaption_0x0C7B.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_2341; <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para><bold>Std_ReturnType <ref refid="_u_s_s___a_d_a_p_t_a_t_i_o_n_8h_1acc2e89af02d1f2e4d9dbbe167ec1566d" kindref="member">USS_Write_Adaption_0x0C7B(const uint8* Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType* ErrorCode)</ref></bold><linebreak/>
+<linebreak/>
+ This generated function handles the write request 0x2E 0x0C7B belonging to USS Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Error state of the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully written <linebreak/>
+ E_NOT_OK - Failure while writing the adaption <linebreak/>
+ DCM_E_PENDING - Dcm is busy </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] g_eADAPT_Status - Used to handle status of adaption </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="USS_Write_Adaption_0x0C7B.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Check the <ulink url="files.html">File section</ulink>. </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000014"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21710;  <linebreak/>
+<linebreak/>
+<linebreak/>
+</para></xrefdescription></xrefsect></para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_USS.png">Software_Unit_Interaction_USS</image>
+ </para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>USS SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/USS/SW Architecture/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para> USS SWC is assigned to <bold> CORE 0 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core0</bold>. <linebreak/>
+USS component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C0 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/USS/SW Architecture/Dynamic/USS TaskCyclic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para> No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para> No AUTOSAR OS/OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para> Operating Modes are not seen from this point of view, it is handled by other components in BSW.<linebreak/>
+ <heading level="2">Power Modes</heading>
+</para><para> Power Modes are not seen from this point of view, it is handled by other components in BSW.<linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para> If dataset pointer is not available (NULL), read 0 to value in case the offset is in boundaries. <linebreak/>
+When function is called with NULL PTR, RTE_E_INVALID returned. <linebreak/>
+ When function is called with NULL PTR, E_NOT_OK returned. <linebreak/>
+ When function is called with NULL PTR, UDScub_GENERAL_PROGRAMMING_FAILURE returned. If the data&apos;s range is not in boundaries, UDScub_REQUEST_OUT_OF_RANGE returned. If writing process is not succeeded, UDScub_GENERAL_REJECTED returned.</para><para><heading level="2">Synchronization</heading>
+</para><para> Since <bold>USS</bold> is designed to run on a single core, concurent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para> <bold>USS</bold> operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para> No complex macros or function like macros used. Following macros are used: <ulink url="globals_defs.html">Macros section</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para> <bold>USS</bold> doesn&apos;t make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para> See <ulink url="files.html">File section</ulink>.</para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>A simple wrapper is required to exchange data.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of dependencies is greater then 7.   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>QM   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No complex algorithms are used.   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units less than 3.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Only PLAST tool.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

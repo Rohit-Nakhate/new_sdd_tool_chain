@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___can___bus___off___detection_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Can_Bus_Off_Detection.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___can___bus___off___detection_8c" local="yes">ErrHdl_Can_Bus_Off_Detection.c</includedby>
+    <includedby refid="_err_hdl___can___global___timeout___detection_8c" local="yes">ErrHdl_Can_Global_Timeout_Detection.c</includedby>
+    <includedby refid="_err_hdl___can___vlan___node___timeouts___detection_8c" local="yes">ErrHdl_Can_Vlan_Node_Timeouts_Detection.c</includedby>
+    <incdepgraph>
+      <node id="138">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="136">
+        <label>ErrHdl_Can_Bus_Off_Detection.h</label>
+        <link refid="_err_hdl___can___bus___off___detection_8h"/>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="139">
+        <label>ErrHdl_Can_Bus_Off_Detection.h</label>
+        <link refid="_err_hdl___can___bus___off___detection_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="142">
+        <label>ErrHdl_Can_Global_Timeout_Detection.c</label>
+        <link refid="_err_hdl___can___global___timeout___detection_8c"/>
+      </node>
+      <node id="141">
+        <label>ErrHdl_Can_Bus_Off_Detection.c</label>
+        <link refid="_err_hdl___can___bus___off___detection_8c"/>
+      </node>
+      <node id="143">
+        <label>ErrHdl_Can_Vlan_Node_Timeouts_Detection.c</label>
+        <link refid="_err_hdl___can___vlan___node___timeouts___detection_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga26c6186e8b3709e4b762fd5d605d9e10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrCanBusOffMonitor</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrCanBusOffMonitor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function monitor CAN bus off DTC</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context isr <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___bus___off___detection_8c_1a931146e34f6fdd012639ec4b5ea1fc7f" kindref="member">ErrBusOffOccurred</ref></para></simplesect>
+<simplesect kind="par"><title>Error Handling (optional)</title><para>No need to check status of Diag CAN <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCanBusOffMonitor.png">Activity Diagram of function ErrCanBusOffMonitor </image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria (optional)</title><para>If the channel is Diag can then no need to check the status <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___bus___off___detection_8c_8test_1a916a1091a33eaeabe4c49dc29c6ae44f" kindref="member">TEST_ErrCanBusOffMonitor</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 </para><para>SWR_ICAS1_GW_3342 </para><para>SWR_ICAS1_GW_10084 </para><para>SWR_ICAS1_GW_3338 </para><para>SWR_ICAS1_GW_3336 </para><para>SWR_ICAS1_GW_3337 </para><para>SWR_ICAS1_GW_3340 </para><para>SWR_ICAS1_GW_3341 </para><para>SWR_ICAS1_GW_3343<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Bus_Off_Detection.h" line="112" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Bus_Off_Detection.c" bodystart="176" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga43263c386b8aeddb3e64a2aa5071d9b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrRemoteCanBusOffMonitor</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrRemoteCanBusOffMonitor</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function monitor remote CAN bus off DTC</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context isr <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="inc_2_err_hdl___types_8h_1a3228e46f41d22b72416644121100e0e5" kindref="member">REMOTE_CAN_IDX</ref> <linebreak/>
+ <ref refid="_2inc_2_err_hdl___types_8h_1a92cdc99ba92a7617518da614da828a7f" kindref="member">ERR_AFS_BUS_NUM</ref> <linebreak/>
+ <ref refid="_2inc_2_err_hdl___types_8h_1a39ca2daef8ef23886438b7fd70179e86" kindref="member">ERR_MFL_BUS_NUM</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrRemoteCanBusOffMonitor.png">Activity Diagram of function ErrRemoteCanBusOffMonitor </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___bus___off___detection_8c_8test_1a62df9c2b907b2527c287e82b59ca69ca" kindref="member">TEST_ErrRemoteCanBusOffMonitor</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 </para><para>SWR_ICAS1_GW_3339 </para><para>SWR_ICAS1_GW_3510<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Bus_Off_Detection.h" line="152" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Bus_Off_Detection.c" bodystart="202" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga5068299252a0c3b9525db779631b526c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrSetResetCanBusOffCounter</definition>
+        <argsstring>(const TComChannel Channel, const boolean Status)</argsstring>
+        <name>ErrSetResetCanBusOffCounter</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type>const boolean</type>
+          <declname>Status</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function counts number of times bus off failed has occured. When the count is incremented to three then bus off DTC can be set.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task, called by Bus monitor files <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel. Provide channel Id to be checked <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean Status - TRUE: bus-off failed, FALSE: bus-off not failed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___bus___off___detection_8c_1a931146e34f6fdd012639ec4b5ea1fc7f" kindref="member">ErrBusOffOccurred</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrSetResetCanBusOffCounter.png">Activity Diagram of function ErrSetResetCanBusOffCounter </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___bus___off___detection_8c_8test_1a99be713cfaaf624cd7b5fc60d0b21130" kindref="member">TEST_ErrSetResetCanBusOffCounter</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10082 </para><para>SWR_ICAS1_GW_10083 </para><para>SWR_ICAS1_GW_10084 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Bus_Off_Detection.h" line="193" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Bus_Off_Detection.c" bodystart="254" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga410e10052cea70b63d87af311a8a4f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrIsBusOffCounterGreaterThanZero</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrIsBusOffCounterGreaterThanZero</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns True when bus off counter is greater than zero.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga441be02ea8b9ba499c72e867b11e102c" kindref="member">ErrCheckCanBusEnableConditions</ref>, <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1abec7e752f5ef4d01ba8a023044a69f25" kindref="member">ErrIsBusFaultOrInTimeout</ref> <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE in case COUNTER &gt; 0, otherwise returns FALSE.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___can___bus___off___detection_8c_1a931146e34f6fdd012639ec4b5ea1fc7f" kindref="member">ErrBusOffOccurred</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrIsBusOffCounterGreaterThanZero.png">Activity Diagram of function ErrIsBusOffCounterGreaterThanZero </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___can___bus___off___detection_8c_8test_1a08a69974ca5ddc71fea2a3673be6061c" kindref="member">TEST_ErrIsBusOffCounterGreaterThanZero</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+ Design Decision - Justification. This is a helper function which returns the bus off error counter status. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Bus_Off_Detection.h" line="227" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Bus_Off_Detection.c" bodystart="280" bodyend="307"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_Can_Bus_Off_Detection functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___can___bus___off___detection_8h" kindref="compound">ErrHdl_Can_Bus_Off_Detection.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>5 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>23/12/2022 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Can_Bus_Off_Detection.h"/>
+  </compounddef>
+</doxygen>

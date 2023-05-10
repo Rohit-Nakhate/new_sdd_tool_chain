@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The basic function of the ICAS1::FFBDataHandler is to receive the UHF Frames triggered by pressing the button on the remote key, proceed with validation of the UHF Frame, and finally (if validation is succesful), trigger the operation on ICAS1::CDL.</para><para>Within the scope of validation, ICAS1::FFBDataHandler performs the following operations (in given order):<itemizedlist>
+<listitem><para>Evaluation (validation) of the received UHF Frames based on data from the UHF Frame&apos;s header and payload</para></listitem><listitem><para>Verifying the Signature of the FZV Frames (by calling operation on ICAS1::CryptoHandler)</para></listitem><listitem><para>Evaluation and processing of the Rolling Code Counter data provided within the FZV Frame</para></listitem><listitem><para>Checking for errors reported by the Key.</para></listitem></itemizedlist>
+</para><para>ICAS1::FFBDataHandler shall allow for triggering operation on ICAS1::CDL only if whole validation process is passed.</para><para>The scope of the FFBDataHandler SWC covers the following functionality: <linebreak/>
+<linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1a31a9ac319f44da8c7a4d3dc5aec5475d" kindref="member">evUHFEmpfang</ref> - Receiving a trigger with an UHF Telegram from UHF-Master SWC <linebreak/>
+</para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1a31a9ac319f44da8c7a4d3dc5aec5475d" kindref="member">evUHFEmpfang</ref> - Evaluation (validation) of the received UHF Telegram (raw data) based on data from the UHF Frame&apos;s header and payload <linebreak/>
+</para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1ac2dde2331a6fa6d668868d075e9f2a41" kindref="member">UHF_MessageValidation</ref> - Verifying the Signature and TransponderId of the FZV Frames (by calling operation on CryptoHandler SWC) <linebreak/>
+</para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref> - Evaluation and processing of the Rolling Code Counter data provided within the FZV Frame <linebreak/>
+</para></listitem><listitem><para>Preserve recently received RCC (in FZV telegram) by reliable NVM storage of RCC and its Status: <linebreak/>
+<mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1ac1ff29e91d1f7ee247a5c9a1d44cb406" kindref="member">WCZ_StatusReadFromNvm</ref> <linebreak/>
+<mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1a02ef581cf1d520e1a64f64198a9645f4" kindref="member">WCZ_StatusWriteToNvm</ref> <linebreak/>
+<mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1a268ab14c2844fab58f9c05c96dccf64c" kindref="member">WCZ_StatusVerifyNvm</ref> <linebreak/>
+<mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1abfc2cc20554a6c286a7ae35ed93d308b" kindref="member">WCZ_ValueReadFromNvm</ref> <linebreak/>
+ <mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1a3c0b1337f7b7498a606338706acb3924" kindref="member">WCZ_ValueWriteToNvm</ref> <linebreak/>
+ <mdash/> <ref refid="_f_d_h___w_c_z___handler_8c_1a18889de07457cdddce8ea7dc01199ec1" kindref="member">WCZ_ValueVerifyNvm</ref> <linebreak/>
+</para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1a97155fed36b4d242df482b511cb2f798" kindref="member">BatteryLevelDTC</ref> - Checking for errors reported by the Key <linebreak/>
+</para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" kindref="member">ButtonCodeReport</ref> - Generating triggers to CDL SWC by decoding of Button code. <linebreak/>
+</para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_d_w_a_x___nv_ram_8h" kind="file" language="C++">
+    <compoundname>DWAX_NvRam.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includedby refid="_d_w_a_x___task_8c" local="yes">DWAX_Task.c</includedby>
+    <includedby refid="_d_w_a_x___data_types_8h" local="yes">DWAX_DataTypes.h</includedby>
+    <incdepgraph>
+      <node id="16">
+        <label>DWAX_NvRam.h</label>
+        <link refid="_d_w_a_x___nv_ram_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="19">
+        <label>NvM.h</label>
+      </node>
+      <node id="17">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="20">
+        <label>DWAX_NvRam.h</label>
+        <link refid="_d_w_a_x___nv_ram_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>DWAX_DataTypes.h</label>
+        <link refid="_d_w_a_x___data_types_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>DWAX_Task.c</label>
+        <link refid="_d_w_a_x___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 Pim_DWAX_SireneMasterCode</definition>
+        <argsstring></argsstring>
+        <name>Pim_DWAX_SireneMasterCode</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Represents the NvM Block for Sirene MasterCode. <linebreak/>
+</para><para>Store the calculated value of MasterCode. <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range uint8 <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ protection none <linebreak/>
+ storage class init ram and reset proof area <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/inc/DWAX_NvRam.h" line="74" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_d_w_a_x___nv_ram_8h_1a0be7fa80cdeddb752ec6778e4d36a0f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NvmSingleDWA_SireneMasterCodeCbk</definition>
+        <argsstring>(NvM_ServiceIdType a_uServ, NvM_RequestResultType a_uRequest)</argsstring>
+        <name>NvmSingleDWA_SireneMasterCodeCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>a_uServ</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>a_uRequest</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function <linebreak/>
+</para><para>Function callback from reading and writing of master code to NVM module <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_uServ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Parameter for reading type of NvM request (reading or writing) <linebreak/>
+ range NvM_ServiceIdType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_uRequest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] - Parameter for reading the result of the NvM request (OK or NOT_OK) <linebreak/>
+ range NvM_RequestResultType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>NVM_READ_BLOCK [in] <linebreak/>
+ NVM_WRITE_BLOCK [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea90f6d47322064bd179b153be9a276dcf" kindref="member">DWAX_NVM_RESTORED</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf0a70243bef87110e1e095dd564c2a17" kindref="member">DWAX_SAVE_MASTERCODE_VERIFY</ref> [in] <linebreak/>
+ E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvmSingleDWA_SireneMasterCodeCbk.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the result of read and write request of MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a22ec610f2c4b8235dbc386e36cf279b8" kindref="member">TEST_DWAX_Task__NvmSingleDWA_SireneMasterCodeCbk</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to read and write the MasterCode from and into NvM module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/inc/DWAX_NvRam.h" line="117" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2365" bodyend="2389"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file used for external variables needed for NvM module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_d_w_a_x___nv_ram_8h" kindref="compound">DWAX_NvRam.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie49009 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/06/17 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/inc/DWAX_NvRam.h"/>
+  </compounddef>
+</doxygen>

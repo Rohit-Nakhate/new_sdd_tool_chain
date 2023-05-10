@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___steuergeraet___defekt_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Steuergeraet_Defekt.h</compoundname>
+    <includes local="yes">agw.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includedby refid="_err_hdl_8c" local="yes">ErrHdl.c</includedby>
+    <includedby refid="_err_hdl___steuergeraet___defekt_8c" local="yes">ErrHdl_Steuergeraet_Defekt.c</includedby>
+    <incdepgraph>
+      <node id="713">
+        <label>agw.h</label>
+      </node>
+      <node id="712">
+        <label>ErrHdl_Steuergeraet_Defekt.h</label>
+        <link refid="_err_hdl___steuergeraet___defekt_8h"/>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+      </node>
+      <node id="714">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="717">
+        <label>ErrHdl_Steuergeraet_Defekt.c</label>
+        <link refid="_err_hdl___steuergeraet___defekt_8c"/>
+      </node>
+      <node id="716">
+        <label>ErrHdl.c</label>
+        <link refid="_err_hdl_8c"/>
+      </node>
+      <node id="715">
+        <label>ErrHdl_Steuergeraet_Defekt.h</label>
+        <link refid="_err_hdl___steuergeraet___defekt_8h"/>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1a816e7be0073bc526fe33e42d7b51ec07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ErrGetReasonBuffer</definition>
+        <argsstring>(uint8 *const Reason)</argsstring>
+        <name>ErrGetReasonBuffer</name>
+        <param>
+          <type>uint8 *const</type>
+          <declname>Reason</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns reason for DTC was set.</para><para>reentrant No <linebreak/>
+ context {task, called by DEM files} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* Reason - Reson of setting Steuergeraet Error DTC</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType ReturnValue : E_OK in case of success, otherwise E_NOT_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___steuergeraet___defekt_8c_1afb16fa7c6fa92425cb9497e8ecca7bb5" kindref="member">ErrReasonBuffer</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetReasonBuffer.png">Activity Diagram of function ErrGetReasonBuffer </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1a297b7aa3deb7777f4bb1a1ee78a30b7d" kindref="member">TEST_ErrGetReasonBuffer</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which returns the ErrorReason for the Control Unit Defect. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="94" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Steuergeraet_Defekt.c" bodystart="408" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1afa1011e25cd58b5c30d1598ff1c293e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrSteuergeraetErrDTCMonitoring</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrSteuergeraetErrDTCMonitoring</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function checks if Steuergeraet Error DTC should be set to active</para><para>reentrant No <linebreak/>
+ context {isr, ErrHandlerTask - Called cyclically every 10ms} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___steuergeraet___defekt_8c_1a463b04510f2b34ac03b08f058c6a1cd6" kindref="member">isSysIntDTCHandled</ref> <ref refid="_err_hdl___steuergeraet___defekt_8c_1afb16fa7c6fa92425cb9497e8ecca7bb5" kindref="member">ErrReasonBuffer</ref> <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_1ab07cfd1c5f39dc047053eaaf8eadd6c1" kindref="member">DTCCanBeSet</ref> <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_1af6e3d84cda58216a5c26230e535f7018" kindref="member">CurrentHandledDTC</ref> <linebreak/>
+ <ref refid="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba8d645abb9e54fa6069568b6ee48d6f06" kindref="member">NUMBER_Of_Steuergeraet_DTC</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrSteuergeraetErrDTCMonitoring.png">Activity Diagram of function ErrSteuergeraetErrDTCMonitoring </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1a8aad420ba93d651af047515e6f48dcbb" kindref="member">TEST_ErrSteuergeraetErrDTCMonitoring_TC1</ref> <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1af351efd2164dcee55a0a702bcd18ff3c" kindref="member">TEST_ErrSteuergeraetErrDTCMonitoring_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000066"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11497 </para><para>SWR_ICAS1_GW_11569 </para><para>SWR_ICAS1_GW_11576 </para><para>SWR_ICAS1_GW_18424 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="138" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Steuergeraet_Defekt.c" bodystart="320" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1a1a0ed7e0f3386bf89500af14d7c4874c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetDTCCanBeSet</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrResetDTCCanBeSet</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets the flag which indicate Steuergeraet DTC is currently being handled.</para><para>reentrant No <linebreak/>
+ context {Task, Called by DEM module} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___steuergeraet___defekt_8c_1ab07cfd1c5f39dc047053eaaf8eadd6c1" kindref="member">DTCCanBeSet</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetDTCCanBeSet.png">Activity Diagram of function ErrResetDTCCanBeSet </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1a52f458fdffc21f355a57e31d74e8447c" kindref="member">TEST_ErrResetDTCCanBeSet</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which resets Control Unit defect DTC to handle in the queue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="175" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Steuergeraet_Defekt.c" bodystart="387" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1abbc0a615b7b37bd4d81fb7d25aa44ccf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrGotToNextDTC</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrGotToNextDTC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets next DTC in queue to handle</para><para>reentrant No <linebreak/>
+ context {Task, Called by DEM module} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___steuergeraet___defekt_8c_1af6e3d84cda58216a5c26230e535f7018" kindref="member">CurrentHandledDTC</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGotToNextDTC.png">Activity Diagram of function ErrGotToNextDTC </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1ae28fcee450a06ff6b8eef985440ab346" kindref="member">TEST_ErrGotToNextDTC</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which sets next Control Unit defect DTC to handle in the queue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="212" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Steuergeraet_Defekt.c" bodystart="393" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1aaaa775901fd6ff95d2d15b805bb6ee7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ErrErrHdlSteuergeraetDefektDTCs_DemClearEventAllowed</definition>
+        <argsstring>(boolean *Allowed)</argsstring>
+        <name>ErrErrHdlSteuergeraetDefektDTCs_DemClearEventAllowed</name>
+        <param>
+          <type>boolean *</type>
+          <declname>Allowed</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets FALSE to the pointer value.</para><para>reentrant No <linebreak/>
+ context {Task, Called by DEM module} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean Allowed - By default FALSE.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK in case of success</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrErrHdlSteuergeraetDefektDTCs_DemClearEventAllowed.png">Activity Diagram of function ErrErrHdlSteuergeraetDefektDTCs_DemClearEventAllowed </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___steuergeraet___defekt_8c_8test_1a2e42c414a97332a33c0af9c7989db75e" kindref="member">TEST_ErrErrHdlSteuergeraetDefektDTCs_DemClearEventAllowed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which updates the Controlunit DTC DEM clear event allowed status. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="249" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Steuergeraet_Defekt.c" bodystart="461" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___steuergeraet___defekt_8h_1af7a6814b619ab3406a4b923994699ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType DiagF_Chorus_DemClearEventAllowed</definition>
+        <argsstring>(boolean *Allowed)</argsstring>
+        <name>DiagF_Chorus_DemClearEventAllowed</name>
+        <param>
+          <type>boolean *</type>
+          <declname>Allowed</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets FALSE to the pointer value.</para><para>reentrant No <linebreak/>
+ context {Task, Called by DEM module} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean Allowed - By default FALSE.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK in case of success</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DiagF_Chorus_DemClearEventAllowed.png">Activity Diagram of function DiagF_Chorus_DemClearEventAllowed </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_DiagF_Chorus_DemClearEventAllowed <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which updates the Controlunit DTC DEM clear event allowed status. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h" line="287" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_Steuergeraet_Defekt functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___steuergeraet___defekt_8h" kindref="compound">ErrHdl_Steuergeraet_Defekt.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>4 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/17/2023 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Steuergeraet_Defekt.h"/>
+  </compounddef>
+</doxygen>

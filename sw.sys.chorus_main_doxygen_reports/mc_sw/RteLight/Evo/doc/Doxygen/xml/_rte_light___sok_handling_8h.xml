@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___sok_handling_8h" kind="file" language="C++">
+    <compoundname>RteLight_SokHandling.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <incdepgraph>
+      <node id="78">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="77">
+        <label>RteLight_SokHandling.h</label>
+        <link refid="_rte_light___sok_handling_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_rte_light___sok_handling_8h_1afcace9d2c6b2f2cc532a6813739830ed" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 SokMsg_&lt; PDU &gt;[Length]</definition>
+        <argsstring>[Length]</argsstring>
+        <name>SokMsg_&lt; PDU &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>SoK message buffer for &lt;PDU&gt;. <linebreak/>
+ This buffer is used by RteLight to store the signal values until the &lt;PDU&gt; is signed and sent on the bus. <linebreak/>
+<simplesect kind="remark"><para>values [0x00 - 0xFF] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Different cores <linebreak/>
+ protection none.As for all other Tx Buffers there is no protection. Potential data inconsistency is solved by a new transmission. <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="77" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___sok_handling_8h_1ab34a41f4019199510f36d0968af153fc" prot="public" static="no" mutable="no">
+        <type>IccFifo_tstFifo</type>
+        <definition>IccFifo_tstFifo Rte_SokFifo&lt; CORE &gt;</definition>
+        <argsstring></argsstring>
+        <name>Rte_SokFifo&lt; CORE &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fifo structure used for SoK handle management on the core &lt;CORE&gt; <linebreak/>
+ The variable is paired with Rte_SokHandleFifoBuffer&lt;CORE&gt;.<linebreak/>
+ The IccFifo&apos;s API works only when there is one sender and one receiver. This is independent if they are located on same core or not. This structure is required to store the management data for requests originating from core &lt;CORE&gt;.<linebreak/>
+<simplesect kind="remark"><para>values N/A] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Different cores <linebreak/>
+ protection none.The IccFifo&apos;s API is protecting the structure <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="95" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___sok_handling_8h_1a0eca543bcb0a5743d8e81831223f278a" prot="public" static="no" mutable="no">
+        <type>IccFifo_tstFifo</type>
+        <definition>IccFifo_tstFifo Rte_SokFmChallengeReceivedFifo&lt; CORE &gt;</definition>
+        <argsstring></argsstring>
+        <name>Rte_SokFmChallengeReceivedFifo&lt; CORE &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fifo structure used for Receive Challenge management on the core &lt;CORE&gt; <linebreak/>
+ The variable is paired with Rte_SokFmChallengeReceivedBuffer&lt;CORE&gt;.<linebreak/>
+ The IccFifo&apos;s API works only when there is one sender and one receiver. This is independent if they are located on same core or not. This structure is required to store the management data for requests originating from core &lt;CORE&gt;.<linebreak/>
+<simplesect kind="remark"><para>values N/A] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Different cores <linebreak/>
+ protection none.The IccFifo&apos;s API is protecting the structure <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="114" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_rte_light___sok_handling_8h_1ab9eff710bbfa7c6bf31b9b42cb366224" prot="public" static="no" mutable="no">
+        <type>IccFifo_tstFifo</type>
+        <definition>IccFifo_tstFifo Rte_SokFmTriggerCrRequestFifo&lt; CORE &gt;</definition>
+        <argsstring></argsstring>
+        <name>Rte_SokFmTriggerCrRequestFifo&lt; CORE &gt;</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fifo structure used for Triggering a Challenge Request on the core &lt;CORE&gt; <linebreak/>
+ The variable is paired with Rte_SokFmTriggerCrRequestBuffer&lt;CORE&gt;.<linebreak/>
+ The IccFifo&apos;s API works only when there is one sender and one receiver. This is independent if they are located on same core or not. This structure is required to store the management data for requests originating from core &lt;CORE&gt;.<linebreak/>
+<simplesect kind="remark"><para>values N/A] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Different cores <linebreak/>
+ protection none.The IccFifo&apos;s API is protecting the structure <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="133" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga0af3fde6734a67fbce50590ecb1c1e91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_SokInit</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_SokInit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initalize the RteLight&apos;s Sok functionality. Any requests made before this function runs are lost. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - same task as SoK stack<linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void<linebreak/>
+. range N/A<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_SokInit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of IccFifo_Init function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing<linebreak/>
+ Tested in <ref refid="_rte_light___sok_handling_8h_8test_1a1fd20472db1e4c63a7998be98a380bb2" kindref="member">TEST_Rte_SokInit</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the function RteLight_SokInit.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ {}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="197" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gabb3a794801f015ce6723a1289ac8d76c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_SokMain</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_SokMain</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check which buffers require encryption.</para><para>The function will check the encryption requests made by SWCs on each core. If needed, then the SoK functionality will be triggered. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: spr requirement</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Variables</para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>   No error handling is performed by RteLight. This has to be done by the     application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_SokMain.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of SecOC_Transmit function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing<linebreak/>
+ Tested in <ref refid="_rte_light___sok_handling_8h_8test_1ad94085a95503caed911c079a79911f1d" kindref="member">TEST_Rte_SokMain</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the function Rte_SokMain.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_282,SWR_ICAS1_RteLight_283,SWR_ICAS1_RteLight_284.<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="272" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaa4ec6b30d1a1bb7e9637efa93354eaa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_SokFmServer_CORE</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_SokFmServer_CORE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Core specific SokFm Dispatcher. There dispatcher function needs to be integrated in core &lt;CORE&gt; because the server&apos;s (SWC) runnable needs to be called from the same core.<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000002"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: spr requirement</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>   No error handling is performed by RteLight. This has to be done by the     application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_SokFmServerGW.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of server runnables .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaa4ec6b30d1a1bb7e9637efa93354eaa2" kindref="member">Rte_SokFmServer_CORE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_SokFmServer&lt;CORE&gt;.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_282,SWR_ICAS1_RteLight_283,SWR_ICAS1_RteLight_284.<linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h" line="328" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Generates the variables and functions needed by SoK and SokFm functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_rte_light___sok_handling_8h" kindref="compound">RteLight_SokHandling.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+</para><para>Generates the variables and functions needed by SoK and SokFm functionality. In case simbols are not available from Sok configuration, the module will generate values out of bound.<linebreak/>
+ Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_SokHandling.h"/>
+  </compounddef>
+</doxygen>

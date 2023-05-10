@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_1_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_1_requirements</compoundname>
+    <title>ExportedDoorsSpecification_1_requirements</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="par"><title>Brief description DOORS requirements </title><para></para></simplesect>
+</para><sect1 id="md__exported_doors_specification_1_requirements_1ExportedDoorsSpecification_1">
+<title>ExportedDoorsSpecification_1</title>
+<para><linebreak/>
+</para><sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+During initialization, the RemoteSignalRouter module shall peform the following actions: (AND) <linebreak/>
+ i.Trigger the Routing Engine component to disable transmission of all B_PDU_D PDUs <linebreak/>
+ ii. Set the data of all B_PDU_A PDUs to their initial values. <linebreak/>
+ Note: Init values as mentioned in SWR_L3_CRoute_Comserv_1248 <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1253 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Upon receiving a T_PDU event, if the transmission of its corresponding B_PDU is disabled, <linebreak/>
+ the Remote Signal Router shall: (AND) <linebreak/>
+ i. Enable the cyclic transmission of the corresponding B_PDU <linebreak/>
+ ii.Copy the received T_PDU data into its corresponding B_PDU&apos;s data <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1254 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Upon receiving a T_PDU event, if the cyclic transmission of its corresponding B_PDU is enabled, <linebreak/>
+ the Remote Signal Router shall copy the received T_PDU data into its corresponding B_PDU&apos;s data <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1255 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For each T_PDU having a corresponding B_PDU_D, if a timeout event has occured since its last reception, the Remote Signal Router shall trigger the Routing Engine component to stop the cyclic transmission of its corresponding B_PDU on all external buses. <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1256 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For each T_PDU having a corresponding B_PDU_A, if a timeout event has occured since its last reception, the Remote Signal Router shall set the corresponding B_PDU_A data to its initial value. <linebreak/>
+ Note: Init values as mentioned in SWR_L3_CRoute_Comserv_1248 <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1257 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For each T_PDU having a corresponding B_PDU_AD, if a timeout event has occured since its last reception, the Remote Signal Router shall: (AND) <linebreak/>
+ i. Trigger Routing Engine component to stop transmission of all its corresponding B_PDU_D PDUs (network dependent) <linebreak/>
+ ii. Set its corresponding B_PDU_A PDU&apos;s data to the initial value. <linebreak/>
+ Note: Init values as mentioned in SWR_L3_CRoute_Comserv_1248 <linebreak/>
+ <linebreak/>
+ ID: SWR_L3_CRoute_Comserv_1258 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+ComServer_CL shall serialize and deserialize the data structures (*1) specified in the data definition (*2) in accordance with the rules specified in the bellow requirements specification. <linebreak/>
+ <linebreak/>
+ (*1)Note1: Data structures is referring to the all elements of a SomeIP resource which needs to be serialized / deserialized, which can be interpreted as structure data type. There can be cases when the elements of a Data structure (property) can be of type struct. <linebreak/>
+ <linebreak/>
+ (*2)Note2: data definition is reffering to the ComServSpec, ComServ_SST, ServiceName_Specification, Arxml specific for each serviceName <linebreak/>
+ <linebreak/>
+ Note3: All the properties from a resource which have the same &quot;SomeIP Key Value&quot; , are part of the same data structure. We might have cases when we have data structure only with one element. <linebreak/>
+ ID: SWR_ICAS1_GW_3629 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For a payload that needs to be deserialized, if ComServer_CL receives more data than it is specifed in the lenth indicator, the ComServer_CL should deserialize and further process only known part of the data(*). <linebreak/>
+ <linebreak/>
+ (*)Note: Known part of the data = first x bytes from the received payload, where x= value from the length indicator. <linebreak/>
+ ID: SWR_ICAS1_GW_3635 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For a payload that needs to be deserialized, if ComServer_CL receives less data than it is specifed in the lenth indicator, the ComServer_CL should deserialize and further process only known part of the data(*). <linebreak/>
+ <linebreak/>
+ (*)Note: Known part of the data = first x bytes from the received payload, where x= value from the length indicator. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3637 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For a payload that needs to be deserialized, when ComServer_CL receives less data than it is specifed in the lenth indicator, the ComServer_CL should NOT set to init value the properties for which the data has not been received. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3638 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The byte order of the elements within the data structures to be serialized must be the &quot;Network Byte Order Big Endian&quot;. <linebreak/>
+ <linebreak/>
+ Note: If another Byte Order for the elements within the data structures to be serialized is explicitly required in the data specification, this one must be used. Currently this is not the case. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3640 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The ComServer_CL serializer shall support the following basic data types. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Table: Basic data types <linebreak/>
+ <linebreak/>
+ Note: the boolean data type is represented by an entire byte in order to avoid bitshifts and maskings. <linebreak/>
+ ID: SWR_ICAS1_GW_3645 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The elements of a structure must be serialized in the order specified by a depth search first algorithm. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3648 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For each serialized data structure, a length indicator must be inserted before it. <linebreak/>
+ <linebreak/>
+ Note: All the properties from a resource which have the same &quot;SomeIP Key Value&quot; , are part of the same data structure. We might have cases when the data structure contains only one element. In this situation the length indicator must be inserted also. <linebreak/>
+ (*) - &quot;SomeIP Key Value&quot; is defined in the ComServer_SperviceSpec. <linebreak/>
+ ID: SWR_ICAS1_GW_3669 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+In case that it is not differently specified, the Length Indicator should be always 4 bytes. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3670 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The Length Indicator must contain the length (in bytes) of the data structure without the length of the Length Indicator itself. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3677 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If, during deserialization, the length specified in the length indicator is bigger than the expected length according to the data specification, then the deserializer must ignore the data exceeding the length defined in the data specification and shall deserialize only the known data. <linebreak/>
+ ID: SWR_ICAS1_GW_3698 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Each element of a data structure shall be uniquely identified by a numeric TAG. <linebreak/>
+ This TAG is createad from the data ID (which is taken from the service specifiaction of each service -&quot; TLV Data-ID&quot;) and the wire type of the element. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Note1: A data ID must be unique within the elements of a structure. <linebreak/>
+ Note2: A data ID does not need to be unique across various structures, i.e. there can be two elements in different structures that can have the same data ID. <linebreak/>
+ ID: SWR_ICAS1_GW_3702 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The elements that are defined as optional in the data specification and marked as &quot;unavailable&quot; by the application must be skipped and must not be serialized. <linebreak/>
+ <linebreak/>
+ Note1: An element of a structure can be either required or optional. In the first case, the element must be always transmitted by the sender; in the last case, the element is transmitted only on request. If there are not any available optional elements, the receiver must ensure the processing. <linebreak/>
+ Note2: the application marks the elements as &quot;unavailable&quot; in a specific way for each implementation <linebreak/>
+ Note3: By using a tag/length/value coding, the length of the serialized byte stream is of course increased and leads to an increased complexity, so that the processing time of the serializer and the deserializer also rises. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3704 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+As already specified in SWR_ICAS1_GW_3670 and SWR_ICAS1_GW_3669, for each data structure that needs to be serialized, a Length Indicator of 4 bytes needs to be added at the begining of each strucutre. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Note: For complex data types a different length of the Length Indicator can be used. See SWR_ICAS1_GW_3731 <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3706 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Due to static configuration of the services, which is defined in the data specification, the same size of the Length Indicator (4 bytes) needs to be used for all elements of a message (structures, unions, arrays). This size needs to be used for Serialization and also Deserialization. <linebreak/>
+ <linebreak/>
+ Note: This req is appplicable for wire type 4. For this wire type the Length Indicator size should be defined in the ComServer_Spec files, but is not. Due to this, the decision was to use the 4 bytes Length Indicator for this wire type. <linebreak/>
+ ID: SWR_ICAS1_GW_3707 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The Length Indicator must include the length (in bytes) of the entire data structure including: <linebreak/>
+ the length-sum of all child-elements <linebreak/>
+ the length-sum of all the child-elements&apos; tags <linebreak/>
+ the length-sum of all the child elements&apos; length indicators <linebreak/>
+ <linebreak/>
+ This is applicable also for the lenth the entire SomeIP payload (called size indicator or arrayLength). <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3724 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+As specified in SWR_ICAS1_GW_3702 each element of a structure, needs to be preceeded by a tag. <linebreak/>
+ This tag must be two bytes long and should consist of: <linebreak/>
+ reserved (bit 7 of the first byte) <linebreak/>
+ wire type (bit 6-4 of the first byte) <linebreak/>
+ data ID (bit 3-0 of the first byte and bit 7-0 of the second byte) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Note: Because 12 bits are used for the coding of data ID, 4095 is the highest possible value of a data ID and, thus, the highest possible number for the elements of a structure. <linebreak/>
+ ID: SWR_ICAS1_GW_3725 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The wire type determines the type of the following data of the element. The value of the wire type must be set according the bellow table: <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Table: Wire types <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3726 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the data type of a structure element is a base data type (Wire Types 0-3), the tag will be imediately followed by the serialized data of the element. <linebreak/>
+ ID: SWR_ICAS1_GW_3728 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the data type of a structure element is complex (Wire Type 4-7), a Length Indicator must be inserted after the tag and before the serialized data of the element. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3729 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For Wire Type 5-7, the size of the length field must be the one specified by the Wire Type which is used. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3731 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If during deserialization, ComServer_CL reads an unknown tag (different than the ones specified in SWR_ICAS1_GW_3726), it must skip the unknown element using the information from Wire Type and Length Indicator. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3735 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the deserializer does not find a known non-optional element in the serialized byte stream, it must cancel the deserialization. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Implementation Note: the deserializer does not need to extract the Data ID from the tag. It can use the entire tag (including Length Bit and Wire Type) to identify the structure elements. This could be an optimization for the deserializer as no additional shift and masking operations need be used. <linebreak/>
+ ID: SWR_ICAS1_GW_3736 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The output parameters of a method must be serialized as if all the output parameters were elements of a structure according to the chapter Payload Serialization <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3740 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+The order of parameters shall be given by the TLV DATA-ID from the Service specification. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3741 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+All the output parameters of a method must have assigned a numerical data ID as specified in the data specification (TLV Data-ID). <linebreak/>
+ In the serialized payload this is part of the TAG. <linebreak/>
+ ID: SWR_ICAS1_GW_3742 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+An array with a dynamic length must be serialized by linking the following elements: <linebreak/>
+ a length indicator that contains the length (in bytes) of the following arrays <linebreak/>
+ the array itself with the valid array elements <linebreak/>
+ <linebreak/>
+ Here, <linebreak/>
+ the size of the length indicator (1, 2 or 4 bytes) must be taken from the data specification <linebreak/>
+ and the array must be serialized in accordance with an array with the static length of the valid elements. The number of elements to be transferred is defined during run time and it includes only the valid elements, but no reserve. Elements must no longer be transferred as necessary. <linebreak/>
+ <linebreak/>
+ Note: See SWR_ICAS1_GW_3729, SWR_ICAS1_GW_3731. In these req the length of the Length Indicator is defined based on the used wire type. <linebreak/>
+ ID: SWR_ICAS1_GW_3745 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For unidimensional arrays, the elements of the array must be serialized according to their order. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3746 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Strings must be serialized as an array of dynamic length with element type uint8. <linebreak/>
+ ID: SWR_ICAS1_GW_3749 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+ComServer_CL does not check the encoding of the strings, and it treats all the data it is received from application or services. <linebreak/>
+ <linebreak/>
+ Note: In ICAS1 the encoding of the string is done in ASCII which is 100% compatible with UTF-8 encoding. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3751 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Byte Order Mark (BOM) should not use. <linebreak/>
+ <linebreak/>
+ Note1: A BOM is not necessary for UTF-8. <linebreak/>
+ Note2: The strings must not be null-terminated because the length of the string is transmitted, the null-termination is not necessary. <linebreak/>
+ ID: SWR_ICAS1_GW_3752 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If events cause an error during deserialization, the ComServer_CL must not trigger sendding of an error message. <linebreak/>
+ ID: SWR_ICAS1_GW_3781 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For events, the request ID field must be set to 0. <linebreak/>
+ <linebreak/>
+ Note: The request ID = Client ID (2 bytes) + SessionID (2 bytes) <linebreak/>
+ ID: SWR_ICAS1_GW_3786 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For events, the message type field must be set to 0x02 (=NOTIFICATION). <linebreak/>
+ ID: SWR_ICAS1_GW_3787 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+For events, the payload must consist of the serialized parameters of the event. <linebreak/>
+ <linebreak/>
+ Note: See chapter serialization. <linebreak/>
+ ID: SWR_ICAS1_GW_3789 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the Client sends a request Message <linebreak/>
+ then <linebreak/>
+ the Client shall set the value of the Message Type to 0x00 (=REQUEST). <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3821 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the Client sends a request Message <linebreak/>
+ then <linebreak/>
+ the Client shall set the value of the Return Code to 0x00. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3822 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the Client sends a request Message <linebreak/>
+ then <linebreak/>
+ the payload from the request message shall consist the serialize input parameters. <linebreak/>
+ <linebreak/>
+ Hint: <linebreak/>
+ see chapter serialization. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3823 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+ComServer_CL must be able to receive additional requests from other clients during the process of processing a method request. <linebreak/>
+ ID: SWR_ICAS1_GW_3825 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the server receives a request message (GET) then the server shall send a response message. <linebreak/>
+ ID: SWR_ICAS1_GW_3827 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the server receives a request message then the server shall set the value of the Message Type, in the response message, to 0x80 (=RESPONSE). <linebreak/>
+ ID: SWR_ICAS1_GW_3830 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the server receives a request message then the server shall set the Client ID for the response message with the Client ID from the request message. <linebreak/>
+ ID: SWR_ICAS1_GW_3839 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the server receives a request message then the server shall set the session ID for the response message with the session ID from the request message. <linebreak/>
+ ID: SWR_ICAS1_GW_3845 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If the server receives a request message (GET) then the payload from the response message shall consists the serialize output parameters from the request. <linebreak/>
+ <linebreak/>
+ Note: see chapter serialization. <linebreak/>
+ ID: SWR_ICAS1_GW_3859 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the client sends a RequestNoReturn message <linebreak/>
+ then <linebreak/>
+ the client shall set the value for the field message typen to 0x01 (=REQUEST_NO_RETURN). <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3889 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the client sends a RequestNoReturn message <linebreak/>
+ then <linebreak/>
+ the client shall set the value for the field return code to 0x00. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3890 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the client sends a RequestNoReturn message <linebreak/>
+ then <linebreak/>
+ the client shall set the value for the field client ID to 0x0000. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3891 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the client sends a RequestNoReturn message <linebreak/>
+ then <linebreak/>
+ the client shall set the value for the field session ID to 0x0000. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3892 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="">
+<title></title>
+<para>Requirement is not satisfied <linebreak/>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+If <linebreak/>
+ the client sends a RequestNoReturn message <linebreak/>
+ then <linebreak/>
+ the payload from the RequestNoReturn message shall consists the serialize input parameters from the request. <linebreak/>
+ <linebreak/>
+ Hint: <linebreak/>
+ see chapter serialization. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_GW_3893 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+</para></simplesect>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

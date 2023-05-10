@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has the following files that are developed by Continental:<itemizedlist>
+<listitem><para><ref refid="_d_w_a___task_8c" kindref="compound">DWA_Task.c</ref> - This file will init, run and stop the DWA functionality</para></listitem><listitem><para><ref refid="_d_w_a___task_8h" kindref="compound">DWA_Task.h</ref> - Header file for <ref refid="_d_w_a___task_8c" kindref="compound">DWA_Task.c</ref></para></listitem><listitem><para><ref refid="_d_w_a___nv_ram_8h" kindref="compound">DWA_NvRam.h</ref> - Header file is needed for connecting memory and lib</para></listitem><listitem><para><ref refid="_d_w_a___extra_definitions_8h" kindref="compound">DWA_ExtraDefinitions.h</ref> - This headerfile controls the overwriting of generated S/R autosar_functions</para></listitem><listitem><para><ref refid="_d_w_a___data_types_8h" kindref="compound">DWA_DataTypes.h</ref> - This headerfile provides the datatypes used to provide the S/R Autosar functions for coding, fault memory, etc.</para></listitem><listitem><para><ref refid="_d_w_a___mem_map_8h" kindref="compound">DWA_MemMap.h</ref> - Header file used during RTE generation</para></listitem></itemizedlist>
+</para><para><image type="html" name="InternalComponentDesign.png">Internal Component Design</image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level.<linebreak/>
+For more details, please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter. Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_DWA_1600  </para></entry><entry thead="no"><para>The ICAS1 shall be able to schedule DWA every 10 ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_DWA_1707  </para></entry><entry thead="no"><para>DWA component required 5 blocks of NvM memory, according to ARXML file.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>No interfaces between units because DWA has only one unit. (DWA_Task)</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The DWA has only one unit DWA_Task. There are no interractions with other units. Nevertheless the next diagram depicts the interfaces.<linebreak/>
+<image type="html" name="DWA_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="DWA_DynamicBehavior.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+The NvM data flow is presented in red.</para><para><image type="html" name="DWA_DFD0.png"></image>
+ </para><para>Control flow diagram that represents the DWA state machine: <image type="html" name="dataFlow_DWA.png">Sounder LIN Communication</image>
+ </para><para><bold>Note:</bold> <linebreak/>
+ - SCHARF = 1 <linebreak/>
+ - UNSCHARF = 0 <linebreak/>
+<heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because DWA component runs in high-power mode. Currently, the component does not require a special power modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>The functions are handling errors via return value (e.g. RTE_E_OK). DWA component reports internal errors on DTC level. For more details, see <ref refid="_d_w_a___task_8c" kindref="compound">DWA_Task.c</ref></para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the concurrent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para>DWA operations are available in the <ulink url="globals_func.html">Functions section</ulink>.</para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>No complex data structures used. A structure that stores internal DWA data is used. For more details, please see <ulink url="struct_d_w_a___internal__t.html">structure page</ulink>.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para><heading level="4">Interoperability</heading>
+</para><para>Interoperability is set to <bold>low</bold> because DWA depends on other components.</para><para><heading level="4">Interaction</heading>
+</para><para>Interaction is set to <bold>low</bold> because the component has a reduced number of non RTE dependencies.</para><para><heading level="4">Criticality</heading>
+</para><para>Since <bold>DWA</bold> is non-safety, the interaction is Low and the component was not integrated recently, the criticality is <bold>medium</bold>.</para><para><heading level="4">Technical complexity</heading>
+</para><para>The technical complexity is <bold>medium</bold> because DWA implements a specific behavior.</para><para><heading level="4">Risks</heading>
+</para><para>The component <bold>DWA</bold> is composed of only one unit and no complex alghoritms are implemented therefore the risk is <bold>low</bold>.</para><para><heading level="4">Testability</heading>
+</para><para>The component <bold>DWA</bold> requires other tools (like PLAST) besides SWATT for 100% tests coverage but all tests can be automated. So, the testability level is <bold>high</bold>. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

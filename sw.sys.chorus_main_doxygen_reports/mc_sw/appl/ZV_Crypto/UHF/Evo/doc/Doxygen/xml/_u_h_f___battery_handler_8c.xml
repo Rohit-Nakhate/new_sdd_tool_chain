@@ -1,0 +1,855 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___battery_handler_8c" kind="file" language="C++">
+    <compoundname>UHF_BatteryHandler.c</compoundname>
+    <includes local="yes">tl_basetypes.h</includes>
+    <includes local="yes">Dem.h</includes>
+    <includes local="yes">Rte.h</includes>
+    <includes refid="_u_h_f___receiver_8h" local="yes">UHF_Receiver.h</includes>
+    <includes refid="_u_h_f___battery_handler_8h" local="yes">UHF_BatteryHandler.h</includes>
+    <includes local="yes">Rte_UHF.h</includes>
+    <includes refid="_u_h_f___data_types_8h" local="yes">UHF_DataTypes.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>UHF_DataTypes.h</label>
+        <link refid="_u_h_f___data_types_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Dem.h</label>
+      </node>
+      <node id="17">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="10">
+        <label>UHF_Receiver.h</label>
+        <link refid="_u_h_f___receiver_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>UHF_BatteryHandler.c</label>
+        <link refid="_u_h_f___battery_handler_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Rte.h</label>
+      </node>
+      <node id="11">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="7">
+        <label>tl_basetypes.h</label>
+      </node>
+      <node id="15">
+        <label>UHF_nvram.h</label>
+        <link refid="_u_h_f___nv_ram_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Rte_UHF_Type.h</label>
+      </node>
+      <node id="12">
+        <label>UHF_BatteryHandler.h</label>
+        <link refid="_u_h_f___battery_handler_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Rte_UHF.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_u_h_f___battery_handler_8c_1a9b18d20477dd8082d226d00f0ba54ebc" prot="public" static="no">
+        <name>BATTERIE_VOLTAGE_INVALID</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant describing invalid value of a key battery voltage</para><para>used in <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> when comparing batteryvoltage <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_h_f___battery_handler_8c_1a6c533eb5cb3749b96b7aa3ee0aa42320" prot="public" static="no">
+        <name>NUMBER_OF_KEYS</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>constant used as maximal value of keys learned by UHF Master</para><para>constant is referenced in functions regarding key processes (e.g. Key learning process). <linebreak/>
+ used in fucntions: <ref refid="_u_h_f___task_8c_1a82681067ecfc26b5dc3d941d2d17d909" kindref="member">UHF_Stop</ref> <linebreak/>
+ <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> <linebreak/>
+ <ref refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" kindref="member">checkErrorFlags</ref> <simplesect kind="remark"><para>values 8u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="86" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean batteryErrorFlag[8u]</definition>
+        <argsstring>[8u]</argsstring>
+        <name>batteryErrorFlag</name>
+        <initializer>= { 0,  0,  0,  0,  0,  0,  0,  0}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Array of flags for key battery errors</para><para>Array indicates if battery voltage in any of learned keys is invalid. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {Its values are updated in <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> Its values are checked in <ref refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" kindref="member">checkErrorFlags</ref> All its values are set to FALSE in <ref refid="_u_h_f___task_8c_1a82681067ecfc26b5dc3d941d2d17d909" kindref="member">UHF_Stop</ref>} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___task_8c" kindref="compound">UHF_Task.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="107" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="107" bodyend="-1"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a3ed4f37453db564eb07a23051af5e34d" compoundref="_u_h_f___battery_handler_8c" startline="835" endline="841">UHF_BatteryHandler_Stop</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" compoundref="_u_h_f___battery_handler_8c" startline="1078" endline="1106">checkErrorFlags</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1afad4d7d32fe9691661a5dc87ac3583e3" compoundref="_u_h_f___battery_handler_8c_8test" startline="287" endline="323">TEST_UHF_BatteryHandler_Stop</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" compoundref="_u_h_f___battery_handler_8c_8test" startline="610" endline="754">TEST_updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a483f7b986212d69fb60274ad1d803641" compoundref="_u_h_f___battery_handler_8c_8test" startline="766" endline="835">TEST_checkErrorFlags</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_u_h_f___battery_handler_8c_1a0eb4a8f68e3fbaf80f1578dbc7427470" prot="public" static="yes" mutable="no">
+        <type>Std_ReturnType(*const</type>
+        <definition>Std_ReturnType(*const DemEvent_SetEventStatus[8])(Dem_EventStatusType data)</definition>
+        <argsstring>[8])(Dem_EventStatusType data)</argsstring>
+        <name>DemEvent_SetEventStatus</name>
+        <initializer>= {
+    Rte_Call_ZV_DemEventId_035800_SetEventStatus,
+    Rte_Call_ZV_DemEventId_035803_SetEventStatus,
+    Rte_Call_ZV_DemEventId_035806_SetEventStatus,
+    Rte_Call_ZV_DemEventId_035809_SetEventStatus,
+    Rte_Call_ZV_DemEventId_03580C_SetEventStatus,
+    Rte_Call_ZV_DemEventId_03580F_SetEventStatus,
+    Rte_Call_ZV_DemEventId_035812_SetEventStatus,
+    Rte_Call_ZV_DemEventId_035815_SetEventStatus
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Const variable holding pointers to RTE call functions.</para><para>Array elements point to functions used to set proper DTC <simplesect kind="remark"><para>values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, used by updateBatteryVoltage} <linebreak/>
+ protection {static global variable for <ref refid="_u_h_f___battery_handler_8c" kindref="compound">UHF_BatteryHandler.c</ref>} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="121" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="121" bodyend="-1"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void updateBatteryCounter</definition>
+        <argsstring>(uint8_t u8SchluesselNrBattCounter)</argsstring>
+        <name>updateBatteryCounter</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8SchluesselNrBattCounter</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function updates battery error in RAM mirror and NVM.</para><para>Function is processing Battery error, increases error counter and saves updated counter and date of event occurance in NVM. <simplesect kind="pre"><para>Is called in cyclic task in <ref refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" kindref="member">checkErrorFlags</ref> and in <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u8SchluesselNrBattCounter - Number of a key which was used </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>keyBatteryDebouncing might be updated in the NVM  <image type="html" name="updateBatteryCounter.png">Activity Diagram updateBatteryCounter</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a7db6f2aeb850e2f4640a29c329bd887d" kindref="member">TEST_updateBatteryCounter</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_217 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_175 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_216 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_174 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_192 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_193 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_96 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function updates battery error in RAM mirror and NVM. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="235" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1114" bodyend="1200"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a9df6a5cac985c6b88e38756a4699cb53" compoundref="_u_h_f___battery_handler_8c" startline="1208" endline="1265">getNvmKey</references>
+        <references refid="struct_key_battery_debouncing_type_1a0c84dce7c03783b076686468c51b69d3" compoundref="_u_h_f___data_types_8h" startline="619">KeyBatteryDebouncingType::counter</references>
+        <references refid="struct_key_battery_debouncing_type_1a0b92e65d81c3ac7fd8cad380b2e9ab5a" compoundref="_u_h_f___data_types_8h" startline="615">KeyBatteryDebouncingType::year</references>
+        <references refid="struct_key_battery_debouncing_type_1aef1ebf54c1aa19caaa8d431b0f791e5a" compoundref="_u_h_f___data_types_8h" startline="616">KeyBatteryDebouncingType::month</references>
+        <references refid="struct_key_battery_debouncing_type_1a1139dd3c946585c227408a4a8b1e5039" compoundref="_u_h_f___data_types_8h" startline="617">KeyBatteryDebouncingType::day</references>
+        <references refid="struct_key_battery_debouncing_type_1a08b2136e1c3976a76b77c892978dc8df" compoundref="_u_h_f___data_types_8h" startline="618">KeyBatteryDebouncingType::hours</references>
+        <references refid="_u_h_f___battery_handler_8c_1aa06169f30b1941cab8c6be85a29267e9" compoundref="_u_h_f___battery_handler_8c" startline="971" endline="993">dayOfYear</references>
+        <references refid="_u_h_f___battery_handler_8c_1aabc64cbd84e2206e268e4e517953708c" compoundref="_u_h_f___battery_handler_8c" startline="899" endline="921">isLeapYear</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" compoundref="_u_h_f___battery_handler_8c" startline="1078" endline="1106">checkErrorFlags</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" compoundref="_u_h_f___battery_handler_8c_8test" startline="610" endline="754">TEST_updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a483f7b986212d69fb60274ad1d803641" compoundref="_u_h_f___battery_handler_8c_8test" startline="766" endline="835">TEST_checkErrorFlags</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a7db6f2aeb850e2f4640a29c329bd887d" compoundref="_u_h_f___battery_handler_8c_8test" startline="847" endline="932">TEST_updateBatteryCounter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void checkErrorFlags</definition>
+        <argsstring>(void)</argsstring>
+        <name>checkErrorFlags</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function iterates over table with error flags and processes if any was set.</para><para>Processed active flag indicates that an update in NvM is needed. Function is a part of a low battery event. If during calculation system time was not available but all conditions were met - proper flag was set. This function is called in <ref refid="_u_h_f___task_8c_1adbc62ed27152db19e96b12dda3727e9c" kindref="member">UHF_TaskCyclicEvent</ref> and if system time is available, counter is increased and the error flag is reset. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" kindref="member">batteryErrorFlag</ref> - Array storing battery error flags </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="checkErrorFlags.png">Activity Diagram checkErrorFlags</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a483f7b986212d69fb60274ad1d803641" kindref="member">TEST_checkErrorFlags</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_100 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_102 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function iterates over table with error flags and processes if any was set. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="295" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1078" bodyend="1106"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___battery_handler_8c_1aecbb766b1cac7db8d80834df3300fff1" compoundref="_u_h_f___battery_handler_8c" startline="867" endline="891">isSystemTimeAvailable</references>
+        <references refid="_u_h_f___battery_handler_8c_1a6c533eb5cb3749b96b7aa3ee0aa42320" compoundref="_u_h_f___battery_handler_8c" startline="86">NUMBER_OF_KEYS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" compoundref="_u_h_f___battery_handler_8c" startline="107">batteryErrorFlag</references>
+        <references refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" compoundref="_u_h_f___battery_handler_8c" startline="1114" endline="1200">updateBatteryCounter</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a3278730895cc1b2efcbeacea00aa59e7" compoundref="_u_h_f___battery_handler_8c" startline="849" endline="855">UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a41aeb764821b7038ec1c97c885229620" compoundref="_u_h_f___battery_handler_8c_8test" startline="335" endline="358">TEST_UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a483f7b986212d69fb60274ad1d803641" compoundref="_u_h_f___battery_handler_8c_8test" startline="766" endline="835">TEST_checkErrorFlags</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1aecbb766b1cac7db8d80834df3300fff1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isSystemTimeAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>isSystemTimeAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function is checking if system time is available.</para><para>In order to check system time availability it reads signal from ECUManager. Function is using enum construction <ref refid="_u_h_f___data_types_8h_1af2274febc1ae0d601ef35733e162515e" kindref="member">_BasicUTCQualityEnum</ref>. If system time is in format BasicUTCQuiality_Source_RTC or BasicUTCQuiality_UTC_Source_GNSS it returns TRUE otherwise it returns FALSE. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - information if system time is available. </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="isSystemTimeAvailable.png">Activity Diagram isSystemTimeAvailable</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a8c921a9c59b8d5615f6666ff63b607f8" kindref="member">TEST_isSystemTimeAvailable</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_217 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function is checking if system time is available. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="350" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="867" bodyend="891"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1af2274febc1ae0d601ef35733e162515ea09d09e2ebf60234eeaa611cf476bf49b" compoundref="_u_h_f___data_types_8h" startline="633">BasicUTCQuiality_UTC_MAX</references>
+        <references refid="_u_h_f___data_types_8h_1af2274febc1ae0d601ef35733e162515eae1d9f448728bdde28a01159356d7c783" compoundref="_u_h_f___data_types_8h" startline="630">BasicUTCQuiality_Source_RTC</references>
+        <references refid="_u_h_f___data_types_8h_1af2274febc1ae0d601ef35733e162515ea4c5a437efa9edb44991460b3168f6697" compoundref="_u_h_f___data_types_8h" startline="631">BasicUTCQuiality_UTC_Source_GNSS</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" compoundref="_u_h_f___battery_handler_8c" startline="1078" endline="1106">checkErrorFlags</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a8c921a9c59b8d5615f6666ff63b607f8" compoundref="_u_h_f___battery_handler_8c_8test" startline="370" endline="415">TEST_isSystemTimeAvailable</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" compoundref="_u_h_f___battery_handler_8c_8test" startline="610" endline="754">TEST_updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a483f7b986212d69fb60274ad1d803641" compoundref="_u_h_f___battery_handler_8c_8test" startline="766" endline="835">TEST_checkErrorFlags</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1aabc64cbd84e2206e268e4e517953708c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean isLeapYear</definition>
+        <argsstring>(const uint16 year)</argsstring>
+        <name>isLeapYear</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>year</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function validating if given year value is a leap year.</para><para>It uses a mathematical method to validate year. If given number is divisible by 4 it is a leap year. There are exceptions: Year divisible by 100 is not a leap year. Year divisible by 400 is a leap year. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>year - 0..65535<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - True if given year is a leap year. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="isLeapYear.png">Activity Diagram isLeapYear</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a529cc01eac396291545760232d7c9678" kindref="member">TEST_isLeapYear</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_217 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function validating if given year value is a leap year. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="403" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="899" bodyend="921"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1ad8b47f182861b53e17e879a2d52921c3" compoundref="_u_h_f___data_types_8h" startline="230">UHF_VALUE_4</references>
+        <references refid="_u_h_f___data_types_8h_1a51ba2a61d493757d86b02b710dc78c43" compoundref="_u_h_f___data_types_8h" startline="379">UHF_VALUE_100</references>
+        <references refid="_u_h_f___data_types_8h_1a8de832be6df0287620589d16a23a1dd8" compoundref="_u_h_f___data_types_8h" startline="390">UHF_VALUE_400</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a8bbac8889bc179e4a6bc4a3c7c979e6d" compoundref="_u_h_f___battery_handler_8c" startline="929" endline="963">daysInMonth</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" compoundref="_u_h_f___battery_handler_8c" startline="1114" endline="1200">updateBatteryCounter</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a529cc01eac396291545760232d7c9678" compoundref="_u_h_f___battery_handler_8c_8test" startline="427" endline="470">TEST_isLeapYear</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a57d25deeeab849522b2ef9b37bf23319" compoundref="_u_h_f___battery_handler_8c_8test" startline="482" endline="543">TEST_daysInMonth</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a7db6f2aeb850e2f4640a29c329bd887d" compoundref="_u_h_f___battery_handler_8c_8test" startline="847" endline="932">TEST_updateBatteryCounter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a8bbac8889bc179e4a6bc4a3c7c979e6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>static uint8 daysInMonth</definition>
+        <argsstring>(const uint16 year, const uint8 month)</argsstring>
+        <name>daysInMonth</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>year</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>month</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function returns number of days in given month of a given year.</para><para>Function returns number of days in given month of a given year. Used as a helper function since 2nd month of a leap year has one more day. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>year - 0..65535<linebreak/>
+ [in] uint8 month - 1..12<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - Number of days in the given month. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="daysInMonth.png">Activity Diagram daysInMonth</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a57d25deeeab849522b2ef9b37bf23319" kindref="member">TEST_daysInMonth</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_217 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function returns number of days in given month of a given year. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="474" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="929" bodyend="963"/>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___data_types_8h_1a339712b16eaa96f2043150887b8443ea" compoundref="_u_h_f___data_types_8h" startline="214">UHF_VALUE_3</references>
+        <references refid="_u_h_f___data_types_8h_1ad732b7d2990f3c2031c3566010a26185" compoundref="_u_h_f___data_types_8h" startline="244">UHF_VALUE_5</references>
+        <references refid="_u_h_f___data_types_8h_1a10bf99e473fd977d9c60ad1495b588a6" compoundref="_u_h_f___data_types_8h" startline="276">UHF_VALUE_7</references>
+        <references refid="_u_h_f___data_types_8h_1a23cf68f2c958002832484557a5c79a23" compoundref="_u_h_f___data_types_8h" startline="291">UHF_VALUE_8</references>
+        <references refid="_u_h_f___data_types_8h_1ab7a94f06a3e579c7861235e43eeb5ba1" compoundref="_u_h_f___data_types_8h" startline="313">UHF_VALUE_10</references>
+        <references refid="_u_h_f___data_types_8h_1a769f84c1fe36f3c3e0ea995eee522160" compoundref="_u_h_f___data_types_8h" startline="335">UHF_VALUE_12</references>
+        <references refid="_u_h_f___data_types_8h_1aad9157b26257c38eaeb0adc5249d958c" compoundref="_u_h_f___data_types_8h" startline="368">UHF_VALUE_31</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <references refid="_u_h_f___data_types_8h_1a54f0d9a5f329ddee5a322bdf6ba5a78e" compoundref="_u_h_f___data_types_8h" startline="346">UHF_VALUE_28</references>
+        <references refid="_u_h_f___battery_handler_8c_1aabc64cbd84e2206e268e4e517953708c" compoundref="_u_h_f___battery_handler_8c" startline="899" endline="921">isLeapYear</references>
+        <references refid="_u_h_f___data_types_8h_1ad8b47f182861b53e17e879a2d52921c3" compoundref="_u_h_f___data_types_8h" startline="230">UHF_VALUE_4</references>
+        <references refid="_u_h_f___data_types_8h_1af18b180d4d02f8b062c83869774d37a4" compoundref="_u_h_f___data_types_8h" startline="260">UHF_VALUE_6</references>
+        <references refid="_u_h_f___data_types_8h_1a0dbb8d8bd073c3e848d2aca44e0da8de" compoundref="_u_h_f___data_types_8h" startline="302">UHF_VALUE_9</references>
+        <references refid="_u_h_f___data_types_8h_1aebe5c4c2f977b39b6ea8449ea0b398dc" compoundref="_u_h_f___data_types_8h" startline="324">UHF_VALUE_11</references>
+        <references refid="_u_h_f___data_types_8h_1ab18b217693b808a9c1ebecd674543062" compoundref="_u_h_f___data_types_8h" startline="357">UHF_VALUE_30</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1aa06169f30b1941cab8c6be85a29267e9" compoundref="_u_h_f___battery_handler_8c" startline="971" endline="993">dayOfYear</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a57d25deeeab849522b2ef9b37bf23319" compoundref="_u_h_f___battery_handler_8c_8test" startline="482" endline="543">TEST_daysInMonth</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1aa06169f30b1941cab8c6be85a29267e9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>static uint16 dayOfYear</definition>
+        <argsstring>(const uint16 year, const uint8 month, const uint8 day)</argsstring>
+        <name>dayOfYear</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>year</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>month</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>day</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function returns number of days that passed until today in current year.</para><para>Function returns number of days that passed until today in current year. It uses <ref refid="_u_h_f___battery_handler_8c_1a8bbac8889bc179e4a6bc4a3c7c979e6d" kindref="member">daysInMonth</ref> function as a helper function. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>year - 0..65535<linebreak/>
+ [in] uint8 month - 1..12<linebreak/>
+ [in] uint8 day - 0..31<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 - Day number in a given year. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="dayOfYear.png">Activity Diagram dayOfYear</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a2e648448868ff674d590e5c4aa00460b" kindref="member">TEST_dayOfYear</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_217 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function returns number of days that passed until today in current year. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="529" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="971" bodyend="993"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a8bbac8889bc179e4a6bc4a3c7c979e6d" compoundref="_u_h_f___battery_handler_8c" startline="929" endline="963">daysInMonth</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" compoundref="_u_h_f___battery_handler_8c" startline="1114" endline="1200">updateBatteryCounter</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a2e648448868ff674d590e5c4aa00460b" compoundref="_u_h_f___battery_handler_8c_8test" startline="555" endline="598">TEST_dayOfYear</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a7db6f2aeb850e2f4640a29c329bd887d" compoundref="_u_h_f___battery_handler_8c_8test" startline="847" endline="932">TEST_updateBatteryCounter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a9df6a5cac985c6b88e38756a4699cb53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IDT_CRYPTO_uint8_DIM6 *</type>
+        <definition>static IDT_CRYPTO_uint8_DIM6 * getNvmKey</definition>
+        <argsstring>(const uint8 u8SchluesselNrBattVolInput)</argsstring>
+        <name>getNvmKey</name>
+        <param>
+          <type>const <ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>u8SchluesselNrBattVolInput</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions returns correct key battery data from PIM.</para><para>Is using switch construction - depending on a key number given in a parameter different pointer to NVM data is returned. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u8SchluesselNrBattVolInput - Number of a key </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IDT_CRYPTO_uint8_DIM6 * - Pointer to battery data </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="getNvmKey.png">Activity Diagram getNvmKey</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1aed47a57d826136912ddb56df4821519f" kindref="member">TEST_getNvmKey</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function for pointer extraction.<linebreak/>
+ Functions returns correct key battery data from PIM. <linebreak/>
+</para></simplesect>
+Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="599" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1208" bodyend="1265"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___data_types_8h_1abb3e137bdfc4b7d6ebac57c778d185dc" compoundref="_u_h_f___data_types_8h" startline="198">UHF_VALUE_2</references>
+        <references refid="_u_h_f___data_types_8h_1a339712b16eaa96f2043150887b8443ea" compoundref="_u_h_f___data_types_8h" startline="214">UHF_VALUE_3</references>
+        <references refid="_u_h_f___data_types_8h_1ad8b47f182861b53e17e879a2d52921c3" compoundref="_u_h_f___data_types_8h" startline="230">UHF_VALUE_4</references>
+        <references refid="_u_h_f___data_types_8h_1ad732b7d2990f3c2031c3566010a26185" compoundref="_u_h_f___data_types_8h" startline="244">UHF_VALUE_5</references>
+        <references refid="_u_h_f___data_types_8h_1af18b180d4d02f8b062c83869774d37a4" compoundref="_u_h_f___data_types_8h" startline="260">UHF_VALUE_6</references>
+        <references refid="_u_h_f___data_types_8h_1a10bf99e473fd977d9c60ad1495b588a6" compoundref="_u_h_f___data_types_8h" startline="276">UHF_VALUE_7</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" compoundref="_u_h_f___battery_handler_8c" startline="1114" endline="1200">updateBatteryCounter</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" compoundref="_u_h_f___battery_handler_8c_8test" startline="610" endline="754">TEST_updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a7db6f2aeb850e2f4640a29c329bd887d" compoundref="_u_h_f___battery_handler_8c_8test" startline="847" endline="932">TEST_updateBatteryCounter</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1aed47a57d826136912ddb56df4821519f" compoundref="_u_h_f___battery_handler_8c_8test" startline="1091" endline="1155">TEST_getNvmKey</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a3b16db1ec7357129841d1485fa7cb6f8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ResetFlagsOnClampS</definition>
+        <argsstring>(void)</argsstring>
+        <name>ResetFlagsOnClampS</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to detect Power Off on Clamp S and to reset a proper signal on CAN.</para><para>Uses Rte read fucntion to read a state of Clamp and if OFF transition occurs function sets to 0 signal responsible of showing if key battery is on low level. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="ResetFlagsOnClampS.png">Activity Diagram ResetFlagsOnClampS</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a53b195ef11a6b06747cec1ef87a9c2b1" kindref="member">TEST_ResetFlagsOnClampS</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000026"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_101 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function used to detect Power Off on Clamp S and to reset a proper signal on CAN. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="646" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1273" bodyend="1286"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a3278730895cc1b2efcbeacea00aa59e7" compoundref="_u_h_f___battery_handler_8c" startline="849" endline="855">UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a41aeb764821b7038ec1c97c885229620" compoundref="_u_h_f___battery_handler_8c_8test" startline="335" endline="358">TEST_UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a53b195ef11a6b06747cec1ef87a9c2b1" compoundref="_u_h_f___battery_handler_8c_8test" startline="944" endline="993">TEST_ResetFlagsOnClampS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PerformBatteryUpdateOnClamp15</definition>
+        <argsstring>(void)</argsstring>
+        <name>PerformBatteryUpdateOnClamp15</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function checks if ignition of the car happened and if so calls <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref> .</para><para>Uses Rte function to read state of the clamp 15 and if Transition to ON appears it calls function to update battery level. Additional conditions for function to trigger is that SKC and TransonderID were learned and event with sending battery level occurs. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>s_UHF_LogicalHeader_buf.BatteryLevel - battery level of currently evaluated key <ref refid="_u_h_f___receiver_8c_1ad0ae4d805e49f951b1a467a9d89e4a23" kindref="member">u8SchluesselNr</ref> - number of currently evaluated key </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>s_FBS_Warn_Schluessel_Batt is set on CAN  <image type="html" name="PerformBatteryUpdateOnClamp15.png">Activity Diagram PerformBatteryUpdateOnClamp15</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a27b5ff185da1841378d36128eabbd322" kindref="member">TEST_PerformBatteryUpdateOnClamp15</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000027"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_100 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_102 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function checks if ignition of the car happened and if so calls <ref refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" kindref="member">updateBatteryVoltage</ref>. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="696" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1294" bodyend="1317"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___receiver_8c_1aa3e5f3d7f153f9c5a22ec7c67d0e6075" compoundref="_u_h_f___receiver_8c" startline="382">FirstMessageArrived</references>
+        <references refid="_u_h_f___receiver_8h_1ad4d723b7c5c71e3e1174a1a039a8602e" compoundref="_u_h_f___receiver_8c" startline="993" endline="996">UHF_Receiver_Is_FirstMessageArrived</references>
+        <references refid="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" compoundref="_u_h_f___battery_handler_8c" startline="1002" endline="1070">updateBatteryVoltage</references>
+        <references refid="_u_h_f___receiver_8h_1aff395d4c78fdcb658b99e16462e9ee5e" compoundref="_u_h_f___receiver_8c" startline="973" endline="976">UHF_Receiver_Get_BatteryLevel</references>
+        <references refid="_u_h_f___receiver_8h_1ae3acdd1492786bdbd0b13cfbb7c8f38b" compoundref="_u_h_f___receiver_8c" startline="983" endline="986">UHF_Receiver_Get_SchluesselNr</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a3278730895cc1b2efcbeacea00aa59e7" compoundref="_u_h_f___battery_handler_8c" startline="849" endline="855">UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a41aeb764821b7038ec1c97c885229620" compoundref="_u_h_f___battery_handler_8c_8test" startline="335" endline="358">TEST_UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a27b5ff185da1841378d36128eabbd322" compoundref="_u_h_f___battery_handler_8c_8test" startline="1005" endline="1079">TEST_PerformBatteryUpdateOnClamp15</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1ad708f3397b5d02991bb8d9d606e33b91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>STATIC void</type>
+        <definition>STATIC void updateBatteryVoltage</definition>
+        <argsstring>(uint8 batteryvoltage, uint8 u8SchluesselNrBattVol)</argsstring>
+        <name>updateBatteryVoltage</name>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>batteryvoltage</declname>
+        </param>
+        <param>
+          <type><ref refid="_u_h_f___c_r_c10_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>u8SchluesselNrBattVol</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to update information about Battery voltage and perform action if battery is on low level.</para><para>Function reads threshold of low levels of voltage, new battery threshold and value of a counter that is a number describing of how many times low level of battery voltage shall occur before setting an DTC for performed key. Function additionally uses mechanism to calculate difference in time between previous and current incident of low battery and increases the counter. Difference of time in a mechanism mentioned should be longer than 24 hours. <simplesect kind="pre"><para>Is called by <ref refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" kindref="member">PerformBatteryUpdateOnClamp15</ref> if proper conditions are met </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>batteryvoltage - Battery voltage value received with FFB payload [in] uint8 u8SchluesselNrBattVol - Number of a key to perform update </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" kindref="member">batteryErrorFlag</ref> - Array of flags for key battery errors <ref refid="_u_h_f___battery_handler_8c_1a0eb4a8f68e3fbaf80f1578dbc7427470" kindref="member">DemEvent_SetEventStatus</ref> - Array of pointers to RTE functions </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>In case of voltage issues <ref refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" kindref="member">batteryErrorFlag</ref> is updated  <image type="html" name="updateBatteryVoltage.png">Activity Diagram updateBatteryVoltage</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" kindref="member">TEST_updateBatteryVoltage</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000028"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_129 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_213 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_126 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_178 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_238 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_179 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_208 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_209 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function used to update information about Battery voltage and perform action if battery is on low level. <linebreak/>
+</para><para>Please find detail information in the declaration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="785" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="1002" bodyend="1070"/>
+        <references refid="_u_h_f___data_types_8h_1ab7023dbef15bacb4d9fb4aa1f70da69d" compoundref="_u_h_f___data_types_8h" startline="602">SWATT_BYPASS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a9b18d20477dd8082d226d00f0ba54ebc" compoundref="_u_h_f___battery_handler_8c" startline="72">BATTERIE_VOLTAGE_INVALID</references>
+        <references refid="_u_h_f___battery_handler_8c_1a9df6a5cac985c6b88e38756a4699cb53" compoundref="_u_h_f___battery_handler_8c" startline="1208" endline="1265">getNvmKey</references>
+        <references refid="_u_h_f___battery_handler_8c_1aecbb766b1cac7db8d80834df3300fff1" compoundref="_u_h_f___battery_handler_8c" startline="867" endline="891">isSystemTimeAvailable</references>
+        <references refid="_u_h_f___battery_handler_8c_1a2652ab31ac455c72374cf13568a24549" compoundref="_u_h_f___battery_handler_8c" startline="1114" endline="1200">updateBatteryCounter</references>
+        <references refid="_u_h_f___battery_handler_8c_1a6c533eb5cb3749b96b7aa3ee0aa42320" compoundref="_u_h_f___battery_handler_8c" startline="86">NUMBER_OF_KEYS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" compoundref="_u_h_f___battery_handler_8c" startline="107">batteryErrorFlag</references>
+        <references refid="struct_key_battery_debouncing_type_1a0c84dce7c03783b076686468c51b69d3" compoundref="_u_h_f___data_types_8h" startline="619">KeyBatteryDebouncingType::counter</references>
+        <references refid="_u_h_f___data_types_8h_1a222678625dfbfda19be5a87a9d8c219d" compoundref="_u_h_f___data_types_8h" startline="181">UHF_VALUE_1</references>
+        <references refid="_u_h_f___data_types_8h_1a23cf68f2c958002832484557a5c79a23" compoundref="_u_h_f___data_types_8h" startline="291">UHF_VALUE_8</references>
+        <references refid="_u_h_f___battery_handler_8c_1a0eb4a8f68e3fbaf80f1578dbc7427470" compoundref="_u_h_f___battery_handler_8c" startline="121">DemEvent_SetEventStatus</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a3aae50f1a6428d59ca9d40a1f80c5514" compoundref="_u_h_f___battery_handler_8c_8test" startline="610" endline="754">TEST_updateBatteryVoltage</referencedby>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a27b5ff185da1841378d36128eabbd322" compoundref="_u_h_f___battery_handler_8c_8test" startline="1005" endline="1079">TEST_PerformBatteryUpdateOnClamp15</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1aafb4624e75042ed47f347abe56b7aa6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void clear_KeyfobBatteryStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>clear_KeyfobBatteryStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function triggers UHF-Master to initialize the Error Counter in PIM after CryptoHandler started the Key Learning process. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="799" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="799" bodyend="805"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a1abebecba12e6d8215534c98e3ab51e4" compoundref="_u_h_f___battery_handler_8c_8test" startline="169" endline="216">TEST_clear_KeyfobBatteryStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1ae311295780cf6f04a050d67a6e875471" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF_BatteryHandler init function called by scheduler. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="813" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="813" bodyend="827"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a93db4f26992996854cd892dcfa5f7be6" compoundref="_u_h_f___battery_handler_8c_8test" startline="228" endline="275">TEST_UHF_BatteryHandler_Init</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1a1fca64702650caaecf37f6c445c8c815" compoundref="_u_h_f___task_8c" startline="93" endline="96">UHF_InitVarFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a3ed4f37453db564eb07a23051af5e34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>De-Initialization routine, to be called once on each ExitRun event. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="835" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="835" bodyend="841"/>
+        <references refid="_u_h_f___battery_handler_8c_1a6c533eb5cb3749b96b7aa3ee0aa42320" compoundref="_u_h_f___battery_handler_8c" startline="86">NUMBER_OF_KEYS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" compoundref="_u_h_f___battery_handler_8c" startline="107">batteryErrorFlag</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1afad4d7d32fe9691661a5dc87ac3583e3" compoundref="_u_h_f___battery_handler_8c_8test" startline="287" endline="323">TEST_UHF_BatteryHandler_Stop</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1a82681067ecfc26b5dc3d941d2d17d909" compoundref="_u_h_f___task_8c" startline="113" endline="116">UHF_Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8c_1a3278730895cc1b2efcbeacea00aa59e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" line="849" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="849" bodyend="855"/>
+        <references refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" compoundref="_u_h_f___battery_handler_8c" startline="1078" endline="1106">checkErrorFlags</references>
+        <references refid="_u_h_f___battery_handler_8c_1a3b16db1ec7357129841d1485fa7cb6f8" compoundref="_u_h_f___battery_handler_8c" startline="1273" endline="1286">ResetFlagsOnClampS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a41aeb764821b7038ec1c97c885229620" compoundref="_u_h_f___battery_handler_8c_8test" startline="335" endline="358">TEST_UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1adbc62ed27152db19e96b12dda3727e9c" compoundref="_u_h_f___task_8c" startline="123" endline="127">UHF_TaskCyclicEvent</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported functions for UHF SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___battery_handler_8c" kindref="compound">UHF_BatteryHandler.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>24/05/2022 </para></simplesect>
+</para><para>detailed multiline description of the file <linebreak/>
+<simplesect kind="par"><title>Verification criteria</title><para>Expected test coverage (100%) and type of test coverage (C1/CTC). Add software requirement IDs in the testcases. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c"/>
+  </compounddef>
+</doxygen>

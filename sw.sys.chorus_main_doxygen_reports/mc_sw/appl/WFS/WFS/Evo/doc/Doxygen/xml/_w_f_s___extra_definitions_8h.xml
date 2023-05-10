@@ -1,0 +1,705 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_w_f_s___extra_definitions_8h" kind="file" language="C++">
+    <compoundname>WFS_ExtraDefinitions.h</compoundname>
+    <includes refid="_w_f_s__com_8h" local="yes">WFS_com.h</includes>
+    <includes local="yes">AdaptationGWDiagSignalMap.h</includes>
+    <includedby refid="_w_f_s__com_8c" local="yes">WFS_com.c</includedby>
+    <includedby refid="_w_f_s__csm_8c" local="yes">WFS_csm.c</includedby>
+    <includedby refid="_w_f_s__dem_8c" local="yes">WFS_dem.c</includedby>
+    <includedby refid="_w_f_s__nvram_8c" local="yes">WFS_nvram.c</includedby>
+    <includedby refid="_w_f_s___stubs_8c" local="yes">WFS_Stubs.c</includedby>
+    <includedby refid="_w_f_s___task_8c" local="yes">WFS_Task.c</includedby>
+    <includedby refid="_rte___w_f_s__extended_8h" local="yes">Rte_WFS_extended.h</includedby>
+    <incdepgraph>
+      <node id="160">
+        <label>WFS_com.h</label>
+        <link refid="_w_f_s__com_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+      </node>
+      <node id="161">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="159">
+        <label>WFS_ExtraDefinitions.h</label>
+        <link refid="_w_f_s___extra_definitions_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>AdaptationGWDiagSignalMap.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="167">
+        <label>WFS_nvram.c</label>
+        <link refid="_w_f_s__nvram_8c"/>
+      </node>
+      <node id="170">
+        <label>Rte_WFS_extended.h</label>
+        <link refid="_rte___w_f_s__extended_8h"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>WFS_dem.c</label>
+        <link refid="_w_f_s__dem_8c"/>
+      </node>
+      <node id="165">
+        <label>WFS_csm.c</label>
+        <link refid="_w_f_s__csm_8c"/>
+      </node>
+      <node id="169">
+        <label>WFS_Task.c</label>
+        <link refid="_w_f_s___task_8c"/>
+      </node>
+      <node id="164">
+        <label>WFS_com.c</label>
+        <link refid="_w_f_s__com_8c"/>
+      </node>
+      <node id="168">
+        <label>WFS_Stubs.c</label>
+        <link refid="_w_f_s___stubs_8c"/>
+      </node>
+      <node id="171">
+        <label>WFS_CsH.c</label>
+        <link refid="_w_f_s___cs_h_8c"/>
+      </node>
+      <node id="163">
+        <label>WFS_ExtraDefinitions.h</label>
+        <link refid="_w_f_s___extra_definitions_8h"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a8c724121c339686e0960aaa2c5e39c07" prot="public" static="no">
+        <name>WFS_ENABLE_RUNNABLE_HOOKS</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to select variant of implementation of functions: <linebreak/>
+ FUNC(Std_ReturnType, DCM_APPL_CODE) WFS_Uds_EFD1_ReadData(Dcm_OpStatusType OpStatus, P2VAR(uint8, AUTOMATIC, DCM_VAR) Data) <linebreak/>
+ FUNC(Std_ReturnType, RTE_CODE) WFS_Uds_EFD1_WriteData (P2CONST(uint8, AUTOMATIC, RTE_APPL_DATA) Data, Dcm_OpStatusType OpStatus, P2VAR(Dcm_NegativeResponseCodeType, AUTOMATIC, RTE_APPL_DATA) ErrorCode) <linebreak/>
+ **************************************************************************</para><para>Define used to activate/deactivate execution of following runnable hooks in the code: <linebreak/>
+ <ref refid="_w_f_s___stubs_8c_1a439379cf39c264394fae992ef6159403" kindref="member">WFS_PreAllRunnablesHook()</ref> <linebreak/>
+ <ref refid="_w_f_s___task_8c_1a1fae3a8631145301b79675ae695b353a" kindref="member">WFS_PreCustomHook()</ref> <linebreak/>
+ <ref refid="_w_f_s___stubs_8c_1a97f9b7b12e76b2a569bfa90671bfd5f8" kindref="member">WFS_PostAllRunnablesHook()</ref> <linebreak/>
+ <ref refid="_w_f_s___task_8c_1a861884536e8df629b68c4a071cc20c80" kindref="member">WFS_KY_Event_call()</ref> <linebreak/>
+ <ref refid="_w_f_s___stubs_8c_1a85b81b0cbc3d1cdaa95c41adc1adfb6b" kindref="member">WFS_PostStubHook()</ref> <linebreak/>
+ <ref refid="_w_f_s___task_8c_1a7715c4492614121a1858ea9e48bb376f" kindref="member">WFS_PostCustomHook()</ref> <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="83" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1afcc44a225612ab7d4bf03a5e14b48f4e" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STMSG3WFSANFRAGE_NUMRND</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StMsg3WfsAnfrage_numRnd(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a1460248be350f1f4197780551736cde0" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STMSG3WFSANFRAGE_NUMCRC</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StMsg3WfsAnfrage_numCrc(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="99" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a879b110066942411a637293d003970ab" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STMSG4WFSANFRAGE_NUMRND</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StMsg4WfsAnfrage_numRnd(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="107" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ac2e21acc7b29119dee3fcb0649006ba7" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STMSG4WFSANFRAGE_NUMCRC</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StMsg4WfsAnfrage_numCrc(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="115" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a33e639c6d3dc8e33ab1a101c86ae0626" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STELVWFSANFRAGE_NUMCRC</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StElvWfsAnfrage_numCrc(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="123" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a4d866e5f3e974b443a7de15a2cb6ad39" prot="public" static="no">
+        <name>REPLACE_RTE_READ_WFS_STOCUWFSANFRAGE_NUMCRC</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define used to activate usage of manually implemented function <linebreak/>
+ <ref refid="_w_f_s__com_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref> Rte_Read_WFS_StOcuWfsAnfrage_numCrc(uint8* recvSignal) <linebreak/>
+ doing conversion between formats used by lib WFS and slave. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="131" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a6f48c032a9de3d0583169842b8190f03" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSELVANTWORT_STRUCTWFSELVANTWORT_NUMRND</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="133" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a69d27fb9e993d0f15e565ed080442387" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSELVANTWORT_STRUCTWFSELVANTWORT_NUMCRC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="137" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1af438b1a2f079ef8377be22c9ea0e682d" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSOCUANTWORT_STRUCTWFSOCUANTWORT_NUMRND</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="138" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a889bf2edf45d7662ef496af107af7642" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSOCUANTWORT_STRUCTWFSOCUANTWORT_NUMCRC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="142" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a18fddecb3f6e0b2babd355b2c1ee26c2" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSMSG3ANTWORT_STRUCTWFSMSG3ANTWORT_NUMCRC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="143" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a96bf35ba492596826a464ce9520534da" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSMSG4ANTWORT_STRUCTWFSMSG4ANTWORT_NUMCRC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="144" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a3c922b5043bd269ac0f6f45907597b71" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV01_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="146" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ae2a6a4829b7553970fc8dc5ed9ea5a9a" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV02_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="147" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a4ffab44acb43ba827a7cb57287f58833" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV03_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="148" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aa47955a91a6eb32bfdf841883bfb4344" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV04_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="149" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ab4451365e4b270725cb35e68e7cd3df1" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV05_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="150" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1acacb5f8f65ac5c73bdfae090eab1813f" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV06_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="151" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ad9da6b173beb73bbcf26e3d45a0e5687" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV07_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="152" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a59134a8caa34f613b8ad979985a953df" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV08_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="153" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aaf9390db3b51a2b674c50fbbd0743db6" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV09_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="154" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a4039bc821a724ec4eed892d3399683f2" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV10_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="155" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ae469784c53f3a6b5d0527c8bee0c6e10" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEV11_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="156" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ab58b65eb21199236ee8ebb509124dc71" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS01_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="157" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a92bdef345a58603811c72ead16521d47" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS02_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="158" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aa90b8c6453abeadcfdc90de642d69a55" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS03_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="159" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aee6a8a4cafb39c3deaad3e433792e4c1" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS04_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="160" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1abea5f37c7195f2bffc907a60ec472bc9" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS05_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="161" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1af8b73e39ba235eda50ab6288c5b5ecd9" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS06_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="162" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aced55d72275694a7527f996212a5b01a" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS07_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="163" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a710088f1f236f62b2573ec014decbebf" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS08_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="164" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a8194ae8db6a0f21e2373be70545747c4" prot="public" static="no">
+        <name>REPLACE_POST_HOOK_WFS_WFS_TASK10MS_STWFSDEVSYS09_DATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="165" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a10240f5fa337081374ad029071afbccc" prot="public" static="no">
+        <name>REPLACE_PRE_HOOK_WFS_WFS_TASK10MS_STFLASHFREIGABEREQ_EVABBRUCH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="167" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a509c72c63f8afd4136352b7b4aaa153a" prot="public" static="no">
+        <name>REPLACE_PRE_HOOK_WFS_WFS_TASK10MS_STFLASHFREIGABEREQ_EVANFORDERUNG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="168" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a02fa7fe1ce283a14c612f2f42bbd2579" prot="public" static="no">
+        <name>REPLACE_PRE_HOOK_WFS_WFS_TRANSPONDERRESP02REC_STWFSTRANSPONDERRESP02_RAWDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="170" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1abbb79a78574a27a61ae2bcf8c09caf98" prot="public" static="no">
+        <name>REPLACE_PRE_HOOK_WFS_WFS_TRANSPONDERRESP01REC_STWFSTRANSPONDERRESP01_RAWDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="171" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ac76947d08e03476b773760f36e69383b" prot="public" static="no">
+        <name>REPLACE_RTE_WRITE_WFS_STWFSTRANSPONDERREQ01_RAWDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="172" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a3f9c1d5e6280e2cdffd96d7fe5609a3e" prot="public" static="no">
+        <name>REPLACE_RTE_WRITE_WFS_STWFSTRANSPONDERREQ02_RAWDATA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="173" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1ae012cc6dd86e0b8335db05e7af8f6e21" prot="public" static="no">
+        <name>REPLACE_RTE_CALL_WFS_WFS_ECUM_STATEREQUEST_RELEASEPOSTRUN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="175" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1a734f6428ec1cfa002dd53e73310d2a3f" prot="public" static="no">
+        <name>REPLACE_RTE_CALL_WFS_WFS_ECUM_STATEREQUEST_REQUESTPOSTRUN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="176" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___extra_definitions_8h_1aad3611bea14b7f4638f5840b8a342975" prot="public" static="no">
+        <name>SCALE_numReqKeys</name>
+        <initializer><ref refid="_w_f_s__com_8h_1a99ec28055ee6178caeb568c392715054" kindref="member">WFS_StTKM_numReqKeys_wasRead</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="178" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_w_f_s___extra_definitions_8h_1a3bbdd7006aa00045b4ccfc173cc7892e" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 WFS_Status_StWfsMsg4Antwort_structWfsMsg4Antwort</definition>
+        <argsstring></argsstring>
+        <name>WFS_Status_StWfsMsg4Antwort_structWfsMsg4Antwort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="56" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_w_f_s___extra_definitions_8h_1ac6e852f0547a098ed4dd90c7cefcdfdd" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 WFS_Status_StWfsMsg3Antwort_structWfsMsg3Antwort</definition>
+        <argsstring></argsstring>
+        <name>WFS_Status_StWfsMsg3Antwort_structWfsMsg3Antwort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="57" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_w_f_s___extra_definitions_8h_1aea13c444cbeeb328f6505c2e9fc67328" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 WFS_Status_StWfsOcuAntwort_structWfsOcuAntwort</definition>
+        <argsstring></argsstring>
+        <name>WFS_Status_StWfsOcuAntwort_structWfsOcuAntwort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="58" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_w_f_s___extra_definitions_8h_1ac469fb0a51fc60e8956e57f077392fba" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 WFS_Status_StWfsElvAntwort_structWfsElvAntwort</definition>
+        <argsstring></argsstring>
+        <name>WFS_Status_StWfsElvAntwort_structWfsElvAntwort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="59" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_w_f_s___extra_definitions_8h_1a1afcef4e1b59fe8123a0de2533b04df4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_preWFS_Stub_TransponderResp01RecHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>WFS_preWFS_Stub_TransponderResp01RecHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The hook for loading the value of WFS_Transponder_Resp_01.WFS_Transponder_Resp_01_Data from OSEK-Layer <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <linebreak/>
+ [out] <ref refid="_w_f_s___stubs_8c_1a9613cbf9a438efc999cddff887d70d49" kindref="member">WFS_DE_StWfsTransponderResp01_rawData</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_preWFS_Stub_TransponderResp01RecHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>During test design, define <ref refid="_w_f_s___extra_definitions_8h_1abbb79a78574a27a61ae2bcf8c09caf98" kindref="member">REPLACE_PRE_HOOK_WFS_WFS_TRANSPONDERRESP01REC_STWFSTRANSPONDERRESP01_RAWDATA</ref> should be considered. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s___stubs_8c_8test_1a0f0dce5c2ae01c2debdac50758426ef0" kindref="member">TEST_WFS_preWFS_Stub_TransponderResp01RecHook</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies no DOORS Requirements. <linebreak/>
+ Design Decision - Justification. This is hook function to reading the data from OSEK-Layer. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="192" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="171" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___extra_definitions_8h_1a31c1b771dbd0023e1ce5c578874a324b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WFS_preWFS_Stub_TransponderResp02RecHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>WFS_preWFS_Stub_TransponderResp02RecHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The hook for loading the value of WFS_Transponder_Resp_02.WFS_Transponder_Resp_02_Data from OSEK-Layer <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: <linebreak/>
+ [out] <ref refid="_w_f_s___stubs_8c_1a0f0174e0781f6942ba27854c885fefde" kindref="member">WFS_DE_StWfsTransponderResp02_rawData</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="WFS_preWFS_Stub_TransponderResp02RecHook.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>During test design, define <ref refid="_w_f_s___extra_definitions_8h_1a02fa7fe1ce283a14c612f2f42bbd2579" kindref="member">REPLACE_PRE_HOOK_WFS_WFS_TRANSPONDERRESP02REC_STWFSTRANSPONDERRESP02_RAWDATA</ref> should be considered. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_w_f_s___stubs_8c_8test_1ab84684381494573c56cce0bab549fea4" kindref="member">TEST_WFS_preWFS_Stub_TransponderResp02RecHook</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies no DOORS Requirements. <linebreak/>
+ Design Decision - Justification. This is hook function to reading the data from OSEK-Layer. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h" line="193" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/src/WFS_Stubs.c" bodystart="238" bodyend="250"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This headerfile controls the overwriting of generated S/R autosar_functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para>WFS_ExtraDefinitions.c </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>Foerster Robert (uid02400), Artur Redosz (uidp7980) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2023-01-13 </para></simplesect>
+<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/Evo/inc/WFS_ExtraDefinitions.h"/>
+  </compounddef>
+</doxygen>

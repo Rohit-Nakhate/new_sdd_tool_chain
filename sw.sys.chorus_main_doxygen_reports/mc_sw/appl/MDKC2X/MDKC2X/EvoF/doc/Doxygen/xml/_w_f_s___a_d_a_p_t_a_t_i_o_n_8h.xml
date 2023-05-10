@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h" kind="file" language="C++">
+    <compoundname>WFS_ADAPTATION.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includedby refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8c" local="yes">WFS_ADAPTATION.c</includedby>
+    <incdepgraph>
+      <node id="42">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="40">
+        <label>WFS_ADAPTATION.h</label>
+        <link refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="44">
+        <label>WFS_ADAPTATION.c</label>
+        <link refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8c"/>
+      </node>
+      <node id="43">
+        <label>WFS_ADAPTATION.h</label>
+        <link refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ad119f3564cfc16fa0cfbd55c7cb57132" prot="public" static="no">
+        <name>MESSAGE_0x0A54_ARRAY_SIZE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>size of DID 0x0A54</para><para>the DID size is based on requirements <simplesect kind="remark"><para>values 4 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="61" column="9" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ab000e66540b4f971677689b3b96d795c" prot="public" static="no">
+        <name>MESSAGE_0x553D_ARRAY_SIZE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>size of DID 0x553D</para><para>the DID size is based on requirements <simplesect kind="remark"><para>values 4 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="70" column="9" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ad03cad55fc23f8479f865d1c93e30094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType WFS_Read_Adaption_0x0A54</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>WFS_Read_Adaption_0x0A54</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x0A54</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName pa_transponder_gw, StartBit 0, Length 8<linebreak/>
+ SignalName reserved1, StartBit 0, Length 24<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Read_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  TEST_WFS_Read_Adaption_0x0A54_ParameterTest. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ . No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="132" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.c" bodystart="85" bodyend="114"/>
+        <references refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ad119f3564cfc16fa0cfbd55c7cb57132" compoundref="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h" startline="61">MESSAGE_0x0A54_ARRAY_SIZE</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1a3ef10dae6fe2ea3ee0be7301459427d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType WFS_Read_Adaption_0x553D</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>WFS_Read_Adaption_0x553D</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x553D</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 32<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Read_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  TEST_WFS_Read_Adaption_0x553D_ParameterTest. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ . No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="184" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.c" bodystart="120" bodyend="149"/>
+        <references refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ab000e66540b4f971677689b3b96d795c" compoundref="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h" startline="70">MESSAGE_0x553D_ARRAY_SIZE</references>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1aa64f92c4d1b4aaae84cfb3343213862b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType WFS_Write_Adaption_0x0A54</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>WFS_Write_Adaption_0x0A54</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x0A54</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName pa_transponder_gw, StartBit 0, Length 8<linebreak/>
+ SignalName reserved1, StartBit 0, Length 24<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Write_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  TEST_WFS_Write_Adaption_0x0A54_NullParameterTest<linebreak/>
+ TEST_WFS_Write_Adaption_0x0A54_errorCode_NULL_PTR<linebreak/>
+ TEST_WFS_Write_Adaption_0x0A54_DWRS_PENDING_g_ADAPT_Status<linebreak/>
+ TEST_WFS_Write_Adaption_0x0A54_errorCode_no_NULL_PTR<linebreak/>
+ TEST_WFS_Write_Adaption_0x0A54_ErrorCode_is_NULL_PTR_writeRetVal_E_NOT_OK<linebreak/>
+ TEST_WFS_Write_Adaption_0x0A54_Test_writeRetVal_E_NOT_OK_errorCode_no_NULL_PTR<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ . No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="249" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.c" bodystart="159" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h_1ad417386a29929deaf316d714d6f550bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType WFS_Write_Adaption_0x553D</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>WFS_Write_Adaption_0x553D</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x553D</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName reserved1, StartBit 0, Length 32<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Write_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  TEST_WFS_Write_Adaption_0x553D_NullParameterTest<linebreak/>
+ TEST_WFS_Write_Adaption_0x553D_errorCode_NULL_PTR<linebreak/>
+ TEST_WFS_Write_Adaption_0x553D_DWRS_PENDING_g_ADAPT_Status<linebreak/>
+ TEST_WFS_Write_Adaption_0x553D_errorCode_no_NULL_PTR<linebreak/>
+ TEST_WFS_Write_Adaption_0x553D_ErrorCode_is_NULL_PTR_writeRetVal_E_NOT_OK<linebreak/>
+ TEST_WFS_Write_Adaption_0x553D_Test_writeRetVal_E_NOT_OK_errorCode_no_NULL_PTR<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+ . No requirements ID are exported. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h" line="311" column="1" bodyfile="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.c" bodystart="229" bodyend="291"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>header file for WFS Adaptation </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_w_f_s___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">WFS_ADAPTATION.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>v1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>01/05/2023 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/Workspace/Chorus/sw.sys.chorus_main_build/mc_sw/appl/WFS/WFS/c/gen/WFS_ADAPTATION.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has three units:<linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_b_a_p_handler___e_l___task_8c" kindref="compound">BAPHandler_EL_Task.c</ref> <linebreak/>
+</para></listitem><listitem><para><ref refid="_b_a_p_handler___e_l___data_handler_8c" kindref="compound">BAPHandler_EL_DataHandler.c</ref> <linebreak/>
+</para></listitem><listitem><para><ref refid="_b_a_p_handler___e_l__callbacks_8c" kindref="compound">BAPHandler_EL_callbacks.c</ref> <linebreak/>
+ </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The <bold>functional</bold> software requirements can be traced on function level.<linebreak/>
+For more details please refer to the Requirements Implementation chapter.<linebreak/>
+ <linebreak/>
+<bold>Non-functional</bold> requirements are traced here: <table rows="2" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+</table>
+No <bold>non-functional</bold> requirements for the module found! <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Interfaces introduced for BAPHandler_EL can be found on page Modules/List of public interfaces.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between Software Units and other files. <linebreak/>
+ <image type="html" name="SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagrams below depict the dynamic behaviour of the module and its functionalities.<linebreak/>
+For specific implementations, check the Files list. <linebreak/>
+ <image type="html" name="BAPHandler_EL_kl_15_dependance.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <image type="html" name="BAPHandler_EL_Factory_reset.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <image type="html" name="BAPHandler_EL_Indication_handling.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>State Machine</title>
+<para>The diagram below depicts the State Machine of the module.<linebreak/>
+ <image type="html" name="State_machine.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_3">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow of the module.<linebreak/>
+ <image type="html" name="DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>BAPHandler_EL SWC is assigned to <bold>CORE 0</bold> , in SWA:<linebreak/>
+<bold>VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ApplicationLayer_Core0</bold> <linebreak/>
+ <linebreak/>
+ Component execution is under control of Scheduler (CDD) in task: <bold>SchM_ICAS1_Main_C0</bold> <linebreak/>
+ <image type="html" name="BAPHandler_EL_Cyclic.png"></image>
+ </para><para><image type="html" name="BAPHandler_EL_Wakeup.png"></image>
+ </para><para><heading level="2">Interrupts</heading>
+</para><para>This subcomponent does not use interrupts.</para><para><heading level="2">Events</heading>
+</para><para>Check section State Machine to find events and how they affect subcomponent state and behavior.</para><para><heading level="2">Operating Modes</heading>
+</para><para>This subcomponent does not use operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>This subcomponent does not use power modes.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>This subcomponent does not use DTC nor DET. <linebreak/>
+Error handling for wrong input values or parameters is prepared and can be found in detailed design for functions. <linebreak/>
+In specific situations RTE interface for informing about errors is used.</para><para><heading level="2">Synchronization</heading>
+</para><para>This subcomponent does not use multi-threading, so no synchronization is used.</para><para><heading level="2">Operations</heading>
+</para><para>This subcomponent does not perform operations other than showed in Dynamic Behavior section.</para><para><heading level="2">Macros</heading>
+</para><para>This subcomponent has only two macros defined:<linebreak/>
+ <ref refid="_b_a_p_handler___e_l___data_handler_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" kindref="member">SWATT_BYPASS(a,b)</ref>, and TEST_DESIGN_TECHNIQUE(a)<linebreak/>
+which are connected to testing, and also widely used in other components.</para><para><heading level="2">Algorithms</heading>
+</para><para>Algorithms used in this subcomponent are showed in Dynamic Behavior section.</para><para><heading level="2">Data Structures</heading>
+</para><para>See Data Structures</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

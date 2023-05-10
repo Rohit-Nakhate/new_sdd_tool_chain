@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="hal_8h" kind="file" language="C++">
+    <compoundname>hal.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">mem_utility_api.h</includes>
+    <includes refid="hal__common_8h" local="yes">hal_common.h</includes>
+    <includes refid="hal__variant_8h" local="yes">hal_variant.h</includes>
+    <includes local="yes">temperature_sensor.h</includes>
+    <includes refid="gw__dev__msg_8h" local="yes">gw_dev_msg.h</includes>
+    <incdepgraph>
+      <node id="50">
+        <label>GW_ANP_nvram.h</label>
+      </node>
+      <node id="40">
+        <label>hal_common.h</label>
+        <link refid="hal__common_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>hal.h</label>
+        <link refid="hal_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>mem_utility_api.h</label>
+      </node>
+      <node id="45">
+        <label>hal_cfg_gen.h</label>
+      </node>
+      <node id="44">
+        <label>HardwareVersion.h</label>
+      </node>
+      <node id="48">
+        <label>Nvm.h</label>
+      </node>
+      <node id="46">
+        <label>temperature_sensor.h</label>
+      </node>
+      <node id="47">
+        <label>gw_dev_msg.h</label>
+        <link refid="gw__dev__msg_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="43">
+        <label>hal_variant.h</label>
+        <link refid="hal__variant_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>NvM_Types.h</label>
+      </node>
+      <node id="42">
+        <label>hal_defines_gen.h</label>
+      </node>
+      <node id="41">
+        <label>hal_base.h</label>
+        <link refid="hal__base_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hal_8h_1aee533a9dbf631e9960b5c84c26d8df69" prot="public" static="no">
+        <name>Watchpoint</name>
+        <param><defname>Name</defname></param>
+        <briefdescription>
+<para>Use during debugging for measuring the time from startup until the watchpoint. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="283" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal_8h_1a3fbb07b5dec67a49d3758feebcc29fcb" prot="public" static="no">
+        <name>WatchpointDeltaMax</name>
+        <param><defname>Name</defname></param>
+        <briefdescription>
+<para>Use during debugging for measuring maximum period between 2 events. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="285" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hal_8h_1a6388e9fb57c9922f2e5924bd6f049608" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalSetNormal</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HalSetNormal</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set CAN or LIN to normal mode. <linebreak/>
+</para><para>This function set CAN or LIN transceiver to normal mode. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context BusMonitorConfig - ApplNmCanNormal <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalSetNormal.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the CAN or LIN is set to normal mode. <linebreak/>
+ TEST_HalSetNormal </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="100" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1ab1be134fc784bea148d26e1bcf5d6532" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalSetSleep</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HalSetSleep</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set CAN or LIN to sleep mode. <linebreak/>
+</para><para>This function set CAN or LIN transceiver to sleep mode. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context BusMonitorConfig - ApplNmCanSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalSetSleep.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the CAN or LIN is set to sleep mode. <linebreak/>
+ TEST_HalSetSleep </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18926 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="136" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a944b35a9bb4318410ae7d48491eec98f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalClearWakeUp</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HalClearWakeUp</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Clear wakeup event. <linebreak/>
+</para><para>This function clear the wakeup event from CAN or LIN channel. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context BusMonitorConfig - ApplNmCanSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalClearWakeUp.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the wakeup event is cleared. <linebreak/>
+ TEST_HalClearWakeUp </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function clear the wakeup event and <ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref> from CAN/LIN. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="172" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="172" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a7a76705ca90b86d39ee5d6dca3f78700" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean HalWakeupIs</definition>
+        <argsstring>(TComChannel Channel)</argsstring>
+        <name>HalWakeupIs</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check and clear wakeup bit. <linebreak/>
+</para><para>This function check if a CAN or LIN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CAN or LIN channel <linebreak/>
+ range TComChannel <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup was detected <linebreak/>
+ FALSE if no wakeup was detected <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context WakeupSleep.c - doBusRxWakeupHandling <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalWakeupIs.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the hardware wakeup bit is cleared. <linebreak/>
+ TEST_HalWakeupIs </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19868 </para><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="210" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1adfcf931f7fefe12fc279b709ef524961" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalusTimedelay</definition>
+        <argsstring>(uint32 delay_us)</argsstring>
+        <name>HalusTimedelay</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+          <declname>delay_us</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set delay for task. <linebreak/>
+</para><para>This function is used to block the task for the defined <bold>delay</bold> in microsencods. <linebreak/>
+<simplesect kind="warning"><para>The task execution will be blocked for the <bold>delay</bold> microseconds. <linebreak/>
+Use this only for very short period of time <linebreak/>
+</para></simplesect>
+<simplesect kind="see"><para><ref refid="hal__common_8h_8test_1a779393d153a153da3532354f47c4f737" kindref="member">GetHalStopWatch_RTC</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delay_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- delay period in <bold>microseconds</bold> <linebreak/>
+ range uint32 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context DWA_LIN_heartbeat - DWA_LIN_WaitShutdownMax_ms <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalusTimedelay.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the task is blocked during the delay time. <linebreak/>
+ TEST_HalusTimedelay </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper API to delay the execution for a short period of time. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" line="249" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h" bodystart="249" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Export the exteral interfaces to be used by the other modules. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2039 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_sys_w_d_diagnosis_8c" kind="file" language="C++">
+    <compoundname>SysWDDiagnosis.c</compoundname>
+    <includes local="yes">Dem.h</includes>
+    <includes refid="_sys_w_d_diagnosis_8h" local="yes">SysWDDiagnosis.h</includes>
+    <includes local="yes">Spi2SysWD.h</includes>
+    <includes local="yes">HardwareVersion.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="yes">bitwisehelpers.h</includes>
+    <includes local="yes">logicHelpers.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>logicHelpers.h</label>
+      </node>
+      <node id="7">
+        <label>Dem.h</label>
+      </node>
+      <node id="8">
+        <label>SysWDDiagnosis.h</label>
+        <link refid="_sys_w_d_diagnosis_8h"/>
+      </node>
+      <node id="12">
+        <label>bitwisehelpers.h</label>
+      </node>
+      <node id="11">
+        <label>string.h</label>
+      </node>
+      <node id="10">
+        <label>HardwareVersion.h</label>
+      </node>
+      <node id="9">
+        <label>Spi2SysWD.h</label>
+      </node>
+      <node id="6">
+        <label>SysWDDiagnosis.c</label>
+        <link refid="_sys_w_d_diagnosis_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_sys_w_d_diagnosis___d_t_c___map" prot="public">SysWDDiagnosis_DTC_Map</innerclass>
+    <innerclass refid="struct_sys_w_d_diagnosis___flags__s" prot="public">SysWDDiagnosis_Flags_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a5a6deefb6f992385bb6e999c91013c95" prot="public" static="no">
+        <name>SYSWD_SHIFT_4</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the 4 bits shift</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 4 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="81" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1aff1332a3e6109b062f18c2de352b7c2e" prot="public" static="no">
+        <name>SYSWD_SHIFT_8</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the 8 bits shift</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 8 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a13ef47e981ae0f1c99b63c1140ace5fd" prot="public" static="no">
+        <name>SYSWD_SHIFT_16</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the 16 bits shift</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 16 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="101" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a163737c5eff253366b579a39331de387" prot="public" static="no">
+        <name>SYSWD_HEX_0F</name>
+        <initializer>0x0Fu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines a 4 bits lsb mask</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 0x0F <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="111" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a0f18df35a080f7b77826cf069a235384" prot="public" static="no">
+        <name>SYSWD_HEX_FF</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines a 8 bits lsb mask</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 0xFF <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="121" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ad19b0748bdaa682e9e2f9aa05e471efe" prot="public" static="no">
+        <name>SYSWD_DTC_INFOLEN1</name>
+        <initializer>0x04u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the data length of the DiagInfo frame for 1 DTC</para><para>This will be used to check and extract the DTC(s) <simplesect kind="remark"><para>Value 0x04 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="131" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a2c4321c8dba951ef2261d10e59ccf731" prot="public" static="no">
+        <name>SYSWD_DTC_INFOLEN2</name>
+        <initializer>0x08u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the data length of the DiagInfo frame for 2 DTCs</para><para>This will be used to check and extract if a second DTC exists <simplesect kind="remark"><para>Value 0x08 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="141" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1afc234982d08ac2d29a2d2a078a3ecab3" prot="public" static="no">
+        <name>SYSWD_REQ_DTCRESYNC</name>
+        <initializer>0x7000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for DTC Diagnostic Info SPI Frame, resync request</para><para>DiagnosticInfoData is an array of 5 uint16: 1 byte representing the Header (4bits InofID + 4bits Info length), <linebreak/>
+ and max. 9 bytes representing the Diagnostic Data. The first Header byte defines what kind of diagnostic <linebreak/>
+ information is provided in the diagnostic data. For the DTC Resync Request InfoID = 0x07 <linebreak/>
+<simplesect kind="remark"><para>Value 0x7000 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="153" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ae0c49f0d57611445786f2bba4aa3a803" prot="public" static="no">
+        <name>SYSWD_REQ_CRC32</name>
+        <initializer>0x9111u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for DTC Diagnostic Info SPI Frame, CRC32 calculation request</para><para>DiagnosticInfoData is an array of 5 uint16: 1 byte representing the Header (4bits InofID + 4bits Info length), <linebreak/>
+ and max. 9 bytes representing the Diagnostic Data. The first Header byte defines what kind of diagnostic information is provided in the diagnostic data. For the CRC32 request the first two bytes will be filled with: <linebreak/>
+ Byte 0: 0x91 For the CRC32 calculation Request InfoID = 0x09 and the data length is 1. <linebreak/>
+ Byte 1: 0x11 Logical block ID for RL78. See requirement SWR_ICAS1_GW_21244 <linebreak/>
+<simplesect kind="remark"><para>Value 0x9111 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="167" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a1fec65a808f3ef18745ae8a024cc7933" prot="public" static="no">
+        <name>SYSWD_HEADER_HW_VERSION</name>
+        <initializer>0x83u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value of the HeaderID byte of Diagnostic Info SPI Frame for sending the HW version.</para><para>DiagnosticInfoData is an array of 5 uint16. The first byte is the the Header (4bits InofID + 4bits Info length)<linebreak/>
+ and this byte defines what kind of diagnostic information is provided in the diagnostic data. <linebreak/>
+ For the HW version the value of this byte is as follows: 4 bits InfoID: value 8 for the HW Version 4 bits Data Length: value 3 (representing the 3 ASCII coded values for the Hardware VersionPlatform, VersionHigh and VersionLow) <simplesect kind="remark"><para>Value 0x83 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="181" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a1eea66142a0c9523b951c333a02f3572" prot="public" static="no">
+        <name>SYSWD_HEX_FF00</name>
+        <initializer>0xFF00u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines a mask for the 2nd byte of a uint16 data type</para><para>This will be used locally for bitwise operations <simplesect kind="remark"><para>Value 0xFF00 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="191" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a5a53e35d96cb037c60db795bbe8430f6" prot="public" static="no">
+        <name>SYSWD_FLAG_OFF</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for setting a flag to OFF</para><para>This is used locally to reset the flags - <ref refid="_sys_w_d_diagnosis_8c_1ad210981f81ea3b011428d57bfe3a5cc4" kindref="member">SysWDDiagnosis_Flags_s</ref> <simplesect kind="remark"><para>Value: 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="201" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a7f50169a99ed5d505d621850005dee8c" prot="public" static="no">
+        <name>SYSWD_FLAG_ON</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for setting a flag to ON</para><para>This is used locally to set the flags - <ref refid="_sys_w_d_diagnosis_8c_1ad210981f81ea3b011428d57bfe3a5cc4" kindref="member">SysWDDiagnosis_Flags_s</ref> <simplesect kind="remark"><para>Value: 1 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="211" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ae0a28650362022a84a48237053cbe7cf" prot="public" static="no">
+        <name>SYSWD_DIAGINFO_LEN</name>
+        <initializer>5u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the necessary length for the buffers when storing and sending the DiagInfo data. <linebreak/>
+</para><para>The Diagnostic Info uses 10 bytes - 1 byte representing the Header (4bits InofID + 4bits Info length), <linebreak/>
+ and max. 9 bytes representing the Diagnostic Data - it could be SW, FBL version, DTCs, Voltage, etc. <linebreak/>
+ This is used locally to define the necessary buffers for receiving and sending the data to RL78. <linebreak/>
+<simplesect kind="remark"><para>Value: 5 <linebreak/>
+ The buffers <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] and <ref refid="_sys_w_d_diagnosis_8c_1a39594e5a8cf9d0cf7c8f324c23fd4056" kindref="member">SysWDDiag_DiagInfo_Tx</ref>[] are of type uint16 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="224" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ad318d3bba83df26788f5f1176cb57e20" prot="public" static="no">
+        <name>SYSWD_LEN_RL78</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value of the Diagnostic Data length for CRC32, FBL and SW version.</para><para>This is used locally to define the buffers for storing the FBL and SW version received from <linebreak/>
+ RL78, and also to check if the length is correct in functions <ref refid="_sys_w_d_diagnosis_8c_1a74e262c79473f44e3a8d97b635b01bc1" kindref="member">SysWDDiag_ExtractRL78FBLVersion()</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1ad58f57e23ac47d13ee88fe8f034136e7" kindref="member">SysWDDiag_ExtractRL78SWVersion()</ref> and <ref refid="_sys_w_d_diagnosis_8h_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> when processing the data. <simplesect kind="remark"><para>Value: 4 <linebreak/>
+ SW and FBL version are 4 bytes long, representing the 4 ASCII characters <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="237" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ada9d58a3c79d8f25423f0af3d9d3a2e7" prot="public" static="no">
+        <name>SYSWD_LEN_RL78HW</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value of the Diagnostic Data length for the HW version.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8h_1af721b3183e844aca13e85df414e742aa" kindref="member">SysWDDiag_ReadRL78HWVersion()</ref> when copying the RL78 hardware version in the variable given as parameter. <linebreak/>
+ Only the last two bytes received from HardwareVersion component are relevant representing the high and low ASCII values of the board HW version. <simplesect kind="remark"><para>Value: 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="248" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a254cb08fbc6ac1acbd43892e4c61b2ae" prot="public" static="no">
+        <name>SYSWD_TEMP_LENGTH</name>
+        <initializer>0x02u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value of the Diagnostic Data length for Temperature.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8h_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> to check the <linebreak/>
+ correct length of the data when the header ID indicates that contains Temperature values. <linebreak/>
+<simplesect kind="remark"><para>Value: 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="260" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a286ab8cd407e00a8fa64f281abf2dda4" prot="public" static="no">
+        <name>SYSWD_HW_FEEDBACK_LENGTH</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value of the Diagnostic Data length for HW feedback.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8h_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> to check the <linebreak/>
+ correct length of the data when the header ID indicates that contains HW feedback value. <linebreak/>
+<simplesect kind="remark"><para>Value: 1 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="271" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a183752b38e4818d5bad824cccbe0cfec" prot="public" static="no">
+        <name>N_DEFINED_DTCS</name>
+        <initializer>17u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the number of DTCs that could be received from RL78.</para><para>This is used locally to declare and define the DTC list and also to iterate <linebreak/>
+ trough all the defined DTC IDs when finding which DTC should be handled. <linebreak/>
+<simplesect kind="remark"><para>Value: There are 17 DTCs for ICAS1evo - <ref refid="_sys_w_d_diagnosis_8c_1a5934bd78cbcb8f37ab88b9283bf2a63f" kindref="member">SYSWD_RL78_DTC</ref>[] <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="282" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a2a32918a40475a62c4e2f7e76faaf402" prot="public" static="no">
+        <name>SYSWDDIAG_EXTWDG_WINDOW_MODE</name>
+        <initializer>0x04u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for RL78 Window Mode.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> to check if DTC can be set. <linebreak/>
+ By architectural decision the DTCs will be set only in Window Mode to avoid settings DTCs <linebreak/>
+ during development mode, startup or shutdown. <simplesect kind="remark"><para>Value: 0x04 <linebreak/>
+ Data Definition Status field <linebreak/>
+<itemizedlist>
+<listitem><para>0x01 Startup Mode <linebreak/>
+</para></listitem><listitem><para>0x02 Timeout Mode <linebreak/>
+</para></listitem><listitem><para>0x04 Window Mode <linebreak/>
+</para></listitem><listitem><para>0x08 Shutdown Mode <linebreak/>
+</para></listitem><listitem><para>0x10 Sleep Mode <linebreak/>
+</para></listitem><listitem><para>0x80 SW Development Mode (no Reset will be done) <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="301" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ab4eb6fd17c4157b41c26bab9b486251c" prot="public" static="no">
+        <name>SYSWDDIAG_EXTWDG_PAYLOAD_LENGTH_WORDS</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the length of the data for External Watchdog SPI frame.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> to give it as parameter for <ref refid="_sys_w_d_diagnosis_8c_8test_1a99bad96aee4123eeb999f41793f579f8" kindref="member">Spi2SysWD_getClientInfo()</ref> external interface when getting the WATCHDOG frame and status of data. <linebreak/>
+<simplesect kind="remark"><para>Value: 3 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="312" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a8c1818a27e1377a70e15c1aa896dc606" prot="public" static="no">
+        <name>SYSWDDIAG_PAYLOAD_LENGTH_BYTES</name>
+        <initializer>(<ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref>)(<ref refid="_sys_w_d_diagnosis_8c_1ab4eb6fd17c4157b41c26bab9b486251c" kindref="member">SYSWDDIAG_EXTWDG_PAYLOAD_LENGTH_WORDS</ref> * 2u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the length of the SPI WDG Payload Bytes.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> when getting the WATCHDOG frame and status of data. <linebreak/>
+ It will help to reserve the sufficient number of bytes for storing the pdata - the passed by reference parameter of the <ref refid="_sys_w_d_diagnosis_8c_8test_1a99bad96aee4123eeb999f41793f579f8" kindref="member">Spi2SysWD_getClientInfo()</ref>. <simplesect kind="remark"><para>Value: 6 <linebreak/>
+ The number of necessary bytes are the double of <ref refid="_sys_w_d_diagnosis_8c_1ab4eb6fd17c4157b41c26bab9b486251c" kindref="member">SYSWDDIAG_EXTWDG_PAYLOAD_LENGTH_WORDS</ref> - as each word consists of two bytes. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="324" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1afca80e48df887f5d73bd497b9bb3766a" prot="public" static="no">
+        <name>SYSWDDIAG_INIT</name>
+        <initializer>0u /* Initialization value */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines a initialization value of 0.</para><para>Will be used locally by <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> and <ref refid="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" kindref="member">SysWDDiag_CrcWdg_Init()</ref> functions to check the value and initialize <linebreak/>
+ variables and counters used to implement the corresponding functionalities for DTC 0121 and the CRC32 initialization. <simplesect kind="remark"><para>Value: 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="335" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a4c90ee237cae3d9debb3ffc084907685" prot="public" static="no">
+        <name>SAFEWDG_MAX_TIME_ERR_DTC</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines a max value for a 30 ms timer</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> to check if the DTC can be set to Qualified. The cyclicity of Diag_Chorus_RL78 is 10 ms <linebreak/>
+ In order to implement a 30 ms timer this value will be used to check if the timer reached max value</para><para><simplesect kind="remark"><para>Value: 3 <linebreak/>
+ In accordance to SWR_ICAS1_GW_7339 the DTC 0x000121 is set to Qualified if the software sends the <linebreak/>
+ client info over SPI_GW2WD AND it does not receive an answer within 30 ms for 3 subsequent times. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="350" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1a6ecdc72436a37e7a7dfb9d26241f48be" prot="public" static="no">
+        <name>SYSWD_MAX_TIME_SEND_HW_STARTUP</name>
+        <initializer>10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for maximum number of times to send HW version to RL78 after Startup.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8h_1a891230418f8e73678d809da220deac97" kindref="member">SysWDDiag_FillDiagInfo()</ref> to implement a counter for the number of calls. <linebreak/>
+ According to SWR_ICAS1_GW_21243, after Startup, Chorus shall send cyclically the HW version to RL78 via <linebreak/>
+ Diagnostic Buffer until positive feedback is received from RL78. Based on the SWA if no feedback is <linebreak/>
+ received for more than 10 calls, we have to consider other requests and will send again the HW version later. <linebreak/>
+ For details see: VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.Output frames priority (ICAS1evo) <linebreak/>
+ <simplesect kind="remark"><para>Value: 10 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="365" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ac7aafcc22a0a115b0eeba8dda04228c8" prot="public" static="no">
+        <name>SYSWD_MAX_TIME_SEND_DTC_FEEDBACK</name>
+        <initializer>10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the value for maximum number of times to send DTC feedback to RL78.</para><para>This is used locally in function <ref refid="_sys_w_d_diagnosis_8h_1a891230418f8e73678d809da220deac97" kindref="member">SysWDDiag_FillDiagInfo()</ref> to implement a counter that will keep track of <linebreak/>
+ how many times the DTC feedback was sent. Based on SWA in order to avoid starvation due to continuous DTCs requests, <linebreak/>
+ the DTC feedback should be sent for maximum 10 times in a row if other requests are present for CRC32 or DTC sync request. <linebreak/>
+ For details see: VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.Output frames priority (ICAS1evo) <linebreak/>
+ <simplesect kind="remark"><para>Value: 10 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="379" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_sys_w_d_diagnosis_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="382" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>@0</name>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55ba115d5ef0e02cb878bb373f2dd67571ee" prot="public">
+          <name>SYSWDDIAG_SWVERSION_ID</name>
+          <initializer>= 0x01u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for RL78 SW version. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55bad831e8e227b760484e694ce69153cdba" prot="public">
+          <name>SYSWDDIAG_FBLVERSION_ID</name>
+          <initializer>= 0x02u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for RL78 FBL version. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55ba3646f46cea801e93959a12f06e03c21c" prot="public">
+          <name>SYSWDDIAG_DLTTRACE_ID</name>
+          <initializer>= 0x03u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for Trace information. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55baf50b6a05ec7d7a81bf691ad7e979a0e3" prot="public">
+          <name>SYSWDDIAG_DTC_ID</name>
+          <initializer>= 0x04u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for DTC(s) (Status/Feedback) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55bad949809b5d6f33024690f99f30f20cab" prot="public">
+          <name>SYSWDDIAG_VOLTAGE_ID</name>
+          <initializer>= 0x05u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for Voltage Measurements. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55ba383a5d757ff082f9c07b844e28ca6a1f" prot="public">
+          <name>SYSWDDIAG_TEMPERATURE_ID</name>
+          <initializer>= 0x06u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for Temperature. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55ba1efb2b8ef4fa1d363448b7ee91e66e76" prot="public">
+          <name>SYSWDDIAG_DTCRESYNCREQ_ID</name>
+          <initializer>= 0x07u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for Resync request of all DTCs. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55badb69eb9fcc4a3aacb05d4f0beab6770c" prot="public">
+          <name>SYSWDDIAG_HWVERSION_ID</name>
+          <initializer>= 0x08u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for RL78 HW version. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a06fc87d81c62e9abb8790b6e5713c55ba5b2ea98da35b00ad5649297f1c62744d" prot="public">
+          <name>SYSWDDIAG_CRC32_ID</name>
+          <initializer>= 0x09u</initializer>
+          <briefdescription>
+<para>DiagInfo Header ID for CRC32 calculation. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the used IDs of the DiagInfo frame.</para><para>The Diagnostic Info Data is a shared area that can contain different kind of information, such as <linebreak/>
+ SW versions, DTC(s), resync response and other. This enum defines what kind of diagnostic information <linebreak/>
+ can be provided in the diagnostic data based on the InfoID of the Header. <linebreak/>
+ <simplesect kind="remark"><para>This will be used in the <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> function to process the data received <linebreak/>
+ from RL78, and to take specific actions based on the identified HeaderID. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="398" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="397" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="enum" id="_sys_w_d_diagnosis_8c_1adf764cbdea00d65edcd07bb9953ad2b7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>@1</name>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1adf764cbdea00d65edcd07bb9953ad2b7a5b6ae1b307744b5fb6804e26aca8d995" prot="public">
+          <name>SYSWD_DTC_STATUS_RESET</name>
+          <initializer>= 0x00u</initializer>
+          <briefdescription>
+<para>Received DTC from RL78 should be reset - function <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref> to be called with parameter DEM_EVENT_STATUS_PASSED. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1adf764cbdea00d65edcd07bb9953ad2b7a2a8646ab89869542705ffb8975f3ce7d" prot="public">
+          <name>SYSWD_DTC_STATUS_SET</name>
+          <initializer>= 0x01u</initializer>
+          <briefdescription>
+<para>Received DTC from RL78 should be set - - function <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref> to be called with parameter DEM_EVENT_STATUS_FAILED. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the statuses of received DTCs.</para><para>If valid DTCs are received from RL78 the SysWDdiagnosis will extract the DTC ID and the status of each DTC from DiagInfo <linebreak/>
+ frame and will call the corresponding interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref> to set or reset DTCs according to status. <linebreak/>
+ This will be used in the <ref refid="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" kindref="member">SysWDDiag_setDTCEventStatus()</ref> function that will handle the setting of DTC(s). <linebreak/>
+ <simplesect kind="remark"><para>There are two possible statuses of the received DTC(s) - to be set or reset. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="422" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="421" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="enum" id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>T_CRC_Local_State</name>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5da1d4a09f068d9c852d61e54fbe69ed13a" prot="public">
+          <name>SYSWD_CRC_INIT</name>
+          <initializer>= 0x00u</initializer>
+          <briefdescription>
+<para>Initial state - no CRC request has been sent. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5da36fefb27a1402183b491e8ce57360570" prot="public">
+          <name>SYSWD_CRC_SEND_REQUEST</name>
+          <initializer>= 0x01u</initializer>
+          <briefdescription>
+<para>A request for CRC calculation has to be sent to RL78. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5da9f92222c9368d937541b283645ca2841" prot="public">
+          <name>SYSWD_CRC_WAIT_RESPONSE</name>
+          <initializer>= 0x02U</initializer>
+          <briefdescription>
+<para>A request for CRC calculation has been sent to RL78 and now the answer is waited. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5daacb059fb1562929bf8025f9c196bc27c" prot="public">
+          <name>SYSWD_CRC_VALID_CRC</name>
+          <initializer>= 0x03u</initializer>
+          <briefdescription>
+<para>A valid CRC calculation has been received from RL78. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5da39985b9deb4a14d6649af21527927654" prot="public">
+          <name>SYSWD_CRC_ERROR</name>
+          <initializer>= 0x04u</initializer>
+          <briefdescription>
+<para>No valid CRC calculation has been received from RL78. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the types of the local state for the CRC requests.</para><para>In order to keep track of the current status for the CRC requests to RL78 we will implement a state machine. <linebreak/>
+ This enum will be used to declare and define a state variable <ref refid="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" kindref="member">SysWDDiag_CRC32_State</ref> that will be used <linebreak/>
+ in this scope. In function <ref refid="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" kindref="member">SysWDDiag_CrcWdg_CrcReq()</ref> the states will be checked and used in order to give feedback <linebreak/>
+ to CRC Manager and take specific action based on the type of the request and the current local state. <linebreak/>
+ <simplesect kind="remark"><para>There are 5 possible local states for the CRC request to be handled and updated by SysWDDiagnosis component. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="441" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="440" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="enum" id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SYSWDDIAG_DTC_LIST_T</name>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0adb23d3712b799ab0c36a2bd32092df0d" prot="public">
+          <name>SYSWD_DTC_VAL_101</name>
+          <initializer>= 0x000101u</initializer>
+          <briefdescription>
+<para>Watchdog RAM malfunction. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0aa840c0e9b609c852d7ab026ad6679cf5" prot="public">
+          <name>SYSWD_DTC_VAL_102</name>
+          <initializer>= 0x000102u</initializer>
+          <briefdescription>
+<para>ROM malfunction. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a90fd7a83ae96b5d10b75978279331fec" prot="public">
+          <name>SYSWD_DTC_VAL_104</name>
+          <initializer>= 0x000104u</initializer>
+          <briefdescription>
+<para>Watchdog malfunction. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a4cf880055e7c7a64ecb09824a8bf60da" prot="public">
+          <name>SYSWD_DTC_VAL_109</name>
+          <initializer>= 0x000109u</initializer>
+          <briefdescription>
+<para>WD Program execution error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ab8929cb9eb5cd771fd4e43f9dd849cb3" prot="public">
+          <name>SYSWD_DTC_VAL_10A</name>
+          <initializer>= 0x00010Au</initializer>
+          <briefdescription>
+<para>Chorus Watchdog Error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0affced4c3e5e95460c7a0eacb24c50a5f" prot="public">
+          <name>SYSWD_DTC_VAL_10C</name>
+          <initializer>= 0x00010Cu</initializer>
+          <briefdescription>
+<para>WD Memory Protection Violation. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a43983e3967bf79eddd11c381db2d546d" prot="public">
+          <name>SYSWD_DTC_VAL_10D</name>
+          <initializer>= 0x00010Du</initializer>
+          <briefdescription>
+<para>Voltage sensor defective. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a7d2b2fe42364192ae84d2d67369d0ff6" prot="public">
+          <name>SYSWD_DTC_VAL_120</name>
+          <initializer>= 0x000120u</initializer>
+          <briefdescription>
+<para>Interface checksum error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ab809bd6c30b6cb85b2b272f5dd89a64a" prot="public">
+          <name>SYSWD_DTC_VAL_150</name>
+          <initializer>= 0x000150u</initializer>
+          <briefdescription>
+<para>R7 SPI Interface checksum error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a337fa9eed7142e8f78f615b24c989f5d" prot="public">
+          <name>SYSWD_DTC_VAL_151</name>
+          <initializer>= 0x000151u</initializer>
+          <briefdescription>
+<para>R7 SPI Interface timeout error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ad60a75ecb7ed34b7ebfd09fcd3e01a29" prot="public">
+          <name>SYSWD_DTC_VAL_153</name>
+          <initializer>= 0x000153u</initializer>
+          <briefdescription>
+<para>Power Management internal error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ad0752e37343fcb5fe6828c43803640c4" prot="public">
+          <name>SYSWD_DTC_VAL_155</name>
+          <initializer>= 0x000155u</initializer>
+          <briefdescription>
+<para>Voltage supply POWER_GOOD_SOC problem. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0af948b661064a6c0422d6039538b13fe7" prot="public">
+          <name>SYSWD_DTC_VAL_156</name>
+          <initializer>= 0x000156u</initializer>
+          <briefdescription>
+<para>Voltage supply POWER_GOOD_S2R Problem. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ac00b3037e15b8e3a3d9d30306d354a75" prot="public">
+          <name>SYSWD_DTC_VAL_157</name>
+          <initializer>= 0x000157u</initializer>
+          <briefdescription>
+<para>Voltage supply POWER_GOOD_MAIN Problem. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a880323d2792dc2f7bd9f6966388e0791" prot="public">
+          <name>SYSWD_DTC_VAL_158</name>
+          <initializer>= 0x000158u</initializer>
+          <briefdescription>
+<para>Voltage supply POWER_GOOD_ETH Problem. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a31a27f6d5154d3f09b77d8f1d9c110ea" prot="public">
+          <name>SYSWD_DTC_VAL_1A2</name>
+          <initializer>= 0x0001A2u</initializer>
+          <briefdescription>
+<para>Interface version implausible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0adb3ce7120cd0e8594fbf6e51470b7638" prot="public">
+          <name>SYSWD_DTC_VAL_1B2</name>
+          <initializer>= 0x0001B2u</initializer>
+          <briefdescription>
+<para>RL78 Temperature too high. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the list of DTC hex values.</para><para>This is used locally to handle the received DTC(s) from RL78. When a valid DTC is found, <linebreak/>
+ the received hex value of the DTC should correspond to one of the values defined in this enum. <linebreak/>
+ This will be checked in function <ref refid="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" kindref="member">SysWDDiag_setDTCEventStatus()</ref>, which will handle also <linebreak/>
+ the mapping and setting of the DTC(s) with corresponding DEM values/interfaces. <linebreak/>
+ <simplesect kind="remark"><para>The list of the RL78 possible DTC(s) is given by architectural elements. <linebreak/>
+ See VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.Handling of RL78 DTCs <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="464" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="463" bodyend="482"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_sys_w_d_diagnosis_8c_1ad210981f81ea3b011428d57bfe3a5cc4" prot="public" static="no">
+        <type>struct SysWDDiagnosis_Flags_s</type>
+        <definition>typedef struct SysWDDiagnosis_Flags_s  SysWDDiagnosis_Flags_s</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiagnosis_Flags_s</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This defines the type of flags needed for handling the Chorus - RL78 communication data.</para><para>This structure is used locally to define a variable <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> that will <linebreak/>
+ store the corresponding flags when receiving, processing and sending back the data to RL78. <linebreak/>
+ <simplesect kind="remark"><para>There are 5 flags used by SysWDDiagnosis to handle the Chorus - RL78 communication. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="559" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a5934bd78cbcb8f37ab88b9283bf2a63f" prot="public" static="yes" mutable="no">
+        <type>const SysWDDiagnosis_DTC_Map</type>
+        <definition>const SysWDDiagnosis_DTC_Map SYSWD_RL78_DTC[17u]</definition>
+        <argsstring>[17u]</argsstring>
+        <name>SYSWD_RL78_DTC</name>
+        <initializer>=
+    {
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0adb23d3712b799ab0c36a2bd32092df0d" kindref="member">SYSWD_DTC_VAL_101</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1ad9be7e91e8db18c0d9282545b35e64ca" kindref="member">Dem_RL78_DemEventId_000101</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0aa840c0e9b609c852d7ab026ad6679cf5" kindref="member">SYSWD_DTC_VAL_102</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1af2a5e498a1ff15dfe8f6c49852a0a85a" kindref="member">Dem_RL78_DemEventId_000102</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a90fd7a83ae96b5d10b75978279331fec" kindref="member">SYSWD_DTC_VAL_104</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a724113d987cae18f1f276b43d3f5c10d" kindref="member">Dem_RL78_DemEventId_000104</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a4cf880055e7c7a64ecb09824a8bf60da" kindref="member">SYSWD_DTC_VAL_109</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1aea8597f677ea63a48199cf1e7cb2d093" kindref="member">Dem_RL78_DemEventId_000109</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ab8929cb9eb5cd771fd4e43f9dd849cb3" kindref="member">SYSWD_DTC_VAL_10A</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a24a6bfd51ac32ab700ad38f10db6c011" kindref="member">Dem_RL78_DemEventId_00010A</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0affced4c3e5e95460c7a0eacb24c50a5f" kindref="member">SYSWD_DTC_VAL_10C</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1adf05f56bf030945e1c01cdebac0d9f2e" kindref="member">Dem_RL78_DemEventId_00010C</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a43983e3967bf79eddd11c381db2d546d" kindref="member">SYSWD_DTC_VAL_10D</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a787c5d241523b57d6a39303e6b8a52e9" kindref="member">Dem_RL78_DemEventId_00010D</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a7d2b2fe42364192ae84d2d67369d0ff6" kindref="member">SYSWD_DTC_VAL_120</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1aab104838a160b2e0b8aee71714a4983f" kindref="member">Dem_RL78_DemEventId_000120</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ab809bd6c30b6cb85b2b272f5dd89a64a" kindref="member">SYSWD_DTC_VAL_150</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1af844b778d62af7c9e064e24bebbe1fb3" kindref="member">Dem_RL78_DemEventId_000150</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a337fa9eed7142e8f78f615b24c989f5d" kindref="member">SYSWD_DTC_VAL_151</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1acd2e0f3b0ef327f0f07b9cfe4a4d094e" kindref="member">Dem_RL78_DemEventId_000151</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ad60a75ecb7ed34b7ebfd09fcd3e01a29" kindref="member">SYSWD_DTC_VAL_153</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1af3c3e97411d90b772e24f89e3d73271b" kindref="member">Dem_RL78_DemEventId_000153</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ad0752e37343fcb5fe6828c43803640c4" kindref="member">SYSWD_DTC_VAL_155</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a5c776989c945d14ed773c7a0c9446a51" kindref="member">Dem_RL78_DemEventId_000155</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0af948b661064a6c0422d6039538b13fe7" kindref="member">SYSWD_DTC_VAL_156</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a9d4c795d2e336cbfadc5db8c318fc825" kindref="member">Dem_RL78_DemEventId_000156</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0ac00b3037e15b8e3a3d9d30306d354a75" kindref="member">SYSWD_DTC_VAL_157</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a3de503991050c94cc57b04a989caf054" kindref="member">Dem_RL78_DemEventId_000157</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a880323d2792dc2f7bd9f6966388e0791" kindref="member">SYSWD_DTC_VAL_158</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a893359d7b568ddd4d1d3434d174e9455" kindref="member">Dem_RL78_DemEventId_000158</ref>,  0},   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0a31a27f6d5154d3f09b77d8f1d9c110ea" kindref="member">SYSWD_DTC_VAL_1A2</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1abd0554910395a692d7a3c6f50b6472e0" kindref="member">Dem_RL78_DemEventId_0001A2</ref>,  1 },   
+        {<ref refid="_sys_w_d_diagnosis_8c_1a84d83f9df9364e282978b6be825e31d0adb3ce7120cd0e8594fbf6e51470b7638" kindref="member">SYSWD_DTC_VAL_1B2</ref>, <ref refid="_sys_w_d_diagnosis_8c_8test_1a2e1713a1c6a6e7d57b7caf890fc8bd50" kindref="member">Dem_DemEventId_0001B2</ref>     ,  1 }    
+      }</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mapping the DTC 3-byte values from diagnostic info SPI frame to defined values for DTCs</para><para>This constant will be used locally in function <ref refid="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" kindref="member">SysWDDiag_setDTCEventStatus()</ref> that handles the setting of <linebreak/>
+ the DTC(s) received from RL78. For each hex value there is a corresponding DEM value, and the type of the DTC <linebreak/>
+<itemizedlist>
+<listitem><para>erasable or not. The mapping is necessary in order to set/reset DTC(s) using DEM interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref>. <linebreak/>
+ <simplesect kind="remark"><para>There are 17 possible DTC(s) that have to be handled - <ref refid="_sys_w_d_diagnosis_8c_1a183752b38e4818d5bad824cccbe0cfec" kindref="member">N_DEFINED_DTCS</ref> <linebreak/>
+ The list of the RL78 possible DTC(s) is given by architectural elements. <linebreak/>
+ See VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.Handling of RL78 DTCs <linebreak/>
+</para></simplesect>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="519" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="519" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a3b2f44d69c134474ddd9f463f11a483a" prot="public" static="no" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 SysWDDiag_Voltage[SYSWD_VOLT_LENGTH]</definition>
+        <argsstring>[SYSWD_VOLT_LENGTH]</argsstring>
+        <name>SysWDDiag_Voltage</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer to store RL78 Voltage measurements.</para><para>This is a local variable used for storing the Voltage Measurements received from RL78. <linebreak/>
+ The content of the buffer will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> function <linebreak/>
+ and will be read by <ref refid="_sys_w_d_diagnosis_8c_1ade3c2a0408b562758a2ea50d8803a0c4" kindref="member">SysWDDiag_ReadRL78Voltage()</ref> function when the data is requested by other components. <linebreak/>
+<simplesect kind="remark"><para>range The buffer is an array of 9 uint8 <linebreak/>
+ values The values are 7 different measurements with ADC filtered values (70 bits used) from a frame with 9 bytes (72 bits) - under following buffer layout: <linebreak/>
+<itemizedlist>
+<listitem><para>VDD_0V8 - 10 bits - start position bit 0 ... 9 <linebreak/>
+</para></listitem><listitem><para>VDD_DVFS - 10 bits - start position bit 10 ... 19 <linebreak/>
+</para></listitem><listitem><para>VDD_DDR_1V1 - 10 bits - start position bit 20 ... 29 <linebreak/>
+</para></listitem><listitem><para>VDD_DDR_1V8 - 10 bits - start position bit 30 ... 39 <linebreak/>
+</para></listitem><listitem><para>VDD_1V8 - 10 bits - start position bit 40 ... 49 <linebreak/>
+</para></listitem><listitem><para>VDD_2V5 - 10 bits - start position bit 50 ... 59 <linebreak/>
+</para></listitem><listitem><para>VDD_3V3_SW - 10 bits - start position bit 60 ... 69 <linebreak/>
+ unit Voltage <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1ade3c2a0408b562758a2ea50d8803a0c4" kindref="member">SysWDDiag_ReadRL78Voltage()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="585" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="585" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a0d671f87659224898b3a03838af9e5df" prot="public" static="no" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 SysWDDiag_Temp</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_Temp</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable to store RL78 Temperature.</para><para>This is a local variable used for storing the Temperature received from RL78. <linebreak/>
+ The content of the variable will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> function <linebreak/>
+ and will be read by <ref refid="_sys_w_d_diagnosis_8c_1a47ffa5348133a85e88a7af9b927e0524" kindref="member">SysWDDiag_ReadRL78Temperature()</ref> function when the data is requested by other components. <linebreak/>
+<simplesect kind="remark"><para>range The variable is of type uint16 <linebreak/>
+ values The temperature is provided as Celsius. Negative values are supported. <linebreak/>
+ unit Celsius <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a47ffa5348133a85e88a7af9b927e0524" kindref="member">SysWDDiag_ReadRL78Temperature()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="601" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="601" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 SysWDDiag_DiagInfo_Rx[5u]</definition>
+        <argsstring>[5u]</argsstring>
+        <name>SysWDDiag_DiagInfo_Rx</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DiagInfo receive buffer</para><para>This is a local variable to be used for receiving and storing the information from DiagInfo SPI frame <linebreak/>
+ The content of the buffer will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> function <linebreak/>
+ and will be read by other functions of the current module to extract and process the containing info from RL78. <simplesect kind="remark"><para>range The buffer is an array of 5 uint16 <linebreak/>
+ values The values will be taken from DiagnosticInfoData <linebreak/>
+ unit Could be temperature, voltage measurements, SW version, FBL version and others - depending on the HeaderID <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="617" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a39594e5a8cf9d0cf7c8f324c23fd4056" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 SysWDDiag_DiagInfo_Tx[5u]</definition>
+        <argsstring>[5u]</argsstring>
+        <name>SysWDDiag_DiagInfo_Tx</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DiagInfo send buffer</para><para>This is a local variable used for storing the information to be sent to RL78. <linebreak/>
+ The content of the buffer will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a908609df0ef8d226bcae7d7ce3ffecea" kindref="member">SysWDDiag_ExtractDTCs()</ref> function <linebreak/>
+ and will be read by <ref refid="_sys_w_d_diagnosis_8c_1a891230418f8e73678d809da220deac97" kindref="member">SysWDDiag_FillDiagInfo()</ref> function when sending the data. <linebreak/>
+<simplesect kind="remark"><para>range The buffer is an array of 5 uint16 <linebreak/>
+ values The values will contain feedback information and DTCs <linebreak/>
+ unit The content of the buffer will match DiagnosticInfoData <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1a908609df0ef8d226bcae7d7ce3ffecea" kindref="member">SysWDDiag_ExtractDTCs()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="633" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="633" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_1ad210981f81ea3b011428d57bfe3a5cc4" kindref="member">SysWDDiagnosis_Flags_s</ref></type>
+        <definition>SysWDDiagnosis_Flags_s SysWDDiag_AllFlags</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_AllFlags</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used for storing various flags related to Chorus - RL78 communication data. <linebreak/>
+</para><para>This is a local variable used to implement the flags for: <linebreak/>
+<itemizedlist>
+<listitem><para>DTC feedback <linebreak/>
+</para></listitem><listitem><para>DTC cleared <linebreak/>
+</para></listitem><listitem><para>RL78 SW error <linebreak/>
+</para></listitem><listitem><para>RL78 FBL error <linebreak/>
+</para></listitem><listitem><para>HW version received by RL78 <linebreak/>
+</para></listitem><listitem><para>RL78 Voltage error <linebreak/>
+</para></listitem><listitem><para>RL78 Temperature error <linebreak/>
+<simplesect kind="remark"><para>range There are 5 flags stored with this variable <linebreak/>
+ values <ref refid="_sys_w_d_diagnosis_8c_8test_1a5a53e35d96cb037c60db795bbe8430f6" kindref="member">SYSWD_FLAG_OFF</ref> and <ref refid="_sys_w_d_diagnosis_8c_8test_1a7f50169a99ed5d505d621850005dee8c" kindref="member">SYSWD_FLAG_ON</ref> <linebreak/>
+ unit N/A. <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, &quot;Updated an read in the current module inside the functions that send and process the received data from RL78&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="654" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="654" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 SysWDDiag_RL78_SW_ver[4u]</definition>
+        <argsstring>[4u]</argsstring>
+        <name>SysWDDiag_RL78_SW_ver</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer to store RL78 SW version.</para><para>This is a local variable used for storing the SW version received from RL78. <linebreak/>
+ The content of the buffer will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1ad58f57e23ac47d13ee88fe8f034136e7" kindref="member">SysWDDiag_ExtractRL78SWVersion()</ref> function <linebreak/>
+ and will be read by <ref refid="_sys_w_d_diagnosis_8c_1a2ddaccd95dbc3c08e0f359879db5ec3e" kindref="member">SysWDDiag_ReadRL78SWVersion()</ref> function when the data is requested by other components. <linebreak/>
+<simplesect kind="remark"><para>range The buffer is an array of 4 uint8 <linebreak/>
+ values The values represent four ASCII characters representing the SW version <linebreak/>
+ unit ASCII characters forming the SW version <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1ad58f57e23ac47d13ee88fe8f034136e7" kindref="member">SysWDDiag_ExtractRL78SWVersion()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a2ddaccd95dbc3c08e0f359879db5ec3e" kindref="member">SysWDDiag_ReadRL78SWVersion()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="670" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="670" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 SysWDDiag_RL78_FBL_ver[4u]</definition>
+        <argsstring>[4u]</argsstring>
+        <name>SysWDDiag_RL78_FBL_ver</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buffer to store RL78 FBL version.</para><para>This is a local variable used for storing the FBL version received from RL78. <linebreak/>
+ The content of the buffer will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a74e262c79473f44e3a8d97b635b01bc1" kindref="member">SysWDDiag_ExtractRL78FBLVersion()</ref> function <linebreak/>
+ and will be read by <ref refid="_sys_w_d_diagnosis_8c_1a1c4a917b54e7988cbc4332ab0494c5e7" kindref="member">SysWDDiag_ReadRL78FBLVersion()</ref> function when the data is requested by other components. <linebreak/>
+<simplesect kind="remark"><para>range The buffer is an array of 4 uint8 <linebreak/>
+ values The values represent four ASCII characters representing the FBL version <linebreak/>
+ unit ASCII characters forming the FBL version <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1a74e262c79473f44e3a8d97b635b01bc1" kindref="member">SysWDDiag_ExtractRL78FBLVersion()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a1c4a917b54e7988cbc4332ab0494c5e7" kindref="member">SysWDDiag_ReadRL78FBLVersion()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="686" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="686" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1af153f63b0e57efcdc75d83eb70204a67" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref></type>
+        <definition>uint32 SysWDDiag_CRC32</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_CRC32</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable to store RL78 CRC32 calculation.</para><para>This is a local variable used for storing the CRC32 calculation received from RL78. <linebreak/>
+ The content of the variable will be updated inside the <ref refid="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" kindref="member">SysWDDiag_CrcWdg_Init()</ref> and <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> <linebreak/>
+ functions and will be read by <ref refid="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" kindref="member">SysWDDiag_CrcWdg_CrcReq()</ref> function when the data is requested by CRC manager component. <linebreak/>
+<simplesect kind="remark"><para>range The variable is of type uint32 <linebreak/>
+ values The CRC32 calculation is provided by RL78 <linebreak/>
+ unit CRC calculation result <linebreak/>
+ context {Background_C2 OsTask on Core2, <ref refid="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" kindref="member">SysWDDiag_CrcWdg_Init()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" kindref="member">SysWDDiag_CrcWdg_CrcReq()</ref>, &quot;The variable is initialized and read by CRC Manager&quot; <linebreak/>
+ context {LinTask on Core1, <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref>, &quot;The variable is written inside the cyclic function when data is received from RL78&quot; } <linebreak/>
+ protection {local, &quot;This is a local variable and is written only in the context of LinTask - cyclic function #SysWDDiag_AnalyzeRL78DiagInfoFrame()&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="703" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="703" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5d" kindref="member">T_CRC_Local_State</ref></type>
+        <definition>T_CRC_Local_State SysWDDiag_CRC32_State</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_CRC32_State</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable to store the state of the request for CRC32 calculation.</para><para>This is a local variable used to implement a state machine for handling the CRC32 calculation request from RL78. <linebreak/>
+ The variable will be initialized inside the <ref refid="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" kindref="member">SysWDDiag_CrcWdg_Init()</ref> and will be updated in <ref refid="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" kindref="member">SysWDDiag_CrcWdg_CrcReq()</ref> <linebreak/>
+ function based on the type of the request form CRC Manager. When sending the data to RL78 in <ref refid="_sys_w_d_diagnosis_8c_1a891230418f8e73678d809da220deac97" kindref="member">SysWDDiag_FillDiagInfo()</ref> <linebreak/>
+ function, this local state will be checked to decide if a request for CRC32 calculation need to be sent. Also when receiving <linebreak/>
+ and processing the data from RL78 inside the <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> if the Header ID indicates that contains <linebreak/>
+ CRC calculation this state variable will be updated based on the result - valid CRC received or error status will be set. <linebreak/>
+ <simplesect kind="remark"><para>range The variable is of type <ref refid="_sys_w_d_diagnosis_8c_1a3be2b046be1d7b844c3ebadeee64bf5d" kindref="member">T_CRC_Local_State</ref> <linebreak/>
+ values The local state for CRC32 can have the following values:<itemizedlist>
+<listitem><para>SYSWD_CRC_INIT <linebreak/>
+</para></listitem><listitem><para>SYSWD_CRC_SEND_REQUEST <linebreak/>
+</para></listitem><listitem><para>SYSWD_CRC_WAIT_RESPONSE <linebreak/>
+</para></listitem><listitem><para>SYSWD_CRC_VALID_CRC <linebreak/>
+</para></listitem><listitem><para>SYSWD_CRC_ERROR <linebreak/>
+ unit State of the CRC32 request <linebreak/>
+ context {Background_C2 OsTask on Core2, <ref refid="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" kindref="member">SysWDDiag_CrcWdg_Init()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" kindref="member">SysWDDiag_CrcWdg_CrcReq()</ref>, &quot;The variable is initialized, written and read by CRC Manager&quot;} <linebreak/>
+ context {LinTask on Core1, <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref>, <ref refid="_sys_w_d_diagnosis_8c_1a891230418f8e73678d809da220deac97" kindref="member">SysWDDiag_FillDiagInfo()</ref>, &quot;The variable is written and read inside the cyclic functions when data is received and send from/to RL78&quot;} <linebreak/>
+ <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module. Variable is written and read both in Core1 and Core2 but the access is atomic (the cache is disabled)&quot;} <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="729" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="729" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1acd6078e92f218343314fcb8c02600c33" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 SysWDDiag_index_resp_ok_received</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_index_resp_ok_received</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used to count the correctly received responses from RL78 via SPI.</para><para>This is a local variable used in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> when checking the <linebreak/>
+ conditions for setting the DTC as De-Qualified: <ref refid="md__exported_doors_specification_0_requirements_1SWR_ICAS1_GW_7339" kindref="member">SWR_ICAS1_GW_7339</ref>. <simplesect kind="remark"><para>range The variable is of type uint8 <linebreak/>
+ values Counter incremented and reset to default value <ref refid="_sys_w_d_diagnosis_8c_1afca80e48df887f5d73bd497b9bb3766a" kindref="member">SYSWDDIAG_INIT</ref> <linebreak/>
+ unit number of correctly received responses <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="744" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="744" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1acd4a8a8c994a31e5141d8cb1be7135d8" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 SysWDDiag_MsgCount</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_MsgCount</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used to store the External Watchdog message counter.</para><para>This is a local variable used in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> to implement the 0x000121 DTC functionality <linebreak/>
+ <simplesect kind="remark"><para>range The variable is of type uint16, matching the type of msgcount - the passed by reference parameter of the <ref refid="_sys_w_d_diagnosis_8c_8test_1a99bad96aee4123eeb999f41793f579f8" kindref="member">Spi2SysWD_getClientInfo()</ref>. <linebreak/>
+ values Variable will take the value from the message counter parameter of <ref refid="_sys_w_d_diagnosis_8c_8test_1a99bad96aee4123eeb999f41793f579f8" kindref="member">Spi2SysWD_getClientInfo()</ref> external function. <linebreak/>
+ unit Counter <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="758" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="758" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_sys_w_d_diagnosis_8c_1adb722c2631c0dd98e12d38df10617686" prot="public" static="yes" mutable="no">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 SysWDDiag_ErrorDebounce</definition>
+        <argsstring></argsstring>
+        <name>SysWDDiag_ErrorDebounce</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable used for counting invalid or not received response from RL78 via SPI.</para><para>This is a local variable used in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref> to check if the DTC can be set to Qualified. <linebreak/>
+ In accordance to SWR_ICAS1_GW_7339 the DTC 0x000121 is set to Qualified if the software sends the client info over <linebreak/>
+ SPI_GW2WD AND it does not receive an answer within 30 ms for 3 subsequent times. <simplesect kind="remark"><para>range The variable is of type uint8. <linebreak/>
+ values Variable will be incremented and reset to SYSWDDIAG_INIT in function <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref>. <linebreak/>
+ unit Counter of invalid responses <linebreak/>
+ context {LinTask/Diag_Chorus_RL78, <ref refid="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" kindref="member">SysWDDiag_DTC000121()</ref>, &quot;Updated an read in the current module&quot;} <linebreak/>
+ protection {local, &quot;This is a local variable in the scope of this module&quot;} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="774" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="774" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>static Std_ReturnType SysWDDiag_setDTCEventStatus</definition>
+        <argsstring>(uint32 eventDtcId, uint8 DtcStatus)</argsstring>
+        <name>SysWDDiag_setDTCEventStatus</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref></type>
+          <declname>eventDtcId</declname>
+        </param>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>DtcStatus</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set DTC event status, DTC and status received as parameters.</para><para>This function will: <linebreak/>
+<itemizedlist>
+<listitem><para>correlate the DTC ID received as parameter (from the client) with the DTC ID defined in DEM; <linebreak/>
+</para></listitem><listitem><para>it will call the Dem_SetEventStatus function with the status received as parameter.</para></listitem></itemizedlist>
+</para><para><simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint32 eventDtcId - DTC ID received from the client </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] - uint8 DtcStatus - status of the DTC received </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - <ref refid="_sys_w_d_diagnosis_8c_8test_1a1e7cc741c56207a8872ea58373276925" kindref="member">E_OK(0)</ref> or <ref refid="_sys_w_d_diagnosis_8c_8test_1a1d155fa7a571f569a380bb42b1947eb4" kindref="member">E_NOT_OK(1)</ref></para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a5934bd78cbcb8f37ab88b9283bf2a63f" kindref="member">SYSWD_RL78_DTC</ref>[] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function will be called in the context of <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> after extracting the DTC ID and the status of the DTC from <linebreak/>
+ DiagInfo frame. Depending on the data length there could be 1 or 2 DTCs. This function will map the the DTC ID received with <linebreak/>
+ defined value from DEM and will call the corresponding interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref> to set/reset/clear DTCs according to status. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_setDTCEventStatus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a173b40db9eb691736fdc26bde969968f" kindref="member">TEST_SysWDDiag_setDTCEventStatus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11545, SWR_ICAS1_GW_11546, <linebreak/>
+ SWR_ICAS1_GW_11548, <linebreak/>
+ SWR_ICAS1_GW_11556, <linebreak/>
+ SWR_ICAS1_GW_11557, <linebreak/>
+ SWR_ICAS1_GW_11558, SWR_ICAS1_GW_11559, SWR_ICAS1_GW_21506, SWR_ICAS1_GW_3313, SWR_ICAS1_GW_3314, SWR_ICAS1_GW_3316, SWR_ICAS1_GW_7333, SWR_ICAS1_GW_7334, SWR_ICAS1_GW_7336, SWR_ICAS1_GW_7337, SWR_ICAS1_GW_7338, SWR_ICAS1_GW_7339, SWR_ICAS1_GW_7345, SWR_ICAS1_GW_7346, SWR_ICAS1_GW_7347, SWR_ICAS1_GW_7348, SWR_ICAS1_GW_7396 <linebreak/>
+ Design Decision - Justification. In case of DTC received from RL78 this function will handle the setting/resetting/clearing DTC according to status by sending the corresponding request to DEM. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="887" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1570" bodyend="1635"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a908609df0ef8d226bcae7d7ce3ffecea" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SysWDDiag_ExtractDTCs</definition>
+        <argsstring>(uint8 DataLength)</argsstring>
+        <name>SysWDDiag_ExtractDTCs</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>DataLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Extract DTC(s) and status(es) from DiagInfo frame.</para><para>This function will: <linebreak/>
+<itemizedlist>
+<listitem><para>extract the DTC(s) from the DiagInfo frame (1 or 2, depending on the data length); <linebreak/>
+</para></listitem><listitem><para>extract the status for each DTC; <linebreak/>
+</para></listitem><listitem><para>fill the feedback buffer; <linebreak/>
+</para></listitem><listitem><para>call the function <ref refid="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" kindref="member">SysWDDiag_setDTCEventStatus()</ref> for each DTC; <linebreak/>
+</para></listitem><listitem><para>put the result of setting the DTC(s) in the feedback buffer. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8 DataLength </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a39594e5a8cf9d0cf7c8f324c23fd4056" kindref="member">SysWDDiag_DiagInfo_Tx</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function will be called in the context of <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> when the header ID indicates that stores a DTC message. If the DataLength parameter is <ref refid="_sys_w_d_diagnosis_8c_1ad19b0748bdaa682e9e2f9aa05e471efe" kindref="member">SYSWD_DTC_INFOLEN1</ref> or <ref refid="_sys_w_d_diagnosis_8c_1a2c4321c8dba951ef2261d10e59ccf731" kindref="member">SYSWD_DTC_INFOLEN2</ref>, indicating that there is 1 or 2 DTCs, the DTC/DTCs and their status will be extracted and the function <ref refid="_sys_w_d_diagnosis_8c_1a38fc0f876dc1d77c52adc56783e1cb0b" kindref="member">SysWDDiag_setDTCEventStatus()</ref> will be called to handle further to DEM the DTC requests.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ExtractDTCs.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a97667f35894626a36e109d1fd9fbac10" kindref="member">TEST_SysWDDiag_ExtractDTCs</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to be used in case of DTC received from RL78 - needed to extract the DTC(s), their status, and to update the feedback buffer. <linebreak/>
+</para></simplesect>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1027" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1637" bodyend="1700"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1ad58f57e23ac47d13ee88fe8f034136e7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SysWDDiag_ExtractRL78SWVersion</definition>
+        <argsstring>(uint8 DataLength)</argsstring>
+        <name>SysWDDiag_ExtractRL78SWVersion</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>DataLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function extracts the RL78 SW version from DiagInfo and stores it in a buffer.</para><para>If the header of Diagnostic Info frame indicates an Info ID related to SW version, this function <linebreak/>
+ will be called to extract and store this information in dedicated buffer <ref refid="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" kindref="member">SysWDDiag_RL78_SW_ver</ref>[] <linebreak/>
+</para><para><simplesect kind="pre"><para>The InfoId in the DiagInfo header is 0x01 </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataLength - Info length of the headerDiagInfo </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" kindref="member">SysWDDiag_RL78_SW_ver</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function will be called in the context of <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> when the header ID indicates <linebreak/>
+ that stores SW version info. If the DataLength parameter is <ref refid="_sys_w_d_diagnosis_8c_1ad318d3bba83df26788f5f1176cb57e20" kindref="member">SYSWD_LEN_RL78</ref> the SW version will be extracted from <linebreak/>
+ receive buffer <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] and copied in a dedicated buffer for SW version <ref refid="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" kindref="member">SysWDDiag_RL78_SW_ver</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ExtractRL78SWVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a8695d238c983f9f03b1c1d1622c10c1d" kindref="member">TEST_SysWDDiag_ExtractRL78SWVersion</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to process and store the data received from RL78 related to SW version. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1102" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1702" bodyend="1722"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a74e262c79473f44e3a8d97b635b01bc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SysWDDiag_ExtractRL78FBLVersion</definition>
+        <argsstring>(uint8 DataLength)</argsstring>
+        <name>SysWDDiag_ExtractRL78FBLVersion</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>DataLength</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function extracts the RL78 FBL version from DiagInfo and stores it in a buffer.</para><para>If the header of Diagnostic Info frame indicates an Info ID related to FBL version, this function <linebreak/>
+ will be called to extract and store this information in dedicated buffer <ref refid="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" kindref="member">SysWDDiag_RL78_FBL_ver</ref>[] <linebreak/>
+</para><para><simplesect kind="pre"><para>The InfoId in the DiagInfo header is 0x02 </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataLength - Info length of the headerDiagInfo </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" kindref="member">SysWDDiag_RL78_FBL_ver</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function will be called in the context of <ref refid="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" kindref="member">SysWDDiag_AnalyzeRL78DiagInfoFrame()</ref> when the header ID indicates <linebreak/>
+ that stores FBL version info. If the DataLength parameter is <ref refid="_sys_w_d_diagnosis_8c_1ad318d3bba83df26788f5f1176cb57e20" kindref="member">SYSWD_LEN_RL78</ref> the FBL version will be extracted from <linebreak/>
+ receive buffer <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] and copied in a dedicated buffer for SW version <ref refid="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" kindref="member">SysWDDiag_RL78_FBL_ver</ref>[]</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ExtractRL78FBLVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a8e4df880ccba1ce46d82da8ea9f7b974" kindref="member">TEST_SysWDDiag_ExtractRL78FBLVersion</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to process and store the data received from RL78 related to FBL version. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1177" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1724" bodyend="1743"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1ace816888ab2a50cffe06a5a8ddf051ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SysWDDiag_DTC000121</definition>
+        <argsstring>(void)</argsstring>
+        <name>SysWDDiag_DTC000121</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the DTC 0x000121 - SPI interface to GW defective.</para><para>The DTC 0x000121 is set as Qualified when the software sends the client info over SPI_GW2WD AND it does not receive <linebreak/>
+ an answer within 30 ms for 3 subsequent times. The DTC is set as De-Qualified after 3 subsequent client info over <linebreak/>
+ SPI_GW2WD answers. Setting and resetting the DTC is done by calling the DEM interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a0544cb84f74bff3dbcab92e35ff6e062" kindref="member">Dem_SetEventStatus()</ref>. <linebreak/>
+</para><para><simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_8test_1a72d78a0228d42ee10c0d4a988a19eb56" kindref="member">SysWDDiag_MsgCount</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_8test_1a51cbf6720344abb56f725140a969046e" kindref="member">SysWDDiag_ErrorDebounce</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_8test_1ad0c8edf0271e5858b7aa272a6cab262c" kindref="member">SysWDDiag_index_resp_ok_received</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>There is no correlation of input data to output data for this function. When called, the function will <linebreak/>
+ check the conditions for setting and resetting the DTC 0x000121 by using counters and global variables <linebreak/>
+ and if necessary will call the corresponding DEM interface to set the DTC as Qualified or De-Qualified. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_DTC000121.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a36b491cbc0432fdca10faa9071208e22" kindref="member">TEST_SysWDDiag_DTC000121</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirement and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_7339 Design Decision - Justification. This function implements the following <bold>architectural element</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.WDG communication DTC 0x000121&quot; <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1296" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1746" bodyend="1810"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a970affbbdd6ce7a389e951ed06425387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SysWDDiag_AnalyzeRL78DiagInfoFrame</definition>
+        <argsstring>(void)</argsstring>
+        <name>SysWDDiag_AnalyzeRL78DiagInfoFrame</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Analyze and process the DiagInfo frame received from RL78.</para><para>The Diagnostic Info Data is a shared area that can contain different kind of information, <linebreak/>
+ such as SW versions, DTC(s), resync response and others. This function will process this data <linebreak/>
+ based on the InfoID - which are the 4 msb of the Diagnostic Info Header.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_8test_1a583e37ebdae9e59c0ff79be033f61328" kindref="member">SysWDDiag_Temp</ref> - Temperature from RL78 <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a3b2f44d69c134474ddd9f463f11a483a" kindref="member">SysWDDiag_Voltage</ref>[] - Voltage from RL78 <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a4cc367d92646df5cd1eb2d91d8fcfb75" kindref="member">SysWDDiag_DiagInfo_Rx</ref>[] - Receive buffer <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> - Flag for status of received HW version <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1af153f63b0e57efcdc75d83eb70204a67" kindref="member">SysWDDiag_CRC32</ref> - CRC32 value received from RL78 <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" kindref="member">SysWDDiag_CRC32_State</ref> - State of the request for CRC32 <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The DiagInfo frame and status of data will be processed and different actions will be <linebreak/>
+ taken based on the InfoID from the header byte of the DiagInfo. The frame ID could indicate <linebreak/>
+ a Resync Response, DTC, CRC32 calculation and others.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_AnalyzeRL78DiagInfoFrame.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a0cedec9d614418ee3bbaa050703bb9f9" kindref="member">TEST_SysWDDiag_AnalyzeRL78DiagInfoFrame</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21252 SWR_ICAS1_GW_21305 SWR_ICAS1_GW_7596 <linebreak/>
+ This function is also given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is the cyclic function for receiving and processing the data from RL78. <linebreak/>
+ Based on this Data the Chorus will react accordingly. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1307" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1307" bodyend="1445"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a891230418f8e73678d809da220deac97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SysWDDiag_FillDiagInfo</definition>
+        <argsstring>(uint16 *sendDiagInfo, uint16 sendDiagInfoLen)</argsstring>
+        <name>SysWDDiag_FillDiagInfo</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref> *</type>
+          <declname>sendDiagInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+          <declname>sendDiagInfoLen</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fill the DiagInfo buffer with HW version, feedback data or requests for CRC32 and resync.</para><para>This function will: <linebreak/>
+<itemizedlist>
+<listitem><para>Fill the SPI send buffer with 0 if nothing needs to be sent; <linebreak/>
+</para></listitem><listitem><para>Fill the SPI send buffer with HW version in the first 10 calls from startup or if there is no feedback that HW version was received; <linebreak/>
+</para></listitem><listitem><para>Fill the SPI send buffer with feedback data if the DTCfeedback flag is set (but not more than 10 times in a row if there are other requests), and clear the flag; <linebreak/>
+</para></listitem><listitem><para>Fill the SPI send buffer with CRC32 request and update the local state; <linebreak/>
+</para></listitem><listitem><para>Fill the SPI send buffer with the DTC resync request if a resync response is not received; <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sendDiagInfo - Points to the address where the SPI send buffer will copy the data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sendDiagInfoLen - length of the data to be sent </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a39594e5a8cf9d0cf7c8f324c23fd4056" kindref="member">SysWDDiag_DiagInfo_Tx</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" kindref="member">SysWDDiag_CRC32_State</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The output data in sendDiagInfo location will be updated based on the local state of the <linebreak/>
+ requests, status of flags and Output frames priority described in SWA. For details see: <linebreak/>
+ VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Dynamic.Output frames priority (ICAS1evo) <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_FillDiagInfo.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method will be described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a38d14f3c7feff2a5bfc028f3d878d4e8" kindref="member">TEST_SysWDDiag_FillDiagInfo</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21245 SWR_ICAS1_GW_21517 SWR_ICAS1_GW_21243 SWR_ICAS1_GW_21252 SWR_ICAS1_GW_21244 <linebreak/>
+ This function is also given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to be called by Spi2SysWD component that handles the communication between Chorus and RL78. </para></xrefdescription></xrefsect></para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1450" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1450" bodyend="1568"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1af721b3183e844aca13e85df414e742aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_ReadRL78HWVersion</definition>
+        <argsstring>(uint8 *const pHWVersion)</argsstring>
+        <name>SysWDDiag_ReadRL78HWVersion</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>pHWVersion</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies the RL78 hardware version in the variable given as parameter.</para><para>The RL78 HW version will be read from Chorus HSI component using defined SWA interface <ref refid="_sys_w_d_diagnosis_8c_8test_1a4d9690a75d11bbb35d38a28891e8bfaf" kindref="member">HardwareVersion_GetHardwareVersionNumber()</ref>. <linebreak/>
+ This function will take this HW version and will copy the high and low ASCII values into the given parameter. <linebreak/>
+</para><para><simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* const pHWVersion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK - HW version correctly retrieved and E_NOT_OK - HW version not available</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the given parameter is not null pointer, the function will get the HW version from Chorus HSI, will copy <linebreak/>
+ this HW version into the given parameter and will return E_OK, otherwise the function will return E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ReadRL78HWVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a5c684b8997bacaf787962697a3c4a2ba" kindref="member">TEST_SysWDDiag_ReadRL78HWVersion</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to read the HW version received from Chorus HSI by other components. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1815" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1815" bodyend="1834"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a2ddaccd95dbc3c08e0f359879db5ec3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_ReadRL78SWVersion</definition>
+        <argsstring>(uint8 *const pSWVersion)</argsstring>
+        <name>SysWDDiag_ReadRL78SWVersion</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>pSWVersion</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies the RL78 software version in the variable given as parameter.</para><para>The RL78 SW version will be stored in the dedicated buffer <ref refid="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" kindref="member">SysWDDiag_RL78_SW_ver</ref>[] <linebreak/>
+ This function will take the SW version from this buffer and will copy it into the given parameter. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* const pSWVersion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK if no error occurred and E_NOT_OK otherwise</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a4400c974d2466fb75e49d3dfe995f3aa" kindref="member">SysWDDiag_RL78_SW_ver</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the given parameter is not null pointer and the error flag for RL78SW is not set, the function <linebreak/>
+ will copy the SW version and will return E_OK, otherwise the function will return E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ReadRL78SWVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a03b1bad07a6d9d50b43ee4a30899af07" kindref="member">TEST_SysWDDiag_ReadRL78SWVersion</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to read the SW version received from RL78 by other components. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1836" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1836" bodyend="1856"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a1c4a917b54e7988cbc4332ab0494c5e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_ReadRL78FBLVersion</definition>
+        <argsstring>(uint8 *const pFBLVersion)</argsstring>
+        <name>SysWDDiag_ReadRL78FBLVersion</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>pFBLVersion</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies the RL78 FBL version in the variable given as parameter.</para><para>The RL78 FBL version will be stored in the dedicated buffer <ref refid="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" kindref="member">SysWDDiag_RL78_FBL_ver</ref>[] <linebreak/>
+ This function will take the FBL version from this buffer and will copy it into the given parameter. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* const pFBLVersion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK if no error occurred and E_NOT_OK otherwise</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1aba122b12589eafeeeea38a93656da18f" kindref="member">SysWDDiag_RL78_FBL_ver</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the given parameter is not null pointer and the error flag for RL78FBL is not set, the function <linebreak/>
+ will copy the FBL version and will return E_OK, otherwise the function will return E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ReadRL78FBLVersion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a2392bba719879f3414c86664f2b24434" kindref="member">TEST_SysWDDiag_ReadRL78FBLVersion</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to read the FBL version received from RL78 by other components. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1858" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1858" bodyend="1878"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a47ffa5348133a85e88a7af9b927e0524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_ReadRL78Temperature</definition>
+        <argsstring>(uint16 *const pTemperature)</argsstring>
+        <name>SysWDDiag_ReadRL78Temperature</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref> *const</type>
+          <declname>pTemperature</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies the RL78 Temperature in the variable given as parameter.</para><para>The RL78 Temperature will be stored in the dedicated global variable <ref refid="_sys_w_d_diagnosis_8c_8test_1a583e37ebdae9e59c0ff79be033f61328" kindref="member">SysWDDiag_Temp</ref>. <linebreak/>
+ This function will take the Temperature from this variable and will copy it into the given parameter. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16* const pTemperature </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK if no error occurred and E_NOT_OK otherwise</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_8test_1a583e37ebdae9e59c0ff79be033f61328" kindref="member">SysWDDiag_Temp</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the given parameter is not null pointer the function will copy the temperature and will return E_OK, otherwise the function will return E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ReadRL78Temperature.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a0994467961669db89bb4f5148337047e" kindref="member">TEST_SysWDDiag_ReadRL78Temperature</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to read the temperature received from RL78 by other components. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1880" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1880" bodyend="1900"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1ade3c2a0408b562758a2ea50d8803a0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_ReadRL78Voltage</definition>
+        <argsstring>(uint8 *const pVoltage)</argsstring>
+        <name>SysWDDiag_ReadRL78Voltage</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *const</type>
+          <declname>pVoltage</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function copies the RL78 Voltage in the variable given as parameter.</para><para>The RL78 Voltage will be stored in the dedicated buffer <ref refid="_sys_w_d_diagnosis_8c_1a3b2f44d69c134474ddd9f463f11a483a" kindref="member">SysWDDiag_Voltage</ref>[]. <linebreak/>
+ This function will take the voltage from this buffer and will copy it into the given parameter. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: LinTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">-</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint8* const pVoltage </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK if no error occurred and E_NOT_OK otherwise</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a3b2f44d69c134474ddd9f463f11a483a" kindref="member">SysWDDiag_Voltage</ref>[] <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>If the given parameter is not null pointer the function will copy the voltage and will return E_OK, otherwise the function will return E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_ReadRL78Voltage.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a61950db63e9fe3474640048fe415cbb2" kindref="member">TEST_SysWDDiag_ReadRL78Voltage</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to read the voltage received from RL78 by other components. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1902" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1902" bodyend="1922"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a44cd6f59cf15efb96c347a2a796fd04f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType SysWDDiag_DemClearEventAllowed</definition>
+        <argsstring>(boolean *Allowed)</argsstring>
+        <name>SysWDDiag_DemClearEventAllowed</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref> *</type>
+          <declname>Allowed</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets the flag that indicates one or more DTCs have been cleared.</para><para>This is an external function to be called by Dem component. <linebreak/>
+ The function will update the DTCcleared flag from <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> global variable. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allowed - By default FALSE. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK in case of success, otherwise E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>There is no correlation of input data to output data for this function. Whenever called the function will set the DTC cleared flag to ON and will return E_OK.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_DemClearEventAllowed.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1acfc1fc27a6a6941a2d41504b2bac5838" kindref="member">TEST_SysWDDiag_DemClearEventAllowed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to be called by Dem module when one or more DTCs were cleared. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1925" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1925" bodyend="1934"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a8cc8fc3ebaba8168c41f9fff5cc61a23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SysWDDiag_SetDTCClearedFlag</definition>
+        <argsstring>(void)</argsstring>
+        <name>SysWDDiag_SetDTCClearedFlag</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets the flag that indicates one or more DTCs have been cleared.</para><para>This is an external function to be called by UDSServiceHandler component. <linebreak/>
+ The function will update the DTCcleared flag from <ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> global variable. <linebreak/>
+ <simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: DiagTask task <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1a82cbdec5606d3b2b0169850c37a537fa" kindref="member">SysWDDiag_AllFlags</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>There is no correlation of input data to output data for this function. Whenever called the function will set the DTC cleared flag to ON.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_SetDTCClearedFlag.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1a69036100f4fdff51429650a8991d77cb" kindref="member">TEST_SysWDDiag_SetDTCClearedFlag</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to be called by UDSServiceHandler component when one or more DTCs were cleared. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1936" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1936" bodyend="1940"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a3884db54132f8aa49fdcc931a2dbe7e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SysWDDiag_CrcWdg_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>SysWDDiag_CrcWdg_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function initializes the information regarding the CRC.</para><para>This is an external function to be called by CRC32 manager component. <linebreak/>
+ The function will initialize the data regarding the CRC32 calculation <linebreak/>
+<itemizedlist>
+<listitem><para>namely the CRC value and the local state of the RL78 CRC request. <linebreak/>
+</para></listitem></itemizedlist>
+</para><para><simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Background_C2 OsTask on Core2 <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1af153f63b0e57efcdc75d83eb70204a67" kindref="member">SysWDDiag_CRC32</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" kindref="member">SysWDDiag_CRC32_State</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>There is no correlation of input data to output data for this function. Whenever called the <linebreak/>
+ function will initialize the CRC32 value and the local state of the RL78 CRC request.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_CrcWdg_Init.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method will be described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1ab1d2bf8837998a19e61b286d038da1d4" kindref="member">TEST_SysWDDiag_CrcWdg_Init</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to be called by CRC32_mng component when the information regarding CRC should be initialized. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1942" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1942" bodyend="1947"/>
+      </memberdef>
+      <memberdef kind="function" id="_sys_w_d_diagnosis_8c_1a5197c0eb30dc6aaa8e7858275f0a8333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_sys_w_d_diagnosis_8h_1a950f768545f31ea7aa2d562f38c50e6f" kindref="member">T_CrcWdg_Status</ref></type>
+        <definition>T_CrcWdg_Status SysWDDiag_CrcWdg_CrcReq</definition>
+        <argsstring>(T_CrcWdg_ReqType reqType, uint32 *pCrcVal)</argsstring>
+        <name>SysWDDiag_CrcWdg_CrcReq</name>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8h_1adbae8c9454aa607d14a358b650a37961" kindref="member">T_CrcWdg_ReqType</ref></type>
+          <declname>reqType</declname>
+        </param>
+        <param>
+          <type><ref refid="_sys_w_d_diagnosis_8c_8test_1a4b435a49c74bb91f284f075e63416cb6" kindref="member">uint32</ref> *</type>
+          <declname>pCrcVal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will request/retrieve the CRC from RL78 via SPI.</para><para>This is an external function to be called by CRC32 manager. <linebreak/>
+ Based on the request type from CRC32_mng and the local status of the CRC32 communication with RL78, <linebreak/>
+ the function will send new requests for CRC32 calculation, will write the previously received <linebreak/>
+ CRC32 value if available, and will return one of the statuses from <ref refid="_sys_w_d_diagnosis_8h_1a950f768545f31ea7aa2d562f38c50e6f" kindref="member">T_CrcWdg_Status</ref> <linebreak/>
+</para><para><simplesect kind="pre"><para>No preconditions </para></simplesect>
+<simplesect kind="post"><para>No postconditions</para></simplesect>
+<simplesect kind="remark"><para>reentrant: No <linebreak/>
+ context: Background_C2 OsTask on Core2 <linebreak/>
+ thread safe: No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe: No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">T_CrcWdg_ReqType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Type of the request from CRC manager </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pCrcVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Points to the address, the CRC result should be stored </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>T_CrcWdg_Status retVal - Status of CRC calculation from RL78</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_sys_w_d_diagnosis_8c_1af153f63b0e57efcdc75d83eb70204a67" kindref="member">SysWDDiag_CRC32</ref> <linebreak/>
+ <ref refid="_sys_w_d_diagnosis_8c_1ace54a8eabcb159446b855df8a810de0b" kindref="member">SysWDDiag_CRC32_State</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Based on the request type from CRC32_mng and the current local status of the CRC32 request to RL78, the function will either send new requests to RL78, or will read the already received CRC32 value.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SysWDDiag_CrcWdg_CrcReq.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method will be described in SWATT <ref refid="_sys_w_d_diagnosis_8c_8test_1adff8838c34384a9601cb819ed1551769" kindref="member">TEST_SysWDDiag_CrcWdg_CrcReq</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21244 SWR_ICAS1_GW_21305 <linebreak/>
+ This function is also given by <bold>architectural requirements</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.Diag_Chorus_RL78.SW Architecture.Static.Interfaces&quot; <linebreak/>
+ Design Decision - Justification. This is an external interface defined in SWA to be called by CRC32_mng component when needs to retrieve/request CRC from RL78. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" line="1952" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c" bodystart="1952" bodyend="2037"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This module provides the implementation for the SysWDDiagnosis component. </para>    </briefdescription>
+    <detaileddescription>
+<para>Handles the processing of data used for communication between Chorus and RL78. This module checks the DiagInfo frame received from RL78 and:<itemizedlist>
+<listitem><para>Provides HW version at startup and checks for feedback</para></listitem><listitem><para>Requests the CRC32 calculation and provides the data to CRC manager</para></listitem><listitem><para>If DTC(s) received : sets DTCs and sends feedback to RL78</para></listitem><listitem><para>If DLT trace - call function that outputs it to console</para></listitem><listitem><para>If resync response - sets active DTCs if any When DTC(s) are cleared by client a resync request is sent to RL78 <simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes. <linebreak/>
+ Add software requirement IDs in the testcases. <linebreak/>
+</para></simplesect>
+</para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Diag_Chorus_RL78/SysWDDiagnosis/c/src/SysWDDiagnosis.c"/>
+  </compounddef>
+</doxygen>

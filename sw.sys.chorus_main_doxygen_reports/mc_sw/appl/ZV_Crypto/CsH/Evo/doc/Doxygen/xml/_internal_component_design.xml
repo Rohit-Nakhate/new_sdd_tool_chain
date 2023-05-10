@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has 3 units:<itemizedlist>
+<listitem><para><ref refid="_cs_h___task_8c" kindref="compound">CsH_Task.c</ref></para></listitem><listitem><para><ref refid="_cs_h___crypto_operations_8c" kindref="compound">CsH_CryptoOperations.c</ref></para></listitem><listitem><para><ref refid="_cs_h___key_learning_8c" kindref="compound">CsH_KeyLearning.c</ref></para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level.<linebreak/>
+For more details please refer to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="6" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_CRY_723  </para></entry><entry thead="no"><para>ICAS1::CryptoHandler shall utilize maximum 0.50 kB RAM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_CRY_724  </para></entry><entry thead="no"><para>ICAS1::CryptoHandler shall utilize maximum 5.00 kB ROM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_CRY_727  </para></entry><entry thead="no"><para>ICAS1::CryptoHandler shall generate maximum 0.25% of CPU Load at peaks.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_CRY_726  </para></entry><entry thead="no"><para>ICAS1::CryptoHandler shall be available 30 ms at the latest (&lt;=30 ms) after ICAS1 start-up.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_CRY_737  </para></entry><entry thead="no"><para>ICAS1::CryptoHandler shall mirror the following data stored by ICAS1::CryptoHandler in ICAS1::NVM:<linebreak/>
+ - Transponder IDs (all 8 slots mirrored, even if not used)<linebreak/>
+ - FFB_SKC<linebreak/>
+ - FFB_SKC validity flag<linebreak/>
+ - FFB_Data validity flag   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cs_h___crypto_operations_8c_1a160da28c17c82efe68e13018fe55974a" kindref="member">CsH_CryptoOperations_Cyclic</ref><linebreak/>
+</para></listitem><listitem><para><ref refid="_cs_h___key_learning_8c_1a5f7c78cd77f69bfa4850a6b80bfc5a9d" kindref="member">CsH_KeyHandler_Cyclic</ref><linebreak/>
+</para></listitem><listitem><para><ref refid="_cs_h___key_learning_8c_1a4fc4edf6fc5e8310b52e068d2b3633eb" kindref="member">CsH_KeyHandler_Init</ref><linebreak/>
+ </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_CsH.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>CsH SWC dynamic behavior is described in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.CsH.Dynamic</bold></para><para>Below data flow diagram depicts the FFB_SKC learning scenario, which is a first part of an entire key learning process. Afterwards, FFB_Data learning scenario is executed; nevertheless, data flow of this scenario is trivial and not presented.</para><para><image type="html" name="FFB_SKCLearningFunction.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>CsH SWC is assigned to <bold> CORE 1 </bold>, in SWA: <bold>VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ApplicationLayer_Core1</bold>. <linebreak/>
+CsH component execution is under controll of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.CSH_Init</bold> <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.CSH_Cyclic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>CsH does not have requirements for specific operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>ZV_Crypto composition including Crypto Handler is operating in the Kessy Mode code RUN_CRYPTO_AVAILABLE mode designed specifically for the purpose of fullfilling Kessy performance requirements. CsH SWC power modes are described in SWA: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.UHF_Init</bold> <bold> VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Crypto.SW Architecture.UHF.Dynamic.CSH_Cyclic</bold></para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>During Key Learning process error handling is implemented. After received request with FFB_SKC, the DTC:DTC_ZV_Funk_keine_Grundeinstellung_Adaption is set. After FFB_Data is stored correctly in NvM DTC:DTC_ZV_Funk_keine_Grundeinstellung_Adaption is reset.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para><ulink url="globals_defs.html">Macros defintions</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>1) FFB_SKC Learning Function:<itemizedlist>
+<listitem><para>CryptoHandler receives the FFB_SKC from ICAS1::WFS.</para></listitem><listitem><para>CryptoHandler sets the FFB_SKC and FFB_Key validation flags to &quot;invalid&quot;.</para></listitem><listitem><para>CryptoHandler deletes previously stored FFB_SKC.</para></listitem><listitem><para>CryptoHandler sets DTC_ZV_Funk_keine_Grundeinstellung_Adaption DTC.</para></listitem><listitem><para>CryptoHandler deletes previously stored FFB data.</para></listitem><listitem><para>CryptoHandler stores the FFB_SKC in non-volatile memory of ICAS1 and SAM</para></listitem><listitem><para>CryptoHandler sets the FFB_SKC validity flag to &quot;valid&quot;.</para></listitem><listitem><para>CryptoHandler provides the UHF Channel Configuration data to WFS</para></listitem><listitem><para>CryptoHandler forwards the FFB_SKC validity flag and ICAS1-configured key type and frequency to SAM</para></listitem><listitem><para>CryptoHandler responds to ICAS1::WFS with FFBUebertragungResp(E_OK) response.</para></listitem><listitem><para>CryptoHandler broadcasts the number of learnt keys to other functions (i.e., zero keys).</para></listitem></itemizedlist>
+</para><para><heading level="2">Data Structures</heading>
+</para><para>CsH component is only using data structure generated by RTE.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para>Ad. Interoperability<linebreak/>
+CsH is designed for ICAS1 project with specific hardware architecture. This means that potential adaptation to other project would require additional configuration e.g., NVM block or StandbyRAM configuration, event handling utilizing Kessy_Event_Manager.<linebreak/>
+Ad. Interaction<linebreak/>
+CsH in general is using RTE connection.<linebreak/>
+Ad. Criticality<linebreak/>
+CsH is rated as QM component.<linebreak/>
+Ad. Technical complexity<linebreak/>
+CsH is using algorithms on medium level of complexity like FFB SKC learning.<linebreak/>
+Ad. Risks<linebreak/>
+CsH contains algorithms of medium complexity and include 3 SW Units.<linebreak/>
+Ad. Testability<linebreak/>
+CsH is tested completely on SWATT level.<linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

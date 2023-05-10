@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_config_lin_8c" kind="file" language="C++">
+    <compoundname>ConfigLin.c</compoundname>
+    <includes local="yes">RoutingOps.h</includes>
+    <includes refid="_config_lin_8h" local="yes">ConfigLin.h</includes>
+    <includes local="yes">Routing_Cfg.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>Lin.h</label>
+      </node>
+      <node id="13">
+        <label>Routing_Cfg.h</label>
+      </node>
+      <node id="6">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="9">
+        <label>ErrHdl_DEM_Interface.h</label>
+      </node>
+      <node id="10">
+        <label>LinIntegration.h</label>
+        <link refid="_lin_integration_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LinFlash.h</label>
+      </node>
+      <node id="8">
+        <label>ConfigNmHighSpeed.h</label>
+      </node>
+      <node id="3">
+        <label>RoutingOps.h</label>
+      </node>
+      <node id="12">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="4">
+        <label>ConfigLin.h</label>
+        <link refid="_config_lin_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ConfigLin.c</label>
+        <link refid="_config_lin_8c"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_config_lin_8c_1a8e36f486b1942a87add4a9105f6c71ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LinDoLinMsgRouting</definition>
+        <argsstring>(const TComChannel linComChannel, const TLinStatus LinStatus)</argsstring>
+        <name>LinDoLinMsgRouting</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>linComChannel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_config_lin_8h_1a3b46cbb501272cd45d88bd6c6221d4a2" kindref="member">TLinStatus</ref></type>
+          <declname>LinStatus</declname>
+        </param>
+        <briefdescription>
+<para>This function calls the Routing callbacks on LIN frame transmission on given linComChannel. </para>        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s called cyclically from the LinTask.</para><para><simplesect kind="pre"><para>No precondition </para></simplesect>
+<simplesect kind="post"><para>No postcondition</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context LinTask <linebreak/>
+ thread safe yes - the interrupts are suspended when callbacks are called<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">linComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LinInstance for routing_requirement </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">LinStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of the Lin channel </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A. </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="LinDoLinMsgRouting.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method </title><para><linebreak/>
+ The testing method is described on TEST_LinDoLinMsgRouting <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function calls the routing callbacks on frame transmission on LIN channels. Needed for timeout monitoring of the frames. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/ConfigLin.c" line="82" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/ConfigLin.c" bodystart="82" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides the necessary callback functions for LIN Integration component. </para>    </briefdescription>
+    <detaileddescription>
+<para>This instance allows to perform the LIN transmitted Msg on LIN channels <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/LIN_Com/LIN_Integration/c/src/ConfigLin.c"/>
+  </compounddef>
+</doxygen>

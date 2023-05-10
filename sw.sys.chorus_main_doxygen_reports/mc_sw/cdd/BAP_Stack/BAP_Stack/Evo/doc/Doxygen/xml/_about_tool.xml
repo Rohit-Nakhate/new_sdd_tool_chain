@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_about_tool" kind="page">
+    <compoundname>AboutTool</compoundname>
+    <title>About The Tool</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_about_tool_1AboutGeneral">
+<title>General</title>
+<para>BapIntGen Tool is to support developer in integration of BAP Stack on ICAS1 Chorus MCU. It allows to easily provide RTE interfaces and configure routing for receival/transmission of the PDUs.<linebreak/>
+BapIntGen tool supports integration on Chorus on 2 layers:</para><para><itemizedlist>
+<listitem><para>RTE Layer</para></listitem><listitem><para>Routing Layer</para></listitem></itemizedlist>
+</para><para><bold>RTE Layer</bold> - as Chorus use RteLight instead of Autosar standard RTE, it does not support BAP calls from/to SWC. Here BapIntGen provides:</para><para><itemizedlist>
+<listitem><para>bap_rte.c/h files which provides all request from SWC to BAP Stack</para></listitem><listitem><para>bap_applCallbacks.c/h files which provides implementation of indications from BAP Stack to SWC</para></listitem><listitem><para>bap_*LSG*_applCallbacks.h files which provides rte headers for LSGs</para></listitem></itemizedlist>
+</para><para><bold>Routing Layer</bold> - as BAP Stack was developed for Vector Stack, it requires PDU IDs provided by the system. Additionally Chorus do not use Autosar PduR, instead custom PDURouting is developed. Here BapIntGen provides all necessary objects for PDURouting and provides BAP PDUs to exchange between integration layer and BAP Stack.</para><para><itemizedlist>
+<listitem><para>bap_com_gw_adaption_gen.c/h</para></listitem></itemizedlist>
+</para><para>Additionally for each generated .c file, tool also provie .c.test file which covers Unit Tests.</para><para>For details on how communication looks like please refer to BAP Chorus SWA.</para></sect1>
+<sect1 id="_about_tool_1sysreq">
+<title>System Requirements</title>
+<para>In order to run the script, several requirements needs to be met:</para><para><itemizedlist>
+<listitem><para>Python 3.6</para></listitem><listitem><para>TS_LOCAL environment variable pointing to TS_MIRR with copied folders from TS_REF:<itemizedlist>
+<listitem><para>xml\jre1.5.0</para></listitem><listitem><para>xml</para></listitem><listitem><para>xml\xerces2.6.2</para></listitem><listitem><para>xml\xalan2.6.0</para></listitem><listitem><para>xml-b</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_about_tool_1inputfiles">
+<title>Input Files</title>
+<para>In order to generate output files BapIntGen requires input files:</para><para><bold>BAP Config XML</bold><linebreak/>
+BAP Configuration is an xml file delivered by VW. It is a BAP system description, which provides details like what LSGs are used in the system, what version catalogue they use, what functions are used and what messages are received/sent. Each system/partition has its own BAP configuration.<linebreak/>
+This file is provided by VW and stored on artifactory.<linebreak/>
+Package name: BAP Stack<linebreak/>
+Artifactory repository: i_bs_vw_meb_19_icas1_chorus_packages_conan_releases_l<linebreak/>
+Artifactory path: i_bs_vw_meb_19_icas1_chorus_packages_conan_releases_l/cdd/BAP_Stack/<linebreak/>
+Repository path: sw.sys.chorus_main_build/mc_sw/_TPD/cdd/Evo/BAP_Stack/</para><para><bold>KMatix/RTT Routing Table</bold><linebreak/>
+KMatrix is an bus definition file, which provides details on what bus, what message, what signal is being send and all the details about signal and message (id, length etc.)<linebreak/>
+RTT Routing Table is an excel file which merges all the KMatrixes into one large file and consists data of what PDUs are routed, received or send by the ECU.<linebreak/>
+Apart of sharepoint, RTT Routing table is store in doc repository under:<linebreak/>
+sw.sys.chorus_main_doc/Administration/{VARIANT}/InputVW/BusData/1_RTT </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

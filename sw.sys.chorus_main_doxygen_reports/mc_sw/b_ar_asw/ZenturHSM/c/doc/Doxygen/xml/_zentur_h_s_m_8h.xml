@@ -1,0 +1,573 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_zentur_h_s_m_8h" kind="file" language="C++">
+    <compoundname>ZenturHSM.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Compiler.h</includes>
+    <includes local="yes">Dcm_Types.h</includes>
+    <includedby refid="_zentur_h_s_m_8c" local="yes">ZenturHSM.c</includedby>
+    <incdepgraph>
+      <node id="21">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="18">
+        <label>ZenturHSM.h</label>
+        <link refid="_zentur_h_s_m_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="20">
+        <label>Compiler.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="23">
+        <label>ZenturHSM.c</label>
+        <link refid="_zentur_h_s_m_8c"/>
+      </node>
+      <node id="22">
+        <label>ZenturHSM.h</label>
+        <link refid="_zentur_h_s_m_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a6e990fd435a53c51bd5201b2d980adec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZenturHSM_Startup</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZenturHSM_Startup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is the Init routine for HSM startup; shall be called before PLL lock. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZenturHSM_Startup.png">ZenturHSM_Startup Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Since the function definition is empty Testcase(SWATT) shall be only the function call under test.<linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a96e9b35a2bab7d22231bcfa251410f4b" kindref="member">TEST_ZenturHSM_Startup_TC1</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+  <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1ae5c2ae3318f78b3ac1a86dc0623df245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shewrite_cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is used for Cyclic task for state machine handling. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_cyclic.png">shewrite_cyclic Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Mock the functions shewrite_writenewkey and EbHsm_VKMS_InjectIS_Key and Check the expected number of mocked function calls as per the function definition <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ae8433577bf78dc041f06c027a3b2ace2" kindref="member">TEST_shewrite_cyclic_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+  <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a7325cc2180558e7f3375a1ac8b202ff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 shewrite_ongoing</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_ongoing</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is used for power management to know if SHE write process is ongoing. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 = NO process ongoing, 1 = PROCESS ongoing, keep CAN alive <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_ongoing.png">shewrite_ongoing Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different SHE states passed as input and expect the result accordingly <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a84c0bb84b2cceeb0f5aaaf6f0326fd7f" kindref="member">TEST_shewrite_ongoing_TC1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+  <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a0d470457b68aebe14b2d95ea35758e8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_ReadLength_Adaption_0xEFC5</definition>
+        <argsstring>(uint16 *DataLength)</argsstring>
+        <name>shewrite_ReadLength_Adaption_0xEFC5</name>
+        <param>
+          <type>uint16 *</type>
+          <declname>DataLength</declname>
+        </param>
+        <briefdescription>
+<para>This function is used to support UDS read request (0x22 DID 0xEFC5) for reading the length of status bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>DataLength</parametername>
+<parametername>pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filled by function with length expected for that UDS identifier <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_ReadLength_Adaption_0xEFC5.png">shewrite_ReadLength_Adaption_0xEFC5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the possible values of datalength <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ae127ce71335d130322d8938c1155c3cf" kindref="member">TEST_shewrite_ReadLength_Adaption_0xEFC5_TC1</ref> <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a034754ff8ba346b89d120c2d3f9010af" kindref="member">TEST_shewrite_ReadLength_Adaption_0xEFC5_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_20790 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a836845403945329e8a0023145634e977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_Read_Adaption_0xEFC5</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>shewrite_Read_Adaption_0xEFC5</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para>This function is used to handle UDS read request (0x22, DID 0xEFC5) for reading the written status of the CHORUS SHE and SHE+ Keys. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>OpStatus</parametername>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of DCM stack <linebreak/>
+Data, pointer to data filled by API with status of current (or last) SHE slot write process <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_Read_Adaption_0xEFC5.png">shewrite_Read_Adaption_0xEFC5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Pass the possible nrc states and the she_m4hsm messages as input to test case. The expected output m4m5hsm length should be the based on the inputs provided <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ae584423e51c36dd69a8645cbdff6541f" kindref="member">TEST_shewrite_Read_Adaption_0xEFC5_TC1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_20789 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="310" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a9f86eddddce2b82dc1751ded7d7aa77a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_Write_Adaption_0xEFC5</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>shewrite_Write_Adaption_0xEFC5</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para>This function is used to handle UDS write request(0x2E, DID 0xEFC5) for provisioning keys related to SHE and SHE+ key range slots. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+</para><para>The internal valriables are initialized with the default values. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Data</parametername>
+<parametername>pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to data which shall be forwarded to SHE_LoadKey API <linebreak/>
+DataLength, length of payload at parameter Data <linebreak/>
+ OpStatus, status of DCM stack <linebreak/>
+ErrorCode, pointer to be filled by function with the result of the function execution <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK (write was successful) or E_NOT_OK (see ErrorCode for reason) or 10 (which is RTE_PENDING, expect to be called again) <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_Write_Adaption_0xEFC5.png">shewrite_Write_Adaption_0xEFC5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for datalength, SHE states and the data <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a2a26e4a24598b7a956ce3923849f7f79" kindref="member">TEST_shewrite_Write_Adaption_0xEFC5_TC1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_20788, SWR_ICAS1_GW_20792,SWR_ICAS1_GW_20793,SWR_ICAS1_GW_21446 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="361" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1aa2ebe89c0355dbff3387387b14b81d1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_ReadLength_Adaption_0xEFF2</definition>
+        <argsstring>(uint16 *DataLength)</argsstring>
+        <name>shewrite_ReadLength_Adaption_0xEFF2</name>
+        <param>
+          <type>uint16 *</type>
+          <declname>DataLength</declname>
+        </param>
+        <briefdescription>
+<para>This function is to support UDS read request (0x22 DID 0xEEF2) for reading the length of status bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>DataLength</parametername>
+<parametername>pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filled by function with length expected for that UDS identifier <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_ReadLength_Adaption_0xEFF2.png">shewrite_ReadLength_Adaption_0xEFF2 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for nrc,and the m4hsm message 15th bit <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1aa2cd00244fde6ef444f6f1f339985b25" kindref="member">TEST_shewrite_ReadLength_Adaption_0xEFF2_TC1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21520; <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="410" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1a64ac9017169e77929923cfe2d6892b0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_Read_Adaption_0xEFF2</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>shewrite_Read_Adaption_0xEFF2</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para>This function is to handle UDS read request (0x22, DID 0xEEF2) for reading the written status of the CHORUS VKMS IS Key. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>OpStatus</parametername>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of DCM stack <linebreak/>
+Data, pointer to data filled by API with status of current (or last) SHE slot write process <linebreak/>
+ <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK or E_NOT_OK <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_Read_Adaption_0xEFF2.png">shewrite_Read_Adaption_0xEFF2 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for nrc, SHE states and the m4hsm message <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a22750672a02421fc89e0172321992200" kindref="member">TEST_shewrite_Read_Adaption_0xEFF2_TC1</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21520; <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="459" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8h_1ae7d8f97060c3fc9a7d4ae81c36094623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType shewrite_Write_Adaption_0xEFF2</definition>
+        <argsstring>(const uint8 *Data, uint16 DataLength, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>shewrite_Write_Adaption_0xEFF2</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>DataLength</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para>This function is to handle UDS write request(0x2E, DID 0xEFF2) for Provisioning the CHORUS VKMS IS Key into VKMS SHE slot. </para>        </briefdescription>
+        <detaileddescription>
+<para>The internal valriables are initialized with the default values. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>NA <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Data</parametername>
+<parametername>pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to data which shall be forwarded to SHE_LoadKey API <linebreak/>
+DataLength, length of payload at parameter Data <linebreak/>
+OpStatus, status of DCM stack <linebreak/>
+ErrorCode, pointer to be filled by function with the result of the function execution <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK (write was successful) or E_NOT_OK (see ErrorCode for reason) or 10 (which is RTE_PENDING, expect to be called again) <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_Write_Adaption_0xEFF2.png">shewrite_Write_Adaption_0xEFF2 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for data length and SHE states <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a592d0c94c7d2f2d08d8dc42af6c95ed6" kindref="member">TEST_shewrite_Write_Adaption_0xEFF2_TC1</ref> <linebreak/>
+ <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21447; <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h" line="510" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Startup routine for HSM and mechanism to write she slots via UDS. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_zentur_h_s_m_8h" kindref="compound">ZenturHSM.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#2 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib68048 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2020/11/26 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/sandbox/chorus1/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/inc/ZenturHSM.h"/>
+  </compounddef>
+</doxygen>

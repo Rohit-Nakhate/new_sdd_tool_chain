@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___lin___electrical___failure___detection_8h" kind="file" language="C++">
+    <compoundname>ErrHdl_Lin_Electrical_Failure_Detection.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includedby refid="_err_hdl___lin___electrical___failure___detection_8c" local="yes">ErrHdl_Lin_Electrical_Failure_Detection.c</includedby>
+    <incdepgraph>
+      <node id="572">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="570">
+        <label>ErrHdl_Lin_Electrical_Failure_Detection.h</label>
+        <link refid="_err_hdl___lin___electrical___failure___detection_8h"/>
+        <childnode refid="571" relation="include">
+        </childnode>
+        <childnode refid="572" relation="include">
+        </childnode>
+      </node>
+      <node id="571">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="573">
+        <label>ErrHdl_Lin_Electrical_Failure_Detection.h</label>
+        <link refid="_err_hdl___lin___electrical___failure___detection_8h"/>
+        <childnode refid="574" relation="include">
+        </childnode>
+      </node>
+      <node id="574">
+        <label>ErrHdl_Lin_Electrical_Failure_Detection.c</label>
+        <link refid="_err_hdl___lin___electrical___failure___detection_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga45dfbe05c4ebf1c846a08794dbe82a3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrSetResetElectricalFailStatusLIN</definition>
+        <argsstring>(const TComChannel Channel, const boolean Status)</argsstring>
+        <name>ErrSetResetElectricalFailStatusLIN</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type>const boolean</type>
+          <declname>Status</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function sets or resets LIN electrical failure DTC according to given Status.</para><para>reentrant No <linebreak/>
+ context {task, Called by LIN files if there is a LIN error, to set DTC} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - Com channel. Provide channel Id to be checked. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean Status - TRUE: Electrical failure present, FALSE: Electrical failure not present. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrSetResetElectricalFailStatusLIN.png">Activity Diagram of function ErrSetResetElectricalFailStatusLIN </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___lin___electrical___failure___detection_8c_8test_1a4921f2741e2fec4c2579f873fe5446e0" kindref="member">TEST_ErrSetResetElectricalFailStatusLIN</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000045"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_3398 </para><para>SWR_ICAS1_GW_3399 </para><para>SWR_ICAS1_GW_3400 </para><para>SWR_ICAS1_GW_3401 </para><para>SWR_ICAS1_GW_20780 </para><para>SWR_ICAS1_GW_20794 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Lin_Electrical_Failure_Detection.h" line="103" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Lin_Electrical_Failure_Detection.c" bodystart="152" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_If functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___lin___electrical___failure___detection_8h" kindref="compound">ErrHdl_Lin_Electrical_Failure_Detection.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>4 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/6/2023 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/inc/ErrHdl_Lin_Electrical_Failure_Detection.h"/>
+  </compounddef>
+</doxygen>

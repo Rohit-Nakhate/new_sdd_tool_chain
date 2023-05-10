@@ -1,0 +1,498 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_f_d_h___w_c_z___handler_8h" kind="file" language="C++">
+    <compoundname>FDH_WCZ_Handler.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includes refid="_f_d_h___data_types_8h" local="yes">FDH_DataTypes.h</includes>
+    <includedby refid="_f_d_h___task_8c" local="yes">FDH_Task.c</includedby>
+    <includedby refid="_f_d_h___u_h_f___handler_8c" local="yes">FDH_UHF_Handler.c</includedby>
+    <includedby refid="_f_d_h___w_c_z___handler_8c" local="yes">FDH_WCZ_Handler.c</includedby>
+    <incdepgraph>
+      <node id="104">
+        <label>FDH_DataTypes.h</label>
+        <link refid="_f_d_h___data_types_8h"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="102">
+        <label>FDH_WCZ_Handler.h</label>
+        <link refid="_f_d_h___w_c_z___handler_8h"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>Rte_FDH_Type.h</label>
+      </node>
+      <node id="106">
+        <label>FDH_nvram.h</label>
+        <link refid="_f_d_h___nv_ram_8h"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="109">
+        <label>FDH_UHF_Handler.c</label>
+        <link refid="_f_d_h___u_h_f___handler_8c"/>
+      </node>
+      <node id="107">
+        <label>FDH_WCZ_Handler.h</label>
+        <link refid="_f_d_h___w_c_z___handler_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>FDH_Task.c</label>
+        <link refid="_f_d_h___task_8c"/>
+      </node>
+      <node id="110">
+        <label>FDH_WCZ_Handler.c</label>
+        <link refid="_f_d_h___w_c_z___handler_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_f_d_h___w_c_z___handler_8h_1a7f7d4376fb7278c95a65f9c4c66540d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WCZ_Initialization</definition>
+        <argsstring>(void)</argsstring>
+        <name>WCZ_Initialization</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Init function for <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> and rolling code counter data.</para><para>On system wake up, internal data structures initialization with default values. NV data read flags are set to request read stored WCZ data+status to internal buffers. Validity and WCZ buffers are set to invalid. Also internal data (counters, timers) used during WCZ processing are cleared. <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> - W access </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>After initialization cyclic processing of WCZ data/status synchronization can start.  <image type="html" name="WCZ_Initialization.png">Activity Diagram WCZ_Initialization</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___w_c_z___handler_8c_8test_1ae58333f289685b8ddaabf1047b09cce6" kindref="member">TEST_WCZ_Initialization</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: helper function to initialize <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> and connected data.<linebreak/>
+ Init function for <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> and rolling code counter data.</para></simplesect>
+Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h" line="113" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_WCZ_Handler.c" bodystart="2845" bodyend="2881"/>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" compoundref="_f_d_h___w_c_z___handler_8c" startline="518">sNvmWcz</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a524e247fbfb569af5fa730d4274a88c3" compoundref="_f_d_h___w_c_z___handler_8c" startline="118">SLOT_INDEX_A</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a268cd562a811bb5cfabdf1a4d720605c" compoundref="_f_d_h___w_c_z___handler_8c" startline="84">WCZ_INDEX_0</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1afcf8e85610405d12128ec10f3e3f5439" compoundref="_f_d_h___w_c_z___handler_8c" startline="92">WCZ_INDEX_1</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a770fa0f6e36e6e4e9a742a145e285ed4" compoundref="_f_d_h___w_c_z___handler_8c" startline="100">WCZ_INDEX_2</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a60dc44ab3b4b2183c02946f0aa4743a7" compoundref="_f_d_h___w_c_z___handler_8c" startline="127">SLOT_INDEX_B</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a8b27c4894a1345bedbde2188794f8e44" compoundref="_f_d_h___w_c_z___handler_8c" startline="238">DATA_NVM_STATUS_RD</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a62fada9bec5e0a3393932462c37c60de" compoundref="_f_d_h___w_c_z___handler_8c" startline="219">DATA_NVM_SLOT_A_RD</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a74263a145ed5e63b222a371a6f73b2b3" compoundref="_f_d_h___w_c_z___handler_8c" startline="226">DATA_NVM_SLOT_B_RD</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1aff17fc580478e4e63046ac45c8b5f85b" compoundref="_f_d_h___w_c_z___handler_8c" startline="193">DATA_NVM_READY</references>
+        <references refid="_f_d_h___data_types_8h_1a3f8d5d004003a528d47e6d1f1578cc9b" compoundref="_f_d_h___data_types_8h" startline="37">NUM_KEY_LENGTH</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a97767680b68a1a2eba0a0eb3956ae34d" compoundref="_f_d_h___w_c_z___handler_8c" startline="134">KEY_STATUS_UNKNOWN</references>
+        <references refid="_f_d_h___data_types_8h_1ad7b59ba1a4f601f9825539e4fe22d2b4" compoundref="_f_d_h___data_types_8h" startline="75">KEY_INDEX_UNSET</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a0dc3ec20f712270a083a42b642e35e11" compoundref="_f_d_h___w_c_z___handler_8c" startline="2768" endline="2775">WCZ_TimerReset</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a205796e6fe60af0d16205c09a2b3f317" compoundref="_f_d_h___w_c_z___handler_8c" startline="2777" endline="2781">WCZ_CounterReset</references>
+        <referencedby refid="_f_d_h___task_8c_1a75010decb651eb86f0de841b2d3cf9dd" compoundref="_f_d_h___task_8c" startline="92" endline="98">FDH_Start</referencedby>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_8test_1ae58333f289685b8ddaabf1047b09cce6" compoundref="_f_d_h___w_c_z___handler_8c_8test" startline="2560" endline="2630">TEST_WCZ_Initialization</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___w_c_z___handler_8h_1a8f1c62cdec11e971acba24201cca0961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WCZ_CyclicHandle</definition>
+        <argsstring>(void)</argsstring>
+        <name>WCZ_CyclicHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function for rolling code counter.</para><para>NVM data storage/retrieve cyclic scheduler. Executed from 10ms FDH cyclic task. Following sequence Read-Write-Verify is executed each cycle for both WCZ Value and Status information. Flags (sNvmWcz.sFlags.u8Read, sNvmWcz.sFlags.u8Write, sNvmWcz.sFlags.u8Exchange) are evaluated in the functions to determine exact actions. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous  </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Cyclic execution of Read/Write/Verify sequence to synchronize to NVM WCZ value and status, where requested. Read is requested only at wake up/reset only; Write/Verify is periodic, whenever First Telegram in burst is determined, via UHF_CyclicHandle-&gt;WCZ_SetValue/WCZ_SetStatus. Alternative scenario of triggering Write/Verify is through learning process, from callout function evFFBDataExchange-&gt;WCZ_SetValue/WCZ_SetStatus. <linebreak/>
+ <image type="html" name="WCZ_CyclicHandle.png">Activity Diagram WCZ_CyclicHandle</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___w_c_z___handler_8c_8test_1aef8c877a5259346afc72581460f75931" kindref="member">TEST_WCZ_CyclicHandle</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_268. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclic function for rolling code counter.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h" line="166" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_WCZ_Handler.c" bodystart="2888" bodyend="2930"/>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___data_types_8h_1a3f8d5d004003a528d47e6d1f1578cc9b" compoundref="_f_d_h___data_types_8h" startline="37">NUM_KEY_LENGTH</references>
+        <references refid="_f_d_h___data_types_8h_1a940ae083682553706172c769246a7b14" compoundref="_f_d_h___data_types_8h" startline="22">bTrue</references>
+        <references refid="_f_d_h___data_types_8h_1aca55ae1d96ed6abf8f8ed91234a16cfd" compoundref="_f_d_h___data_types_8h" startline="28">UNUSED_RETVAL</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1aefeb0de919b2a08bb735f989fa836942" compoundref="_f_d_h___w_c_z___handler_8c" startline="2976" endline="3018">evFFBDataExchange</references>
+        <references refid="_f_d_h___toolbox_8h_1aa2040e0e73f503bfa7ec230f7d38d746" compoundref="_f_d_h___toolbox_8c" startline="96" endline="99">FDH_KeyIndexToIndex</references>
+        <references refid="_f_d_h___data_types_8h_1ad47b73ff8a9fb2aa57638750a4896a32" compoundref="_f_d_h___data_types_8h" startline="84">KEY_INDEX_1</references>
+        <references refid="_f_d_h___data_types_8h_1a2c511414c876d2d8b117fc203d9abe14" compoundref="_f_d_h___data_types_8h" startline="93">KEY_INDEX_2</references>
+        <references refid="_f_d_h___data_types_8h_1af0d1b34bdc5340db061e4dac8ce06a0c" compoundref="_f_d_h___data_types_8h" startline="102">KEY_INDEX_3</references>
+        <references refid="_f_d_h___data_types_8h_1a4ad00bb32c5de5ce36de1c2a0ec57139" compoundref="_f_d_h___data_types_8h" startline="110">KEY_INDEX_4</references>
+        <references refid="_f_d_h___data_types_8h_1a9cb20a9945ca29e7138f77d604dd3628" compoundref="_f_d_h___data_types_8h" startline="118">KEY_INDEX_5</references>
+        <references refid="_f_d_h___data_types_8h_1aae797c497cbdcbb8e79476ffea969c2f" compoundref="_f_d_h___data_types_8h" startline="126">KEY_INDEX_6</references>
+        <references refid="_f_d_h___data_types_8h_1a86352d95a0f0f92c1be6d278d4b5f299" compoundref="_f_d_h___data_types_8h" startline="134">KEY_INDEX_7</references>
+        <references refid="_f_d_h___data_types_8h_1a168906ea595990a07eacb14f051ee4af" compoundref="_f_d_h___data_types_8h" startline="142">KEY_INDEX_8</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1ac1ff29e91d1f7ee247a5c9a1d44cb406" compoundref="_f_d_h___w_c_z___handler_8c" startline="2233" endline="2304">WCZ_StatusReadFromNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1abfc2cc20554a6c286a7ae35ed93d308b" compoundref="_f_d_h___w_c_z___handler_8c" startline="2475" endline="2563">WCZ_ValueReadFromNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a524e247fbfb569af5fa730d4274a88c3" compoundref="_f_d_h___w_c_z___handler_8c" startline="118">SLOT_INDEX_A</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a60dc44ab3b4b2183c02946f0aa4743a7" compoundref="_f_d_h___w_c_z___handler_8c" startline="127">SLOT_INDEX_B</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a02ef581cf1d520e1a64f64198a9645f4" compoundref="_f_d_h___w_c_z___handler_8c" startline="2311" endline="2382">WCZ_StatusWriteToNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a3c0b1337f7b7498a606338706acb3924" compoundref="_f_d_h___w_c_z___handler_8c" startline="2570" endline="2668">WCZ_ValueWriteToNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a268ab14c2844fab58f9c05c96dccf64c" compoundref="_f_d_h___w_c_z___handler_8c" startline="2389" endline="2440">WCZ_StatusVerifyNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a18889de07457cdddce8ea7dc01199ec1" compoundref="_f_d_h___w_c_z___handler_8c" startline="2675" endline="2761">WCZ_ValueVerifyNvm</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a32c7c1d7512cd5f29b75a3b1113a1b0b" compoundref="_f_d_h___w_c_z___handler_8c" startline="2170" endline="2205">WCZ_Synchronization</references>
+        <referencedby refid="_f_d_h___task_8c_1a039ddc8eb74041064ebea355e50f56ad" compoundref="_f_d_h___task_8c" startline="116" endline="126">FDH_TaskCyclicEvent</referencedby>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_8test_1aef8c877a5259346afc72581460f75931" compoundref="_f_d_h___w_c_z___handler_8c_8test" startline="2643" endline="2682">TEST_WCZ_CyclicHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___w_c_z___handler_8h_1ad59ce326515923c3228a5f29a485743b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WCZ_TimerHandle</definition>
+        <argsstring>(void)</argsstring>
+        <name>WCZ_TimerHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function executes periodically in 10ms ticks timers used in WCZ internal calculation.</para><para>In addition there are associated counters, one per key incremented every second up to 10s. After counter value increase, WCZ is calculated and value strored in RAM. If counter reach max value = 10 then value is also stored in NvM. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_349} {SWR_L3_CRoute_FFB_345} {SWR_L3_CRoute_FFB_495} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> sFZV_Timer[].bRun - R access, flag to run WCZ timer, if true <linebreak/>
+ <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> sFZV_Timer[] - R/W access, timer counts up (u32Value) <linebreak/>
+ <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> sCounter[] - R/W access <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Timer started (via <ref refid="_f_d_h___w_c_z___handler_8c_1a0dc3ec20f712270a083a42b642e35e11" kindref="member">WCZ_TimerReset</ref>) when new FZV &quot;first telegram&quot; is detected, from <ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref>. Present value of the timer is utulized to calculate internally expected WCZ.  <image type="html" name="WCZ_TimerHandle.png">Activity Diagram WCZ_TimerHandle</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___w_c_z___handler_8c_8test_1a148a2d8f9a18ed5eff59ebf4c4368047" kindref="member">TEST_WCZ_TimerHandle</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_345, </para><para>SWR_L3_CRoute_FFB_350. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_495, </para><para>SWR_L3_CRoute_FFB_349. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function executes periodically in 10ms ticks timers used in WCZ internal calculation.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h" line="230" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_WCZ_Handler.c" bodystart="2937" bodyend="2969"/>
+        <references refid="_f_d_h___data_types_8h_1a3f8d5d004003a528d47e6d1f1578cc9b" compoundref="_f_d_h___data_types_8h" startline="37">NUM_KEY_LENGTH</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" compoundref="_f_d_h___w_c_z___handler_8c" startline="518">sNvmWcz</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a3dd7b7d41c220904632461a2d95d61cf" compoundref="_f_d_h___w_c_z___handler_8c" startline="250">TICKS_PER_SECOND</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a807cfa270f8ba8a0091fbe1bace36c07" compoundref="_f_d_h___w_c_z___handler_8c" startline="268">WCZ_INC_COUNT</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a29720cd293fa07e515a0995d7f6a2043" compoundref="_f_d_h___w_c_z___handler_8c" startline="259">COUNTER_MAX_INC</references>
+        <references refid="_f_d_h___data_types_8h_1a940ae083682553706172c769246a7b14" compoundref="_f_d_h___data_types_8h" startline="22">bTrue</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a2f62d9020dbb8b00c89b3f0a671e9250" compoundref="_f_d_h___w_c_z___handler_8c" startline="2447" endline="2467">WCZ_SetValue</references>
+        <references refid="_f_d_h___toolbox_8h_1aa98deb9d61d53c9bb8ea83f90e098b65" compoundref="_f_d_h___toolbox_8c" startline="106" endline="109">FDH_IndexToKeyIndex</references>
+        <referencedby refid="_f_d_h___task_8c_1a039ddc8eb74041064ebea355e50f56ad" compoundref="_f_d_h___task_8c" startline="116" endline="126">FDH_TaskCyclicEvent</referencedby>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_8test_1a148a2d8f9a18ed5eff59ebf4c4368047" compoundref="_f_d_h___w_c_z___handler_8c_8test" startline="2694" endline="2819">TEST_WCZ_TimerHandle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___w_c_z___handler_8h_1a24fdd3fac3c26aae152b7b2d7b2c2005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+        <definition>boolean WCZ_Validate</definition>
+        <argsstring>(S_UHF_Message *p_UHF_Message)</argsstring>
+        <name>WCZ_Validate</name>
+        <param>
+          <type><ref refid="struct_s___u_h_f___message" kindref="compound">S_UHF_Message</ref> *</type>
+          <declname>p_UHF_Message</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function check if WCZ is valid</para><para>Function is handling cyclic processing of WCZ ranges of received and validated FZV telegrams. The simplified flow is: <linebreak/>
+ Every 10ms the following flow is executed: <linebreak/>
+ <ndash/> If WCZ storage in NVM is valid (completed R/W, no errors) <linebreak/>
+ -<mdash/> If Key index of current (new) message is not disabled <linebreak/>
+ ---<mdash/> store it as last key index <linebreak/>
+ ---<mdash/> If first telegram in burst -&gt; setup slot for NVM write and reset timer used for FZV burst detection <linebreak/>
+ ---<mdash/> copy to internal buffer (not nv yet) incoming WCZ value <linebreak/>
+ ---<mdash/> calculate WCZ and determine into which range it falls <linebreak/>
+ ---<mdash/> trigger storage of WCZ to NVM <linebreak/>
+ ---<mdash/> if the present key is not deactivated already (KEY_STATUS_INACTIVE_MECH_KESSY) <linebreak/>
+ -----<mdash/> calculate status of key (based on present range and recent status in NVM) and trigger storage of updated value into NVM <linebreak/>
+ -----<mdash/> -&gt; range 1: -&gt; status = 0 <linebreak/>
+ -----<mdash/> -&gt; range 2: -&gt; increment status by 1 up to 3 times <linebreak/>
+ -----<mdash/> -&gt; range 3: -&gt; deactivate (KEY_STATUS_INACTIVE_MECH_KESSY) <linebreak/>
+ ---<mdash/> clear first telegram flag (as all checks processed already) <linebreak/>
+ -<mdash/> if in range 1 -&gt; set valid=1 of the present key (=keyIndex od processed telegram) <linebreak/>
+ -<mdash/> discard telegram if in range 3 <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_463} {SWR_L3_CRoute_FFB_326} {SWR_L3_CRoute_FFB_344} {SWR_L3_CRoute_FFB_427} {SWR_L3_CRoute_FFB_465} {SWR_L3_CRoute_FFB_466} {SWR_L3_CRoute_FFB_412} {SWR_L3_CRoute_FFB_467} {SWR_L3_CRoute_FFB_478} {SWR_L3_CRoute_FFB_429} {SWR_L3_CRoute_FFB_476} {SWR_L3_CRoute_FFB_414} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_UHF_Message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- R access to most of the fields in the structure, W to some like <bold>DiscardTelegram</bold>. This structure is major input data to this cyclic function, fields like &quot;event/new value/validity&quot; are written when values are &quot;consumed&quot;. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><linebreak/>
+ <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> - direct R access to status fields in structure, but also indirect access through used function calls e.g. <ref refid="_f_d_h___w_c_z___handler_8c_1a2f62d9020dbb8b00c89b3f0a671e9250" kindref="member">WCZ_SetValue</ref>. <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>General flow as follows: Input sUHF_Message, in structure sUHF_Message in this cyclic call are the consumed and output signals are generated over <ref refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" kindref="member">ButtonCodeReport</ref> function. Local memory is declared for WCZin, WCZincprev, WCZCalc while telegram burst is processed. <linebreak/>
+ <image type="html" name="WCZ_Validate.png">Activity Diagram WCZ_Validate</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___w_c_z___handler_8c_8test_1a17c189577069dc7d675e7098df90f3b0" kindref="member">TEST_WCZ_Validate</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_459. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_463. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_344. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_326. </para><para>SWR_L3_CRoute_FFB_427. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_465. </para><para>SWR_L3_CRoute_FFB_466. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_467. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_412. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_478. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_414. </para><para>SWR_L3_CRoute_FFB_429. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_476. <linebreak/>
+ <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_325. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function check if WCZ is valid</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h" line="360" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_WCZ_Handler.c" bodystart="3025" bodyend="3136"/>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_f_d_h___toolbox_8h_1aa2040e0e73f503bfa7ec230f7d38d746" compoundref="_f_d_h___toolbox_8c" startline="96" endline="99">FDH_KeyIndexToIndex</references>
+        <references refid="struct_s___u_h_f___message_1a42e9586be0fe6bf667705cfa18833ecc" compoundref="_f_d_h___data_types_8h" startline="243">S_UHF_Message::u8KeyIndex</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" compoundref="_f_d_h___w_c_z___handler_8c" startline="518">sNvmWcz</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1ab660775f7ae4b0648ae4760bbf6a0754" compoundref="_f_d_h___w_c_z___handler_8c" startline="352">WCZ_RANGE_3</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1af059942a1b98e13817082ca2ea333940" compoundref="_f_d_h___w_c_z___handler_8c" startline="2038" endline="2053">WCZ_CheckKeyActive</references>
+        <references refid="_f_d_h___data_types_8h_1a3f8d5d004003a528d47e6d1f1578cc9b" compoundref="_f_d_h___data_types_8h" startline="37">NUM_KEY_LENGTH</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a21ba786c3638e196efba918901d47885" compoundref="_f_d_h___w_c_z___handler_8c" startline="2061" endline="2081">WCZ_SetupSlot</references>
+        <references refid="struct_s___u_h_f___message_1a3afc0449235d76a33e69c56ef9dde46b" compoundref="_f_d_h___data_types_8h" startline="242">S_UHF_Message::sFlags</references>
+        <references refid="struct_s___f_d_h___flags_1a40aae55bc90b290384d79ecc01e721fa" compoundref="_f_d_h___data_types_8h" startline="209">S_FDH_Flags::FirstFzvTelegram</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a0dc3ec20f712270a083a42b642e35e11" compoundref="_f_d_h___w_c_z___handler_8c" startline="2768" endline="2775">WCZ_TimerReset</references>
+        <references refid="_f_d_h___data_types_8h_1a940ae083682553706172c769246a7b14" compoundref="_f_d_h___data_types_8h" startline="22">bTrue</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a8459cf8d5cb11a9775275a333c397878" compoundref="_f_d_h___w_c_z___handler_8c" startline="1927" endline="1930">FDH_tabToU32</references>
+        <references refid="struct_s___u_h_f___message_1a4e7d012a243d5c83c873570a1a68dc12" compoundref="_f_d_h___data_types_8h" startline="241">S_UHF_Message::sPayload</references>
+        <references refid="struct_s___u_h_f___payload_1afce0b404b5e5c6277d174f2b3f5446ed" compoundref="_f_d_h___data_types_8h" startline="228">S_UHF_Payload::FZV</references>
+        <references refid="struct_s___payload___f_z_v_1aff037eb7acbe6e46d465bd9d31a69af4" compoundref="_f_d_h___data_types_8h" startline="179">S_Payload_FZV::RolingCodeCounter</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a99ebd545fd4f32c76e90ae6b72d8a2dd" compoundref="_f_d_h___w_c_z___handler_8c" startline="1971" endline="1996">WCZ_CalculateRange</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a74118dc6831647701ca07caac972d467" compoundref="_f_d_h___w_c_z___handler_8c" startline="178">KEY_STATUS_INACTIVE_MECH_KESSY</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a49a547438a55d0f4bbff4672118111da" compoundref="_f_d_h___w_c_z___handler_8c" startline="332">WCZ_RANGE_1</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1ac41f08e11762f7d341cd7169c4671e09" compoundref="_f_d_h___w_c_z___handler_8c" startline="2212" endline="2226">WCZ_SetStatus</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a11679b2c92392df814ef74b27830f500" compoundref="_f_d_h___w_c_z___handler_8c" startline="142">KEY_STATUS_OK</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1aae2fb0f91f37159b17c9012f1c230dd4" compoundref="_f_d_h___w_c_z___handler_8c" startline="342">WCZ_RANGE_2</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a2f62d9020dbb8b00c89b3f0a671e9250" compoundref="_f_d_h___w_c_z___handler_8c" startline="2447" endline="2467">WCZ_SetValue</references>
+        <references refid="struct_s___f_d_h___flags_1a386e6a0f41df54db73f615926d150249" compoundref="_f_d_h___data_types_8h" startline="208">S_FDH_Flags::DiscardTelegram</references>
+        <references refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" compoundref="_f_d_h___u_h_f___handler_8c" startline="290">sUHF_Message</references>
+        <referencedby refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" compoundref="_f_d_h___u_h_f___handler_8c" startline="1566" endline="1646">UHF_CyclicHandle</referencedby>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_8test_1a17c189577069dc7d675e7098df90f3b0" compoundref="_f_d_h___w_c_z___handler_8c_8test" startline="2920" endline="3074">TEST_WCZ_Validate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_f_d_h___w_c_z___handler_8h_1aefeb0de919b2a08bb735f989fa836942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_z_v_crypto___s_c_i_d_8c_8test_1aa79fdc8c8f68425fb17f50b589dba2fc" kindref="member">Std_ReturnType</ref></type>
+        <definition>Std_ReturnType evFFBDataExchange</definition>
+        <argsstring>(boolean bFFBStatusNr1, boolean bFFBStatusNr2, boolean bFFBStatusNr3, boolean bFFBStatusNr4, boolean bFFBStatusNr5, boolean bFFBStatusNr6, boolean bFFBStatusNr7, boolean bFFBStatusNr8, const uint8 *numWCZInit1, const uint8 *numWCZInit2, const uint8 *numWCZInit3, const uint8 *numWCZInit4, const uint8 *numWCZInit5, const uint8 *numWCZInit6, const uint8 *numWCZInit7, const uint8 *numWCZInit8)</argsstring>
+        <name>evFFBDataExchange</name>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr1</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr2</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr3</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr4</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr5</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr6</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr7</declname>
+        </param>
+        <param>
+          <type><ref refid="_f_d_h___toolbox_8c_8test_1a3315517a2fc66e335d570ec8f5364027" kindref="member">boolean</ref></type>
+          <declname>bFFBStatusNr8</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit3</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit4</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit5</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit6</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit7</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_f_d_h___toolbox_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref> *</type>
+          <declname>numWCZInit8</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function requesting WCZ storage of all learned FFBs in NVM as a C/S service.</para><para>This is callout function (from CSH module), which is requesting WCZ storage of all learned FFBs in NVM as a C/S service. Also initial statuses are requested to store in separate NVM block. Up to 8 keys are supported. Note: store means write+verify. Also, initial answer to C/S request is sent back. <linebreak/>
+ <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous {SWR_L3_CRoute_FFB_519} {SWR_L3_CRoute_FFB_520} {SWR_L3_CRoute_FFB_522} </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bFFBStatusNr 1-8 (8 parameters) - true, if key is learned. <linebreak/>
+ [in] boolean numWCZInit1 1-8 (8 parameters) - pointer to byte oriented WCZ data <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - RTE status. </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> sFlags.u8Exchange - R/W <linebreak/>
+ <ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> sFlags.u8Write - R <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function is called out of CSH context as C/S interface. It is sporadic call only occurring during key learning process. Initial values of WCZ and status (active or disabled) for up to 8 keys are provided. <linebreak/>
+ All status and WCZ values are stored in internal NVM structure and NVM write / verification is triggered. Once learning is complete, UHF telegrams may be processed.  <image type="html" name="evFFBDataExchange.png">Activity Diagram evFFBDataExchange</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_f_d_h___w_c_z___handler_8c_8test_1a829f87ebe08f215af5db54a4a2043da8" kindref="member">TEST_evFFBDataExchange</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_FFB_519. </para><para>SWR_L3_CRoute_FFB_520. <linebreak/>
+ </para><para>SWR_L3_CRoute_FFB_522. <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Function requesting WCZ storage of all learned FFBs in NVM as a C/S service.</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h" line="431" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/src/FDH_WCZ_Handler.c" bodystart="2976" bodyend="3018"/>
+        <references refid="_f_d_h___data_types_8h_1a3f8d5d004003a528d47e6d1f1578cc9b" compoundref="_f_d_h___data_types_8h" startline="37">NUM_KEY_LENGTH</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a1045912e0b965293b9fa61873724f7e9" compoundref="_f_d_h___w_c_z___handler_8c" startline="2788" endline="2806">WCZ_DataExchange</references>
+        <references refid="_f_d_h___data_types_8h_1ad47b73ff8a9fb2aa57638750a4896a32" compoundref="_f_d_h___data_types_8h" startline="84">KEY_INDEX_1</references>
+        <references refid="_f_d_h___data_types_8h_1a2c511414c876d2d8b117fc203d9abe14" compoundref="_f_d_h___data_types_8h" startline="93">KEY_INDEX_2</references>
+        <references refid="_f_d_h___data_types_8h_1af0d1b34bdc5340db061e4dac8ce06a0c" compoundref="_f_d_h___data_types_8h" startline="102">KEY_INDEX_3</references>
+        <references refid="_f_d_h___data_types_8h_1a4ad00bb32c5de5ce36de1c2a0ec57139" compoundref="_f_d_h___data_types_8h" startline="110">KEY_INDEX_4</references>
+        <references refid="_f_d_h___data_types_8h_1a9cb20a9945ca29e7138f77d604dd3628" compoundref="_f_d_h___data_types_8h" startline="118">KEY_INDEX_5</references>
+        <references refid="_f_d_h___data_types_8h_1aae797c497cbdcbb8e79476ffea969c2f" compoundref="_f_d_h___data_types_8h" startline="126">KEY_INDEX_6</references>
+        <references refid="_f_d_h___data_types_8h_1a86352d95a0f0f92c1be6d278d4b5f299" compoundref="_f_d_h___data_types_8h" startline="134">KEY_INDEX_7</references>
+        <references refid="_f_d_h___data_types_8h_1a168906ea595990a07eacb14f051ee4af" compoundref="_f_d_h___data_types_8h" startline="142">KEY_INDEX_8</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1ac41f08e11762f7d341cd7169c4671e09" compoundref="_f_d_h___w_c_z___handler_8c" startline="2212" endline="2226">WCZ_SetStatus</references>
+        <references refid="_f_d_h___toolbox_8h_1aa98deb9d61d53c9bb8ea83f90e098b65" compoundref="_f_d_h___toolbox_8c" startline="106" endline="109">FDH_IndexToKeyIndex</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a2f62d9020dbb8b00c89b3f0a671e9250" compoundref="_f_d_h___w_c_z___handler_8c" startline="2447" endline="2467">WCZ_SetValue</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a524e247fbfb569af5fa730d4274a88c3" compoundref="_f_d_h___w_c_z___handler_8c" startline="118">SLOT_INDEX_A</references>
+        <references refid="_f_d_h___data_types_8h_1a940ae083682553706172c769246a7b14" compoundref="_f_d_h___data_types_8h" startline="22">bTrue</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a60dc44ab3b4b2183c02946f0aa4743a7" compoundref="_f_d_h___w_c_z___handler_8c" startline="127">SLOT_INDEX_B</references>
+        <references refid="_f_d_h___data_types_8h_1ad7b59ba1a4f601f9825539e4fe22d2b4" compoundref="_f_d_h___data_types_8h" startline="75">KEY_INDEX_UNSET</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a11679b2c92392df814ef74b27830f500" compoundref="_f_d_h___w_c_z___handler_8c" startline="142">KEY_STATUS_OK</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" compoundref="_f_d_h___w_c_z___handler_8c" startline="518">sNvmWcz</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1a6453bd5cbc355d46547c0bfb329140ae" compoundref="_f_d_h___w_c_z___handler_8c" startline="2813" endline="2834">WCZ_DataExchangeResponse</references>
+        <references refid="_f_d_h___w_c_z___handler_8c_1aff17fc580478e4e63046ac45c8b5f85b" compoundref="_f_d_h___w_c_z___handler_8c" startline="193">DATA_NVM_READY</references>
+        <references refid="_f_d_h___data_types_8h_1ae7b35815236c8674f4e560085dc0efdf" compoundref="_f_d_h___data_types_8h" startline="17">bFalse</references>
+        <references refid="_z_v_crypto___s_c_i_d_8c_8test_1af29b2c4145853fe948d72594a1b03039" compoundref="_z_v_crypto___s_c_i_d_8c_8test" startline="63">RTE_E_OK</references>
+        <references refid="_z_v_crypto___s_c_i_d_8c_8test_1a03c0b954df468e477a0bda880ecd7613" compoundref="_z_v_crypto___s_c_i_d_8c_8test" startline="64">RTE_E_INVALID</references>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_1a8f1c62cdec11e971acba24201cca0961" compoundref="_f_d_h___w_c_z___handler_8c" startline="2888" endline="2930">WCZ_CyclicHandle</referencedby>
+        <referencedby refid="_f_d_h___w_c_z___handler_8c_8test_1a829f87ebe08f215af5db54a4a2043da8" compoundref="_f_d_h___w_c_z___handler_8c_8test" startline="2831" endline="2908">TEST_evFFBDataExchange</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the FDH functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_f_d_h___w_c_z___handler_8h" kindref="compound">FDH_WCZ_Handler.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/05/11 </para></simplesect>
+</para><para>This file can be included by other modules. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/FDH/c/inc/FDH_WCZ_Handler.h"/>
+  </compounddef>
+</doxygen>

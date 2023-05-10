@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component Built In List consists of only the follwing SW unit: <ref refid="_built_in_list_8c" kindref="compound">BuiltInList.c</ref> <linebreak/>
+ The component Built In List provides following interfaces:<itemizedlist>
+<listitem><para>to DiagTask :<itemizedlist>
+<listitem><para>BIL_Init which is used to initialize BuiltInList. Which is called by DiagTask once during start of system.<linebreak/>
+</para></listitem><listitem><para>BIL_Cyclic100ms - Called cyclically every 100ms to check if all the buses connected to GW are asleep.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>to RoutingTask:<itemizedlist>
+<listitem><para>BIL_CyclicTimeoutCheck - Called cyclically every 25ms to check if ECUs on Built In List didn&apos;t timed out.</para></listitem><listitem><para>BIL_CyclicClamp15Poll - Called cyclically every 50ms to check if Clamp15 became ON. If Clamp15 is switched ON, Istverbau parameter of all ECUs on BuiltInList is set to zero.</para></listitem></itemizedlist>
+</para></listitem><listitem><para><bold>BIL_NmhRcvCb</bold> &amp; <bold>BIL_KnRcvCb</bold> that is called by ISOTpRouting, which is used to update the parameters when new message is received. <linebreak/>
+</para></listitem><listitem><para>to DCM in order to:<itemizedlist>
+<listitem><para>read/write Sollverbau value via diagnosis adaptation channel DID 0x04A3 : BIL_Read_0x04A3, BIL_Write_0x04A3</para></listitem><listitem><para>read/write ContentList value via diagnosis adaptation channel DID 0x0502 : BIL_Read_0x0502, BIL_Write_0x0502</para></listitem><listitem><para>read Istverbau value via diagnosis adaptation channel DID 0x2A26 : BIL_Read_0x2A26</para></listitem><listitem><para>read SleepIndication value via diagnosis adaptation channel DID 0x2A27 : BIL_Read_0x2A27</para></listitem><listitem><para>read KDBit value via diagnosis adaptation channel DID 0x2A28 : BIL_Read_0x2A28</para></listitem><listitem><para>read DiagProt value via diagnosis adaptation channel DID 0x2A29 : BIL_Read_0x2A29</para></listitem><listitem><para>read BusID value via diagnosis adaptation channel DID 0x2A2D : BIL_Read_0x2A2D</para></listitem><listitem><para>read Authentizitat value via diagnosis adaptation channel DID 0x2EE1 : BIL_Read_0x2EE1</para></listitem><listitem><para>read NodeID value via diagnosis adaptation channel DID 0xF1B7 : BIL_Read_0xF1B7</para></listitem><listitem><para>read DiagProt value via diagnosis adaptation channel DID 0x2A29 : BIL_Read_0x2A29.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>to DEM to set appropriate state for the DTC 0x300000, if<itemizedlist>
+<listitem><para>node send the message but the node is not configured in the sysytem.</para></listitem><listitem><para>index computation &gt; 15, i.e; no free space is present in built in list.</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>Built in List consist of only one unit <ref refid="_built_in_list_8c" kindref="compound">BuiltInList.c</ref>. All BuiltInList requirement is satisfied by this unit.<linebreak/>
+BuiltInList requirement can be found in module 5. SWR_ICAS1_BSW. In the chapter 2.18.8 Built-In-List.<linebreak/>
+<linebreak/>
+Requirements traceability in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus_6M.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.BuiltInListChorus.SW Architecture.Components</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component consists of only one unit. There is no unit interface description needed.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The component consists of only one unit. There is no unit interaction description needed.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><heading level="2">Tasks</heading>
+</para><para>The component Built in List provides one interface, that is called cyclically by OSTask &quot;DiagTask&quot; (period = 100ms) : BIL_Cyclic100ms.<linebreak/>
+The component Built in List provides two interface, that is called cyclically by OSTask &quot;RoutingTask&quot; (period = 5ms) : BIL_CyclicTimeoutCheck, BIL_CyclicClamp15Poll. <linebreak/>
+ <linebreak/>
+see also Interaction Diagram &quot;Cyclic behaviour&quot; at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus_6M.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.BuiltInListChorus.SW Architecture.Dynamic</para><para><heading level="2">Interrupts</heading>
+</para><para>The interrupts related to incoming messages of Built in List is handled in RxCallbacks.c file.</para><para><heading level="2">Events</heading>
+</para><para>There is no event-handling designed.</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used.</para><para><heading level="2">Power Modes</heading>
+</para><para>There is no special power mode used.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>Built in List errors are handled by the ErrorHandler component.</para><para><heading level="2">Synchronization</heading>
+</para><para>A synchronization method is not necessary.</para><para><heading level="2">Operations</heading>
+</para><para>The operations are mentioned in the proper function description.</para><para><heading level="2">Macros</heading>
+</para><para>See the Macros list.</para><para><heading level="2">Algorithms</heading>
+</para><para>refer the section files - <ref refid="_built_in_list_8c" kindref="compound">BuiltInList.c</ref> <ref refid="_built_in_list_8h" kindref="compound">BuiltInList.h</ref>, subsection functions.</para><para><heading level="2">Data Structures</heading>
+</para><para>See Data structure list.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>1) Built in List detailed design is not considered as a ciritical component on QM level.<linebreak/>
+2) Built in List interact with several SWC&apos;s on the same QM level.<linebreak/>
+3) Complexity of component could be classified as medium.<linebreak/>
+ </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

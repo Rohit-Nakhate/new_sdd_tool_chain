@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_z_k_m_e_b_i_n_t___task_8c" kind="file" language="C++">
+    <compoundname>ZKMEBINT_Task.c</compoundname>
+    <includes local="yes">Rte_ZKMEBINT.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <includes refid="_z_k_m_e_b_i_n_t___task_8h" local="yes">ZKMEBINT_Task.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>ZKMEBINT_Task.c</label>
+        <link refid="_z_k_m_e_b_i_n_t___task_8c"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="15">
+        <label>Rte_ZKMEBINT.h</label>
+      </node>
+      <node id="16">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="17">
+        <label>ZKMEBINT_Task.h</label>
+        <link refid="_z_k_m_e_b_i_n_t___task_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_z_k_m_e_b_i_n_t___task_8c_1a571a43f6f5236d3242e3dd6b6da06a78" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ZKMEBINT_boRun</definition>
+        <argsstring></argsstring>
+        <name>ZKMEBINT_boRun</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This flag shows that the lib was initialized. (ZKMEBINT_InitVarFunc) <linebreak/>
+</para><para>Allows the library&apos;s functions to run. (ZKMEBINT_TaskCyclicEvent) <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range True if ZKMEBINT_InitVarFunc is called <linebreak/>
+ False otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context ZKMEBINT_InitVarFunc, ZKMEBINT_Stop, ZKMEBINT_TaskCyclicEvent <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" line="69" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_z_k_m_e_b_i_n_t___task_8c_1a1c9b51fcfa4e28ab0262dc12e4027615" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZKMEBINT_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZKMEBINT_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>init the variables for the ZKMEBINT module</para><para>This function is called by ModelsTask before starting the model (Scheduler is called). The code here must be short. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - must not be interrupted by other ZKMEBINT&apos;s functions <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A.<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A.<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZKMEBINT_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to check the ZKMEBINT function call and if ZKMEBINT_boRun was updated. <linebreak/>
+ <ref refid="_z_k_m_e_b_i_n_t___task_8c_8test_1a50a8d91e9b10888d99af740063d137c8" kindref="member">TEST_ZKMEBINT_Task__ZKMEBINT_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_22050 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" line="86" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_k_m_e_b_i_n_t___task_8c_1aa6e5894c29dd0dc37f50032adda038f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZKMEBINT_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZKMEBINT_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>start-up/init the ZKMEBINT module.</para><para>called my modeltask in order to start-up/init the ZKMEBINT module. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - must not be interrupted by other ZKMEBINT&apos;s functions <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A.<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A.<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZKMEBINT_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to check the ZKMEBINT function call. <linebreak/>
+ <ref refid="_z_k_m_e_b_i_n_t___task_8c_8test_1a6e5db9b24eb3cde29d149571441f5eaa" kindref="member">TEST_ZKMEBINT_Task__ZKMEBINT_Start</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_22051 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" line="92" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_k_m_e_b_i_n_t___task_8c_1a5413b9d5ec53ceec809ff5997b24cd03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZKMEBINT_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZKMEBINT_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>stop function of the ZKMEBINT module.</para><para>this function is called by ModelsTask when the StopEv is set (Scheduler is called). Here is a good place to save data to NvRAM. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - must not be interrupted by other ZKMEBINT&apos;s functions <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A.<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A.<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZKMEBINT_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to check the ZKMEBINT function call and the ZKMEBINT_boRun value. <linebreak/>
+ <ref refid="_z_k_m_e_b_i_n_t___task_8c_8test_1aef1a7d40585a04e9efc6661c72dfd7ae" kindref="member">TEST_ZKMEBINT_Task__ZKMEBINT_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_22052 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" line="98" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="_z_k_m_e_b_i_n_t___task_8c_1a9830ec8bfde2973c09972c89f79432f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ZKMEBINT_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>ZKMEBINT_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>cyclic function of the ZKMEBINT module.</para><para>This function is called by ModelsTask/Scheduler when the model&apos;s recurrence occurs. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - must not be interrupted by other ZKMEBINT&apos;s functions <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A.<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A.<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ZKMEBINT_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be created to check the functions call. <linebreak/>
+ <ref refid="_z_k_m_e_b_i_n_t___task_8c_8test_1af6eb401be90a9e2df74e36efe6bad317" kindref="member">TEST_ZKMEBINT_Task__ZKMEBINT_TaskCyclicEvent</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_22045 SWR_ICAS1_GW_22049 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" line="104" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c" bodystart="104" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Source file for ZKMEBINT module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Id</title><para><ref refid="_z_k_m_e_b_i_n_t___task_8c" kindref="compound">ZKMEBINT_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uie80781 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/09/6 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+Expected test coverage (100%) and type of test coverage (C1/MCDC).<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Lib/ZKMEBINT/Evo/src/ZKMEBINT_Task.c"/>
+  </compounddef>
+</doxygen>

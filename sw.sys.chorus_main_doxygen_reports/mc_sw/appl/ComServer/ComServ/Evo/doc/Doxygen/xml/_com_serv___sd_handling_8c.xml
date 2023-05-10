@@ -1,0 +1,870 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_com_serv___sd_handling_8c" kind="file" language="C++">
+    <compoundname>ComServ_SdHandling.c</compoundname>
+    <includes local="yes">Sd.h</includes>
+    <includes refid="_com_serv_8h" local="yes">ComServ.h</includes>
+    <includes refid="_com_serv___sd_handling_8h" local="yes">ComServ_SdHandling.h</includes>
+    <includes refid="_com_serv__set__gen_8h" local="yes">ComServ_set_gen.h</includes>
+    <includes local="yes">ConfigOsekMessagesIAC.h</includes>
+    <includes local="yes">Routing.h</includes>
+    <includes local="yes">ConfigTxGen.h</includes>
+    <incdepgraph>
+      <node id="109">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="119">
+        <label>ConfigTxGen.h</label>
+      </node>
+      <node id="107">
+        <label>ComServ.h</label>
+        <link refid="_com_serv_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>ComServ_SdHandling.h</label>
+        <link refid="_com_serv___sd_handling_8h"/>
+      </node>
+      <node id="106">
+        <label>Sd.h</label>
+      </node>
+      <node id="111">
+        <label>ComServ_BswM_Callouts.h</label>
+        <link refid="_com_serv___bsw_m___callouts_8h"/>
+      </node>
+      <node id="114">
+        <label>ComServ_cdd_read_gen.h</label>
+        <link refid="_com_serv__cdd__read__gen_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>ComServ_SdHandling.c</label>
+        <link refid="_com_serv___sd_handling_8c"/>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>ConfigOsekMessagesIAC.h</label>
+      </node>
+      <node id="110">
+        <label>ComServ_SomeIp_Interfaces.h</label>
+        <link refid="_com_serv___some_ip___interfaces_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>ComStack_Types.h</label>
+      </node>
+      <node id="112">
+        <label>ComServ_cdd_send_gen.h</label>
+        <link refid="_com_serv__cdd__send__gen_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>Routing.h</label>
+      </node>
+      <node id="108">
+        <label>ComServ_SomeIp_Types.h</label>
+        <link refid="_com_serv___some_ip___types_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>ComServ_set_gen.h</label>
+        <link refid="_com_serv__set__gen_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>serviceDiscoveryStatus</name>
+        <enumvalue id="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" prot="public">
+          <name>NOT_REQUESTED</name>
+          <briefdescription>
+<para>Used when the service&apos;s propriety is not requested. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9a09eb653c7a2263eb32e79d5b71ff048b" prot="public">
+          <name>REQUESTED</name>
+          <briefdescription>
+<para>Used when the service&apos;s propriety is reguested. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9a1e229ccb8b53a57de4ebb11c2d15272e" prot="public">
+          <name>AVAILABLE</name>
+          <briefdescription>
+<para>Used when the service&apos;s propriety is available. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9a9b0b4a95b99523966e0e34ffdadac9da" prot="public">
+          <name>DOWN</name>
+          <briefdescription>
+<para>Used when the service&apos;s propriety is down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Brief description</title><para>For client services the comserver needs to set the status for the communication with ServiceDiscovery. This enum helps to set the 4 stages for requests and offers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="71" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="70" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" prot="public" static="no">
+        <type>enum <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9" kindref="member">serviceDiscoveryStatus</ref></type>
+        <definition>typedef enum serviceDiscoveryStatus sdStatus</definition>
+        <argsstring></argsstring>
+        <name>sdStatus</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Brief description</title><para>For client services the comserver needs to set the status for the communication with ServiceDiscovery. This enum helps to set the 4 stages for requests and offers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="75" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1aa3ac21963434aff4cebbb1f14ec45261" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 Sd_Initialized</definition>
+        <argsstring></argsstring>
+        <name>Sd_Initialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="93" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a4e1ec4b2490324031bdfc1d187d8005d" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean alreadyOffered</definition>
+        <argsstring></argsstring>
+        <name>alreadyOffered</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="97" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1acd18220a2fcd4a0dff4091b2ca643d1f" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_LongitudinalCtrlHmiState_status</definition>
+        <argsstring></argsstring>
+        <name>sd_LongitudinalCtrlHmiState_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="112" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a654b8f5f668661d8126890c95f72afa0" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_LongitudinalCtrlHmiState_displayStates_status</definition>
+        <argsstring></argsstring>
+        <name>sd_LongitudinalCtrlHmiState_displayStates_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="113" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a69c7c363d0897a8b22992caab7898fdb" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_LongitudinalCtrlHmiState_functionSelection_status</definition>
+        <argsstring></argsstring>
+        <name>sd_LongitudinalCtrlHmiState_functionSelection_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="114" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a1068c9a34d6f475402cba9f4cfadfe95" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_Positioning_status</definition>
+        <argsstring></argsstring>
+        <name>sd_Positioning_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="115" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1ab748302248066d40b710aa611f31eb6d" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_Positioning_positions_status</definition>
+        <argsstring></argsstring>
+        <name>sd_Positioning_positions_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="116" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a1beb05cb3636fb28f5d71aaaf73802fd" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_Positioning_posMapInfo_status</definition>
+        <argsstring></argsstring>
+        <name>sd_Positioning_posMapInfo_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="117" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a5339052b675b3d269dbd266d93b3dc79" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_Temperature_status</definition>
+        <argsstring></argsstring>
+        <name>sd_Temperature_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1a6495cf7c365118f191ac21007eff2372" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_Temperature_temperatures_status</definition>
+        <argsstring></argsstring>
+        <name>sd_Temperature_temperatures_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="119" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1abf10da652ab9948fd5116bd4fc85dd99" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_TripComputer_status</definition>
+        <argsstring></argsstring>
+        <name>sd_TripComputer_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="120" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1aaef27d796dc59bacd4797a58e5d22db8" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_TripComputer_resets_status</definition>
+        <argsstring></argsstring>
+        <name>sd_TripComputer_resets_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="121" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1aa144e4c7f848948c52545ca9d508180f" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_UnitMaster_status</definition>
+        <argsstring></argsstring>
+        <name>sd_UnitMaster_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="122" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_com_serv___sd_handling_8c_1af266d868db023ea13492dd0b782299fd" prot="public" static="yes" mutable="no">
+        <type><ref refid="_com_serv___sd_handling_8c_1a5e7ffb17d4d62b7d8cbbf5295f8022f8" kindref="member">sdStatus</ref></type>
+        <definition>sdStatus sd_UnitMaster_units_status</definition>
+        <argsstring></argsstring>
+        <name>sd_UnitMaster_units_status</name>
+        <initializer>= <ref refid="_com_serv___sd_handling_8c_1aaf8617d636e2348a81fe5bf8b3d174a9aca27dcc667953489ee712a3a2c6349a6" kindref="member">NOT_REQUESTED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="123" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a37ce3f85c56d6f4ca98dd8f6e85b251d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_displayStates_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_displayStates_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;displayStates&quot; of Client Service &quot;LongitudinalCtrlHmiState&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="132" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1acfde3da71d6979063b18e1b2335bbeee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_functionSelection_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_functionSelection_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;functionSelection&quot; of Client Service &quot;LongitudinalCtrlHmiState&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="137" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a4a4235e8d0d181e7f398975735ab6bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_positions_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_positions_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;positions&quot; of Client Service &quot;Positioning&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="142" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ad524e1e9ca93004d9ca3d94de65bfc30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_posMapInfo_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_posMapInfo_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;posMapInfo&quot; of Client Service &quot;Positioning&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="147" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a19d831b316a2bb4b4880927ac15cbf44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Temperature_temperatures_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Temperature_temperatures_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;temperatures&quot; of Client Service &quot;Temperature&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="152" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ae17213bd410a2aa2c757f251d2197a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_TripComputer_resets_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_TripComputer_resets_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;resets&quot; of Client Service &quot;TripComputer&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="157" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a25cf234a84938a4eb75cdeca20e7ecc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_UnitMaster_units_EventAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_UnitMaster_units_EventAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Resource Group &quot;units&quot; of Client Service &quot;UnitMaster&quot; is available (ComServ is subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="162" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1abaa87650fbff32057530c4c3f9448971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_displayStates_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_displayStates_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;displayStates&quot; of Client Service &quot;LongitudinalCtrlHmiState&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="167" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="167" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a4e0ea058d80c70cd4e3b4319b1522ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_functionSelection_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_functionSelection_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;functionSelection&quot; of Client Service &quot;LongitudinalCtrlHmiState&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="176" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="176" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ad173d2f1dfda57d8db831c8d29074a77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_positions_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_positions_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;positions&quot; of Client Service &quot;Positioning&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="185" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="185" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a476a98f90e6a5f59d119da2ebf493580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_posMapInfo_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_posMapInfo_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;posMapInfo&quot; of Client Service &quot;Positioning&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="208" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="208" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a1f12cefe8c35c42babf549da9ea0229a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Temperature_temperatures_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Temperature_temperatures_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;temperatures&quot; of Client Service &quot;Temperature&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="221" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="221" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a8b601918079ca6c465fa312129d843ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_TripComputer_resets_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_TripComputer_resets_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;resets&quot; of Client Service &quot;TripComputer&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="237" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="237" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a1483de67f192eb18f01f77664446a071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_UnitMaster_units_EventDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_UnitMaster_units_EventDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if resource &quot;units&quot; of Client Service &quot;UnitMaster&quot; is down (ComServ is no longer subscriber of this Event Group) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="244" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="244" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a8091da452a44399385a7cb3d02c497d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_ServiceAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_ServiceAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;LongitudinalCtrlHmiState&quot; is available And Comserver sets this service to available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="259" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="259" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1af34dfa89d01780c5b2f98967a58f83fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_ServiceAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_ServiceAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;Positioning&quot; is available And Comserver sets this service to available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="265" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="265" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ab91dd92ef3c159eebf36018219873403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Temperature_ServiceAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Temperature_ServiceAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;Temperature&quot; is available And Comserver sets this service to available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="271" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="271" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1acd493e6fc1cf96733a63989a9b6c27e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_TripComputer_ServiceAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_TripComputer_ServiceAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;TripComputer&quot; is available And Comserver sets this service to available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="277" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="277" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ac68453a1d8b48311d1c6b159ec265f62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_UnitMaster_ServiceAvailable</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_UnitMaster_ServiceAvailable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;UnitMaster&quot; is available And Comserver sets this service to available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="283" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="283" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a53e04c02a9e78339297d6db9d3f55dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_LongitudinalCtrlHmiState_ServiceDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_LongitudinalCtrlHmiState_ServiceDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;LongitudinalCtrlHmiState&quot; is down and Comserv sets this service to down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="289" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="289" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a18969d0d8c9903d438a6537c9b7b7dbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Positioning_ServiceDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Positioning_ServiceDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;Positioning&quot; is down and Comserv sets this service to down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="295" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="295" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a15c8149624c2702b83a6fb98d329a465" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_Temperature_ServiceDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_Temperature_ServiceDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;Temperature&quot; is down and Comserv sets this service to down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="301" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="301" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a2a6d898dc2bfec5ded011ef948b10495" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_TripComputer_ServiceDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_TripComputer_ServiceDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;TripComputer&quot; is down and Comserv sets this service to down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="307" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="307" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a9b574057c96333b78008e458ad916482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ComSer_UnitMaster_ServiceDown</definition>
+        <argsstring>(void)</argsstring>
+        <name>ComSer_UnitMaster_ServiceDown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>BswM calls ComServ if Client Service &quot;UnitMaster&quot; is down and Comserv sets this service to down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="313" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="313" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a0419dc3cc3e0a08926aa1dd7a683196a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void requestClientServices</definition>
+        <argsstring>(void)</argsstring>
+        <name>requestClientServices</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The function requests status for every service through SD in case ComServer_CL is client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="323" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="323" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1acb1fbdfc915b85175120dee8405da8a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void request_LongitudinalCtrlHmiState_EventGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>request_LongitudinalCtrlHmiState_EventGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Request-handling for all EventGroups of the service &apos;LongitudinalCtrlHmiState&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="417" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="417" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1acca2a05c9b82a9b3f14e7098f7a014fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void request_Positioning_EventGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>request_Positioning_EventGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Request-handling for all EventGroups of the service &apos;Positioning&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="468" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="468" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1adf3b95d5559d486415672ab4b39f62f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void request_Temperature_EventGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>request_Temperature_EventGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Request-handling for all EventGroups of the service &apos;Temperature&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="519" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="519" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ab2ff886de4a4c9bd53204da6457326de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void request_TripComputer_EventGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>request_TripComputer_EventGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Request-handling for all EventGroups of the service &apos;TripComputer&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="551" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="551" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1ac6c1d7cecd60581adfc95fc1f522c2a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void request_UnitMaster_EventGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>request_UnitMaster_EventGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Request-handling for all EventGroups of the service &apos;UnitMaster&apos;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="583" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="583" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="_com_serv___sd_handling_8c_1a320c6c1e47bad40878902e1d2f99da39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void offerServerServices</definition>
+        <argsstring>(void)</argsstring>
+        <name>offerServerServices</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Sets Sd service states to service available for comserver server services. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" line="617" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c" bodystart="617" bodyend="698"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This unit contains the code that manages the state of client services. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_com_serv___sd_handling_8c" kindref="compound">ComServ_SdHandling.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+<simplesect kind="par"><title>Details</title><para>It handles the interaction between Comserver and BswM and between Comserver and Service Discovery.  As this is a generated file the verification method is review, no MTS needed. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/ComServ/Evo/src/ComServ_SdHandling.c"/>
+  </compounddef>
+</doxygen>

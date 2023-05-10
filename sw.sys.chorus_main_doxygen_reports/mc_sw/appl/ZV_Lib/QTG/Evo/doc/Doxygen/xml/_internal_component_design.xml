@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the following files:<itemizedlist>
+<listitem><para><ref refid="_q_t_g___task_8c" kindref="compound">QTG_Task.c</ref> - Code is called by scheduler which will init, start and stop the operation of QTG <linebreak/>
+</para></listitem><listitem><para><ref refid="_q_t_g___task_8h" kindref="compound">QTG_Task.h</ref> - Header file for <ref refid="_q_t_g___task_8c" kindref="compound">QTG_Task.c</ref> <linebreak/>
+</para></listitem><listitem><para><ref refid="_q_t_g___extra_definitions_8h" kindref="compound">QTG_ExtraDefinitions.h</ref> - This header file controls the overwriting of generated S/R autosar_functions <linebreak/>
+</para></listitem><listitem><para><ref refid="_q_t_g___nv_ram_8h" kindref="compound">QTG_NvRam.h</ref> - Header file is needed for connecting memory and lib <linebreak/>
+</para></listitem><listitem><para><ref refid="_q_t_g___mem_map_8h" kindref="compound">QTG_MemMap.h</ref> - Header file used during RTE generation <linebreak/>
+</para></listitem></itemizedlist>
+</para><para><image type="html" name="QTG_InternalComponentDesign.png"></image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level.<linebreak/>
+For more details please see <ulink url="satisfy.html">Requirements Implementation</ulink> chapter.<linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>No interfaces between units because there is only one unit for QTG (QTG_Task)</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The QTG has only one unit QTG_Task. There are no interractions with other units. Nevertheless the next diagram depicts the interfaces.<linebreak/>
+<image type="html" name="QTG_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagram below depicts the init and cylic behaviour of the component QTG.</para><para><image type="html" name="QTG_DynamicBehavior1.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No OSEK task needs to be configured by the module.</para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured by the module.</para><para><heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Not applicable because QTG component runs in high-power mode. At the moment, QTG component does not require a special power modes, it only integrates library functions.</para><para><heading level="2">Power Modes</heading>
+</para><para>As mentioned in above chapter, the current functionality is available only in high-power mode.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>So far, the QTG functions do not handle errors via return value, they are only void type. There are also no DTC or DEM events.</para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the concurrent access of the component is not required.</para><para><heading level="2">Operations</heading>
+</para><para>QTG operations are available in the <ulink url="globals_func.html">Functions section</ulink></para><para><heading level="2">Macros</heading>
+</para><para>There are no definitions of complex macros inside the functionality. Details about purpose and usage of existing macros are done inside source code. List of the currently defined macros <ulink url="globals_defs.html">here</ulink>.</para><para><heading level="2">Algorithms</heading>
+</para><para>The component does not make use of or implements a particular algorithm.</para><para><heading level="2">Data Structures</heading>
+</para><para>This component doesn&apos;t use data structures because it&apos;s complexity is reduced.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Low   </para></entry></row>
+</table>
+</para><para><heading level="2">Interoperability</heading>
+</para><para>Interoperability is set to <bold>low</bold> because QTG depends on other components.</para><para><heading level="2">Interaction</heading>
+</para><para>Interaction is set to <bold>low</bold> because the component has a reduced number of non RTE dependencies. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.QTG.QTG Static.QTG Dependecies</emphasis>.</para><para><heading level="2">Criticality</heading>
+</para><para>Criticality is set to <bold>low</bold> because QTG is a QM component, the level of interaction is low.</para><para><heading level="2">Technical complexity</heading>
+</para><para>Technical complexity is set to <bold>low</bold> because so far QTG does not implement any algorithm only integrates the library functions and interaction component is low.</para><para><heading level="2">Risks</heading>
+</para><para>Risks is set to <bold>low</bold> because QTG has only one SW unit. See <emphasis>VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ApplicationLayer.ZV_Lib.SW Architecture.QTG.QTG Dynamic.QTG Init and Cyclic Task</emphasis>.</para><para><heading level="2">Testability</heading>
+</para><para>Testability is set to <bold>low</bold> because QTG can be tested with SWATT and basic tests should be performed on the target. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

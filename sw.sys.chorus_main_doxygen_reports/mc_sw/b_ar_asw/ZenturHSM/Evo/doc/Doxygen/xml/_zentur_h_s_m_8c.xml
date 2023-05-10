@@ -1,0 +1,1099 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_zentur_h_s_m_8c" kind="file" language="C++">
+    <compoundname>ZenturHSM.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Compiler.h</includes>
+    <includes local="yes">TSMem.h</includes>
+    <includes local="yes">unitTestHelpers.h</includes>
+    <includes refid="_zentur_h_s_m_8h" local="yes">ZenturHSM.h</includes>
+    <includes local="yes">eb_hsm_comm_types.h</includes>
+    <includes local="yes">eb_hsm_proxy.h</includes>
+    <includes local="yes">hal.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="6">
+        <label>ZenturHSM.c</label>
+        <link refid="_zentur_h_s_m_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>eb_hsm_proxy.h</label>
+      </node>
+      <node id="9">
+        <label>TSMem.h</label>
+      </node>
+      <node id="7">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="8">
+        <label>Compiler.h</label>
+      </node>
+      <node id="11">
+        <label>ZenturHSM.h</label>
+        <link refid="_zentur_h_s_m_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>unitTestHelpers.h</label>
+      </node>
+      <node id="15">
+        <label>hal.h</label>
+      </node>
+      <node id="13">
+        <label>eb_hsm_comm_types.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structshewrite__msg_t" prot="public">shewrite_msgT</innerclass>
+    <innerclass refid="structshewrite__var_t" prot="public">shewrite_varT</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para>For SWATT testing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="63" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a38d786db4df71a138b2e5f7928b3a62a" prot="public" static="no">
+        <name>MAX_EBHSM_POLL_TIMES</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The maximum value EBHSM can accept the Polling <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="75" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a54e2a31269ed42e512bf0b9aec623aa8" prot="public" static="no">
+        <name>M4_ENCRYPT_START</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Start of encrypt message.Position inside M4 message where the encrypted part starts which is not dependent on SHE slot UID <simplesect kind="remark"><para>values 16u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="83" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a36ae2de408e6383ab50f51a894fd2887" prot="public" static="no">
+        <name>M4_ENCRYPT_END</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>End of encrypt message.Position inside M4 message where the encrypted part ends which is not dependent on SHE slot UID <simplesect kind="remark"><para>values 32u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a97d00c5cc6876d0cc8500de53d2ad6c2" prot="public" static="no">
+        <name>LENGHT_M1_M3_M5</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of the messages m1, m3, m5 and m5hsm is 16 bytes <simplesect kind="remark"><para>values 16u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="99" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1abf4cec5cf1c4aa41c55e65a46d3c7003" prot="public" static="no">
+        <name>TOTAL_READ_LEN_M4HSM_M5HSM</name>
+        <initializer>48u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Total read length of the messages m4hsm(32u) and m5hsm(16u) is 48 bytes <simplesect kind="remark"><para>values 48u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="107" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1aa262fa3a4bcfb9fd68325ce09c49f0f9" prot="public" static="no">
+        <name>LENGHT_M2_M4</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of the messages m2, m4 and m4hsm is 32 bytes <simplesect kind="remark"><para>values 32u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="115" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1ae8dc8531ee8aebcc69193ecae36ac2c5" prot="public" static="no">
+        <name>DID_EFC5_READ_LEN</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of reading the data by identifier EFC5 <simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="123" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a2239d0c13bf2c4c0bac2ede1af6f71a9" prot="public" static="no">
+        <name>DID_EFC5_WRITE_LEN_WITH_M4M5</name>
+        <initializer>145u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of writing the data by EFC5 identifier with M4 and M5 message <simplesect kind="remark"><para>values 145u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="131" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a0c566d26d1cb8b21f27b8750c5a681a8" prot="public" static="no">
+        <name>DID_EFC5_WRITE_LEN_WITHOUT_M4M5</name>
+        <initializer>97u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of writing the data by EFC5 identifier without M4 and M5 message <simplesect kind="remark"><para>values 97u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="139" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a3a29f0f02739e974f899d89f0762a18b" prot="public" static="no">
+        <name>DID_EFF2_READ_LEN</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of reading the data by identifier EFF2 <simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="147" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1acd59a34105829c0b2d940aedcae48045" prot="public" static="no">
+        <name>DID_EFF2_WRITE_LEN_WITH_M4M5</name>
+        <initializer>144u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of writing the data by EFF2 identifier with M4 and M5 message <simplesect kind="remark"><para>values 144u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="155" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1aba14439ab8c3541ae8205b4713d81bf4" prot="public" static="no">
+        <name>DID_EFF2_WRITE_LEN_WITHOUT_M4M5</name>
+        <initializer>96u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Length of writing the data by EFF2 identifier without M4 and M5 message <simplesect kind="remark"><para>values 96u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="163" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a6812a8b61b3717c6418906e65e12621e" prot="public" static="no">
+        <name>KDM_EXTD_KEY_11</name>
+        <initializer>11u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>KDM Key Identifier for SHE+ Key Slot 11 <simplesect kind="remark"><para>values 11u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="171" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1a211937e1d478b0836f7a47e7c1685838" prot="public" static="no">
+        <name>KDM_EXTD_KEY_20</name>
+        <initializer>20u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>KDM Key Identifier for SHE+ Key Slot 20 <simplesect kind="remark"><para>values 20u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="179" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_zentur_h_s_m_8c_1abbe74ebd19490c84024b5188a3ef7f81" prot="public" static="no">
+        <name>RTE_PENDING</name>
+        <initializer>10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Definition of the pending state of the Real Time Environment <simplesect kind="remark"><para>values 10u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="187" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>shewriteState_T</name>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3ca1cff37fd9b752d147ec71efd620298ad" prot="public">
+          <name>SHEWRITE_IDLE</name>
+          <initializer>= 0u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3caeee335f20183f4fc26e42205b9369ec4" prot="public">
+          <name>SHEWRITE_OPEN</name>
+          <initializer>= 1u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3ca449ca8e1e4ea131a3a445282d8131a37" prot="public">
+          <name>SHEWRITE_LOAD</name>
+          <initializer>= 2u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3cab1bcdeec6083c7c855d681fcd29ad2f6" prot="public">
+          <name>SHEWRITE_POLL</name>
+          <initializer>= 3u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3cada54864f0d688647dada57f1707059ea" prot="public">
+          <name>SHEWRITE_CHCK</name>
+          <initializer>= 4u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3ca244118ceb93c7a8988bdbf62e3c088b2" prot="public">
+          <name>SHEWRITE_DONE</name>
+          <initializer>= 5u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_zentur_h_s_m_8c_1ae2b0fabae02cdf0f639df5955f9ddb3ca050be0cb8dcc15b5750c6d66aba6b20b" prot="public">
+          <name>SHEWRITE_FAIL</name>
+          <initializer>= 6u</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enumeration of different states in shewrite process </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="193" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="192" bodyend="201"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_zentur_h_s_m_8c_1a2a97dc4e3755d23336bd32b21881ad35" prot="public" static="yes" mutable="no">
+        <type>shewrite_varT</type>
+        <definition>shewrite_varT Vkms_shewrite_var</definition>
+        <argsstring></argsstring>
+        <name>Vkms_shewrite_var</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The structure variable hold all shewrite required data and also holds M1-M5 messages in a structure element. <simplesect kind="remark"><para>range The structure elements holds Status,States and Messages <linebreak/>
+ values uint8 <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection {The variable Vkms_shewrite_var is Static} <linebreak/>
+ storage class normal ram <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000008"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: Used in function where spr_requirement is tagged </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="246" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_zentur_h_s_m_8c_1af913bc1bcc54861861468a708eeb5739" prot="public" static="yes" mutable="no">
+        <type>shewrite_varT</type>
+        <definition>shewrite_varT shewrite_var1</definition>
+        <argsstring></argsstring>
+        <name>shewrite_var1</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The structure variable hold all shewrite required data and also holds M1-M5 messages in a structure element. <simplesect kind="remark"><para>range The structure elements holds Status,States and Messages <linebreak/>
+ values uint8 <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task} <linebreak/>
+ protection {The variable shewrite_var1 is Static} <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000009"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: Used in function where spr_requirement is tagged </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="262" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_zentur_h_s_m_8c_1af922426719fae9a79602ffc9c87f8b18" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 VkmsISkeywrite_state</definition>
+        <argsstring></argsstring>
+        <name>VkmsISkeywrite_state</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable indicates the IS key Write Status. Bit7&amp;6 -&gt; contains shewrite state IDLE,OPEN,LOAD,POLL and Bit 5-0 -&gt; Indicates the HSM error codes, range from 0x00 to 0x2D <simplesect kind="remark"><para>range uint8 <linebreak/>
+ values uint8 <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task} <linebreak/>
+ protection {The variable VkmsISkeywrite_state is Static} <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000010"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: Used in function where spr_requirement is tagged </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="278" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_zentur_h_s_m_8c_1a253a063b792151d19c68ab83b4b84e0b" prot="public" static="yes" mutable="no">
+        <type>comm_key_range_t</type>
+        <definition>comm_key_range_t shekeyrange_var</definition>
+        <argsstring></argsstring>
+        <name>shekeyrange_var</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The key range specifier COMM_KEY_RANGE_STD denotes SHE and COMM_KEY_RANGE_EXTEND denotes SHE+ <simplesect kind="remark"><para>range The structure elements holds the multiple COMM_KEY_RANGEs <linebreak/>
+ values 0x00-0xFEu <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task} <linebreak/>
+ protection {The variable shekeyrange_var is Static} <linebreak/>
+ </para></simplesect>
+<xrefsect id="spr_true_1_spr_true000011"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: Used in function where spr_requirement is tagged </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="294" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a099152b0bea4cf3d6948b642a1c5cf04" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shewrite_writenewkey</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_writenewkey</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has state machine implementation for new key loading into SHE slots. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000012"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_writenewkey.png">shewrite_writenewkey Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria </title><para>Test case shall be based on the different values provided as input for SHE states. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ac2c46b8493fff8b9dc0a67bf52fb8bf4" kindref="member">TEST_shewrite_writenewkey_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for new key loading into SHE slots <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="340" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a571bc380b1c5045f2ed6a244d5ca58e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shewrite_writenewkey_open</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_writenewkey_open</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has state machine implementation for new key loading into SHE slots when she write status is SHE_OPEN. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000013"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_writenewkey_open.png">shewrite_writenewkey_open Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria </title><para>Test case shall be based on the different values provided as input for channel allocation. Mock the function eb_hsm_channel_allocate. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ac6135623d7a228706c45dc56beb85964" kindref="member">TEST_shewrite_writenewkey_open_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for new key loading into SHE slots when she write status is SHE_OPEN<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="382" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1affda4c1c97f9e6cd5de7003889b0d317" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shewrite_writenewkey_load</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_writenewkey_load</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has state machine implementation for new key loading into SHE slots when she write status is SHE_LOAD. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000014"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_writenewkey_load.png">shewrite_writenewkey_load Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria </title><para>Test case shall be based on the different values provided as input for return value of load key. Mock the function eb_hsm_load_key. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a9f1b5a25ac7e7263cde781077c2d782a" kindref="member">TEST_shewrite_writenewkey_load_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for new key loading into SHE slots when she write status is SHE_LOAD <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="425" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a441e15a3aba9d66a7e664966eadf5ab6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shewrite_writenewkey_poll</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_writenewkey_poll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has state machine implementation for new key loading into SHE slots when she write status is SHE_POLL. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000015"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_writenewkey_poll.png">shewrite_writenewkey_poll Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for channel allocation. Mock the function eb_hsm_get_result_channel. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a227300bdfd891dd828ccda0e971b97d7" kindref="member">TEST_shewrite_writenewkey_poll_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for new key loading into SHE slots when she write status is SHE_POLL <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="468" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1ad3a0e1df05a1e230c6d421e103bf3475" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void shewrite_writenewkey_checkm4m5</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_writenewkey_checkm4m5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function has state machine implementation for new key loading into SHE slots when she write status is SHE_checkm4m5. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000016"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_writenewkey_checkm4m5.png">shewrite_writenewkey_checkm4m5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for m4m5 return value. Mock the function shewrite_checkm4m5. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a3373b0fc9b88bf148461647a13dd877e" kindref="member">TEST_shewrite_writenewkey_checkm4m5_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+ satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for new key loading into SHE slots when she write status is SHE_checkm4m5<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="512" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1ac3c3189023f1df3fbc6dd157ed1ea692" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>comm_rc_t</type>
+        <definition>static comm_rc_t shewrite_checkm4m5</definition>
+        <argsstring>(void)</argsstring>
+        <name>shewrite_checkm4m5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is compare the SHE Key coming from tester and from HSM and to check the key written status is success or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000017"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CSAI_SUCCESS: m4m5 check is ok <linebreak/>
+ CSAI_ERR_UNDEFINED: m4m5 detects differences <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="shewrite_checkm4m5.png">shewrite_checkm4m5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for availablity of m4m5 message. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ae17c3b52fd1745ddb4485a64996cd6f3" kindref="member">TEST_shewrite_checkm4m5_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_21448; <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="557" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1aedbbc8733a259f366307c7b846255237" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>comm_rc_t</type>
+        <definition>static comm_rc_t Vkms_shewrite_checkm4m5</definition>
+        <argsstring>(void)</argsstring>
+        <name>Vkms_shewrite_checkm4m5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is Callback to handle UDS requests for VKMS DebugKey authentication. </para>        </briefdescription>
+        <detaileddescription>
+<para>Forward request to generic implementation.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000018"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CSAI_SUCCESS: m4m5 check is ok <linebreak/>
+ CSAI_ERR_UNDEFINED: m4m5 detects differences <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Vkms_shewrite_checkm4m5.png">Vkms_shewrite_checkm4m5 Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for availablity of vkms m4m5 message. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ae970259b01d36a3a26537d6faf3add43" kindref="member">TEST_Vkms_shewrite_checkm4m5_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has callback to handle UDS requests for VKMS DebugKey authentication <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="602" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a44eb725af7e1cedf8fa7f026e4477880" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_VKMS_InjectIS_Key</definition>
+        <argsstring>(void)</argsstring>
+        <name>EbHsm_VKMS_InjectIS_Key</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has the state machine implementation for VKMS IS Key provisioning. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000019"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_VKMS_InjectIS_Key.png">EbHsm_VKMS_InjectIS_Key Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for SHE states. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a3324a7c59d85f042de5543ecf40e38e7" kindref="member">TEST_EbHsm_VKMS_InjectIS_Key_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for VKMS IS Key provisioning <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="645" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a9b3b1a35a5e7339e8e6413dfd1e5a2e9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_VKMS_InjectIS_Key_OpenSession</definition>
+        <argsstring>(void)</argsstring>
+        <name>EbHsm_VKMS_InjectIS_Key_OpenSession</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has the state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is OpenSession. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000020"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_VKMS_InjectIS_Key_OpenSession.png">EbHsm_VKMS_InjectIS_Key_OpenSession Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for allocation of channel. Mock the function eb_hsm_channel_allocate. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a3324a7c59d85f042de5543ecf40e38e7" kindref="member">TEST_EbHsm_VKMS_InjectIS_Key_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is OpenSession <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="689" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1abe3452e9da9be19ddebce9df36522baa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_VKMS_InjectIS_Key_LoadKey</definition>
+        <argsstring>(void)</argsstring>
+        <name>EbHsm_VKMS_InjectIS_Key_LoadKey</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has the state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is LoadKey. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000021"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_VKMS_InjectIS_Key_LoadKey.png">EbHsm_VKMS_InjectIS_Key_LoadKey Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for allocation of channel. Mock the function eb_hsm_load_key. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a9d45de51613078ef5795ab3a2d1227d3" kindref="member">TEST_EbHsm_VKMS_InjectIS_Key_LoadKey_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is LoadKey <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="733" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1abaab7fe7a52b12eb1c3051b8250fe9cc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_VKMS_InjectIS_Key_PollChannel</definition>
+        <argsstring>(void)</argsstring>
+        <name>EbHsm_VKMS_InjectIS_Key_PollChannel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has the state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is PollChannel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000022"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_VKMS_InjectIS_Key_PollChannel.png">EbHsm_VKMS_InjectIS_Key_PollChannel Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for return value of poll channel. Mock the function eb_hsm_poll_channel. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a8783bec3bc21cd4ba1a8af20758de12a" kindref="member">TEST_EbHsm_VKMS_InjectIS_Key_PollChannel_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is PollChannel <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="777" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a829df59d4db8af866fb34eba815b32d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_VKMS_InjectIS_Key_WriteCheck</definition>
+        <argsstring>(void)</argsstring>
+        <name>EbHsm_VKMS_InjectIS_Key_WriteCheck</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function has the state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is WriteCheck. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000023"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_VKMS_InjectIS_Key_WriteCheck.png">EbHsm_VKMS_InjectIS_Key_WriteCheck Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for allocation of channel. Mock the function checkm4m5 to check m4 and m5 message. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a3efe505ed99c29907893c5df66e2fd86" kindref="member">TEST_EbHsm_VKMS_InjectIS_Key_WriteCheck_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which has state machine implementation for VKMS IS Key provisioning when EbHsm_VKMS key status is WriteCheck <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="821" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a1fcaf53c8cf77104c31f43429c4f303d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Vkms_shewrite_var_MsgM1toM5Copy</definition>
+        <argsstring>(const uint8 *Data)</argsstring>
+        <name>Vkms_shewrite_var_MsgM1toM5Copy</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para>This function copy m1-m5 from dcm buffer to local arrays during vkms intial key write request - 0xEFF2. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000024"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Vkms_shewrite_var_MsgM1toM5Copy.png">Vkms_shewrite_var_MsgM1toM5Copy Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for allocation of channel. Mock the function to copy the msg from M1 to M5. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1a592d0c94c7d2f2d08d8dc42af6c95ed6" kindref="member">TEST_shewrite_Write_Adaption_0xEFF2_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which will copy m1-m5 from dcm buffer to local arrays during vkms intial key write request - 0xEFF2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="865" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_zentur_h_s_m_8c_1a8c8527b19940426e66cee1cb78a1b7d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EbHsm_ReleaseChannelPolled</definition>
+        <argsstring>(uint8 HsM_ChannelId)</argsstring>
+        <name>EbHsm_ReleaseChannelPolled</name>
+        <param>
+          <type>uint8</type>
+          <declname>HsM_ChannelId</declname>
+        </param>
+        <briefdescription>
+<para>This function will release the channel after polling maximum number of times(MAX_EBHSM_POLL_TIMES) if channel is not released. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000025"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: access spr material </para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>HsM_ChannelId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Channel ID of the HSM <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EbHsm_ReleaseChannelPolled.png">EbHsm_ReleaseChannelPolled Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Test case shall be based on the different values provided as input for channel release status. Mock the functions eb_hsm_channel_release <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+ <ref refid="_zentur_h_s_m_8c_8test_1ab6cf784a89fa6bc790269f16d1ad25d8" kindref="member">TEST_EbHsm_ReleaseChannelPolled_TC1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>this function is given by <ulink url="">VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.HSM_SHE_10m.SW Architecture.Components</ulink> <linebreak/>
+satisfied following DOORS Requirements/Design Decision: <linebreak/>
+ Design Decision - Justification. This is a helper function which will release the channel after polling maximum number of times <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c" line="910" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Startup routine for HSM and mechanism to write she slots via UDS. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_zentur_h_s_m_8c" kindref="compound">ZenturHSM.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#3 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uib68048 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2020/12/09 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/b_ar_asw/ZenturHSM/Evo/src/ZenturHSM.c"/>
+  </compounddef>
+</doxygen>

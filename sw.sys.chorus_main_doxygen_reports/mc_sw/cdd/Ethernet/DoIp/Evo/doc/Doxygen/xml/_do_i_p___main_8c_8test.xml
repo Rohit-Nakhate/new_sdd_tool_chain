@@ -1,0 +1,819 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_do_i_p___main_8c_8test" kind="file" language="C++">
+    <compoundname>DoIP_Main.c.test</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1ae1ef652d1dc7be337b213b1f5fa1e454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000048"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_Init </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all the globals are initialized </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ab55dff640d015db2217e2eef6e86391d" kindref="member">DoIP_Init</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Call the function <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: All global variables are initialized <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="69" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="69" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a1f3009a89cce220b25e9f2bb27f01873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_ActivationLineChanged</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_ActivationLineChanged</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000049"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_ActivationLineChanged </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the activation/deactivation line of diagnosis is triggered </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1a1fd2ad0a443c32656da658061f8fb935" kindref="member">DoIP_ActivationLineChanged</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: ActivationLine = FALSE <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: ActivationLine = TRUE <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Status.State = DOIP_STATE_DEACTIVATED <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled value did not change. <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled is set to TRUE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="188" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="188" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1aff8375ff6d4e9785190ca98577518bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_ObdLinkChanged</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_ObdLinkChanged</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000050"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_ObdLinkChanged</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Test verifies if the cyclic transmission of &apos;VehicleID response&apos; in case of OBD link-up is retriggered </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1a8f46019c9bebd3d75beec92bbc23494a" kindref="member">DoIP_ObdLinkChanged</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: linkStatus = LINK_DOWN <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: linkStatus = LINK_UP <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Data did not change after the function call <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled = TRUE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="243" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="243" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a7811ad7b8da5884eaeb9c0b7b6af5672" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_MainFunction_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_MainFunction_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000051"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_MainFunction_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all global are set accordingly </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=FALSE <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=1 <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceTxCnt=1 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=1 <linebreak/>
+ Mock function DoIP_SendVehicleIdentificatonRes to return E_OK <linebreak/>
+ <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=FALSE <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=1 <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceTxCnt=1 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=1 <linebreak/>
+ Mock function DoIP_SendVehicleIdentificatonRes to return E_NOT_OK <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function Rte_Write_BUILTINLIST_OutPort_s_CANTester_Active is called. <linebreak/>
+ Function DoIP_SendVehicleIdentificatonRes is called <linebreak/>
+ Function DoIP_Client_MainFunction is called. <linebreak/>
+ VehAnnounceTxCnt is decreased. <linebreak/>
+ CanTesterActiveTOut is decreased. <linebreak/>
+ VehAnnouncePeriod_ticks is set to DOIP_ANNOUNCE_INTERVAL_TICKS. <linebreak/>
+ VehAnnounceEnabled is set to TRUE <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function Rte_Write_BUILTINLIST_OutPort_s_CANTester_Active is called. <linebreak/>
+ Function DoIP_SendVehicleIdentificatonRes is called <linebreak/>
+ Function DoIP_Client_MainFunction is called. <linebreak/>
+ VehAnnounceTxCnt is not decreased. <linebreak/>
+ CanTesterActiveTOut is decreased. <linebreak/>
+ VehAnnouncePeriod_ticks is set to DOIP_ANNOUNCE_INTERVAL_TICKS. <linebreak/>
+ VehAnnounceEnabled is set to TRUE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="318" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="318" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1abfd7a7f096d0da3c502207971e35df2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_MainFunction_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_MainFunction_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000052"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_MainFunction_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all global are set accordingly </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=TRUE <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=0 <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceTxCnt=0 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=2 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_Client_MainFunction is called. <linebreak/>
+ VehAnnounceTxCnt is set to DOIP_VEHICLE_ID_RES_MSG_COUNT <linebreak/>
+ CanTesterActiveTOut is decreased. <linebreak/>
+ VehAnnounceEnabled is set to FALSE. <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="426" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="426" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1abb43b9c0fc3620628364323c0e22037c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_MainFunction_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_MainFunction_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000053"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_MainFunction_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all global are set accordingly </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=TRUE <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=1 <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnounceTxCnt=0 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=TRUE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=2 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_Client_MainFunction is called. <linebreak/>
+ Function Rte_Write_BUILTINLIST_OutPort_s_CANTester_Active is called <linebreak/>
+ VehAnnounceTxCnt is set to DOIP_VEHICLE_ID_RES_MSG_COUNT <linebreak/>
+ CanTesterActiveTOut is decreased. <linebreak/>
+ VehAnnounceEnabled is set to FALSE. <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks is decreased <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="484" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="484" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1aa7373e3b06ff50058a7e2e05f53bc833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_MainFunction_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_MainFunction_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000054"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_MainFunction_4 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all global are set accordingly </title><para>Test type: Decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=FALSE <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=0 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=0 <linebreak/>
+</para></listitem><listitem><para>condition 2: Set: DoIP_Status.State = DOIP_STATE_ACTIVATED <linebreak/>
+ Set: DoIP_Status.VehAnnTxCtrl.VehAnnounceEnabled=FALSE <linebreak/>
+ DoIP_Status.VehAnnTxCtrl.VehAnnouncePeriod_ticks=2 <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=0 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_Client_MainFunction is called. <linebreak/>
+ VehAnnouncePeriod_ticks is 0 <linebreak/>
+</para></listitem><listitem><para>expected results from condition 2: Function DoIP_Client_MainFunction is called. <linebreak/>
+ VehAnnouncePeriod_ticks is decreased <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="549" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="549" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a0d658ea10bdb159e9e838d92a5ef2fd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_MainFunction_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_MainFunction_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000055"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_MainFunction_5 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if all global are set accordingly </title><para>Test type: Decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ad667351d3525c3794d34f54b198171ea" kindref="member">DoIP_MainFunction</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.State = DOIP_STATE_DEACTIVATED <linebreak/>
+ Set: DoIP_Status.CANTester.DiagCANReqRecv=FALSE <linebreak/>
+ Set: DoIP_Status.CANTester.CanTesterActiveTOut=0 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_Client_MainFunction is called. <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="615" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="615" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1af3b58499570c645fec0828390fe882be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000056"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the data is being forwarded in order to be procceded </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1aed743d8f2efeba54fcd9440f8c40e291" kindref="member">DoIP_RxIndication</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl=SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ Set: RemoteAddrPtr = NULL <linebreak/>
+ Set: BufPtr=NULL <linebreak/>
+ Set: Length=1 <linebreak/>
+ Set return value of function DoIP_RxIndication_DecodeNextMessage = 1 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Function DoIP_RxIndication_DecodeNextMessage is called. <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="653" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="653" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1aa0655653d9a89a0e38beb8aeec0b9d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_1</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000057"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_1 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=12 <linebreak/>
+ Set: tot_len = 10 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_NOT_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 12 <linebreak/>
+ DoIP_SetError is called twice <linebreak/>
+ DoIP_Get_UInt32 is called <linebreak/>
+ SoMgr_FreeRxWindow is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="702" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="702" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1ad5785ea685ff96f45555f2fb07d207aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_2</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000058"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_2 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=12 <linebreak/>
+ Set: tot_len = 7 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: DoIP_Get_UInt32 return value = 13 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 12 <linebreak/>
+ DoIP_Get_UInt32 is called <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="767" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="767" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a4387d7971388732afa118efc1fb33965" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_3</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000059"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_3 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=12 <linebreak/>
+ Set: tot_len = 0 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: DoIP_Get_UInt32 return 13 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 12 <linebreak/>
+ DoIP_Get_UInt32 is called <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="824" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="824" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a12413f4c2640eb6615d9b2fb542abb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_4</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_4</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000060"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_4 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 7 <linebreak/>
+ Set: Length=7 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 7 <linebreak/>
+ Value of RemainingMsgLength was set to 0 <linebreak/>
+ DoIP_Server_RxIndication was called <linebreak/>
+ SoMgr_FreeRxWindow was called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="877" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="877" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a674a5aaa99f397fae2c3ddd02c8e1e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_5</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_5</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000061"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_5 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 8 <linebreak/>
+ Set: Length=7 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 7 <linebreak/>
+ Value of RemainingMsgLength was set to 1 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="930" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="930" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a60e680d6906f20909fcdf01cac966bde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_6</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_6</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000062"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_6 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=0 <linebreak/>
+ Set: tot_len = 0 <linebreak/>
+ Set: SoMgr_SocketTable[SocketHdl].pRxWin = NULL <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_NOT_OK <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 0 <linebreak/>
+ Function DoIP_SendDoipHeaderNack is called <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function SoMgr_FreeRxWindow is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="978" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="978" bodyend="1021"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a58be8a118ebfe444f4bda8f296c2ee68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_7</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_7</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000063"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_7 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 1 <linebreak/>
+ Set: Length=2 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: tot_len = 9 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 1 <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1038" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1038" bodyend="1070"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1acc8d752446f2d84f61d5e9374a5cdc19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_8</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_8</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000064"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_8 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=2 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: tot_len = 9 <linebreak/>
+ Set: First call of function DoIP_Get_UInt16 return DOIP_PROTOCOL_VERSION +1 <linebreak/>
+ Set: Second call of function DoIP_Get_UInt16 return DOIP_PL_TYPE_VEHICLE_ID_VIN_REQ <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 1 <linebreak/>
+ DoIP_SetError is called twice <linebreak/>
+ SoMgr_SetErrorSock is called <linebreak/>
+ DoIP_SendDoipHeaderNack is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1092" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1092" bodyend="1145"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a5e34c92fd5f55b83de79e9dc5552e869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_9</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_9</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000065"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_9 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=2 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: First call of DoIP_Get_UInt16 return DOIP_PROTOCOL_VERSION_VEH_ANN <linebreak/>
+ Set: Second call of DoIP_Get_UInt16 return DOIP_PL_TYPE_VEHICLE_ID_REQ <linebreak/>
+ Set: Message lenght to 1 Set: tot_len = 9 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 2 <linebreak/>
+ DoIP_SetError is called <linebreak/>
+ DoIP_Get_UInt32 is called twice <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1167" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1167" bodyend="1209"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1aea910b71639438b3af451e4cdab0ff83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_10</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_10</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000066"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_10 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=10 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: tot_len = 9 <linebreak/>
+ Set: First call of function DoIP_Get_UInt16 return DOIP_PROTOCOL_VERSION_VEH_ANN <linebreak/>
+ Set PayloadType to be invalid / set it to 0. <linebreak/>
+ Set: Message lenght to 0 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 10 <linebreak/>
+ DoIP_SetError is called twice <linebreak/>
+ DoIP_Get_UInt32 is called twice <linebreak/>
+ DoIP_SendDoipHeaderNack is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1232" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1232" bodyend="1288"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a5d39c4de21050a71775a85aa8da0fd20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_11</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_11</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000067"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_11 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SoMgr_SocketDefId_IPv6_UDP_DISCOVERY_Tester_MC <linebreak/>
+ Set: RemainingMsgLength = 0 <linebreak/>
+ Set: Length=10 <linebreak/>
+ Set: SoMgr_EnqueueRxWindow return value E_OK <linebreak/>
+ Set: tot_len = 9 <linebreak/>
+ Set: DoIP_Get_UInt16 return value to DOIP_PROTOCOL_VERSION <linebreak/>
+ Set: Message lenght to 0 <linebreak/>
+ Set: Set pRxWin to be != NULL <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 8 <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+ Function DoIP_Server_RxIndication is called <linebreak/>
+ Function SoMgr_FreeRxWindow is called <linebreak/>
+ Function DoIP_Get_UInt32 is called twice <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1311" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1311" bodyend="1361"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1ac71e90a3594f6282b3b959ad2137fe1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_12</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_RxIndication_DecodeNextMessage_12</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000068"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_RxIndication_DecodeNextMessage_12 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the returned value is the expected one </title><para>Test type: decision testing, statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8c_1aab494296fec455947fb473d8f306a9dd" kindref="member">DoIP_RxIndication_DecodeNextMessage</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: SocketHdl = SOMGR_MAX_NUM_SOCKETS <linebreak/>
+ Set: Length = 10 <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: Retuned value = the value of lenght = 10 <linebreak/>
+ Function DoIP_SetError is called <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1375" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1375" bodyend="1402"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a3da61910a5b36a64a685f54680134c86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_Terminate</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_Terminate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000069"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_Terminate</para></xrefdescription></xrefsect></para><para><simplesect kind="par"><title>Description -&gt; Test verifies if the DoIP_Status.State is finished </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1ae3fa7bc5f73aa331a49acb6b10a7f6c8" kindref="member">DoIP_Terminate</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Call the function <linebreak/>
+ <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_Status.State has the value = DOIP_STATE_TERMINATED <linebreak/>
+ Function DoIP_Client_Terminate is called once <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1416" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1416" bodyend="1433"/>
+      </memberdef>
+      <memberdef kind="function" id="_do_i_p___main_8c_8test_1a21e05184de1e75eb406323132dcb5aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TEST_DoIP_Main__DoIP_DiagCANReqReceivedCbk</definition>
+        <argsstring>(void)</argsstring>
+        <name>TEST_DoIP_Main__DoIP_DiagCANReqReceivedCbk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="test_1_test000070"><xreftitle>Test</xreftitle><xrefdescription><para>DoIP_Main__DoIP_DiagCANReqReceivedCbk </para></xrefdescription></xrefsect><simplesect kind="par"><title>Description -&gt; Test verifies if the Cbk function for CAN diagnostic request is set to TRUE </title><para>Test type: Statement testing <linebreak/>
+Verifies: <ref refid="_do_i_p___main_8h_1a5cc1856d335c1f4bf5f0f73402d09292" kindref="member">DoIP_DiagCANReqReceivedCbk</ref> </para></simplesect>
+<simplesect kind="pre"><para><itemizedlist>
+<listitem><para>condition 1: Set: DoIP_Status.CANTester.DiagCANReqRecv = FALSE <linebreak/>
+ Call the function <linebreak/>
+ <linebreak/>
+ </para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="par"><title>Result</title><para><itemizedlist>
+<listitem><para>expected results from condition 1: DoIP_DiagCANReqReceivedCbk returns TRUE <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" line="1447" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test" bodystart="1447" bodyend="1464"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Test case specification file for <ref refid="_do_i_p___main_8c" kindref="compound">DoIP_Main.c</ref> module. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="_do_i_p___main_8c_8test" kindref="compound">DoIP_Main.c.test</ref>.</para><para><simplesect kind="author"><para>Patras, Ionela - uidn1598 / Zagan, Andrei - uie55532 </para></simplesect>
+<simplesect kind="date"><para>21 Jul 2020 10:05:48</para></simplesect>
+Testcase specification file for <ref refid="_do_i_p___main_8c" kindref="compound">DoIP_Main.c</ref>. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/DoIp/c/test/swut/DoIP_Main.c.test"/>
+  </compounddef>
+</doxygen>

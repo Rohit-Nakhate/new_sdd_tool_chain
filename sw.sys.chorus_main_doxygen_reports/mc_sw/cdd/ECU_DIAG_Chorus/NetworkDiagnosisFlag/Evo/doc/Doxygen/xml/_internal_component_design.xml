@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has two units: CentrActivationNetDiag and ConfigCentrActivationNetDiag <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The component covers requirement present in the module 5.SWR_ICAS1_BSW. The requirements present in chapter 2.18.2 Network Diagnostics is covered by this component. The <bold>Requirements traceability</bold> in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.NetworkDiagnosisFlag.Requirements.Requirements traceability</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Network Diagnosis Flag is composed from two units: CentrActivationNetDiag and ConfigCentrActivationNetDiag <linebreak/>
+The unit CentrActivationNetDiag handles Activation or deactivation of Network Diagnosis based the Flag set. The unit ConfigCentrActivationNetDiag handles Configuration file for Central Network Diagnosis Flag</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>Network Diagnosis Flag has two SW components ,but there is no interaction between them. </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><bold>NetworkDiagnosticFlag_Cyclic.</bold> <image type="html" name="NetworkDiagnosisFlag_Dynamic_Behavior_Cyclic.png"></image>
+ </para><para><bold>CentAND_Master.</bold> <image type="html" name="CentANDMaster.png"></image>
+ </para><para><bold>CentAND_Slave.</bold> <image type="html" name="CentANDSlave.png"></image>
+ </para><para><bold>CentANDS_Start.</bold> <image type="html" name="CentANDSstart.png"></image>
+ </para><para><bold>CentAND_Stop.</bold> <image type="html" name="CentANDStop.png"></image>
+ </para><para><bold>CentAND_SlaveState_TDiagStartActive.</bold> <image type="html" name="CentANDSlaveStateTDiagStartActive.png"></image>
+ </para><para><bold>CentAND_SlaveState_NetDiagActive.</bold> <image type="html" name="CentANDSlaveStateNetDiagActive.png"></image>
+  <bold>CentAND_SlaveState_NetDiagInactive.</bold> <image type="html" name="CentANDSlaveStateNetDiagInactive.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow from the module.<linebreak/>
+ <image type="html" name="NetworkDiagnosisFlag.png"></image>
+  <heading level="2">Tasks</heading>
+</para><para>see also Interaction Diagram &quot;Network diagnostic flag&quot; at the following location in Enterprise Architect: VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.NetworkDiagnosisFlag.Dynamic Diagrams <heading level="2">Interrupts</heading>
+</para><para>There is no interrupts directly handled by Network Diagnosis Flag. <heading level="2">Events</heading>
+</para><para>There are no cyclic Events executed in Network Diagnosis Flag <heading level="2">Operating Modes</heading>
+</para><para>There are no special operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>There is no special power modes used.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>A special exception or error handling is not necessary. <heading level="2">Synchronization</heading>
+</para><para>A special synchronization method is not necessary. <heading level="2">Operations</heading>
+</para><para>The operations are mentioned in the proper function description. <linebreak/>
+ <heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>The subcomponent has defined interfaces that can be easy accessed from different modules. The design of this subcomponent was created with testablity in mind. Proposed solutions can be tested by unit tests with 100% MC/DC coverage. <table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just two software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of dependencies greater than 7   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL and not a stack and not new and intraction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

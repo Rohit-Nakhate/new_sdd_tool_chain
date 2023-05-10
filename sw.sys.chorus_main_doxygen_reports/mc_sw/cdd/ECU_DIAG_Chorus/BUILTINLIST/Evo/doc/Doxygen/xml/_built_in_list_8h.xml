@@ -1,0 +1,2843 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_built_in_list_8h" kind="file" language="C++">
+    <compoundname>BuiltInList.h</compoundname>
+    <includes local="yes">can.h</includes>
+    <includes local="yes">NvM_Types.h</includes>
+    <includedby refid="_built_in_list_8c" local="yes">BuiltInList.c</includedby>
+    <incdepgraph>
+      <node id="17">
+        <label>BuiltInList.h</label>
+        <link refid="_built_in_list_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>can.h</label>
+      </node>
+      <node id="19">
+        <label>NvM_Types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="20">
+        <label>BuiltInList.h</label>
+        <link refid="_built_in_list_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>BuiltInList.c</label>
+        <link refid="_built_in_list_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t_built_in_list_basic" prot="public">TBuiltInListBasic</innerclass>
+    <innerclass refid="struct_t_built_in_list_ext" prot="public">TBuiltInListExt</innerclass>
+    <innerclass refid="struct_t_content_list_element" prot="public">TContentListElement</innerclass>
+    <innerclass refid="struct_t_built_in_list_node_info" prot="public">TBuiltInListNodeInfo</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_built_in_list_8h_1a0350098eee8c2b916451fbe1dfb3c64e" prot="public" static="no">
+        <name>BUILT_IN_LIST_ELEMENTS</name>
+        <initializer>256u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of elements in BuiltInList. <linebreak/>
+<simplesect kind="remark"><para>values 256 <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_378 </para><para>SWR_ICAS1_GW_8186 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="64" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ab95e3ecaf64e173864d61c6d37f81e10" prot="public" static="no">
+        <name>R7_TX_SIZE</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>R7 transmission buffer size. <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_11603} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aac0c7978dfcc7a738258ddfe0bd08b53" prot="public" static="no">
+        <name>CONTENT_LIST_ELEMENTS_DYN</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of elements in Content list. <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_10917}</para></simplesect>
+number of Dynamic content list element. <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_10917} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="80" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a4e64c1f25d602a600c2511242a03cf70" prot="public" static="no">
+        <name>CONTENT_LIST_ELEMENT_SIZE</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>used to save 3 size (2 for node and 1 for bus) <linebreak/>
+<simplesect kind="remark"><para>values 3 <linebreak/>
+ {SWR_ICAS1_GW_10917} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="88" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a7352cf4f0aab4320fdf01d2670ff0b21" prot="public" static="no">
+        <name>BIL_GW_ENTRY</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>first entry in BIL is reserved for GW. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8212} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="96" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ac45df531e3c245fbce2e799021e3bcd5" prot="public" static="no">
+        <name>R7_TX_32_BYTE</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>used to allocate 32 byte to a R7 buffer <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_8277} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="104" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aac0c7978dfcc7a738258ddfe0bd08b53" prot="public" static="no">
+        <name>CONTENT_LIST_ELEMENTS_DYN</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of elements in Content list. <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_10917}</para></simplesect>
+number of Dynamic content list element. <linebreak/>
+<simplesect kind="remark"><para>values 32 <linebreak/>
+ {SWR_ICAS1_GW_10917} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="112" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1af71b0483b1ac5ce655533463fb85f32f" prot="public" static="no">
+        <name>CONTENT_LIST_ELEMENTS_STAT</name>
+        <initializer>86u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>number of Static content list element. <linebreak/>
+<simplesect kind="remark"><para>values 73 <linebreak/>
+ {SWR_ICAS1_GW_19853} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="120" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a2da7af76435741437f736dd3063760a5" prot="public" static="no">
+        <name>GW_OWN_NODE_ID</name>
+        <initializer>0x10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>ICAS1 Node-Address. <linebreak/>
+<simplesect kind="remark"><para>values 16 <linebreak/>
+ {SWR_ICAS1_GW_8219} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="128" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ac55eb721c85e8353db04c33190a8e149" prot="public" static="no">
+        <name>REQ_LENGTH_1_BYTE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 1byte of memory. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="135" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a5e5f8af8aa0f044799aede1067dcf455" prot="public" static="no">
+        <name>REQ_LENGTH_4_BYTES</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 4 bytes of memory. <linebreak/>
+<simplesect kind="remark"><para>values 4 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="142" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1adb5677b77fe69b2d7547dbcfca8d2285" prot="public" static="no">
+        <name>REQ_LENGTH_256_BITS</name>
+        <initializer>(256u / 8u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 8 bytes of memory. <linebreak/>
+<simplesect kind="remark"><para>values 256 <linebreak/>
+ {SWR_ICAS1_GW_11602} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="150" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a36bdb53b5f43066bb879c238da2caf3d" prot="public" static="no">
+        <name>REQ_LENGTH_48_BYTES</name>
+        <initializer>48u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 48 bytes of memory. <linebreak/>
+<simplesect kind="remark"><para>values 48 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="157" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a21feed935e6ff005f89fd1cb1407e55b" prot="public" static="no">
+        <name>REQ_LENGTH_256_BYTES</name>
+        <initializer>256u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 256 bytes of memory. <linebreak/>
+<simplesect kind="remark"><para>values 256 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="164" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a08d7b5f40328ec9b4a1b1a2de8a7808a" prot="public" static="no">
+        <name>REQ_LENGTH_512_BYTES</name>
+        <initializer>(256u * 2u) /* The content of 0xF1B7 is 2 Bytes for each table position -&gt; 2*256 Bytes */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to clear 512 bytes of memory. <linebreak/>
+<simplesect kind="remark"><para>values 512 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="171" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a337a8786f4ed5d70700a0202258ca58c" prot="public" static="no">
+        <name>NODE_ID_MASK</name>
+        <initializer>0x03FFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>10 bits mask. <linebreak/>
+<simplesect kind="remark"><para>values 1023 <linebreak/>
+ {SWR_ICAS1_GW_10917} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="178" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1adc63a7b2b27ed1e170a37f494b0bafa4" prot="public" static="no">
+        <name>NVM_WRITE_TIMEOUT</name>
+        <initializer>400u /* 4sec = 400 * 10ms */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>4 sec timeout. <linebreak/>
+<simplesect kind="remark"><para>values 400 <linebreak/>
+ {SWR_ICAS1_GW_8277} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="186" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a1f5681b87a1a14a7e25402d4325c25ee" prot="public" static="no">
+        <name>NODE_ID_LENGTH</name>
+        <initializer>2u /* 2 bytes */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>used to reserved 2bytes for Node ID. <linebreak/>
+<simplesect kind="remark"><para>values 2 <linebreak/>
+ {SWR_ICAS1_GW_10917} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="193" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a98922c74b8352473678a5e8b25aae26b" prot="public" static="no">
+        <name>BIL_NVM_WRITE_TIMEOUT_LOAD_VALUE</name>
+        <initializer>400u /* 4sec = 400 * 10ms */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>4 sec timeout. <linebreak/>
+<simplesect kind="remark"><para>values 400 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="199" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a5c0f4c9caf1c2ed9f79bddf644edc5be" prot="public" static="no">
+        <name>BIL_NVM_WRITE_TIMEOUT_STOP_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>used to check for timeout.. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="205" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a2bff9d0e143debd9c4be4d09e83d6067" prot="public" static="no">
+        <name>INDEX_HASHING_ATTEMPTS</name>
+        <initializer>15u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Maximum attempts in Hash function. <linebreak/>
+<simplesect kind="remark"><para>values 15 <linebreak/>
+ {SWR_ICAS1_GW_8219} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="212" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a235a1f2e1fe8cb25a0ad6d9d8a55b08b" prot="public" static="no">
+        <name>DIAG_PFAD_POSITION_BYTE</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>position of Diag Pfad byte in incoming message . <linebreak/>
+<simplesect kind="remark"><para>values 7 <linebreak/>
+ {SWR_ICAS1_GW_8184} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="219" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ada684d29bba63b5a68c2c17c412e805f" prot="public" static="no">
+        <name>DIAG_PFAD_POSITION_BIT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Position of the Diag pfad signal. <linebreak/>
+<simplesect kind="remark"><para>values 4 <linebreak/>
+  {SWR_ICAS1_GW_11490} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="226" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a9845d23c46cee0020892e15b4d01f197" prot="public" static="no">
+        <name>DIAG_PROT_NOT_SET</name>
+        <initializer>0x00u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Diag Prot initial value. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8290} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="233" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ae7dc09edaca6838587dd94b2295c40ad" prot="public" static="no">
+        <name>DIAG_PROT_IP</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Diag Prot IP value. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8290} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="240" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a57ac925cae1cfe6c6802da3dda1d6669" prot="public" static="no">
+        <name>DIAG_PROT_ISOTP</name>
+        <initializer>0x10u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Diag Prot ISOTP value. <linebreak/>
+<simplesect kind="remark"><para>values 16 <linebreak/>
+ {SWR_ICAS1_GW_8290} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="247" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a644032e2833a3dc0913ab10398ee5f5d" prot="public" static="no">
+        <name>DIAG_PROT_ISOTP_IP</name>
+        <initializer>0x11u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>If node adress and Bus address != 0 than DiagProt = 0x11. <linebreak/>
+<simplesect kind="remark"><para>values 17 <linebreak/>
+ {SWR_ICAS1_GW_8290} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="254" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1af2beed9d895670976455937eaf7d0d9a" prot="public" static="no">
+        <name>KDBIT_POSITION_BYTE</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Position of KD byte. <linebreak/>
+<simplesect kind="remark"><para>values 7 <linebreak/>
+ {SWR_ICAS1_GW_8184} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="261" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1af7ff02a9a43a6b2350ea650d627c1cc8" prot="public" static="no">
+        <name>KDBIT_POSITION_BIT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>position of KD bit. <linebreak/>
+<simplesect kind="remark"><para>values 7 <linebreak/>
+ {SWR_ICAS1_GW_8184} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="268" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a71eda6e90aba69e8cd1e7f2e8a56b0d4" prot="public" static="no">
+        <name>NACHLAUFTYP_POSITION_BYTE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>position of Nachlauftyp byte. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8275} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="275" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a5ffaf376e2ed883aa48241743e0bd5f6" prot="public" static="no">
+        <name>NACHLAUFTYP_POSITION_BIT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>position of Nachlauftyp bit. <linebreak/>
+<simplesect kind="remark"><para>values 4 <linebreak/>
+ {SWR_ICAS1_GW_8275} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="282" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a4af3e3031aca09dd13ca549baf79e412" prot="public" static="no">
+        <name>READY_TO_SLEEP</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>if node is ready to sleep. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8272 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="289" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a86e31676408650ec76183ff3746d07ca" prot="public" static="no">
+        <name>NOT_READY_TO_SLEEP</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>node not ready to sleep. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8272} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="296" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aa7701903afc87c87525b02d2f603e355" prot="public" static="no">
+        <name>DEVICE_BUILT_IN</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in is complete. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8268}</para></simplesect>
+device built in. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8268} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="303" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a38c0a666eb990176ee0cf3965d3c97d7" prot="public" static="no">
+        <name>DEVICE_NOT_BUILT_IN</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in has not taken place. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8268}</para></simplesect>
+Device not built in. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8268} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="310" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aca70ea93a55998ded2b6f3c39cbd225d" prot="public" static="no">
+        <name>SHOULD_BE_BUILT_IN</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in should take place. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="317" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a353b7840db749d85a6d51bd7f7f00907" prot="public" static="no">
+        <name>SHOULD_NOT_BE_BUILT_IN</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in should not take place. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8277} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="324" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a83864c95308815d74198b76211a95bf4" prot="public" static="no">
+        <name>KD_BIT_ERROR</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>KD bit error. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8270} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="331" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1acc8f7ab9fec42631210aec5654925c73" prot="public" static="no">
+        <name>KD_BIT_NO_ERROR</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>No error in KD bit. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8270} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="338" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1acb473f25320b6ddaa136a7a71c2277e3" prot="public" static="no">
+        <name>NOT_DIAGNOSTICABLE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node is not diagnosticable. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8274} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="345" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ac76c095928f49bfa745717aca931d161" prot="public" static="no">
+        <name>DIAGNOSTICABLE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node is diagnosticable. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8274} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="352" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a3897e75157ee0fa77a5f045770dbf2d7" prot="public" static="no">
+        <name>NODE_MESSAGE_TIMEOUT_RANGE</name>
+        <initializer>28u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>KN message timeout has taken place , 700ms checked every 25ms = 28 . <linebreak/>
+<simplesect kind="remark"><para>values 28 <linebreak/>
+ {SWR_ICAS1_GW_8213} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="359" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1abfb2bc5ecdb7377a2288443786b28189" prot="public" static="no">
+        <name>NMH_MESSAGE_TIMEOUT_RANGE</name>
+        <initializer>20u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>NMH message timeout has taken place, 500ms checked every 25ms = 20 . <linebreak/>
+<simplesect kind="remark"><para>values 20 <linebreak/>
+ {SWR_ICAS1_GW_8214} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="366" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1adc54c6a7bc9907f19795bb90bc3a70f0" prot="public" static="no">
+        <name>BIL_INCORRECT_BUS_ID</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Bus ID error. <linebreak/>
+<simplesect kind="remark"><para>values 255 <linebreak/>
+ {SWR_ICAS1_GW_8216} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="374" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a9973d96188cf64f6b467ebd8c2c1465b" prot="public" static="no">
+        <name>BIL_INCORRECT_COM_CHANNEL</name>
+        <initializer>_IncorrectComChannel</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Com channel error. <linebreak/>
+<simplesect kind="remark"><para>values 26 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="380" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a2e051903db905f9f3c538302c895d8de" prot="public" static="no">
+        <name>AUTHENTICITY_OCCUPIED</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Authenticity occupied. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8276} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="387" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1ab331d0db951dff4cdb790d3d7142f2a9" prot="public" static="no">
+        <name>AUTHENTICITY_UNOCCUPIED</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Authenticity not occupied. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8276} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="394" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a38c0a666eb990176ee0cf3965d3c97d7" prot="public" static="no">
+        <name>DEVICE_NOT_BUILT_IN</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in has not taken place. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8268}</para></simplesect>
+Device not built in. <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+ {SWR_ICAS1_GW_8268} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="401" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aa7701903afc87c87525b02d2f603e355" prot="public" static="no">
+        <name>DEVICE_BUILT_IN</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in is complete. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8268}</para></simplesect>
+device built in. <linebreak/>
+<simplesect kind="remark"><para>values 1 <linebreak/>
+ {SWR_ICAS1_GW_8268} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="408" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a6c423b536badd2d1370eed7b0940559f" prot="public" static="no">
+        <name>KN_GATEWAY_KDBIT_ERROR</name>
+        <initializer>0x80u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>KD bit error on KN GW. <linebreak/>
+<simplesect kind="remark"><para>values 128 <linebreak/>
+ {SWR_ICAS1_GW_8271} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="415" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a9a1b64c942916ab2fbad88648d0e501f" prot="public" static="no">
+        <name>KN_GATEWAY_KDBIT_NO_ERROR</name>
+        <initializer>0x7Fu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>No KD bit error on KN GW. <linebreak/>
+<simplesect kind="remark"><para>values 127 <linebreak/>
+ {SWR_ICAS1_GW_8271} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="422" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1a6fc4ee8d74b19935223319de07abc132" prot="public" static="no">
+        <name>BIL_E_OK</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>no error . <linebreak/>
+<simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="429" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_built_in_list_8h_1aa25017b871e3b9aad031511f7cbd6b89" prot="public" static="no">
+        <name>BIL_ETH_NODE_MASK</name>
+        <initializer>0x60u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask Ethernet node. <linebreak/>
+<simplesect kind="remark"><para>values 96 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="435" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_built_in_list_8h_1a56dcce7483189ad0176ece4164db492b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EBuiltInListStates</name>
+        <enumvalue id="_built_in_list_8h_1a56dcce7483189ad0176ece4164db492bae05e6122ac55c9b5badfd8f06dcd7c86" prot="public">
+          <name>E_BIL_NORMAL_STATE</name>
+          <briefdescription>
+<para>Node and NMH messages have influence on BuiltInList. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a56dcce7483189ad0176ece4164db492bac27984d43c691a8010836a68adc4a786" prot="public">
+          <name>E_BIL_UPDATE_CONTENT_LIST</name>
+          <briefdescription>
+<para>After requested ContentList update BuiltInList have to be rebuilt, Node and NMH messages are ignored. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>stores builtinlist state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="442" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="441" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="enum" id="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ERequestStatus</name>
+        <enumvalue id="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1cae474263fe486ae0b4d486e2250eacdd1" prot="public">
+          <name>E_BIL_REQUEST_COMPLETED</name>
+          <briefdescription>
+<para>process completed </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1cafb11c25ddecf4148b3c4e9cc62b32b76" prot="public">
+          <name>E_BIL_REQUEST_STARTED</name>
+          <briefdescription>
+<para>process started </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1ca8a8e45fe2061475cfb1ea4473e4a814d" prot="public">
+          <name>E_BIL_REQUEST_FINISHED_OK</name>
+          <briefdescription>
+<para>process finished to no error </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1ca998a6258857cd50358bec912ee89e5ae" prot="public">
+          <name>E_BIL_REQUEST_FINISHED_NOK</name>
+          <briefdescription>
+<para>process finished to error </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>used to check request status </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="452" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="451" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="enum" id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EBIL_Node_Identification</name>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2acd59498ed89a42ed903e9f0664a3d1c2" prot="public">
+          <name>NI_EPH</name>
+          <initializer>= 0x0Au</initializer>
+          <briefdescription>
+<para>EPH node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a4d71dff61db0f3fccaf34c753f400acd" prot="public">
+          <name>NI_SMLS</name>
+          <initializer>= 0x0Cu</initializer>
+          <briefdescription>
+<para>SMLS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2acd444ebb3c76f27710c7c54ad3ee2f8a" prot="public">
+          <name>NI_BCM1</name>
+          <initializer>= 0x0Eu</initializer>
+          <briefdescription>
+<para>BCM1 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a1e754331c88beeb64c05f3f8ac1d218c" prot="public">
+          <name>NI_LENKHILFE</name>
+          <initializer>= 0x12u</initializer>
+          <briefdescription>
+<para>LENKHILFE node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ac544496f00a7835adeb91fe988b9bea7" prot="public">
+          <name>NI_ABS</name>
+          <initializer>= 0x13u</initializer>
+          <briefdescription>
+<para>ABS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a491357dac363faa1b9f8a9e8fd282e37" prot="public">
+          <name>NI_KOMBI</name>
+          <initializer>= 0x14u</initializer>
+          <briefdescription>
+<para>KOMBI node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a4faf59f26ead1c322f143d26735298b3" prot="public">
+          <name>NI_AIRBAG_01</name>
+          <initializer>= 0x15u</initializer>
+          <briefdescription>
+<para>AIRBAG_01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a87ddf2957007a5a5774ff5a1c17f1adb" prot="public">
+          <name>NI_HUD</name>
+          <initializer>= 0x1Bu</initializer>
+          <briefdescription>
+<para>HUD node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a5c490b251dd91dec3b8c6b5159eac325" prot="public">
+          <name>NI_HDSG</name>
+          <initializer>= 0x23u</initializer>
+          <briefdescription>
+<para>HDSG node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a235b6228de2a23216f5286924de41ae4" prot="public">
+          <name>NI_MFG</name>
+          <initializer>= 0x2Cu</initializer>
+          <briefdescription>
+<para>MFG node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2abd7dd9ac74051e2a4cd4337d41432a38" prot="public">
+          <name>NI_ELV</name>
+          <initializer>= 0x31u</initializer>
+          <briefdescription>
+<para>ELV node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aa862c906019f1ad9e8b2fc64a57236dd" prot="public">
+          <name>NI_KESSY</name>
+          <initializer>= 0x32u</initializer>
+          <briefdescription>
+<para>KESSY node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a93db2d01c2edaed301d290565dafb7d0" prot="public">
+          <name>NI_STSG_HFS</name>
+          <initializer>= 0x33u</initializer>
+          <briefdescription>
+<para>STSG_HFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a2b818af72a786da82fd93dffab6bd20e" prot="public">
+          <name>NI_STSG_HBFS</name>
+          <initializer>= 0x34u</initializer>
+          <briefdescription>
+<para>STSG_HBFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aab5c7dc609e619bbe0b006983c820ebb" prot="public">
+          <name>NI_EBKV</name>
+          <initializer>= 0x3Bu</initializer>
+          <briefdescription>
+<para>EBKV node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a0040bb4505239038cfaa751bf8cd13a7" prot="public">
+          <name>NI_TSG_HFS</name>
+          <initializer>= 0x3Eu</initializer>
+          <briefdescription>
+<para>TSG_HFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2af154e05a9bc66041532c670fe030622b" prot="public">
+          <name>NI_TSG_HBFS</name>
+          <initializer>= 0x3Fu</initializer>
+          <briefdescription>
+<para>TSG_HBFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a247f07200ed4270a9b886ea8692584c4" prot="public">
+          <name>NI_LADEGERAET</name>
+          <initializer>= 0x44u</initializer>
+          <briefdescription>
+<para>NI_LADEGERAET node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a65dec523c7e7e5cff784d59d9cee5ab6" prot="public">
+          <name>NI_KLIMA</name>
+          <initializer>= 0x46u</initializer>
+          <briefdescription>
+<para>KLIMA node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a71ebbe631f5220c2110e64f2b27916bc" prot="public">
+          <name>NI_AAG</name>
+          <initializer>= 0x47u</initializer>
+          <briefdescription>
+<para>AAG node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a6602d6803ad96f2505f601012607bde1" prot="public">
+          <name>NI_TSG_FS</name>
+          <initializer>= 0x4Au</initializer>
+          <briefdescription>
+<para>TSG_FS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a5e5a6d3d9bdbd4fc5e9d40cff61b5f86" prot="public">
+          <name>NI_TSG_BFS</name>
+          <initializer>= 0x4Bu</initializer>
+          <briefdescription>
+<para>TSG_BFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ab1422617e60c327e430514a6bceaa52e" prot="public">
+          <name>NI_SITZMEMO_FS</name>
+          <initializer>= 0x4Cu</initializer>
+          <briefdescription>
+<para>SITZMEMO_FS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ac6f4a4e754d19222acd0c61a09495c9b" prot="public">
+          <name>NI_SITZMEMO_BFS</name>
+          <initializer>= 0x4Du</initializer>
+          <briefdescription>
+<para>SITZMEMO_BFS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a2bf16222e67ea73be20d5f804d1f216d" prot="public">
+          <name>NI_SWA</name>
+          <initializer>= 0x4Eu</initializer>
+          <briefdescription>
+<para>SWA node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2adc3e89363efd196e39d579aca5cae82c" prot="public">
+          <name>NI_KAMERA</name>
+          <initializer>= 0x4Fu</initializer>
+          <briefdescription>
+<para>KAMERA node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a10023d0c6a8d85ed736a15ddc14f6290" prot="public">
+          <name>NI_ACC</name>
+          <initializer>= 0x57u</initializer>
+          <briefdescription>
+<para>ACC node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2adf86d1c1aba449979d5799e2ba24b78a" prot="public">
+          <name>NI_AGA</name>
+          <initializer>= 0x64u</initializer>
+          <briefdescription>
+<para>AGA node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2abd75055d2c14e6ecae4733a0f0ab35e4" prot="public">
+          <name>NI_ECALL</name>
+          <initializer>= 0x67u</initializer>
+          <briefdescription>
+<para>ECALL node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a34d6b94bd2147c9a18406947c594c66d" prot="public">
+          <name>NI_REARVIEW</name>
+          <initializer>= 0x69u</initializer>
+          <briefdescription>
+<para>REARVIEW node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a34190b2c590a9d15b674517489627770" prot="public">
+          <name>NI_AMP</name>
+          <initializer>= 0x6Fu</initializer>
+          <briefdescription>
+<para>AMP node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ab5cab7f90988a78df39a388a7a1a7d6a" prot="public">
+          <name>NI_DAEMPFER</name>
+          <initializer>= 0x72u</initializer>
+          <briefdescription>
+<para>DAEMPFER node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ae431022619992c30b1d33c6cb9d7a93f" prot="public">
+          <name>NI_INFO_EL</name>
+          <initializer>= 0x73u</initializer>
+          <briefdescription>
+<para>INFO_EL node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a64745013dd3044b0d79712385a382e7c" prot="public">
+          <name>NI_MO_01</name>
+          <initializer>= 0x76u</initializer>
+          <briefdescription>
+<para>MO_01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a25c92b7981e231a0c7dd58556c5b60f2" prot="public">
+          <name>NI_HYBRID_01</name>
+          <initializer>= 0x7Bu</initializer>
+          <briefdescription>
+<para>HYBRID_01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a57f8f0179b359595559d441d156d6795" prot="public">
+          <name>NI_EMOTOR_01</name>
+          <initializer>= 0x7Cu</initializer>
+          <briefdescription>
+<para>EMOTOR_01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a439628715effeb5cfec9e9240c70f6ac" prot="public">
+          <name>NI_SAD</name>
+          <initializer>= 0x84u</initializer>
+          <briefdescription>
+<para>SAD node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a78f2dbd7ed2421749eba990193f26c48" prot="public">
+          <name>NI_E_SOUND2</name>
+          <initializer>= 0x8Cu</initializer>
+          <briefdescription>
+<para>E_SOUND2 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a14548cbdf9961aec2fda4b7c1cc59f66" prot="public">
+          <name>NI_AWC</name>
+          <initializer>= 0x8Fu</initializer>
+          <briefdescription>
+<para>AWC node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2adb86efb4f1057a3f7c437e23e2da4a9c" prot="public">
+          <name>NI_LED_DK3_L</name>
+          <initializer>= 0x96u</initializer>
+          <briefdescription>
+<para>LED_DK3_L node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ae7fce64aae54596a92f8dc29c84995ff" prot="public">
+          <name>NI_LED_DK3_R</name>
+          <initializer>= 0x97u</initializer>
+          <briefdescription>
+<para>LED_DK3_R node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a257a13fbee10720bb811b39ea2fb668a" prot="public">
+          <name>NI_FRONTECKRADAR1</name>
+          <initializer>= 0x9Du</initializer>
+          <briefdescription>
+<para>FRONTECKRADAR1 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a9294de860d0fbad5f6ed1103f7516d61" prot="public">
+          <name>NI_MFAS</name>
+          <initializer>= 0xB3u</initializer>
+          <briefdescription>
+<para>MFAS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aeb6a2e61e782f33aa19d295ddc21631e" prot="public">
+          <name>NI_LE2</name>
+          <initializer>= 0xB8u</initializer>
+          <briefdescription>
+<para>LE2 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aa39908455aef3bbd4318137bbc033041" prot="public">
+          <name>NI_DCDC_NV</name>
+          <initializer>= 0xB9u</initializer>
+          <briefdescription>
+<para>DCDC_NV node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aa33238989e37d23c80b7660fc25737aa" prot="public">
+          <name>NI_DDA</name>
+          <initializer>= 0xBAu</initializer>
+          <briefdescription>
+<para>DDA node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a1aa2851a6a44dfcf8fd94934a63e1022" prot="public">
+          <name>NI_UmfKam_H</name>
+          <initializer>= 0xC9u</initializer>
+          <briefdescription>
+<para>node </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2af6d84e937ce469cd1b53fb65c4c686eb" prot="public">
+          <name>NI_RSAD_VL</name>
+          <initializer>= 0x101u</initializer>
+          <briefdescription>
+<para>RSAD_VL node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a2d6e50c17285d4600a527cc763c36cdc" prot="public">
+          <name>NI_RSAD_VR</name>
+          <initializer>= 0x102u</initializer>
+          <briefdescription>
+<para>RSAD_VR node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a84cd8abdcfea0eaab8c9c1be4af038cf" prot="public">
+          <name>NI_RSAD_HL</name>
+          <initializer>= 0x103u</initializer>
+          <briefdescription>
+<para>RSAD_HL node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a28143babb996aa7716d2c99899ce9f1c" prot="public">
+          <name>NI_RSAD_HR</name>
+          <initializer>= 0x104u</initializer>
+          <briefdescription>
+<para>RSAD_HR node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ace6aa58c26f50dd95c446f098575e5cf" prot="public">
+          <name>NI_RSAD_IN</name>
+          <initializer>= 0x105u</initializer>
+          <briefdescription>
+<para>RSAD_IN node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a0ec16b8ddae438a1647b740e394414b6" prot="public">
+          <name>NI_ICAS1Sys01</name>
+          <initializer>= 0x106u</initializer>
+          <briefdescription>
+<para>ICAS1Sys01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a30f28000f8366faf85fb7bef748a291a" prot="public">
+          <name>NI_ICAS1Sys02</name>
+          <initializer>= 0x107u</initializer>
+          <briefdescription>
+<para>ICAS1Sys02 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a90f28f77f3be8d62d84ff8facd4a7230" prot="public">
+          <name>NI_ICAS3SYS01</name>
+          <initializer>= 0x108u</initializer>
+          <briefdescription>
+<para>ICAS3SYS01 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a20fa58d05d7366faf644e12c0e8d56d4" prot="public">
+          <name>NI_DISPKBI_FS</name>
+          <initializer>= 0x109u</initializer>
+          <briefdescription>
+<para>DISPKBI_FS node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a6d4e916b3b4d208aabf82f0ab3f02cc5" prot="public">
+          <name>NI_SMLI_1</name>
+          <initializer>= 0x10Cu</initializer>
+          <briefdescription>
+<para>SMLI_1 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2a80ac6b4733dec58df064302cc384249c" prot="public">
+          <name>NI_KESSY2</name>
+          <initializer>= 0x12Au</initializer>
+          <briefdescription>
+<para>ATP_2 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ac904ea0c56f2f5515e2e1b843bc7582b" prot="public">
+          <name>NI_RSAD_IN2</name>
+          <initializer>= 0x135u</initializer>
+          <briefdescription>
+<para>RSAD_IN2 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2aa97f85806ceba73f7ce667513ad25e6c" prot="public">
+          <name>NI_RSAD_IN3</name>
+          <initializer>= 0x136u</initializer>
+          <briefdescription>
+<para>RSAD_IN3 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_built_in_list_8h_1a8d5deaf08c16bc1023ec17109dfca9a2ac73bf7df20ca3144b74fbe178f74719d" prot="public">
+          <name>NI_RSAD_IN4</name>
+          <initializer>= 0x137u</initializer>
+          <briefdescription>
+<para>RSAD_IN4 node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>List of nodes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="531" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" bodystart="530" bodyend="593"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_built_in_list_8h_1aafd94a09b3d43f986889100e5f1c0a5f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_t_content_list_element" kindref="compound">TContentListElement</ref></type>
+        <definition>const TContentListElement ContentListStatic[86u]</definition>
+        <argsstring>[86u]</argsstring>
+        <name>ContentListStatic</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>list of content list static nodes.</para><para>Stores static part of content List <simplesect kind="remark"><para>range 0-73 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_RebuildBIL <linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="508" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_built_in_list_8h_1acc56ba38bae78b1cab1bdf16486ca403" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_t_content_list_element" kindref="compound">TContentListElement</ref></type>
+        <definition>TContentListElement ContentListDynamic[32u]</definition>
+        <argsstring>[32u]</argsstring>
+        <name>ContentListDynamic</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>List of contetnt list dynamic nodes</para><para>Stores Dynamic part of content List <simplesect kind="remark"><para>range 0-32 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_Read_0x0502,BIL_Write_0x0502,NvmSingleContentListCbk, <linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="513" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_built_in_list_8h_1aa1dac6419b78d391b9e7a70844811593" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_t_built_in_list_basic" kindref="compound">TBuiltInListBasic</ref></type>
+        <definition>TBuiltInListBasic BuiltInListBasic[256u]</definition>
+        <argsstring>[256u]</argsstring>
+        <name>BuiltInListBasic</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in list array having Node ID, Bus ID and solverbau parameter</para><para>Stores node ID, bus ID, Nachlauftyp, solverbau <simplesect kind="remark"><para>range 0-255 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_RebuildBIL,BIL_ProcessContentList\,BIL_IndexComputation,BIL_SetAuthenticity,BIL_SetDiagProt,BIL_SetSleepIndicationBit,BIL_SetNodeBasicData,BIL_KnRcvCb,BIL_Read_0x2A2D<linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="600" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_built_in_list_8h_1af42fb9ef9cc136068d034d52e9cb7dc6" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_t_built_in_list_ext" kindref="compound">TBuiltInListExt</ref></type>
+        <definition>TBuiltInListExt BuiltInListExt[256u]</definition>
+        <argsstring>[256u]</argsstring>
+        <name>BuiltInListExt</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in list array having all parameter</para><para>Stores Isterbau, Sleep bit, KD bit, KN timeout counter, NMH counter of each node <simplesect kind="remark"><para>range 0-255 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_SetBILExtDefaultValues,BIL_SetDiagProt,BIL_CyclicClamp15Poll,BIL_CyclicTimeoutCheck,BIL_KnRcvCb,<linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="605" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_built_in_list_8h_1af3063bb48b8f7e264ed866855031e32c" prot="public" static="no" mutable="no">
+        <type><ref refid="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1c" kindref="member">ERequestStatus</ref></type>
+        <definition>ERequestStatus BIL_UDSRequestState</definition>
+        <argsstring></argsstring>
+        <name>BIL_UDSRequestState</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in list NVM processing parameters</para><para>Stores UDS request state <simplesect kind="remark"><para>range 0-3 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_Write_0x04A3,BIL_Write_0x0502,BIL_WriteContentListToNvM,BIL_VerifyUDSRequestState,NvmSingleBuiltInListBasicCbk <linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="610" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_built_in_list_8h_1ac52adbe6a550ab7d6e0e1172a5941b0f" prot="public" static="no" mutable="no">
+        <type>uint16</type>
+        <definition>uint16 BIL_NvMcounter</definition>
+        <argsstring></argsstring>
+        <name>BIL_NvMcounter</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Built in list NVM counter which is used to check for NVM timeout</para><para>Stores NVM counter value <simplesect kind="remark"><para>range 0 <linebreak/>
+ values No special values. <linebreak/>
+ unit Not Applicable. <linebreak/>
+ resolution Not Applicable. <linebreak/>
+ context called by functions BIL_Write_0x04A3,BIL_Write_0x0502,BIL_WriteContentListToNvM,BIL_VerifyUDSRequestState, <linebreak/>
+ protection None <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="615" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/src/BuiltInList.c" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_built_in_list_8h_1abd7dd74ae9cdb90a3850aa6921c84bbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>BIL_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Used to initialize Built in List <linebreak/>
+</para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - Init function. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1aba9dcbe785ffa1e09f89c390c19d3e6b" kindref="member">BILcorrupted</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1a9dd3fc83f17736fcefd698482988b448" kindref="member">CurrentBILState</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Init.png">Activity Diagram of BIL_Init</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) test of boundary values <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a1970f1a1b0558c8917c69712f12d5dbd" kindref="member">TEST_BIL_Init_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a0df527e7ff6db197cbdcd63063a86da7" kindref="member">TEST_BIL_Init_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10921 </para><para>SWR_ICAS1_GW_8290 </para><para>SWR_ICAS1_GW_8268 </para><para>SWR_ICAS1_GW_8270 </para><para>SWR_ICAS1_GW_8272 </para><para>SWR_ICAS1_GW_8274 </para><para>SWR_ICAS1_GW_8276 </para><para>SWR_ICAS1_GW_8275 </para><para>SWR_ICAS1_GW_8184 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="669" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a272b70e9d5416a7563b2249577646248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_NmhRcvCb</definition>
+        <argsstring>(const TCanRxFifoElem *DataBuf)</argsstring>
+        <name>BIL_NmhRcvCb</name>
+        <param>
+          <type>const TCanRxFifoElem *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a NMH-message was received. </para>        </briefdescription>
+        <detaileddescription>
+<para>If both NodeID and BusID was yet unknown, new Built-In List entry will be created. If NodeID was already known and BusID was unknown, Built-In List entry will be updated with BusID.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called from the CAN driver when a NMH-message was received. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">DataBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: CAN/VLAN data buffer. pointer to incoming message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a9dd3fc83f17736fcefd698482988b448" kindref="member">CurrentBILState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1a42226cc738f783098ff5775a10f057c8" kindref="member">R7_TxRteWrite</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_NmhRcvCb.png">Activity Diagram of BIL_NmhRcvCb</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a88fbcd81cb3a43c354fc65e8f61c10c8" kindref="member">TEST_BIL_NmhRcvCb_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a9c4a8a3d4a937c12399c3760e63d010a" kindref="member">TEST_BIL_NmhRcvCb_TC2</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1afb4e4805fce041b5f75a26aea148adae" kindref="member">TEST_BIL_NmhRcvCb_TC3</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a9c7faa450801a413a38277ee45112011" kindref="member">TEST_BIL_NmhRcvCb_TC4</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a11286297ed74927e9e876f5751205188" kindref="member">TEST_BIL_NmhRcvCb_TC5</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8211 </para><para>SWR_ICAS1_GW_8212 </para><para>SWR_ICAS1_GW_8184 <linebreak/>
+ </para><para>SWR_ICAS1_GW_10919 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="719" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a9e96aaaec756cc0cbd9486b93bc9ca48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_KnRcvCb</definition>
+        <argsstring>(const TCanRxFifoElem *DataBuf)</argsstring>
+        <name>BIL_KnRcvCb</name>
+        <param>
+          <type>const TCanRxFifoElem *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a NMH Node-message is received. </para>        </briefdescription>
+        <detaileddescription>
+<para>If both NodeID and BusID was yet unknown, new Built-In List entry will be created. If NodeID was already known and BusID was unknown, Built-In List entry will be updated with BusID.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called from the CAN driver when a Node-message was received. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">DataBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: CAN/VLAN data buffer. pointer to incoming message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a9dd3fc83f17736fcefd698482988b448" kindref="member">CurrentBILState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1a42226cc738f783098ff5775a10f057c8" kindref="member">R7_TxRteWrite</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_KnRcvCb.png">Activity Diagram of BIL_KnRcvCb</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ae79fcea2ef32a68fbba5458ceddc7223" kindref="member">TEST_BIL_KnRcvCb_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a54cca65a13c2029750bc5bc480c01cb1" kindref="member">TEST_BIL_KnRcvCb_TC2</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1acc6091c7b9cd1bb5c89ba49bb5d5cd2d" kindref="member">TEST_BIL_KnRcvCb_TC3</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aea15f55d25ce53951a29483d1f532ade" kindref="member">TEST_BIL_KnRcvCb_TC4</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a785713acd42b7f86225d1dead02dedbc" kindref="member">TEST_BIL_KnRcvCb_TC5</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ac85e36fd2cba1e494da2f57334412f4d" kindref="member">TEST_BIL_KnRcvCb_TC6</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8211 </para><para>SWR_ICAS1_GW_8214 </para><para>SWR_ICAS1_GW_10919 </para><para>SWR_ICAS1_GW_8184 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="771" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a16045a542d9432daf6c057913e888a05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_Cyclic25ms</definition>
+        <argsstring>(void)</argsstring>
+        <name>BIL_Cyclic25ms</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ this function is called cyclically every 25ms. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - Called cyclically every 25ms from Routing task <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Cyclic25ms.png">Activity Diagram of BIL_Cyclic25ms</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ac31bfe2280049e75c5c429fda0622576" kindref="member">TEST_BIL_Cyclic25ms</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ Check &quot;Cyclic Behaviour&quot; in EA. <linebreak/>
+ Design Decision - Justification. This function is used to provide 25ms and 50ms interval for BIL_CyclicTimeoutCheck and BIL_CyclicClamp15Poll function. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="810" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1abd4d2c2e04a3072fedecfa11a39eb546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_Cyclic100ms</definition>
+        <argsstring>(void)</argsstring>
+        <name>BIL_Cyclic100ms</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Called cyclically every 100ms from UDS task. </para>        </briefdescription>
+        <detaileddescription>
+<para>Checks if all the buses connected to the GW are asleep</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - Called cyclically every 100ms from UDS task. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Cyclic100ms.png">Activity Diagram of BIL_Cyclic100ms</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) test of boundary values <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a3712168aeef3a1170d9d1416554c6f6e" kindref="member">TEST_BIL_Cyclic100ms_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1afd67de4b7275b6bf8c7cab972613eda6" kindref="member">TEST_BIL_Cyclic100ms_TC2</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10277 </para><para>SWR_ICAS1_GW_9960</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="852" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1ab8b0ab033f9508e21cf19d18270f6d15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BIL_GetNodeInfo</definition>
+        <argsstring>(uint16 RequestedNodeID, TBuiltInListNodeInfo *pNodeInfo)</argsstring>
+        <name>BIL_GetNodeInfo</name>
+        <param>
+          <type>uint16</type>
+          <declname>RequestedNodeID</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_t_built_in_list_node_info" kindref="compound">TBuiltInListNodeInfo</ref> *</type>
+          <declname>pNodeInfo</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function is used to obtain information related to particular Node present in BIL </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called for obtaining information related to particular Node present in BIL. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RequestedNodeID - ID of a node the information for which is requested </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pNodeInfo - pointer for output information </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_GetNodeInfo.png">Activity Diagram of BIL_GetNodeInfo</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1abf20d65d420a42a994eb7bc3ddd0c1d3" kindref="member">TEST_BIL_GetNodeInfo_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1affe5862e014198e19912de64cc019acd" kindref="member">TEST_BIL_GetNodeInfo_TC2</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ Design Decision - Justification. this function is used to get the node related information. When a node information is requested this function provides Isverbau, Solverbau. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="897" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1add7cfb7581aa8451be5af64a7e6501db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_ComChannelToBusId</definition>
+        <argsstring>(uint8 ComChannel)</argsstring>
+        <name>BIL_ComChannelToBusId</name>
+        <param>
+          <type>uint8</type>
+          <declname>ComChannel</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Map TComChannel to Built-In List BusID </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called only by <ref refid="_built_in_list_8h_1a272b70e9d5416a7563b2249577646248" kindref="member">BIL_NmhRcvCb</ref> , <ref refid="_built_in_list_8h_1a9e96aaaec756cc0cbd9486b93bc9ca48" kindref="member">BIL_KnRcvCb</ref> <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ComChannel</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>BusID for BuiltInList, where 0xFFu is error value</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_ComChannelToBusId.png">Activity Diagram of BIL_ComChannelToBusId</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ae27550ac9da179c8d249b3b6d431aa7f" kindref="member">TEST_BIL_ComChannelToBusId</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ Design Decision - Justification. This function is used to get the BusID for given ComChannel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="934" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a1bb75a86817b4cfdb8db8a97563aa892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x04A3</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x04A3</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x04A3 (Sollverbau). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x04A3 (Sollverbau). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x04A3.png">Activity Diagram of BIL_Read_0x04A3</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aa9ecc5c46ae00cd06233d2d85ca5d3cd" kindref="member">TEST_BIL_Read_0x04A3_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ad00f698e74ea96c3bb41ceebe4836e60" kindref="member">TEST_BIL_Read_0x04A3_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8277 </para><para>SWR_ICAS1_GW_8184 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="977" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1aba0501f7e54e557e2ca895ffda3e5603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x0502</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x0502</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x0502 (ContentList) </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x0502 (ContentList). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1ad59c198f0879b05921ea954bb1165ae2" kindref="member">ContentListDynamic</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x0502.png">Activity Diagram of BIL_Read_0x0502</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a3b612ac4cf21f610fc935bd4aa3ae4bb" kindref="member">TEST_BIL_Read_0x0502_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aa961b72fdb16ba4e7e72c2af902f1cab" kindref="member">TEST_BIL_Read_0x0502_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11193 </para><para>SWR_ICAS1_GW_10917 </para><para>SWR_ICAS1_GW_8184 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1021" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a4a44fcec5cb6e57d3e38dddb6e84f261" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2A26</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2A26</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2A26 (Istverbau). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2A26 (Istverbau). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2A26.png">Activity Diagram of BIL_Read_0x2A26</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aa15ad6ae71c38424d664c1a101b38c5f" kindref="member">TEST_BIL_Read_0x2A26_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1afde9e22a585103e7e3c68a6186cc0f89" kindref="member">TEST_BIL_Read_0x2A26_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8268 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1063" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1af493c19e284ac93066d94e1375d4086f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2A27</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2A27</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2A27 (SleepIndication). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2A27 (SleepIndication). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2A27.png">Activity Diagram of BIL_Read_0x2A27</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a89ecd7d91dcf68533e023d4f6a7b0fb9" kindref="member">TEST_BIL_Read_0x2A27_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ab636bda2692d0d2976c6178972084a4c" kindref="member">TEST_BIL_Read_0x2A27_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8272 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1afcb194cc70731fc09304d041657e56f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2A28</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2A28</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2A28 (KDBit). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2A28 (KDBit). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2A28.png">Activity Diagram of BIL_Read_0x2A28</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a91d2276977d588a6e9d52fb18370e84c" kindref="member">TEST_BIL_Read_0x2A28_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1acf7a96198a3fbfd70b45b74aad11a3f1" kindref="member">TEST_BIL_Read_0x2A28_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8270 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1147" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1ae88b9651ee73f6b7f15430fc905335cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2A29</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2A29</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2A29 (DiagProt). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2A29 (DiagProt). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2A29.png">Activity Diagram of BIL_Read_0x2A29</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a2f1aca10ac6fa45f64cda4eee75e46a9" kindref="member">TEST_BIL_Read_0x2A29_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1abb9f691e8d601712d04a7cf5a5afdf05" kindref="member">TEST_BIL_Read_0x2A29_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8290 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a4bce058b2cfbc8685c1198f4c88d801e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2A2D</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2A2D</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2A2D (BusID). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2A2D (BusID). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2A2D.png">Activity Diagram of BIL_Read_0x2A2D</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a58d84269bfd9010a90b707878120480a" kindref="member">TEST_BIL_Read_0x2A2D_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a3fbb427911c11e174174504446d2cbcc" kindref="member">TEST_BIL_Read_0x2A2D_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8286 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1231" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1af64f30eb74d86db7477de531ed6f3490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2EE0</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2EE0</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2EE0 (DiagPfad). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2EE0 (DiagPfad). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2EE0.png">Activity Diagram of BIL_Read_0x2EE0</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a958dda690949b7c3f97481a49a4ea398" kindref="member">TEST_BIL_Read_0x2EE0_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a5e236c38c46f40b1b7f656ab249153f7" kindref="member">TEST_BIL_Read_0x2EE0_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000014"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8274 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1273" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1adce3b65b1a4cf36c9eb3519b90bbecb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0x2EE1</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0x2EE1</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0x2EE1 (Authentizitat). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0x2EE1 (Authentizitat). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1a8e371035a2fb45d29964ac0ed522e6fc" kindref="member">BuiltInListExt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0x2EE1.png">Activity Diagram of BIL_Read_0x2EE1</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ac4ecb3c7fe7fe30477e100ad9c58f1aa" kindref="member">TEST_BIL_Read_0x2EE1_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ae65f5d2e97d364b3f122a0032caefe03" kindref="member">TEST_BIL_Read_0x2EE1_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000015"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8276 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1314" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a95dad957255bd41c1c33c83b67695158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_Read_0xF1B7</definition>
+        <argsstring>(uint8 *DataBuf)</argsstring>
+        <name>BIL_Read_0xF1B7</name>
+        <param>
+          <type>uint8 *</type>
+          <declname>DataBuf</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a read request from tester is received for DID 0xF1B7 (NodeID). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a read request from tester is received for DID 0xF1B7 (NodeID). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DataBuf - pointer to CAN data buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 if successful or else 1 if failure</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Read_0xF1B7.png">Activity Diagram of BIL_Read_0xF1B7</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a0a0a5b795c0fdcf7d088b6f97b45db3d" kindref="member">TEST_BIL_Read_0xF1B7_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ae58e4910ae7777901f86d9079efcf536" kindref="member">TEST_BIL_Read_0xF1B7_TC2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8283 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1356" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a052dca9f94c6756efd041dcc0d3ebb65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_GetKDbitsCount</definition>
+        <argsstring>(void)</argsstring>
+        <name>BIL_GetKDbitsCount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This function returns error counts reported by ECU in Built In List. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This getter returns current count of ECUs reporting errors on BuiltInList. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>KDbitsCnt - Error count</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1adafa98136cdf27886c1baafa63eb6e36" kindref="member">KDbitsCnt</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_GetKDbitsCount.png">Activity Diagram of BIL_GetKDbitsCount</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a40c98754d8f4697301d92fab3dae232b" kindref="member">TEST_BIL_GetKDbitsCount</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8271 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1396" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1ae9cd77097c15e89c9a455f88bf634c80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_TranslateRemoteChan</definition>
+        <argsstring>(uint32 ComChannel)</argsstring>
+        <name>BIL_TranslateRemoteChan</name>
+        <param>
+          <type>uint32</type>
+          <declname>ComChannel</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Function will convert AFS and MFL channel from R7 to Chorus presentation. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called only by <ref refid="_built_in_list_8h_1a272b70e9d5416a7563b2249577646248" kindref="member">BIL_NmhRcvCb</ref> , <ref refid="_built_in_list_8h_1a9e96aaaec756cc0cbd9486b93bc9ca48" kindref="member">BIL_KnRcvCb</ref> <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ComChannel - AFS (0x40), MFL(0x41) ComChannel&apos;s or Com Channel connected to Chorus</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Chan - If ComChannel is AFS or MFL channels than converted to Chorus presentation. Or else return the ComChannel.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>_R7_AFSCAN - 0x40 <linebreak/>
+ _R7_MFLCAN - 0x41 <linebreak/>
+ CChan_MEB_AFSCAN_R - 16 <linebreak/>
+ CChan_MEB_MFLCAN_R - 17</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_TranslateRemoteChan.png">Activity Diagram of BIL_TranslateRemoteChan</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a52dda4bb38a78df38d5b806d888a380e" kindref="member">TEST_BIL_TranslateRemoteChan</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ Design Decision - Justification. AFS and MFL can are present in R7. So this function is used to convert AFS and MFL channel from R7 to Chorus presentation. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1439" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a7f3058acf8f01faacfeb14214ad77249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_VerifyUDSRequestState</definition>
+        <argsstring>(void)</argsstring>
+        <name>BIL_VerifyUDSRequestState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Checks the state of NvM write process during UDS request and sets proper UDS response. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets return value to error in case NvM didn&apos;t responded within 4000ms.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called only by <ref refid="_built_in_list_8h_1a0d1314310b725a85f98e763010a5da54" kindref="member">BIL_Write_0x04A3</ref> , <ref refid="_built_in_list_8h_1a4d950acf321739e1dc13bf1890dda761" kindref="member">BIL_Write_0x0502</ref> <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RetVal - return UDS request state</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af3063bb48b8f7e264ed866855031e32c" kindref="member">BIL_UDSRequestState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1ac52adbe6a550ab7d6e0e1172a5941b0f" kindref="member">BIL_NvMcounter</ref> <linebreak/>
+ <ref refid="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1cafb11c25ddecf4148b3c4e9cc62b32b76" kindref="member">E_BIL_REQUEST_STARTED</ref> <linebreak/>
+ <ref refid="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1cae474263fe486ae0b4d486e2250eacdd1" kindref="member">E_BIL_REQUEST_COMPLETED</ref> <linebreak/>
+ <ref refid="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1ca8a8e45fe2061475cfb1ea4473e4a814d" kindref="member">E_BIL_REQUEST_FINISHED_OK</ref> <linebreak/>
+ <ref refid="_built_in_list_8h_1a90613b6dca61c8f754f85eb1fd8d3c1ca998a6258857cd50358bec912ee89e5ae" kindref="member">E_BIL_REQUEST_FINISHED_NOK</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_VerifyUDSRequestState.png">Activity Diagram of BIL_VerifyUDSRequestState</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aad7106fae7d368f708b7893d9ab4c253" kindref="member">TEST_BIL_VerifyUDSRequestState</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10331 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1484" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a0d1314310b725a85f98e763010a5da54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType BIL_Write_0x04A3</definition>
+        <argsstring>(const uint8 *RxTxBuf, uint8 *Nrc)</argsstring>
+        <name>BIL_Write_0x04A3</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>RxTxBuf</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Nrc</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a write request from tester is received for DID 0x04A3 (Sollverbau). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a write request from tester is received for DID 0x04A3 (Sollverbau). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RxTxBuf : Pointer to Data Buffer. contains solverbau value from tester <linebreak/>
+ [OUT]Nrc : pointer to returned Negative Response Code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RetVal - return E_OK if no error <linebreak/>
+ DCM_E_PENDING if processing previous request <linebreak/>
+ E_NOT_OK in case of error</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af3063bb48b8f7e264ed866855031e32c" kindref="member">BIL_UDSRequestState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1ac52adbe6a550ab7d6e0e1172a5941b0f" kindref="member">BIL_NvMcounter</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref></para></simplesect>
+</para><para><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Write_0x04A3.png">Activity Diagram of BIL_Write_0x04A3</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1ad136e8edb23e73499a3747746d1a8504" kindref="member">TEST_BIL_Write_0x04A3_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a0f3b4ef1778fb9e2a552c0131ffe9b25" kindref="member">TEST_BIL_Write_0x04A3_TC2</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a038c5380e82c39a44e75dafb4eb2dffa" kindref="member">TEST_BIL_Write_0x04A3_TC3</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aae753b3acc48f5488e594a0f32a0d8dd" kindref="member">TEST_BIL_Write_0x04A3_TC4</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aa4c683a595ff795d3253bddc0f4c98a0" kindref="member">TEST_BIL_Write_0x04A3_TC5</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_8277 <linebreak/>
+ </para><para>SWR_ICAS1_GW_8279 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1535" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a4d950acf321739e1dc13bf1890dda761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType BIL_Write_0x0502</definition>
+        <argsstring>(const uint8 *RxTxBuf, uint8 *Nrc)</argsstring>
+        <name>BIL_Write_0x0502</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>RxTxBuf</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Nrc</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine is called when a write request from tester is received for DID 0x0502 (ContentList). </para>        </briefdescription>
+        <detaileddescription>
+<para>Does the following operation:<itemizedlist>
+<listitem><para>Update ContentList</para></listitem><listitem><para>Rebuild BuiltInList</para></listitem><listitem><para>Save ContentList to NvM</para></listitem></itemizedlist>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - This routine is called when a write request from tester is received for DID 0x0502 (ContentList). <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RxTxBuf : Pointer to Data Buffer. contains new node and Bus ID from tester to be written to Built in List<linebreak/>
+ [OUT] Nrc : pointer to returned Negative Response Code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RetVal - return E_OK if no error <linebreak/>
+ DCM_E_PENDING if processing previous request <linebreak/>
+ E_NOT_OK in case of error <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af3063bb48b8f7e264ed866855031e32c" kindref="member">BIL_UDSRequestState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1a9dd3fc83f17736fcefd698482988b448" kindref="member">CurrentBILState</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1ac52adbe6a550ab7d6e0e1172a5941b0f" kindref="member">BIL_NvMcounter</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1ad59c198f0879b05921ea954bb1165ae2" kindref="member">ContentListDynamic</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_Write_0x0502.png">Activity Diagram of BIL_Write_0x0502</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) Check if the function process NULL pointer. <linebreak/>
+ 2) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1abaa0aa8ee47ab2cc58c5bf84faff8f73" kindref="member">TEST_BIL_Write_0x0502_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a94cf38f0dabda6c00cdee043c9e72352" kindref="member">TEST_BIL_Write_0x0502_TC2</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a4aa6e32e68eb7fb64837edd6a2df38f9" kindref="member">TEST_BIL_Write_0x0502_TC3</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11193 </para><para>SWR_ICAS1_GW_10917 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1589" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1ac0290a41dd027f1ce86df23924e9436d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NvmSingleBuiltInListBasicCbk</definition>
+        <argsstring>(NvM_ServiceIdType serv, NvM_RequestResultType request)</argsstring>
+        <name>NvmSingleBuiltInListBasicCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>serv</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Called after performing operation on BuiltInList&apos;s NVM block. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to set default values for BuiltInList in case of read error and for informing UDS write service handlers about finished write operation.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - Called after performing operation on BuiltInList&apos;s NVM block. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>serv - wheather the function need to write the memory or read the memory <linebreak/>
+ [IN] request : Indicate if read is succesful or failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>BIL_E_OK - always returns E_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1aba9dcbe785ffa1e09f89c390c19d3e6b" kindref="member">BILcorrupted</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvmSingleBuiltInListBasicCbk.png">Activity Diagram of NvmSingleBuiltInListBasicCbk</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a60f347fb244e89318efb7bd855157d16" kindref="member">TEST_NvmSingleBuiltInListBasicCbk</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10921 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1632" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a84be6594a4703d2419925df9a0f715bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NvmSingleContentListCbk</definition>
+        <argsstring>(NvM_ServiceIdType serv, NvM_RequestResultType request)</argsstring>
+        <name>NvmSingleContentListCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>serv</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Called after performing operation on ContentList&apos;s NVM block. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used to set default values for ContentList in case of read error.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - Called after performing operation on ContentList&apos;s NVM block. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>serv - wheather the function need to write the memory or read the memory <linebreak/>
+ [IN] request : Indicate if read is succesful or failure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>BIL_E_OK - always returns E_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1ad59c198f0879b05921ea954bb1165ae2" kindref="member">ContentListDynamic</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_1af3063bb48b8f7e264ed866855031e32c" kindref="member">BIL_UDSRequestState</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvmSingleContentListCbk.png">Activity Diagram of NvmSingleContentListCbk</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a50d8c6898a4cffb3d4998bc3beb1d037" kindref="member">TEST_NvmSingleContentListCbk_TC1</ref> <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a50d8677c5c214cf5b9514b2a38836085" kindref="member">TEST_NvmSingleContentListCbk_TC2</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10921 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1676" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a77077a5887ff57d7f91b1d4017493735" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType BIL_EvaluateNrc</definition>
+        <argsstring>(uint8 Nrc)</argsstring>
+        <name>BIL_EvaluateNrc</name>
+        <param>
+          <type>uint8</type>
+          <declname>Nrc</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ This routine computes return value for BIL_write functions, based on the received NRC </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called only by <ref refid="_built_in_list_8h_1a0d1314310b725a85f98e763010a5da54" kindref="member">BIL_Write_0x04A3</ref> , <ref refid="_built_in_list_8h_1a4d950acf321739e1dc13bf1890dda761" kindref="member">BIL_Write_0x0502</ref> <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Nrc - NRC Code value <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK if no error <linebreak/>
+ DCM_E_PENDING: processing previous request <linebreak/>
+ E_NOT_OK : in case of error</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_EvaluateNrc.png">Activity Diagram of BIL_EvaluateNrc</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) test of boundary values <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1aceec6bc4cd8c3ee986c2fcb9014d8314" kindref="member">TEST_BIL_EvaluateNrc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ Design Decision - Justification. This is a helper function used to evaluate the Nrc. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1716" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a4ca79b4c69329417019969e488cdc9b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TComChannel</type>
+        <definition>TComChannel BIL_BusIdToComChannel</definition>
+        <argsstring>(uint8 BusID)</argsstring>
+        <name>BIL_BusIdToComChannel</name>
+        <param>
+          <type>uint8</type>
+          <declname>BusID</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Map Built-In List BusID to TComChannel </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called only by <ref refid="_built_in_list_8h_1ab8b0ab033f9508e21cf19d18270f6d15" kindref="member">BIL_GetNodeInfo</ref> <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BusID from BuiltInList entry</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TComChannel, as defined in NetworkManagement, where 0xFFu is error value</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_BusIdToComChannel.png">Activity Diagram of BIL_BusIdToComChannel</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) check if the function returns the com channel ID for the given Bus ID <linebreak/>
+ <ref refid="_built_in_list_8c_8test_1a2df805ee8d0c703023be99735a2e3b0b" kindref="member">TEST_BIL_BusIdToComChannel</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ Design Decision - Justification. This function is used to get the ComChannel for given BusID. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1754" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_built_in_list_8h_1a45fb264ecd49a053f5b3e649b8bf7830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 BIL_GetETHPortInfo</definition>
+        <argsstring>(uint16 nodeID)</argsstring>
+        <name>BIL_GetETHPortInfo</name>
+        <param>
+          <type>uint16</type>
+          <declname>nodeID</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ Function will return value of sollverbau parameter for VLAN node. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called for getting the sollverbau parameter for VLAN node. <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nodeID - searched VLAN node ID</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>sollverbau value. if sollverbau is TRUE, port should be active, if sollverbau is FALSE port is inactive</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_built_in_list_8c_1af24a25800a7f0bf62cbf9bfd30cbaa51" kindref="member">BuiltInListBasic</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BIL_GetETHPortInfo.png">Activity Diagram of BIL_GetETHPortInfo</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+</para></simplesect>
+<ref refid="_built_in_list_8c_8test_1aeeeaac7c93b6060e2dfe9246b352e3c3" kindref="member">TEST_BIL_GetETHPortInfo</ref> <linebreak/>
+ <simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.BuiltInListChorus.SW Architecture.SW Requirements.Requirements traceability <linebreak/>
+ Design Decision - Justification. This function is used to check if VLAN is configured properly. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h" line="1796" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file provides the BuiltInList. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_built_in_list_8h" kindref="compound">BuiltInList.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>#7 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic47275 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2021/02/11</para></simplesect>
+The BuiltInList contains the known Node addresses and BUS IDs present in the Vehicle, as well as some of their parameters. </para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/BUILTINLIST/c/inc/BuiltInList.h"/>
+  </compounddef>
+</doxygen>

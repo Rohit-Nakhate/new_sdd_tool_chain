@@ -1,0 +1,912 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_i_l2___main_8h" kind="file" language="C++">
+    <compoundname>IL2_Main.h</compoundname>
+    <includes local="yes">BAPHandler_UtilityLib.h</includes>
+    <includes local="yes">BAPHandler_PSO_ImExport.h</includes>
+    <includedby refid="_b_a_p_handler___i_l2___task_8c" local="yes">BAPHandler_IL2_Task.c</includedby>
+    <includedby refid="_i_l2___main_8c" local="yes">IL2_Main.c</includedby>
+    <incdepgraph>
+      <node id="31">
+        <label>BAPHandler_PSO_ImExport.h</label>
+      </node>
+      <node id="30">
+        <label>BAPHandler_UtilityLib.h</label>
+      </node>
+      <node id="29">
+        <label>IL2_Main.h</label>
+        <link refid="_i_l2___main_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="33">
+        <label>BAPHandler_IL2_Task.c</label>
+        <link refid="_b_a_p_handler___i_l2___task_8c"/>
+      </node>
+      <node id="34">
+        <label>IL2_Main.c</label>
+        <link refid="_i_l2___main_8c"/>
+      </node>
+      <node id="32">
+        <label>IL2_Main.h</label>
+        <link refid="_i_l2___main_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t___s___i_l2___functions" prot="public">T_S_IL2_Functions</innerclass>
+    <innerclass refid="struct_t___s___i_l2___adapt_coding" prot="public">T_S_IL2_AdaptCoding</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_i_l2___main_8h_1a19d8dd5be3797776cb763f2a9fa7c51c" prot="public" static="no">
+        <name>IL2_CYCLE_TIME</name>
+        <initializer>20u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Cyclic time of the component InteriorLight2. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in defines: <linebreak/>
+<ref refid="_i_l2___main_8h_1a1caaed7a84f7e97455cbb1d2658f9f0b" kindref="member">IL2_RESET_COUNTER_STOP</ref> <linebreak/>
+<ref refid="_i_l2___main_8h_1ab799e2a8bf6630fcd3fd97846a7d9107" kindref="member">IL2_WAIT_FOR_BAP_STOP</ref> <linebreak/>
+<ref refid="_i_l2___main_8h_1a4df73babd0f6d307f1a85cf679f04eec" kindref="member">IL2_ADAPT_AND_CODING_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values 20u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="71" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1ab6271dbdbbad7c2f2689d78311578ce7" prot="public" static="no">
+        <name>IL2_RESET_COUNTER_MIN_TIME</name>
+        <initializer>200u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Minimum time that BAPHandler_IL2 has to wait before providing Status message after FSG_Control reset. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1a1caaed7a84f7e97455cbb1d2658f9f0b" kindref="member">IL2_RESET_COUNTER_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values 200u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="81" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1adcbbf749d6bbb2916188a65eba89af69" prot="public" static="no">
+        <name>IL2_RESET_COUNTER_START</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Start point of reset counter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in functions: <linebreak/>
+<ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> <linebreak/>
+<ref refid="_i_l2___main_8c_8test_1a5dc675d1e607d67411a69e0b35ee3e07" kindref="member">InteriorLight2_BapIndication_FSG_Control</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a1caaed7a84f7e97455cbb1d2658f9f0b" prot="public" static="no">
+        <name>IL2_RESET_COUNTER_STOP</name>
+        <initializer>(<ref refid="_i_l2___main_8h_1ab6271dbdbbad7c2f2689d78311578ce7" kindref="member">IL2_RESET_COUNTER_MIN_TIME</ref>/<ref refid="_i_l2___main_8h_1a19d8dd5be3797776cb763f2a9fa7c51c" kindref="member">IL2_CYCLE_TIME</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ Stop point of reset counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+Calculated from minimum time and cycle time. Used in function: <linebreak/>
+<ref refid="_i_l2___main_8c_1adec468a3ed4fc4770cc069664c3adc5c" kindref="member">IL2_resetToDefaults</ref> <linebreak/>
+<simplesect kind="remark"><para>values IL2_RESET_COUNTER_MIN_TIME/IL2_CYCLE_TIME <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="101" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a40a04d697fc5ee3966394892ee46ea80" prot="public" static="no">
+        <name>IL2_WAIT_FOR_BAP_TIME</name>
+        <initializer>60u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Number of ms that BAPHandler_IL2 needs to wait before sending any requests to BAP. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+At least 50ms. Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1ab799e2a8bf6630fcd3fd97846a7d9107" kindref="member">IL2_WAIT_FOR_BAP_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values 60u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="111" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a4aee685f5d71569490f5c3a96518ebab" prot="public" static="no">
+        <name>IL2_WAIT_FOR_BAP_START</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Start point of waiting for BAP counter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in function: <linebreak/>
+<ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="120" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1ab799e2a8bf6630fcd3fd97846a7d9107" prot="public" static="no">
+        <name>IL2_WAIT_FOR_BAP_STOP</name>
+        <initializer>(<ref refid="_i_l2___main_8h_1a40a04d697fc5ee3966394892ee46ea80" kindref="member">IL2_WAIT_FOR_BAP_TIME</ref>/<ref refid="_i_l2___main_8h_1a19d8dd5be3797776cb763f2a9fa7c51c" kindref="member">IL2_CYCLE_TIME</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ Stop point of waiting for BAP counter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculated from defined time to wait and cycle time. <linebreak/>
+Used in functions: <linebreak/>
+<ref refid="_i_l2___main_8c_1ab2bb0d64e7d137869412e052142235bb" kindref="member">IL2_initialize</ref> <linebreak/>
+<ref refid="_i_l2___main_8c_1a4d4f64f4097b398f60fc72d5d2ce95be" kindref="member">IL2_waitForBAP</ref> <linebreak/>
+<simplesect kind="remark"><para>values IL2_WAIT_FOR_BAP_TIME/IL2_CYCLE_TIME <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="131" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a2d1517da09133271971f1f13fb6c7b4d" prot="public" static="no">
+        <name>IL2_ADAPT_AND_CODING_TIME</name>
+        <initializer>3000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Number of ms that BAPHandler_IL2 waits before will perform next check of the adaptations/codings. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1a4df73babd0f6d307f1a85cf679f04eec" kindref="member">IL2_ADAPT_AND_CODING_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values 3000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="141" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a378f342ea8e621bb2062767398a9d3d6" prot="public" static="no">
+        <name>IL2_ADAPT_AND_CODING_START</name>
+        <initializer>0U</initializer>
+        <briefdescription>
+<para><hruler/>
+ Start point of adaptation/coding checking counter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in functions: <linebreak/>
+<ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> <linebreak/>
+<ref refid="_i_l2___main_8c_1ae7525a4e481f2230ef4c7b05613c531d" kindref="member">IL2_run</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="151" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a4df73babd0f6d307f1a85cf679f04eec" prot="public" static="no">
+        <name>IL2_ADAPT_AND_CODING_STOP</name>
+        <initializer>(<ref refid="_i_l2___main_8h_1a2d1517da09133271971f1f13fb6c7b4d" kindref="member">IL2_ADAPT_AND_CODING_TIME</ref>/<ref refid="_i_l2___main_8h_1a19d8dd5be3797776cb763f2a9fa7c51c" kindref="member">IL2_CYCLE_TIME</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ Stop point of adaptation/coding checking counter. </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+Calculated from defined time to wait and cycle time. Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1a4df73babd0f6d307f1a85cf679f04eec" kindref="member">IL2_ADAPT_AND_CODING_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values IL2_ADAPT_AND_CODING_TIME/IL2_CYCLE_TIME <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="161" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1ad43483bfa6d12d530c0491e752722484" prot="public" static="no">
+        <name>IL2_PERSONALISIERUNG2_ACTIVE</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Value of Perso Status for activated Personalisation 2.0. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in functions: <linebreak/>
+<ref refid="_i_l2___main_8c_1ae7525a4e481f2230ef4c7b05613c531d" kindref="member">IL2_run</ref> <linebreak/>
+<simplesect kind="remark"><para>values 2u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="170" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a06a180a5a7a37c36164b8d705b8beb19" prot="public" static="no">
+        <name>IL2_PERSONALISIERUNG2_NOTACTIVE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Value of Perso Status for not activated Personalisation 2.0. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1a4df73babd0f6d307f1a85cf679f04eec" kindref="member">IL2_ADAPT_AND_CODING_STOP</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="179" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a44c6265a9e416e8fb85c52c4bd6535ef" prot="public" static="no">
+        <name>BRIGHTNESS_HMI_MAX</name>
+        <initializer>100u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Maximum value of Brightness property. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in structure: <linebreak/>
+<ref refid="_i_l2___main_8c_1a474f6a9fc78366f146d19e4503c554e2" kindref="member">di58_PSO_ImExport_ParameterMap</ref> <linebreak/>
+Used in function: <linebreak/>
+<ref refid="_i_l2___main_8c_8test_1aa488f48045c3f3b6b09fc88695013f53" kindref="member">InteriorLight2_BapIndication_Brightness</ref> <linebreak/>
+<simplesect kind="remark"><para>values 100u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="190" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1aefdfa80c9bf6e110d22481551f537d6d" prot="public" static="no">
+        <name>Kl58Eingabemedium_HMI</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ Brightness control via HMI setting. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in function: <linebreak/>
+<ref refid="_i_l2___main_8c_1a846cfd247c55b2e1a66c2ce20f9405c2" kindref="member">IL2_isAvailable_Brightness</ref> <linebreak/>
+<simplesect kind="remark"><para>values 3u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="199" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1afc620303eb607388b970fd06739cbe37" prot="public" static="no">
+        <name>IL2_FUNCTIONLIST_LENGTH</name>
+        <initializer>BH_FUNCTIONLIST_LENGTH</initializer>
+        <briefdescription>
+<para><hruler/>
+ The length of data array used by InteriorLight2 FunctionList functionality. </para>        </briefdescription>
+        <detaileddescription>
+<para>Size of data array: <linebreak/>
+functionList_au8 <linebreak/>
+Used in structure: <linebreak/>
+<ref refid="struct_t___s___i_l2___functions" kindref="compound">T_S_IL2_Functions</ref> <linebreak/>
+<simplesect kind="remark"><para>values BH_FUNCTIONLIST_LENGTH <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="210" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1a77df63cb5d1c575a65e55c8c8dac607c" prot="public" static="no">
+        <name>IL2_BRIGHTNESS_LENGTH</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ The length of data array used by InteriorLight2 Brightness functionality. </para>        </briefdescription>
+        <detaileddescription>
+<para>Size of data array: <linebreak/>
+brightness_au8: <linebreak/>
+Used in structure: <linebreak/>
+<ref refid="struct_t___s___i_l2___functions" kindref="compound">T_S_IL2_Functions</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0x03u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="221" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1aba3c34f9d8197046b6325f6c42f18713" prot="public" static="no">
+        <name>DI58_PSO_IMEXPORT_NUMBER_OF_PSO_DATA_ELEMENTS_IN_FRAME</name>
+        <initializer>5u</initializer>
+        <briefdescription>
+<para><hruler/>
+ The maximum number of PSO Data Elements that can be send in one frame. </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in define: <linebreak/>
+<ref refid="_i_l2___main_8h_1abf75e02488ca8a576661e9984aa2608d" kindref="member">DI58_PSO_IMEXPORT_BUFFER_LENGTH</ref> <linebreak/>
+<simplesect kind="remark"><para>values 0x05u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="230" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_i_l2___main_8h_1abf75e02488ca8a576661e9984aa2608d" prot="public" static="no">
+        <name>DI58_PSO_IMEXPORT_BUFFER_LENGTH</name>
+        <initializer>(PSO_IMEXPORT_FULL_FRAME_NO_DATA_LENGTH + \
+                                       (<ref refid="_i_l2___main_8h_1aba3c34f9d8197046b6325f6c42f18713" kindref="member">DI58_PSO_IMEXPORT_NUMBER_OF_PSO_DATA_ELEMENTS_IN_FRAME</ref> * PSO_IMEXPORT_STATUS_ARRAY_PSO_DATA_RECORD_ADDRESS_3_LENGTH))</initializer>
+        <briefdescription>
+<para><hruler/>
+ The length of buffer used by InteriorLight2 ImExport functionality. </para>        </briefdescription>
+        <detaileddescription>
+<para>Size of data array: <linebreak/>
+<ref refid="_i_l2___main_8c_1afc174d189085bfae6395f16ce50320f9" kindref="member">di58_ImExport_DataBuffer_pa</ref> <linebreak/>
+<simplesect kind="remark"><para>values (PSO_IMEXPORT_FULL_FRAME_NO_DATA_LENGTH + \ (DI58_PSO_IMEXPORT_NUMBER_OF_PSO_DATA_ELEMENTS_IN_FRAME * PSO_IMEXPORT_STATUS_ARRAY_PSO_DATA_RECORD_ADDRESS_3_LENGTH)) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="240" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_i_l2___main_8h_1a64faf9e26914d1a7f11d7a77490ad8d8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>T_E_IL2_States_e</name>
+        <enumvalue id="_i_l2___main_8h_1a64faf9e26914d1a7f11d7a77490ad8d8a97aefddc2c372488f22edb959de037b9" prot="public">
+          <name>stateIL2_init</name>
+          <initializer>= 0u</initializer>
+          <briefdescription>
+<para>used to indicate that BAP properties needs to be initialized </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a64faf9e26914d1a7f11d7a77490ad8d8a61f74504377c797826bdb7f7f60ae311" prot="public">
+          <name>stateIL2_waitForBap</name>
+          <briefdescription>
+<para>state in which InteriorLight2 needs to wait 5 BAP tasks before any request </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a64faf9e26914d1a7f11d7a77490ad8d8a9e4a3f9fd120edd9dd7df57089403b72" prot="public">
+          <name>stateIL2_run</name>
+          <briefdescription>
+<para>normal operating of IL2 </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a64faf9e26914d1a7f11d7a77490ad8d8a5e1d63788831cb7c47cf8413e76f67b3" prot="public">
+          <name>stateIL2_resetDefault</name>
+          <briefdescription>
+<para>reset of FSG_Control state </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>T_E_IL2_States_e</para><para>The enum to define the list of all states of InteriorLight2. <linebreak/>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="250" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="249" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_l2___main_8h_1afe26dedd0c6ef52620be93a85d709c89" prot="public" static="no" strong="no">
+        <type></type>
+        <name>T_E_IL2_ResetStates_e</name>
+        <enumvalue id="_i_l2___main_8h_1afe26dedd0c6ef52620be93a85d709c89ac430fdd00ef35c52c9f70df6f428cbe4" prot="public">
+          <name>resetIL2_resetRequest</name>
+          <briefdescription>
+<para>new request of reset came. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1afe26dedd0c6ef52620be93a85d709c89ab669c1790c94aaeeb8caae55ff4e084f" prot="public">
+          <name>resetIL2_resetDone</name>
+          <briefdescription>
+<para>reset of properties has been performed. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1afe26dedd0c6ef52620be93a85d709c89a0d6a4440573f2d9f313cb4c9d8b6320c" prot="public">
+          <name>resetIL2_noReset</name>
+          <briefdescription>
+<para>default state </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>T_E_IL2_ResetStates_e</para><para>The enum to define the list of all states used to separate steps of FSG_Control reset operation. <linebreak/>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="265" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="264" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79" prot="public" static="no" strong="no">
+        <type></type>
+        <name>T_E_IL2_Functions</name>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79aa9b00923b3aa5a7f36c035f6a817113b" prot="public">
+          <name>fct_IL2_GetAll</name>
+          <initializer>= 1u</initializer>
+          <briefdescription>
+<para>GetAll property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79ab04deb425485abf9d481c2ac26b79746" prot="public">
+          <name>fct_IL2_BAP_Config</name>
+          <initializer>= 2u</initializer>
+          <briefdescription>
+<para>BAP_Config property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79ad957dcacb68db597da4bb35d215b81c9" prot="public">
+          <name>fct_IL2_FunctionList</name>
+          <initializer>= 3u</initializer>
+          <briefdescription>
+<para>FunctionList property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79a4645edee5032197cc1644273441840fb" prot="public">
+          <name>fct_IL2_Heartbeat</name>
+          <initializer>= 4u</initializer>
+          <briefdescription>
+<para>Heartbeat property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79ad842958766109a49728765a49dd1d670" prot="public">
+          <name>fct_IL2_FSG_Control</name>
+          <initializer>= 13u</initializer>
+          <briefdescription>
+<para>FSG_Control property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79a1b5b594e49dbf6f28695847438fd056d" prot="public">
+          <name>fct_IL2_FSG_OperationState</name>
+          <initializer>= 15u</initializer>
+          <briefdescription>
+<para>FSG_OperationState property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79a9734ce8e8600b34fdb51a32c5c0540fa" prot="public">
+          <name>fct_IL2_Brightness</name>
+          <initializer>= 21u</initializer>
+          <briefdescription>
+<para>Brightness property. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a710dcebe65649a024cdc910e74918e79af02219d3a494ec1cda754bf90d0ad231" prot="public">
+          <name>fct_IL2_PSO_ImExport</name>
+          <initializer>= 49u</initializer>
+          <briefdescription>
+<para>PSO_ImExport array. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>T_E_IL2_Functions</para><para>The enum to define the list of BAP functionalities used by InteriorLight2 LSG. <linebreak/>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="278" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="277" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_l2___main_8h_1a6110fafc582368ff956321710749467d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>T_E_PSO_Parameters_e</name>
+        <enumvalue id="_i_l2___main_8h_1a6110fafc582368ff956321710749467dafcac784c9b45b97376e488433643baa5" prot="public">
+          <name>PSO_IL2_Brightness</name>
+          <briefdescription>
+<para>Brightness parameter. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_l2___main_8h_1a6110fafc582368ff956321710749467da711cca40bc00e3d4471327377448c601" prot="public">
+          <name>PSO_IL2_numOfParameters</name>
+          <briefdescription>
+<para>Number of handled PSO parameters. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>T_E_PSO_Parameters_e</para><para>The enum to define the list of all personalized parameters handled by InteriorLights2. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="296" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" bodystart="296" bodyend="299"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_i_l2___main_8h_1a4ce7d534cc7aeaa3005cd70716243416" prot="public" static="no" mutable="no">
+        <type>T_S_BapI_PSO_ImExport_PSO_Data</type>
+        <definition>T_S_BapI_PSO_ImExport_PSO_Data di58_PSO_ImExport_PSO_Data[PSO_IL2_numOfParameters]</definition>
+        <argsstring>[PSO_IL2_numOfParameters]</argsstring>
+        <name>di58_PSO_ImExport_PSO_Data</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The structure to store the elements of PSO_Data parameter used by PSO_ImExport function.</para><para>Details of each field can be found in T_S_BapI_PSO_ImExport_PSO_Data definition. <linebreak/>
+<simplesect kind="remark"><para>context { It is updated in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> } <linebreak/>
+ protection { global variable for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="334" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1aea5847dddc714036d1a107bea00aafd6" prot="public" static="no" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 di58_ImExport_DataBuffer_pa[(PSO_IMEXPORT_FULL_FRAME_NO_DATA_LENGTH+(5u *PSO_IMEXPORT_STATUS_ARRAY_PSO_DATA_RECORD_ADDRESS_3_LENGTH))]</definition>
+        <argsstring>[(PSO_IMEXPORT_FULL_FRAME_NO_DATA_LENGTH+(5u *PSO_IMEXPORT_STATUS_ARRAY_PSO_DATA_RECORD_ADDRESS_3_LENGTH))]</argsstring>
+        <name>di58_ImExport_DataBuffer_pa</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Data buffer to use by ImExport functionality of BAPHandler_IL2.</para><para>Data buffer used by PSO_ImExport common library for receiving/sending messages from BAP. <linebreak/>
+<simplesect kind="remark"><para>range 0x00-0xFF for each array element <linebreak/>
+ resolution Factor = 1, Offset = 0 <linebreak/>
+ context { It is updated in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> } <linebreak/>
+ protection { global variable for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="335" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1a474f6a9fc78366f146d19e4503c554e2" prot="public" static="no" mutable="no">
+        <type>T_S_BapI_BAPHandlerData_PSO_ImExport_ParameterMap</type>
+        <definition>T_S_BapI_BAPHandlerData_PSO_ImExport_ParameterMap di58_PSO_ImExport_ParameterMap[PSO_IL2_numOfParameters]</definition>
+        <argsstring>[PSO_IL2_numOfParameters]</argsstring>
+        <name>di58_PSO_ImExport_ParameterMap</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>PSO ImExport Parameter Map of all personalised parameters handled by InteriorLight2.</para><para>The structure to store all informations about personalized parameters specific for BAPHandler_IL2 and required by PSO_ImExport functionality. <linebreak/>
+ Details of each field can be found in T_S_BapI_BAPHandlerData_PSO_ImExport_ParameterMap definition. <linebreak/>
+<simplesect kind="remark"><para>context { Initialized in <ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> <linebreak/>
+ It is updated in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> } <linebreak/>
+ protection { global variable for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="337" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1ab9bb0ecf0b1be0776dd7c6203db4d0ca" prot="public" static="no" mutable="no">
+        <type>const T_S_NvM_BapHandler_PSO_ImExport</type>
+        <definition>const T_S_NvM_BapHandler_PSO_ImExport Pim_DimmingKL58_DimmingKL58_PIM_User_Parameters_defaults[PSO_IL2_numOfParameters]</definition>
+        <argsstring>[PSO_IL2_numOfParameters]</argsstring>
+        <name>Pim_DimmingKL58_DimmingKL58_PIM_User_Parameters_defaults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="338" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1a172f3c93cabec436264693cd364e5b29" prot="public" static="no" mutable="no">
+        <type>T_S_BapI_BAPHandlerData_PSO_ImExport_PSOUser</type>
+        <definition>T_S_BapI_BAPHandlerData_PSO_ImExport_PSOUser di58_PSO_ImExport_User</definition>
+        <argsstring></argsstring>
+        <name>di58_PSO_ImExport_User</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>PSO user profile structure stores the information about active user and control commands.</para><para>The structure to store the information which user profile memory slot is activated and which settings should be loaded. <linebreak/>
+ Details of each field can be found in T_S_BapI_BAPHandlerData_PSO_ImExport_PSOUser definition. <linebreak/>
+<simplesect kind="remark"><para>context { Initialized in <ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> to PSO_def_psoUser <linebreak/>
+ It is updated and read in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> <linebreak/>
+ It is read in: <linebreak/>
+ <ref refid="_i_l2___main_8c_1ab16fb8d08a4ee622efa92518e3064c30" kindref="member">IL2_checkDataUpdate</ref> } <linebreak/>
+ protection { global variable for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="339" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1a6ec8e202759fcc2b6f7e4519c434ecbb" prot="public" static="no" mutable="no">
+        <type>const T_S_BapI_BAPHandlerData_PSO_ImExport_Functions</type>
+        <definition>const T_S_BapI_BAPHandlerData_PSO_ImExport_Functions di58_PSO_Functions_s</definition>
+        <argsstring></argsstring>
+        <name>di58_PSO_Functions_s</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The structure to store the pointers to functions required by PSO_ImExport functionality.</para><para>Details of each field can be found in T_S_BapI_BAPHandlerData_PSO_ImExport_Functions definition. <linebreak/>
+<simplesect kind="remark"><para>context { Initialized in <ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> <linebreak/>
+ It is updated in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> } <linebreak/>
+ protection { global const for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="340" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1ad5a7f4f79c503118bdcb4eb779b725ef" prot="public" static="no" mutable="no">
+        <type>T_S_BapI_BAPHandlerData_PSO_ImExport_Data</type>
+        <definition>T_S_BapI_BAPHandlerData_PSO_ImExport_Data di58_PSO_ImExport</definition>
+        <argsstring></argsstring>
+        <name>di58_PSO_ImExport</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The structure to store the informations required by PSO_ImExport functionality.</para><para>Details of each field can be found in T_S_BapI_BAPHandlerData_PSO_ImExport_Data definition. <linebreak/>
+<simplesect kind="remark"><para>context { Initialized in <ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> <linebreak/>
+ It is updated in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> <linebreak/>
+ <ref refid="_i_l2___main_8c_1ae7525a4e481f2230ef4c7b05613c531d" kindref="member">IL2_run</ref> <linebreak/>
+ <ref refid="_i_l2___main_8c_1adec468a3ed4fc4770cc069664c3adc5c" kindref="member">IL2_resetToDefaults</ref> <linebreak/>
+ <ref refid="_i_l2___main_8c_1aae34df9d27662a15d862b5e2d8516e99" kindref="member">IL2_checkFunctionListUpdate</ref> <linebreak/>
+ <ref refid="_i_l2___main_8c_1ab16fb8d08a4ee622efa92518e3064c30" kindref="member">IL2_checkDataUpdate</ref> <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1a321fc20df37ee6e86f290cfa6810b726" kindref="member">InteriorLight2_BapAcknowledge_PSO_ImExport</ref> <linebreak/>
+ It is read in: <ref refid="_i_l2___main_8c_8test_1a321fc20df37ee6e86f290cfa6810b726" kindref="member">InteriorLight2_BapAcknowledge_PSO_ImExport</ref> } <linebreak/>
+ protection { global variable for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="341" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_l2___main_8h_1ada5dcd0182fd9ad31a372aa9813be266" prot="public" static="no" mutable="no">
+        <type>const T_S_NvM_BapHandler_PSO_ImExport</type>
+        <definition>const T_S_NvM_BapHandler_PSO_ImExport Pim_BAPHandler_IL2_BAPHandler_IL2_PSOParameters_defaults[PSO_IL2_numOfParameters]</definition>
+        <argsstring>[PSO_IL2_numOfParameters]</argsstring>
+        <name>Pim_BAPHandler_IL2_BAPHandler_IL2_PSOParameters_defaults</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default values for BAPHandler PSO properties stored in NvM <linebreak/>
+</para><para>Structure with default values for BAPHandler PSO properties stored in NvM. <linebreak/>
+ Details of each field can be found in T_S_NvM_BapHandler_PSO_ImExport definition. <linebreak/>
+<simplesect kind="remark"><para>context { Initialized in <ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> <linebreak/>
+ It is read in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> } <linebreak/>
+ protection { global const for: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> } <linebreak/>
+</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="342" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="417" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_i_l2___main_8h_1ae5e5cfb479010e0750f2128e7dd3a15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IL2_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>IL2_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts-up/initializes the BAPHandler_IL2 (Interior Light) module.</para><para>Called by function BAPHandler_IL2_Start in order to prepare the real start-up/init of the BAPHandler_IL2 module. <linebreak/>
+ Shall be called only once during Start-up. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not interrupted by the other functions of the same module. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core synchronous. <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] <ref refid="_i_l2___main_8c_1a172f3c93cabec436264693cd364e5b29" kindref="member">di58_PSO_ImExport_User</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_1a474f6a9fc78366f146d19e4503c554e2" kindref="member">di58_PSO_ImExport_ParameterMap</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_8test_1a9f356265408b8b59127c30af8292eaaf" kindref="member">Pim_BAPHandler_IL2_BAPHandler_IL2_PSOParameters</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_1ada5dcd0182fd9ad31a372aa9813be266" kindref="member">Pim_BAPHandler_IL2_BAPHandler_IL2_PSOParameters_defaults</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_1a4ce7d534cc7aeaa3005cd70716243416" kindref="member">di58_PSO_ImExport_PSO_Data</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_1afc174d189085bfae6395f16ce50320f9" kindref="member">di58_ImExport_DataBuffer_pa</ref> <linebreak/>
+ [in] <ref refid="_i_l2___main_8c_1a6ec8e202759fcc2b6f7e4519c434ecbb" kindref="member">di58_PSO_Functions_s</ref> <linebreak/>
+ [in, out] <ref refid="_i_l2___main_8c_1a29391c7d0ab2b0058864871dc4f3cf62" kindref="member">IL2_AdaptCodings</ref> <linebreak/>
+ [in, out] <ref refid="_i_l2___main_8c_1ad5a7f4f79c503118bdcb4eb779b725ef" kindref="member">di58_PSO_ImExport</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a0baad937fdf584c3577979defdd83edd" kindref="member">initialization_setup_state</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1adb01cc27175e319ae5185b5584aeea46" kindref="member">IL2_state</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a206cbea0c92fcb78b04a54ea8bb2b1a2" kindref="member">IL2_ResetState</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a860c206a79fbf6e5e0cea95dfe195f88" kindref="member">persoStatus</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1aadf7cc77a950b168b9a58893bb36e26b" kindref="member">di58_IL2_BAPTaskCounter</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a4f95fcebdf6392334ee920e9d364b44b" kindref="member">di58_IL2_AdaptAndCodingCounter</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a0c8965bac237ad9b9e7dde93a38d6ada" kindref="member">di58_IL2_ResetCounter</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a618b49e20652bd05c1367f38bc75a58f" kindref="member">IL2_Functions_S</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1a1a2e617864041a64739e9680ddacfb3b" kindref="member">IL2_PIM_PSO_Parameters</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1aa50731f607fc442f839ff40169f4188c" kindref="member">IL2_PIM_PSO_Parameters_Old</ref> <linebreak/>
+ [out] <ref refid="_i_l2___main_8c_1ae0c3abe6062c742441bb1fee8e21d119" kindref="member">IL2_AdaptCodings_Old</ref> <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para>The BapHandler for InteriorLight is initialized. <linebreak/>
+ Adaptations and codings are read, PSO_ImExport library is initialized, a copy of NvM data is prepared. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="IL2_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1af4f64b10249484401441b716e0f0b23f" kindref="member">TEST_IL2_Start</ref> <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a function needed for the initialization of the BAPHandler_IL2 module. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="437" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="512" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="_i_l2___main_8h_1a4062fe6c01c161bc266c4c31ce480f39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IL2_Cycle</definition>
+        <argsstring>(void)</argsstring>
+        <name>IL2_Cycle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the InteriorlLight2 module. Called every 20ms. <linebreak/>
+ It hosts InteriorlLight2 State Machine and calls specific functions dependingly on what state currently InteriorlLight2 is running.</para><para>The modules of functions are called cyclicly by <ref refid="_b_a_p_handler___i_l2___task_8c_1a7e4f201584537030fdca4bd456c5d915" kindref="member">BAPHandler_IL2_TaskCyclicEvent</ref>, depending on the <ref refid="_i_l2___main_8c_1adb01cc27175e319ae5185b5584aeea46" kindref="member">IL2_state</ref> state. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must ensure that the function is not interrupted by the other functions of the same module. <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core synchronous. <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] <ref refid="_i_l2___main_8c_1adb01cc27175e319ae5185b5584aeea46" kindref="member">IL2_state</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><linebreak/>
+ This function doesn&apos;t have impact on global variables. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="IL2_Cycle.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1a400367d60aef170b71637ac6d532e2ae" kindref="member">TEST_IL2_Cycle</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function satisfies partially following DOORS Requirement: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_PSO_AP_590 <linebreak/>
+</para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="518" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="555" bodyend="590"/>
+      </memberdef>
+      <memberdef kind="function" id="_i_l2___main_8h_1a3806034f24796865b2d4c92997ab9344" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IL2_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>IL2_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stops the BAPHandler_IL2 (Interior Light) module.</para><para>Called by function BAPHandler_IL2_Stop. <linebreak/>
+ It is empty function. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe Yes <linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="IL2_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1a9250eb073e379d010273af5468a4ed6d" kindref="member">TEST_IL2_Stop</ref> <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. This is a empty function. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h" line="558" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/IL2_Main.c" bodystart="592" bodyend="596"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file provides handling of BAP communication between actual Dimming <linebreak/>
+Master module and BAP protocol. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_i_l2___main_8h" kindref="compound">IL2_Main.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.1 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>Wojciech Sowinski (uib18192), Artur Redosz (uidp7980) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022-11-28 </para></simplesect>
+It hosts BAP InteriorLight2 (IL2) LSG. <linebreak/>
+It main purpose is to provide brightness value from user (via HMI) to <linebreak/>
+Dimming Master and store its personalised values accordingly to user slots. <linebreak/>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/inc/IL2_Main.h"/>
+  </compounddef>
+</doxygen>

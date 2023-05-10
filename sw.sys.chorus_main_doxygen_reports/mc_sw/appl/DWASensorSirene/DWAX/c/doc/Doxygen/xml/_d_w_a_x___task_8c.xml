@@ -1,0 +1,2841 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_d_w_a_x___task_8c" kind="file" language="C++">
+    <compoundname>DWAX_Task.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">OsekComMsgs_ExpCfgGen.h</includes>
+    <includes local="yes">DWA_LIN_heartbeat.h</includes>
+    <includes refid="_d_w_a_x___extra_definitions_8h" local="yes">DWAX_ExtraDefinitions.h</includes>
+    <includes refid="_d_w_a_x___nv_ram_8h" local="yes">DWAX_NvRam.h</includes>
+    <includes local="yes">Rte_DWAX.h</includes>
+    <includes refid="_d_w_a_x___data_types_8h" local="yes">DWAX_DataTypes.h</includes>
+    <includes refid="_d_w_a_x___task_8h" local="yes">DWAX_Task.h</includes>
+    <incdepgraph>
+      <node id="33">
+        <label>Rte_DWAX_Type.h</label>
+      </node>
+      <node id="29">
+        <label>DWAX_NvRam.h</label>
+        <link refid="_d_w_a_x___nv_ram_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>DWAX_Task.h</label>
+        <link refid="_d_w_a_x___task_8h"/>
+      </node>
+      <node id="26">
+        <label>DWA_LIN_heartbeat.h</label>
+      </node>
+      <node id="27">
+        <label>DWAX_ExtraDefinitions.h</label>
+        <link refid="_d_w_a_x___extra_definitions_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="31">
+        <label>Rte_DWAX.h</label>
+      </node>
+      <node id="32">
+        <label>DWAX_DataTypes.h</label>
+        <link refid="_d_w_a_x___data_types_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>NvM.h</label>
+      </node>
+      <node id="25">
+        <label>OsekComMsgs_ExpCfgGen.h</label>
+      </node>
+      <node id="24">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="23">
+        <label>DWAX_Task.c</label>
+        <link refid="_d_w_a_x___task_8c"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a45476dd25d2743885638d3bba7507506" prot="public" static="no">
+        <name>DWAX_RANDOM_LENGTH_GENERATE</name>
+        <initializer>1U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX random length generate. <linebreak/>
+</para><para>Holds the amount of bytes which should be generated. Used as parameter in function CsmPi_RandomGenerate. <linebreak/>
+<simplesect kind="remark"><para>Value 1U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="75" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1ae00c111431ce84bae3741acb36a4bbb2" prot="public" static="no">
+        <name>DWAX_ADAPTER_MASTERCODE</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in DWAX_Adapter function. <linebreak/>
+</para><para>Used to enable or disable functionalities in function DWAX_Adapter. <linebreak/>
+<simplesect kind="remark"><para>If DWAX_ADAPTER_MASTERCODE is not enabled, DWA is trasmiting to the Siren the MasterCode in order to arm the Siren by the signal bStSounderCode. If MasterCode is not generated and not stored successfully in NVRam, it should be set to 0. <linebreak/>
+ If DWAX_ADAPTER_MASTERCODE is enabled, DWA is trasmiting to the Siren the MasterCode in order to arm the Siren by the signal bStSounderCode. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="86" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" prot="public" static="no">
+        <name>DWAX_TASK_DEM_BIT_CHECK</name>
+        <initializer>(uint8)DEM_UDS_STATUS_TF</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Used in functions to check the activation of DTCs. <linebreak/>
+</para><para>Used to check if some DTCs are active, and if they are active, some signals shall pe write to 0, otherwise to 1. <linebreak/>
+<simplesect kind="remark"><para>Value is DEM_UDS_STATUS_TF, which is 0x01U. This indicates the first bit of RTE_TYPE_Dem_EventStatusExtendedType(defines the Event Status byte). <linebreak/>
+ If this bit is set to 1, it represents that the test failed. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="96" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a048ca521e8c30d60c4475ff030ccadb8" prot="public" static="no">
+        <name>DWA_ACTIVE_ARM_STATUS_THRESHOLD</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWA arming status activation threshold. Used in DWAX_SignalHandle__bStDWAStatus function. <linebreak/>
+</para><para>Represends the limit (threshold) value where the DWA armed status can change. <linebreak/>
+ If the signal enStDWAStatus is greater or equal to 2, DWA armed status is armed. <linebreak/>
+ If the signal enStDWAStatus is less than 2, DWA armed status not armed. <linebreak/>
+<simplesect kind="remark"><para>Value 2U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="107" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a140f39cd9c06c8f5411913b294057503" prot="public" static="no">
+        <name>DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GSA_GFSA</name>
+        <initializer>253U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX stand heating activation threshold for GSA(Klima_12.KL_Geblspng_Soll) and GFSA(Klima_12.KL_Geblspng_Fond_Soll). Used in DWAX_SignalHandle__bStStandheizung function. <linebreak/>
+</para><para>Represends the limit (threshold, boundary) value where bStStandheizung (climate heating status) can change. <linebreak/>
+ It checks if Klima_12.KL_Geblspng_Soll (voltage klima for motor front) or Klima_12.KL_Geblspng_Fond_Soll(voltage klima for motor rear) are less or equal than 253. <linebreak/>
+<simplesect kind="remark"><para>Value 253U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="117" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1ad288df640f7d7008a9d8e0ae65e00821" prot="public" static="no">
+        <name>DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GS_GFS</name>
+        <initializer>10U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX stand heating activation threshold for GS(Klima_03.KL_Geblaese_Status) and GFS(Klima_03.KL_Geblaese_Fond_Status). Used in DWAX_SignalHandle__bStStandheizung function. <linebreak/>
+</para><para>Represends the limit (threshold, boundary) value where bStStandheizung (climate heating status) can change. <linebreak/>
+ It checks if Klima_03.KL_Geblaese_Status (FAN status) or Klima_03.KL_Geblaese_Fond_Status (FAN status rear) are less or equal than 10. <linebreak/>
+<simplesect kind="remark"><para>Value 10U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="126" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1ae4bd1e331f37536b0f17da4dcf64eaae" prot="public" static="no">
+        <name>DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GSA_GFSA__ERR</name>
+        <initializer>254U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX stand heating error activation threshold for GSA(Klima_12.KL_Geblspng_Soll) and GFSA(Klima_12.KL_Geblspng_Fond_Soll). Used in DWAX_SignalHandle__bStStandheizungErr function. <linebreak/>
+</para><para>Represends the limit (threshold, boundary) value where bStStandheizungErr (climate heating status error) can change. <linebreak/>
+ It checks if Klima_12.KL_Geblspng_Soll (voltage klima for motor front) or Klima_12.KL_Geblspng_Fond_Soll(voltage klima for motor rear) are greater or equal than 254. <linebreak/>
+<simplesect kind="remark"><para>Value 254U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="137" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a2fbb694e1f4dac8676aa00ca43c16853" prot="public" static="no">
+        <name>DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GS_GFS__ERR</name>
+        <initializer>10U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX stand heating error activation threshold for GS(Klima_03.KL_Geblaese_Status) and GFS(Klima_03.KL_Geblaese_Fond_Status). Used in DWAX_SignalHandle__bStStandheizungErr function. <linebreak/>
+</para><para>Represends the limit (threshold, boundary) value where bStStandheizungErr (climate heating status error) can change. <linebreak/>
+ It checks if Klima_03.KL_Geblaese_Status (FAN status) or Klima_03.KL_Geblaese_Fond_Status (FAN status rear) are greater than 10. <linebreak/>
+<simplesect kind="remark"><para>Value 10U. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="148" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a0b999b6d9034bfa242cefd4758198acf" prot="public" static="no">
+        <name>DWAX_MASTERCODE_INCORRECT_VALUE_FF</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX MasterCode incorrect value. Used in DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED and DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE functions. <linebreak/>
+</para><para>Used for checking invalid mastercode values. If the MasterCode has 0xFFu value, a restart procedure is triggered, otherwise the MasterCode is correct. <linebreak/>
+<simplesect kind="remark"><para>Value 0XFFu. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="158" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1aef996189a547c15fe24da9897010ebdd" prot="public" static="no">
+        <name>DWAX_MASTERCODE_INCORRECT_VALUE_00</name>
+        <initializer>0x00u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX MasterCode incorrect value. Used in DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED and DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE functions. <linebreak/>
+</para><para>Used for checking invalid mastercode values. If the MasterCode has 0x00u value, a restart procedure is triggered, otherwise the MasterCode is correct. <linebreak/>
+<simplesect kind="remark"><para>Value 0X00u. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="168" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a3792e1f231648594f5ca6acccd509a15" prot="public" static="no">
+        <name>DWAX_MASTERCODE_MAX_NO_RETRIES</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DWAX MasterCode maximum number of retries. Used in DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE and DWAX_MasterCodeGeneration__DWAX_SAVE_MASTERCODE_VERIFY functions. <linebreak/>
+</para><para>Used to represent the maximum number of retries. If it is less or equal to 2, then the MasterCode is stored succesfully in EEPROM. Otherwise, a problem occured and MasterCode shall be set to 0. <linebreak/>
+<simplesect kind="remark"><para>Value 2u. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="179" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1a7377a9c136accea5039c8e037cf0b391" prot="public" static="no">
+        <name>RTE_CAN_MIRROR_OFFSET</name>
+        <initializer>0x01000000UL   /* offset  from OSEK_Buffer_Start  to RTE_Buffer_Start */</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CAN Mirror offset. <linebreak/>
+</para><para>Offset from OSEK_Buffer_Start to RTE_Buffer_Star. <linebreak/>
+<simplesect kind="remark"><para>value 0x01000000UL <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="200" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_d_w_a_x___task_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para>For SWATT testing. </para>        </briefdescription>
+        <detaileddescription>
+<para><hruler/>
+</para><para>For SWATT testing</para><para>SWATT bypassing used for testing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="212" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_d_w_a_x___task_8c_1ab439a74dafc6d9385a1dcdea82a20f78" prot="public" static="no">
+        <type>Std_ReturnType(*</type>
+        <definition>typedef Std_ReturnType(* Rte_Read_func) (boolean *recvSignal)</definition>
+        <argsstring>)(boolean *recvSignal)</argsstring>
+        <name>Rte_Read_func</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>RTE Read Typedef. <linebreak/>
+</para><para>Typedef used for RTE Read function pointers. <linebreak/>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="66" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1abcb495085afaea869586ec41d5a45a78" prot="public" static="yes" mutable="no">
+        <type><ref refid="_d_w_a_x___task_8c_1ab439a74dafc6d9385a1dcdea82a20f78" kindref="member">Rte_Read_func</ref></type>
+        <definition>Rte_Read_func rte_read_WUS_s_CAN_Comm_Active[DWAX_CAN_COUNTER]</definition>
+        <argsstring>[DWAX_CAN_COUNTER]</argsstring>
+        <name>rte_read_WUS_s_CAN_Comm_Active</name>
+        <initializer>= {
+	&amp;Rte_Read_DWAX_WakeupSleep_s_CCAN_Comm_Active,	
+	&amp;Rte_Read_DWAX_WakeupSleep_s_EVCAN_Comm_Active,	
+	&amp;Rte_Read_DWAX_WakeupSleep_s_KCAN_Comm_Active	
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Pointer array to functions that return Std_ReturnType. <linebreak/>
+</para><para>This array points to functions like Rte_Read_DWAX_WakeupSleep_s_[CAN_BUS]_Comm_Active, which provide CAN_BUS activity status. <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range Std_ReturnType - see Std_Types.h <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_CheckCANstate <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="230" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1a4600c15c10e2ff5333f3816ebf4e4fd4" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean DWAX_boRun</definition>
+        <argsstring></argsstring>
+        <name>DWAX_boRun</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This flag shows that the lib was initialized. (DWAX_InitVarFunc) <linebreak/>
+</para><para>Allows the library&apos;s functions to run. (DWAX_TaskCyclicEvent) <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range True if DWAX_InitVarFunc is called <linebreak/>
+ False otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_InitVarFunc, DWAX_Stop, DWAX_TaskCyclicEvent <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="251" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1a1b479881dc458b76cc7a0538ea752815" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 dwax_msgInitDelayCounter_u8</definition>
+        <argsstring></argsstring>
+        <name>dwax_msgInitDelayCounter_u8</name>
+        <initializer>= 0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Delay counter for enAnhaengerErrSt <linebreak/>
+</para><para>This variable is used for counting 50ms in order to delay the enAnhaengerErrSt signal <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range uint8 <linebreak/>
+ values this variable will increase to 50 (maximum delay timer) <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_InitVarFunc, DWAX_CanMessageErrorStatusHandling_enAnhaengerErrSt <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="267" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct_d_w_a_x__structure__t" kindref="compound">DWAX_structure_t</ref></type>
+        <definition>DWAX_structure_t DWAX_Data</definition>
+        <argsstring></argsstring>
+        <name>DWAX_Data</name>
+        <initializer>=
+{
+    .StateOfMasterCode = <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea860163a5d678858aa2c6d295eea7e83f" kindref="member">DWAX_MASTERCODE_INIT</ref>,
+    .StateOfNvm = NVM_REQ_NOT_OK,
+    .RandomNumber = 0u,
+    .NumberOfRetries = 0u,
+    .RandomFinishCbk =  0,
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Structure used to store important DWAX data elements. <linebreak/>
+</para><para>DWAX structure containing the state of master code, state of Nvm, random number, number of retries, indicator for CsmPi generation of random number. <linebreak/>
+<simplesect kind="remark"><para><linebreak/>
+ range <ref refid="struct_d_w_a_x__structure__t" kindref="compound">DWAX_structure_t</ref> <linebreak/>
+ values <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context Task cyclic context <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="283" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1a4bf20c7bbd0a7b430f9630ea1d1889c7" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean DWAX_BUS_STATES[DWAX_CAN_COUNTER]</definition>
+        <argsstring>[DWAX_CAN_COUNTER]</argsstring>
+        <name>DWAX_BUS_STATES</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Bus states array <linebreak/>
+</para><para>This array stores the bus states for each bus <linebreak/>
+<simplesect kind="remark"><para>For each position in array: range True if corresponding bus is active <linebreak/>
+ False otherwise <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_ReadCANStates, DWAX_UpdatePduCounters, DWAX_GetKommErrorStatus <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="308" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1a9405aef8990d6e87b7874ae66661f6c3" prot="public" static="yes" mutable="no">
+        <type>uint16</type>
+        <definition>uint16 DWAX_PDU_TIMEOUT_COUNTERS[DWAX_PDU_NUM]</definition>
+        <argsstring>[DWAX_PDU_NUM]</argsstring>
+        <name>DWAX_PDU_TIMEOUT_COUNTERS</name>
+        <initializer>= { 0 }</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>PDU Timeout counter array <linebreak/>
+</para><para>This array stores the timer values for each PDU used for communication error status handling. The values are stored as tens of miliseconds, because the DWAX component is running cyclically at 10ms <linebreak/>
+<simplesect kind="remark"><para>For each position in array: range uint16 <linebreak/>
+ values N/A <linebreak/>
+ unit 10s of ms <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_InitPduTimeoutCounters, DWAX_UpdatePduCounters, DWAX_GetKommErrorStatus <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="327" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_d_w_a_x___task_8c_1aa54dde9d391fce816583f50b942d9134" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structtconst_d_w_a_x___msg" kindref="compound">tconstDWAX_Msg</ref></type>
+        <definition>const tconstDWAX_Msg constDWAX_Msg[DWAX_PDU_NUM]</definition>
+        <argsstring>[DWAX_PDU_NUM]</argsstring>
+        <name>constDWAX_Msg</name>
+        <initializer>=  {
+
+        	{ 201u,  KCAN_BUS, &amp;IpduStatus_SAM_01 },
+        	{ 1001u, CCAN_BUS, &amp;IpduStatus_TM_01 },
+			{ 1001u, KCAN_BUS, &amp;IpduStatus_BCM_01 },
+      { 101u, KCAN_BUS, &amp;IpduStatus_Anhaenger_01 }
+
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>PDU data structures array <linebreak/>
+</para><para>This array stores the information about each PDU used for communication error status handling. We map each PDU to their PDU Statuses, buses and timeout values <linebreak/>
+ The timeout values are calculated based on the KMatrix PDU&apos;s normal cycle time * 10ms. <simplesect kind="remark"><para>range N/A <linebreak/>
+ values N/A <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context DWAX_InitPduTimeoutCounters, DWAX_UpdatePduCounters, DWAX_GetKommErrorStatus <linebreak/>
+ protection none <linebreak/>
+ storage class init ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="347" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1af330f095fa55c6808a904b7217f238e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MessageCounterProcedure</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_MessageCounterProcedure</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function used to start master counter procedure. <linebreak/>
+</para><para>Function sends master counter for sirene on Soundere_02. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_Adapter function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MessageCounterProcedure.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  The testcase shall be created to check if the master counter is stored correctly in bStSounderMasterZaehler signal. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ab4faba8c57f376c2de171ac31d15cf27" kindref="member">TEST_DWAX_Task__DWAX_MessageCounterProcedure</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function that sends master counter for sirene on Soundere_02. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="395" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1708" bodyend="1714"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1afa3afdc779442bcd3284f446077b0cde" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_MasterCodeGeneration</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function. Function handles states of MasterCode generation. <linebreak/>
+</para><para>According to the state of the MasterCode, the right action is taken. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea860163a5d678858aa2c6d295eea7e83f" kindref="member">DWAX_MASTERCODE_INIT</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea90f6d47322064bd179b153be9a276dcf" kindref="member">DWAX_NVM_RESTORED</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeadeff568c4b1534038d93e9f64506da92" kindref="member">DWAX_START_WAIT_FOR_ARMING_REQUEST</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea9ef847d7ec311c04c841284c78a684e1" kindref="member">DWAX_START_GENERATE_PROCEDURE</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea0b8fe20b6deb0eb263c50eb17eba22e6" kindref="member">DWAX_START_SEED_GENERATION</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea442acd3726fd4876402c216287ca6a7b" kindref="member">DWAX_START_RANDOM_GENERATION</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea0abac4bd30ff965035ff984d1ee6ac6d" kindref="member">DWAX_START_RANDOM_VERIFY</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea2e7214aada6ac891f3dedc4dd4c7a12e" kindref="member">DWAX_GENERATE_MASTERCODE</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea64d502ffee8eae38dd327602ebd9f875" kindref="member">DWAX_WAITING_FOR_SAVE</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf0a70243bef87110e1e095dd564c2a17" kindref="member">DWAX_SAVE_MASTERCODE_VERIFY</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf6869bb42a12a8af8fb29b859ac98764" kindref="member">DWAX_MASTERCODE_GENERATED</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea53df3d2702fafbbb53a3dfff3cf7fc48" kindref="member">DWAX_MASTERCODE_SAFEFAIL</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_TaskCyclicEvent function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  The testcase shall be created to check if the corresponfing action is taken according to the state of the MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a36c9bd73087f4f76f9604dfe91f4bda6" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function which decides what action shall be taken according to the state of MasterCode. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="434" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1716" bodyend="1750"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a5471ecb26c4b72c13dfb13b6e082abb1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enStDWASensorKommErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enStDWASensorKommErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to monitor the communication with the ATWS sensor via LIN using the signal enStDWASensorKommErrSt. <linebreak/>
+</para><para>Functions which sets enStDWASensorKommErrSt signal to 1 if some DTCs are active, otherwise to 0. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1a4502824986a55ec22b98b72bd65e9f3c" kindref="member">DWAX_TASK_DWA_verbaut</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a160560e0f249dedf210376f16a6c1e25" kindref="member">DWAX_TASK_sensor_aktiv</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enStDWASensorKommErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  The testcase shall be created to check if nStDWASensorKommErrSt signal is set according to the status of the DTCs. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a6cef232362174a40397519e6344f43a1" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStDWASensorKommErrSt_T1</ref> <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a89d21832f27354e338836fdb2f3438e7" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStDWASensorKommErrSt_T2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1477 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="465" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1818" bodyend="1868"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1af11a9f00e5bb8bd6a7138e38805dd1f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enStSNDKommErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enStSNDKommErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function used to monitor the communication status to the Sounder using the signal enStSNDKommErrSt. <linebreak/>
+</para><para>Functions which sets enStSNDKommErrSt signal to 1 if some DTCs are active, otherwise to 0. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___data_types_8h_1a4502824986a55ec22b98b72bd65e9f3c" kindref="member">DWAX_TASK_DWA_verbaut</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1ab742d1aa02aa72a7761b2e9e32e665b5" kindref="member">DWAX_TASK_LIN_Sounder_verbaut</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enStSNDKommErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  The testcase shall be created to check if enStSNDKommErrSt signal is set according to the status of the DTCs. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a1896459dcb62b2eecac9ef852ac1896b" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStSNDKommErrSt_T1</ref> <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a01420dd9e0f9a37ad5a8721a01ef558c" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStSNDKommErrSt_T2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1698 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="496" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1870" bodyend="1910"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a3ab8c27ea0dae43835ae9e6e90d97c86" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enHSBruchErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enHSBruchErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the enHSBruchErrSt value <linebreak/>
+</para><para>Function used to monitor the communication status with the SAM_01 using the signal enHSBruchErrSt. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92a3ef1f50bdae512eb914daddaf8b4ae74" kindref="member">DWAX_SAM_01</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ K2CAN_BUS will be used as KCAN_BUS because the interface receives the same output. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enHSBruchErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to ckeck the enHSBruchErrSt values <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ae687be2949c3897348164b8702627a43" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enHSBruchErrSt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1700 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="524" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1912" bodyend="1923"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1afe2849a090f2d9df107d5ea8ec5e463b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enStHDKommErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enStHDKommErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the enStHDKommErrSt value <linebreak/>
+</para><para>Function used to monitor the communication status with the rear sensors using the signal enStHDKommErrSt. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92a3ef1f50bdae512eb914daddaf8b4ae74" kindref="member">DWAX_SAM_01</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ K2CAN_BUS will be used as KCAN_BUS because the interface receives the same output. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enStHDKommErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to ckeck the enStHDKommErrSt values <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a5f770a7a6f82768b5608a3a67462e449" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStHDKommErrSt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para><linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1699 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="553" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1925" bodyend="1936"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a22b176b488098706b4981ed8f4dbeedd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enStMHOffenErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enStMHOffenErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the enStMHOffenErrSt value. <linebreak/>
+</para><para>Sets the status of the communication with the BCM_01 ECU using the signal enStMHOffenErrSt. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92ac8b24bc609f28b87e73a5e9a96a2f21e" kindref="member">DWAX_BCM_01</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ K2CAN_BUS will be used as KCAN_BUS because the interface receives the same output. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enStMHOffenErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to ckeck the enStMHOffenErrSt values. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1abc0ad08512a3edbc9b9c0dae794062bc" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enStMHOffenErrSt</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1696 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="581" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1938" bodyend="1949"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1afd146416f23861a0b2e468bd0c6bd95e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStSounderKlemme15</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStSounderKlemme15</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the bStSounderKlemme15 value. <linebreak/>
+</para><para>Sets the bStSounderKlemme15 value according to klemme15 value and RTE return status. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RTE_E_OK [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStSounderKlemme15.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to ckeck the if bStSounderKlemme15 is updated according to klemme15 and RTE return status. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a5d756138b7dd72bdbccaa3f6fa1874cb" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStSounderKlemme15</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1672 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="609" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1951" bodyend="1971"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ace84a28302da414432b54a8b40a81967" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStDWASensorSafeLedDTCAktiv</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStDWASensorSafeLedDTCAktiv</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the bStDWASensorSafeLedDTCAktiv value. <linebreak/>
+</para><para>The BCM must provide the status for the relevant qualified error memory entries as logical information, for indicating an ATWS-sensor error in the SafeLED, by means of the data element bStDWASensorSafeLedDTCAktiv. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStDWASensorSafeLedDTCAktiv.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the if bStDWASensorSafeLedDTCAktiv is updated accordingly. The value of the data element must be reset if none of the assigned DTCs is qualified. <linebreak/>
+ The value of the data element must be set to true if at least one of the assigned DTCs is qualified. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a6506c2bd0c28b0e99ad4bbf87868e640" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStDWASensorSafeLedDTCAktiv</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1480 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="641" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1973" bodyend="2028"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ae579ebb10a83bd19347b39e085e7e74c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DWAX_SafeLed_Sensor_Precondition</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SafeLed_Sensor_Precondition</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>verifies if the safe led sensor preconditions were accomplished. <linebreak/>
+</para><para>If cp_DWA_verbaut is true and either pc_DWA_mit_IRUe or pc_DWA_mit_NGS is true, then the safe led sensor preconditions were accomplished. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___data_types_8h_1a4502824986a55ec22b98b72bd65e9f3c" kindref="member">DWAX_TASK_DWA_verbaut</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a160560e0f249dedf210376f16a6c1e25" kindref="member">DWAX_TASK_sensor_aktiv</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__bStDWASensorSafeLedDTCAktiv function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SafeLed_Sensor_Precondition.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the variable ret is set accordingly to the values of cp_DWA_verbaut, pc_DWA_mit_IRUe and pc_DWA_mit_NGS. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a3a45617284fef714e4d2c90c196482cb" kindref="member">TEST_DWAX_Task__DWAX_SafeLed_Sensor_Precondition</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1480 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="672" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2030" bodyend="2059"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1aa78cd8bce1e6cb3d6e2882d49d8ad015" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStSounderSafeLedDTCAktiv</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStSounderSafeLedDTCAktiv</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the bStSounderSafeLedDTCAktiv value. <linebreak/>
+</para><para>The BCM must provide the status for the relevant qualified error memory entries as logical information, for indicating an ATWS-sensor error in the SafeLED, by means of the data element bStDWASensorSafeLedDTCAktiv <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStSounderSafeLedDTCAktiv.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the if bStSounderSafeLedDTCAktiv is updated accordingly. The value of the data element must be reset if none of the assigned DTCs is qualified. <linebreak/>
+ The value of the data element must be set to true if at least one of the assigned DTCs is qualified. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ab8bc4e0ab7a68671668c1c998d421eda" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStSounderSafeLedDTCAktiv</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1499, SWR_ICAS1_L3_DWA_1543, SWR_ICAS1_L3_DWA_1541 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="704" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2061" bodyend="2115"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a2d75bedbd2da0f033ca99ca65988902d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DWAX_SafeLed_Sounder_Precondition</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SafeLed_Sounder_Precondition</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>verifies if the safe led sounder preconditions were accomplished. <linebreak/>
+</para><para>If the signal cp_DWA_verbaut is true and pc_DWA_mit_Einfachhorn is 2, then the safe led sounder preconditions were accomplished. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a4502824986a55ec22b98b72bd65e9f3c" kindref="member">DWAX_TASK_DWA_verbaut</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1ab742d1aa02aa72a7761b2e9e32e665b5" kindref="member">DWAX_TASK_LIN_Sounder_verbaut</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__bStSounderSafeLedDTCAktiv function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SafeLed_Sounder_Precondition.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check if the variable ret is set accordingly to the values of cp_DWA_verbaut and pc_DWA_mit_Einfachhorn. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ae8ba463155c86715f9b7e70f4cab0e7a" kindref="member">TEST_DWAX_Task__DWAX_SafeLed_Sounder_Precondition</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1499 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="735" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2118" bodyend="2143"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a364b9d4b25b2979dd032eb773bd92342" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DWAX_SafeLed_Sounder_CodeGenerationErr</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SafeLed_Sounder_CodeGenerationErr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Verifies if the safe led sounder code generation was succesfully accomplished or not. <linebreak/>
+</para><para>If some DTCs are active, then the safe led sounder code generation has an error, otherwise not. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__bStSounderSafeLedDTCAktiv function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SafeLed_Sounder_CodeGenerationErr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check if the variable ret is set accordingly to the activation of the DTCs. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a924cd73e67485cdd946edde305ec5f4c" kindref="member">TEST_DWAX_Task__DWAX_SafeLed_Sounder_CodeGenerationErr</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1499, SWR_ICAS1_L3_DWA_1543, SWR_ICAS1_L3_DWA_1541 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="766" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2146" bodyend="2173"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a690067ec63a497fd5a1e1280e53bc6ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStDWAStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStDWAStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the bStDWAStatus value <linebreak/>
+</para><para>The BCM must output the logical information about the status of the ATWS (bStDWAStatus) on the CAN (so_ZV_02.DWA_aktiv_can). <linebreak/>
+ bStDWAStatus represents the DWA active CAN status. <linebreak/>
+ TRUE = armed <linebreak/>
+ FALSE = not armed <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a048ca521e8c30d60c4475ff030ccadb8" kindref="member">DWA_ACTIVE_ARM_STATUS_THRESHOLD</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStDWAStatus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check if the bStDWAStatus values are set properly. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1afb938f73d777f0a8d3add9145c28bc75" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStDWAStatus</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1510 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="798" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2175" bodyend="2195"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a2919d6025a5981e16a01077085e79723" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__enAnhaengerErrSt</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__enAnhaengerErrSt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the enAnhaengerErrSt value. <linebreak/>
+</para><para>Function used to monitor the communication status to the trailer using the signal enAnhaengerErrSt. <linebreak/>
+ The BCM must monitor the communication status with the trailer ECU (Anhaenger_01) and must indicate this status by means of the data element enAnhaengerErrSt. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>IpduStatus_Anhaenger_01 [in] - represents the message status for Anhaenger_01 IPdu <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7afc9c795db6532beb193d5480d6b38dac" kindref="member">KCAN_BUS</ref> [in] - represents the CAN used <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ For this signal is applied a 50ms delay in case of NoError transmission. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__enAnhaengerErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the enAnhaengerErrSt values. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1aa9a26bc1a548e9ebec808317356c6171" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__enAnhaengerErrSt</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1709 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="829" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2197" bodyend="2208"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a98e80e85c15cb8e492d7f5bd261ed32c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__numStTMKommStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__numStTMKommStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the numStTMKommStatus value. <linebreak/>
+</para><para>Sets the status of the communication with the connected unit (OCU, cGW) and provides it to the data element numStTMKommStatus. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92aae56ee85fcb44e2b3ecc09a29ab5818c" kindref="member">DWAX_TM_01</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__numStTMKommStatus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the numStTMKommStatus values. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a8a367703d2cd939d59f66a79b00b96c1" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__numStTMKommStatus</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000014"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1708 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="857" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2210" bodyend="2221"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ae34f0e7913492c57e7943978e4465038" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__LinMsg</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__LinMsg</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates signals reponsbile for transport modus and battery reloaded suppressed status. <linebreak/>
+</para><para>SubFunction handles misc signals of transmiting into and to DWAX and corresrponding modules. <linebreak/>
+ The ATWS-master must send the information regarding the activation / deactivation of the QRS (quick-quiescent current measuring mode) and TRM (transport mode) to the siren via the communication line. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__LinMsg.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the transmision of transport modus signal and QRS signal. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ae5df9a4db59615734e128b1579b4f1fe" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__LinMsg</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000015"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1466 SWR_ICAS1_L3_DWA_1463 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="886" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2223" bodyend="2241"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ac89fa78baeeef705840da036c6931901" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStSGSounderCodeErr</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStSGSounderCodeErr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the sounder code error value. <linebreak/>
+</para><para>SubFunction handles misc signals of transmiting into and to DWAX and corresrponding modules. <linebreak/>
+ The BCM must internally generate the information that the ECU could not generate a master code for the sounder and thus the backup value used (s_SounderMasterCodeErr) and must provide it to the data element bStSGSounderCodeErr as logical information. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" kindref="member">Pim_DWAX_SireneMasterCode</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStSGSounderCodeErr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the function behaviour and if the signal responsible for sounder code error is set properly. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ab99413e9e453a6bddedc988debe9f5c6" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStSGSounderCodeErr</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1490 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="918" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2243" bodyend="2259"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a651def111bd41c0642a578b663896447" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStStandheizung</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStStandheizung</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>SubFunction handles stand heating status. <linebreak/>
+</para><para>According to the parameters responsible for car heating,the function provides the status to the corresponding data element bStStandheizung (climate heating status). <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a140f39cd9c06c8f5411913b294057503" kindref="member">DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GSA_GFSA</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1ad288df640f7d7008a9d8e0ae65e00821" kindref="member">DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GS_GFS</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStStandheizung.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the function behaviour. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a7bbd176e4b84eebe37865de9e59ab228" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStStandheizung</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_707 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="947" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2261" bodyend="2305"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a19fc8ea5663c262379a87da438539bef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_SignalHandle__bStStandheizungErr</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle__bStStandheizungErr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>SubFunction handles stand heating error status. <linebreak/>
+</para><para>According to the parameters responsible for car heating,the function provides the status to the corresponding data element bStStandheizungErr (climate heating status error). <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><linebreak/>
+ IpduStatus_Klima_03_EV [in] <linebreak/>
+ IpduStatus_Klima_12_EV [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7abff8a01fbb7026784d9ef95bffb2647b" kindref="member">EVCAN_BUS</ref> <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1ae4bd1e331f37536b0f17da4dcf64eaae" kindref="member">DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GSA_GFSA__ERR</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a2fbb694e1f4dac8676aa00ca43c16853" kindref="member">DWAX_ACTIV_STANDHEIZUNG_THRESHOLD_GS_GFS__ERR</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle_DTC_Signals function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle__bStStandheizungErr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check bStStandheizungErr value. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a1309fbfa0bf1d49c80a030b6b6a344f7" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle__bStStandheizungErr</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_709 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="978" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2307" bodyend="2363"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1abadd35141a06338a929de5d6d9adb710" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to validate the read from NVM of the stored mastercode. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a919ab9e253b5bb92bb1065e63cfd2d10" kindref="member">DWAX_TASK_DEM_BIT_CHECK</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" kindref="member">Pim_DWAX_SireneMasterCode</ref> [in/out] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea53df3d2702fafbbb53a3dfff3cf7fc48" kindref="member">DWAX_MASTERCODE_SAFEFAIL</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1aef996189a547c15fe24da9897010ebdd" kindref="member">DWAX_MASTERCODE_INCORRECT_VALUE_00</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a0b999b6d9034bfa242cefd4758198acf" kindref="member">DWAX_MASTERCODE_INCORRECT_VALUE_FF</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf6869bb42a12a8af8fb29b859ac98764" kindref="member">DWAX_MASTERCODE_GENERATED</ref> <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeadeff568c4b1534038d93e9f64506da92" kindref="member">DWAX_START_WAIT_FOR_ARMING_REQUEST</ref> <linebreak/>
+ NVM_REQ_REDUNDANCY_FAILED [in] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the read from NVM of the stored MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1afd4140a47c2d47d7048014018885e6ab" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_NVM_RESTORED</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1540 SWR_ICAS1_L3_DWA_1458 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1019" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2412" bodyend="2445"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a545ae412eb4a019933bbd6f0d9b85e66" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_START_WAIT_FOR_ARMING_REQUEST</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_START_WAIT_FOR_ARMING_REQUEST</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to perform the arming request from DWAX component. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___data_types_8h_1ab9a20d2cbe5e19e306379ad9ef839845" kindref="member">DWAX_TASK_scharf</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea9ef847d7ec311c04c841284c78a684e1" kindref="member">DWAX_START_GENERATE_PROCEDURE</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_START_WAIT_FOR_ARMING_REQUEST.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the response for random seed from CsmPi module. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a5b3f15adebbf15ec99b946f63fd0fe36" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_START_WAIT_FOR_ARMING_REQUEST</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to perform the arming request from DWAX component. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1052" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2447" bodyend="2464"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a84e211d2e5900c03eecbc44e1096f1ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_START_SEED_GENERATION</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_START_SEED_GENERATION</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to request for random seed from CsmPi module. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>NVM_REQ_NOT_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [out] <linebreak/>
+ Rte_Call_CsmPi_DwaRandom_RandomSeedStart [in] <linebreak/>
+ CSMPI_E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea442acd3726fd4876402c216287ca6a7b" kindref="member">DWAX_START_RANDOM_GENERATION</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_START_SEED_GENERATION.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the response for random seed from CsmPi module. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a9c3d1f36508e654881d415e4f9a3f505" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_START_SEED_GENERATION</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to request for random seed from CsmPi module.. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1088" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2466" bodyend="2484"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ad24f8064624cf1639b4c059da968b46d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_START_RANDOM_GENERATION</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_START_RANDOM_GENERATION</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to request for random number from CsmPi module. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>Rte_Call_CsmPi_DwaRandom_RandomGenerate [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in] <linebreak/>
+ CSMPI_E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea0abac4bd30ff965035ff984d1ee6ac6d" kindref="member">DWAX_START_RANDOM_VERIFY</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_START_RANDOM_GENERATION.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the response from CsmPi module in order to obtain the random number. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a1a77bf2e2bdfb3c4e0b249d82a3e6583" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_START_RANDOM_GENERATION</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to request the random number from CsmPi module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1123" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2486" bodyend="2502"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ab0eb888611c27e6022c9fb3f6a8d8ff2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_START_RANDOM_VERIFY</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_START_RANDOM_VERIFY</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to verify if CsmPi generation of random number was complete in order to generate MasterCode. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea2e7214aada6ac891f3dedc4dd4c7a12e" kindref="member">DWAX_GENERATE_MASTERCODE</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_START_RANDOM_VERIFY.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check if the random number was generated in order to generate MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1aabe22f3a61aeebccdd73bc4fbe262051" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_START_RANDOM_VERIFY</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function for checking the random verify of the MasterCode generation. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1156" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2504" bodyend="2517"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1aef98b5977360cb66ee62d48fef0bd191" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to verify the storage of the MasterCode in NVM and generate MasterCode. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in/out] <linebreak/>
+ <ref refid="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" kindref="member">Pim_DWAX_SireneMasterCode</ref> [in/out] <linebreak/>
+ DEM_EVENT_STATUS_FAILED [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea53df3d2702fafbbb53a3dfff3cf7fc48" kindref="member">DWAX_MASTERCODE_SAFEFAIL</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1aef996189a547c15fe24da9897010ebdd" kindref="member">DWAX_MASTERCODE_INCORRECT_VALUE_00</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a0b999b6d9034bfa242cefd4758198acf" kindref="member">DWAX_MASTERCODE_INCORRECT_VALUE_FF</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea9ef847d7ec311c04c841284c78a684e1" kindref="member">DWAX_START_GENERATE_PROCEDURE</ref> [in] <linebreak/>
+ RTE_E_OK [in] <linebreak/>
+ DEM_EVENT_STATUS_PASSED [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea64d502ffee8eae38dd327602ebd9f875" kindref="member">DWAX_WAITING_FOR_SAVE</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the generation of MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ae3f295aec03e8cdc391242ae6647941c" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_GENERATE_MASTERCODE</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1540, SWR_ICAS1_L3_DWA_1542, SWR_ICAS1_L3_DWA_1543 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1197" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2519" bodyend="2569"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ae174a50c40ca624aa2244253e0aa2116" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_MasterCodeGeneration__DWAX_SAVE_MASTERCODE_VERIFY</definition>
+        <argsstring>(DWAX_generate_MasterCode_t *p)</argsstring>
+        <name>DWAX_MasterCodeGeneration__DWAX_SAVE_MASTERCODE_VERIFY</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400ae" kindref="member">DWAX_generate_MasterCode_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function handles substate of MasterCode generation. <linebreak/>
+</para><para>Function used to verify the storage of the MasterCode in NVM. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">*p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of MasterCode generation. <linebreak/>
+ range DWAX_generate_MasterCode_t <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in/out] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a3792e1f231648594f5ca6acccd509a15" kindref="member">DWAX_MASTERCODE_MAX_NO_RETRIES</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" kindref="member">Pim_DWAX_SireneMasterCode</ref> [in/out] <linebreak/>
+ DEM_EVENT_STATUS_FAILED [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea53df3d2702fafbbb53a3dfff3cf7fc48" kindref="member">DWAX_MASTERCODE_SAFEFAIL</ref> [in] <linebreak/>
+ NVM_REQ_OK [in] <linebreak/>
+ DEM_EVENT_STATUS_PASSED [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf6869bb42a12a8af8fb29b859ac98764" kindref="member">DWAX_MASTERCODE_GENERATED</ref> [in] <linebreak/>
+ RTE_E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea64d502ffee8eae38dd327602ebd9f875" kindref="member">DWAX_WAITING_FOR_SAVE</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_MasterCodeGeneration__DWAX_SAVE_MASTERCODE_VERIFY.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the storage of MasterCode generation. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1ad546a42723bf014c1250def126cf7d67" kindref="member">TEST_DWAX_Task__DWAX_MasterCodeGeneration__DWAX_SAVE_MASTERCODE_VERIFY</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1540 SWR_ICAS1_L3_DWA_1541 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1238" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2571" bodyend="2612"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a64478d1311981017f623b659747b4269" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8 *</type>
+        <definition>static uint8 * DWAX_RteLight_pu8GetAddress</definition>
+        <argsstring>(void *pvBaseAddress, uint32 u32CoreOffset)</argsstring>
+        <name>DWAX_RteLight_pu8GetAddress</name>
+        <param>
+          <type>void *</type>
+          <declname>pvBaseAddress</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>u32CoreOffset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function. <linebreak/>
+</para><para>Function used to get the address of the CAN message and core offset. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pvBaseAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the address of the message status for a specific IPdu <linebreak/>
+ range void <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32CoreOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the offset from OSEK_Buffer_Start to RTE_Buffer_Start <linebreak/>
+ range uint32 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unit8* <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_GetKommErrorStatus, DWAX_GetKommErrorStatus_Anhaenger <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_RteLight_pu8GetAddress.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  Test case shall be based on values of RteLight base address and core offset. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1aa66b7acfe2f8fc284e3697907ed2f862" kindref="member">TEST_DWAX_Task__DWAX_RteLight_pu8GetAddress</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function for getting the address of the CAN message and core offset <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1274" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2614" bodyend="2635"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a450d7375e79702036b8c41c3b614fbc4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DWAX_CanMessageErrorHandling</definition>
+        <argsstring>(uint8 msgStatus, CAN_State canNumber_e)</argsstring>
+        <name>DWAX_CanMessageErrorHandling</name>
+        <param>
+          <type>uint8</type>
+          <declname>msgStatus</declname>
+        </param>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7" kindref="member">CAN_State</ref></type>
+          <declname>canNumber_e</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function. <linebreak/>
+</para><para>Provides status of CAN message and switches values of timeout, init, noError for DWAX needs. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">msgStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the message status for a specific IPdu <linebreak/>
+ range uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">canNumber_e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the CAN channel ID <linebreak/>
+ range CAN_State <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - CAN message error status <linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__bStMHOffenErr, DWAX_SignalHandle__bStStandheizungErr, DWAX_CheckCANstate functions <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_CanMessageErrorHandling.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check all possible return values. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a52d5af2db8ba0d28a206d8e32b1dc6e0" kindref="member">TEST_DWAX_Task__DWAX_CanMessageErrorHandling</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to provide the CAN activity status. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1311" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2637" bodyend="2676"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a7de930299d02cd82aece751eb3abb580" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean DWAX_CheckCANstate</definition>
+        <argsstring>(CAN_State canNumber_e)</argsstring>
+        <name>DWAX_CheckCANstate</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7" kindref="member">CAN_State</ref></type>
+          <declname>canNumber_e</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function. <linebreak/>
+</para><para>Check if CAN bus is active. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">canNumber_e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- represents the CAN channel ID <linebreak/>
+ range CAN_State <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - CAN activity status <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1abcb495085afaea869586ec41d5a45a78" kindref="member">rte_read_WUS_s_CAN_Comm_Active</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7ac204c92e330940e0d7e7cdede6e6dabe" kindref="member">DWAX_CAN_COUNTER</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_CanMessageErrorStatusHandling, DWAX_CanMessageErrorStatusHandling_enAnhaengerErrSt, DWAX_CanMessageErrorHandling, DWAX_errorStatusDelayCounter function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_CheckCANstate.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check if the CAN status is set accordingly. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a02a7546fd3cdcb0054b30ce88d9ca12a" kindref="member">TEST_DWAX_Task__DWAX_CheckCANstate</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a helper function to provide the CAN activity status. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1343" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2678" bodyend="2702"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ac2bc3bf2dbd9d0969a954783bc139c29" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_InitPduTimeoutCounters</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_InitPduTimeoutCounters</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function the initializes the PDU timers after ECU wake-up <linebreak/>
+</para><para>This function set the init values for each PDu timeout timer after each ECU wake-up. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_InitVarFunc <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a9405aef8990d6e87b7874ae66661f6c3" kindref="member">DWAX_PDU_TIMEOUT_COUNTERS</ref> [out] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1aa54dde9d391fce816583f50b942d9134" kindref="member">constDWAX_Msg</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92aa4d02197c99196014424ca3aeef1484a" kindref="member">DWAX_PDU_NUM</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_InitPduTimeoutCounters.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a18ceda55d2890cf3a6d81cca18d582cd" kindref="member">TEST_DWAX_Task__DWAX_InitPduTimeoutCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1710 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1378" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2755" bodyend="2765"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a97e462b8ea29a8bf611505d8954231e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>static uint8 DWAX_GetKommErrorStatus</definition>
+        <argsstring>(eDWAX_PDU pdu)</argsstring>
+        <name>DWAX_GetKommErrorStatus</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92" kindref="member">eDWAX_PDU</ref></type>
+          <declname>pdu</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function the returns the communication error status for a specific PDU</para><para>This function cyclically updates the pdu counters accordingly to the communication error status requirements. <linebreak/>
+ After each BUS WAKE-UP, the counters are reset. They are decrementing only if the BUS WAKE-UP is not finished (after the timeout has elapsed or when we receive a NoError pdu status). <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__enHSBruchErrSt, DWAX_SignalHandle__enStHDKommErrSt, DWAX_SignalHandle__enStMHOffenErrSt, DWAX_SignalHandle__numStTMKommStatus <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>eDWAX_PDU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pdu [in] - the PDU data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - the communication error status for the PDU <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1aa54dde9d391fce816583f50b942d9134" kindref="member">constDWAX_Msg</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a7377a9c136accea5039c8e037cf0b391" kindref="member">RTE_CAN_MIRROR_OFFSET</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a4bf20c7bbd0a7b430f9630ea1d1889c7" kindref="member">DWAX_BUS_STATES</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a9405aef8990d6e87b7874ae66661f6c3" kindref="member">DWAX_PDU_TIMEOUT_COUNTERS</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_GetKommErrorStatus.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1af589cde869a079ec08e5f0b15c8866e9" kindref="member">TEST_DWAX_Task__DWAX_GetKommErrorStatus</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>Design Decision - Justification. This is a helper function to provide the status of CAN message for some errSt signals. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1417" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2767" bodyend="2781"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a72a93725d394edc48902f4eee8d52446" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>static uint8 DWAX_GetKommErrorStatus_enAnhaengerErrSt</definition>
+        <argsstring>(eDWAX_PDU pdu)</argsstring>
+        <name>DWAX_GetKommErrorStatus_enAnhaengerErrSt</name>
+        <param>
+          <type><ref refid="_d_w_a_x___data_types_8h_1a3b5d7c3f10162a25183c53c9fa186e92" kindref="member">eDWAX_PDU</ref></type>
+          <declname>pdu</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function the returns the communication error status for a specific PDU</para><para>This function cyclically updates the pdu counters accordingly to the communication error status requirements. <linebreak/>
+ After each BUS WAKE-UP, the counters are reset. They are decrementing only if the BUS WAKE-UP is not finished (after the timeout has elapsed or when we receive a NoError pdu status). <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_SignalHandle__enAnhaengerErrSt <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>eDWAX_PDU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pdu [in] - the PDU data <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - the communication error status for the PDU <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>constDWAX_Msg [in] <linebreak/>
+ RTE_CAN_MIRROR_OFFSET [in] <linebreak/>
+ DWAX_BUS_STATES [in] <linebreak/>
+ DWAX_PDU_TIMEOUT_COUNTERS [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_GetKommErrorStatus_enAnhaengerErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a1fd1a18f333762c0102d3c20c6991f57" kindref="member">TEST_DWAX_Task__DWAX_GetKommErrorStatus_enAnhaengerErrSt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>Design Decision - Justification. This is a helper function to provide the status of CAN message for some errSt signals. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1456" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2871" bodyend="2885"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a917a9f8a3fac7f72b27ac553429caf0a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_ReadCANStates</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_ReadCANStates</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that cyclically updates the bus states information</para><para>This function cyclically reads and stores the state of the buses that are used by the communication error status signals <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_TaskCyclicEvent <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1abcb495085afaea869586ec41d5a45a78" kindref="member">rte_read_WUS_s_CAN_Comm_Active</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a4bf20c7bbd0a7b430f9630ea1d1889c7" kindref="member">DWAX_BUS_STATES</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a17cce154acd088b42c7c639d3ea3ccb7ac204c92e330940e0d7e7cdede6e6dabe" kindref="member">DWAX_CAN_COUNTER</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_ReadCANStates.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if each BUS state is updated. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a4cf6875b017fe49159bc9113b465cac7" kindref="member">TEST_DWAX_Task__DWAX_ReadCANStates</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. According to the architecture this is a helper function which reads the CAN state. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1490" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2704" bodyend="2721"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a12560029c0c0e6f7e61a5e8a81505c57" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DWAX_UpdatePduCounters</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_UpdatePduCounters</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function that cyclically updates the pdu counters</para><para>This function cyclically updates the pdu counters accordingly to the communication error status requirements. <linebreak/>
+ After each BUS WAKE-UP, the counters are reset. They are decrementing only if the BUS WAKE-UP is not finished (after the timeout has elapsed or when we receive a NoError pdu status). <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_TaskCyclicEvent <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a4bf20c7bbd0a7b430f9630ea1d1889c7" kindref="member">DWAX_BUS_STATES</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a9405aef8990d6e87b7874ae66661f6c3" kindref="member">DWAX_PDU_TIMEOUT_COUNTERS</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_UpdatePduCounters.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a200cf815a2a9150d7a786478f6ced034" kindref="member">TEST_DWAX_Task__DWAX_UpdatePduCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1710 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1527" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2723" bodyend="2753"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a4b58ad09b5e27d6a7d360a7d5a67ce8f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>static uint8 DWAX_CAN_KommErrorStatusDelayCounter</definition>
+        <argsstring>(boolean isBusActive, uint8 u8IPduStatus, uint16 u16PduTimeoutCounter)</argsstring>
+        <name>DWAX_CAN_KommErrorStatusDelayCounter</name>
+        <param>
+          <type>boolean</type>
+          <declname>isBusActive</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>u8IPduStatus</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>u16PduTimeoutCounter</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function that returns the communication status based on the state of the bus, the pdu status and the timeout timer value <linebreak/>
+</para><para>This function sets the communication error status based on the requirements. <linebreak/>
+ While bus sleep, the communication status should be set to init value. <linebreak/>
+ If bus is active, if PDU status is NoError, the communication status is set to NoError, else if the timeout is not elapsed, we set it to init (bus is not fully awake), otherwise, the communication status is set to error. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_GetKommErrorStatus <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>isBusActive [in] - corresponding bus state <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u8IPduStatus [in] - corresponding PDU status <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u16PduTimeoutCounter [in] - corresponding timeout counter <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - the communication error status for the PDU <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Rte_StatusMask_NoError [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_CAN_KommErrorStatusDelayCounter.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1aa6714c5b6675f11e71a9b803f28d500e" kindref="member">TEST_DWAX_Task__DWAX_CAN_KommErrorStatusDelayCounter</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000026"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>Design Decision - Justification. Helper function used to manage the delay counter and delayed timeout for each CAN. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1568" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2783" bodyend="2820"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a25b11538589c6be79a313105eb896e7a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8</type>
+        <definition>static uint8 DWAX_CAN_KommErrorStatusDelayCounter_enAnhaengerErrSt</definition>
+        <argsstring>(boolean isBusActive, uint8 u8IPduStatus, uint16 u16PduTimeoutCounter)</argsstring>
+        <name>DWAX_CAN_KommErrorStatusDelayCounter_enAnhaengerErrSt</name>
+        <param>
+          <type>boolean</type>
+          <declname>isBusActive</declname>
+        </param>
+        <param>
+          <type>uint8</type>
+          <declname>u8IPduStatus</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>u16PduTimeoutCounter</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function that returns the communication status based on the state of the bus, the pdu status and the timeout timer value <linebreak/>
+</para><para>This function sets the communication error status based on the requirements. <linebreak/>
+ While bus sleep, the communication status should be set to init value. <linebreak/>
+ If bus is active, if PDU status is NoError, the communication status is set to NoError, else if the timeout is not elapsed, we set it to init (bus is not fully awake), otherwise, the communication status is set to error. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_GetKommErrorStatus <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boolean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>isBusActive [in] - corresponding bus state <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u8IPduStatus [in] - corresponding PDU status <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>u16PduTimeoutCounter [in] - corresponding timeout counter <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8 - the communication error status for the PDU <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Rte_StatusMask_NoError [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1ad78dce4c7799d6c3aa39d726328b4dec" kindref="member">DWAX_CAN_INIT_DELAY</ref> [in] <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_CAN_KommErrorStatusDelayCounter_enAnhaengerErrSt.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the testing method is described on: <linebreak/>
+  Test case shall check if the timers are working according to the requirements. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a085d7a98ae6d6735eebf985b8afcee06" kindref="member">TEST_DWAX_Task__DWAX_CAN_KommErrorStatusDelayCounter_enAnhaengerErrSt</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000027"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>Design Decision - Justification. Helper function used to manage the delay counter and delayed timeout for each CAN. <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1610" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2822" bodyend="2869"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1ade41da3a5d58ee84d97fe55e45c916d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DWAX_SignalHandle</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_SignalHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function. Signal handle of DWAX. <linebreak/>
+</para><para>Function handles misc signals of transmiting into and outo dwax and corresrponding modules. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals N/A </title><para></para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_TaskCyclicEvent function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_SignalHandle.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check the DWAX signal functions call. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a256220d202557bd2cbb5ca16695d8d1e" kindref="member">TEST_DWAX_Task__DWAX_SignalHandle</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which calls the functions for signal handling. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1637" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1782" bodyend="1816"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a6c8ff699ede579e0ba1db17555cbb52b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DWAX_Adapter</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_Adapter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Adapter function of the DWAX module. <linebreak/>
+</para><para>Function handles sending arming and Master code signals. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___nv_ram_8h_1acf172ed37a81362d192300822262d1b9" kindref="member">Pim_DWAX_SireneMasterCode</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1ae00c111431ce84bae3741acb36a4bbb2" kindref="member">DWAX_ADAPTER_MASTERCODE</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf6869bb42a12a8af8fb29b859ac98764" kindref="member">DWAX_MASTERCODE_GENERATED</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea53df3d2702fafbbb53a3dfff3cf7fc48" kindref="member">DWAX_MASTERCODE_SAFEFAIL</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1ab9a20d2cbe5e19e306379ad9ef839845" kindref="member">DWAX_TASK_scharf</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1a17ffa36c51981abdf589710dcd145d48" kindref="member">DWAX_TASK_unscharf</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_TaskCyclicEvent function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<xrefsect id="spr_true_1_spr_true000001"><xreftitle>Security Relevance</xreftitle><xrefdescription><para>Security-Relevant. Reason: SWR_ICAS1_L3_DWA_1531, SWR_ICAS1_L3_DWA_1533 </para></xrefdescription></xrefsect><simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_Adapter.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  The testcase shall be created to check if the trasmision of the MasterCode is sent in order to arm the Siren. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a2d6273e42fc597e78092507b85e54277" kindref="member">TEST_DWAX_Task__DWAX_Adapter</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000028"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_DWA_1531, SWR_ICAS1_L3_DWA_1533, SWR_ICAS1_L3_DWA_1711, SWR_ICAS1_L3_DWA_1532, SWR_ICAS1_L3_DWA_1712 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1669" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1752" bodyend="1780"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a80e6eca771a43e95fdfe63c4792120a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DWAX_InitVarFunc</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_InitVarFunc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialize the variables for the DWAX module.</para><para>This function is called by ModelsTask(Scheduler) before starting the model (MmDoSetup is called). The code here must be short. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a4600c15c10e2ff5333f3816ebf4e4fd4" kindref="member">DWAX_boRun</ref> [out] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a1b479881dc458b76cc7a0538ea752815" kindref="member">dwax_msgInitDelayCounter_u8</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_InitVarFunc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check the DWAX function call. If DWAX_boRun was updated and dwax_msgInitDelayCounter_u8 and CAN_TimeoutDelayElapsed_bo were initialised. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1aead8b5c28b446a0760c9453eb7430475" kindref="member">TEST_DWAX_Task__DWAX_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which initialise DWAX_boRun, dwax_msgInitDelayCounter_u8, CAN_TimeoutDelayElapsed_bo. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1674" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1674" bodyend="1681"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a10e95c8d5be0d3a1bcd29afd9caaa1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DWAX_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop callback for the DWAX module. <linebreak/>
+</para><para>This function is called by ModelsTask in order to stop the DWAX module. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_d_w_a_x___task_8c_1a4600c15c10e2ff5333f3816ebf4e4fd4" kindref="member">DWAX_boRun</ref> [out] <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check the DWAX function call and the DWAX_boRun value. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a76d66eb8fde448738a72938f16f2672f" kindref="member">TEST_DWAX_Task__DWAX_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which sets the value of the DWAX_boRun. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1683" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1683" bodyend="1687"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1af7b1af94c1f6bb9c68c8f55545393d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DWAX_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>DWAX_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the DWAX module. <linebreak/>
+</para><para>This function is called by ModelsTask (Scheduler) when the model&apos;s recurrence occurs. This function should be performed with a cycle time of 10 ms. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a4600c15c10e2ff5333f3816ebf4e4fd4" kindref="member">DWAX_boRun</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="DWAX_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described in: <linebreak/>
+  Test case shall be created to check the functions call. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a14e59717c10e172add90bfd68641ad3b" kindref="member">TEST_DWAX_Task__DWAX_TaskCyclicEvent</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. According to the architecture this is a helper function which contains the full functionality of DWAX. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="1689" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="1689" bodyend="1706"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a0be7fa80cdeddb752ec6778e4d36a0f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType NvmSingleDWA_SireneMasterCodeCbk</definition>
+        <argsstring>(NvM_ServiceIdType a_uServ, NvM_RequestResultType a_uRequest)</argsstring>
+        <name>NvmSingleDWA_SireneMasterCodeCbk</name>
+        <param>
+          <type>NvM_ServiceIdType</type>
+          <declname>a_uServ</declname>
+        </param>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>a_uRequest</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function <linebreak/>
+</para><para>Function callback from reading and writing of master code to NVM module <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a_uServ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Parameter for reading type of NvM request (reading or writing) <linebreak/>
+ range NvM_ServiceIdType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">a_uRequest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] - Parameter for reading the result of the NvM request (OK or NOT_OK) <linebreak/>
+ range NvM_RequestResultType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>NVM_READ_BLOCK [in] <linebreak/>
+ NVM_WRITE_BLOCK [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea90f6d47322064bd179b153be9a276dcf" kindref="member">DWAX_NVM_RESTORED</ref> [in] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aeaf0a70243bef87110e1e095dd564c2a17" kindref="member">DWAX_SAVE_MASTERCODE_VERIFY</ref> [in] <linebreak/>
+ E_OK [in] <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context DWAX_MasterCodeGeneration function <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="NvmSingleDWA_SireneMasterCodeCbk.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the result of read and write request of MasterCode. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a22ec610f2c4b8235dbc386e36cf279b8" kindref="member">TEST_DWAX_Task__NvmSingleDWA_SireneMasterCodeCbk</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to read and write the MasterCode from and into NvM module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="2365" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2365" bodyend="2389"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_w_a_x___task_8c_1a0e6e40cc8ed199055a6c17464998bb2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dwa_CsmRandomCallback</definition>
+        <argsstring>(CsmPi_ReturnType Result)</argsstring>
+        <name>Dwa_CsmRandomCallback</name>
+        <param>
+          <type>CsmPi_ReturnType</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function. <linebreak/>
+</para><para>Function callback from CsmPi module that random number was generated. <linebreak/>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- return the state of random number generation. <linebreak/>
+ range CsmPi_ReturnType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="_d_w_a_x___task_8c_1a83e8ff325b6032d7cd4013a570560962" kindref="member">DWAX_Data</ref> [in/out] <linebreak/>
+ <ref refid="_d_w_a_x___data_types_8h_1adbbe064a05631a6fb836e14e5e5400aea0abac4bd30ff965035ff984d1ee6ac6d" kindref="member">DWAX_START_RANDOM_VERIFY</ref> [in] <linebreak/>
+ CSMPI_E_OK [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context MasterCode generation <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Dwa_CsmRandomCallback.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test method is described on: <linebreak/>
+  The testcase shall be created to check the result of random number generation from CsmPi module. <linebreak/>
+ <ref refid="_d_w_a_x___task_8c_8test_1a6972b8ec0414ab959e31659b2017e350" kindref="member">TEST_DWAX_Task__Dwa_CsmRandomCallback</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function used to check the state of random number generation. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" line="2391" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c" bodystart="2391" bodyend="2410"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Source file for DWA Sensor Sirene module. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_d_w_a_x___task_8c" kindref="compound">DWAX_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic43108 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022/28/07 </para></simplesect>
+<linebreak/>
+</para><para>File used for DWA Sensor Sirene (DWAX) component to receives a master code from DWA component in order to arm the Siren. DWA Sensor Sirene is notified by DWA which sends an arm request with MasterCode. <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/DWASensorSirene/DWAX/c/src/DWAX_Task.c"/>
+  </compounddef>
+</doxygen>

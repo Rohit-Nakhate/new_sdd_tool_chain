@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_u_h_f___battery_handler_8h" kind="file" language="C++">
+    <compoundname>UHF_BatteryHandler.h</compoundname>
+    <includes local="yes">Rte_Type.h</includes>
+    <includedby refid="_u_h_f___battery_handler_8c" local="yes">UHF_BatteryHandler.c</includedby>
+    <includedby refid="_u_h_f___task_8c" local="yes">UHF_Task.c</includedby>
+    <incdepgraph>
+      <node id="22">
+        <label>Rte_Type.h</label>
+      </node>
+      <node id="21">
+        <label>UHF_BatteryHandler.h</label>
+        <link refid="_u_h_f___battery_handler_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="24">
+        <label>UHF_BatteryHandler.c</label>
+        <link refid="_u_h_f___battery_handler_8c"/>
+      </node>
+      <node id="23">
+        <label>UHF_BatteryHandler.h</label>
+        <link refid="_u_h_f___battery_handler_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>UHF_Task.c</label>
+        <link refid="_u_h_f___task_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_h_f___battery_handler_8h_1aafb4624e75042ed47f347abe56b7aa6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void clear_KeyfobBatteryStatus</definition>
+        <argsstring>(void)</argsstring>
+        <name>clear_KeyfobBatteryStatus</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function triggers UHF-Master to initialize the Error Counter in PIM after CryptoHandler started the Key Learning process. <simplesect kind="pre"><para>CryptoHandler started the Key Learning process - triggered via FFBSKCUebertragung </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>Error Counters in PIM are initialized  <image type="html" name="clear_KeyfobBatteryStatus.png">Activity Diagram clear_KeyfobBatteryStatus</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___battery_handler_8c_8test_1a1abebecba12e6d8215534c98e3ab51e4" kindref="member">TEST_clear_KeyfobBatteryStatus</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_203 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_98 <linebreak/>
+ </para><para>SWR_L3_CRoute_UHF_205 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>This function triggers UHF-Master to initialize the Error Counter in PIM after CryptoHandler started the Key Learning process. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_BatteryHandler.h" line="102" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="799" bodyend="805"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a1abebecba12e6d8215534c98e3ab51e4" compoundref="_u_h_f___battery_handler_8c_8test" startline="169" endline="216">TEST_clear_KeyfobBatteryStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8h_1ae311295780cf6f04a050d67a6e875471" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>UHF_BatteryHandler init function called by scheduler.</para><para>Checks the status for the Keyfob Battery in the NVM. <linebreak/>
+ If the status is RTE_E_OK and error status is not NVM_REQ_OK <linebreak/>
+ clears out Keyfob Battery status in the NVM with value 0u . <linebreak/>
+ Called by scheduler once on each EnterRun. <simplesect kind="pre"><para>System after wake up/reset, in EnterRUN. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="UHF_BatteryHandler_Init.png">Activity Diagram UHF_BatteryHandler_Init</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___task_8c_8test_1a5078d4851281f101c6ac1653dfef6c79" kindref="member">TEST_UHF_InitVarFunc</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Design decision: component init function to be called by scheduler.<linebreak/>
+ UHF_BatteryHandler init function called by scheduler. <linebreak/>
+</para></simplesect>
+Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_BatteryHandler.h" line="154" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="813" bodyend="827"/>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a93db4f26992996854cd892dcfa5f7be6" compoundref="_u_h_f___battery_handler_8c_8test" startline="228" endline="275">TEST_UHF_BatteryHandler_Init</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1a1fca64702650caaecf37f6c445c8c815" compoundref="_u_h_f___task_8c" startline="93" endline="96">UHF_InitVarFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8h_1a3ed4f37453db564eb07a23051af5e34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>De-Initialization routine, to be called once on each ExitRun event.</para><para>Sets Battery error flags to FALSE. <simplesect kind="pre"><para>System leaves RUN mode, prepares to sleep. </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="UHF_BatteryHandler_Stop.png">Activity Diagram UHF_BatteryHandler_Stop</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___task_8c_8test_1a3d6ab1c0ad49a8fb9ec2b2939b6ffdff" kindref="member">TEST_UHF_Stop</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_189 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>De-Initialization routine, to be called once on each ExitRun event. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_BatteryHandler.h" line="198" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="835" bodyend="841"/>
+        <references refid="_u_h_f___battery_handler_8c_1a6c533eb5cb3749b96b7aa3ee0aa42320" compoundref="_u_h_f___battery_handler_8c" startline="86">NUMBER_OF_KEYS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a8a12d01fa22ce69f78cad98ba41bc499" compoundref="_u_h_f___battery_handler_8c" startline="107">batteryErrorFlag</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1afad4d7d32fe9691661a5dc87ac3583e3" compoundref="_u_h_f___battery_handler_8c_8test" startline="287" endline="323">TEST_UHF_BatteryHandler_Stop</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1a82681067ecfc26b5dc3d941d2d17d909" compoundref="_u_h_f___task_8c" startline="113" endline="116">UHF_Stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_u_h_f___battery_handler_8h_1a3278730895cc1b2efcbeacea00aa59e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UHF_BatteryHandler_Cyclic</definition>
+        <argsstring>(void)</argsstring>
+        <name>UHF_BatteryHandler_Cyclic</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode.</para><para>4 major subtasks are referenced periodically: <linebreak/>
+ -checkErrorFlags <linebreak/>
+ <linebreak/>
+ -ResetFlagsOnClampS <linebreak/>
+ -PerformBatteryUpdateOnClamp15 <linebreak/>
+<simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>N/A  <image type="html" name="UHF_BatteryHandler_Cyclic.png">Activity Diagram UHF_BatteryHandler_Cyclic</image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit test. <linebreak/>
+ The testing method is described in <ref refid="_u_h_f___task_8c_8test_1ace684ff79333032b9a920f219bfa0be0" kindref="member">TEST_UHF_TaskCyclicEvent</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_UHF_229 <linebreak/>
+ </para></xrefdescription></xrefsect></para><para>Cyclically (10ms) executed routine, called by scheduler while system is in RUN mode. <linebreak/>
+</para><para>Please find detail information in header file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_BatteryHandler.h" line="244" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/src/UHF_BatteryHandler.c" bodystart="849" bodyend="855"/>
+        <references refid="_u_h_f___battery_handler_8c_1a128d4687e4892179d8e493ec54d55a91" compoundref="_u_h_f___battery_handler_8c" startline="1078" endline="1106">checkErrorFlags</references>
+        <references refid="_u_h_f___battery_handler_8c_1a3b16db1ec7357129841d1485fa7cb6f8" compoundref="_u_h_f___battery_handler_8c" startline="1273" endline="1286">ResetFlagsOnClampS</references>
+        <references refid="_u_h_f___battery_handler_8c_1a409e82648b3538b2211bf87bb97c8d3a" compoundref="_u_h_f___battery_handler_8c" startline="1294" endline="1317">PerformBatteryUpdateOnClamp15</references>
+        <referencedby refid="_u_h_f___battery_handler_8c_8test_1a41aeb764821b7038ec1c97c885229620" compoundref="_u_h_f___battery_handler_8c_8test" startline="335" endline="358">TEST_UHF_BatteryHandler_Cyclic</referencedby>
+        <referencedby refid="_u_h_f___task_8c_1adbc62ed27152db19e96b12dda3727e9c" compoundref="_u_h_f___task_8c" startline="123" endline="127">UHF_TaskCyclicEvent</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the UHF SWC (Internal integration in Model Task). </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_u_h_f___battery_handler_8h" kindref="compound">UHF_BatteryHandler.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>1.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidm5889 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>24/05/2022 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ZV_Crypto/UHF/c/inc/UHF_BatteryHandler.h"/>
+  </compounddef>
+</doxygen>

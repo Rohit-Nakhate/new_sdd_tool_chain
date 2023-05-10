@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_b_a_p_handler___i_l2___task_8c" kind="file" language="C++">
+    <compoundname>BAPHandler_IL2_Task.c</compoundname>
+    <includes refid="_b_a_p_handler___i_l2___task_8h" local="yes">BAPHandler_IL2_Task.h</includes>
+    <includes refid="_i_l2___main_8h" local="yes">IL2_Main.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>bap_InteriorLight2_applCallbacks.h</label>
+      </node>
+      <node id="6">
+        <label>bap_rte.h</label>
+      </node>
+      <node id="4">
+        <label>Rte_type.h</label>
+      </node>
+      <node id="5">
+        <label>IL2_Main.h</label>
+        <link refid="_i_l2___main_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>BAPHandler_PSO_ImExport.h</label>
+      </node>
+      <node id="2">
+        <label>BAPHandler_IL2_Task.c</label>
+        <link refid="_b_a_p_handler___i_l2___task_8c"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>BAPHandler_UtilityLib.h</label>
+      </node>
+      <node id="3">
+        <label>BAPHandler_IL2_Task.h</label>
+        <link refid="_b_a_p_handler___i_l2___task_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>bap_wrapper.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_b_a_p_handler___i_l2___task_8c_1ab18355c343be072ac95437b20dffd537" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_IL2_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_IL2_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Starts-up/initializes the BAPHandler_IL2 (Interior Light) module. <linebreak/>
+</para><para>Called by Model Task in order to start-up/init the BAPHandler_IL2 module. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><ref refid="_i_l2___main_8c_8test_1af06aba7211d09b8bac8f0f54fff7033a" kindref="member">IL2_Start</ref> is invoked. <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_IL2_Start.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ test_BAPHandler_IL2_Start <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a function needed for the initialization of the BAPHandler_IL2 module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" line="54" column="1" bodyfile="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___i_l2___task_8c_1a63db920a407ee50ddb81728ad5e67265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_IL2_Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_IL2_Stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stops callbacks for the BAPHandler_IL2 (Interior Light) module. <linebreak/>
+</para><para>This function is called by Model Task when StopEv is set <linebreak/>
+ (MmDoStop is called). <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>StopEv is set. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><ref refid="_i_l2___main_8c_1a3806034f24796865b2d4c92997ab9344" kindref="member">IL2_Stop</ref> is invoked. <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="BAPHandler_IL2_Stop.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ test_BAPHandler_IL2_Stop <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a function potentially needed to stop callbacks <linebreak/>
+ for the BAPHandler_IL2 module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" line="60" column="1" bodyfile="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="_b_a_p_handler___i_l2___task_8c_1a7e4f201584537030fdca4bd456c5d915" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BAPHandler_IL2_TaskCyclicEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>BAPHandler_IL2_TaskCyclicEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function of the BAPHandler_IL2 (Interior Light) module. <linebreak/>
+</para><para>This function is called by Model Task when the model&apos;s recurrence occurs. <linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task Model Task <linebreak/>
+ thread safe No - Integration must ensure that the function is not <linebreak/>
+ interrupted by the other functions of the same module <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core <linebreak/>
+ synchronous </para></simplesect>
+<simplesect kind="pre"><para>Function BAPHandler_IL2_Start have to be executed first. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation </title><para><ref refid="_i_l2___main_8c_1a4062fe6c01c161bc266c4c31ce480f39" kindref="member">IL2_Cycle</ref> is invoked. <linebreak/>
+ <linebreak/>
+ <image type="html" name="BAPHandler_IL2_TaskCyclicEvent.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>SWATT unit tests. The testing method is described in: <linebreak/>
+ test_BAPHandler_IL2_TaskCyclicEvent <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This is a function needed to stop callbacks for the BAPHandler_IL2 module. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" line="66" column="1" bodyfile="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c" bodystart="66" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file is used to handle exported function (init, cyclic) of <linebreak/>
+BAPHandler_IL2 component. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_b_a_p_handler___i_l2___task_8c" kindref="compound">BAPHandler_IL2_Task.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>Wojciech Sowiński (uib18192), Artur Redosz (uidp7980) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2022-08-31 </para></simplesect>
+<linebreak/>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/ICAS1_Repo/sw.sys.chorus_main_build/mc_sw/appl/BAP/BAPHandler_IL2/c/src/BAPHandler_IL2_Task.c"/>
+  </compounddef>
+</doxygen>

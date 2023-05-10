@@ -1,0 +1,3556 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="inc_2_err_hdl___types_8h" kind="file" language="C++">
+    <compoundname>inc/ErrHdl_Types.h</compoundname>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">ConfigLinDiag.h</includes>
+    <includes local="yes">Platform_Types.h</includes>
+    <includes local="yes">DK2_LinBuiltInList.h</includes>
+    <includes local="yes">DK2_CanBuiltInList.h</includes>
+    <includes local="yes">BuiltInList.h</includes>
+    <includes local="yes">Dem_Cfg.h</includes>
+    <incdepgraph>
+      <node id="723">
+        <label>DK2_CanBuiltInList.h</label>
+      </node>
+      <node id="721">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="720">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="725">
+        <label>Dem_Cfg.h</label>
+      </node>
+      <node id="724">
+        <label>BuiltInList.h</label>
+      </node>
+      <node id="722">
+        <label>DK2_LinBuiltInList.h</label>
+      </node>
+      <node id="718">
+        <label>ErrHdl_Types.h</label>
+        <link refid="inc_2_err_hdl___types_8h"/>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="723" relation="include">
+        </childnode>
+        <childnode refid="724" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+      </node>
+      <node id="719">
+        <label>ConfigChannels.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_node_timeout_obj" prot="public">NodeTimeoutObj</innerclass>
+    <innerclass refid="struct_t_err_data_object" prot="public">TErrDataObject</innerclass>
+    <innerclass refid="struct_channel_maping_ethernet_bus_i_p" prot="public">ChannelMapingEthernetBusIP</innerclass>
+    <innerclass refid="struct_channel_maping_ethernet_bus_h_w" prot="public">ChannelMapingEthernetBusHW</innerclass>
+    <innerclass refid="struct_channel_maping" prot="public">ChannelMaping</innerclass>
+    <innerclass refid="struct_lin_node_frame_range_obj" prot="public">LinNodeFrameRangeObj</innerclass>
+    <innerclass refid="struct_err_built_in_list_nodes_obj" prot="public">ErrBuiltInListNodesObj</innerclass>
+    <innerclass refid="struct_can_nodes_range_obj" prot="public">CanNodesRangeObj</innerclass>
+    <innerclass refid="struct_g_w___reset___counter" prot="public">GW_Reset_Counter</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a4f3d5e24e228a8e547ddc5369ed5191f" prot="public" static="no">
+        <name>ERR_NUMB_OF_NODES</name>
+        <initializer>256u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of nodes in built in list <simplesect kind="remark"><para>values 256 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="64" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a8e21d202a225d9dafac47f2bd9389cf0" prot="public" static="no">
+        <name>ERR_NUMB_OF_NODES_IN_BYTES</name>
+        <initializer>32u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of nodes in built in list in bytesk <simplesect kind="remark"><para>values 32 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="72" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a6278871632856256c36a0eae317e6458" prot="public" static="no">
+        <name>ERR_NUMB_OF_ETH_BUSSES</name>
+        <initializer>((_ComChannelVLANLast-_ComChannelVLANFirst)+1u)</initializer>
+        <briefdescription>
+<para>Number of Ethernet buses. </para>        </briefdescription>
+        <detaileddescription>
+<para><hruler/>
+</para><para>Number of Ethernet buses <simplesect kind="remark"><para>values 4 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="83" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a0e6c4ab83cfb5b0c58e28293f2c2a70d" prot="public" static="no">
+        <name>ERR_FIRST_ETH_PORT</name>
+        <initializer>((Tuint8)_ComChannelVLANFirst)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>COM ID of first Ethernet bus <simplesect kind="remark"><para>values 20 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aacb7ba3f7bab57d114c57dfea65554fe" prot="public" static="no">
+        <name>ERR_LAST_ETH_PORT</name>
+        <initializer>(_ComChannelVLANLast)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>COM ID of last Ethernet bus <simplesect kind="remark"><para>values 23 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="99" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ae911e9c4c032fbd5a1d026d578a1807b" prot="public" static="no">
+        <name>ERR_NUMB_OF_CAN_BUSSES</name>
+        <initializer>_ComChannelCanNumber</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of CAN buses <simplesect kind="remark"><para>values 13 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="107" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1acc0ee6c6c8e1a4e8f7eced2864d8415d" prot="public" static="no">
+        <name>ERR_NUMB_OF_CAN_AND_AFS</name>
+        <initializer>_ComChannelCanNumber</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of CAN buses including AFS remote bus <simplesect kind="remark"><para>values 13 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="115" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a567446f1353c51289a6d3b023c3af570" prot="public" static="no">
+        <name>ERR_NUMB_OF_CAN_MONITORED_BUSES</name>
+        <initializer>_ComChannelCanNumber</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of built in list CAN buses for which we monitor timeouts <simplesect kind="remark"><para>values 13 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="123" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ac88f0d7511df4ce38314f1848786a686" prot="public" static="no">
+        <name>ERR_NUMB_OF_MONITORED_BUSES</name>
+        <initializer>(_ComChannelCanNumber +<ref refid="_2inc_2_err_hdl___types_8h_1a6278871632856256c36a0eae317e6458" kindref="member">ERR_NUMB_OF_ETH_BUSSES</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of built in list buses for which we monitor node timeouts <simplesect kind="remark"><para>values 17 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="131" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a2a2f6b45e0c6033fe1cc8ccf4de01dd5" prot="public" static="no">
+        <name>ERR_NUMB_OF_LIN_BUSSES</name>
+        <initializer>((_ComChannelLinLast-_ComChannelLinFirst)+1u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of LIN buses <simplesect kind="remark"><para>values 7 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="139" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a73d81c65a6c74b0f9d852449a68c8055" prot="public" static="no">
+        <name>ERR_NUMB_OF_REMOTE_BUSSES</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of CAN remote bus, MFL and AFS <simplesect kind="remark"><para>values 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="147" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a92d4c2f14a7bce14b142bb8a0bd09421" prot="public" static="no">
+        <name>ERR_NUMB_OF_LIN_NODES</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of LIN bus nodes <simplesect kind="remark"><para>values 13 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="155" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a92cdc99ba92a7617518da614da828a7f" prot="public" static="no">
+        <name>ERR_AFS_BUS_NUM</name>
+        <initializer>(_ComChannelIntern)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>COM channel ID of AFS remote CAN <simplesect kind="remark"><para>values 24 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="163" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a39ca2daef8ef23886438b7fd70179e86" prot="public" static="no">
+        <name>ERR_MFL_BUS_NUM</name>
+        <initializer>(_ComChannelIntern + 1)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>COM channel ID of MFL remote CAN <simplesect kind="remark"><para>values 25 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="171" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a2ac8ebcb7f0ecc6583c576757fe0235e" prot="public" static="no">
+        <name>ERR_NUMB_OF_BUSES</name>
+        <initializer>_IncorrectComChannel</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Total number of buses in ICAS1 <simplesect kind="remark"><para>values 26 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="179" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a42fff9b411b149432c8c8844b504374f" prot="public" static="no">
+        <name>ERR_NUMB_ETH_BUS_IP</name>
+        <initializer>13u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of Ethernet IP buses <simplesect kind="remark"><para>values 13 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="187" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a8b3186bd157a7cb4988586015336a9d0" prot="public" static="no">
+        <name>ERR_NUMB_ETH_BUS_HW</name>
+        <initializer>11u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of Ethernet HW buses <simplesect kind="remark"><para>values 11 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="195" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5e5d0fa6f4e8d1d771bf47d8e9a87e25" prot="public" static="no">
+        <name>ERR_NUMB_OF_CAN_AND_LIN</name>
+        <initializer>(_ComChannelCanNumber+<ref refid="_2inc_2_err_hdl___types_8h_1a2a2f6b45e0c6033fe1cc8ccf4de01dd5" kindref="member">ERR_NUMB_OF_LIN_BUSSES</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Total number of CAN and LIN buses <simplesect kind="remark"><para>values 256 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="203" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aeff680e9cabcd596d3e36fe008b2d38f" prot="public" static="no">
+        <name>ERR_NUMB_OF_CAN_DK2</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Total number of CAN DK2 buses <simplesect kind="remark"><para>values 3 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="211" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aeed44c983021f4cd42a7757e0b208fb9" prot="public" static="no">
+        <name>VLAN_INVALID</name>
+        <initializer>(0xFFFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Wrong ID VLAN bas id. Used in default case <simplesect kind="remark"><para>values 3 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="219" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ac0cee0591c66943b186447a8248efbd5" prot="public" static="no">
+        <name>NODE_STATE_DLI</name>
+        <initializer>33U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+/** **************************************************************************</para><para>Number of DTC status which should be sent to DLI library <simplesect kind="remark"><para>values 3 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="227" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1abf20af7cba2d383d9c0988604c23e5dc" prot="public" static="no">
+        <name>CONFIRMED_DTC_MASK</name>
+        <initializer>0x03u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask which is used to check if DTC is active or not <simplesect kind="remark"><para>values 3 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="235" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" prot="public" static="no">
+        <name>ERR_RESET_TIMER_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Reset value of ErrHdl timers <simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="243" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1abbe80f20232cb766e280be5f8273fcc8" prot="public" static="no">
+        <name>ERR_TIMER_STOP_VALUE</name>
+        <initializer>51u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stop value of ErrHdl timers <simplesect kind="remark"><para>values 51 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="251" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a918628ade1a4488d7152814d1468107e" prot="public" static="no">
+        <name>ERR_TIMER_FAIL_VALUE</name>
+        <initializer>50u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fail value of start diagnostic timer <simplesect kind="remark"><para>values 50 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="259" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a851d98c7df57b8a3f627d88681e3d0e9" prot="public" static="no">
+        <name>ERR_BUSOFF_COUNTER_RESET_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default value for bus off error counter <simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="267" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a48653f69b25efd14289f7c9efcdced85" prot="public" static="no">
+        <name>ERR_BUSOFF_COUNTER_INIT_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default value for bus off error counter <simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="275" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a9aac16283affeecdffc67ce9d202c85d" prot="public" static="no">
+        <name>ERR_ELECTRICAL_FAILURE_FAIL_VALUE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Fail value for LIN electrical failure error <simplesect kind="remark"><para>values 1 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="283" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a8000fba674ce3f8d624b5e90ec1aadae" prot="public" static="no">
+        <name>ERR_WIRE_CYCLE_TIMER_LOAD_VALUE</name>
+        <initializer>5u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Prescaler counter value for single wire errors reads from HAL layer <simplesect kind="remark"><para>values 5 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="291" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a77c696d61cb1288e575a740fb9b9dea7" prot="public" static="no">
+        <name>ERR_WIRE_CYCLE_TIMER_STOP_VALUE</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Prescaler counter default value for single wire errors reads from HAL layer <simplesect kind="remark"><para>values 0 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="299" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a961bfc30f18d5d5e7afe3879227bb6b6" prot="public" static="no">
+        <name>ERR_5_5V_THRESHOLD</name>
+        <initializer>5500</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Voltage value used in under voltage detection <simplesect kind="remark"><para>values 5500 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="307" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ac7f9458086acbf3c005b56ace0925a73" prot="public" static="no">
+        <name>ERR_18_5V_THRESHOLD</name>
+        <initializer>18500</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Voltage value used in over voltage detection <simplesect kind="remark"><para>values 18500 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="315" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa9e12f2b1479dc7e2281c94f4362bad9" prot="public" static="no">
+        <name>ERR_VOLTAGE_HYSTERESIS</name>
+        <initializer>500</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Hysteresis value used in error under/over voltage detection <simplesect kind="remark"><para>values 500 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="323" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa1c25338ef0d03fdc0a7ff04ce4582f2" prot="public" static="no">
+        <name>ERR_UNDER_VOLTAGE_THRESHOLD</name>
+        <initializer><ref refid="inc_2_err_hdl___types_8h_1a961bfc30f18d5d5e7afe3879227bb6b6" kindref="member">ERR_5_5V_THRESHOLD</ref></initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Under voltage threshold value <simplesect kind="remark"><para>values 5500 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="331" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ae696a7c7cb27a06a866a3fbeabec617c" prot="public" static="no">
+        <name>ERR_LOWER_NORMAL_VOLTAGE_THRESHOLD</name>
+        <initializer>(<ref refid="inc_2_err_hdl___types_8h_1a961bfc30f18d5d5e7afe3879227bb6b6" kindref="member">ERR_5_5V_THRESHOLD</ref> + <ref refid="inc_2_err_hdl___types_8h_1aa9e12f2b1479dc7e2281c94f4362bad9" kindref="member">ERR_VOLTAGE_HYSTERESIS</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Lower normal voltage threshold value <simplesect kind="remark"><para>values 5000 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="339" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a327ed0ea6539462deeee1e44aa34fc78" prot="public" static="no">
+        <name>ERR_UPPER_NORMAL_VOLTAGE_THRESHOLD</name>
+        <initializer>(<ref refid="inc_2_err_hdl___types_8h_1ac7f9458086acbf3c005b56ace0925a73" kindref="member">ERR_18_5V_THRESHOLD</ref> - <ref refid="inc_2_err_hdl___types_8h_1aa9e12f2b1479dc7e2281c94f4362bad9" kindref="member">ERR_VOLTAGE_HYSTERESIS</ref>)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Upper normal voltage threshold value <simplesect kind="remark"><para>values 18000 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="347" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1afb4d96b44737b30b16cdbf5d82371b54" prot="public" static="no">
+        <name>ERR_OVER_VOLTAGE_THRESHOLD</name>
+        <initializer><ref refid="inc_2_err_hdl___types_8h_1ac7f9458086acbf3c005b56ace0925a73" kindref="member">ERR_18_5V_THRESHOLD</ref></initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Over voltage threshold value <simplesect kind="remark"><para>values 18500 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="355" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aeb23d9c7112552660da6a3c9c0d88b6b" prot="public" static="no">
+        <name>MFL_INDEX</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>MFL index in array with bus activation DEM conditions <simplesect kind="remark"><para>values 1 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="363" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a9408e0bbd3f0448e3643643a0d1ca974" prot="public" static="no">
+        <name>CANH_SHORT_TO_UBATT_3_2V</name>
+        <initializer>3002u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANH, Short CANH to UBATT <simplesect kind="remark"><para>values 3002 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="379" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a760eb9424b30a67bdaec0f0c129b463d" prot="public" static="no">
+        <name>CANL_SHORT_TO_UBATT_3_2V</name>
+        <initializer>3002u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANL, Short CANH to UBATT <simplesect kind="remark"><para>values 3002 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="387" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a82e8a4740327b922b355673b3b645648" prot="public" static="no">
+        <name>CANH_SHORT_TO_GND_0_3V</name>
+        <initializer>281u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANH, Short CANL to GND <simplesect kind="remark"><para>values 281 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="395" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a9402f96d86f64f256e71c64af666af02" prot="public" static="no">
+        <name>CANL_SHORT_TO_GND_0_3V</name>
+        <initializer>281u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANL, Short CANL to GND <simplesect kind="remark"><para>values 281 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="403" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ace45619d37fefeca62ee6ed046848d4f" prot="public" static="no">
+        <name>CANH_SHORT_1_55V</name>
+        <initializer>1454u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANH <simplesect kind="remark"><para>values 1454 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="411" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a700eb28140afc8020558746581c1427c" prot="public" static="no">
+        <name>CANL_SHORT_0_4V</name>
+        <initializer>375u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value CANL <simplesect kind="remark"><para>values 375 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="419" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a7bb71af086244774cb92ac682bfd7080" prot="public" static="no">
+        <name>CAN_DIFF_1_55V</name>
+        <initializer>1454u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value <simplesect kind="remark"><para>values 1454 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="427" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5dfe2aca4ef8266c2f74dac676ed2646" prot="public" static="no">
+        <name>CAN_DIFF_0_3V</name>
+        <initializer>281u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value <simplesect kind="remark"><para>values 281 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="435" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a580b9371b282ec66120da7a2358a797f" prot="public" static="no">
+        <name>CAN_DIFF_0_1V</name>
+        <initializer>94u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Single wire threshold value <simplesect kind="remark"><para>values 94 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="443" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="443" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a7f2441db1d133236064c60a12357eb0d" prot="public" static="no">
+        <name>NODE_INDEX_NOT_EXISTS</name>
+        <initializer>(0xFFFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node not exists uint8. This value is used to fill ignored node IDs in tEnableCondition array <simplesect kind="remark"><para>values 0xFFFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="451" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a6bf2ae8125f45dcce12c523702d06e92" prot="public" static="no">
+        <name>NODE_INDEX_NOT_EXISTS_U8</name>
+        <initializer>((uint8)0xFF)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node not exists uint8. This value is used to fill ignored node IDs in NodeCanEventObj struct <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="459" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a485414e14d809c4cd3fa255550a0a04d" prot="public" static="no">
+        <name>NODE_MAX_INDEX_BUILTIN</name>
+        <initializer>((uint16)NI_SMLI_1 + (uint16)1)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of the max built in list CAN node ID + 1 <simplesect kind="remark"><para>values 0x10Du <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="467" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="467" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1af7a7c36120ce0941c376d3b4d6c5c103" prot="public" static="no">
+        <name>UNKNOW_BUS_ID</name>
+        <initializer>(0xFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Uknow bus Id. This value is used to fill ignored node IDs in NodeCanEventObj struct <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="475" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a613513bba146c00afc02925166a1a74f" prot="public" static="no">
+        <name>MAX_NODE_TAB_INDEX</name>
+        <initializer>(0x02u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>There is posibility that node might be also availabe for CAN and VLAN at same time <simplesect kind="remark"><para>values 2 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="483" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="483" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5e29f994a52ab15922e96fdf0cc29562" prot="public" static="no">
+        <name>FIRST_INDEX</name>
+        <initializer>(0x00u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>If first index is UNKNOW_BUS_ID the struct object has to be ignored <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="491" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a08a68dfbbf268dee2e4897995ff382c7" prot="public" static="no">
+        <name>NODE_TIMEOUT_LOAD_VALUE</name>
+        <initializer>(0x00u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node timeout timer load value <simplesect kind="remark"><para>values 0x00 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="499" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1afbe8997cf63445cd0b27a15ac49040f0" prot="public" static="no">
+        <name>ERR_TIMEOUT_INC_VALUE</name>
+        <initializer>(50u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node timeout inc value <simplesect kind="remark"><para>values 0x50 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="507" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a584cd15be5ba1da3118e24391d142e02" prot="public" static="no">
+        <name>NODE_CAN_TIMEOUT_FAIL_VALUE</name>
+        <initializer>(2500u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node timeout timer fail value <simplesect kind="remark"><para>values 2500u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="515" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="515" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a00b4cd5649314f965900a1b52fc2f2b2" prot="public" static="no">
+        <name>CAN_BUS_TIMEOUT_FAIL_VALUE</name>
+        <initializer>(2000u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CAN bus timeout timer fail value <simplesect kind="remark"><para>values 2000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="523" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a7c2d40596522cc5fff4e2e62d9e91ad9" prot="public" static="no">
+        <name>NODE_NOT_VALID</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node not valid. <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="531" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="531" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ace1341afe9b3b924305a53c20d06ac0e" prot="public" static="no">
+        <name>MAX_NODE_ID_BUILT_LIST</name>
+        <initializer>269u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Max node id. <simplesect kind="remark"><para>values 269u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="539" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="539" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a30bef13b416f14799d40b5aa991d2d1d" prot="public" static="no">
+        <name>NODE_LIN_TIMEOUT_FAIL_VALUE</name>
+        <initializer>(4000u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node LIN timeout timer fail value <simplesect kind="remark"><para>values 4000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="547" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="547" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a19bae4fbb16293ffb3dbcf7088a5ce5f" prot="public" static="no">
+        <name>BUS_LIN_TIMEOUT_FAIL_VALUE</name>
+        <initializer>(3500u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Node LIN timeout timer fail value <simplesect kind="remark"><para>values 3500u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="555" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="555" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a304053fdb331b351327ebd8b69629fab" prot="public" static="no">
+        <name>NODE_LOAD_VALUE_DEFAULT_VALUES</name>
+        <initializer>{<ref refid="inc_2_err_hdl___types_8h_1a08a68dfbbf268dee2e4897995ff382c7" kindref="member">NODE_TIMEOUT_LOAD_VALUE</ref>, <ref refid="inc_2_err_hdl___types_8h_1a08a68dfbbf268dee2e4897995ff382c7" kindref="member">NODE_TIMEOUT_LOAD_VALUE</ref>}, {FALSE, FALSE}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default values used to initialize tNodeTimeoutDTC array <simplesect kind="remark"><para>NA <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="563" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="563" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a14733835c380161e063bbe21cd82ea60" prot="public" static="no">
+        <name>NODE_CAN_DTC_NOT_EXISTS</name>
+        <initializer>{{<ref refid="inc_2_err_hdl___types_8h_1af7a7c36120ce0941c376d3b4d6c5c103" kindref="member">UNKNOW_BUS_ID</ref>, <ref refid="inc_2_err_hdl___types_8h_1af7a7c36120ce0941c376d3b4d6c5c103" kindref="member">UNKNOW_BUS_ID</ref>}, {<ref refid="inc_2_err_hdl___types_8h_1a7f2441db1d133236064c60a12357eb0d" kindref="member">NODE_INDEX_NOT_EXISTS</ref>, <ref refid="inc_2_err_hdl___types_8h_1a7f2441db1d133236064c60a12357eb0d" kindref="member">NODE_INDEX_NOT_EXISTS</ref>}, NODE__DEFAULT_VALUES}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Macro used to reduce the code of not existing node in NodeCanEventObj struct <simplesect kind="remark"><para>values NA <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="571" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad2493dfb9f29671de6d0502cf576907c" prot="public" static="no">
+        <name>NACHLAUF_KLEMME_30</name>
+        <initializer>(0x02u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value defined for node with nachlauf type 2 <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="579" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="579" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a73412a2eea57ec9bc6f647a3c8ee6cc3" prot="public" static="no">
+        <name>VLAN_ACTIVE</name>
+        <initializer>(0x01u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that VLAN bus is active <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="587" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="587" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a2fa8c56f3925a12a9dfc99e466291d27" prot="public" static="no">
+        <name>ComChannelVLANNumber</name>
+        <initializer>(4u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>VValue determined the VLAN buses nuber <simplesect kind="remark"><para>values 4u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="595" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="595" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a39d55b9a9ff79b9f5a192f8e66b7d3db" prot="public" static="no">
+        <name>BUILT_LIST_LIN_NUM_NODES</name>
+        <initializer>(13u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined number of nodes in LIN built in list (LIN and DK2) <simplesect kind="remark"><para>values 13u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="603" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="603" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad21f26531820964c18dd7a7398e1803d" prot="public" static="no">
+        <name>UNKNOWN_BUS_ID</name>
+        <initializer>(0x00u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined unknown bus ID <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="611" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="611" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad192e0b41fcd070977f022ab53fbe3a9" prot="public" static="no">
+        <name>NODES_NOT_OCCURRED</name>
+        <initializer>(0x00u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined unknown bus ID <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="619" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="619" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ab6ab60c8c7e1f9fa0d00ea25b917a7e1" prot="public" static="no">
+        <name>ONE_BYTE</name>
+        <initializer>(0x08u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined one byte <simplesect kind="remark"><para>values 0x08u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="627" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5b77895446a2242ba7dc6538ec7d3d76" prot="public" static="no">
+        <name>HAL_GET_ERROR_CORRECT_IONFACTOR</name>
+        <initializer>(1000u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value is used to devide voltage by 1000 <simplesect kind="remark"><para>values 1000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="635" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="635" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a1a0c878d31fec784c06e660be0a19a58" prot="public" static="no">
+        <name>LIN_VIP_NOT_CONNECTED_VALUE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that VIP is not connected <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="643" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1af59bd937a5e9f9b987441e0a0577219c" prot="public" static="no">
+        <name>LIN_VIP_ELECTR_FAIL_CODE1_VALUE</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with VIP node <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="651" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="651" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ac872961e44da68a44b95b48133d6b099" prot="public" static="no">
+        <name>LIN_VIP_ELECTR_FAIL_CODE2_VALUE</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with VIP node <simplesect kind="remark"><para>values 0x04u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="659" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a431c1c6e9b15a19a34bc797d7aad47e2" prot="public" static="no">
+        <name>LIN_VIP_SENSOR_16_VALUE</name>
+        <initializer>16u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with VIP node <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="667" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5ff357e22c8864551c86fc692658830b" prot="public" static="no">
+        <name>LIN_VIP_SENSOR_8_VALUE</name>
+        <initializer>8u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with VIP node <simplesect kind="remark"><para>values 0x08u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="675" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad0f0c1729fe27d605899eea9035230fd" prot="public" static="no">
+        <name>LIN_KLR_Touchintensitaet_DEFEKT_VALUE</name>
+        <initializer>255u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with KLR node <simplesect kind="remark"><para>values 255u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="683" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1af79541ca54da2fc0bd474914f2f07e0a" prot="public" static="no">
+        <name>LIN_KLR_Touchintensitaet_1_VALUE</name>
+        <initializer>252u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is problem with KLR node <simplesect kind="remark"><para>values 252u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="691" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="755" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa0ca2e1b23ddf292c31d745d810e9809" prot="public" static="no">
+        <name>MFL_IS_NOT_PRESENT</name>
+        <initializer>0x00u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that MFL is present on LIN bus <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="699" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="763" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a46b43ebdf14a4e8ccf42f19a5e792ca3" prot="public" static="no">
+        <name>MFL_IS_PRESENT_ON_LIN</name>
+        <initializer>0x01u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that MFL is present on LIN bus <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="707" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="771" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa1f0f05b48d1c13a667ad2af463edd13" prot="public" static="no">
+        <name>MFL_IS_PRESENT_ON_CAN</name>
+        <initializer>0x02u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that MFL is present on CAN bus <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="715" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="779" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a48240dc715966b21d0e69c5871e54e6c" prot="public" static="no">
+        <name>NODES_NOT_EXISTS</name>
+        <initializer>0u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is 0 coded node on bus <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="723" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a99c4b48ca06575081a6506f19fc5af75" prot="public" static="no">
+        <name>ONE_NODE</name>
+        <initializer>1u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined one node <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="731" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="795" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a26b9840336ae16900529615a073a9896" prot="public" static="no">
+        <name>TWO_NODES</name>
+        <initializer>2u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined two nodes <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="739" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="803" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a04d43982fb514d8327f939d662b6f7c0" prot="public" static="no">
+        <name>NUMBER_STEUERGERAET_DTC</name>
+        <initializer>4u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of known Steuergeraet Defekt DTC <simplesect kind="remark"><para>values 0x04u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="747" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="811" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a4502824986a55ec22b98b72bd65e9f3c" prot="public" static="no">
+        <name>DWAX_TASK_DWA_verbaut</name>
+        <initializer>1U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is DWA verbaut <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="755" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="819" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a160560e0f249dedf210376f16a6c1e25" prot="public" static="no">
+        <name>DWAX_TASK_sensor_aktiv</name>
+        <initializer>1U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is sensor active <simplesect kind="remark"><para>values 0x01u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="763" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ab742d1aa02aa72a7761b2e9e32e665b5" prot="public" static="no">
+        <name>DWAX_TASK_LIN_Sounder_verbaut</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value determined that there is Sounder verbaut <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="771" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="835" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1adfdb745f2c50f9a45c95115afcbb0f19" prot="public" static="no">
+        <name>NUMBER_OF_VLAN_PORTS</name>
+        <initializer>15U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined the number of VLAN ports <simplesect kind="remark"><para>values 15u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="779" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="843" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a4843d6e8710a56580bbb92809a87819b" prot="public" static="no">
+        <name>VLAN_PORT_2</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 2 <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="787" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="851" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a20b5ab778bd44586ce0d9be2db37b2e5" prot="public" static="no">
+        <name>VLAN_PORT_3</name>
+        <initializer>3U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 3 <simplesect kind="remark"><para>values 0x03u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="795" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="859" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a532fe818500ada84ff694f85e3cdfa72" prot="public" static="no">
+        <name>VLAN_PORT_4</name>
+        <initializer>4U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 4 <simplesect kind="remark"><para>values 0x04u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="803" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="867" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a8dd6ca86bcb803bd19ed568587c4534d" prot="public" static="no">
+        <name>VLAN_PORT_6</name>
+        <initializer>6U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 6 <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="811" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="875" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad8bb3fb92382aad5678119cb0a06b8c9" prot="public" static="no">
+        <name>VLAN_PORT_10</name>
+        <initializer>10U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 10 <simplesect kind="remark"><para>values 10u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="819" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="883" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ab8a24cbd4aa0c71148de1eced8d76293" prot="public" static="no">
+        <name>VLAN_PORT_11</name>
+        <initializer>11U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 11 <simplesect kind="remark"><para>values 11u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="827" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="891" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ade3dbef3504f8f762c002de0e2f7ee4f" prot="public" static="no">
+        <name>VLAN_PORT_12</name>
+        <initializer>12U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 12 <simplesect kind="remark"><para>values 12 <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="835" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="899" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad3d49f858bcf12a246ef3b8e745ec62f" prot="public" static="no">
+        <name>VLAN_PORT_13</name>
+        <initializer>13U</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This value determined port number 13 <simplesect kind="remark"><para>values 13u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="843" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="907" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad80b550ad513b2002dc5bd08c6f0f836" prot="public" static="no">
+        <name>UNKNOWN_DEM_EVENT_ID</name>
+        <initializer>(0x00000000u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Unknown DEM event id <simplesect kind="remark"><para>values 0x00u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="851" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="915" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1abdef9d9c829b3678269512fe9f0ed1db" prot="public" static="no">
+        <name>NUMBER_VLAN_PORTS</name>
+        <initializer>(14u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of VLAN ports which has to be monitored <simplesect kind="remark"><para>values 14u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="859" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="923" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a38ae8b6d750be9918b4f8e049a5c80c9" prot="public" static="no">
+        <name>MAX_NODES_ON_PORT</name>
+        <initializer>(2u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Max node per port <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="867" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="931" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a5189a2e2c821273de5cd1cad93fd9414" prot="public" static="no">
+        <name>PORT_NOT_USED</name>
+        <initializer>(0xFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Port not used <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="875" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="939" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a1e2648367b288e7de6eca7d1cfb5975e" prot="public" static="no">
+        <name>IGNORE_PORT</name>
+        <initializer>{<ref refid="inc_2_err_hdl___types_8h_1a5189a2e2c821273de5cd1cad93fd9414" kindref="member">PORT_NOT_USED</ref>, {<ref refid="inc_2_err_hdl___types_8h_1a5189a2e2c821273de5cd1cad93fd9414" kindref="member">PORT_NOT_USED</ref>, <ref refid="inc_2_err_hdl___types_8h_1a5189a2e2c821273de5cd1cad93fd9414" kindref="member">PORT_NOT_USED</ref>}}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>port that should not be used. <simplesect kind="remark"><para>N/A <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="883" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="947" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a66a59fd912362810f32ea9b2f7b45279" prot="public" static="no">
+        <name>ENABLE_CONDITION_NOT_EXISTS</name>
+        <initializer>(0xFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enable condition not exists <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="891" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="955" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a644304a3df575f741edaee5adc3a7b6c" prot="public" static="no">
+        <name>PORT_NOT_VALID</name>
+        <initializer>(0xFFu)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Port not valid <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="899" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="963" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aeaaba0b06e39381b0c7d49274a1e8710" prot="public" static="no">
+        <name>MAX_VLAN_NODE_ID</name>
+        <initializer>(0x109u)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Max VLAN node ID <simplesect kind="remark"><para>values 0x109u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="907" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="971" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a3228e46f41d22b72416644121100e0e5" prot="public" static="no">
+        <name>REMOTE_CAN_IDX</name>
+        <param><defname>Channel</defname></param>
+        <initializer>((uint8)(Channel) - (uint8)_ComChannelIntern)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Remote CAN array index <simplesect kind="remark"><para>values 0x02u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="915" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="979" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1adb6f207b78ea51b2f6aab621d60826f8" prot="public" static="no">
+        <name>LIN_IDX</name>
+        <param><defname>Channel</defname></param>
+        <initializer>((uint8)(Channel) - (uint8)_ComChannelLinFirst)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Value defined for node with nachlauf type 2 <simplesect kind="remark"><para>N/A <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="923" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="987" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a2fa3ba11b17662edc2a179ad84ec2281" prot="public" static="no">
+        <name>VLAN_IDX</name>
+        <param><defname>Channel</defname></param>
+        <initializer>((uint8)(Channel) - (uint8)_ComChannelVLANFirst)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>VLAN array index <simplesect kind="remark"><para>N/A <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="931" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="995" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa0c07699bf29c34c5f1d21ff41ddd371" prot="public" static="no">
+        <name>CAN_BUS_OFF_FAIL_VALUE</name>
+        <initializer>3u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>CAN bus off fail value <simplesect kind="remark"><para>values 0x03u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="939" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1003" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1afe51b017fb30608abf48152b3a87bfb1" prot="public" static="no">
+        <name>FRAME_NOT_VALID</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Unknown frame id. <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="947" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1011" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a64b4cd6324b194dbd8d2ddb5222fe244" prot="public" static="no">
+        <name>LIN_MAX_FRAME_ID</name>
+        <initializer>60u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Maximum frame id. <simplesect kind="remark"><para>values 60u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="955" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1019" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ad127cca2bd013b08b21ce5e3c9f3f7dd" prot="public" static="no">
+        <name>OP_CYC_NOT_EXISTS</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Operation cycle not exists <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="963" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1027" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aaf082df5fed68130089654586bfdd677" prot="public" static="no">
+        <name>VLAN_15s_TIMEOUT_TRESH</name>
+        <initializer>15000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>VLAN 15s timeout treshold <simplesect kind="remark"><para>values 15000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="971" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1035" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1ab94ebe9fd08c063a3c363efaa71bc958" prot="public" static="no">
+        <name>NODE_20s_TIMEOUT_TRESH</name>
+        <initializer>20000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>VLAN 20s timeout treshold <simplesect kind="remark"><para>values 20000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="979" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1043" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1a69f2f705fa8fdf2b30e860b2fffb2ebd" prot="public" static="no">
+        <name>VLAN_80s_TIMEOUT_TRESH</name>
+        <initializer>80000u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>VLAN 80s timeout treshold <simplesect kind="remark"><para>values 80000u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="987" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa43d0b343d1b3b6ad2bb7b362205cb89" prot="public" static="no">
+        <name>ENABLE_CONDITION_NOT_VALID</name>
+        <initializer>0xFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enable condition not valid <simplesect kind="remark"><para>values 0xFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="995" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1059" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa6434f7f4bdedd401dc5e741611c3ec1" prot="public" static="no">
+        <name>DTC_NOT_VALID</name>
+        <initializer>0xFFFFu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>DTC is not valid/exists. <simplesect kind="remark"><para>values 0xFFFFu <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1003" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1067" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1abe8ea049764bf077fd0a1c82ee487994" prot="public" static="no">
+        <name>NUM_OF_MONITORED_NODES_CAN_AND_VLAN</name>
+        <initializer>69u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Number of all standard CANs and VLAN Nodes for which we monitor timeout. <simplesect kind="remark"><para>values 69u <linebreak/>
+ Number of all standard CANs and VLAN Nodes for which we monitor timeout. </para></simplesect>
+<simplesect kind="remark"><para>values 77u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1011" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1075" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="inc_2_err_hdl___types_8h_1aa5c311e69c16b1745c4b6a79dabc5cd2" prot="public" static="no">
+        <name>MAX_NODE_ID</name>
+        <initializer>0x12Bu</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>MAX node ID in built in list. <simplesect kind="remark"><para>values 0x12Bu <linebreak/>
+ MAX node ID in built in list. </para></simplesect>
+<simplesect kind="remark"><para>values 0x138u <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1019" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evof/inc/ErrHdl_Types.h" bodystart="1083" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TEVoltageRange</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089a69ceb75b5f8ee5d2b94429206775bf8a" prot="public">
+          <name>E_NORMAL_VOLTAGE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Voltage is in normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089abbf88422da79c432c7903c39fb1ebbaf" prot="public">
+          <name>E_UNDER_VOLTAGE</name>
+          <briefdescription>
+<para>Voltage is in below normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089a4cb3b14cbd951aee4de47be1c05be3bb" prot="public">
+          <name>E_OVER_VOLTAGE</name>
+          <briefdescription>
+<para>Voltage is in above normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089a69ceb75b5f8ee5d2b94429206775bf8a" prot="public">
+          <name>E_NORMAL_VOLTAGE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Voltage is in normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089abbf88422da79c432c7903c39fb1ebbaf" prot="public">
+          <name>E_UNDER_VOLTAGE</name>
+          <briefdescription>
+<para>Voltage is in below normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1ae3b193624ac3a90dd4513f41a333e089a4cb3b14cbd951aee4de47be1c05be3bb" prot="public">
+          <name>E_OVER_VOLTAGE</name>
+          <briefdescription>
+<para>Voltage is in above normal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ENUMS. </para>        </briefdescription>
+        <detaileddescription>
+<para><hruler/>
+</para><para>This enum defines the Voltage Ranges </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1028" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1027" bodyend="1032"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EthernetBusHW</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773af513baaac9bceb5a8662771fd9514393" prot="public">
+          <name>ethernetBusHW_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a7cea51e07132a598efa89145393127b9" prot="public">
+          <name>ethernetBusHW_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a28062d856aca2acb825979cfd6d7bcb6" prot="public">
+          <name>ethernetBusHW_4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773ab6b75d022a090e5d7ca9ac666bbf98a7" prot="public">
+          <name>ethernetBusHW_6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a936acc7c243b080c33fa7ca1301865ad" prot="public">
+          <name>ethernetBusHW_7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773ab4180b01b8c2e717bf39a77fcb2b98fd" prot="public">
+          <name>ethernetBusHW_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a659993a5de47afa47ee73af7c1d58673" prot="public">
+          <name>ethernetBusHW_10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a53bb7c87998c7d15a937fa1abbef2b27" prot="public">
+          <name>ethernetBusHW_11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a0640d55734c9e1825c52d3782413ebf7" prot="public">
+          <name>ethernetBusHW_12</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773afbf937a8683658192f0f33ed54b02dd1" prot="public">
+          <name>ethernetBusHW_13</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a47b89ddda937b7bf4c9725c26e029af5" prot="public">
+          <name>LastBusHW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773af513baaac9bceb5a8662771fd9514393" prot="public">
+          <name>ethernetBusHW_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a7cea51e07132a598efa89145393127b9" prot="public">
+          <name>ethernetBusHW_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a28062d856aca2acb825979cfd6d7bcb6" prot="public">
+          <name>ethernetBusHW_4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773ab6b75d022a090e5d7ca9ac666bbf98a7" prot="public">
+          <name>ethernetBusHW_6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a936acc7c243b080c33fa7ca1301865ad" prot="public">
+          <name>ethernetBusHW_7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773ab4180b01b8c2e717bf39a77fcb2b98fd" prot="public">
+          <name>ethernetBusHW_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a659993a5de47afa47ee73af7c1d58673" prot="public">
+          <name>ethernetBusHW_10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a53bb7c87998c7d15a937fa1abbef2b27" prot="public">
+          <name>ethernetBusHW_11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a0640d55734c9e1825c52d3782413ebf7" prot="public">
+          <name>ethernetBusHW_12</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773afbf937a8683658192f0f33ed54b02dd1" prot="public">
+          <name>ethernetBusHW_13</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1af9f42a2af1272596a33d57b3d0f27773a47b89ddda937b7bf4c9725c26e029af5" prot="public">
+          <name>LastBusHW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buses ids for ethernet hardware errors </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1038" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1038" bodyend="1050"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EthernetBusIP</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8addbf0f66b3a0a7bd137c2b5f02ae3ac0" prot="public">
+          <name>ethernetBusIP_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a1d23bb8fe35a0397b2666184c92d4e81" prot="public">
+          <name>ethernetBusIP_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a57e4a3c9c261f521a0892637daad9c73" prot="public">
+          <name>ethernetBusIP_4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aec80a587dcdff68688315d9b41f13878" prot="public">
+          <name>ethernetBusIP_6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ac570bed317845e76341d3dd718891872" prot="public">
+          <name>ethernetBusIP_7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8af0420bfac245a633274ca3ac787e252b" prot="public">
+          <name>ethernetBusIP_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ae6b1485264b22d6edc552eeded518767" prot="public">
+          <name>ethernetBusIP_10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aead7f47c67509da969b9ad10c4fd4ed8" prot="public">
+          <name>ethernetBusIP_11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a4d094a32dd68dec8e4f51be8ba275fcf" prot="public">
+          <name>ethernetBusIP_12</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ac047a5ae52d4bdcfa9c416e71d1c9cde" prot="public">
+          <name>ethernetBusIP_13</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8abd9da04500bf9bd4ed497712bdf65625" prot="public">
+          <name>ethernetBusIP_30</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aa6d35a330e91b28e6fe2f53932e73dd0" prot="public">
+          <name>ethernetBusIP_31</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a5904695be183f9c2b4353e618375e43d" prot="public">
+          <name>LastBusIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8addbf0f66b3a0a7bd137c2b5f02ae3ac0" prot="public">
+          <name>ethernetBusIP_2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a1d23bb8fe35a0397b2666184c92d4e81" prot="public">
+          <name>ethernetBusIP_3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a57e4a3c9c261f521a0892637daad9c73" prot="public">
+          <name>ethernetBusIP_4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aec80a587dcdff68688315d9b41f13878" prot="public">
+          <name>ethernetBusIP_6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ac570bed317845e76341d3dd718891872" prot="public">
+          <name>ethernetBusIP_7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8af0420bfac245a633274ca3ac787e252b" prot="public">
+          <name>ethernetBusIP_8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ae6b1485264b22d6edc552eeded518767" prot="public">
+          <name>ethernetBusIP_10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aead7f47c67509da969b9ad10c4fd4ed8" prot="public">
+          <name>ethernetBusIP_11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a4d094a32dd68dec8e4f51be8ba275fcf" prot="public">
+          <name>ethernetBusIP_12</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8ac047a5ae52d4bdcfa9c416e71d1c9cde" prot="public">
+          <name>ethernetBusIP_13</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8abd9da04500bf9bd4ed497712bdf65625" prot="public">
+          <name>ethernetBusIP_30</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8aa6d35a330e91b28e6fe2f53932e73dd0" prot="public">
+          <name>ethernetBusIP_31</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a99b4ee0e977e76713961cb316f8f2be8a5904695be183f9c2b4353e618375e43d" prot="public">
+          <name>LastBusIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Buses ids for ethernet logical errors </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1056" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1056" bodyend="1070"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SteuergeraetDefektID</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a7aba9ce9085e540282bc009f461fbe15" prot="public">
+          <name>DTC_000143</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a4e8af10f9478dec0edbc2a1283bd1562" prot="public">
+          <name>CIE_IMA_DTC</name>
+          <initializer>= DTC_000143</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a30f8c83b5725d22c337f5cef37949ab0" prot="public">
+          <name>CIE_PBRIDGE_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4aafaf5107769111ecbcdd11e858cf03cf" prot="public">
+          <name>CIE_XBAR_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a422a804ca3c674788018d29bfc54e30f" prot="public">
+          <name>CIE_SSCM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ab14819c4f9c774a23d80fb4e6ecdd7e3" prot="public">
+          <name>CIE_HSM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ac937a46559369251b09ed3fbf967184e" prot="public">
+          <name>DTC_000142</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a1ec43b4d7f737c42a441adaae22ba5d3" prot="public">
+          <name>TCM_DTC</name>
+          <initializer>= DTC_000142</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a671f4fc953ccd04bcf2efb9052f4333a" prot="public">
+          <name>SYS_RAM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a5a501044f9ceba2a7a9206a4d33ab822" prot="public">
+          <name>PERIPH_RAM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a00bdc03b917e5b7982a0d5902e3d6209" prot="public">
+          <name>DTC_000144</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ae609346dc27f1072a7170e55dc6d734a" prot="public">
+          <name>SAFE_MODE_DTC</name>
+          <initializer>= DTC_000144</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a5f7e5c624a3e31ce7ff0792a90265b23" prot="public">
+          <name>Test_CIRCUITRY_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ae7bd3b4e2a39e5c8c16a4e5b37847b63" prot="public">
+          <name>DTC_000153</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a7c1ac98f8fc15fe3efeaf29971434a44" prot="public">
+          <name>PMIE_CHORUS_DTC</name>
+          <initializer>= DTC_000153</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a9bcc09bfb26ca8bcbd348638f0d61221" prot="public">
+          <name>STEUERGERAET_DEFEKT_NR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a7aba9ce9085e540282bc009f461fbe15" prot="public">
+          <name>DTC_000143</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a4e8af10f9478dec0edbc2a1283bd1562" prot="public">
+          <name>CIE_IMA_DTC</name>
+          <initializer>= DTC_000143</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a30f8c83b5725d22c337f5cef37949ab0" prot="public">
+          <name>CIE_PBRIDGE_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4aafaf5107769111ecbcdd11e858cf03cf" prot="public">
+          <name>CIE_XBAR_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a422a804ca3c674788018d29bfc54e30f" prot="public">
+          <name>CIE_SSCM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ab14819c4f9c774a23d80fb4e6ecdd7e3" prot="public">
+          <name>CIE_HSM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ac937a46559369251b09ed3fbf967184e" prot="public">
+          <name>DTC_000142</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a1ec43b4d7f737c42a441adaae22ba5d3" prot="public">
+          <name>TCM_DTC</name>
+          <initializer>= DTC_000142</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a671f4fc953ccd04bcf2efb9052f4333a" prot="public">
+          <name>SYS_RAM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a5a501044f9ceba2a7a9206a4d33ab822" prot="public">
+          <name>PERIPH_RAM_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a00bdc03b917e5b7982a0d5902e3d6209" prot="public">
+          <name>DTC_000144</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ae609346dc27f1072a7170e55dc6d734a" prot="public">
+          <name>SAFE_MODE_DTC</name>
+          <initializer>= DTC_000144</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a5f7e5c624a3e31ce7ff0792a90265b23" prot="public">
+          <name>Test_CIRCUITRY_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4ae7bd3b4e2a39e5c8c16a4e5b37847b63" prot="public">
+          <name>DTC_000153</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a7c1ac98f8fc15fe3efeaf29971434a44" prot="public">
+          <name>PMIE_CHORUS_DTC</name>
+          <initializer>= DTC_000153</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa53f823fd1d62d8a8caa0a949ff8c1b4a9bcc09bfb26ca8bcbd348638f0d61221" prot="public">
+          <name>STEUERGERAET_DEFEKT_NR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains DTC information </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1076" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1076" bodyend="1105"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SteuergeraetDefektDTCCNT</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba36b2b92f1d381871038060b926431e0f" prot="public">
+          <name>DTC_000143_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba01de06c7d8f49b7784b35a9403454003" prot="public">
+          <name>DTC_000142_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83babc5862bca06d379cc3b97915aa42dd29" prot="public">
+          <name>DTC_000144_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba8465c30e42c05c2721170a9e85a2f637" prot="public">
+          <name>DTC_000153_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba8d645abb9e54fa6069568b6ee48d6f06" prot="public">
+          <name>NUMBER_Of_Steuergeraet_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba36b2b92f1d381871038060b926431e0f" prot="public">
+          <name>DTC_000143_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba01de06c7d8f49b7784b35a9403454003" prot="public">
+          <name>DTC_000142_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83babc5862bca06d379cc3b97915aa42dd29" prot="public">
+          <name>DTC_000144_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba8465c30e42c05c2721170a9e85a2f637" prot="public">
+          <name>DTC_000153_ID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1aa6a61678c5b36e65215d148b299df83ba8d645abb9e54fa6069568b6ee48d6f06" prot="public">
+          <name>NUMBER_Of_Steuergeraet_DTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains DTC ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1111" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1111" bodyend="1117"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>NodeTimeoutObjOp</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca796586122c81331748e0620c52c05941" prot="public">
+          <name>TimerNodeInc</name>
+          <briefdescription>
+<para>Node Timeout timer increment. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28cab9ae92c5ad0ba62a472520abe364cc28" prot="public">
+          <name>ResetNodeTimer</name>
+          <briefdescription>
+<para>Reset node timer. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca23f835fe1fd98a41d2fd35ab534458e0" prot="public">
+          <name>GetTimerState</name>
+          <briefdescription>
+<para>Get Node timer state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28cabc497a8eb30bc22630d33f96c5bcbb60" prot="public">
+          <name>GetEventId</name>
+          <briefdescription>
+<para>Get node DEM event id. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca91abf2ce3934f4104fea3b3aeee1ada9" prot="public">
+          <name>SetOldState</name>
+          <briefdescription>
+<para>Set DTC report state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28caf937132065857a5bd5e47356fdf41a04" prot="public">
+          <name>ResetOldState</name>
+          <briefdescription>
+<para>Reset DTC report state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca3e2bb0c2817b9bce5e17a2b8c22d6992" prot="public">
+          <name>GetOldState</name>
+          <briefdescription>
+<para>Get DTC report state*/. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca796586122c81331748e0620c52c05941" prot="public">
+          <name>TimerNodeInc</name>
+          <briefdescription>
+<para>Node Timeout timer increment. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28cab9ae92c5ad0ba62a472520abe364cc28" prot="public">
+          <name>ResetNodeTimer</name>
+          <briefdescription>
+<para>Reset node timer. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca23f835fe1fd98a41d2fd35ab534458e0" prot="public">
+          <name>GetTimerState</name>
+          <briefdescription>
+<para>Get Node timer state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28cabc497a8eb30bc22630d33f96c5bcbb60" prot="public">
+          <name>GetEventId</name>
+          <briefdescription>
+<para>Get node DEM event id. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca91abf2ce3934f4104fea3b3aeee1ada9" prot="public">
+          <name>SetOldState</name>
+          <briefdescription>
+<para>Set DTC report state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28caf937132065857a5bd5e47356fdf41a04" prot="public">
+          <name>ResetOldState</name>
+          <briefdescription>
+<para>Reset DTC report state. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a5e0c94b740ba2689ca268e3be804e28ca3e2bb0c2817b9bce5e17a2b8c22d6992" prot="public">
+          <name>GetOldState</name>
+          <briefdescription>
+<para>Get DTC report state*/. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Conatins node state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1123" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1123" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="enum" id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>LINFramesID</name>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac597b0fbc251f24214fd915b1972015c" prot="public">
+          <name>IMPL_LIN1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a36b76b562bd4720a63f4732fd1542fac" prot="public">
+          <name>LIN1_BDM_FIRST</name>
+          <initializer>= IMPL_LIN1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab1fe5418ef5c203b2bf43da565ac4286" prot="public">
+          <name>LIN1_BDM</name>
+          <initializer>= LIN1_BDM_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a02cafac4dff27c6080a9686bd58103e7" prot="public">
+          <name>LIN1_BDM_Fusi</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a43bfc9aead9e7fe3cf590e5993f01cd2" prot="public">
+          <name>LIN1_BDM_LiIon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afb2a824b4dbc445cbdb28b01db30e4b0" prot="public">
+          <name>LIN1_BDM_Ruhe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac44b1d2621fb63e5d9efdcde0b962cc5" prot="public">
+          <name>LIN1_BDM_Zeit</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a3c2d0b76fe8efff29998453a2f08de03" prot="public">
+          <name>LIN1_BDM_BZE_01</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a941750c08cec32d4eac30c0167798fad" prot="public">
+          <name>LIN1_BDM_BZE_02</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ade03fd081a005254f68bfe72fde7a1d0" prot="public">
+          <name>LIN1_BDM_BZE_03</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a562e6a12aa3d685a49454441e885ea46" prot="public">
+          <name>LIN1_BDM_LAST</name>
+          <initializer>= LIN1_BDM_BZE_03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1ba9f1577a53fbc77f4c8bdc9d7a2509" prot="public">
+          <name>LIN1_DCAC_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ae153b4b7c134d2596acc9b2b5eb74ee6" prot="public">
+          <name>LIN1_DCAC</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afd4e9423b350ab9dc0e63c0c1ce337ea" prot="public">
+          <name>LIN1_DCAC_LAST</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab39da75fd7598389d67d93dda96134ee" prot="public">
+          <name>IMPL_LIN1_LAST</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a218681be99b2302bfe9829e206781fc4" prot="public">
+          <name>IMPL_LIN2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac54826aa2da27563264643bb48ef07e7" prot="public">
+          <name>LIN2_MFL_FIRST</name>
+          <initializer>= IMPL_LIN2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afe988bc468b1dc2b10f76d2741d06cd4" prot="public">
+          <name>LIN2_MFL</name>
+          <initializer>= IMPL_LIN2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5b5941cf10d696101cf70f03c7a9f8da" prot="public">
+          <name>LIN2_MFL_01</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a552a192a097d623a144699e2643f8af2" prot="public">
+          <name>LIN2_MFL_LR_HZG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9adb8c8cf363b2c2b4db45313606a4c8dc" prot="public">
+          <name>LIN2_MFL_LAST</name>
+          <initializer>= LIN2_MFL_LR_HZG</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a87afbe98e9c791cccf78e35931b340e7" prot="public">
+          <name>LIN2_KLR_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aef9fe78822a864f2fa635e96613f6f8a" prot="public">
+          <name>LIN2_KLR</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a95d5c8467a7d1f15bbb70da0abff695b" prot="public">
+          <name>LIN2_KLR_LAST</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8fc45d07e5efb66c3a505834df27a3c2" prot="public">
+          <name>IMPL_LIN2_LAST</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa51d886a93f5b7f0343aab9c496218b4" prot="public">
+          <name>LIN3_SHL_LI1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8dfa1d1fb4548c085b3d496d4e849d93" prot="public">
+          <name>LIN3_SHL_LI1</name>
+          <initializer>= LIN3_SHL_LI1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5a51c79985d9e37d820b3080c5993ea3" prot="public">
+          <name>LIN3_SHL_LI1_LAST</name>
+          <initializer>= LIN3_SHL_LI1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a49f0cbce9f6fa629b59bb53b26db36c2" prot="public">
+          <name>LIN3_SHL_LI2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa93a15f7481a68f3f35741f321302455" prot="public">
+          <name>LIN3_SHL_LI2</name>
+          <initializer>= LIN3_SHL_LI2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a986ab7e843da6ac4bb6ea0aabc52a4c3" prot="public">
+          <name>LIN3_SHL_LI2_LAST</name>
+          <initializer>= LIN3_SHL_LI2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa33ded9c141f8e358a2e5ec860d7078f" prot="public">
+          <name>LIN3_SHL_RE1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ada209975536f383d18d2bbe758268b44" prot="public">
+          <name>LIN3_SHL_RE1</name>
+          <initializer>= LIN3_SHL_RE1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a57a87de36555b7e9255bda247918fb24" prot="public">
+          <name>LIN3_SHL_RE1_LAST</name>
+          <initializer>= LIN3_SHL_RE1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a057fdd9065838fa7097456a143e95fdb" prot="public">
+          <name>LIN3_SHL_RE2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a2e3992360884b5f9c2338e4add18107b" prot="public">
+          <name>LIN3_SHL_RE2</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1cd5aa92aa3de30c89e9784a214f157a" prot="public">
+          <name>LIN3_SHL_RE2_LAST</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a393f80d9db82d3fadde91706303c8fe6" prot="public">
+          <name>IMPL_LIN3_LAST</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab08f56099c2f3e13a41ccf9694a431bb" prot="public">
+          <name>IMPL_LIN4_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a98d4927c379a8efe827b20aa5f4d1362" prot="public">
+          <name>LIN4_DWASENSOR_FIRST</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ad49ff19ff4ee15574d73c7901d27e239" prot="public">
+          <name>LIN4_DWASENSOR</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a19cb7fae86cd3369673201c9cf894649" prot="public">
+          <name>LIN4_DWASENSOR_LAST</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9acdd72f9c1ea1137f9d2a66a3c5aa04cb" prot="public">
+          <name>LIN4_SOUNDER_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a072de3180a49f5c0ec69d5938001bd6f" prot="public">
+          <name>LIN4_SOUNDER</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a32a0ef12beb278894a2cf226334f4297" prot="public">
+          <name>LIN4_SOUNDER_LAST</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a9f22ae22907b7ec3336cf39b4618715d" prot="public">
+          <name>IMPL_LIN4_LAST</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5a5e88a5c8d45fca711a3e6c02d24e60" prot="public">
+          <name>LIN6_VIP_HFS_FIRST</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a44636c5142956125921fb094b8048396" prot="public">
+          <name>LIN6_VIP_HFS</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a31d669a9353aed7fed6ddf2bc5c72449" prot="public">
+          <name>LIN6_VIP_HFS_LAST</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a27daf1ee8ab846af6c2b7070df1614b6" prot="public">
+          <name>IMPL_LIN6_LAST</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab2bb370a1d3368b09955cf4f6c2c2745" prot="public">
+          <name>LIN6_VIP_HBFS_FIRST</name>
+          <initializer>= 20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1b9050546b6e6b43392f4d18602ab191" prot="public">
+          <name>LIN6_VIP_HBFS</name>
+          <initializer>= LIN6_VIP_HBFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a85135f674d76c61a3917cf7269aa1713" prot="public">
+          <name>LIN6_VIP_HBFS_LAST</name>
+          <initializer>= LIN6_VIP_HBFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab4ee47902fc2f2d5dced391f9f3a4baa" prot="public">
+          <name>IMPL_LIN6_FIRST</name>
+          <initializer>= 21</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9af5bf7f6633b58c03ce4b782d043aed13" prot="public">
+          <name>LIN6_VIP_FIRST</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8eccee9a58c7e4299ac6634b8313efda" prot="public">
+          <name>LIN6_VIP</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a0e5d036dded28b6bbf0c7ee70aa75566" prot="public">
+          <name>LIN6_VIP_LAST</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9af4879383e93871610b2d8f477deb0f2f" prot="public">
+          <name>MAX_FRAME_NUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac597b0fbc251f24214fd915b1972015c" prot="public">
+          <name>IMPL_LIN1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a36b76b562bd4720a63f4732fd1542fac" prot="public">
+          <name>LIN1_BDM_FIRST</name>
+          <initializer>= IMPL_LIN1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab1fe5418ef5c203b2bf43da565ac4286" prot="public">
+          <name>LIN1_BDM</name>
+          <initializer>= LIN1_BDM_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a02cafac4dff27c6080a9686bd58103e7" prot="public">
+          <name>LIN1_BDM_Fusi</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a43bfc9aead9e7fe3cf590e5993f01cd2" prot="public">
+          <name>LIN1_BDM_LiIon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afb2a824b4dbc445cbdb28b01db30e4b0" prot="public">
+          <name>LIN1_BDM_Ruhe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac44b1d2621fb63e5d9efdcde0b962cc5" prot="public">
+          <name>LIN1_BDM_Zeit</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a3c2d0b76fe8efff29998453a2f08de03" prot="public">
+          <name>LIN1_BDM_BZE_01</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a941750c08cec32d4eac30c0167798fad" prot="public">
+          <name>LIN1_BDM_BZE_02</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ade03fd081a005254f68bfe72fde7a1d0" prot="public">
+          <name>LIN1_BDM_BZE_03</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a562e6a12aa3d685a49454441e885ea46" prot="public">
+          <name>LIN1_BDM_LAST</name>
+          <initializer>= LIN1_BDM_BZE_03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1ba9f1577a53fbc77f4c8bdc9d7a2509" prot="public">
+          <name>LIN1_DCAC_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ae153b4b7c134d2596acc9b2b5eb74ee6" prot="public">
+          <name>LIN1_DCAC</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afd4e9423b350ab9dc0e63c0c1ce337ea" prot="public">
+          <name>LIN1_DCAC_LAST</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab39da75fd7598389d67d93dda96134ee" prot="public">
+          <name>IMPL_LIN1_LAST</name>
+          <initializer>= LIN1_DCAC_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a218681be99b2302bfe9829e206781fc4" prot="public">
+          <name>IMPL_LIN2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ac54826aa2da27563264643bb48ef07e7" prot="public">
+          <name>LIN2_MFL_FIRST</name>
+          <initializer>= IMPL_LIN2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9afe988bc468b1dc2b10f76d2741d06cd4" prot="public">
+          <name>LIN2_MFL</name>
+          <initializer>= IMPL_LIN2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5b5941cf10d696101cf70f03c7a9f8da" prot="public">
+          <name>LIN2_MFL_01</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a552a192a097d623a144699e2643f8af2" prot="public">
+          <name>LIN2_MFL_LR_HZG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9adb8c8cf363b2c2b4db45313606a4c8dc" prot="public">
+          <name>LIN2_MFL_LAST</name>
+          <initializer>= LIN2_MFL_LR_HZG</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a87afbe98e9c791cccf78e35931b340e7" prot="public">
+          <name>LIN2_KLR_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aef9fe78822a864f2fa635e96613f6f8a" prot="public">
+          <name>LIN2_KLR</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a95d5c8467a7d1f15bbb70da0abff695b" prot="public">
+          <name>LIN2_KLR_LAST</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8fc45d07e5efb66c3a505834df27a3c2" prot="public">
+          <name>IMPL_LIN2_LAST</name>
+          <initializer>= LIN2_KLR_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa51d886a93f5b7f0343aab9c496218b4" prot="public">
+          <name>LIN3_SHL_LI1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8dfa1d1fb4548c085b3d496d4e849d93" prot="public">
+          <name>LIN3_SHL_LI1</name>
+          <initializer>= LIN3_SHL_LI1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5a51c79985d9e37d820b3080c5993ea3" prot="public">
+          <name>LIN3_SHL_LI1_LAST</name>
+          <initializer>= LIN3_SHL_LI1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a49f0cbce9f6fa629b59bb53b26db36c2" prot="public">
+          <name>LIN3_SHL_LI2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa93a15f7481a68f3f35741f321302455" prot="public">
+          <name>LIN3_SHL_LI2</name>
+          <initializer>= LIN3_SHL_LI2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a986ab7e843da6ac4bb6ea0aabc52a4c3" prot="public">
+          <name>LIN3_SHL_LI2_LAST</name>
+          <initializer>= LIN3_SHL_LI2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9aa33ded9c141f8e358a2e5ec860d7078f" prot="public">
+          <name>LIN3_SHL_RE1_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ada209975536f383d18d2bbe758268b44" prot="public">
+          <name>LIN3_SHL_RE1</name>
+          <initializer>= LIN3_SHL_RE1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a57a87de36555b7e9255bda247918fb24" prot="public">
+          <name>LIN3_SHL_RE1_LAST</name>
+          <initializer>= LIN3_SHL_RE1_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a057fdd9065838fa7097456a143e95fdb" prot="public">
+          <name>LIN3_SHL_RE2_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a2e3992360884b5f9c2338e4add18107b" prot="public">
+          <name>LIN3_SHL_RE2</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1cd5aa92aa3de30c89e9784a214f157a" prot="public">
+          <name>LIN3_SHL_RE2_LAST</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a393f80d9db82d3fadde91706303c8fe6" prot="public">
+          <name>IMPL_LIN3_LAST</name>
+          <initializer>= LIN3_SHL_RE2_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab08f56099c2f3e13a41ccf9694a431bb" prot="public">
+          <name>IMPL_LIN4_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a98d4927c379a8efe827b20aa5f4d1362" prot="public">
+          <name>LIN4_DWASENSOR_FIRST</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ad49ff19ff4ee15574d73c7901d27e239" prot="public">
+          <name>LIN4_DWASENSOR</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a19cb7fae86cd3369673201c9cf894649" prot="public">
+          <name>LIN4_DWASENSOR_LAST</name>
+          <initializer>= IMPL_LIN4_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9acdd72f9c1ea1137f9d2a66a3c5aa04cb" prot="public">
+          <name>LIN4_SOUNDER_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a072de3180a49f5c0ec69d5938001bd6f" prot="public">
+          <name>LIN4_SOUNDER</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a32a0ef12beb278894a2cf226334f4297" prot="public">
+          <name>LIN4_SOUNDER_LAST</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a9f22ae22907b7ec3336cf39b4618715d" prot="public">
+          <name>IMPL_LIN4_LAST</name>
+          <initializer>= LIN4_SOUNDER_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a5a5e88a5c8d45fca711a3e6c02d24e60" prot="public">
+          <name>LIN6_VIP_HFS_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a44636c5142956125921fb094b8048396" prot="public">
+          <name>LIN6_VIP_HFS</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a31d669a9353aed7fed6ddf2bc5c72449" prot="public">
+          <name>LIN6_VIP_HFS_LAST</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a27daf1ee8ab846af6c2b7070df1614b6" prot="public">
+          <name>IMPL_LIN6_LAST</name>
+          <initializer>= LIN6_VIP_HFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab2bb370a1d3368b09955cf4f6c2c2745" prot="public">
+          <name>LIN6_VIP_HBFS_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a1b9050546b6e6b43392f4d18602ab191" prot="public">
+          <name>LIN6_VIP_HBFS</name>
+          <initializer>= LIN6_VIP_HBFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a85135f674d76c61a3917cf7269aa1713" prot="public">
+          <name>LIN6_VIP_HBFS_LAST</name>
+          <initializer>= LIN6_VIP_HBFS_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9ab4ee47902fc2f2d5dced391f9f3a4baa" prot="public">
+          <name>IMPL_LIN6_FIRST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9af5bf7f6633b58c03ce4b782d043aed13" prot="public">
+          <name>LIN6_VIP_FIRST</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a8eccee9a58c7e4299ac6634b8313efda" prot="public">
+          <name>LIN6_VIP</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9a0e5d036dded28b6bbf0c7ee70aa75566" prot="public">
+          <name>LIN6_VIP_LAST</name>
+          <initializer>= IMPL_LIN6_FIRST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_2inc_2_err_hdl___types_8h_1a06fdbedb21c90101608a33e6aa0d2fd9af4879383e93871610b2d8f477deb0f2f" prot="public">
+          <name>MAX_FRAME_NUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains LIN ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1137" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" bodystart="1137" bodyend="1248"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="inc_2_err_hdl___types_8h_1a002cbcbfd64938ba2b9f9c12b0a51e4c" prot="public" static="no" mutable="no">
+        <type>const TBilLinNodeIdx</type>
+        <definition>const TBilLinNodeIdx MapUint8ToTBilLinNodeIdx[BIL_LIN_NODES_CNT]</definition>
+        <argsstring>[BIL_LIN_NODES_CNT]</argsstring>
+        <name>MapUint8ToTBilLinNodeIdx</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This array maps uint8 to TBilLinNodeIdx. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1352" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_If.c" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="inc_2_err_hdl___types_8h_1ac5389ea27f55a2481f7d096b03aa0af1" prot="public" static="no" mutable="no">
+        <type>const tDK2Slave</type>
+        <definition>const tDK2Slave MapUint8ToDK2Enum[DK2_CanSlavesCount]</definition>
+        <argsstring>[DK2_CanSlavesCount]</argsstring>
+        <name>MapUint8ToDK2Enum</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This array is used to map uint8 to tDK2Slave. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1353" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_DK2_Can_Timeout_Detection.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="inc_2_err_hdl___types_8h_1a6c6afa83bc626d57df6709dbb4784ec3" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 ErrMapVLANNodeToPort[(0x109u)]</definition>
+        <argsstring>[(0x109u)]</argsstring>
+        <name>ErrMapVLANNodeToPort</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This array maps Vlan node ID to port. <simplesect kind="remark"><para>values N/A - is a const array <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context {task, <ref refid="_err_hdl___vlan___bus___port___enable___conditions_8c_1a41a8c91ef11adc685fb3a4136782eb57" kindref="member">ErrCheckNodeExistsOnPort</ref>} <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h" line="1354" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Vlan_Bus_Port_Enable_Conditions.c" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the ErrHdl_Can_Vlan_Node_Timeouts_Detection functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para>ErrHdl_Types.h </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>11 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/24/2023 </para></simplesect>
+This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/Evo/inc/ErrHdl_Types.h"/>
+  </compounddef>
+</doxygen>

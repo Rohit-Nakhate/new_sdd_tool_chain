@@ -1,0 +1,734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___start___diag___timer_8c" kind="file" language="C++">
+    <compoundname>ErrHdl_Start_Diag_Timer.c</compoundname>
+    <includes refid="_err_hdl___start___diag___timer_8h" local="yes">ErrHdl_Start_Diag_Timer.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">ErrHdl_Types.h</includes>
+    <includes refid="_err_hdl_8h" local="yes">ErrHdl.h</includes>
+    <includes local="yes">ConfigChannels.h</includes>
+    <includes local="yes">CentrActivationNetDiag.h</includes>
+    <includes refid="_err_hdl___can___bus___enable___conditions_8h" local="yes">ErrHdl_Can_Bus_Enable_Conditions.h</includes>
+    <includes local="yes">Rte_ERRHDL_MQB.h</includes>
+    <incdepgraph>
+      <node id="677">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="678">
+        <label>Mm.h</label>
+      </node>
+      <node id="676">
+        <label>ErrHdl_Lin_Frame_Errors_Detection.h</label>
+        <link refid="_err_hdl___lin___frame___errors___detection_8h"/>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+      </node>
+      <node id="673">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="680">
+        <label>ErrHdl_Can_Bus_Enable_Conditions.h</label>
+        <link refid="_err_hdl___can___bus___enable___conditions_8h"/>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+      </node>
+      <node id="674">
+        <label>ErrHdl_Types.h</label>
+      </node>
+      <node id="681">
+        <label>Rte_ERRHDL_MQB.h</label>
+      </node>
+      <node id="679">
+        <label>CentrActivationNetDiag.h</label>
+      </node>
+      <node id="670">
+        <label>ErrHdl_Start_Diag_Timer.c</label>
+        <link refid="_err_hdl___start___diag___timer_8c"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+      </node>
+      <node id="675">
+        <label>ErrHdl.h</label>
+        <link refid="_err_hdl_8h"/>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>ConfigChannels.h</label>
+      </node>
+      <node id="671">
+        <label>ErrHdl_Start_Diag_Timer.h</label>
+        <link refid="_err_hdl___start___diag___timer_8h"/>
+        <childnode refid="672" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 TDiagStartTKL30[ERR_NUMB_OF_BUSES]</definition>
+        <argsstring>[ERR_NUMB_OF_BUSES]</argsstring>
+        <name>TDiagStartTKL30</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This array stores TdiagStartT for kl30 DTCs per bus. <simplesect kind="remark"><para>values The elements is updated in <ref refid="_err_hdl___start___diag___timer_8c_1aa7f05e95497a4768e234a5530c3cefb8" kindref="member">ErrCalculateTDiagStartTKL30</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1ac85be4b4a11ac7f8ed4f4224344a0473" kindref="member">ErrResetTDiagStartTAllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" kindref="member">ErrTDiagStartTCyclicCalc</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1a371a6de8a2664ad2fc6d061ea8265df9" kindref="member">ErrResetTDiagStartTKL30AllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1aa7cd00c3fcbb1690f8def94d7ef3c168" kindref="member">ErrResetTDiagStartT</ref> <linebreak/>
+ unit N/A - It is an array <linebreak/>
+ resolution N/A - It is an array <linebreak/>
+ context task, Check values <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="76" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 TDiagStartTKL15[ERR_NUMB_OF_BUSES]</definition>
+        <argsstring>[ERR_NUMB_OF_BUSES]</argsstring>
+        <name>TDiagStartTKL15</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This array strages TdiagStartT for kl15 DTCs per bus. <simplesect kind="remark"><para>values The elements is updated in <ref refid="_err_hdl___start___diag___timer_8c_1aa7f05e95497a4768e234a5530c3cefb8" kindref="member">ErrCalculateTDiagStartTKL30</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1ac85be4b4a11ac7f8ed4f4224344a0473" kindref="member">ErrResetTDiagStartTAllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" kindref="member">ErrTDiagStartTCyclicCalc</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1a371a6de8a2664ad2fc6d061ea8265df9" kindref="member">ErrResetTDiagStartTKL30AllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1aa7cd00c3fcbb1690f8def94d7ef3c168" kindref="member">ErrResetTDiagStartT</ref> <linebreak/>
+ unit N/A - It is an array <linebreak/>
+ resolution N/A - It is an array <linebreak/>
+ context task, Check values <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="92" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___start___diag___timer_8c_1a1a89edbb7c20b4d1a8e8f3a9662740a6" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean KL15State</definition>
+        <argsstring></argsstring>
+        <name>KL15State</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This stores State of KL15. <simplesect kind="remark"><para>values The elements is updated in <ref refid="_err_hdl___start___diag___timer_8c_1aa7f05e95497a4768e234a5530c3cefb8" kindref="member">ErrCalculateTDiagStartTKL30</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1ac85be4b4a11ac7f8ed4f4224344a0473" kindref="member">ErrResetTDiagStartTAllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" kindref="member">ErrTDiagStartTCyclicCalc</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1a371a6de8a2664ad2fc6d061ea8265df9" kindref="member">ErrResetTDiagStartTKL30AllChannels</ref>, <ref refid="_err_hdl___start___diag___timer_8c_1aa7cd00c3fcbb1690f8def94d7ef3c168" kindref="member">ErrResetTDiagStartT</ref> <linebreak/>
+ unit N/A - It is an array <linebreak/>
+ resolution N/A - It is an array <linebreak/>
+ context task, Check values <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="108" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___start___diag___timer_8c_1a67caf2834c88cd9ce4e11a6230ee056f" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean NWDFKL30</definition>
+        <argsstring></argsstring>
+        <name>NWDFKL30</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>informs state of NWDF KL30. <simplesect kind="remark"><para>values The elements is updated in if NWDF state changes <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task, <ref refid="_err_hdl___start___diag___timer_8c_1a9b1491eaf6bac16db703c3ba653d34c7" kindref="member">ErrGetNWDFKL30OffOnState</ref> <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="123" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___start___diag___timer_8c_1a6c60a465e46d39a1c1d1afe3e118deb4" prot="public" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean NWDFKL15</definition>
+        <argsstring></argsstring>
+        <name>NWDFKL15</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Informs state of NWDF KL15. <simplesect kind="remark"><para>values The elements is updated in if NWDF state changes unit N/A - It is an array <linebreak/>
+ resolution N/A - It is an array <linebreak/>
+ context task, <ref refid="_err_hdl___start___diag___timer_8c_1a01381ad71e98d268bcd6a8b3e5d063c2" kindref="member">ErrGetNWDFKL15OffOnState</ref> <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="138" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1aa7f05e95497a4768e234a5530c3cefb8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrCalculateTDiagStartTKL30</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrCalculateTDiagStartTKL30</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function calculate tDiagStartT timer for KL30 type DTCs. If counter value is not above 51 then countert is incremented. This function is called with a cycle time of 10ms.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" kindref="member">ErrTDiagStartTCyclicCalc</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel whose timeout counter to be incremented.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="inc_2_err_hdl___types_8h_1abbe80f20232cb766e280be5f8273fcc8" kindref="member">ERR_TIMER_STOP_VALUE</ref> <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" kindref="member">TDiagStartTKL30</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCalculateTDiagStartTKL30.png">Activity Diagram of function ErrCalculateTDiagStartTKL30 </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1acfe2d398a0ae9cd2aa908512ec037870" kindref="member">TEST_ErrCalculateTDiagStartTKL30</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000104"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10014. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="179" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="225" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a79df75e4eda1dfa2bc1e648c0f8b6532" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrCalculateTDiagStartTKL15</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrCalculateTDiagStartTKL15</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function calculate tDiagStartT timer for KL15 type DTCs. If counter value is not above 51 then countert is incremented. This function is called with a cycle time of 10ms.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" kindref="member">ErrTDiagStartTCyclicCalc</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel whose timeout counter to be incremented.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="inc_2_err_hdl___types_8h_1abbe80f20232cb766e280be5f8273fcc8" kindref="member">ERR_TIMER_STOP_VALUE</ref> <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" kindref="member">TDiagStartTKL15</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrCalculateTDiagStartTKL15.png">Activity Diagram of function ErrCalculateTDiagStartTKL15 </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a1ca877bb1d06f5b9173e4f7940384f78" kindref="member">TEST_ErrCalculateTDiagStartTKL15</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000105"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10014. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="218" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="283" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1ac85be4b4a11ac7f8ed4f4224344a0473" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetTDiagStartTAllChannels</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrResetTDiagStartTAllChannels</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function reset tDiagStartT timers for each bus.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___start___diag___timer_8c_1a8828b96a42d2f76ad99e533ff327e00f" kindref="member">ErrGetKL15OffOnState</ref> } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" kindref="member">TDiagStartTKL15</ref> <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" kindref="member">TDiagStartTKL30</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetTDiagStartTAllChannels.png">Activity Diagram of function ErrResetTDiagStartTAllChannels </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a76d912ac1b7182f1cd7e65ef4382e6da" kindref="member">TEST_ErrResetTDiagStartTAllChannels</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000058"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10011 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="234" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="234" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a371a6de8a2664ad2fc6d061ea8265df9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetTDiagStartTKL30AllChannels</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrResetTDiagStartTKL30AllChannels</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function reset tDiagStartTKL30 timer for each bus.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___start___diag___timer_8c_1a9b1491eaf6bac16db703c3ba653d34c7" kindref="member">ErrGetNWDFKL30OffOnState</ref> } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" kindref="member">TDiagStartTKL30</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetTDiagStartTKL30AllChannels.png">Activity Diagram of function ErrResetTDiagStartTKL30AllChannels </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1ac75c156a236a098c4a45f24e772fe3a6" kindref="member">TEST_ErrResetTDiagStartTKL30AllChannels</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+ {SWR_ICAS1_GW_12148}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="247" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="247" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a4805f53154614ac9ad047687f9e41e61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetTDiagStartTKL15AllChannels</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrResetTDiagStartTKL15AllChannels</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function reset tDiagStartTKL15 timer for each bus.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___start___diag___timer_8c_1a01381ad71e98d268bcd6a8b3e5d063c2" kindref="member">ErrGetNWDFKL15OffOnState</ref> } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" kindref="member">TDiagStartTKL15</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetTDiagStartTKL15AllChannels.png">Activity Diagram of function ErrResetTDiagStartTKL15AllChannels </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1ac64bfa552d3358e1079a6c2b8d565695" kindref="member">TEST_ErrResetTDiagStartTKL15AllChannels</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000059"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_12151. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="259" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="259" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1add70ded6b6246942a74b5f348f4ff9d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrTDiagStartTCyclicCalc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrTDiagStartTCyclicCalc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates tDiagStartT timers for each bus. This function is called when the cyclic event occurs (10ms period).</para><para>reentrant No <linebreak/>
+ context {isr, ErrHandlerTask - Called cyclically every 10ms} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrTDiagStartTCyclicCalc.png">Activity Diagram of function ErrTDiagStartTCyclicCalc </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a908f316f730a4e864473b4e515012b4d" kindref="member">TEST_ErrTDiagStartTCyclicCalc</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000057"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10014. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="271" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="271" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a1a6187da2272783380c69178e90e4090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrTDiagStartTKL15HasElapsed</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrTDiagStartTKL15HasElapsed</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns true if TDiagStartTKL15 has elapsed.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga441be02ea8b9ba499c72e867b11e102c" kindref="member">ErrCheckCanBusEnableConditions</ref>, <ref refid="_err_hdl___can___vlan___node___timeouts___detection_8c_1a4adfd13e397e6c068a99718648e5050c" kindref="member">ErrCheckNodeEnaCond</ref> } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel whose KL15 timer status to be checked</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" kindref="member">TDiagStartTKL15</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrTDiagStartTKL15HasElapsed.png">Activity Diagram of function ErrTDiagStartTKL15HasElapsed </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a55b46d1c4bd21b93eaf56ec0035f0de9" kindref="member">TEST_ErrTDiagStartTKL15HasElapsed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000062"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10010. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="294" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="294" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a2115ba45edefaea40ba3740c8bec68b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrTDiagStartTKL30HasElapsed</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrTDiagStartTKL30HasElapsed</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns true if TDiagStartTKL30 has elapsed.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, function is called to check if the KL30 timer has timed out } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel whose KL30 timer status to be checked</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean HasElapsed : TRUE in case of elapse, otherwise FALSE.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" kindref="member">TDiagStartTKL30</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrTDiagStartTKL30HasElapsed.png">Activity Diagram of function ErrTDiagStartTKL30HasElapsed </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a951f44ea3355a4f4132f6e80ea650472" kindref="member">TEST_ErrTDiagStartTKL30HasElapsed</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000061"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10010. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="307" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="307" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1aa7cd00c3fcbb1690f8def94d7ef3c168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrResetTDiagStartT</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrResetTDiagStartT</name>
+        <param>
+          <type>const TComChannel</type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets TDiagStartT for coresponding Com channel.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, Called to reset the tdiag timer} <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel whose timeout counter to be incremented.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1abc6bde38c1963a66750bd4889b64b74b" kindref="member">TDiagStartTKL15</ref> <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_1a656338dacf6bc3c77ae67d02f8f17ab3" kindref="member">TDiagStartTKL30</ref> <linebreak/>
+ <ref refid="inc_2_err_hdl___types_8h_1a5e4b179147694b071689f11340eeaa57" kindref="member">ERR_RESET_TIMER_VALUE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrResetTDiagStartT.png">Activity Diagram of function ErrResetTDiagStartT </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1abda9b46ed81d03bd09f4160b10ad7afc" kindref="member">TEST_ErrResetTDiagStartT</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000060"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18152 </para><para>SWR_ICAS1_GW_18148 </para><para>SWR_ICAS1_GW_10212 </para><para>SWR_ICAS1_GW_10241 </para><para>SWR_ICAS1_GW_10244 </para><para>SWR_ICAS1_GW_10290. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="320" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="320" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a8828b96a42d2f76ad99e533ff327e00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrGetKL15OffOnState</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrGetKL15OffOnState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets tDiagStartT timer when KL15 change state from off to on.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, ErrHandlerTask - Called every 10ms } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1a1a89edbb7c20b4d1a8e8f3a9662740a6" kindref="member">KL15State</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetKL15OffOnState.png">Activity Diagram of function ErrGetKL15OffOnState </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1abca87110e07f67b32d28676435688f68" kindref="member">TEST_ErrGetKL15OffOnState</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000065"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_12151. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="330" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="330" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a9b1491eaf6bac16db703c3ba653d34c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrGetNWDFKL30OffOnState</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrGetNWDFKL30OffOnState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets tDiagStartTKL30 when NWDF change state from off to on.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, ErrHandlerTask - Called every 10ms } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1a67caf2834c88cd9ce4e11a6230ee056f" kindref="member">NWDFKL30</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetNWDFKL30OffOnState.png">Activity Diagram of function ErrGetNWDFKL30OffOnState </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a75e9c325a1dad0368b5dd4e011a00a6b" kindref="member">TEST_ErrGetNWDFKL30OffOnState</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000064"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10002. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="364" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="364" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___start___diag___timer_8c_1a01381ad71e98d268bcd6a8b3e5d063c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrGetNWDFKL15OffOnState</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrGetNWDFKL15OffOnState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function resets tDiagStartTKL15 when NWDF change state from off to on.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, ErrHandlerTask - Called every 10ms } <linebreak/>
+ thread safe yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___start___diag___timer_8c_1a6c60a465e46d39a1c1d1afe3e118deb4" kindref="member">NWDFKL15</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrGetNWDFKL15OffOnState.png">Activity Diagram of function ErrGetNWDFKL15OffOnState </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___start___diag___timer_8c_8test_1a6b2197dfbefbe6f57e65c2eda88e90e3" kindref="member">TEST_ErrGetNWDFKL15OffOnState</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000063"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_10002. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" line="395" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c" bodystart="395" bodyend="418"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Error Handler - Handales Diag timers. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___start___diag___timer_8c" kindref="compound">ErrHdl_Start_Diag_Timer.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>8 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/17/2023 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Start_Diag_Timer.c"/>
+  </compounddef>
+</doxygen>

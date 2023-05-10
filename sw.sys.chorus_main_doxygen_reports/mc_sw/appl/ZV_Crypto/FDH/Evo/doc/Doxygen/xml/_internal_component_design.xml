@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has 5 units:<itemizedlist>
+<listitem><para><ref refid="_f_d_h___task_8c" kindref="compound">FDH_Task.c</ref></para></listitem><listitem><para><ref refid="_f_d_h___toolbox_8c" kindref="compound">FDH_Toolbox.c</ref></para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c" kindref="compound">FDH_UHF_Handler.c</ref></para></listitem><listitem><para><ref refid="_f_d_h___w_c_z___handler_8c" kindref="compound">FDH_WCZ_Handler.c</ref></para></listitem><listitem><para><ref refid="_z_v_crypto___s_c_i_d_8c" kindref="compound">ZVCrypto_SCID.c</ref> Purpose and interaction of each unit is described in <ref refid="_internal_component_design_1SoftwareUnitInteraction" kindref="member">Software Unit Interaction</ref>.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level.<linebreak/>
+For more details please refer to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="6" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_FFB_357  </para></entry><entry thead="no"><para>ICAS1::FFBDataHandler shall utilize maximum 0.50 kB RAM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_FFB_360  </para></entry><entry thead="no"><para>ICAS1::FFBDataHandler shall utilize maximum 4.50 kB ROM.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_FFB_437  </para></entry><entry thead="no"><para>ICAS1::FFBDataHandler shall generate maximum 0.20% of CPU Load at peaks.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_FFB_359  </para></entry><entry thead="no"><para>ICAS1 shall schedule ICAS1::FFBDataHandler each 10ms.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L3_CRoute_FFB_358  </para></entry><entry thead="no"><para>ICAS1::FFBDataHandler shall be available 30 ms at the latest (&lt;=30 ms) after ICAS1 start-up.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1aedd834be1fcef2567131ca025360d00a" kindref="member">UHF_MessageInitialization</ref></para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1a6c7a346da21b7e706a5bab4a95205593" kindref="member">UHF_TimerInitialization</ref></para></listitem><listitem><para><ref refid="_f_d_h___w_c_z___handler_8c_1a7f7d4376fb7278c95a65f9c4c66540d5" kindref="member">WCZ_Initialization</ref></para></listitem><listitem><para><ref refid="_f_d_h___w_c_z___handler_8c_1a8f1c62cdec11e971acba24201cca0961" kindref="member">WCZ_CyclicHandle</ref></para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref></para></listitem><listitem><para><ref refid="_f_d_h___w_c_z___handler_8c_1ad59ce326515923c3228a5f29a485743b" kindref="member">WCZ_TimerHandle</ref></para></listitem><listitem><para><ref refid="_f_d_h___u_h_f___handler_8c_1ac459fa4d1df04398a423cfc3de7a057f" kindref="member">UHF_TimerHandle</ref></para></listitem><listitem><para><ref refid="_f_d_h___toolbox_8c_1abd55916181df4be0c86596080751ac7e" kindref="member">KeyIndexValidation</ref></para></listitem><listitem><para><ref refid="_f_d_h___toolbox_8c_1aa2040e0e73f503bfa7ec230f7d38d746" kindref="member">FDH_KeyIndexToIndex</ref></para></listitem><listitem><para><ref refid="_f_d_h___toolbox_8c_1aa98deb9d61d53c9bb8ea83f90e098b65" kindref="member">FDH_IndexToKeyIndex</ref></para></listitem><listitem><para>FDH_memset</para></listitem><listitem><para><ref refid="_f_d_h___w_c_z___handler_8c_1a24fdd3fac3c26aae152b7b2d7b2c2005" kindref="member">WCZ_Validate</ref></para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><image type="html" name="Software_Unit_Interaction_FDH.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>FDH SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ZV_Crypto/SW Architecture/FDH/Dynamic</bold></para><para><heading level="2">Tasks</heading>
+</para><para>FDH SWC is assigned to <bold> CORE 1 </bold>, in SWA: <bold>VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ApplicationLayer_Core1</bold>. <linebreak/>
+FDH component execution is under controll of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C1 </bold> in SWA: <bold> VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ZV_Crypto/SW Architecture/FDH/Dynamic/FDH_Init_And_Cyclic</bold></para><para><heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <heading level="2">Events</heading>
+</para><para>No OSEK event needs to be configured for by the module.</para><para><heading level="2">Operating Modes</heading>
+</para><para>FDH does not have requirements for specific operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>FDH SWC power modes are described in SWA: <bold> VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ZV_Crypto/SW Architecture/FDH/Dynamic/FDH_Init_And_Cyclic</bold></para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>Evaluation of the Remote Control Key Error.<linebreak/>
+Remote Control Key reports the key errors by using the LogicalHeader.BatteryLevel field. This is handled by FDH and if field LogicalHeader.BatteryLevel report 0xFF then proper DTC is set. It is realized by <ref refid="_f_d_h___u_h_f___handler_8c_1a97155fed36b4d242df482b511cb2f798" kindref="member">BatteryLevelDTC</ref>.</para><para>Evaluating the errors of the rolling code counter storage in the FFB Data Handler.<linebreak/>
+The FFB Data Handler must check the plausibility of the storage of the rolling code counter in the FFB Data Handler and it must set the associated DTCs. It is realized by <ref refid="_f_d_h___w_c_z___handler_8c_1a5c05fa09c37746766b0f0d2a7757303c" kindref="member">WCZ_PlausibleDTC</ref></para><para><heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts.</para><para><heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para><ulink url="globals_defs.html">Macros defintions</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>There are few significant calculations &amp; algorithms designed within FDH component: <linebreak/>
+ <linebreak/>
+1) <ref refid="_f_d_h___task_8c_1a039ddc8eb74041064ebea355e50f56ad" kindref="member">FDH_TaskCyclicEvent</ref> - is described in SWA: <bold> VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ZV_Crypto/SW Architecture/FDH/Dynamic/FDH_Init_And_Cyclic</bold><linebreak/>
+2) Telegram reception &amp; validation <ref refid="_f_d_h___u_h_f___handler_8c_1a31a9ac319f44da8c7a4d3dc5aec5475d" kindref="member">evUHFEmpfang</ref> <linebreak/>
+3) UHF telegram RCC range detection and output signals triggering <ref refid="_f_d_h___u_h_f___handler_8c_1ab59c8f72efdda193e4d984b8c84a47d8" kindref="member">UHF_CyclicHandle</ref> <linebreak/>
+4) NVM backup handling of Rolling Code Counter status: <ref refid="_f_d_h___w_c_z___handler_8c_1ac1ff29e91d1f7ee247a5c9a1d44cb406" kindref="member">WCZ_StatusReadFromNvm</ref> <ref refid="_f_d_h___w_c_z___handler_8c_1a02ef581cf1d520e1a64f64198a9645f4" kindref="member">WCZ_StatusWriteToNvm</ref> <ref refid="_f_d_h___w_c_z___handler_8c_1a268ab14c2844fab58f9c05c96dccf64c" kindref="member">WCZ_StatusVerifyNvm</ref> <linebreak/>
+5) NVM backup handling of Rolling Code Counters data (WCZ): <ref refid="_f_d_h___w_c_z___handler_8c_1abfc2cc20554a6c286a7ae35ed93d308b" kindref="member">WCZ_ValueReadFromNvm</ref> <ref refid="_f_d_h___w_c_z___handler_8c_1a3c0b1337f7b7498a606338706acb3924" kindref="member">WCZ_ValueWriteToNvm</ref> <ref refid="_f_d_h___w_c_z___handler_8c_1a18889de07457cdddce8ea7dc01199ec1" kindref="member">WCZ_ValueVerifyNvm</ref> <linebreak/>
+6) <ref refid="_f_d_h___u_h_f___handler_8c_1acae902bdbdaee91f399a94896eed4599" kindref="member">ButtonCodeReport</ref> <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para><ref refid="_f_d_h___w_c_z___handler_8c_1a5237f685cd6cfb0c9db6ba78a5732994" kindref="member">sNvmWcz</ref> <ref refid="_f_d_h___u_h_f___handler_8c_1a78367f4bf90a6bd77707b5265b1672c7" kindref="member">sUHF_Message</ref></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>High   </para></entry></row>
+</table>
+</para><para>Ad. Interoperability<linebreak/>
+FDH is designed for ICAS1 project with specific hardware architecture. This means that potential adaptation to other project would require additional configuration e.g., NVM block or StandbyRAM configuration, event handling utilizing Kessy_Event_Manager.<linebreak/>
+Ad. Interaction<linebreak/>
+FDH in general is using RTE connection.<linebreak/>
+Ad. Criticality<linebreak/>
+FDH is rated as QM component.<linebreak/>
+Ad. Technical complexity<linebreak/>
+FDH is using algorithms on high level of complexity like Rolling Code Counters calculation or FZV Telegram detection.<linebreak/>
+Ad. Risks<linebreak/>
+FDH contains algorithms of high complexity and include 5 SW Units.<linebreak/>
+Ad. Testability<linebreak/>
+FDH is tested completely on SWATT level.<linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

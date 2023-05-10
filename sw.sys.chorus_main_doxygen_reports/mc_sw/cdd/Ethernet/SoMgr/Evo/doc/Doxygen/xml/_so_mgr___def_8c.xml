@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_so_mgr___def_8c" kind="file" language="C++">
+    <compoundname>SoMgr_Def.c</compoundname>
+    <includes refid="_so_mgr___def_8h" local="yes">SoMgr_Def.h</includes>
+    <includes local="yes">DoIP_Client.h</includes>
+    <includes local="yes">DoIP_Main.h</includes>
+    <incdepgraph>
+      <node id="70">
+        <label>TcpIp_Api.h</label>
+      </node>
+      <node id="69">
+        <label>SoMgr_Def.h</label>
+        <link refid="_so_mgr___def_8h"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>SoMgr_Def.c</label>
+        <link refid="_so_mgr___def_8c"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>DoIP_Client.h</label>
+      </node>
+      <node id="72">
+        <label>DoIP_Main.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_so_mgr___def_8c_1ab05eba003cde01300331bc8c2a2f10a6" prot="public" static="no">
+        <name>IPV4_AS_UINT32</name>
+        <param><defname>ip1</defname></param>
+        <param><defname>ip2</defname></param>
+        <param><defname>ip3</defname></param>
+        <param><defname>ip4</defname></param>
+        <initializer>( ((uint32)(ip1) &lt;&lt; 24) + ((uint32)(ip2) &lt;&lt; 16) + ((uint32)(ip3) &lt;&lt; 8) + ((uint32)(ip4)) )</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Define IpV4 address to an uint32</para><para>Follow IPv4 format <simplesect kind="remark"><para>values None <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" line="70" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_so_mgr___def_8c_1a8623f4368d7c514074efef0294495c93" prot="public" static="yes" mutable="no">
+        <type>const TcpIp_SockAddrInetType</type>
+        <definition>const TcpIp_SockAddrInetType SockAddrInet_Console</definition>
+        <argsstring></argsstring>
+        <name>SockAddrInet_Console</name>
+        <initializer>=
+{
+    TCPIP_AF_INET,
+    (uint16)<ref refid="_so_mgr___def_8h_1a1ff6b229dc3511d72aef43bd09daa20fa888672796ec16726da725e07c4833e46" kindref="member">SOMGR_PORT_UDP_IPv4_CONSOLE</ref>,
+    {
+        ( ((uint32)( 172u ) &lt;&lt; 24) + ((uint32)( 31u ) &lt;&lt; 16) + ((uint32)( 255u ) &lt;&lt; 8) + ((uint32)( 255u )) )
+    }
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Remote address for developer Chorus console</para><para>Used just for debug purpose <simplesect kind="remark"><para>range statically define the address 172.31.255.255 <linebreak/>
+ resolution None <linebreak/>
+ context task <linebreak/>
+ protection {see shared vars analysis} <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" line="94" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_so_mgr___def_8c_1af75318a4e5abb18642121d18c3634e4b" prot="public" static="yes" mutable="no">
+        <type>const TcpIp_SockAddrInetType</type>
+        <definition>const TcpIp_SockAddrInetType SockAddrInet_IPv4_UDP_DISCOVERY</definition>
+        <argsstring></argsstring>
+        <name>SockAddrInet_IPv4_UDP_DISCOVERY</name>
+        <initializer>=
+{
+    TCPIP_AF_INET,
+    (uint16)<ref refid="_so_mgr___def_8h_1a1ff6b229dc3511d72aef43bd09daa20fa4f3a6304f1937aebaf044afcfe08c0d7" kindref="member">SOMGR_PORT_DOIP_TCP_DATA</ref>,
+    {
+        ( ((uint32)( 255u ) &lt;&lt; 24) + ((uint32)( 255u ) &lt;&lt; 16) + ((uint32)( 255u ) &lt;&lt; 8) + ((uint32)( 255u )) )
+    }
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default Remote IPv4 address for DoIP UDP communication with Edge-Node</para><para>This remote address is used as default as long as we have no unicast address from Tester received <simplesect kind="remark"><para>range broadcast address defined: 255.255.255.255 <linebreak/>
+ resolution None <linebreak/>
+ context task <linebreak/>
+ protection {see shared vars analysis} <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" line="116" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_so_mgr___def_8c_1a49c5a903499ff50f293b9811170707fb" prot="public" static="yes" mutable="no">
+        <type>const TcpIp_SockAddrInet6Type</type>
+        <definition>const TcpIp_SockAddrInet6Type SockAddrInet_IPv6_UDP_DISCOVERY</definition>
+        <argsstring></argsstring>
+        <name>SockAddrInet_IPv6_UDP_DISCOVERY</name>
+        <initializer>=
+{
+    TCPIP_AF_INET6,
+    (uint16)<ref refid="_so_mgr___def_8h_1a1ff6b229dc3511d72aef43bd09daa20fa4f3a6304f1937aebaf044afcfe08c0d7" kindref="member">SOMGR_PORT_DOIP_TCP_DATA</ref>,
+    {
+        0xff020000u, 0x00000000u, 0x00000000u, 0x00000001u      
+     
+    }
+}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Default Remote IPv6 address for DoIP UDP communication with Edge-Node</para><para>This remote address is used as default as long as we have no unicast address from Tester received <simplesect kind="remark"><para>range static multicast IPV6 address defined <linebreak/>
+ resolution None <linebreak/>
+ context task <linebreak/>
+ protection {see shared vars analysis} <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" line="138" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_so_mgr___def_8c_1ae1f9848a51614a88e63dde3b7878f6a8" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_so_mgr___socket_def_type" kindref="compound">SoMgr_SocketDefType</ref></type>
+        <definition>const SoMgr_SocketDefType SoMgr_SocketDefTable[SOMGR_MAX_NUM_SOCKETS]</definition>
+        <argsstring>[SOMGR_MAX_NUM_SOCKETS]</argsstring>
+        <name>SoMgr_SocketDefTable</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains all statically configured sockets.</para><para><linebreak/>
+<simplesect kind="remark"><para>range [0 - 11] <linebreak/>
+ resolution None <linebreak/>
+ context task <linebreak/>
+ protection {see shared vars analysis} <linebreak/>
+ storage class normal ram <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19203, SWR_ICAS1_GW_19202, SWR_ICAS1_GW_19201, SWR_ICAS1_GW_19200, SWR_ICAS1_GW_19199, SWR_ICAS1_GW_19198 </para><para>SWR_ICAS1_GW_19197, SWR_ICAS1_GW_19196, SWR_ICAS1_GW_19195, SWR_ICAS1_GW_19193, SWR_ICAS1_GW_15848 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" line="149" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definition and default settings of the sockets provided by SoMgr functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Id</title><para><ref refid="_so_mgr___def_8c" kindref="compound">SoMgr_Def.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>See <ref refid="_so_mgr__version_8h" kindref="compound">SoMgr_version.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uidn1598 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>27.09.2022 </para></simplesect>
+</para><para>Contains the socket table <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/src/SoMgr_Def.c"/>
+  </compounddef>
+</doxygen>

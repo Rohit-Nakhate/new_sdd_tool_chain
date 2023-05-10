@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_component_description" kind="page">
+    <compoundname>ComponentDescription</compoundname>
+    <title>Component Description</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_component_description_1CompDescriptionGeneral">
+<title>General</title>
+<para>The component BuiltInList deals with list of node ID and Bus. It is used to check if node is working properly or not. The BIL should receive KN message every 700ms and NMH message every 500ms. This information about received message from the appropriate node, is sent to Error Handler. Error Handler will reset timer for this node. If Error Handler does not receive this information before timeout occur, the appropriate DTC for this node will be set in Error Handler.<linebreak/>
+ It also consist of DTC 0x300000 which is set<itemizedlist>
+<listitem><para>if node send the message but the node is not configured in the sysytem.</para></listitem><listitem><para>If index computation &gt; 15, i.e; no free space is present in built in list. </para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

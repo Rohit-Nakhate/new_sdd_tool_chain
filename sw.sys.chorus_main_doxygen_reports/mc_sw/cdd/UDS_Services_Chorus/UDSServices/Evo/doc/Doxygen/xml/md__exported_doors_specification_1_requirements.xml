@@ -1,0 +1,703 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="md__exported_doors_specification_1_requirements" kind="page">
+    <compoundname>md_ExportedDoorsSpecification_1_requirements</compoundname>
+    <title>ExportedDoorsSpecification_1_requirements</title>
+    <briefdescription>
+<para>DOORS requirements. </para>    </briefdescription>
+    <detaileddescription>
+<para>DOORS requirements</para><sect1 id="md__exported_doors_specification_1_requirements_1ExportedDoorsSpecification_1">
+<title>ExportedDoorsSpecification_1</title>
+<para><linebreak/>
+</para><sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_266">
+<title>SWR_ICAS1_Diag_266</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+RoutineInfo <linebreak/>
+ The ICAS1 shall send the RoutineInfo parameter (1Byte) containing following parameters in the Positive Response to a RequestRoutineResults request <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ <linebreak/>
+ - Bits 0 to 3: RoutineStatus <linebreak/>
+ - 0: RoutineInactive <ndash/>&gt; If the routine has not been executed in the current operation cycle. <linebreak/>
+ - 1: RoutineActive <ndash/>&gt; If the routine is being executed. <linebreak/>
+ - 2: RoutineAborted <ndash/>&gt; If the Routine was stopped because of <linebreak/>
+ - an error <linebreak/>
+ - a safety reason <linebreak/>
+ - a session change to default session. <linebreak/>
+ - a KL15 change to KL15 OFF <linebreak/>
+ - 3: RoutineExecutionStuck <ndash/>&gt; Routine is being executed, but cannot be stopped. <linebreak/>
+ - 4: RoutineFinishedCorrectly <ndash/>&gt; the routine has been successfully executed in the current operation cycle <linebreak/>
+ - 5 :RoutineReturnedToEcuControl <ndash/>&gt; the routine has been successfully stopped via StopRoutine request. <linebreak/>
+ - 6-F: RoutineSystemSupplierDefinedReachedStatus <ndash/>&gt; Reserved Status for specific purposes. If a different status is needed for a routine, this will be defined in the corresponding requirement for the routine. <linebreak/>
+ <linebreak/>
+ - Bits 4 to 7: RoutineResult This parameter is used to describe if the routine has generated results, and if they are correct or not. <linebreak/>
+ - 0: NoResultsAvailable <linebreak/>
+ - 1: IncorrectResults <linebreak/>
+ - 2: CorrectResults <linebreak/>
+ ID: SWR_ICAS1_Diag_266 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_267">
+<title>SWR_ICAS1_Diag_267</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+RoutineStatusRecord <linebreak/>
+ The ICAS1 shall send the RoutineStatusRecord parameter in case it is defined for the requested routine, as defined in the table [Routinen] in the Positive Response to a RequestRoutineResults 0x03 request. <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ RoutineStatusRecord #1-#n <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_267 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_280">
+<title>SWR_ICAS1_Diag_280</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x12 SubfunctionNotSupported <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives a 0x31 with a Subfunction not supported (at all), or not supported for the routine, then the ICAS1 shall ignore the request and, depending on the addressing type: <linebreak/>
+ - In case of physical addressing, the ICAS1 responds with NRC 0x12 <linebreak/>
+ - In case of functional addressing, the ICAS1 does not send any response. <linebreak/>
+ ID: SWR_ICAS1_Diag_280 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_281">
+<title>SWR_ICAS1_Diag_281</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x13 IncorrectMessageLengthOrInvalidFormat <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x31 request with this NRC when the length of the request is invalid. <linebreak/>
+ ID: SWR_ICAS1_Diag_281 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_282">
+<title>SWR_ICAS1_Diag_282</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x22 ConditionsNotCorrect <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x31 request with this NRC in following situations: <linebreak/>
+ - when the ICAS1 receives a RoutineControl request, but at least one of the preconditions is not fulfilled <linebreak/>
+ - when the ICAS1 executes a Routine, but at least one of the conditions stop to be fulfilled <linebreak/>
+ - when the ICAS1 receives a StopRoutine request, which can or must not be stoped during its execution. This case is to be defined in the corresponding routine. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_282 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_283">
+<title>SWR_ICAS1_Diag_283</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x24 RequestSequenceError <linebreak/>
+ The ICAS1 shall respond to a 0x31 request with this NRC in following situations: <linebreak/>
+ - when the ICAS1 receives a RequestRoutineResults for a routine which has not been started in the current OperationCycle. <linebreak/>
+ - when the ICAS1 receives a StartRoutine request for a routine which is already running. <linebreak/>
+ ID: SWR_ICAS1_Diag_283 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_284">
+<title>SWR_ICAS1_Diag_284</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x31 RequestOutOfRange <linebreak/>
+ When the ICAS1 receives a 0x31 request and one of following applies: <linebreak/>
+ - the Routine Identifier is not supported <linebreak/>
+ - the RoutineControlOption contains invalid values <linebreak/>
+ - the Routine Identifier is not supported for the active configuration (i.E if the routine can be dissabled via Coding, DataSet or Adaptation) <linebreak/>
+ <linebreak/>
+ then, the ICAS1 shall ignore the request and, depending on the request´s addressing type: <linebreak/>
+ - In case of physical addressing, the ICAS1 responds with NRC 0x31 <linebreak/>
+ - In case of functional addressing, the ICAS1 does not send any response. <linebreak/>
+ ID: SWR_ICAS1_Diag_284 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_285">
+<title>SWR_ICAS1_Diag_285</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x33 SecurityAccessDenied <linebreak/>
+ The ICAS1 shall respond to a 0x31 request with NRC 0x33 when the security access level required for the requested Routine has not been released. <linebreak/>
+ ID: SWR_ICAS1_Diag_285 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_286">
+<title>SWR_ICAS1_Diag_286</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x72 GeneralProgrammingFailure <linebreak/>
+ The ICAS1 shall respond to a 0x31 request with this NRC when the ICAS1 detects an internal error during the execution of the routine. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_286 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_332">
+<title>SWR_ICAS1_Diag_332</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Service Description <linebreak/>
+ <linebreak/>
+ This service is cyclically requested by a diagnostic tester which previously requested a non-default session. The ICAS1 uses the reception of these requests to implement the Keep-Alive-Logic <linebreak/>
+ <linebreak/>
+ Whenever a non-default session is active, the ICAS1 shall reset the S3server timer everytime it receives a TesterPresent request. If the TesterPresent request is not received for a time longer than S3server timeout, then the ICAS1 will perform a transition to default session as specified in transition 11 (in Application mode) in [Session transitions in Application mode] <linebreak/>
+ <linebreak/>
+ This service shall work also with KL15 OFF <linebreak/>
+ <linebreak/>
+ Session: 0x01 Default Session <linebreak/>
+ 0x02 ECU Programming-Session <linebreak/>
+ 0x03 Extended-Diagnostic-Session <linebreak/>
+ 0x40 VW-EOLSession <linebreak/>
+ 0x4F Development-Session <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ In Bootloader mode, the S3server timeout leads to a reset, as described in [Session transitions in Application mode] <linebreak/>
+ ID: SWR_ICAS1_Diag_332 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_333">
+<title>SWR_ICAS1_Diag_333</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+Request and positive response <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives the following request <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ then the ICAS1 shall reset the S3server timer. <linebreak/>
+ <linebreak/>
+ If the SuppressPositiveResponseBit has the value <linebreak/>
+ 0 - Then the ICAS1 shall respond with positive response with the ZeroSubFunction <linebreak/>
+ 1 - Then the ICAS1 shall not send any response <linebreak/>
+ ID: SWR_ICAS1_Diag_333 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_335">
+<title>SWR_ICAS1_Diag_335</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x13 IncorrectMessageLengthOrInvalidFormat <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x3E request with this NRC when the length of the request is invalid. <linebreak/>
+ ID: SWR_ICAS1_Diag_335 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_336">
+<title>SWR_ICAS1_Diag_336</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x12 SubfunctionNotSupported <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x3E request with this NRC when the value of the ZeroSubFunction is not 0x00 <linebreak/>
+ ID: SWR_ICAS1_Diag_336 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_339">
+<title>SWR_ICAS1_Diag_339</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 169 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 277 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 101 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 420 <linebreak/>
+IF <linebreak/>
+ the ICAS1 is in the NonDefaultSession <linebreak/>
+ all the pre-condition checks are passed <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ The ICAS1 shall be able to execute ControlDTCSettings 0x85 <linebreak/>
+ ID: SWR_ICAS1_Diag_339 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_340">
+<title>SWR_ICAS1_Diag_340</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/inc/DiagAppl_Impl.h line 441 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 170 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 278 <linebreak/>
+Requirement is satisfied here: <ref refid="_diag_appl___d_c_m___service85_8c_1ac70500c8ed3fb15aec3a896663c2a653" kindref="member">DCM_Service85_cyclic</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 384 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 102 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 421 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 732 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_Impl.c.test line 166 <linebreak/>
+Preconditions / Abort conditions <linebreak/>
+ <linebreak/>
+ The following conditions shall be fulfilled in order to respond to a ControlDTCSettings request. <linebreak/>
+ <linebreak/>
+ IF <linebreak/>
+ the following condition is fulfilled, <linebreak/>
+ [Condition Vehicle Speed; ESP_v_Signal &lt;= 5 km/h], <linebreak/>
+ <linebreak/>
+ AND <linebreak/>
+ the 0x85 ControlDTCSetting is requested, <linebreak/>
+ <linebreak/>
+ THEN <linebreak/>
+ the ICAS1 shall response to a ControlDTCSetting request. <linebreak/>
+ <linebreak/>
+ (with a positive response) <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_340 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_341">
+<title>SWR_ICAS1_Diag_341</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 171 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 279 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 103 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 422 <linebreak/>
+Request and processing <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives the following request: <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Then, the ICAS1 shall perform the corresponding checks and <linebreak/>
+ - If some check is failed, the ICAS1 responds with the corresponding NRC. <linebreak/>
+ - If all checks are passed, the ICAS1 performs the requested action and, if the bit SuppressPositiveResponseBit in the request is set to 0, the ICAS1 sends the positive response as defined below. <linebreak/>
+ <linebreak/>
+ Session: 0x03 Extended-Diagnostic-Session <linebreak/>
+ 0x40 VW-EOLSession <linebreak/>
+ 0x4F Development-Session <linebreak/>
+ <linebreak/>
+ Note: <linebreak/>
+ This req does not cover reenabling DTC setting when the preconditions are getting false after activation of the service. Refer to Diag_115. <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_341 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_342">
+<title>SWR_ICAS1_Diag_342</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 172 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 280 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 104 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 423 <linebreak/>
+DTCSettingType <linebreak/>
+ The subfunction parameter DTCSettingType from the request above shall be defined as follows : <linebreak/>
+ <linebreak/>
+ IF the request for the ICAS1 to activate the update of the StatusOfDTC is in a normal behavior, <linebreak/>
+ THEN the ICAS1 shall set DTCSettingType == ON (0x01) <linebreak/>
+ <linebreak/>
+ -<mdash/>OR-Condition-<mdash/> <linebreak/>
+ IF the request for the ICAS1 to deactivate the update of the StatusOfDTC, <linebreak/>
+ THEN the ICAS1 shall set DTCSettingType == OFF (0x02) <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_342 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_344">
+<title>SWR_ICAS1_Diag_344</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 173 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 281 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 105 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 424 <linebreak/>
+Positive Response <linebreak/>
+ <linebreak/>
+ The ICAS1 shall send the following positive response when applies as per the request defined for ControlDTCSettings: <linebreak/>
+ - Byte1: 0xC5 <linebreak/>
+ - Byte2: DTCSettingType from the request as echo (0x01 or 0x02) <linebreak/>
+ <linebreak/>
+ Note: The ICAS1 sends positive response also if the requested DTCSettingType was already active <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_344 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_345">
+<title>SWR_ICAS1_Diag_345</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 276 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 419 <linebreak/>
+ControlDTCSettings = Off <linebreak/>
+ <linebreak/>
+ When the ICAS1 deactivates the DTCSettings, all the results of the diagnosis monitoring shall be ignored (the StatusOfDTC Byte will not be changed). <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ ClearDiagnosticInformation will not affect an active ControlDTCSettings = OFF. This means, if during ControlDTCSettings = OFF, the tester deletes the DTC memory, the ControlDTCSettings will remain OFF. <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_345 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_348">
+<title>SWR_ICAS1_Diag_348</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 178 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 286 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 110 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 429 <linebreak/>
+NRC 0x12 SubfunctionNotSupported <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives a 0x85 with a Subfunction different from 0x01 or 0x02, then the ICAS1 shall ignore the request and, depending on the request´s addressing type: <linebreak/>
+ - In case of physical addressing, the ICAS1 responds with NRC 0x12 <linebreak/>
+ - In case of functional addressing, the ICAS1 does not send any response. <linebreak/>
+ ID: SWR_ICAS1_Diag_348 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_349">
+<title>SWR_ICAS1_Diag_349</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 177 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 285 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 109 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 428 <linebreak/>
+NRC 0x13 IncorrectMessageLengthOrInvalidFormat <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x85 request with this NRC when the length of the request is invalid. <linebreak/>
+ ID: SWR_ICAS1_Diag_349 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_350">
+<title>SWR_ICAS1_Diag_350</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 175 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 283 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 107 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 426 <linebreak/>
+NRC 0x22 ConditionsNotCorrect <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x85 request with this NRC, when at least one of the preconditions is not fulfilled <linebreak/>
+ ID: SWR_ICAS1_Diag_350 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_351">
+<title>SWR_ICAS1_Diag_351</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 176 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service85.c line 284 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 108 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service85.c.test line 427 <linebreak/>
+NRC 0x31 RequestOutOfRange <linebreak/>
+ When the ICAS1 receives a 0x85 request with an incorrect parameter DTCSettingControlOptionRecord <linebreak/>
+ <linebreak/>
+ then, the ICAS1 shall ignore the request and, depending on the request´s addressing type: <linebreak/>
+ - In case of physical addressing, the ICAS1 responds with NRC 0x31 <linebreak/>
+ - In case of functional addressing, the ICAS1 does not send any response. <linebreak/>
+ ID: SWR_ICAS1_Diag_351 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_352">
+<title>SWR_ICAS1_Diag_352</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x81 RpmTooHigh <linebreak/>
+ The ICAS1 shall respond ti request 0x85 request with this NRC, when the RPM are too high. <linebreak/>
+ ID: SWR_ICAS1_Diag_352 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_353">
+<title>SWR_ICAS1_Diag_353</title>
+<para><simplesect kind="warning"><para>Requirement is not satisfied <linebreak/>
+</para></simplesect>
+<simplesect kind="warning"><para>Requirement is not verified <linebreak/>
+NRC 0x88 VehicleSpeedTooHigh <linebreak/>
+ The ICAS1 shall respond ti request 0x85 request with this NRC, when the vehicle velocity is higher than the Diagnostic boundary velocity. <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ Diagnostic boundary velocity can be found in the Pre-condition chapter. <linebreak/>
+ ID: SWR_ICAS1_Diag_353 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></simplesect>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_357">
+<title>SWR_ICAS1_Diag_357</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 185 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 279 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 99 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 377 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 855 <linebreak/>
+The system shall support the service 0x87 LinkControl in the following sessions: <linebreak/>
+ 0x02 ECU Programming-Session <linebreak/>
+ 0x03 Extended-Diagnostic-Session <linebreak/>
+ 0x40 VW-EOLSession <linebreak/>
+ 0x4F Development-Session <linebreak/>
+ ID: SWR_ICAS1_Diag_357 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_358">
+<title>SWR_ICAS1_Diag_358</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 187 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 281 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 101 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 379 <linebreak/>
+Request and processing <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives the following request: <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ Then, the ICAS1 shall perform the corresponding checks and <linebreak/>
+ - If some check is failed, the ICAS1 responds with the corresponding NRC. <linebreak/>
+ - If all checks are passed, the ICAS1 performs the requested action and, if the bit SuppressPositiveResponseBit in the request is set to 0, the ICAS1 sends the positive response (defined below). <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_358 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_359">
+<title>SWR_ICAS1_Diag_359</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 188 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 282 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 102 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 380 <linebreak/>
+The Sub-function - LinkcontrolType definition shall be defined as stated in the tale below <linebreak/>
+ <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_359 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_360">
+<title>SWR_ICAS1_Diag_360</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 189 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 283 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 103 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 381 <linebreak/>
+Positive Response <linebreak/>
+ <linebreak/>
+ The ICAS1 shall send back the Positive respone after the execution of 0x87 <linebreak/>
+ <linebreak/>
+ Remark: <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_360 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_361">
+<title>SWR_ICAS1_Diag_361</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/inc/DiagAppl_Impl.h line 922 <linebreak/>
+Requirement is satisfied here: <ref refid="_diag_appl___d_c_m___service87_8c_1a78e8689e4c956b34eaeb0a2c2418fcf5" kindref="member">DCM_LinkControl_VerifyBaudrateTransitionWithFixedBaudrate</ref> <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 87 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 190 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 284 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 393 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 104 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 382 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 812 <linebreak/>
+Parameter definition <linebreak/>
+ <linebreak/>
+ The ICAS1 shall define LinkControlModeIdentifier as follow <linebreak/>
+ <linebreak/>
+ 0x12 CAN 500000 Baud - default baudrate for the Diagnostic CAN (Classic-CAN) <linebreak/>
+ 0x13 CAN 1000000 Baud - default baudrate for the Diagnostic CAN (Classic-CAN) <linebreak/>
+ 0x15 CAN 2000000 Baud - default baudrate for the Diagnostic CAN (CAN-FD) <linebreak/>
+ 0x1A CAN 4000000 Baud - default baudrate for the Diagnostic CAN (CAN-FD) <linebreak/>
+ 0x1C CAN 5000000 Baud - default baudrate for the Diagnostic CAN (CAN-FD) <linebreak/>
+ ID: SWR_ICAS1_Diag_361 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_363">
+<title>SWR_ICAS1_Diag_363</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 193 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 288 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 107 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 386 <linebreak/>
+NRC 0x12 SubfunctionNotSupported <linebreak/>
+ <linebreak/>
+ When the ICAS1 receives a 0x87 with a Subfunction LinkControlType not supported (at all), or not supported for the routine, then the ICAS1 shall ignore the request and, depending on the addressing type: <linebreak/>
+ - In case of physical addressing, the ICAS1 responds with NRC 0x12 <linebreak/>
+ - In case of functional addressing, the ICAS1 does not send any response. <linebreak/>
+ ID: SWR_ICAS1_Diag_363 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_364">
+<title>SWR_ICAS1_Diag_364</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 191 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 285 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 105 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 383 <linebreak/>
+NRC 0x13 IncorrectMessageLengthOrInvalidFormat <linebreak/>
+ <linebreak/>
+ The ICAS1 shall respond to a 0x87 request with this NRC when the length of the request is invalid. <linebreak/>
+ ID: SWR_ICAS1_Diag_364 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_366">
+<title>SWR_ICAS1_Diag_366</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 287 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 385 <linebreak/>
+NRC 0x24 RequestSequenceError <linebreak/>
+ The ICAS1 shall respond to a 0x87 request with this NRC in following situations if the sequence of the subfunction is not indicated from the Diagnostic tester <linebreak/>
+ <linebreak/>
+ ID: SWR_ICAS1_Diag_366 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+<linebreak/>
+</para></sect2>
+<sect2 id="md__exported_doors_specification_1_requirements_1SWR_ICAS1_Diag_367">
+<title>SWR_ICAS1_Diag_367</title>
+<para>Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 192 <linebreak/>
+Requirement is satisfied here: FUNC <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/src/DiagAppl_DCM_Service87.c line 286 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 106 <linebreak/>
+Requirement is verified here: TRACE <linebreak/>
+../../../../../../../../sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/UDSServices/c/test/swut/DiagAppl_DCM_Service87.c.test line 384 <linebreak/>
+NRC 0x31 RequestOutOfRange <linebreak/>
+ The ICAS1 shall respond to a 0x87 request with this NRC, if the LinkControlModeIdentifier received at the ICAS1 is invalid <linebreak/>
+ ID: SWR_ICAS1_Diag_367 <linebreak/>
+ _ObjectType: Requirement <linebreak/>
+ ASIL: QM <linebreak/>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

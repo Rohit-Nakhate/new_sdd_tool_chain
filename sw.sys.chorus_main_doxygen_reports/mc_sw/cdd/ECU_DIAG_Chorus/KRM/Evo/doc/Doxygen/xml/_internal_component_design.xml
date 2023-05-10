@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component <bold>KRM</bold> consists of only the following SW unit: <bold>KRMActivation</bold> <linebreak/>
+ The architectural overview of the component is described within the SWA at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus <linebreak/>
+ <linebreak/>
+ The component KRM provides interfaces to DCM in order to read and write on demand the KRM activation status via diagnosis adaptation channel DID 0x04FB as follows: <bold>GW_Read_Adaption_0x04FB, GW_Write_Adaption_0x04FB</bold> <linebreak/>
+Besides it provides only one interface - <bold>GW_KRM_ActivityMonitor</bold> - that is called by OSTask &quot;DiagTask&quot; cyclically (period = 10ms) in order to evaluate the activation/deactivation conditions and the info about KRM failure. <linebreak/>
+Additionally the interface function <bold>s_ESP_Rollenmodus_Deaktivieren_Message_Counter</bold> is called on Rx of a ESC_52 message in order to count the number of received ESC_52 messages. <linebreak/>
+ <linebreak/>
+ The static and dynamic SW architecture can be found in EA <linebreak/>
+ VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus.SW Architecture.Static <linebreak/>
+ VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus.SW Architecture.Dynamic <linebreak/>
+ <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>KRM is composed of only one unit, namely KRMActivation, which satisfies all requirements allocated to KRM_Chorus within SWA. <linebreak/>
+ <linebreak/>
+see <bold>Component Diagram &quot;Requirements traceability&quot;</bold> in SWA at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus.SW Architecture.Components <linebreak/>
+ <linebreak/>
+For more details on functional requirements please refere to Requirement Implementation chapter.<linebreak/>
+ Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L1_KRM_72  </para></entry><entry thead="no"><para>Storage of DID value will be reset proof. KL15,KL30 resets will not change the DID 0x04FB value   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_L1_KRM_120  </para></entry><entry thead="no"><para>The DID 0x04FB value can be verified in fresh board or after mass erase in test bench   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The component consists of only one unit: KRMActivation. The unit handles the state machine,condition checks and read-write requests. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The component consists of only one unit. There is no unit interaction description needed. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>KRM_Chorus has only one SW unit. So, dynamic behaviour between component&apos;s SW units is not applicable.<linebreak/>
+However,in general, the SW component&apos;s interactions can be split in two main parts.<orderedlist>
+<listitem><para>A cyclic monitor, which regularly performs a condition check, updates signals and DTC values.</para></listitem><listitem><para>DID read-write requests.</para></listitem></orderedlist>
+</para><para>The diagram below depicts the activity monitor which runs every 10ms.</para><para><image type="html" name="KRM_Chorus_ActivityDiagram_Dynamicbehaviour_0.png"></image>
+ </para><para>The diagram below depicts writing of DID 0x04FB when requested by tester. <image type="html" name="KRM_Chorus_writerequest_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below depicts reading of DID 0x04FB when requested by tester. <image type="html" name="KRM_Chorus_readrequest_Dynamicbehaviour.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The immediate data flow of the KRMActivation SW unit is described here. <linebreak/>
+The data flows from KRM are depicted with green arrows and the data flows to KRM are depicted with the red arrows.</para><para><image type="html" name="sample_DFD0.png"></image>
+ </para><para>For detailed data flow between KRM and external modules, the data flow diagram at the following location in EA can be referred - <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus.SW Architecture.Dynamic</para><para><heading level="2">Tasks</heading>
+</para><para>The component KRM is called cyclically by OSTask &quot;DiagTask&quot; (period = 10ms): GW_KRM_ActivityMonitor <linebreak/>
+KRM&apos;s SW unit is executed in core 2. see also <bold>Interaction Diagram &quot;KRM cyclic monitor&quot;</bold> at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.KRM_Chorus.SW Architecture.Dynamic <linebreak/>
+ <heading level="2">Interrupts</heading>
+</para><para>No interrupt needs to be configured for by the module. <linebreak/>
+ <heading level="2">Events</heading>
+</para><para>There is no event-handling designed. <linebreak/>
+ <heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used. <linebreak/>
+ <heading level="2">Power Modes</heading>
+</para><para>There is no special power mode used. <linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para><orderedlist>
+<listitem><para>If preconditions for KRM are not met, writing of 0x04FB will not be possible and NRC will be received by tester.<linebreak/>
+</para></listitem><listitem><para>In case of failure(sent to KRM by ESC_52 timeout or ESC_52.ESP_Rollenmodus_Deaktivieren = 1),DTC 0x060911 will be set to active and DTC 0x060918 will be set to passive.<linebreak/>
+</para></listitem><listitem><para>DTC 0x060911 once set, will remain set until adaptation 0x04FB is set to 0 and KRM is deactivated.</para></listitem><listitem><para>If NVM is corrupted, and/or, failed read or write happens because of NVM, default values are stored to adaptation 0x04FB.</para></listitem></orderedlist>
+</para><para><heading level="2">Synchronization</heading>
+</para><para>KRM completely runs on Core 2. In the case where data needs to be shared to other cores, RTE_LIGHT is used.<linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>See function list : <ulink url="globals_func.html">Functions</ulink></para><para><heading level="2">Macros</heading>
+</para><para>See macro list: <ulink url="globals_defs.html">Macros</ulink></para><para><heading level="2">Algorithms</heading>
+</para><para>Not Applicable. <linebreak/>
+ <heading level="2">Data Structures</heading>
+</para><para>KRM uses one structure mainly from Adaptations - T_GW_0x04FB_ANP GW_0x04FB_ANP.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Medium   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

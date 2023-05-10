@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="toollocationandstructure" kind="page">
+    <compoundname>toollocationandstructure</compoundname>
+    <title>Tool Location and Structure</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="toollocationandstructure_1toollocation">
+<title>Tool location</title>
+<para>BapIntGen tool is located inside doc repository. Full path is:<linebreak/>
+sw.sys.chorus_main_doc/mc_sw/cdd/BAP_Stack/BAP_Stack/{VARIANT}/tools/BapIntGen/</para></sect1>
+<sect1 id="toollocationandstructure_1folderstructure">
+<title>Folder structure</title>
+<para><itemizedlist>
+<listitem><para>cfg - input files like exported RTT Routing xml</para></listitem><listitem><para>doc - documentation files like this doxygen document</para></listitem><listitem><para>runnable - actual runnables of tool</para></listitem><listitem><para>xsd - xml export maps</para></listitem><listitem><para>xsl - stylesheets used for file generation</para></listitem></itemizedlist>
+</para><sect2 id="toollocationandstructure_1cfg">
+<title>cfg</title>
+<para>Directory used to store input files. Currently only exported RTT Routing xml is stored here.<linebreak/>
+Refer to BAP Chorus integration guide (inwork) for details on how to export RTT Routing xml.</para></sect2>
+<sect2 id="toollocationandstructure_1doc">
+<title>doc</title>
+<para>Directory used to store documentation files.<linebreak/>
+Currently this exact file is being stored here, as well as doxygen generation support files.</para></sect2>
+<sect2 id="toollocationandstructure_1runnable">
+<title>runnable</title>
+<para>Directory used for storing runnables.</para><para>There are 3 scripts inside:</para><para><itemizedlist>
+<listitem><para><ref refid="config_8bat" kindref="compound">config.bat</ref></para></listitem><listitem><para><ref refid="generate_8bat" kindref="compound">generate.bat</ref></para></listitem><listitem><para><ref refid="import_lsg_list_8py" kindref="compound">importLsgList.py</ref></para></listitem></itemizedlist>
+</para><para><bold><ref refid="config_8bat" kindref="compound">config.bat</ref></bold> - here you can find the configuration of the script. This file should be updated whenever new BAP Config is to be integrated or if new KMatrix is available and BAP CAN/ETH PDUs were updated.</para><para><bold><ref refid="generate_8bat" kindref="compound">generate.bat</ref></bold> - actual runnable of the tool. Call this script in order to start generation of the files.</para><para><bold><ref refid="import_lsg_list_8py" kindref="compound">importLsgList.py</ref></bold> - helper script to create <ref refid="lsg_list_8txt" kindref="compound">lsgList.txt</ref>. It searches the BAP Config XML and later extract LSGs names and ids. It is used later by <ref refid="generate_8bat" kindref="compound">generate.bat</ref>, to create rte headers for each LSG (bap_*LSG*_applCallbacks.h)</para></sect2>
+<sect2 id="toollocationandstructure_1xsdpage">
+<title>xsd</title>
+<para>Directory used to store XSD maps for excel to convert excel table to XML file.<linebreak/>
+Currently only xsd map for RTT Routing table is stored here.</para></sect2>
+<sect2 id="toollocationandstructure_1xslpage">
+<title>xsl</title>
+<para>Directory used to store stylesheet files used for generation.<linebreak/>
+Here are located all the files which are defining how output files of the generator shall look like.<linebreak/>
+Refer to <ref refid="xslstylesheets" kindref="compound">XSL stylesheets</ref> on how to modify stylesheets and how to read them. </para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

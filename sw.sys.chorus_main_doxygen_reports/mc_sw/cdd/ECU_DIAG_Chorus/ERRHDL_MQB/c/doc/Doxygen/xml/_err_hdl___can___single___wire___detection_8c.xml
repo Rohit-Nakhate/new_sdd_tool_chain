@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___can___single___wire___detection_8c" kind="file" language="C++">
+    <compoundname>ErrHdl_Can_Single_Wire_Detection.c</compoundname>
+    <includes refid="_err_hdl___can___single___wire___detection_8h" local="yes">ErrHdl_Can_Single_Wire_Detection.h</includes>
+    <includes local="yes">dem.h</includes>
+    <includes local="yes">Dem_IntEvtId.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">hal.h</includes>
+    <includes local="yes">can.h</includes>
+    <includes refid="_err_hdl___d_e_m___interface_8h" local="yes">ErrHdl_DEM_Interface.h</includes>
+    <includes local="yes">Rte_ERRHDL_MQB.h</includes>
+    <includes local="yes">ErrHdl_Types.h</includes>
+    <includes refid="_err_hdl___d_e_m___event___map___arrays_8h" local="yes">ErrHdl_DEM_Event_Map_Arrays.h</includes>
+    <incdepgraph>
+      <node id="140">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="139">
+        <label>ErrHdl_DEM_Interface.h</label>
+        <link refid="_err_hdl___d_e_m___interface_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="145">
+        <label>ErrHdl_Types.h</label>
+      </node>
+      <node id="144">
+        <label>Rte_ERRHDL_MQB.h</label>
+      </node>
+      <node id="132">
+        <label>ErrHdl_Can_Single_Wire_Detection.c</label>
+        <link refid="_err_hdl___can___single___wire___detection_8c"/>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>BusMonitor.h</label>
+      </node>
+      <node id="135">
+        <label>Dem_IntEvtId.h</label>
+      </node>
+      <node id="134">
+        <label>dem.h</label>
+      </node>
+      <node id="138">
+        <label>can.h</label>
+      </node>
+      <node id="143">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="146">
+        <label>ErrHdl_DEM_Event_Map_Arrays.h</label>
+        <link refid="_err_hdl___d_e_m___event___map___arrays_8h"/>
+        <childnode refid="145" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>ErrHdl_Can_Single_Wire_Detection.h</label>
+        <link refid="_err_hdl___can___single___wire___detection_8h"/>
+      </node>
+      <node id="142">
+        <label>Dem_Types.h</label>
+      </node>
+      <node id="137">
+        <label>hal.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_err_hdl___can___single___wire___detection_8c_1a1ea274a58b34fe44417df6d5c520e5df" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl_8c_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+        <definition>uint8 Prescaler</definition>
+        <argsstring></argsstring>
+        <name>Prescaler</name>
+        <initializer>= ERR_WIRE_CYCLE_TIMER_LOAD_VALUE</initializer>
+        <briefdescription>
+<para>Prescaler is used to change cyclic veryfication to 50ms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="71" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___can___single___wire___detection_8c_1a8b40006f3cdd9d98f83b2469233a7b22" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>uint16 SingleWireInfo</definition>
+        <argsstring></argsstring>
+        <name>SingleWireInfo</name>
+        <initializer>= 0x00u</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable contains single wire errors. One bit per bus.</para><para>It contains information related to SIngle wire error.Each bit represent each BUS channel <simplesect kind="remark"><para>range 0 - 12 <linebreak/>
+ unit NA <linebreak/>
+ resolution NA <linebreak/>
+ context { <ref refid="_err_hdl_8c_8test_1a3444cede4d113680f9a2b59f1daabd9d" kindref="member">ErrCanSingleWireMonitor</ref> } <linebreak/>
+ protection {global} <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="85" column="1" bodyfile="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___can___single___wire___detection_8c_1acebf8628bc4825d0184d9f927624095c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean ErrHdlIsSingleWireErrorPresent</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrHdlIsSingleWireErrorPresent</name>
+        <param>
+          <type>const <ref refid="_err_hdl_8c_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para>This function Checks a CAN channel for single wire error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>TComChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[in] Channel - Com channel. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean retVal : TRUE - If single wire error is present. FALSE - If single wire error NOT present.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>HAL_GET_ERROR_CORRECT_IONFACTOR <linebreak/>
+ CAN_DIFF_0_1V <linebreak/>
+ CAN_DIFF_0_3V <linebreak/>
+ CAN_DIFF_1_55V <linebreak/>
+ CANL_SHORT_TO_UBATT_3_2V <linebreak/>
+ CANL_SHORT_TO_GND_0_3V <linebreak/>
+ CANL_SHORT_0_4V <linebreak/>
+ CANH_SHORT_TO_UBATT_3_2V <linebreak/>
+ CANH_SHORT_TO_GND_0_3V <linebreak/>
+ CANH_SHORT_1_55V <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrHdlIsSingleWireErrorPresent.png">Activity Diagram of function ErrHdlIsSingleWireErrorPresent </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrHdlIsSingleWireErrorPresent <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ { SWR_ICAS1_GW_10095 } </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___can___single___wire___detection_8c_1aaa94ab02467358ce3b7ec447bec9b0fd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_err_hdl_8c_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>static uint16 ErrHdlUpdateSingleWireInfo</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrHdlUpdateSingleWireInfo</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the status of CAN channel for single wire error every 50ms.</para><para>Get the info on single wire error. Checks each BUS, and set the individual bit. <simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16 ui8_SingleWireErrorStatus - Status of all CAN channels (1 bit for each CAN bus). Each bit is set if the single wire error is present for the corresponding channel.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>ERR_NUMB_OF_CAN_BUSSES</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>The function checks the status of each Bus and than returns the status.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrHdlUpdateSingleWireInfo.png">Activity Diagram of function ErrHdlUpdateSingleWireInfo </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrHdlUpdateSingleWireInfo <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ { SWR_ICAS1_GW_10096, SWR_ICAS1_GW_10097} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___can___single___wire___detection_8c_1ad92b86efb889dc3f7f3485356f6a9e3f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrSingleWireCanProcessing</definition>
+        <argsstring>(const TComChannel Channel, const Dem_EventStatusType statusOfDTC)</argsstring>
+        <name>ErrSingleWireCanProcessing</name>
+        <param>
+          <type>const <ref refid="_err_hdl_8c_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <param>
+          <type>const Dem_EventStatusType</type>
+          <declname>statusOfDTC</declname>
+        </param>
+        <briefdescription>
+<para>This Function set single wire DTC, if single wire error is detected in the CAN. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel. <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dem_EventStatusType statusOfDTC - Status of DTC.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>DEM_EVENT_STATUS_PREFAILED : indicate test result failed.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrSingleWireCanProcessing.png">Activity Diagram of function ErrSingleWireCanProcessing </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrSingleWireCanProcessing <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ { SWR_ICAS1_GW_10096, SWR_ICAS1_GW_10097} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___can___single___wire___detection_8c_1a63c7c813f44440eb9763f8ffde504f98" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrResetSingleWireDTC</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrResetSingleWireDTC</name>
+        <param>
+          <type>const <ref refid="_err_hdl_8c_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para>This function clear single wire DTC. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___d_e_m___event___map___arrays_8h_1a7f9ecaec9453c20b55495a4d1f03b4f6" kindref="member">ErrChannelToSingWireErrDemEvID</ref> <linebreak/>
+ DEM_EVENT_STATUS_PASSED : indicate test result passed.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrResetSingleWireDTC.png">Activity Diagram of function ErrResetSingleWireDTC </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrResetSingleWireDTC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ { SWR_ICAS1_GW_3321} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="255" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___can___single___wire___detection_8c_1ac9348a68432d942e6a28656e42be8e53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrSetSingleWireDTC</definition>
+        <argsstring>(const TComChannel Channel)</argsstring>
+        <name>ErrSetSingleWireDTC</name>
+        <param>
+          <type>const <ref refid="_err_hdl_8c_8test_1a5af4715f59bcf54883d1e637f03b0452" kindref="member">TComChannel</ref></type>
+          <declname>Channel</declname>
+        </param>
+        <briefdescription>
+<para>This function sets single wire DTC. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>NA <linebreak/>
+ </para></simplesect>
+<simplesect kind="post"><para>NA <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TComChannel Channel - COM channel. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___d_e_m___event___map___arrays_8h_1a7f9ecaec9453c20b55495a4d1f03b4f6" kindref="member">ErrChannelToSingWireErrDemEvID</ref> <linebreak/>
+ DEM_EVENT_STATUS_PREFAILED : indicate test result failed.</para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para><image type="html" name="ErrSetSingleWireDTC.png">Activity Diagram of function ErrSetSingleWireDTC </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrSetSingleWireDTC <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ErrHdl_MQB.SW Architecture.Components <linebreak/>
+ It satisfies the following DOORS Requirements: <linebreak/>
+ { SWR_ICAS1_GW_3321} </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c" line="289" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/GIt/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Can_Single_Wire_Detection.c"/>
+  </compounddef>
+</doxygen>

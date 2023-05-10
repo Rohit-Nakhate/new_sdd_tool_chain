@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component has two units:<linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_b_a_p_handler___i_l2___task_8c" kindref="compound">BAPHandler_IL2_Task.c</ref> <linebreak/>
+</para></listitem><listitem><para><ref refid="_i_l2___main_8c" kindref="compound">IL2_Main.c</ref> <linebreak/>
+ </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The <bold>functional</bold> software requirements can be traced on function level.<linebreak/>
+For more details please refer to the Requirements Implementation chapter.<linebreak/>
+ <linebreak/>
+<bold>Non-functional</bold> requirements are traced here: <table rows="2" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+</table>
+No <bold>non-functional</bold> requirements for the module found! <linebreak/>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Interfaces introduced for BAPHandler_IL2 can be found on page Modules/List of public interfaces.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between Software Units and other files.<linebreak/>
+ <image type="html" name="sample_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagrams below depict the dynamic behaviour of the module and its functionalities.<linebreak/>
+For specific implementations, check the Files list. <linebreak/>
+ <bold>BAPHandler_IL2_Indication_handling</bold> <image type="html" name="BAPHandler_IL2_Indication_handling.png"></image>
+ </para><para><bold>BAPHandler_IL2_PSO_ImExport_Indication_Handling</bold> <image type="html" name="BAPHandler_IL2_PSO_ImExport_Indication_Handling.png"></image>
+ </para><para><bold>BAPHandler_IL2_Reset_Indication</bold> <image type="html" name="BAPHandler_IL2_Reset_Indication.png"></image>
+ </para><para><bold>BapIndication_&lt;fct&gt;</bold> <image type="html" name="BapIndication.png"></image>
+ </para><para><bold>Initialization of BAP IL2 LSG</bold> <image type="html" name="IL2_Initialize.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>State Machine</title>
+<para>The diagram below depicts the State Machine of the module.<linebreak/>
+ <image type="html" name="State_machine.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_3">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major dataflow of the module.<linebreak/>
+ <image type="html" name="DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>No AUTOSAR OS/OSEK task needs to be configured for by the module. BAPHandler_IL2 SWC is assigned to <bold>CORE 1</bold> , in SWA:<linebreak/>
+<bold>VW_ICAS1/Chorus/All_Cores/SoftwareDecomposition/ApplicationLayer/ApplicationLayer_Core1</bold> <linebreak/>
+ <linebreak/>
+ Component execution is under control of Scheduler (CDD) in task: <bold>SchM_ICAS1_Main_C1</bold> <linebreak/>
+</para><para><bold>Start / Wakeup Task</bold> <image type="html" name="BAPHandler_IL2_Wakeup.png"></image>
+ </para><para><bold>Cyclic Task</bold> <image type="html" name="BAPHandler_IL2_Cyclic.png"></image>
+ </para><para><bold>Stop / Shutdown Task</bold> <image type="html" name="BAPHandler_IL2_Stop.png"></image>
+ </para><para><heading level="2">Interrupts</heading>
+</para><para>This subcomponent does not use interrupts.</para><para><heading level="2">Events</heading>
+</para><para>Check section State Machine to find events and how they affect subcomponent state and behavior.</para><para><heading level="2">Operating Modes</heading>
+</para><para>This subcomponent does not use operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>This subcomponent does not use power modes.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>This subcomponent does not use DTC nor DET. <linebreak/>
+Error handling for wrong input values or parameters is prepared and can be found in detailed design for functions. <linebreak/>
+In specific situations RTE interface for informing about errors is used.</para><para><heading level="2">Synchronization</heading>
+</para><para>This subcomponent does not use multi-threading, so no synchronization is used.</para><para><heading level="2">Operations</heading>
+</para><para>This subcomponent does not perform operations other than showed in Dynamic Behavior section.</para><para><heading level="2">Macros</heading>
+</para><para>This subcomponent has only two macros defined:<linebreak/>
+ <ref refid="_i_l2___main_8c_8test_1a39175ab744b4257eb3d011431cfc67d3" kindref="member">SWATT_BYPASS(a,b)</ref>, and <ref refid="_i_l2___main_8c_8test_1acbce0ce50c511173f7907a20110e3090" kindref="member">TEST_DESIGN_TECHNIQUE(a)</ref><linebreak/>
+which are connected to testing, and also widely used in other components.</para><para><heading level="2">Algorithms</heading>
+</para><para>Algorithms used in this subcomponent are showed in Dynamic Behavior section.</para><para><heading level="2">Data Structures</heading>
+</para><para>See Data Structures</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Only two software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Number of dependencies equal to 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL, interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>No algorithms and interaction is rated high (especially in case of PSO functionality)   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

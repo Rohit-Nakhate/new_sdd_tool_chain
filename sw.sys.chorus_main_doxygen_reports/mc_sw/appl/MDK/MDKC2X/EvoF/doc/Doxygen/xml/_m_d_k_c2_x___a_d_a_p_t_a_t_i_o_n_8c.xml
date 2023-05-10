@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c" kind="file" language="C++">
+    <compoundname>MDKC2X_ADAPTATION.c</compoundname>
+    <includes local="yes">Rte_Definitions.h</includes>
+    <includes local="yes">DiagAppl_Impl.h</includes>
+    <includes local="yes">DiagUtils.h</includes>
+    <includes local="yes">DiagSignalMap.h</includes>
+    <includes refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8h" local="yes">MDKC2X_ADAPTATION.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>Rte_Definitions.h</label>
+      </node>
+      <node id="10">
+        <label>DiagSignalMap.h</label>
+      </node>
+      <node id="9">
+        <label>DiagUtils.h</label>
+      </node>
+      <node id="13">
+        <label>Dcm_Types.h</label>
+      </node>
+      <node id="8">
+        <label>DiagAppl_Impl.h</label>
+      </node>
+      <node id="6">
+        <label>MDKC2X_ADAPTATION.c</label>
+        <link refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>MDKC2X_ADAPTATION.h</label>
+        <link refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Std_Types.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c_1a1ecd71772454ee3b7a1a96efcf66e730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType MDKC2X_Read_Adaption_0x1500</definition>
+        <argsstring>(Dcm_OpStatusType OpStatus, uint8 *Data)</argsstring>
+        <name>MDKC2X_Read_Adaption_0x1500</name>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the read request 0x22 0x1500</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName c_mdk_global_switch, StartBit 0, Length 1<linebreak/>
+ SignalName reserved1, StartBit 1, Length 7<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] Data DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+  N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Read_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  <ref refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c_8test_1a5beea89b417ddd147d661d5f03ef56f7" kindref="member">TEST_MDKC2X_Read_Adaption_0x1500</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>ICAS1.X_MDKCCC_Dia_Anp_1743.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/MDK/MDKC2X/c/gen/MDKC2X_ADAPTATION.c" line="85" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/MDK/MDKC2X/c/gen/MDKC2X_ADAPTATION.c" bodystart="85" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c_1a627c3442f42d7e4bab82c2548ad4747f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType MDKC2X_Write_Adaption_0x1500</definition>
+        <argsstring>(const uint8 *Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType *ErrorCode)</argsstring>
+        <name>MDKC2X_Write_Adaption_0x1500</name>
+        <param>
+          <type>const uint8 *</type>
+          <declname>Data</declname>
+        </param>
+        <param>
+          <type>Dcm_OpStatusType</type>
+          <declname>OpStatus</declname>
+        </param>
+        <param>
+          <type>Dcm_NegativeResponseCodeType *</type>
+          <declname>ErrorCode</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function handles the write request 0x2E 0x1500</para><para>The following signals are taken into consideration:<linebreak/>
+ SignalName c_mdk_global_switch, StartBit 0, Length 1<linebreak/>
+ SignalName reserved1, StartBit 1, Length 7<linebreak/>
+ <simplesect kind="remark"><para>reentrant No<linebreak/>
+ context DCM Task <linebreak/>
+ thread safe No - protection mechanism ensured by DCM Handling<linebreak/>
+ multicore safe No<linebreak/>
+ synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="pre"><para>N/A<linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A<linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DID received data.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor N/A offset N/A<linebreak/>
+ unit N/A<linebreak/>
+ [in] OpStatus Not used by current implementation. Required only for DCM compatibility.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ [out] ErrorCode DCM error code.<linebreak/>
+ range N/A<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard return AUTOSAR type.<linebreak/>
+ range Defined in AUTOSAR Standard.<linebreak/>
+ resolution factor = 1 offset = 0. <linebreak/>
+ unit N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None<linebreak/>
+  N/A<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SWC_Write_Adaptation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>the following function is verified in<linebreak/>
+  <ref refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c_8test_1ab62c293244c18a9e603e7c0c4ff04973" kindref="member">TEST_MDKC2X_Write_Adaption_0x1500</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>ICAS1.X_MDKCCC_Dia_Anp_1743.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/MDK/MDKC2X/c/gen/MDKC2X_ADAPTATION.c" line="118" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/MDK/MDKC2X/c/gen/MDKC2X_ADAPTATION.c" bodystart="118" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>source file for MDKC2X Adaptation  Test each DID signal. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_m_d_k_c2_x___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">MDKC2X_ADAPTATION.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>2.0 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>Artur Redosz (uidp7980), Mateusz Lesniak (uif05416) </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>2023-03-24 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/MDK/MDKC2X/c/gen/MDKC2X_ADAPTATION.c"/>
+  </compounddef>
+</doxygen>

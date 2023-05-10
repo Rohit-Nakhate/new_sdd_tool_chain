@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_o_b_d_locking_8h" kind="file" language="C++">
+    <compoundname>OBDLocking.h</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includedby refid="_o_b_d_locking_8c" local="yes">OBDLocking.c</includedby>
+    <incdepgraph>
+      <node id="14">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="13">
+        <label>OBDLocking.h</label>
+        <link refid="_o_b_d_locking_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="16">
+        <label>OBDLocking.c</label>
+        <link refid="_o_b_d_locking_8c"/>
+      </node>
+      <node id="15">
+        <label>OBDLocking.h</label>
+        <link refid="_o_b_d_locking_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_o_b_d_locking_8h_1ae6fd1ca83b24f3db50d527b1a672f7e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OBD_locking_update</definition>
+        <argsstring>(void)</argsstring>
+        <name>OBD_locking_update</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Cyclic function for checking OBD lock status. This function cyclicity is 10 ms</para><para>This function is called by Diag task every 10ms <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context - called by diagtask<linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_o_b_d_locking_8c_1ab0c1c7241aa047fc411866a4ff1bcd19" kindref="member">Routine_0300_State</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="OBD_locking_update.png">Activity diagram of the function &quot;OBD_locking_update&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_o_d_b_locking_8c_8test_1aae2ccf9fe024b7e71f100caead882031" kindref="member">TEST_OBD_locking_update</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>It satisfies the following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRoute_SWL_IT_90 </para><para>SWR_ICAS1_L3_CRoute_SWL_IT_94 </para><para>SWR_ICAS1_L3_CRoute_SWL_IT_77 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_o_b_d_locking_8h_1a37510b05e37d82abcb562331267b5680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean Get_OBD_locking_active</definition>
+        <argsstring>(void)</argsstring>
+        <name>Get_OBD_locking_active</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The function <bold>Get_OBD_locking_active</bold> just returns the OBD lock status.</para><para>This function is called by external interface to check if the OBD_Locking is active or not.</para><para><simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called by ccp and can files <linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean - OBD lock status from the static variable &quot;OBD_locking_active&quot; <linebreak/>
+ TRUE - ODB lock is active FALSE - ODB lock isn&apos;t active</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_o_b_d_locking_8c_1ac2f4a914c1fdcfbbccdf988d589c3d8d" kindref="member">OBD_locking_active</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Get_OBD_locking_active.png">Get_OBD_locking_active Activity Diagram</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ <ref refid="_o_d_b_locking_8c_8test_1a9a04c7eda1feae02cd2c3ba88ca22631" kindref="member">TEST_Get_OBD_locking_active</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.OBDLocking&quot;, Interface: &quot;OBDLocking.h&quot; <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.OBDLocking&quot;, Class: &quot;OBD_Locking&quot; <linebreak/>
+ EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.UDS_Service_Chorus.SW Architecture.OBDLocking.Integration context&quot;, Class Diagram: &quot;Physical Interfaces&quot; <linebreak/>
+</para></simplesect>
+It satisfies the following DOORS Requirements: <xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRoute_SWL_IT_141 </para><para>SWR_ICAS1_L3_CRoute_SWL_IT_142 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_o_b_d_locking_8h_1a86d7e6b2f382d9c4ade8ea05a5e4fe77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean OBD_Locking_Start_0x0300_routine</definition>
+        <argsstring>(void)</argsstring>
+        <name>OBD_Locking_Start_0x0300_routine</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Function to start routine 0x0300. After calling this function OBD Unlocking by routine 0x0300 is handled in cyclic function</para><para>This is called by GWRoutines, when start 0x0300 routine request is received. <simplesect kind="pre"><para>N/A </para></simplesect>
+<simplesect kind="post"><para>N/A</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context - called by GW_Routine.c file<linebreak/>
+ thread safe No - Integration must insure that the function is not interrupted by the other functions of the same module<linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><linebreak/>
+ boolean - if obdlocking is active or not. </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_o_b_d_locking_8c_1ac2f4a914c1fdcfbbccdf988d589c3d8d" kindref="member">OBD_locking_active</ref></para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>NA</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="OBD_Locking_Start_0x0300_routine.png">Activity diagram of the function &quot;OBD_Locking_Start_0x0300_routine&quot;</image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified using the following test method: <linebreak/>
+ 1) equivalence class analysis (test of representative values from input range) <linebreak/>
+ <ref refid="_o_d_b_locking_8c_8test_1a78d396a228ffb7b349052c9b7989249c" kindref="member">TEST_OBD_Locking_Start_0x0300_routine</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by <bold>architectural requirments</bold>: <linebreak/>
+EA path: &quot;VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ServiceLayer.DiagServices.Diagnosis.SW Architecture.Components.OBDLocking.SW requirements&quot; <linebreak/>
+It satisfies the following DOORS Requirements: </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_CRoute_SWL_IT_80 </para><para>SWR_ICAS1_L3_CRoute_SWL_IT_81 </para><para>SWR_ICAS1_L3_CRoute_SWL_IT_79 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h" line="214" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the public interfaces of the OBDLocking functionality. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_o_b_d_locking_8h" kindref="compound">OBDLocking.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uic34660 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>Jul 6, 2020 </para></simplesect>
+</para><para>This file can be included by other modules <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/My_SandBoxes/B_S/VW/ICAS_Git/sw.sys.chorus_main_build/mc_sw/cdd/UDS_Services_Chorus/OBDLocking/c/inc/OBDLocking.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rationalesand_alternatives" kind="page">
+    <compoundname>RationalesandAlternatives</compoundname>
+    <title>Rationales and Alternatives</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>In the past there were functions that were duplicated for each LIN bus. It was decided to spend time in refactoring the code so that it is more generic so that LIN can be added and removed more easily.</para></listitem><listitem><para>Instead of having functions multiple functions <emphasis>LinInt_ScheduleTable_&lt;verb&gt;&lt;table-type&gt;&lt;request&gt;</emphasis> for each schedule type fewer functions could be created by having the <emphasis>table-type</emphasis> as a <bold>parameter</bold>.<linebreak/>
+For example instead of <ref refid="_lin_schedule_8c_1a7ee74113a69e8cf2d30117e16d110998" kindref="member">LinInt_ScheduleTable_RequestAlternative</ref>, <ref refid="_lin_schedule_8c_1a66e429045f4d1a1d532cac24c98f5229" kindref="member">LinInt_ScheduleTable_RequestFlash</ref> there could be something like <emphasis>LinInt_ScheduleTable_Request(<ref refid="_lin_integration___cfg_8h_1a3052ea4a5b3a66274d4cf35abd835ef9" kindref="member">scheduleType</ref> type)</emphasis>. <linebreak/>
+However usually one type of LIN table is required by different components this way is better for the &apos;separation of concerns&apos;. Event if we have multiple functions they are small so the memory footprint is neglijable. </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_err_hdl___reset___counter_8c" kind="file" language="C++">
+    <compoundname>ErrHdl_Reset_Counter.c</compoundname>
+    <includes refid="_err_hdl___reset___counter_8h" local="yes">ErrHdl_Reset_Counter.h</includes>
+    <includes local="yes">SystemIntegrity_QM.h</includes>
+    <includes local="yes">GW_mes_nvram.h</includes>
+    <includes local="yes">NvM_Cfg.h</includes>
+    <includes local="yes">Nvm.h</includes>
+    <includes local="yes">ErrHdl_Types.h</includes>
+    <includes refid="_err_hdl___if_8h" local="yes">ErrHdl_If.h</includes>
+    <incdepgraph>
+      <node id="636">
+        <label>NvM_Cfg.h</label>
+      </node>
+      <node id="640">
+        <label>Platform_Types.h</label>
+      </node>
+      <node id="635">
+        <label>GW_mes_nvram.h</label>
+      </node>
+      <node id="634">
+        <label>SystemIntegrity_QM.h</label>
+      </node>
+      <node id="638">
+        <label>ErrHdl_Types.h</label>
+      </node>
+      <node id="632">
+        <label>ErrHdl_Reset_Counter.h</label>
+        <link refid="_err_hdl___reset___counter_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+      </node>
+      <node id="641">
+        <label>BusMonitor.h</label>
+      </node>
+      <node id="642">
+        <label>ConfigLinDiag.h</label>
+      </node>
+      <node id="639">
+        <label>ErrHdl_If.h</label>
+        <link refid="_err_hdl___if_8h"/>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+      </node>
+      <node id="637">
+        <label>Nvm.h</label>
+      </node>
+      <node id="631">
+        <label>ErrHdl_Reset_Counter.c</label>
+        <link refid="_err_hdl___reset___counter_8c"/>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+      </node>
+      <node id="633">
+        <label>NvM_Types.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_map_rst_ptrr_to_fun" prot="public">MapRstPtrrToFun</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ResetCounterSources</name>
+        <enumvalue id="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1ad2c61c43890d1e679ab2bfe810880aa7" prot="public">
+          <name>ExternalWatchdogResets</name>
+          <briefdescription>
+<para>Stores External watchdog counter value. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1a55d54d7dcb77bce8916eabe512e12e88" prot="public">
+          <name>FunctionalResets</name>
+          <briefdescription>
+<para>Stores Functional reset counter value. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1af0e9f2c09301624355a8bbcf7cca3064" prot="public">
+          <name>DestructiveResets</name>
+          <briefdescription>
+<para>Stores Destructive reset counter value. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1a0e558001249f323b6b69715f2e97d19a" prot="public">
+          <name>NumberOfResetCounterFunctions</name>
+          <briefdescription>
+<para>Stores Number of function reset counter. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enum of all the reset counter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="69" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="68" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_err_hdl___reset___counter_8c_1ae2849a17f7218693f9f47b402396ec95" prot="public" static="no">
+        <type>Std_ReturnType(*const</type>
+        <definition>typedef Std_ReturnType(* const PointerToResetCountFunction) (uint16 *count)</definition>
+        <argsstring>)(uint16 *count)</argsstring>
+        <name>PointerToResetCountFunction</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Pointer on function used to storage pointer on reset counter functions </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="62" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_err_hdl___reset___counter_8c_1af411c6fef58872535e1d67d8dfa4d077" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl___reset___counter_8h_1af23e9d9048813bc6d792709c19902030" kindref="member">T_NWMWriteRequestStatus</ref></type>
+        <definition>volatile T_NWMWriteRequestStatus Counter_Write_Status</definition>
+        <argsstring></argsstring>
+        <name>Counter_Write_Status</name>
+        <initializer>= <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea0438d48fb77cd407dbe4e306c738011d" kindref="member">NVM_IDLE</ref></initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable is used to storage current NVM write stage <simplesect kind="remark"><para>values The value is updated after each NVM operation <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="102" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_err_hdl___reset___counter_8c_1a1fd589d666fad01ce24e2f08b6cdc3cd" prot="public" static="yes" mutable="no">
+        <type><ref refid="_err_hdl___reset___counter_8h_1af23e9d9048813bc6d792709c19902030" kindref="member">T_NWMWriteRequestStatus</ref></type>
+        <definition>T_NWMWriteRequestStatus Counter_Reset_Status</definition>
+        <argsstring></argsstring>
+        <name>Counter_Reset_Status</name>
+        <initializer>= <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea0438d48fb77cd407dbe4e306c738011d" kindref="member">NVM_IDLE</ref></initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This variable is used to clear reset counter value by service 14 <simplesect kind="remark"><para>values The value is updated in function <ref refid="_err_hdl___reset___counter_8c_1a5618d91aebef7adf9d8f48ba1927e858" kindref="member">ErrReqClearResetCounters</ref>, <ref refid="_err_hdl___reset___counter_8c_1a7da4e922a5f90ee3e696873b12f6fa77" kindref="member">ErrNvmSingleResetCounterCbk</ref> <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="117" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a64612c39fa1059a3da4becced32c8842" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrProcessResetCounters</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrProcessResetCounters</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function get system reset information. And then increments the reset counter value if reset has taken place.</para><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___reset___counter_8c_1a884e98142bcf852be79d2fc4a01828cc" kindref="member">ErrUnexpectedResetsCounterMonitoring</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1a0e558001249f323b6b69715f2e97d19a" kindref="member">NumberOfResetCounterFunctions</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1ad2c61c43890d1e679ab2bfe810880aa7" kindref="member">ExternalWatchdogResets</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1a55d54d7dcb77bce8916eabe512e12e88" kindref="member">FunctionalResets</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1af0e9f2c09301624355a8bbcf7cca3064" kindref="member">DestructiveResets</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrProcessResetCounters.png">Activity Diagram of function ErrProcessResetCounters </image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Need to send counter values in ranges using mock function and check result.</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrIncrementResetCounters <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000093"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11244. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="161" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="319" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a31f763e7d561c94b939a4fe9e2c565b4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrClearResetCounters</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrClearResetCounters</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function clears values of Reset counter in NVM block</para><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___reset___counter_8c_1a884e98142bcf852be79d2fc4a01828cc" kindref="member">ErrUnexpectedResetsCounterMonitoring</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>GW_Unexpected_Resets_Counter : structure containing information about unexpected resets counter</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrClearResetCounters.png">Activity Diagram of function ErrClearResetCounters </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1aae5437bdf89b0b38008d6bb3549de2f6" kindref="member">TEST_ErrClearResetCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which is used to clear Reset counters when there is no data available for writing during Reset Monitoring. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="197" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="306" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a6f50549f33193703f8143bc95e1e892d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrWriteNVMResetCounters</definition>
+        <argsstring>(const T_NWMWriteRequestStatus TypeOfOperation)</argsstring>
+        <name>ErrWriteNVMResetCounters</name>
+        <param>
+          <type>const <ref refid="_err_hdl___reset___counter_8h_1af23e9d9048813bc6d792709c19902030" kindref="member">T_NWMWriteRequestStatus</ref></type>
+          <declname>TypeOfOperation</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used to write reset counter value in NVM block</para><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___reset___counter_8c_1a31f763e7d561c94b939a4fe9e2c565b4" kindref="member">ErrClearResetCounters</ref>, <ref refid="_err_hdl___reset___counter_8c_1a64612c39fa1059a3da4becced32c8842" kindref="member">ErrProcessResetCounters</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>T_NWMWriteRequestStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TypeOfOperation : It indicate what type of write operation taking place.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>GW_Unexpected_Resets_Counter : structure containing information about unexpected resets counter <linebreak/>
+ Index_Unexpected_Reset_Counter : NVM address <linebreak/>
+ Counter_Write_Status : Stores current NVM write stage.</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrWriteNVMResetCounters.png">Activity Diagram of function ErrWriteNVMResetCounters </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1a76833fe3c230d60cc806edc632b03856" kindref="member">TEST_ErrWriteNVMResetCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000094"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15909. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="235" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="419" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1af9d0996ea602477c3126e48f25aaadfa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ErrAddResetCounters</definition>
+        <argsstring>(const ResetCounterSources resetCounterSource, const uint16 dataCountReset)</argsstring>
+        <name>ErrAddResetCounters</name>
+        <param>
+          <type>const <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1" kindref="member">ResetCounterSources</ref></type>
+          <declname>resetCounterSource</declname>
+        </param>
+        <param>
+          <type>const uint16</type>
+          <declname>dataCountReset</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function increment reset counter as per the value from system rest.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, <ref refid="_err_hdl___reset___counter_8c_1a64612c39fa1059a3da4becced32c8842" kindref="member">ErrProcessResetCounters</ref>} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ResetCounterSources - The reset counter to be updated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>uint16 dataCountReset - The value to update the counter.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1ad2c61c43890d1e679ab2bfe810880aa7" kindref="member">ExternalWatchdogResets</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1a55d54d7dcb77bce8916eabe512e12e88" kindref="member">FunctionalResets</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a68f781d80afd19273be7d8ae650ba7c1af0e9f2c09301624355a8bbcf7cca3064" kindref="member">DestructiveResets</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrAddResetCounters.png">Activity Diagram of function ErrAddResetCounters </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1ab50a1faba5be0ca71408a11afdbcf16d" kindref="member">TEST_ErrAddResetCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000095"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15912 </para><para>SWR_ICAS1_GW_15913 </para><para>SWR_ICAS1_GW_15914. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="278" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="357" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a884e98142bcf852be79d2fc4a01828cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrUnexpectedResetsCounterMonitoring</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrUnexpectedResetsCounterMonitoring</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used as a monitor which writes unexpected resets counter to NVM when new data is available</para><para>reentrant No <linebreak/>
+ context {isr, ErrHandlerTask - Called cyclically every 10ms} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206feac238cd232b9980729ed42282a28d554f" kindref="member">NVM_RESET</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1af411c6fef58872535e1d67d8dfa4d077" kindref="member">Counter_Write_Status</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea0438d48fb77cd407dbe4e306c738011d" kindref="member">NVM_IDLE</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a1fd589d666fad01ce24e2f08b6cdc3cd" kindref="member">Counter_Reset_Status</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrUnexpectedResetsCounterMonitoring.png">Activity Diagram of function ErrUnexpectedResetsCounterMonitoring </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1a0a248220f6d48c85a3e5029c8e4781f3" kindref="member">TEST_ErrUnexpectedResetsCounterMonitoring</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000054"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15909. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="285" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="285" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a5618d91aebef7adf9d8f48ba1927e858" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ErrReqClearResetCounters</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrReqClearResetCounters</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used to change reset counter flag status to Reset</para><para>reentrant No <linebreak/>
+ context {task, called by 14 service} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8c_1a1fd589d666fad01ce24e2f08b6cdc3cd" kindref="member">Counter_Reset_Status</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206feac238cd232b9980729ed42282a28d554f" kindref="member">NVM_RESET</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrReqClearResetCounters.png">Activity Diagram of function ErrReqClearResetCounters </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1a00224690da134cf2ab50507a9a8adcca" kindref="member">TEST_ErrReqClearResetCounters</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000055"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15916. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="388" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="388" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a7da4e922a5f90ee3e696873b12f6fa77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType ErrNvmSingleResetCounterCbk</definition>
+        <argsstring>(NvM_RequestResultType a_uRequest)</argsstring>
+        <name>ErrNvmSingleResetCounterCbk</name>
+        <param>
+          <type>NvM_RequestResultType</type>
+          <declname>a_uRequest</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used by NVM to inform that NVM record has been finished</para><para>reentrant No <linebreak/>
+ context {task, called by NVM during reint of memory if the memory is corrupted} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[IN]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NvM_RequestResultType a_uRequest - request type to be processed</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - In case of success in write returns E_OK, otherwise E_NOT_OK</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea97cbfd0ed3d765dd380aa1362904b3df" kindref="member">NVM_PENDING</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1af411c6fef58872535e1d67d8dfa4d077" kindref="member">Counter_Write_Status</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea0438d48fb77cd407dbe4e306c738011d" kindref="member">NVM_IDLE</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_1a1fd589d666fad01ce24e2f08b6cdc3cd" kindref="member">Counter_Reset_Status</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrNvmSingleResetCounterCbk.png">Activity Diagram of function ErrNvmSingleResetCounterCbk </image>
+</para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check for all write condition</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8c_8test_1aa4c13df9faead33e6c5a3a1980344fa7" kindref="member">TEST_ErrNvmSingleResetCounterCbk</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+  Callback function to notify the status of NvM Record Reading/Writinging. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="395" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="395" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga5c1ad64c5080030890c8f6a34b3f0151" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType getResetCounters</definition>
+        <argsstring>(GW_Reset_Counter *const resetCounters)</argsstring>
+        <name>getResetCounters</name>
+        <param>
+          <type><ref refid="struct_g_w___reset___counter" kindref="compound">GW_Reset_Counter</ref> *const</type>
+          <declname>resetCounters</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function get the following reset counter value:<itemizedlist>
+<listitem><para>Number of Destructive Resets</para></listitem><listitem><para>Number of External Watchdog Resets</para></listitem><listitem><para>Number of Functional Resets</para></listitem></itemizedlist>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context {task, Updates counter values when there is a system reset } <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[OUT]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_g_w___reset___counter" kindref="compound">GW_Reset_Counter</ref> *resetCounters - Pointer to a structure which consist number of resets. <linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - E_OK in case of success, otherwise E_NOT_OK.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>GW_Unexpected_Resets_Counter - Stores reset counter value.</para></simplesect>
+<image type="html" name="getResetCounters.png">Activity Diagram of function getResetCounters </image>
+</para><para><simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrGetResetCounters <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following DOORs requirement <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000044"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_11263<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="434" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="434" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="_err_hdl___reset___counter_8c_1a7c9f79ae458931108b91086af5654ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean ErrIsResetCounterClearFinished</definition>
+        <argsstring>(void)</argsstring>
+        <name>ErrIsResetCounterClearFinished</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is used to check if NVM reset is completed.</para><para>reentrant No <linebreak/>
+ context {task, called by 14 service} <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No - All APIs needs to be called from the same core<linebreak/>
+ synchronous</para><para><simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean RetVal : Return TRUE if reset counter status is idle or else return FALSE.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_err_hdl___reset___counter_8c_1a1fd589d666fad01ce24e2f08b6cdc3cd" kindref="member">Counter_Reset_Status</ref> <linebreak/>
+ <ref refid="_err_hdl___reset___counter_8h_1a47dd5fafbc368ca136e5bcc158f206fea0438d48fb77cd407dbe4e306c738011d" kindref="member">NVM_IDLE</ref></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ErrIsResetCounterClearFinished.png">Activity Diagram of function ErrIsResetCounterClearFinished </image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>This function can be verified in following test: <linebreak/>
+ TEST_ErrGetResetCounterNVMWriteStatus <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is given by VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.ErrHdl_MQB.SW Architecture.SW Requirements <linebreak/>
+ It satisfies the following Design Decision <linebreak/>
+  This is a helper function which notifies the Reset counter clear Status. <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" line="455" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c" bodystart="455" bodyend="466"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Error Handler - Handales system reset counter value. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_err_hdl___reset___counter_8c" kindref="compound">ErrHdl_Reset_Counter.c</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>4 </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>uif56082 </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>1/17/2023 </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/ECU_DIAG_Chorus/ERRHDL_MQB/c/src/ErrHdl_Reset_Counter.c"/>
+  </compounddef>
+</doxygen>

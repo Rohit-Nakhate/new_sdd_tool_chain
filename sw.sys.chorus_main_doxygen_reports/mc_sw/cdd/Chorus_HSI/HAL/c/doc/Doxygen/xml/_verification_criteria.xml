@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_verification_criteria" kind="page">
+    <compoundname>VerificationCriteria</compoundname>
+    <title>Verification Criteria</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SW Unit testing is accomplished through SWATT. The test cases are based on this design, and also cover the configuration options. Expected test coverage (100%) and type of test coverage (C1). For more details please see <ulink url="test.html">Test List</ulink>.</para><sect1 id="_verification_criteria_1ResourceConsumptionVerification">
+<title>Verification of Resource Consumption</title>
+<para><heading level="2">Estimated Resource consumption for component</heading>
+</para><para><table rows="2" cols="5"><row>
+<entry thead="yes"><para>Component  </para></entry><entry thead="yes"><para>CPU Load  </para></entry><entry thead="yes"><para>ROM  </para></entry><entry thead="yes"><para>RAM  </para></entry><entry thead="yes"><para>NVM   </para></entry></row>
+<row>
+<entry thead="no"><para>HAL  </para></entry><entry thead="no"><para>0.01%  </para></entry><entry thead="no"><para>3 KB  </para></entry><entry thead="no"><para>0.5 KB  </para></entry><entry thead="no"><para>0 MB   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_verification_criteria_1ReviewCriteria">
+<title>Verification by Review</title>
+<para>The verification of the SWDD is performed by review based on the ICAS1 review strategy. The review is available in GitHub, including the review checklist. Any points linked to JIRA tickes, see History section</para><para>The review results can be found here <ulink url="https://mspe.conti.de/projects/DG-054944/Project%20Documents/110%20Engineering/040%20Software%20Engineering/040%20SW%20Architecture%20+%20Concept/070%20Review%20Documents/020%20Reviews%20Detailed%20Design/swddrm_Chorus_HSI.xlsm">[SDD Review Results]</ulink></para></sect1>
+<sect1 id="_verification_criteria_1TestingCriteria">
+<title>Verification by Testing</title>
+<para>The tests are created using SWATT and are available in *.c.test files. more details check the <ulink url="files.html">File section</ulink>.</para></sect1>
+<sect1 id="_verification_criteria_1SharedVariables">
+<title>Shared Variables Analysis</title>
+<para><heading level="3">Shared Variables</heading>
+</para><para><table rows="20" cols="7"><row>
+<entry thead="yes"><para>Name  </para></entry><entry thead="yes"><para>Type  </para></entry><entry thead="yes"><para>Caller Functions  </para></entry><entry thead="yes"><para>Task type  </para></entry><entry thead="yes"><para>Access (R/W)  </para></entry><entry thead="yes"><para>Protection  </para></entry><entry thead="yes"><para>Descriptio   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref>  </para></entry><entry thead="no"><para>uint32  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1ab5dbf0c0e5bc861ad044bb6d37815f51" kindref="member">GetWakeupSrc</ref>  </para></entry><entry thead="no"><para>DL  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from main_core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1aba27b9f49db485b21b2b09ecafb31561" kindref="member">HAL_InitWakeupUnitSleep</ref>, <ref refid="hal__variant_8h_8test_1af387642c7b1d3c561ab916428fd212a8" kindref="member">Prepare_Ports_ForSleepMode</ref>  </para></entry><entry thead="no"><para>DL,1  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called during initialization from and shutdown EcuM/core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1aba7bc87d4972e64e0c3c0f274b6f70f6" kindref="member">HalIsLowPowerWakeup</ref>  </para></entry><entry thead="no"><para>DL  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called in LowPower by RTC_DWA   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1a3b3ce64a23277e66f9dd3ab948c990fe" kindref="member">HAL_WakeupReason_CheckNewEventAndClear</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>R/W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called by WakeupSleep from SystemControl task from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1a83b25ca105cf02b516acae684164a3b9" kindref="member">HAL_WakeupReason_SetNewEvent</ref>  </para></entry><entry thead="no"><para>2  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>P  </para></entry><entry thead="no"><para>Called by CanOpenFilterCallback from RoutingTask Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1a63ecae16df306426259ce031c183db87" kindref="member">ClearWakeupSrc</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl task from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1aabc9faa25b76a94cfe8a43a03d5c0088" kindref="member">HalIsLowPowerToHighPowerWakeup</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl/EcuM task from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="gw__dev__msg_8c_1a5ab8f8e39583c47aef178f9fbf197c59" kindref="member">GW_DevMsg_Buffer</ref>  </para></entry><entry thead="no"><para>uint8[64]  </para></entry><entry thead="no"><para><ref refid="gw__dev__msg_8h_1a0adb4b900e533845d161823633823fa4" kindref="member">OutputGW_DevMessages</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>R/W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="gw__dev__msg_8c_1abaabb08f5442c7b4eccef832edebc93e" kindref="member">GW_DevMsg_Fill_2x12bit</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="gw__dev__msg_8c_1a31d2604d175922d5d4f988ee82b1f967" kindref="member">GW_DevMsg_BytePos</ref>  </para></entry><entry thead="no"><para>uint8  </para></entry><entry thead="no"><para><ref refid="gw__dev__msg_8h_1a0adb4b900e533845d161823633823fa4" kindref="member">OutputGW_DevMessages</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>R/W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="gw__dev__msg_8c_1abaabb08f5442c7b4eccef832edebc93e" kindref="member">GW_DevMsg_Fill_2x12bit</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from SystemControl from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref>  </para></entry><entry thead="no"><para>pointer  </para></entry><entry thead="no"><para><ref refid="hal__variant_8h_8test_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref>  </para></entry><entry thead="no"><para>DL  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called during initializaiton from EcuM   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>pointer  </para></entry><entry thead="no"><para>most functions from HAL  </para></entry><entry thead="no"><para>DL  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Can be called from everywere   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="hal__common_8c_1ab1c746af2dbd4915c7ec940c585ff6ba" kindref="member">HAL_destructive_reset_reason</ref>, <ref refid="hal__common_8c_1aea85f9bf6a7eda688c9178e56be9f897" kindref="member">HAL_functional_reset_reason</ref>  </para></entry><entry thead="no"><para>uint32  </para></entry><entry thead="no"><para><ref refid="hal__common_8h_8test_1a7f786eee8dd5e33ea59db55b78162695" kindref="member">Hal_StoreRegDestResetReason</ref>  </para></entry><entry thead="no"><para>DL  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called during initializaiton from main_Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__common_8h_8test_1ae1dc799bfe7b9f43bce3da9922f1ea8d" kindref="member">Hal_GetDestResetReason</ref>, <ref refid="hal__common_8h_8test_1a71391d0ecaa5ad989ed659c567af9e31" kindref="member">Hal_GetFunctionalResetReason</ref>  </para></entry><entry thead="no"><para>H  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Can be called from everywere   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="hal__common_8h_1a7a9f1b7b3871abab308f4191b8df4e3a" kindref="member">UBSampleLow</ref>  </para></entry><entry thead="no"><para>uint8  </para></entry><entry thead="no"><para>CentANDCheckUbattRanges  </para></entry><entry thead="no"><para>3  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR  </para></entry><entry thead="no"><para>Called from DiagTask from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="gw__dev__msg_8h_1a0adb4b900e533845d161823633823fa4" kindref="member">OutputGW_DevMessages</ref>  </para></entry><entry thead="no"><para>1  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NR (eventual consitency, used for only debugging)  </para></entry><entry thead="no"><para>Called from SystemControl from Core2   </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="hal__base_8c_1a3a0b19e9e76fe5b8ed8a3cb9fc7bb8d0" kindref="member">HAL_RTCValLINActStartPoint</ref>  </para></entry><entry thead="no"><para>uint32  </para></entry><entry thead="no"><para><ref refid="hal__base_8h_8test_1a86f708c7bd16141f0ecc1557aaaa8bf7" kindref="member">HAL_LinTrcvGoToNormalAfterPOR</ref>  </para></entry><entry thead="no"><para>D  </para></entry><entry thead="no"><para>W  </para></entry><entry thead="no"><para>NP  </para></entry><entry thead="no"><para>Used to save current timer value for later evaluation   </para></entry></row>
+<row>
+<entry thead="no"><para>-  </para></entry><entry thead="no"><para>-  </para></entry><entry thead="no"><para><ref refid="hal__base_8h_8test_1a9d104f6c0be485b31387aa5cc20fb048" kindref="member">HAL_LinTrcvGoToSleepAfterPOR</ref>  </para></entry><entry thead="no"><para>D  </para></entry><entry thead="no"><para>R  </para></entry><entry thead="no"><para>NP  </para></entry><entry thead="no"><para>Used to evaluate elapsed time from initial point   </para></entry></row>
+</table>
+</para><para><heading level="3">Shared variables description</heading>
+</para><para>Task type:</para><para><itemizedlist>
+<listitem><para>1 - Task level M (only available in high power, for SW-platform M is equal to FG1 ) Check which task priorities are defined in this project</para></listitem><listitem><para>2 - Task level N (only available in high power, for SW-platform N is equal to FG2 ) Check which task priorities are defined in this project</para></listitem><listitem><para>L - Used in low power</para></listitem><listitem><para>H - Used in high power</para></listitem><listitem><para>A - Service provided to other SW-components An external service might be in use everywhere and on any priority level</para></listitem><listitem><para>P Service provided to other SW-subcomponents which belong to this sw-component design An external service might be in use everywhere and on any priority level</para></listitem><listitem><para>I - In interrupt</para></listitem><listitem><para>S - Init in init task (IT are allowed)</para></listitem><listitem><para>D - Init in startup hook (IT are disabled)</para></listitem></itemizedlist>
+</para><para>Protection Meaning (specific abbreviation for this document):</para><para><itemizedlist>
+<listitem><para>A Atomic access (not interruptible, not good for reusability) Depending to the µC and compiler!</para></listitem><listitem><para>P - Protected from interrupt or/and tasks preemption</para></listitem><listitem><para>NP - Protection not needed </para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

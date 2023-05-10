@@ -1,0 +1,1485 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="hal__variant_8h" kind="file" language="C++">
+    <compoundname>hal_variant.h</compoundname>
+    <includes local="yes">HardwareVersion.h</includes>
+    <includes refid="hal__base_8h" local="yes">hal_base.h</includes>
+    <includes refid="hal__common_8h" local="yes">hal_common.h</includes>
+    <includes local="yes">hal_cfg_gen.h</includes>
+    <includedby refid="gw__dev__msg_8c" local="yes">gw_dev_msg.c</includedby>
+    <includedby refid="hal__variant_8c" local="yes">hal_variant.c</includedby>
+    <includedby refid="hal_8h" local="yes">hal.h</includedby>
+    <incdepgraph>
+      <node id="136">
+        <label>hal_common.h</label>
+        <link refid="hal__common_8h"/>
+        <childnode refid="134" relation="include">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>hal_cfg_gen.h</label>
+      </node>
+      <node id="133">
+        <label>HardwareVersion.h</label>
+      </node>
+      <node id="132">
+        <label>hal_variant.h</label>
+        <link refid="hal__variant_8h"/>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>hal_defines_gen.h</label>
+      </node>
+      <node id="134">
+        <label>hal_base.h</label>
+        <link refid="hal__base_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="141">
+        <label>hal.h</label>
+        <link refid="hal_8h"/>
+      </node>
+      <node id="140">
+        <label>hal_variant.c</label>
+        <link refid="hal__variant_8c"/>
+      </node>
+      <node id="138">
+        <label>hal_variant.h</label>
+        <link refid="hal__variant_8h"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>gw_dev_msg.c</label>
+        <link refid="gw__dev__msg_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hal__variant_8h_1a304374785dba6651f20b4ce1e2405420" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>static uint16 EMMC_Temp_Channel</definition>
+        <argsstring>(void)</argsstring>
+        <name>EMMC_Temp_Channel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Read the EMMC temperature. <linebreak/>
+</para><para>This function is used to get ADC value for AI_TEMP_SENSOR_EMMC - ADC_CHANNEL_1. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>raw ADC value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context GW_Conti_MV - GW_Read_Measure_Values_0xEFE6 <linebreak/>
+ TharmalMgr - CalculateICAS1TemperatureState <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="EMMC_Temp_Channel.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the ADC value pf EMMC temperature. <linebreak/>
+ TEST_EMMC_Temp_Channel </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by CalculateICAS1TemperatureState to implement {SWR_ICAS1_GW_9552}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="101" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a2467e5606de6aeb73383b22e218ed171" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a05f6b0ae8f6a6e135b0e290c25fe0e4e" kindref="member">uint16</ref></type>
+        <definition>static uint16 External_Temp_Gateway_Channel</definition>
+        <argsstring>(void)</argsstring>
+        <name>External_Temp_Gateway_Channel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Read the Chorus temperature. <linebreak/>
+</para><para>This function is used to get ADC value for AI_TEMP_SENSOR - ADC_CHANNEL_0. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref>. <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>raw ADC value <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context GW_Conti_MV - GW_Read_Measure_Values_0xEFE5 <linebreak/>
+ TharmalMgr - CalculateICAS1TemperatureState <linebreak/>
+ VoltagePlausibilityCheck - VoltagePlausibilityCheck_EOL_Calibration <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="External_Temp_Gateway_Channel.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the ADC value of Chorus temperature. <linebreak/>
+ TEST_External_Temp_Gateway_Channel </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by CalculateICAS1TemperatureState to implement {SWR_ICAS1_GW_12052}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="135" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a607a057d2dec8ce903d0d145ed9e7662" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean HalWakeupIsOBD</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalWakeupIsOBD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if a new wakeup was detected on Ethernet and clear wakeup bit. <linebreak/>
+</para><para>This function check if there is a new wakeup event and clear it for WAKEUP_OBD - WAKEUP_PIN_0. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup was detected <linebreak/>
+ FALSE no wakeup was detected <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context WakeupSleep - doBusRxWakeupHandling and doReadyForPowerDown <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/a <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalWakeupIsOBD.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if there is or not any wakeup event. <linebreak/>
+ TEST_HalWakeupIsOBD </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to check the wakeup for a configured pin. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="168" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="168" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a9f0ec34fad92d28f6fc2127f1e2e5f5b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean HalWakeupIsAFSCAN</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalWakeupIsAFSCAN</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if a new wakeup was detected on AFS CAN and clear wakeup bit. <linebreak/>
+</para><para>This function check if a CAN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup was detected <linebreak/>
+ FALSE no wakeup was detected <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452adfbe5bb19f7a4ea61f8674fae9a2156a" kindref="member">_MEB_AFSCAN</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context WakeupSleep - doBusRxWakeupHandling <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To check and modify on the channel for AFS CAN, the function use _MEB_AFSCAN. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalWakeupIsAFSCAN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if there is or not any wakeup event on AFS CAN and if the function clear the weakeup bit. <linebreak/>
+ TEST_HalWakeupIsAFSCAN </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="202" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="202" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ab9a8c5249089fc83e286616bbbc42927" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean HalWakeupIsMFLCAN</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalWakeupIsMFLCAN</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if a new wakeup was detected on MFL CAN and clear wakeup bit. <linebreak/>
+</para><para>This function check if a CAN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup was detected <linebreak/>
+ FALSE no wakeup was detected <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452ae0f72e57c90f399cfa7feefcabdf927c" kindref="member">_MEB_MFLCAN</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context WakeupSleep - doBusRxWakeupHandling <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To check and modify on the channel for MFL CAN, the function use _MEB_MFLCAN. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalWakeupIsMFLCAN.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if there is or not any wakeup event on MFL CAN and if the function clear the weakeup bit. <linebreak/>
+ TEST_HalWakeupIsMFLCAN </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="235" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="235" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ad474838b969050d428048b9f7e349376" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>static boolean Hal_Lin4WakeupBit_Value</definition>
+        <argsstring>(void)</argsstring>
+        <name>Hal_Lin4WakeupBit_Value</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check if a new wakeup was detected on LIN4 and clear wakeup bit. <linebreak/>
+</para><para>This function check if a LIN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup was detected <linebreak/>
+ FALSE no wakeup was detected <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a3998bf040e3518d151a21e0a5e907978" kindref="member">_Lin4</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context LowPower_Main - Lpw_SplitOnLowPower <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To check and modify on the channel for LIN4, the function use _Lin4. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Hal_Lin4WakeupBit_Value.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if there is or not any wakeup event on LIN4 CAN and if the function clear the weakeup bit. <linebreak/>
+ TEST_Hal_Lin4WakeupBit_Value </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by Lpw_SplitOnLowPower. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="268" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="268" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ac22d6f08450a42e80ed7b6d50d46ba4d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin1_SetNormalMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin1_SetNormalMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN1 transceiver to normal mode. <linebreak/>
+</para><para>This function set the LIN1 transceiver to normal mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a0e33578076b7648db2b509073e0c9a91" kindref="member">_Lin1</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - LinNmOnline <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN1 transceiver to normal mode, the function use _Lin1. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin1_SetNormalMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN1 transceiver is set to normal mode. <linebreak/>
+ TEST_HalLin1_SetNormalMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="303" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="303" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a5d466f0959664a81d8f89ce517ab71e2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin1_SetSleepMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin1_SetSleepMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN1 transceiver to sleep mode. <linebreak/>
+</para><para>This function set the LIN1 transceiver to sleep mode using the NSLP pin <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a0e33578076b7648db2b509073e0c9a91" kindref="member">_Lin1</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - ApplNmLinBusSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN1 transceiver to sleep mode, the function use _Lin1. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin1_SetSleepMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN1 transceiver is set to sleep mode. <linebreak/>
+ TEST_HalLin1_SetSleepMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000013"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18928 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="335" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a88ee22f7672bda8b89d9f0929a59dfb9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin2_SetNormalMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin2_SetNormalMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN2 transceiver to normal mode. <linebreak/>
+</para><para>This function set the LIN2 transceiver to normal mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a6ff0920fbf2fef09bf1d61cb26c7b803" kindref="member">_Lin2</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - LinNmOnline <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN2 transceiver to normal mode, the function use _Lin2. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin2_SetNormalMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN2 transceiver is set to normal mode. <linebreak/>
+ TEST_HalLin2_SetNormalMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000014"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="367" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="367" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ad3854dfde54075c22024ca0fe0ff1f4c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin2_SetSleepMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin2_SetSleepMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN2 transceiver to sleep mode. <linebreak/>
+</para><para>This function set the LIN2 transceiver to sleep mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a6ff0920fbf2fef09bf1d61cb26c7b803" kindref="member">_Lin2</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - ApplNmLinBusSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN2 transceiver to sleep mode, the function use _Lin2. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin2_SetSleepMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN2 transceiver is set to sleep mode. <linebreak/>
+ TEST_HalLin2_SetSleepMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000015"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18928 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="399" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="399" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a239717177ce38e93e838f0f8fafb7cdd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin3_SetNormalMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin3_SetNormalMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN3 transceiver to normal mode. <linebreak/>
+</para><para>This function set the LIN3 transceiver to normal mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a31fd364446fd03520679f326bef83e06" kindref="member">_Lin3</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - LinNmOnline <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN3 transceiver to normal mode, the function use _Lin3. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin3_SetNormalMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN3 transceiver is set to normal mode. <linebreak/>
+ TEST_HalLin3_SetNormalMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000016"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="431" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a25831061ad93afd91e12444f0861b73c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin3_SetSleepMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin3_SetSleepMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN3 transceiver to sleep mode. <linebreak/>
+</para><para>This function set the LIN3 transceiver to sleep mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a31fd364446fd03520679f326bef83e06" kindref="member">_Lin3</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - ApplNmLinBusSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN3 transceiver to sleep mode, the function use _Lin3. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin3_SetSleepMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN3 transceiver is set to sleep mode. <linebreak/>
+ TEST_HalLin3_SetSleepMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000017"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18928 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="463" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="463" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1aa46ad0f5e0633dbb311e7f96d9f7f19c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin4_SetNormalMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin4_SetNormalMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN4 transceiver to normal mode. <linebreak/>
+</para><para>This function set the LIN4 transceiver to normal mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a3998bf040e3518d151a21e0a5e907978" kindref="member">_Lin4</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - LinNmOnline <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN4 transceiver to normal mode, the function use _Lin4. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin4_SetNormalMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN4 transceiver is set to normal mode. <linebreak/>
+ TEST_HalLin4_SetNormalMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000018"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18927 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="495" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="495" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a2551cae306a0b1d8700b73f4437e1494" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HalLin4_SetSleepMode_ATA6662_or_TLE7259GE</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalLin4_SetSleepMode_ATA6662_or_TLE7259GE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the LIN4 transceiver to sleep mode. <linebreak/>
+</para><para>This function set the LIN4 transceiver to sleep mode using the NSLP pin. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a3998bf040e3518d151a21e0a5e907978" kindref="member">_Lin4</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context ConfigNmLin - ApplNmLinBusSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ To set the LIN4 transceiver to sleep mode, the function use _Lin4. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalLin4_SetSleepMode_ATA6662_or_TLE7259GE.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the LIN4 transceiver is set to sleep mode. <linebreak/>
+ TEST_HalLin4_SetSleepMode_ATA6662_or_TLE7259GE </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000019"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18928 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="527" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" bodystart="527" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a1116b57813ebd5914bdde4bcccd8c5ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_InitWakeupUnit</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_InitWakeupUnit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialize the Wakeup Unit. <linebreak/>
+</para><para>Initialize the Wakeup Unit by calling HAL_WakeupUnit_Init with unit = 0u and after with unit = 1u. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_VARIANT - HAL_InitWakeupUnitSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_InitWakeupUnit.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the wakeup unit is initialized. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1ab293f2dd904e49b29fc33389f2830ad6" kindref="member">TEST_HAL_InitWakeupUnit</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000020"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18931 </para><para>SWR_ICAS1_GW_19868 </para><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="574" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1181" bodyend="1187"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1aba27b9f49db485b21b2b09ecafb31561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_InitWakeupUnitSleep</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_InitWakeupUnitSleep</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Setup the Wakeup Unit before sleep. <linebreak/>
+</para><para>This function set 256 kbytes Ram and clear all wakeups. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1a1aebb6e743cb67eae4bc6b414a9088f7" kindref="member">MC_PCU_PCONF_STANDBY</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context PostBuildHandler - PostBuildHandler_McalInit <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ MC_PCU_PCONF_STANDBY is used to set the pointer to the &quot;MC_PCU&quot; (Power Control Unit) peripheral on standby (0x25ffuL). <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_InitWakeupUnitSleep.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the wakeup is set correctly and the wakeups are cleared <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a4341f9252d5af5b76e99aa7ddddd4e98" kindref="member">TEST_HAL_InitWakeupUnitSleep</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000021"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18931 </para><para>SWR_ICAS1_GW_19868 </para><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="605" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1189" bodyend="1199"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ab5dbf0c0e5bc861ad044bb6d37815f51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GetWakeupSrc</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetWakeupSrc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Store the wakeup bits and then clear the wakeup source register. <linebreak/>
+</para><para>Store the wakeup bits in <ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref> and Msg_KN_Gateway_diag then clear the wakeup source register. Bits are cleared by writing 1. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context bstartrtsw - main_Core2 <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ WakeupSrc is used to store (write) the wakeup bits and to clear the wakeup source register. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="GetWakeupSrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the wakeup bits are stored correctly and if the clear of the wakeup source register has been done. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a3927f1d9af3a8026c5bf3a0758176f86" kindref="member">TEST_GetWakeupSrc</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. The wakeup information is saved in a RAM image to void loosing the information during initialization and in buffer Msg_KN_Gateway_diag fo diagnosis. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="634" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1082" bodyend="1101"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a96ffb7a7d50135e6be1db35f58c1577a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a1134b580f8da4de94ca6b1de4d37975e" kindref="member">uint32</ref></type>
+        <definition>uint32 HAL_WakeupBits_AllValidBits</definition>
+        <argsstring>(uint8 nr)</argsstring>
+        <name>HAL_WakeupBits_AllValidBits</name>
+        <param>
+          <type><ref refid="hal__base_8h_8test_1adde6aaee8457bee49c2a92621fe22b79" kindref="member">uint8</ref></type>
+          <declname>nr</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get all valid wakeup bits. <linebreak/>
+</para><para>This function is used to return all valid wakeup bits. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- index for HAL Config Set Type <linebreak/>
+ range uint8 <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint32 - wakeup bits <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>HAL_active_config_set [in] <linebreak/>
+ valid_wakeups_bit_mask [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context HAL_VARIANT - Hal_Lpw_EnableWakeupSources <linebreak/>
+ HalIsLowPowerToHighPowerWakeup <linebreak/>
+ HalIsLowPowerWakeup <linebreak/>
+ HAL_WakeupUnit_Init <linebreak/>
+ Board_WakeupBits_ClearAll thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ Active HAL config set depending on the HW version and access the data value of valid_wakeups_bit_mask. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_WakeupBits_AllValidBits.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if we get all valid wakeup bits. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a590517355a9e6bd3e57fba0649b7c1f8" kindref="member">TEST_HAL_WakeupBits_AllValidBits</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function needed by all context functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="636" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1011" bodyend="1016"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a63ecae16df306426259ce031c183db87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ClearWakeupSrc</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearWakeupSrc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Clear WakeupSrc. <linebreak/>
+</para><para>This function is used to Clear WakeupSrc. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context SystemControl - OS_TASK_SystemControlTask <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ This function set WakeupSrc wakeup bits to 0. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="ClearWakeupSrc.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if WakeupSrc is cleared (set to 0). <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a593661a802a6a9fd506ef4cdc84265f0" kindref="member">TEST_ClearWakeupSrc</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Clear the wakeup information that is saved in a RAM image to void loosing the information. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="667" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1103" bodyend="1107"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a8bcdeab09445ffa2ca4f355cdd791d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_activate_WAKEUP_GW2WD</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_activate_WAKEUP_GW2WD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Activate the digital pin WAKEUP_GW2WD (used by RL78). <linebreak/>
+</para><para>This function activate the pin WAKEUP_GW2WD. To be active the pin WAKEUP_GW2WD needs to be low. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a3372537f6ef328b191213cc99994cdc7a7d3465ca037b4c360f6c5e4eb33d7b3e" kindref="member">PORT_PIN_LEVEL_LOW</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context SystemControl - OS_TASK_SystemControlTask <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ WAKEUP_GW2WD is active if WAKEUP_GW2WD is low. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_activate_WAKEUP_GW2WD.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function activate pin WAKEUP_GW2WD. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a1bbbf82bd7998a351974273cdfa3d42f" kindref="member">TEST_HAL_activate_WAKEUP_GW2WD</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by OS_TASK_SystemControlTask to implement {SWR_ICAS1_GW_16101}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="696" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1221" bodyend="1225"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1aa01814d13c359ffcb3103a3cb8191b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_deactivate_WAKEUP_GW2WD</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_deactivate_WAKEUP_GW2WD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Deactivate the digital pin WAKEUP_GW2WD (used by RL78). <linebreak/>
+</para><para>This function deactivate the pin WAKEUP_GW2WD. To be deactive the pin WAKEUP_GW2WD needs to be high. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a3372537f6ef328b191213cc99994cdc7a1a32bce2f80000d544847a48dca98637" kindref="member">PORT_PIN_LEVEL_HIGH</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context SystemControl - OS_TASK_SystemControlTask <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ WAKEUP_GW2WD is deactive if WAKEUP_GW2WD is high. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_deactivate_WAKEUP_GW2WD.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function deactivate pin WAKEUP_GW2WD. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a7c3b636d02c21333822fa38759b47815" kindref="member">TEST_HAL_deactivate_WAKEUP_GW2WD</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by OS_TASK_SystemControlTask to implement {SWR_ICAS1_GW_16102}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="725" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1227" bodyend="1231"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_SetActiveConfigSet</definition>
+        <argsstring>(HardwareVersionType hwVersion)</argsstring>
+        <name>HAL_SetActiveConfigSet</name>
+        <param>
+          <type><ref refid="hal__variant_8h_8test_1a52ff261ebee0558cc4933fc454372f75" kindref="member">HardwareVersionType</ref></type>
+          <declname>hwVersion</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets the pointer <ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> to the valid <ref refid="hal__variant_8h_8test_1af40a0fc603628de04c136f2e92a1e863" kindref="member">HAL_config_set</ref>. <linebreak/>
+</para><para>Sets the pointer <ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> to the valid <ref refid="hal__variant_8h_8test_1af40a0fc603628de04c136f2e92a1e863" kindref="member">HAL_config_set</ref> depending on the Hardware variant. The used components and interfaces are defined in hal_cfg.xml. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">hwVersion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Board version <linebreak/>
+ range HardwareVersionType <linebreak/>
+ resolution N/A <linebreak/>
+ unit N/A <linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context PostBuildHendler - PostBuildHandler_McalInit_LIN4_DWA_mode and PostBuildHandler_McalInit <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ Sets the pointer <ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> to the valid <ref refid="hal__variant_8h_8test_1af40a0fc603628de04c136f2e92a1e863" kindref="member">HAL_config_set</ref> depending on the Hardware variant. <linebreak/>
+ For example if hwVersion is <bold>VW_MEB19_ICAS1_B1</bold>: <linebreak/>
+<programlisting><codeline><highlight class="normal">HAL_active_config_set<sp/>=<sp/>&amp;HAL_config_set[_PortConfigSet_B1_AdcConfigSet_B1];</highlight></codeline>
+</programlisting> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_SetActiveConfigSet.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the pointer <ref refid="hal__variant_8c_1a0ddb7a036c881558be8649286bc2b530" kindref="member">HAL_active_config_set</ref> is set correctly. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a0979ba187d6847b2c42f0804b51fc339" kindref="member">TEST_HAL_SetActiveConfigSet</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000022"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_9711 Design Decision - Justification. The HAL configuration is dependent on the HW version and needs to be updated at startup. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="763" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1018" bodyend="1035"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1ad9d87ad63bbea3ce6d3476a39a780a57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HalClearDiagnosisWakeup</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalClearDiagnosisWakeup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Clear a possible wakeup for diagnose CAN. <linebreak/>
+</para><para>This function check if a CAN or LIN wakeup was detected by the HW wakeup unit for the coresponding Channel and clear the HW wakeup bit. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a5af4715f59bcf54883d1e637f03b0452a23ade03fb7dda171c642b6b1b0ab391c" kindref="member">_MEB_DiagCANFD</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context BusMonitorConfig - ApplNmCanSleep <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ _MEB_DiagCANFD is used for communication channel 2. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalClearDiagnosisWakeup.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the the possible wakeup for diagnose CAN is cleared. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1a57ed4dda2fc403f3b4d642e581d7b7bb" kindref="member">TEST_HalClearDiagnosisWakeup</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by BusMonitor to clear a wakeup event. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="792" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1201" bodyend="1204"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a4537081042d5abe130580d17509a46e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean HalWakeupOBDActive</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalWakeupOBDActive</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>This routine returns the whether the ETH_WAKEUP is active. <linebreak/>
+</para><para>This function is used to check if wakeup is active (to be active it needs DI_ETH_WAKEUP to be low*) and to return the status. <linebreak/>
+<simplesect kind="pre"><para>To be called after <ref refid="hal__variant_8h_1a645b4f6fe205aecbd6e3006fd7e3927c" kindref="member">HAL_SetActiveConfigSet</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if wakeup is active <linebreak/>
+ FALSE otherwise <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a3372537f6ef328b191213cc99994cdc7a7d3465ca037b4c360f6c5e4eb33d7b3e" kindref="member">PORT_PIN_LEVEL_LOW</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context WakeupSleep - updateInternalWUPReasons <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ The OBD is active if DI_ETH_WAKEUP is low (PORT_PIN_LEVEL_LOW). <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalWakeupOBDActive.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the status of wakeup for both conditions (DI_ETH_WAKEUP equal to LOW and DI_ETH_WAKEUP not equal to LOW). <linebreak/>
+ <ref refid="hal__variant_8c_8test_1ad52644e46b18e5376d87686f146c73f9" kindref="member">TEST_HalWakeupOBDActive</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000023"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18948 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="822" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1206" bodyend="1219"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1aba7bc87d4972e64e0c3c0f274b6f70f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="hal__base_8h_8test_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean HalIsLowPowerWakeup</definition>
+        <argsstring>(void)</argsstring>
+        <name>HalIsLowPowerWakeup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Check whether only a wakeup from the internal RTC is active. <linebreak/>
+</para><para>This function is used to check whether only a wakeup from the internal RTC is active and to return the status (if it is active or not). <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if a RTC wakeup is active <linebreak/>
+ FALSE otherwise <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8c_1acf03b078056c8e8d064a126a0d134f7b" kindref="member">WakeupSrc</ref> [in] <linebreak/>
+ <ref refid="hal__variant_8h_8test_1a65527564280b3dfcb7095b8220bdab53" kindref="member">INTERNAL_RTC_WKP_MASK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context LowPower_Main - Lpw_SplitOnLowPower <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ WakeupSrc is used to check the wakeup bits. <linebreak/>
+ INTERNAL_RTC_WKP_MASK - RTC_INT used the last 2 bits from the WKPU. In this function is used to check whether only a wakeup from the internal RTC is active. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HalIsLowPowerWakeup.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check the value of retVal according to each case. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1adb406362cf32db2c9b5bebe5cd964353" kindref="member">TEST_HalIsLowPowerWakeup</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Helper function to check if the system should stay in low power (RTC_DWA mode). <linebreak/>
+ Needed by Lpw_SplitOnLowPower to implement {SWR_ICAS1_GW_11145}. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="855" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1148" bodyend="1169"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a703105d3502168f7742e9ee5683f6840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hal_Lpw_EnableWakeupSources</definition>
+        <argsstring>(void)</argsstring>
+        <name>Hal_Lpw_EnableWakeupSources</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Enable the wakeup reasons from low power (including RTC_API) for low power DWA. <linebreak/>
+</para><para>This function is used to enable the wakeup reasons from low power (including RTC_API) for low power DWA by clearing last 2 bits of **WKPU[0].WISR, enabling Rising-Edge Event and enabling Wakeup Bits. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para><ref refid="hal__variant_8h_8test_1a65527564280b3dfcb7095b8220bdab53" kindref="member">INTERNAL_RTC_WKP_MASK</ref> [in] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context LowPower_HAL - Hal_LpTimer_EnableWakeup <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ RTC_INT used the last 2 bits from the WKPU. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Hal_Lpw_EnableWakeupSources.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the wakeup reasons are enabled. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1ab6af703e47530c977bd1fe0457e5c9ef" kindref="member">TEST_Hal_Lpw_EnableWakeupSources</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000024"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18931 </para><para>SWR_ICAS1_GW_19869 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="885" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1072" bodyend="1080"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1a5711697c73a0a43827d1a8b2f28e3bee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="struct_l_i_n_f_l_e_x_d__tag" kindref="compound">LINFLEXD_tag</ref> *</type>
+        <definition>volatile struct LINFLEXD_tag* HAL_DWA_LIN_GetDevicePtr</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_DWA_LIN_GetDevicePtr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Get device pointer. <linebreak/>
+</para><para>Return the FlexLin device pointer coresponding to the DWA LIN. <linebreak/>
+<simplesect kind="pre"><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>N/A <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to the DWA LIN peripheral <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context DWA_LowPower - Lpw_Poll_Lin_Interrupts <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ N/A <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="HAL_DWA_LIN_GetDevicePtr.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the function returns the FlexLin device pointer coresponding to the DWA LIN. <linebreak/>
+ <ref refid="hal__variant_8c_8test_1aa63bcf025daaaeaec72eee793f048f63" kindref="member">TEST_HAL_DWA_LIN_GetDevicePtr</ref> </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para>Design Decision - Justification. Needed by RTC_DWA to access the status flags in low power when interrupts are not enabled. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="914" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1171" bodyend="1179"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__variant_8h_1af387642c7b1d3c561ab916428fd212a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Prepare_Ports_ForSleepMode</definition>
+        <argsstring>(void)</argsstring>
+        <name>Prepare_Ports_ForSleepMode</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Configure ports for sleep. <linebreak/>
+</para><para>This function is used to configure ports for sleep. It set the standby-pin to standby, set digital value for DO_ENABLE_KL30_DIAGNOSE to low, clear the wakeup bits, check if NvM data stored in Standby RAM is valid <linebreak/>
+mark core1, core0 and HSM as inactive for the next Mcu mode transition, set LIN2 and LIN3 transceivers to sleep mode, set CAN or LIN transceiver to sleep mode, disable all pad keepers and set digital value for GW2WD_LOWPOWER - GPIO_7 to low. <linebreak/>
+<simplesect kind="pre"><para>To be called after #HAL_SetActiveConfigSe <linebreak/>
+</para></simplesect>
+<simplesect kind="post"><para>The ECU needs to go to sleep <linebreak/>
+</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals </title><para>DWA_LIN_MAX_SHUTDOWN_TIME_MS [in] <linebreak/>
+ _Diag, _ComChannelLinFirst, _ComChannelLinLast [in] <linebreak/>
+ PORT_PIN_LEVEL_LOW [in] <linebreak/>
+ SCR0 [out] <linebreak/>
+</para></simplesect>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context No <linebreak/>
+ thread safe No - Integration must insure that that function is not interrupted by the other functions of the same module <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous <linebreak/>
+ DWA_LIN_MAX_SHUTDOWN_TIME_MS - used to set a block time. <linebreak/>
+ _Diag, _ComChannelLinFirst, _ComChannelLinLast - used to set ComChannel to normal mode and sleep mode. <linebreak/>
+ PORT_PIN_LEVEL_LOW - used to set digital value for DO_ENABLE_KL30_DIAGNOSE - GPIO_2 and GW2WD_LOWPOWER - GPIO_7 on low <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Prepare_Ports_ForSleepMode.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The testing method is described on: <linebreak/>
+  Test case shall be created to check if the ports are configured for sleep. <linebreak/>
+ TEST_HAL_Prepare_Ports_ForSleepMode </para></simplesect>
+<simplesect kind="par"><title>Traceability </title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000025"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_18926 </para><para>SWR_ICAS1_GW_19691 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h" line="950" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/src/hal_variant.c" bodystart="1233" bodyend="1294"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides declaration of functions that need low level access specific to one Chorus uC variant. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/cdd/Chorus_HSI/HAL/Evo/inc/hal_variant.h"/>
+  </compounddef>
+</doxygen>

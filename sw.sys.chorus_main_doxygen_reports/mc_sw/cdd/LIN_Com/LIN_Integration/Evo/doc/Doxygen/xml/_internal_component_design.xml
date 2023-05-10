@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+<para><linebreak/>
+ Declarations of interfaces for Lin Integration component. </para>    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+ Declarations of interfaces for Lin Integration component.</para><sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:</para><para><itemizedlist>
+<listitem><para><ref refid="_lin_integration_8h" kindref="compound">LinIntegration.h</ref> -This file can be included by other modules and components.</para></listitem><listitem><para><ref refid="_lin_integration_8c" kindref="compound">LinIntegration.c</ref> - Implementation file for Lin Integration component. Includes the implementation of interfaces used by other components.</para></listitem><listitem><para><ref refid="_lin_task_8h" kindref="compound">LinTask.h</ref> - Function declarations and external data references of the LinTask. This module provides the header file with the function declarations and external <linebreak/>
+data references of the LinTask and its corresponding standard interface definition. <linebreak/>
+</para></listitem><listitem><para><ref refid="_lin_task_8c" kindref="compound">LinTask.c</ref> - This module provides the implementation of the main task loop of the LinTask. The module includes also necessary functions for the the standard interface definition and the task handling by the module manager. The task function definition is called directly in the scope of the OSEK operating systems.</para></listitem><listitem><para><ref refid="_lin_isr_8c" kindref="compound">LinIsr.c</ref> - This module implements the LIN ISR functions. There are 3 types of interrupts for each LIN interface: Lin[x]RxIsr - interrupt for reception Lin[x]ErrIsr - interrupt for error frame Lin[x]TxIsr - interrupt for transmit Where x represents the interface identifier: starts from 0 and goes till LIN_IFC_NR_MAX</para></listitem><listitem><para><ref refid="_lin_integration___cfg_8h" kindref="compound">LinIntegration_Cfg.h</ref> - <linebreak/>
+ Declaration file for LinIntegration_Cfg in the scope of the Lin Integration component. This module is variant dependent and does not contain function definitions to be used by other components.</para></listitem><listitem><para><ref refid="_lin_integration___cfg_8c" kindref="compound">LinIntegration_Cfg.c</ref> - <linebreak/>
+ Implementation file of LinIntegration_Cfg in the scope of the Lin Integration component. This module is variant dependent and its use is to minimize the necessary files to be <linebreak/>
+modified in case there will be changes in the number of LIN interfaces used in the project.</para></listitem><listitem><para><ref refid="_lin_schedule_8h" kindref="compound">LinSchedule.h</ref> - Declaration file for LinSchedule. This module handles LIN schedule table switching.</para></listitem><listitem><para><ref refid="_lin_schedule_8c" kindref="compound">LinSchedule.c</ref> - Implementation file for LinSchedule. This module handles LIN schedule table switching.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The existing requirements for LIN_Com functionality are implemented at design level in all three components - LIN Integration, LIN FlexDriver and LIN Config. <linebreak/>
+As per above mentioned DOORS baseline, for this component there are no valid non functional requirements.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>See the header files:</para><para><itemizedlist>
+<listitem><para>[<bold><ref refid="_lin_integration_8h" kindref="compound">LinIntegration.h</ref></bold>] - <linebreak/>
+ Declarations of interfaces for Lin Integration component. This file can be included by other modules and components.</para></listitem><listitem><para>[<bold><ref refid="_lin_task_8h" kindref="compound">LinTask.h</ref></bold>] - Function declarations and external data references of the LinTask. This module provides the header file with the function declarations and external <linebreak/>
+data references of the LinTask and its corresponding standard interface definition. <linebreak/>
+</para></listitem><listitem><para>[<bold><ref refid="_lin_integration___cfg_8h" kindref="compound">LinIntegration_Cfg.h</ref></bold>] - <linebreak/>
+ Declaration file for LinIntegration_Cfg in the scope of the Lin Integration component. This module is variant dependent and does not contain function definitions to be used by other components.</para></listitem><listitem><para>[<bold><ref refid="_lin_schedule_8h" kindref="compound">LinSchedule.h</ref></bold>] - Declaration file for LinSchedule. This module handles LIN schedule table switching.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between the Sowftware Units.<linebreak/>
+ <image type="html" name="LIN_Integration_SoftwareUnitInteraction.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The interactions between units for the LIN Integration component can be split in two parts. <linebreak/>
+There is an interaction of the units with Start-up code and activating the LinTask. <linebreak/>
+And also there is an interaction of the units when changing and updating the scheduling tables.<linebreak/>
+<linebreak/>
+<linebreak/>
+<bold>Interaction with the Start-up code and OS TASK.</bold></para><para>The following diagram describes the interaction between the units of the LIN Integration SW component during startup. <linebreak/>
+ <image type="html" name="LinIntegration_Dynamic_Behavior_StartUp.png"></image>
+ </para><para><bold>Scheduling of LIN tables</bold> <linebreak/>
+ <image type="html" name="LinIntegration_Dynamic_Behavior_Scheduling.png"></image>
+ </para><para><bold>LIN Rx frame Routing</bold> <linebreak/>
+<linebreak/>
+ <image type="html" name="LinIntegration_Dynamic_Behavior_LINRxRouting.png"></image>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>A Data flow diagram is not relevant for SWDD of LIN Integration component. <linebreak/>
+LIN Integration is a complex device driver that uses the LIN FlexDriver LLD from EB and provides the necessary interfaces for other modules. <linebreak/>
+This means that the component itself does not receive and send directly any data on the LIN buses,providing only request and callback functions to be used by other components. <linebreak/>
+</para><para><heading level="2">Tasks</heading>
+</para><para>The module provides its own task located on Core1 - LinTask (5ms period) This task is started from SystemControl. <table rows="8" cols="2"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value   </para></entry></row>
+<row>
+<entry thead="no"><para>OsTaskActivation  </para></entry><entry thead="no"><para>1   </para></entry></row>
+<row>
+<entry thead="no"><para>OsTaskAutostart  </para></entry><entry thead="no"><para>False   </para></entry></row>
+<row>
+<entry thead="no"><para>OsTaskPriority  </para></entry><entry thead="no"><para>253   </para></entry></row>
+<row>
+<entry thead="no"><para>OsStacksize  </para></entry><entry thead="no"><para>1100   </para></entry></row>
+<row>
+<entry thead="no"><para>OsTaskResourceRef  </para></entry><entry thead="no"><para>None   </para></entry></row>
+<row>
+<entry thead="no"><para>OsTaskSchedule  </para></entry><entry thead="no"><para>FULL   </para></entry></row>
+<row>
+<entry thead="no"><para>Type  </para></entry><entry thead="no"><para>Extended Task   </para></entry></row>
+</table>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>There are 3 types of interrupts for each LIN interface:<itemizedlist>
+<listitem><para>Lin[x]RxIsr - interrupt for reception</para></listitem><listitem><para>Lin[x]ErrIsr - interrupt for error frame</para></listitem><listitem><para>Lin[x]TxIsr - interrupt for transmit</para></listitem></itemizedlist>
+</para><para>Where x represents the interface identifier: starts from 0 and goes till LIN_IFC_NR_MAX</para><para><heading level="2">Events</heading>
+</para><para>The following events are used:<itemizedlist>
+<listitem><para>LinStartEv - set when the task is started</para></listitem><listitem><para>LinStopEv - can be used to stop the cyclic event</para></listitem><listitem><para>LinBaseTickEv - cyclic event (every 5ms) from the OS alarm LinBaseAlarm</para></listitem></itemizedlist>
+</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no specific operating modes for this module. It is always active in &apos;HighPower&apos;. For &apos;LowPower&apos; the LIN communication is handled by <emphasis>RTC_DWA</emphasis> component.</para><para><heading level="2">Power Modes</heading>
+</para><para>High Power</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>LIN Integration component is not setting directly DEM or DTC events but will monitor the status of the HW LIN <linebreak/>
+peripherals and will provide this status to the ErrHdl component which in turn will set/reset the corresponding DTCs. <linebreak/>
+Monitoring the status of the LIN will be handled in the <ref refid="_lin_integration_8c_1a67e4e9d45eb31b56a59d5fc19b9d8b53" kindref="member">LinDoCyclicLinStatus()</ref> function and #ErrSetResetElectricalFailStatusLIN() <linebreak/>
+interface provided by ErrHdl will be used to set and reset the LIN electrical failure DTCs. <linebreak/>
+ <heading level="2">Synchronization</heading>
+</para><para>Since the component is designed to run on a single core, the request variables are protected by means of critical sections Suspend/ResumeAllInterrupts only where necessary.</para><para>The functions mentioned bellow can be called from any other task (and core). The functions only set flags to be process later. The memory access is atomic for native numbers (boolean/integers) because the <emphasis>cache</emphasis> is disabled.<itemizedlist>
+<listitem><para>LinInt_ComChannel_Request&lt;x&gt;Mode - where x is the desired NM mode</para></listitem><listitem><para>LinInt_ScheduleTable_Request&lt;x&gt; or LinInt_ScheduleTable_Release&lt;x&gt;, LinInt_ScheduleTable_RequestOldTable, LinInt_ScheduleTable_SaveOldTable - where x is the desired schedule table type</para></listitem><listitem><para>LinInt_ScheduleTable_RequestSleep, LinInt_ScheduleTable_ClearSleepRequest</para></listitem><listitem><para>LinInt_ScheduleTable_Is&lt;x&gt;, LinInt_ScheduleTable_Get&lt;x&gt; - read only functions that should not update the memory</para></listitem></itemizedlist>
+</para><para><simplesect kind="attention"><para>If the <bold>cache</bold> is enabled in the project in the future the flags should use other <bold>atomic</bold> data types.</para></simplesect>
+<heading level="2">Operations</heading>
+</para><para>See function list</para><para><heading level="2">Macros</heading>
+</para><para>See macro list</para><para><heading level="2">Algorithms</heading>
+</para><para>Not applicable.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para>Evaluation of <bold>LIN Integration</bold> SWDD is resumed in the below table and is based on the following rationales: <linebreak/>
+<itemizedlist>
+<listitem><para>This is a project specific CDD, but some updates in the configuration files can fit the code into different variants, therefore has Low <emphasis>interoperability</emphasis>. <linebreak/>
+</para></listitem><listitem><para>The component interacts with LIN Config and LIN FlexDriver on a lower level, and also provides the necessary interfaces for other modules at higher levels, having a high number of <emphasis>dependencies</emphasis>. <linebreak/>
+</para></listitem><listitem><para>It has medium <emphasis>criticality</emphasis> as the component itself is QM but the functionality impacts the LIN communication. <linebreak/>
+</para></listitem><listitem><para>The <emphasis>technical complexity</emphasis> of the module is also medium because it is split in smaller units but has many interactions with other components. <linebreak/>
+</para></listitem><listitem><para>It has a high <emphasis>risk</emphasis> because the module has more than 5 SW Units and there is a probability for the component to mal-function in case of an unforeseen scenario. <linebreak/>
+</para></listitem><listitem><para>Because it has medium complexity and high risk the <emphasis>testing</emphasis> only by code review and SWATT it`s not sufficient. <linebreak/>
+The overall LIN communication is depended on HW(thus more difficult to simulate) and should be tested on the testbench. <linebreak/>
+ <table rows="2" cols="6"><row>
+<entry thead="yes"><para>Interoperability  </para></entry><entry thead="yes"><para>Interaction  </para></entry><entry thead="yes"><para>Criticality  </para></entry><entry thead="yes"><para>Technical complexity  </para></entry><entry thead="yes"><para>Risks  </para></entry><entry thead="yes"><para>Testability   </para></entry></row>
+<row>
+<entry thead="no"><para>Low  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Medium   </para></entry></row>
+</table>
+</para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para>GW_ADAPTATION.c - GENERATED FILE for GW Adaptations.</para></listitem><listitem><para><ref refid="_g_w___a_n_p__2_e_8c" kindref="compound">GW_ANP_2E.c</ref> - This file provides the Write (Service 0x2E) functions for adaptations.</para></listitem><listitem><para><ref refid="_g_w___a_n_p__22_8c" kindref="compound">GW_ANP_22.c</ref> - This file provides the Read (Service 0x22) functions for adaptations.</para></listitem><listitem><para>GW_Conti_ANP.c - Implementation of GW NVRAM CALLBACK FUNCTIONS. </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The component covers requirement present in the module 5.SWR_ICAS1_BSW. The requirements present in chapter 2.19.3 Adaptation Channels is covered by this component. The <bold>Requirements traceability</bold> in SWA can be found in EA in the following location:<linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.Adaptations <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Adaptations has four SW components ,but there is no interaction between them in both Evo and EvoF varients.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>In GW_Adaptations component the Interfaces are triggered by the Call backs from the DCM module when the service request is received. You can find more detailed description of each interaction below.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagram below showes the generic read request depending on the DiD requested by tester. <image type="html" name="Adaptations_Readrequest_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below showes the generic write request depending on the DiD requested by tester. <image type="html" name="Adaptations_writerequest_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below showes the generic NVM write when requested by tester. <image type="html" name="NVM_write_Dynamicbehaviour.png"></image>
+ </para><para>The diagram below showes the read/write request for DiD 0x0502 requested by tester. <image type="html" name="Adaptations_Readrequest_Dynamicbehaviour.png"></image>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The immediate data flow of the GW_Adaptations SW unit is described here. <linebreak/>
+The data flows from and to the GW_Adaptations are depicted with red arrows.</para><para><image type="html" name="sample_DFD0.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>see also <bold>Interaction Diagram &quot;Adapatation&quot;</bold> at the following location in Enterprise Architect: <linebreak/>
+VW_ICAS1.Chorus.All_Cores.SoftwareDecomposition.ComplexDeviceDrivers.ECU_DIAG_Chorus.Adaptations <linebreak/>
+ <heading level="2">Interrupts</heading>
+</para><para>interrupts are not used.<linebreak/>
+ <heading level="2">Events</heading>
+</para><para>There is no event-handling designed. <linebreak/>
+</para><para><heading level="2">Operating Modes</heading>
+</para><para>There are no special operation modes used. <linebreak/>
+</para><para><heading level="2">Power Modes</heading>
+</para><para>There is no special power mode used. <linebreak/>
+ <heading level="2">Exception and Error Handling</heading>
+</para><para>A special exception or error handling is not necessary. <linebreak/>
+</para><para><heading level="2">Synchronization</heading>
+</para><para>A special synchronization method is not necessary. <linebreak/>
+ <heading level="2">Operations</heading>
+</para><para>The operations are mentioned in the proper function description. <linebreak/>
+ <heading level="2">Macros</heading>
+</para><para>See the Macros list.</para><para><heading level="2">Algorithms</heading>
+</para><para>refer the section files related the adaptations, subsection functions. <heading level="2">Data Structures</heading>
+</para><para>Refer Data structure list. <linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Just 4 software units.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Med  </para></entry><entry thead="no"><para>Number of dependencies less then 5   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Not ASIL and not a stack and not new and intraction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>No algorithms and interaction is rated low   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para><para><linebreak/>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

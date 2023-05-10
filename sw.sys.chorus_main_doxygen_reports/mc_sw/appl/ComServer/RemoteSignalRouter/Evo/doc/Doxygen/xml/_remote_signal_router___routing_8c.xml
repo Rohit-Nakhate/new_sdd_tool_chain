@@ -1,0 +1,972 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_remote_signal_router___routing_8c" kind="file" language="C++">
+    <compoundname>RemoteSignalRouter_Routing.c</compoundname>
+    <includes local="yes">Std_Types.h</includes>
+    <includes local="yes">Routing.h</includes>
+    <includes local="yes">OsekComMsgs_ExpCfgGen.h</includes>
+    <includes local="yes">ConfigOsekMessagesIAC.h</includes>
+    <includes local="yes">ConfigTxGen.h</includes>
+    <includes local="yes">ChnRemoteAFS_Cfg.h</includes>
+    <includes local="yes">ChnRemoteMFL_Cfg.h</includes>
+    <includes local="yes">Rte_RemoteSignalRouter.h</includes>
+    <includes refid="_remote_signal_router___routing_8h" local="yes">RemoteSignalRouter_Routing.h</includes>
+    <includes local="yes">NvM.h</includes>
+    <includes local="yes">TSMem.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>ConfigTxGen.h</label>
+      </node>
+      <node id="10">
+        <label>ConfigOsekMessagesIAC.h</label>
+      </node>
+      <node id="12">
+        <label>ChnRemoteAFS_Cfg.h</label>
+      </node>
+      <node id="6">
+        <label>RemoteSignalRouter_Routing.c</label>
+        <link refid="_remote_signal_router___routing_8c"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>TSMem.h</label>
+      </node>
+      <node id="13">
+        <label>ChnRemoteMFL_Cfg.h</label>
+      </node>
+      <node id="16">
+        <label>NvM.h</label>
+      </node>
+      <node id="8">
+        <label>Routing.h</label>
+      </node>
+      <node id="9">
+        <label>OsekComMsgs_ExpCfgGen.h</label>
+      </node>
+      <node id="14">
+        <label>Rte_RemoteSignalRouter.h</label>
+      </node>
+      <node id="7">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="15">
+        <label>RemoteSignalRouter_Routing.h</label>
+        <link refid="_remote_signal_router___routing_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_remote_signal_router___routing_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" prot="public" static="no">
+        <name>SWATT_BYPASS</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+<para>For SWATT testing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="68" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_remote_signal_router___routing_8c_1acaec4598055ca95c939652d75f9333f3" prot="public" static="no">
+        <name>REMOTESIGNALROUTER_BDP_TV_01_RECEIVED_TIME_OUT</name>
+        <initializer>(41U)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value of the PDU BDP_TV_01. The PDU BDP_TV_01 has a cycle of 1000 ms.<linebreak/>
+ The value is computed based on the formula ((2 * Pdu&apos;s cycle time) / Main Function&apos;s cycle time) + 1 <simplesect kind="remark"><para>values 41U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="82" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_remote_signal_router___routing_8c_1a22380acdf839011f745b21f7aa076d2f" prot="public" static="no">
+        <name>REMOTESIGNALROUTER_ELF_02_RECEIVED_TIME_OUT</name>
+        <initializer>(81U)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value of the PDU ELF_02. The PDU ELF_02 has a cycle of 2000 ms.<linebreak/>
+ The value is computed based on the formula ((2 * Pdu&apos;s cycle time) / Main Function&apos;s cycle time) + 1 <simplesect kind="remark"><para>values 81U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="91" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_remote_signal_router___routing_8c_1a7276404ead2308260c3252dd41db090a" prot="public" static="no">
+        <name>REMOTESIGNALROUTER_FOD_01_RECEIVED_TIME_OUT</name>
+        <initializer>(41U)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value of the PDU FoD_01. The PDU FoD_01 has a cycle of 1000 ms.<linebreak/>
+ The value is computed based on the formula ((2 * Pdu&apos;s cycle time) / Main Function&apos;s cycle time) + 1 <simplesect kind="remark"><para>values 41U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="100" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_remote_signal_router___routing_8c_1a2a38788206eb29685397a30cd52c683e" prot="public" static="no">
+        <name>REMOTESIGNALROUTER_ORU_01_RECEIVED_TIME_OUT</name>
+        <initializer>(21U)</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value of the PDU ORU_01. The PDU ORU_01 has a cycle of 500 ms.<linebreak/>
+ The value is computed based on the formula ((2 * Pdu&apos;s cycle time) / Main Function&apos;s cycle time) + 1 <simplesect kind="remark"><para>values 21U <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="109" column="9" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a8a0ce9f848bed0d7aa9311c7061ea3f5" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 RemoteSignalRouter_Mask_BDP_TV_01</definition>
+        <argsstring>[8]</argsstring>
+        <name>RemoteSignalRouter_Mask_BDP_TV_01</name>
+        <initializer>= {0x00,0xF0,0xFF,0x00,0x00,0x00,0x00,0x00}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used for the received signals in the Pdu BDP_TV_01. <simplesect kind="remark"><para>range 0x00 - 0xFF <linebreak/>
+ unit N/A resolution Factor = 1, Offset = 0. Applies for each byte<linebreak/>
+ context task <linebreak/>
+ protection none - constant <linebreak/>
+ list of signals: BDP_TV_Cam_R_IncludeInStream:12,12,1 BDP_TV_Cam_L_IncludeInStream:13,13,1 BDP_TV_Cam_H_IncludeInStream:14,14,1 BDP_TV_Cam_F_IncludeInStream:15,15,1 BDP_TV_stream_activation:16,16,1 BDP_TV_stream_Profile:17,23,7 binary value: 0000000000001111111111110000000000000000000000000000000000000000 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="129" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a62600d7e552c7eedf894f846b4d8df5c" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 RemoteSignalRouter_Mask_ELF_02</definition>
+        <argsstring>[8]</argsstring>
+        <name>RemoteSignalRouter_Mask_ELF_02</name>
+        <initializer>= {0x00,0xF0,0xFF,0xFF,0xFF,0x0F,0x00,0x00}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used for the received signals in the Pdu ELF_02. <simplesect kind="remark"><para>range 0x00 - 0xFF <linebreak/>
+ unit N/A resolution Factor = 1, Offset = 0. Applies for each byte<linebreak/>
+ context task <linebreak/>
+ protection none - constant <linebreak/>
+ list of signals: ELF_AbfahrtstimerJahr:12,23,12 ELF_AbfahrtstimerMonat:24,27,4 ELF_AbfahrtstimerTag:28,32,5 ELF_AbfahrtstimerStunde:33,37,5 ELF_AbfahrtstimerMinute:38,43,6 binary value: 0000000000001111111111111111111111111111111100000000000000000000 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="148" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a392e65d66b5a8ec48a0229b3bb835276" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 RemoteSignalRouter_Mask_FoD_01</definition>
+        <argsstring>[8]</argsstring>
+        <name>RemoteSignalRouter_Mask_FoD_01</name>
+        <initializer>= {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xC0}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used for the received signals in the Pdu FoD_01. <simplesect kind="remark"><para>range 0x00 - 0xFF <linebreak/>
+ unit N/A resolution Factor = 1, Offset = 0. Applies for each byte<linebreak/>
+ context task <linebreak/>
+ protection none - constant <linebreak/>
+ list of signals: FoD_Anz_Funktionsabschaltung:62,63,2 binary value: 0000000000000000000000000000000000000000000000000000000000000011 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="163" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a86df0d7e0fbaae577c458c01b00f3aad" prot="public" static="no" mutable="no">
+        <type>const uint8</type>
+        <definition>const uint8 RemoteSignalRouter_Mask_ORU_01</definition>
+        <argsstring>[8]</argsstring>
+        <name>RemoteSignalRouter_Mask_ORU_01</name>
+        <initializer>= {0x00,0xF0,0xFF,0x0F,0xF8,0xFF,0xFF,0xEF}</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Mask used for the received signals in the Pdu ORU_01. <simplesect kind="remark"><para>range 0x00 - 0xFF <linebreak/>
+ unit N/A resolution Factor = 1, Offset = 0. Applies for each byte<linebreak/>
+ context task <linebreak/>
+ protection none - constant <linebreak/>
+ list of signals: ORU_DiagAddress:12,27,16 ORU_Inventory:35,36,2 ORU_EM_Anfrage_freigegebeneNetze:37,38,2 ORU_EM_Anfrage_Stromaufnahme:39,47,9 ORU_EM_Anfrage_Flashdauer:48,57,10 ORU_Warnung:58,59,2 ORU_Status:61,63,3 binary value: 0000000000001111111111111111000000011111111111111111111111110111 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="184" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a86bde4906e4071ecddabb580d56504ca" prot="public" static="yes" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 RemoteSignalRouter_BDP_TV_01_Received_TimeOut</definition>
+        <argsstring></argsstring>
+        <name>RemoteSignalRouter_BDP_TV_01_Received_TimeOut</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value counter for RemoteSignalRouter_BDP_TV_01_Received. Each PDU has a runnable connected to the reception through a DRE (Data Receive Event)<linebreak/>
+<simplesect kind="remark"><para>range [0 - REMOTESIGNALROUTER_BDP_TV_01_RECEIVED_TIME_OUT] <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="200" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1ae178609c6088faedf816376b7efebc01" prot="public" static="yes" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 RemoteSignalRouter_ELF_02_Received_TimeOut</definition>
+        <argsstring></argsstring>
+        <name>RemoteSignalRouter_ELF_02_Received_TimeOut</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value counter for RemoteSignalRouter_ELF_02_Received. Each PDU has a runnable connected to the reception through a DRE (Data Receive Event)<linebreak/>
+<simplesect kind="remark"><para>range [0 - REMOTESIGNALROUTER_ELF_02_RECEIVED_TIME_OUT] <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="212" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1af0c7cabb09b8f495a9e5e1891bfc3635" prot="public" static="yes" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 RemoteSignalRouter_FoD_01_Received_TimeOut</definition>
+        <argsstring></argsstring>
+        <name>RemoteSignalRouter_FoD_01_Received_TimeOut</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value counter for RemoteSignalRouter_FoD_01_Received. Each PDU has a runnable connected to the reception through a DRE (Data Receive Event)<linebreak/>
+<simplesect kind="remark"><para>range [0 - REMOTESIGNALROUTER_FOD_01_RECEIVED_TIME_OUT] <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="224" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a7d3f2924636afaa89285b31c71b63b74" prot="public" static="yes" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 RemoteSignalRouter_ORU_01_Received_TimeOut</definition>
+        <argsstring></argsstring>
+        <name>RemoteSignalRouter_ORU_01_Received_TimeOut</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout value counter for RemoteSignalRouter_ORU_01_Received. Each PDU has a runnable connected to the reception through a DRE (Data Receive Event)<linebreak/>
+<simplesect kind="remark"><para>range [0 - REMOTESIGNALROUTER_ORU_01_RECEIVED_TIME_OUT] <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="236" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1a37e8198e75677920981c94372c59cef5" prot="public" static="no" mutable="no">
+        <type>Tuint8</type>
+        <definition>Tuint8 RAM_NvMBlockDescriptor_ORU_01[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>RAM_NvMBlockDescriptor_ORU_01</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>The variable RAM_NvMBlockDescriptor_ORU_01 is used to handle the information into NvRAM location. The name is mentioned in the requirements. It is used to write/read the value from NvM block. <simplesect kind="remark"><para>range [uint8] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A, Offset = N/A <linebreak/>
+ context NvM handle<linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1483 </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="238" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1af682c1f76c231d6004bb660c9561cbf4" prot="public" static="yes" mutable="no">
+        <type>uint8</type>
+        <definition>uint8 NvM_UpdateNeeded</definition>
+        <argsstring></argsstring>
+        <name>NvM_UpdateNeeded</name>
+        <initializer>= E_OK</initializer>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Flag used for ORU_01 PDU to see if the payload received is different then the payload stored in NvM. <simplesect kind="remark"><para>values [0,1] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="253" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_remote_signal_router___routing_8c_1ae5364aed4f9721359892c25761f1c2b9" prot="public" static="yes" mutable="no">
+        <type>NvM_RequestResultType</type>
+        <definition>NvM_RequestResultType ui8_nvm_block_status</definition>
+        <argsstring></argsstring>
+        <name>ui8_nvm_block_status</name>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Stores the state of the NvM block. <simplesect kind="remark"><para>values [0,8] <linebreak/>
+ unit N/A <linebreak/>
+ resolution N/A <linebreak/>
+ context task <linebreak/>
+ protection none <linebreak/>
+ storage class normal ram <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="268" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a901b4e3a5a9a14e1e723653d730ecfa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Disable_BDP_TV_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Disable_BDP_TV_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Disable the transmission of the Pdu BDP_TV_01. In some cases init values are written in the Pdu signals. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Disable_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1ad5afe5d1855655afe7d4b979c7b34132" kindref="member">TEST_RemoteSignalRouter_Handle_BDP_TV_01</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+{}<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="299" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="547" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1aa9b49784488fa81a9eb387943eaf6bd3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Handle_BDP_TV_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Handle_BDP_TV_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles the timeout monitoring of Pdu BDP_TV_01. The Pdu BDP_TV_01 is routed from VCAN. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_BDP_TV_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Handle_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1ad5afe5d1855655afe7d4b979c7b34132" kindref="member">TEST_RemoteSignalRouter_Handle_BDP_TV_01</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1477<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="327" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="560" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a0c30ac7ca2f6dfae8242783e6d86eec1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Disable_ELF_02</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Disable_ELF_02</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Disable the transmission of the Pdu ELF_02. In some cases init values are written in the Pdu signals. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Disable_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1ac442af655dbb2f95a9108de6e0b52f72" kindref="member">TEST_RemoteSignalRouter_Handle_ELF_02</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+{}<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="354" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="585" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a766e263867a9e31add45da51df719d55" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Handle_ELF_02</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Handle_ELF_02</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles the timeout monitoring of Pdu ELF_02. The Pdu ELF_02 is routed from VCAN. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_ELF_02_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Handle_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1ac442af655dbb2f95a9108de6e0b52f72" kindref="member">TEST_RemoteSignalRouter_Handle_ELF_02</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1478<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="382" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="597" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a8999ebb301c437a84a04d29fff5a1408" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Disable_FoD_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Disable_FoD_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Disable the transmission of the Pdu FoD_01. In some cases init values are written in the Pdu signals. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Disable_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a51899934a17d03ef2acc4ead0520dfe0" kindref="member">TEST_RemoteSignalRouter_Handle_FoD_01</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+{}<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="409" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="622" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1acdcefe8337cae69499f9de2a4d0a4b62" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Handle_FoD_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Handle_FoD_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles the timeout monitoring of Pdu FoD_01. The Pdu FoD_01 is routed from VCAN. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_FoD_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Handle_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a51899934a17d03ef2acc4ead0520dfe0" kindref="member">TEST_RemoteSignalRouter_Handle_FoD_01</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1481<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="437" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="633" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a123695a10d8fdd6ff21ee8dde8606a59" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Disable_ORU_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Disable_ORU_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>In case the NvM block is corrupted or empty it disables the transmission of the Pdu ORU_01. Otherwise it shall provide the saved value of ORU_01 PDU. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Disable_ORU_01_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase should test the variable ui8_nvm_block_status. <linebreak/>
+ <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a0a27719766c4bb234ba1579259f38b4f" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Disable_ORU_01_1</ref> <linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1acff482b8e44723c879e50e8e5fe89df0" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Disable_ORU_01_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>,SWR_L3_CRoute_Comserv_1484,SWR_L3_CRoute_Comserv_1485,SWR_L3_CRoute_Comserv_1488<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="467" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="660" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1a4f9f35bef7dccfa62ea96e80d2849052" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_Handle_ORU_01</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Handle_ORU_01</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles the timeout monitoring of Pdu ORU_01. The Pdu ORU_01 is routed from VCAN. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_ORU_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Handle_ORU_01_PDU.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase should test the variables RemoteSignalRouter_ORU_01_Received_TimeOut and NvM_UpdateNeeded.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1afac6b782ffcb00f1bf8ece9df412071b" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Handle_ORU_01_1</ref> <linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1ab4496059f4161c56ab200b09211c8766" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Handle_ORU_01_2</ref> <linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a9bd463f55a476f284425796d60f184a7" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Handle_ORU_01_3</ref> <linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a261d643765a44334322e00deeae015c2" kindref="member">TEST_RemoteSignalRouter__RemoteSignalRouter_Handle_ORU_01_4</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1476,SWR_L3_CRoute_Comserv_1487,SWR_L3_CRoute_Comserv_1488,SWR_L3_CRoute_Comserv_1350,SWR_L3_CRoute_Comserv_1482 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="500" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="710" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="_remote_signal_router___routing_8c_1af35cfc9945267e2fb46c573eeea3c8d2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RemoteSignalRouter_masked_memcpy</definition>
+        <argsstring>(volatile uint8 *dest, const uint8 *src, const uint8 *mask, uint16 length)</argsstring>
+        <name>RemoteSignalRouter_masked_memcpy</name>
+        <param>
+          <type>volatile uint8 *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const uint8 *</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the bits from src to dest if the mask contains a 1 on the same bit position. <simplesect kind="remark"><para>reentrant Yes <linebreak/>
+ context task <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe Yes <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination buffer. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source buffer. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mask buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of copied bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_masked_memcpy.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>None. Tested inside StartOnEvent functions<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a internal one, so no link in achitecture. <linebreak/>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="540" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="770" bodyend="778"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga9f0b0df50dda155a3455d12f2e52ecff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the RemoteSignalRouter. The transmission of the Pdus is stopped and init values are loaded into the signal, depending of the PDU configuration. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_Init.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1af4854d269939f5eb3169c586d7785ef4" kindref="member">TEST_RemoteSignalRouter_Init</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1253.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="782" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="782" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1ga1accf45955601a4fa524429d9b1b52d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_CyclicFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_CyclicFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handels the Pdus for RemoteSignalRouter. The function is responsible for Timout monitoring.<linebreak/>
+<simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>none </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_CyclicFunction.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a23966207cbe6d55832fb48abab899223" kindref="member">TEST_RemoteSignalRouter_CyclicFunction</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1258.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="790" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="790" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaaca011c329e5f3a7b4a1a2b26305b958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_BDP_TV_01_Received</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_BDP_TV_01_Received</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handels the reception of BDP_TV_01. The Pdu&apos;s payload is routed to the other busses. Timeout is restarted. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_BDP_TV_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_PDU_Received.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a41ef7d75d456f109a126e79ec01c1b0f" kindref="member">TEST_RemoteSignalRouter_BDP_TV_01_Received</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1261 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="798" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="798" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gada132f373b874af7b1aa22c4979b8bdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_ELF_02_Received</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_ELF_02_Received</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handels the reception of ELF_02. The Pdu&apos;s payload is routed to the other busses. Timeout is restarted. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_ELF_02_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_PDU_Received.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a1f48ddb153ca1e5acf4ddd570e1f1df9" kindref="member">TEST_RemoteSignalRouter_ELF_02_Received</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1352 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="808" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="808" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gaac13811027fa4a3570c42f572e977200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_FoD_01_Received</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_FoD_01_Received</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handels the reception of FoD_01. The Pdu&apos;s payload is routed to the other busses. Timeout is restarted. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_FoD_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_PDU_Received.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1accca5c9b08c0d1950dd843e8786ed047" kindref="member">TEST_RemoteSignalRouter_FoD_01_Received</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1480 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="818" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="818" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gae321d655187876b1ab46f806cfec4bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RemoteSignalRouter_ORU_01_Received</definition>
+        <argsstring>(void)</argsstring>
+        <name>RemoteSignalRouter_ORU_01_Received</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handels the reception of ORU_01. The Pdu&apos;s payload is routed to the other busses. Timeout is restarted. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous/asynchronous Synchronous<linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. </para></simplesect>
+<simplesect kind="return"><para>void </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>RemoteSignalRouter_ORU_01_Received_TimeOut </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RemoteSignalRouter_PDU_ORU_01_Received.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase should test the flag NvM_UpdateNeeded and the Msg_ORU_01 array. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function can be verified with following test(s): <linebreak/>
+ (The description of Unit test Method is available in the test description)<linebreak/>
+ <ref refid="_remote_signal_router___routing_8c_8test_1a225481c88fdd76e05e93c2379e7482c2" kindref="member">TEST_RemoteSignalRouter_ORU_01_Received</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements and Design Decision: <linebreak/>
+ </para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_L3_CRoute_Comserv_1350 SWR_L3_CRoute_Comserv_1486 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" line="828" column="1" bodyfile="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c" bodystart="828" bodyend="838"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implements the Remote Signal Router functionality<linebreak/>
+Both public and private interfaces are implemented here<linebreak/>
+GENERATED FILE PLEASE DO NOT CHANGE. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title></simplesect>
+<simplesect kind="rcs"><title>Revision</title></simplesect>
+<simplesect kind="rcs"><title>Author</title></simplesect>
+<simplesect kind="rcs"><title>Date</title></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+</para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_build/mc_sw/appl/ComServer/RemoteSignalRouter/Evo/src/RemoteSignalRouter_Routing.c"/>
+  </compounddef>
+</doxygen>

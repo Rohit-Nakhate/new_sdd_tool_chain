@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s" kind="group">
+    <compoundname>LIST_OF_RTE_INTERFACES</compoundname>
+    <title>List of Rte interfaces</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga8a5005a1b01e6c0c29cd3d9f344bdf0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Send_SWC_PORT_SIGNAL</definition>
+        <argsstring>(dataType sendSignal)</argsstring>
+        <name>Rte_Send_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>dataType</type>
+          <declname>sendSignal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard Rte send interface.<linebreak/>
+ adds the signal into the Transmitter&apos;s FIFO</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sendSignal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter of type &lt;dataType&gt;. The &lt;dataType&gt; must defined in SST.<linebreak/>
+ range defined in SST.<linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_NOK}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Send_SWC_PORT_SIGNAL.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of IccFifo_Add .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte___s_w_c_8h_8test_1a2434e208f8b1ed080cbad9c300ad24fa" kindref="member">TEST_Rte_Send_SWC_PORT_SIGNAL</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Send_&lt;SWC&gt;_&lt;PORT&gt;_&lt;SIGNAL&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_239.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1gacb7e1f8b8d77493c492e4ac6940fa5ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Receive_SWC_PORT_SIGNAL</definition>
+        <argsstring>(dataType *signal)</argsstring>
+        <name>Rte_Receive_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>dataType *</type>
+          <declname>signal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard rte receive interface.<linebreak/>
+ reads the signal out of the FIFO.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">signal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter of type &lt;dataType&gt;. The &lt;dataType&gt; must defined in SST.<linebreak/>
+ range defined in SST.<linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_NOK,RTE_E_NO_DATA,RTE_E_TIMEOUT,RTE_E_LOST_DATA,RTE_E_UNCONNECTED}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Receive_swc_port_signal.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of IccFifo_Get .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ <ref refid="_rte___s_w_c_8h_8test_1ae193b6d53f5898c100f3164b549f900e" kindref="member">TEST_Rte_Receive_SWC_PORT_SIGNAL</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Receive_&lt;SWC&gt;_&lt;PORT&gt;_&lt;SIGNAL&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000005"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_240.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="214" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga878c6a2e4a92332374b6061dfc479908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Read_SWC_PORT_SIGNAL</definition>
+        <argsstring>(dataType *recvSignal)</argsstring>
+        <name>Rte_Read_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>dataType *</type>
+          <declname>recvSignal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard rte read interface.<linebreak/>
+ reads the signal out of OSEK Buffer.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">recvSignal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter of type &lt;dataType&gt;. The &lt;dataType&gt; must defined in SST.<linebreak/>
+ range defined in SST.<linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_INVALID,RTE_E_MAX_AGE_EXCEEDED,RTE_E_NEVER_RECEIVED,RTE_E_OUT_OF_RANGE,RTE_E_UNCONNECTED}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Read_SWC_PORT_SIGNAL.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the return type of the function by changing the signal value .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1a24eb9980777ee6ee550ce53cdd626dd0" kindref="member">TEST_Rte_Read_SWC_PORT_SIGNAL</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Read_&lt;SWC&gt;_&lt;PORT&gt;_&lt;SIGNAL&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000006"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_245, SWR_ICAS1_RteLight_247,SWR_ICAS1_RteLight_268,SWR_ICAS1_RteLight_269,SWR_ICAS1_RteLight_270,SWR_ICAS1_RteLight_271.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="283" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1gac7ea9a41403ff6f0eb0577e7189db28e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Write_SWC_PORT_SIGNAL</definition>
+        <argsstring>(dataType sendsignal)</argsstring>
+        <name>Rte_Write_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>dataType</type>
+          <declname>sendsignal</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>: standard rte write interface.<linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sendSignal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter of type &lt;dataType&gt;. The &lt;dataType&gt; must defined in SST.<linebreak/>
+ range defined in SST.<linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_INVALID,RTE_E_MAX_AGE_EXCEEDED,RTE_E_NEVER_RECEIVED,RTE_E_OUT_OF_RANGE,RTE_E_UNCONNECTED}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Write_SWC_PORT_SIGNAL.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check return type of the function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1abcf386ccafee1a209123deb973b60615" kindref="member">TEST_Rte_Write_SWC_PORT_SIGNAL</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Write_&lt;SWC&gt;_&lt;PORT&gt;_&lt;SIGNAL&gt; from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ : {SWR_ICAS1_RteLight_244,SWR_ICAS1_RteLight_260}<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="340" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1gaab075dc2f87014fc9fb940d6ffffda89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Call_SWC_PORT_OPERATION</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Call_SWC_PORT_OPERATION</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>: standard Rte call interface.<linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Call_SWC_Port_opertaion.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the requested operation is called .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1ad4d6f90be00457b43b3afb95bdb7c164" kindref="member">TEST_Rte_Call_SWC_PORT_OPERATION</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Call_&lt;SWC&gt;_&lt;PORT&gt;_&lt;OPERATION&gt; from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :SWR_ICAS1_RteLight_273,SWR_ICAS1_RteLight_322<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="396" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga43db81b29c261048caa5aaece872b10d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Datatype</type>
+        <definition>Datatype Rte_CData_calibrationparameter</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_CData_calibrationparameter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>: The Rte_CData provides access to the defined calibration parameter within a software-component. <linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>:-Primitive Datatype. range {uint8,uint16,uint32}<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ The return type of Rte_CData is dependent on the ImplementationDataType of the ParameterDataPrototype and can either be a value or a pointer to the location where the value can be accessed.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_CData_calibrationparameter.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the function is returning the address of the CData variable .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1a5a5f534cc4e1fb0460f563b817d4f653" kindref="member">TEST_Rte_CData_calibrationparameter</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_CData_calibrationparameter from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :SWR_ICAS1_RteLight_278<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="453" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga60b53d0e5274c3665be0a319223f2d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Datapointer *</type>
+        <definition>Datapointer* Rte_Pim_Pimname</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_Pim_Pimname</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>:Standard AUTOSAR Per Instance Memory api. <linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DataPointer - as described by the AUTOSAR specifications. The API returns a typed reference (in C a typed pointer) to the per-instance memory range N/A.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Pimname <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Pim_Pimname.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the function is returning the address of the PIM variable .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1ab0158ecd1f9307bc03d743d055a6c30d" kindref="member">TEST_Rte_Pim_Pimname</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Pim_Pimname from architecture <linebreak/>
+ <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ : SWR_ICAS1_RteLight_329<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="507" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga5d380839134d6c5c9fe99e80b3977f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_IrvRead_RUNNABLE</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_IrvRead_RUNNABLE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>: Standard AUTOSAR Read Interrunnable Variable <linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Irv variable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_IrvRead_runnable.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the function is returning the interunnable variable .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1aea7d93d41e32f878378e39bcf5665f64" kindref="member">TEST_Rte_IrvRead_RUNNABLE</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_IrvRead_RUNNABLE from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :SWR_ICAS1_RteLight_314<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="560" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga8b111112edb126a7ac11cd6bbbf06ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rte_IrvWrite_runnable</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_IrvWrite_runnable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>:Standard AUTOSAR Write Interrunnable Variable <linebreak/>
+</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-void.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Irv variable. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_IrvWrite_runnable.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the function is called .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1aaf4e551784f2b0a6c2ac804a610c0704" kindref="member">TEST_Rte_IrvWrite_runnable</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_IrvWrite_runnable from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :SWR_ICAS1_RteLight_315<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="612" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1ga07524f7bb13f5c8bae095413bf8db214" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean Rte_IsUpdated_SWC_PORT_SIGNAL</definition>
+        <argsstring>(void)</argsstring>
+        <name>Rte_IsUpdated_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Standard Rte is updated function <linebreak/>
+ Defined for the port RpEMLDiagAnpassung signal DeCoding.<linebreak/>
+ <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+. range NA.<linebreak/>
+ resolution factor = NA offset = NA . <linebreak/>
+ unit NA.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean FALSE the signal was not updated since the last read <linebreak/>
+ TRUE the signal was updated by the sender <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Update counters. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_IsUpdated_Port_Signal.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check whether the function is returning TRUE or FALSE according to sender counter .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1a6c2243d78b9b7e90cdbba1778cbfdc36" kindref="member">TEST_Rte_IsUpdated_SWC_PORT_SIGNAL</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_IsUpdated_/&lt;SWC&gt;_/&lt;Port&gt;_/&lt;Signal&gt; from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :{SWR_ICAS1_RteLight_263,SWR_ICAS1_RteLight_262,SWR_ICAS1_RteLight_318}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="672" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1gae727b9670c0cc89c2ec55906c87d6d79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Result_SWC_PORT_OPERATION</definition>
+        <argsstring>(IN/OUT Result)</argsstring>
+        <name>Rte_Result_SWC_PORT_OPERATION</name>
+        <param>
+          <type>IN/OUT</type>
+          <declname>Result</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Standard Rte result function. Format Rte_Result_Port_Operation <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task context <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>IN/OUT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Result The signature can include zero or more IN/OUT and OUT parameters depending on the signature of the operation in the client-server interface. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_INVALID,RTE_E_MAX_AGE_EXCEEDED,RTE_E_NEVER_RECEIVED,RTE_E_OUT_OF_RANGE,RTE_E_UNCONNECTED}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>N/A since it is an Standard AUTOSAR API. <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Result_SWC_PORT_OPERATION.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the return type of the function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: error guessing, statement testing, decision testing <linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1a2fad1934888958674a1092cb24813f34" kindref="member">TEST_Rte_Result_SWC_PORT_OPERATION</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Result_/&lt;SWC&gt;_/&lt;Port&gt;_/&lt;OPERATION&gt; from architecture <linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+ :{SWR_ICAS1_RteLight_323}.<linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC.h" line="731" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___r_t_e___i_n_t_e_r_f_a_c_e_s_1gac4063b00626a941097222889bdf33f04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType Rte_Read_SWC_PORT_SIGNAL</definition>
+        <argsstring>(dataType *recvSignal, datatype *transformerStatus)</argsstring>
+        <name>Rte_Read_SWC_PORT_SIGNAL</name>
+        <param>
+          <type>dataType *</type>
+          <declname>recvSignal</declname>
+        </param>
+        <param>
+          <type>datatype *</type>
+          <declname>transformerStatus</declname>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>standard rte read interface.<linebreak/>
+ reads the signal out of OSEK Buffer.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Only out of the runnable configured in the SST <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">recvSignal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter of type &lt;dataType&gt;. [out] transformerStatus Parameter of type &lt;dataType&gt;. The &lt;dataType&gt; must defined in SST.<linebreak/>
+ range defined in SST.<linebreak/>
+ resolution factor = defined in SST offset = defined in SST. <linebreak/>
+ unit defined in SST.<linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType - as described by the AUTOSAR specifications. range {RTE_E_OK, RTE_E_INVALID,RTE_E_MAX_AGE_EXCEEDED,RTE_E_NEVER_RECEIVED,RTE_E_OUT_OF_RANGE,RTE_E_UNCONNECTED}.<linebreak/>
+ resolution factor = N/A offset = N/A. <linebreak/>
+ unit N/A.<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] globalVariable <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="Rte_Read_SWC_PORT_SIGNAL.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check the value of signal value and transformer status value .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The test technique involves: boundary value test, equivalence class partitioning, error guessing, statement testing, decision testing<linebreak/>
+ Tested in <ref refid="_rte___s_w_c_8h_8test_1a24eb9980777ee6ee550ce53cdd626dd0" kindref="member">TEST_Rte_Read_SWC_PORT_SIGNAL</ref></para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This covers the generic function Rte_Read_&lt;SWC&gt;_&lt;PORT&gt;_&lt;SIGNAL&gt; from architecture.<linebreak/>
+ Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_302,SWR_ICAS1_RteLight_300,SWR_ICAS1_RteLight_303.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/Rte_SWC_ASIL.h" line="135" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

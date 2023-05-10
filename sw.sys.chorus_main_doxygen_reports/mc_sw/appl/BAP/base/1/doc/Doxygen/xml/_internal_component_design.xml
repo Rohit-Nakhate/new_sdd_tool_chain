@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The folder base includes two independent library units: <linebreak/>
+<itemizedlist>
+<listitem><para><ref refid="_b_a_p_handler___p_s_o___im_export_8c" kindref="compound">BAPHandler_PSO_ImExport.c</ref> <linebreak/>
+and <linebreak/>
+</para></listitem><listitem><para><ref refid="_b_a_p_handler___utility_lib_8c" kindref="compound">BAPHandler_UtilityLib.c</ref> <linebreak/>
+ <linebreak/>
+<linebreak/>
+ </para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para>The software requirements can be traced on function level !.<linebreak/>
+For more details please refere to Requirement Implementation chapter.<linebreak/>
+Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SAMPLE_REQ_ID_666  </para></entry><entry thead="no"><para>The RAM/ROM consumption will be measured before each module release   </para></entry></row>
+<row>
+<entry thead="no"><para>PREFIX_ID_66  </para></entry><entry thead="no"><para>Part of test   </para></entry></row>
+</table>
+</para><para><simplesect kind="attention"><para>If you have requirements applying to some other sections , please add them there. Do not create another table here.<linebreak/>
+</para></simplesect>
+<linebreak/>
+<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>The library unit BAPHandler_PSO_ImExport provides couple public functions to be used as intarfaces. They can be found on page Modules/List of public interfaces.<linebreak/>
+ <linebreak/>
+<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>The below diagram depicts the interaction between BAPHandler SWC&apos;s and BAPHandler_PSO_ImExport library.<linebreak/>
+ <image type="html" name="BAPHandler_PSO_ImExport_Software_Unit_Interaction.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para>The diagrams below depict the dynamic behaviour of the public functions from library unit BAPHandler_PSO_ImExport. <linebreak/>
+For specific implementations, check the Files list. <linebreak/>
+<linebreak/>
+ <bold>Interraction with the start-up code</bold><linebreak/>
+The bapi_Handle_PSO_ImExport_prepareData function should run by specific BAPHandler SWC during its initialisation phase. <linebreak/>
+Without this step the library BAPHandler_PSO_ImExport is not able to properly handle for BAPHandler SWC. <linebreak/>
+ <image type="html" name="BAPHandler_ATN_prepareData.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>BAPHandler ATN BAP Indication Handling of PSO_ImExport</bold> <linebreak/>
+ <image type="html" name="BAPHandler_ATN_BAP_Indication_Handling_PSO_ImExport.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>BAPHandler ATN Update Active User</bold> <linebreak/>
+ <image type="html" name="BAPHandler_ATN_Update_Active_User.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>Handler_SWC_BapIndication_PSO_ImExport</bold> <linebreak/>
+ <image type="html" name="Handle_BAP_Indication.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>Synchronize Active User Slot Data</bold> <linebreak/>
+ <image type="html" name="Synchronize_Active_User_Slot_Data.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>Update Active User</bold> <linebreak/>
+ <image type="html" name="Update_Active_User.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ <bold>Verification of NvM data</bold> <linebreak/>
+ <image type="html" name="Verification_of_NvM_data.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+ </para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_2">
+<title>Data flow Diagram</title>
+<para>The diagram below presents the major data flow between abstract BAPHandler SWC and ISO_ImExport libraryy.<linebreak/>
+ <image type="html" name="Data_flow_Diagram.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para>BAPHandlerData_PSO_ImExport is called from the content of specific BAPHandler SWC (BAPHandler_AbstractModule) <linebreak/>
+which is assigned to specific Core (CoreX). <linebreak/>
+BAPHandler SWC execution is under control of Scheduler (SchM_ICAS1_Main_CX) in specific task (SchM_ICAS1_Main_CX) valid for it, <linebreak/>
+what was reflected on the below diagram. <linebreak/>
+ <linebreak/>
+<linebreak/>
+ <bold>BAPHandler ATN process PSO verification</bold> <linebreak/>
+ <image type="html" name="BAPHandler_ATN_processPSOverification.png"></image>
+ </para><para><linebreak/>
+<linebreak/>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>Libraries does not use interrupts.</para><para><heading level="2">Events</heading>
+</para><para>Libraries does not use events.</para><para><heading level="2">Operating Modes</heading>
+</para><para>Libraries does not use operating modes.</para><para><heading level="2">Power Modes</heading>
+</para><para>Libraries does not use power modes.</para><para><heading level="2">Exception and Error Handling</heading>
+</para><para>No DTC or DEM events. Error handling for wrong input values or parameters is prepared and can be found in detailed design for specific functions. <linebreak/>
+In specific situations RTE interface for informing about errors is used.</para><para><heading level="2">Synchronization</heading>
+</para><para>Libraries does not use multi-threading, so no synchronization is used.</para><para><heading level="2">Operations</heading>
+</para><para>Libraries does not perform operations other than showed in Dynamic Behavior section and represented in detailed design for specific functions.</para><para><heading level="2">Macros</heading>
+</para><para>Libraries has only one macro defined: <linebreak/>
+<ref refid="_b_a_p_handler___utility_lib_8c_1ab7023dbef15bacb4d9fb4aa1f70da69d" kindref="member">SWATT_BYPASS(a,b)</ref><linebreak/>
+which is connected to testing, and widely used in many other components.</para><para><heading level="2">Algorithms</heading>
+</para><para>Algorithms used in libraries are showed in Dynamic Behavior section.</para><para><heading level="2">Data Structures</heading>
+</para><para>See structure list</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Attribute  </para></entry><entry thead="yes"><para>Value  </para></entry><entry thead="yes"><para>Rational   </para></entry></row>
+<row>
+<entry thead="no"><para>Interoperability  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>Exchange of data is extensive but organized in simple way.   </para></entry></row>
+<row>
+<entry thead="no"><para>Interaction  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of dependencies less then 4   </para></entry></row>
+<row>
+<entry thead="no"><para>Criticality  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>QM, new and high interaction with BAPHandler modules   </para></entry></row>
+<row>
+<entry thead="no"><para>Technical complexity  </para></entry><entry thead="no"><para>Medium  </para></entry><entry thead="no"><para>No algorithms and interaction are medium   </para></entry></row>
+<row>
+<entry thead="no"><para>Risks  </para></entry><entry thead="no"><para>Low  </para></entry><entry thead="no"><para>Number of units lower then 3 and static code only.   </para></entry></row>
+<row>
+<entry thead="no"><para>Testability  </para></entry><entry thead="no"><para>High  </para></entry><entry thead="no"><para>Testable completely on SWATT.   </para></entry></row>
+</table>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

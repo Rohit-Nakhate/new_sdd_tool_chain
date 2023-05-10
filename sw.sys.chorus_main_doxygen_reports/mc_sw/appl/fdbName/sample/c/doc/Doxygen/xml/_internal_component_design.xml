@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is splitted into the follwing SW units:<itemizedlist>
+<listitem><para><ref refid="_a_i_v___task_8c" kindref="compound">AIV_Task.c</ref> - main file containing runnables as init and cyclic functions (init function is not being used).</para></listitem><listitem><para><ref refid="_a_i_v___task_8h" kindref="compound">AIV_Task.h</ref> - header file</para></listitem><listitem><para><ref refid="_alc_int___extra_definitions_8h" kindref="compound">AlcInt_ExtraDefinitions.h</ref> - This headerfile controls the overwriting of generated S/R autosar_functions</para></listitem><listitem><para><ref refid="_alc_int__nvram_8h" kindref="compound">AlcInt_nvram.h</ref> - Contains the AlcInt NVRAM blocks. This file should be included for AlcInt NVRAM blocks access</para></listitem><listitem><para><ref refid="_alc_int___r_t_e__stub_8c" kindref="compound">AlcInt_RTE_Stub.c</ref>/.h - is necesary for overwrite RTE function</para></listitem><listitem><para><ref refid="_alc_int___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">AlcInt_ADAPTATION.c</ref>/.h - generated files for adaptations</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SWR">
+<title>Requirements Allocation</title>
+<para><blockquote><para>The SW requirements are defined in module <bold>5.1.1. SWR - L3_CRoute_AlcoLock</bold>. All the software requirements assigned to AlcoLock are satisfied by mentioned subcomponents. </para></blockquote></para><para>Non functional requirements are traced here: <table rows="3" cols="2"><row>
+<entry thead="yes"><para>Requirement ID  </para></entry><entry thead="yes"><para>Action   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_AlcoLock_41  </para></entry><entry thead="no"><para>For integration a ROM consumption of the Alcohol Interlock library of 3.5 - 4 kB shall be considered.   </para></entry></row>
+<row>
+<entry thead="no"><para>SWR_ICAS1_L3_AlcoLock_39  </para></entry><entry thead="no"><para>For integration a RAM consumption of the Alcohol Interlock library of 100 - 200 bytes shall be considered.   </para></entry></row>
+</table>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para><bold><ref refid="_a_i_v___task_8c" kindref="compound">AIV_Task.c</ref></bold><itemizedlist>
+<listitem><para>void <bold>AIV_TaskCyclicEvent</bold>(void) To add here the complete description of the function (either here, either link to the description with the UML)</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para>Since the SW component has only on SW unit, the interaction of the SW unit is therefore defined as the SW component interaction, described in the SWA.</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><image type="html" name="AlcoLock_DynamicBehavior.png"></image>
+ </para><para><heading level="2">Tasks</heading>
+</para><para><bold>AIV_TaskCyclicEvent</bold><itemizedlist>
+<listitem><para>called every 10ms</para></listitem></itemizedlist>
+</para><para><heading level="2">Interrupts</heading>
+</para><para>NA</para><para><heading level="2">Events</heading>
+</para><para><bold>AIV_TaskCyclicEvent</bold><itemizedlist>
+<listitem><para>called every 10ms</para></listitem><listitem><para>no other events defined</para></listitem></itemizedlist>
+</para><para><heading level="2">Operating Modes</heading>
+</para><para><heading level="2">Power Modes</heading>
+</para><para><blockquote><para>Power Modes are not seen from this point of view, it is handled by other components in BSW.<linebreak/>
+</para></blockquote></para><para><heading level="2">Exception and Error Handling</heading>
+</para><para><blockquote><para>No Exception and error handling from integration point of view, it is handled by the lib internally or by other components in BSW.<linebreak/>
+</para></blockquote></para><para><heading level="2">Synchronization</heading>
+</para><para><blockquote><para>No synchronization used for AlcInt.<linebreak/>
+</para></blockquote></para><para><heading level="2">Operations</heading>
+</para><para><blockquote><para>All function operations are described in this document in further chapter Files:Globals:Functions. </para></blockquote></para><para><heading level="2">Macros</heading>
+</para><para><blockquote><para>All macros used in integration code are visible in this document in chapter Files:Globals:Macros </para></blockquote></para><para><heading level="2">Algorithms</heading>
+</para><para><blockquote><para>No algorithm in integration code. </para></blockquote></para><para><heading level="2">Data Structures</heading>
+</para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><blockquote><para>Following design describes the connection of the Library and RTE and all below abstract layers, so it is important that the main function of the design which is calling a component from a library and all supporting functions (like buffers preparing) are called properly otherwise full component/library will not work. </para></blockquote></para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rte_light___lin_handling_8h" kind="file" language="C++">
+    <compoundname>RteLight_LinHandling.h</compoundname>
+    <includes local="yes">Rte_VersionCheck.h</includes>
+    <includes local="yes">Std_Types.h</includes>
+    <incdepgraph>
+      <node id="57">
+        <label>Rte_VersionCheck.h</label>
+      </node>
+      <node id="58">
+        <label>Std_Types.h</label>
+      </node>
+      <node id="56">
+        <label>RteLight_LinHandling.h</label>
+        <link refid="_rte_light___lin_handling_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gac4b77d6cd869ebb883715b34164f9b68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_UpdateTxLinBuffers</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_UpdateTxLinBuffers</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the E2E protected PDU from the FIFO to the transmission LIN buffers<linebreak/>
+ At this point the Data in the FIFO is already protected by the Alive counter and the CRC <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_UpdateTxLinBuffers.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall check function call of IccFifo_Get function .<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function is verified in <ref refid="_rte_light___lin_handling_8h_8test_1a392aae1184035880f7e6a5e994f0b632" kindref="member">TEST_RteLight_UpdateTxLinBuffers</ref>. <linebreak/>
+ more details are available by following the reference.</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>This function is a helper function, based on SWR_ICAS1_RteLight_304, which updates the SAFE Tx LIN PDUs buffers that will be used for next transmission.<linebreak/>
+ This implementation was chosen because of the multicore architecture. <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_304.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_LinHandling.h" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gae63e4ad45c7bc0898aee38f7ba9d920e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_HandleLinTransmission</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_HandleLinTransmission</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Triggers the update of LIN PDUs with new Alive counter and CRC.<linebreak/>
+ Used for LIN Pdus. <simplesect kind="remark"><para>reentrant No <linebreak/>
+ context Task level <linebreak/>
+ thread safe No <linebreak/>
+ multicore safe No <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Describe global input and output data. <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_HandleLinTransmission.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall test the transmission of all LIN PDU&apos;s..<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>The following function is verified in <ref refid="_rte_light___lin_handling_8h_8test_1aa94434b6b17d350d136f77633bea9328" kindref="member">TEST_RteLight_HandleLinTransmission</ref>. <linebreak/>
+ more details are available by following the reference.</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. This function is a helper function, based on SWR_ICAS1_RteLight_304, which checks if the LIN PDUs were sent. <linebreak/>
+ In this case, it triggers the update of LIN PDUs with new Alive counter and CRC for next transmission. This implementation was chosen because of the multicore architecture. <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_304.<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_LinHandling.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_i_s_t___o_f___p_u_b_l_i_c___i_n_t_e_r_f_a_c_e_s_1gae7bfc3292fad89b9be9bc7be1acf1faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RteLight_HandleLinReception</definition>
+        <argsstring>(void)</argsstring>
+        <name>RteLight_HandleLinReception</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para><hruler/>
+ </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles LIN frame reception. As in the AUTOSAR COM specification, the timeout monitoring continues independent to the schedule table.</para><para><simplesect kind="remark"><para>reentrant No <linebreak/>
+ context task - (scheduler) <linebreak/>
+ thread safe Yes <linebreak/>
+ multicore safe No. <linebreak/>
+ synchronous</para></simplesect>
+<simplesect kind="par"><title>Security Relevance </title><para>Not Security-Relevant. <linebreak/>
+ </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>Affected variables: IpduStatus_[LIN_FRAME]<linebreak/>
+ IpduRcvTmr_[LIN_FRAME]<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Error Handling</title><para>No error handling is performed by RteLight. This has to be done by the application software</para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RteLight_HandleLinReception.png"></image>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Testcase shall test the LinReception for all LIN PDU&apos;s..<linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Is described in the test case <linebreak/>
+ <ref refid="_rte_light___lin_handling_8h_8test_1a280a41177d85cc62377013b2e8dd5f92" kindref="member">TEST_RteLight_HandleLinReception</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Satisfies following DOORS Requirements: <linebreak/>
+</para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_RteLight_306, SWR_ICAS1_RteLight_307, SWR_ICAS1_RteLight_308<linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_LinHandling.h" line="251" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interfaces related to the LIN Pdus. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Source</title><para><ref refid="_rte_light___lin_handling_8h" kindref="compound">RteLight_LinHandling.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+This is needed since a AUTOSAR LIN Stack is not available in the Project  Include own header files in the testcase file (SWATT), no stubs for data types and function prototypes.<linebreak/>
+ Add software requirement IDs in the testcases.<linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/icas1/sdd-check-in/sw.sys.chorus_main_doc/mc_sw/RteLight/RteTool/c/inc/RteLight_LinHandling.h"/>
+  </compounddef>
+</doxygen>

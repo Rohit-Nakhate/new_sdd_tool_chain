@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_so_mgr___cbk_8h" kind="file" language="C++">
+    <compoundname>SoMgr_Cbk.h</compoundname>
+    <includes local="yes">Compiler.h</includes>
+    <includes local="yes">TcpIp_Api.h</includes>
+    <includes local="no">ComStack_Types.h</includes>
+    <includes local="no">TcpIp_Socket_Api.h</includes>
+    <includes local="no">TcpIp_CfgTypes.h</includes>
+    <includes local="no">TcpIp_IpAddrM_Api.h</includes>
+    <includedby refid="_so_mgr___cbk_8c" local="yes">SoMgr_Cbk.c</includedby>
+    <includedby refid="_so_mgr_8h" local="yes">SoMgr.h</includedby>
+    <incdepgraph>
+      <node id="69">
+        <label>TcpIp_Socket_Api.h</label>
+      </node>
+      <node id="71">
+        <label>TcpIp_IpAddrM_Api.h</label>
+      </node>
+      <node id="65">
+        <label>SoMgr_Cbk.h</label>
+        <link refid="_so_mgr___cbk_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>TcpIp_Api.h</label>
+      </node>
+      <node id="70">
+        <label>TcpIp_CfgTypes.h</label>
+      </node>
+      <node id="68">
+        <label>ComStack_Types.h</label>
+      </node>
+      <node id="66">
+        <label>Compiler.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="72">
+        <label>SoMgr_Cbk.h</label>
+        <link refid="_so_mgr___cbk_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>SoMgr.c</label>
+        <link refid="_so_mgr_8c"/>
+      </node>
+      <node id="74">
+        <label>SoMgr.h</label>
+        <link refid="_so_mgr_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>SoMgr_Cbk.c</label>
+        <link refid="_so_mgr___cbk_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1a8641fe6f39fd32ac239714ffa80eb59e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoMgr_RxIndication</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId, TcpIp_SockAddrType *RemoteAddrPtr, uint8 *BufPtr, uint16 Length)</argsstring>
+        <name>SoMgr_RxIndication</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <param>
+          <type>TcpIp_SockAddrType *</type>
+          <declname>RemoteAddrPtr</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>BufPtr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>Length</declname>
+        </param>
+        <briefdescription>
+<para>Indicates the reception of a new TCP segment or UDP datagram and provides all data and peer information via parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RemoteAddrPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- node address that sent the veh. ident. req. (tester node) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">BufPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the buffer containing DoIP related data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the data pointed out by pBuff </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_RxIndication.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1ad4fa39fccadc4268241bcc716e20224d" kindref="member">TEST_SoMgr_Cbk__SoMgr_RxIndication</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a483c51a4c4c9e6c5449fa99ad5745c5f" kindref="member">TEST_SoMgr_Cbk__SoMgr_RxIndication_1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000007"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19190 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1ad161565956e1d9d3ab9b3a71ffb4fb3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>BufReq_ReturnType</type>
+        <definition>BufReq_ReturnType SoMgr_CopyTxData</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId, uint8 *BufPtr, uint16 BufLength)</argsstring>
+        <name>SoMgr_CopyTxData</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <param>
+          <type>uint8 *</type>
+          <declname>BufPtr</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>BufLength</declname>
+        </param>
+        <briefdescription>
+<para>This service requests to copy data for transmission to the indicated buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Called from the context of TcpIp_TcpTransmit or TcpIp_UdpTransmit APIs. <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">BufPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to the buffer containing DoIP related data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">BufLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the data pointed out by pBuff </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>BufReq_ReturnType </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>BUFREQ_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- copy of the data succeded </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BUFREQ_E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>This call is usually triggered by TcpIp_Transmit(), with an exception that it can be issued also from DoIP virtual client.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_CopyTxData.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1ab53845c26aa888cac79b49777e087306" kindref="member">TEST_SoMgr_Cbk__SoMgr_CopyTxData</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a7e3c7393e690907be73b10cc9c25326b" kindref="member">TEST_SoMgr_Cbk__SoMgr_CopyTxData_1</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1acd3b248793fea655f48c47218c3ee099" kindref="member">TEST_SoMgr_Cbk__SoMgr_CopyTxData_2</ref> <linebreak/>
+</para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000008"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19189 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1af8ead95f438278f1e90fb54d92eb6d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoMgr_TxConfirmation</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId, uint16 Length)</argsstring>
+        <name>SoMgr_TxConfirmation</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <param>
+          <type>uint16</type>
+          <declname>Length</declname>
+        </param>
+        <briefdescription>
+<para>The TCP/IP stack calls this function after the data has been acknowledged by the peer for TCP or was sent to the lower layer driver using UDP. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the data pointed out by pBuff </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>TcpIp_TcpTransmit can return E_NOT_OK if request has not been accepted, e.g. due to a lack of buffer space or the socket is not connected. If socket isn&apos;t online then probably was closed (or in transition to) and resources will be freed. Otherwise, in case when not enough buffer is available in TCP/IP, it was decided not to free here the pTxWin, this action being left in the decision of the next socket transmission (SoMgr_Main_TcpTransmit)</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_TxConfirmation.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1af2f3a451591c23218b406c70187a1e3d" kindref="member">TEST_SoMgr_Cbk__SoMgr_TxConfirmation</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1ad4f49c799cc342fde3d0545f858c51cd" kindref="member">TEST_SoMgr_Cbk__SoMgr_TxConfirmation_1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para>Design Decision - Justification. Callback from TcpIP stack, used in order to confirm the data transmitted by TcpIp <linebreak/>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1a23c06726cab081eaff4ad68393326675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Std_ReturnType</type>
+        <definition>Std_ReturnType SoMgr_TcpAccepted</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId, TcpIp_SocketIdType SocketIdConnected, TcpIp_SockAddrType *RemoteAddrPtr)</argsstring>
+        <name>SoMgr_TcpAccepted</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketIdConnected</declname>
+        </param>
+        <param>
+          <type>TcpIp_SockAddrType *</type>
+          <declname>RemoteAddrPtr</declname>
+        </param>
+        <briefdescription>
+<para>Indicates an incoming TCP connection on a server socket. </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback gets called if the stack put a socket into the listen mode before (as server) and a peer connected to it (as client). <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketIdConnected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-the connected socket Id </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RemoteAddrPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- node address that sent the veh. ident. req. (tester node) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Std_ReturnType </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>E_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- TCP/IP accepted the data passed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E_NOT_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- otherwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>The TCP/IP stack calls this function after a socket was set into the listen state with TcpIp_TcpListen() and a TCP connection is requested by the peer.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_TcpAccepted.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a3221e5aa3d255adff92442cf9a6defe5" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a1eb27509517d8f11f72a3fe65d82592f" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_1</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a1257a771f9db3c9d1af843c99760ae37" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_2</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1aa630314a62dcedaf0998cb7b62ef9f4f" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_3</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a8323114f7514d7bf72cc7c13b8da5507" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_4</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1ac01866ec1f4e8408ce5983098e1d1da2" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_5</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1aa180c7bc0db068ca7114e6d8c1be4f2c" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_6</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a1a0a727f05af140bc5e8e8be17343783" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpAccepted_7</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000009"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19185 SWR_ICAS1_GW_19187 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1a271cc0ca220220dc2f65e97f0998a1ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoMgr_TcpConnected</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId)</argsstring>
+        <name>SoMgr_TcpConnected</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <briefdescription>
+<para>Indicates a successful connection from client sight. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>Remark: Gets called if the stack initiated a TCP connection before (as client) and the peer (the server) acknowledged the connection set up. In detail: The TCP/IP stack calls this function after a socket was requested to connect with TcpIp_TcpConnect() and a TCP connect. </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_TcpConnected.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1aa58d543ace1fa3a9ee8e8483895d35d2" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpConnected</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a9983a18d77733f302a45a02393d916c2" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpConnected_1</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a44584c0f1728db2b49f9428e4a39a7a7" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpConnected_2</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000010"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19187 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="278" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1ae4a2dfa0374da2efccdcc6d8ccd0e7ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoMgr_TcpIpEvent</definition>
+        <argsstring>(TcpIp_SocketIdType SocketId, TcpIp_EventType Event)</argsstring>
+        <name>SoMgr_TcpIpEvent</name>
+        <param>
+          <type>TcpIp_SocketIdType</type>
+          <declname>SocketId</declname>
+        </param>
+        <param>
+          <type>TcpIp_EventType</type>
+          <declname>Event</declname>
+        </param>
+        <briefdescription>
+<para>Indicates an event in the TCP/IP stack referred to the passed socket. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">SocketId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the socket on which the requests is received </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- received SoMgr event to be processed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>The service gets called if the stack encounters a condition described by the values in TcpIpEvent.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_TcpIpEvent.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Check differents sockets maybe in order to reach all the cases <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1ad650b39b80285ac73457eeae74d3a655" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpIpEvent</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1afbd5caf213bbd7879f5c2e12c1d3ebc6" kindref="member">TEST_SoMgr_Cbk__SoMgr_TcpIpEvent_1</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000011"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_19188 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="311" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_so_mgr___cbk_8h_1a6bab0c7bcd9ae770b774f415206ebbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoMgr_LocalIpAddrAssignmentChg</definition>
+        <argsstring>(TcpIp_LocalAddrIdType IpAddrId, TcpIp_IpAddrStateType State)</argsstring>
+        <name>SoMgr_LocalIpAddrAssignmentChg</name>
+        <param>
+          <type>TcpIp_LocalAddrIdType</type>
+          <declname>IpAddrId</declname>
+        </param>
+        <param>
+          <type>TcpIp_IpAddrStateType</type>
+          <declname>State</declname>
+        </param>
+        <briefdescription>
+<para>Indicates an IP address change. </para>        </briefdescription>
+        <detaileddescription>
+<para>This service gets called by the TCP/IP stack if an IP address changes (i.e. new address assigned or assigned address becomes invalid). <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">IpAddrId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the TCP/IP identifier of local IP address assignment that changed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">State</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the state regarding assignment/de-assignment of the local IP address </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para></simplesect>
+<simplesect kind="remark"><para>The active connection sockets forked from the listen sockets are closed by TCP/IP along with the listen sockets, first are closed the connections sockets.</para></simplesect>
+<simplesect kind="par"><title>Globals</title><para><ref refid="_so_mgr_8h_1ada57610b38bdb57a9576806656071265" kindref="member">SoMgr_SockType::SoMgr_SocketTable</ref> - write </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para></para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="SoMgr_LocalIpAddrAssignmentChg.png"></image>
+</para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>1)Decision testing <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Verification criteria</title><para>Provide IP addresses which are defined in the static table <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a152020aa3e6b5d9bf126f6e6e640cee9" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1aead4cdd49491d7d8a6f21a54decc354b" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_1</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a1f8d4bee3c8478a29a596e1da85aace0" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_2</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1acd2f48d940a0b6aa57fdc5ed7ffe862b" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_3</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1aa348b5f2aeac53603cf01a90c11a907d" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_4</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a66e1512f6398dd8c78b196419764b928" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_5</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a8f89d2667fe043ed5c9e48818e95ae6d" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_6</ref> <linebreak/>
+ <ref refid="_so_mgr___cbk_8c_8test_1a6f65270f044faac2630e375a951bfbff" kindref="member">TEST_SoMgr_Cbk__SoMgr_LocalIpAddrAssignmentChg_7</ref> <linebreak/>
+ </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000012"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_15850 <linebreak/>
+ </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h" line="351" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains the declaration of public functions from <ref refid="_so_mgr___cbk_8c" kindref="compound">SoMgr_Cbk.c</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Id</title><para><ref refid="_so_mgr___cbk_8h" kindref="compound">SoMgr_Cbk.h</ref> </para></simplesect>
+<simplesect kind="rcs"><title>Revision</title><para>version </para></simplesect>
+<simplesect kind="rcs"><title>Author</title><para>author </para></simplesect>
+<simplesect kind="rcs"><title>Date</title><para>date </para></simplesect>
+</para><para>detailed multiline description of the file <linebreak/>
+</para>    </detaileddescription>
+    <location file="D:/git/Chorus_V2/sw.sys.chorus_main_build/mc_sw/cdd/Ethernet/SoMgr/c/inc/SoMgr_Cbk.h"/>
+  </compounddef>
+</doxygen>

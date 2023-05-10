@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_internal_component_design" kind="page">
+    <compoundname>InternalComponentDesign</compoundname>
+    <title>Internal Component Design</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="_internal_component_design_1InternalComponentDesign">
+<title>Internal Component Design</title>
+<para>The component is split into the follwing SW units:</para><para><itemizedlist>
+<listitem><para><ref refid="_r_w_b___task_8c" kindref="compound">RWB_Task.c</ref> - Code is called by scheduler which will init, start, run and stop the operation of RWB</para></listitem><listitem><para><ref refid="_r_w_b___task_8h" kindref="compound">RWB_Task.h</ref> - Header file for <ref refid="_r_w_b___task_8c" kindref="compound">RWB_Task.c</ref></para></listitem><listitem><para><ref refid="_r_w_b___stubs_8c" kindref="compound">RWB_Stubs.c</ref> - Code used to identify the SWC version and error codes of RWB</para></listitem><listitem><para><ref refid="_r_w_b___stubs_8h" kindref="compound">RWB_Stubs.h</ref> - Header file for RWB_Stub.c</para></listitem><listitem><para><ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">RWB_ADAPTATION.c</ref> - Code is needed for handling write and reading requests of adaptions regarding RWB (generated)</para></listitem><listitem><para><ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">RWB_ADAPTATION.h</ref> - Header file for <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">RWB_ADAPTATION.c</ref> (generated)</para></listitem><listitem><para><ref refid="_r_w_b___measure_values__22_8c" kindref="compound">RWB_MeasureValues_22.c</ref> - Auto-generated code for handling reading requests of measurement values regarding RWB (generated)</para></listitem><listitem><para><ref refid="_r_w_b___measure_values__22_8h" kindref="compound">RWB_MeasureValues_22.h</ref> - Header file for <ref refid="_r_w_b___measure_values__22_8c" kindref="compound">RWB_MeasureValues_22.c</ref> (generated)</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="_internal_component_design_1SW">
+<title>Requirements Allocation</title>
+<para><blockquote><para>Requirement for EOC SWC are located in EA project ICAS1, under location: <bold> VW_ICAS1/Common/Requirements/5.1.1. SWR - L3_CRoute_RWB </bold> <linebreak/>
+</para></blockquote><ref refid="satisfy" kindref="compound">Requirement Implementation</ref></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInterfaces">
+<title>Software Unit Interfaces</title>
+<para>Detailed description of the interfaces is done within the corresponding Files of the Unit. Only generated functions are described in detail within this chapter.</para><para><itemizedlist>
+<listitem><para><ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8c" kindref="compound">RWB_ADAPTATION.c</ref> / <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h" kindref="compound">RWB_ADAPTATION.h</ref>  This unit handles all read/write request of the RWB specific adaptions. Following the skeleton of the generated function is described.<linebreak/>
+<linebreak/>
+ <bold>Std_ReturnType RWB_Read_Adaption_&lt;Record_Data_ID&gt;(Dcm_OpStatusType OpStatus, uint8* Data)</bold><linebreak/>
+<linebreak/>
+  This generated function handles the read request 0x22 &lt;Record_Data_ID&gt; belonging to RWB Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully read <linebreak/>
+ E_NOT_OK - Failure while reading the adaption </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RWB_Read_Adaption_Record_Data_ID_1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TBD </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000001"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_RWB_95</para></xrefdescription></xrefsect></para><para> <linebreak/>
+<bold>List of all functions:</bold><linebreak/>
+ <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h_1a67e4d7eb78a010451a5cee00e5107c7b" kindref="member">RWB_Read_Adaption_0x0AB2</ref>, <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h_1aebe76d91630bd7fc01b569f8ccd67e28" kindref="member">RWB_Read_Adaption_0x2AC1</ref>,  <linebreak/>
+ <linebreak/>
+ <bold>Std_ReturnType RWB_Write_Adaption_&lt;Record_Data_ID&gt;(const uint8* Data, Dcm_OpStatusType OpStatus, Dcm_NegativeResponseCodeType* ErrorCode)</bold><linebreak/>
+<linebreak/>
+  This generated function handles the write request 0x2E &lt;Record_Data_ID&gt; belonging to RWB Adaption. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ErrorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Error state of the function </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>E_OK - Adaption was successfully written <linebreak/>
+ E_NOT_OK - Failure while writing the adaption <linebreak/>
+ DCM_E_PENDING - Dcm is busy </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>[in] g_eADAPT_Status - Used to handle status of adaption </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RWB_Write_Adaption_Record_Data_ID_1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TBD </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000002"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_L3_RWB_95</para></xrefdescription></xrefsect></para><para> <linebreak/>
+<bold>List of all functions:</bold><linebreak/>
+ <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h_1af322217a66428cccd911f3320fc52988" kindref="member">RWB_Write_Adaption_0x0AB2</ref>, <ref refid="_r_w_b___a_d_a_p_t_a_t_i_o_n_8h_1a9cddfa522b636edbed0384ab67af7ec0" kindref="member">RWB_Write_Adaption_0x2AC1</ref>,   <linebreak/>
+</para></listitem><listitem><para><ref refid="_r_w_b___measure_values__22_8c" kindref="compound">RWB_MeasureValues_22.c</ref> / <ref refid="_r_w_b___measure_values__22_8h" kindref="compound">RWB_MeasureValues_22.h</ref>  This unit handles all read request of the RWB specific measure values from the GLF components. Following the skeleton of the generated function is described.<linebreak/>
+<linebreak/>
+ <bold>Std_ReturnType RWB_Read_Measure_Values_&lt;Record_Data_ID&gt;(Dcm_OpStatusType OpStatus, uint8* Data)</bold><linebreak/>
+<linebreak/>
+  This generated function handles the read request 0x22 &lt;Record_Data_ID&gt; belonging to RWB measure values. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DCM_E_OK - Measure value was successfully read </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RWB_Read_Measure_Values_Record_Data_ID_1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TBD </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000003"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_2286; SWR_ICAS1_GW_2288; SWR_ICAS1_GW_2290; SWR_ICAS1_GW_2292; SWR_ICAS1_GW_2294; SWR_ICAS1_GW_2296; SWR_ICAS1_GW_2298; </para></xrefdescription></xrefsect></para><para> <linebreak/>
+<bold>List of all functions:</bold><linebreak/>
+ <ref refid="_r_w_b___measure_values__22_8h_1a77053997fe7f847fa0f0339c4758c61c" kindref="member">RWB_Read_Measure_Values_0x2AB2</ref>, <ref refid="_r_w_b___measure_values__22_8h_1a3c4c92ecd2da6e3cde926b7534487e2b" kindref="member">RWB_Read_Measure_Values_0x2AB3</ref>, <ref refid="_r_w_b___measure_values__22_8h_1a4de7dabb711542f4ddac1dc91bb237e3" kindref="member">RWB_Read_Measure_Values_0x2AB4</ref>, <ref refid="_r_w_b___measure_values__22_8h_1a0b1a4a30d36cc7d2ee8820d0a75e8e80" kindref="member">RWB_Read_Measure_Values_0x2AB5</ref>, <ref refid="_r_w_b___measure_values__22_8h_1a180960a6cc88e769fd5b1b1460b3eb2a" kindref="member">RWB_Read_Measure_Values_0x2AB6</ref>, <ref refid="_r_w_b___measure_values__22_8h_1acee8092b196fb4a0ccfdbb60a6f615f9" kindref="member">RWB_Read_Measure_Values_0x2AB7</ref>, <ref refid="_r_w_b___measure_values__22_8h_1a50c9e2c25e7e68b96cf317c51574daf8" kindref="member">RWB_Read_Measure_Values_0x2AB8</ref></para><para> <linebreak/>
+<bold>List of all numbers:</bold><linebreak/>
+ {2,3,4,5,6,7,8}  <linebreak/>
+<linebreak/>
+ <linebreak/>
+ <bold>Std_ReturnType <ref refid="_r_w_b___measure_values__22_8h_1a7b01330cb0b3e149f76fc4088dece306" kindref="member">RWB_Read_Measure_Values_0x5458(Dcm_OpStatusType OpStatus, uint8* Data)</ref></bold><linebreak/>
+  This generated function handles the read request 0x22 0x0852 belonging to HVLM measure values. Needed values can be found inside the corresponding Requirement and macro section.</para><para> <simplesect kind="pre"><para>None </para></simplesect>
+<simplesect kind="post"><para>None </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">OpStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Unused but needed to match with the generated function call of Dcm </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Out data which is filled with the corresponding signals </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DCM_E_OK - Measure value was successfully read </para></simplesect>
+<simplesect kind="par"><title>Globals</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Input-&gt;Output-Correlation</title><para>None </para></simplesect>
+<simplesect kind="par"><title>Call Sequence</title><para><image type="html" name="RWB_Read_Measure_Values_0x0852_1.png"></image>
+  </para></simplesect>
+<simplesect kind="par"><title>Test Method</title><para>TBD </para></simplesect>
+<simplesect kind="par"><title>Traceability</title><para></para></simplesect>
+<xrefsect id="satisfy_1_satisfy000004"><xreftitle>Satisfies requirement</xreftitle><xrefdescription><para>SWR_ICAS1_GW_2300  </para></xrefdescription></xrefsect></para></listitem></itemizedlist>
+</para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitInteraction">
+<title>Software Unit Interaction</title>
+<para><blockquote><para>The component internal SU interaction is not known from this point of view. </para></blockquote></para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareUnitDescription_1">
+<title>Dynamic Behavior</title>
+<para><blockquote><para>EOC SWC dynamic behavior is described in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/RWB/SW Architecture/Dynamic</bold> </para></blockquote><heading level="2">Tasks</heading>
+</para><para> <blockquote><para>RWB SWC is assigned to <bold> CORE 0 </bold>, in SWA: <bold>VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer_Core0</bold>. <linebreak/>
+RWB component execution is under control of Scheduler (CDD) in task: <bold> SchM_ICAS1_Main_C0 </bold> in SWA: <bold> VW_ICAS1/Chorus_6M/All_Cores/SoftwareDecomposition/ApplicationLayer/RWB/SW Architecture/Dynamic/Cyclic</bold> </para></blockquote></para><para><heading level="2">Interrupts</heading>
+</para><para> <blockquote><para>Not Applicable </para></blockquote></para><para><heading level="2">Events</heading>
+</para><para> <blockquote><para>void <ref refid="_r_w_b___task_8h_1a12fefdb08cc07973ec46e1855ad428a1" kindref="member">RWB_Start(void)</ref><linebreak/>
+ void <ref refid="_r_w_b___task_8h_1a305765479cf8867211e6edca5defcc37" kindref="member">RWB_Stop(void)</ref><linebreak/>
+</para></blockquote></para><para><heading level="2">Exception and Error Handling</heading>
+</para><para> <blockquote><para>No Exception and error handling from integration point of view, it is handled by the lib internally or by other components in BSW.<linebreak/>
+</para></blockquote></para><para><heading level="2">Synchronization</heading>
+</para><para> <blockquote><para>No synchronization used for RWB.<linebreak/>
+</para></blockquote></para><para><heading level="2">Operations</heading>
+</para><para> <blockquote><para>All function operations are described in this document in further chapter Files:Globals:Functions. </para></blockquote><heading level="2">Macros</heading>
+</para><para> <blockquote><para>All macros used in integration code are visible in this document in chapter Files:Globals:Macros </para></blockquote></para><para><heading level="2">Algorithms</heading>
+</para><para> <blockquote><para>No algorithm in integration code. </para></blockquote></para><para><heading level="2">Data Structures</heading>
+</para><para> <blockquote><para>All data structures are stored in SST file: RWB_SST.xlsx </para></blockquote></para><para></para></sect1>
+<sect1 id="_internal_component_design_1SoftwareDesignEval">
+<title>Evaluate Software Detailed Design</title>
+<para><blockquote><para>Following design describes the connection of the Library and RTE and all below abstract layers, so it is important that the main function of the design which is calling a component from a library and all supporting functions (like buffers preparing) are called properly otherwise full component/library will not work. </para></blockquote></para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
