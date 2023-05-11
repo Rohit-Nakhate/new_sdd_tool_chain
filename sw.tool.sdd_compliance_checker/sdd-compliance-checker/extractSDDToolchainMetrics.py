@@ -23,11 +23,11 @@ import xml.etree.ElementTree as ET
 # Defining Global Parameters
 input_csv_file=""  
 output_csv_file ="" 
-metrics_paths = [] #
-input_path =[] #
-Metrics_dict_list=[] #
-combine_dict_list=[] #
-list_components = [] #
+metrics_paths = [] 
+input_path =[] 
+Metrics_dict_list=[] 
+combine_dict_list=[] 
+list_components = [] 
 csvHeader = config.csv_header
 project_name=""
 component_name_file = ""
@@ -51,8 +51,8 @@ Variant = False
 # Description    : Read command line arguments
 ################################################################################
 def process_cmdl_args():
-    global  input_csv_file, output_csv_file
-
+    global  input_csv_file, output_csv_file 
+    # output_path=""
     print("\nReading Command Line Arguments...")
     parser=argparse.ArgumentParser()
     parser.add_argument("--input_csv_file",type=str, default=None,help="path to CSV inpput file")
@@ -62,19 +62,18 @@ def process_cmdl_args():
         input_csv_file = args.input_csv_file
         output_csv_file = args.output_csv_file
 
-        # Check if output path exists 
-        if not os.path.exists(output_csv_file):
-            os.mkdir(output_csv_file)
-
+        # Check if directory exist if not create     
+        output = os.path.dirname(output_csv_file)
+        if not os.path.exists(output):
+            os.makedirs(output)
+        
         # Check if input path exists 
         if not os.path.exists(input_csv_file):
             print("Error Exception Occured csv File Not Exist ",input_csv_file)
-            sys.exist(-1)
-
+            sys.exit(-1)
     except Exception as e:
-        print("Error Occured:Invalid Command Line Arguments ",e)
+        print("Error:Exception Occured Invalid Command Line Arguments ",e)
         sys.exit(-1)
-
 
 ################################################################################
 # Function Name  : read_json
@@ -85,11 +84,12 @@ def process_cmdl_args():
 ################################################################################
 def read_json(path):
     try:
-        with open(path,'r') as json_file:
-            json_data = json.load(json_file)
-            return json_data
+            with open(path,'r') as json_file:
+                if json_file != "" and '.json' in path:
+                    json_data = json.load(json_file)
+                    return json_data
     except Exception as e:
-        print("Error Occured:While Reading JSON File At {path} ",e)
+        print("Error : Exception Occured While Reading JSON File At {path} ",e)
     
 ###################################################################################
 # Function Name  : normalize_metrics_data
@@ -100,13 +100,11 @@ def read_json(path):
 ####################################################################################
 def normalize_metrics_data(data,sw_type,list_components):
     global current_log_time
-    
     try :
         # Calculate Current log time 
         current_date_time = datetime.now()
         current_date_time_timestamp = current_date_time.timestamp()
         current_log_time = datetime.utcfromtimestamp(current_date_time_timestamp)
-    
         new_data = dict()
         # Check if list of components not empty
         if list_components != '':
@@ -115,25 +113,21 @@ def normalize_metrics_data(data,sw_type,list_components):
                 new_data['project_name'] = list_components['project_name']
             else:
                 new_data['project_name'] = ""
-
             # Check if sw_component name in list of list components
             if "sw_component" in list_components:
                 new_data['sw_component']= list_components['sw_component']
             else:
                 new_data['sw_component'] = ""
-
             # Check if Customer name in list of list components
             if "Customer" in list_components:
                 new_data['Customer']= list_components['Customer']
             else:
                 new_data['Customer'] = ""
-
             # Check if Variant  in list of list components
             if "Variant" in list_components:
                 new_data['Variant']= list_components['Variant']
             else:
                 new_data['Variant'] = ""
-
             if "type" :
                 new_data['type']= sw_type
             else:
@@ -167,35 +161,38 @@ def normalize_metrics_data(data,sw_type,list_components):
 ################################################################################
 # Function Name  : get_all_path
 # Arguments      : None
-# Return Value   : None
+# Return Value   : exit(-1) (in case of failure)
 # Called By      : main
-# Description    : This function is used to Get all the paths from CSV file.
+# Description    : This function is used to get all the paths from CSV file.
 ################################################################################
 def get_all_path():
     global input_csv_file , metrics_paths,input_path,combine_dict_list
     try:
-        with open (input_csv_file,'r') as csv_file:
-            dict_reader = csv.DictReader(csv_file)
-            # Convert to list of dictionary
-            list_of_dict =list(dict_reader)
-            # Join the paths metrics.json to Output paths and  indexpage.xml to Components paths 
-            for data in list_of_dict:
-                if ('output_path' in data) and ('Components' in data):
-                    metrics_paths.append(f"{data['output_path']}metrics.json") 
-                    input_path.append(f"{data['Components']}\indexpage.xml")
-
-            # Check if both list equal in length and not empty
-            if (len(metrics_paths) == len(input_path)) and (metrics_paths != [] and input_path != []):
-                temp_dict={}
-                # Iterate over each index and value in metrics path list
-                for index, val in enumerate(metrics_paths):
-                    temp_dict["metrics"]=metrics_paths[index]
-                    temp_dict["xml"]=input_path[index]
-                    # Append the dictionary object to temp_dict dictionary
-                    combine_dict_list.append(deepcopy(temp_dict))
+        if input_csv_file != "" and '.csv' in input_csv_file:
+            with open (input_csv_file,'r') as csv_file:             
+                    dict_reader = csv.DictReader(csv_file)
+                    # Convert to list of dictionary
+                    list_of_dict =list(dict_reader)
+                    # Join the paths metrics.json to Output paths and  indexpage.xml to Components paths 
+                    for data in list_of_dict:
+                        if ('output_path' in data) and ('Components' in data):
+                            metrics_paths.append(f"{data['output_path']}metrics.json") 
+                            input_path.append(f"{data['Components']}\indexpage.xml")
+                    # Check if both list equal in length and not empty
+                    if (len(metrics_paths) == len(input_path)) and (metrics_paths != [] and input_path != []):
+                        temp_dict={}
+                        # Iterate over each index and value in metrics path list
+                        for index, val in enumerate(metrics_paths):
+                            temp_dict["metrics"]=metrics_paths[index]
+                            temp_dict["xml"]=input_path[index]
+                            # Append the dictionary object to temp_dict dictionary
+                            combine_dict_list.append(deepcopy(temp_dict))
+        else:
+            print("Error : Exception Occured Invalid CSV File ",e)
+            sys.exit(-1)
     except Exception as e :
-        print("Error : An Exception Occured ",e)
-
+        print("Error : Exception Occured Invalid Input CSV File ",e)
+        sys.exit(-1)
 ##################################################################################
 # Function Name  : extract_data
 # Arguments      : elem
@@ -220,7 +217,7 @@ def extract_data(elem,key,temp_dict):
             # Append to dictionary
             temp_dict[key]=component_element
 
-           # Reset the flags
+        # Reset the flags
         if component_name == True:
             component_name = False
         elif Customer == True:
@@ -228,67 +225,63 @@ def extract_data(elem,key,temp_dict):
         elif Project_Name == True:
             Project_Name = False
         elif Variant == True:
-            Variant = False
+                Variant = False
     except Exception as e:
-        print("Error:Exception Occured while extracting data ",e)
+        print("Error:Exception Occured while extracting values from XML In Extract Data Function ",e)
  
-
 ################################################################################
-# Function Name  : get_component_name
+# Function Name  : get_component_info
 # Arguments      : component_xml
 # Return Value   : temp_dict 
 # Called By      : get_metrics_data
 # Description    : This function is used to Get all the components from XML file.
 ################################################################################
-def get_component_name(component_xml):
+def get_component_info(component_xml):
     global component_name,Customer,Project_Name,Variant
-    try :
-        # Parse the XML file
-        temp_dict={}
-        tree = ET.parse(component_xml)
-        # Get the root element
-        root = tree.getroot()
-        # Iterating on root element in XML file
-        for elem in root.iter():
-            if component_name == True:
-                # Extract Component name from XML file
-                extract_data(elem,key,temp_dict)
-            if Customer == True:
-                # Extract Customer name from XML file
-                extract_data(elem,key,temp_dict)
-            if Project_Name == True:
-                # Extract Project name from XML file
-                extract_data(elem,key,temp_dict)
-            if Variant == True:
-            # Extract Variant  from  XML file
-                extract_data(elem,key,temp_dict)
+    # Parse the XML file
+    temp_dict={}
+    tree = ET.parse(component_xml)
+    # Get the root element
+    root = tree.getroot()
+    # Iterating on root element in XML file
+    for elem in root.iter():
+        if component_name == True:
+            # Extract Component name from XML file
+            extract_data(elem,key,temp_dict)
+        if Customer == True:
+            # Extract Customer name from XML file
+            extract_data(elem,key,temp_dict)
+        if Project_Name == True:
+            # Extract Project name from XML file
+            extract_data(elem,key,temp_dict)
+        if Variant == True:
+        # Extract Variant  from  XML file
+            extract_data(elem,key,temp_dict)
 
-            # Check if tag is present with required value
-            if elem.tag == 'para' and str(elem.text).strip() == 'Component Name':
-                key = 'sw_component'
-                component_name = True
-            # Check if tag is present with required value
-            if elem.tag == 'para' and str(elem.text).strip() == 'Customer':
-                key = 'Customer'
-                Customer = True
-            # Check if tag is present with required value
-            if elem.tag == 'para' and str(elem.text).strip() == 'Project Name':
-                key ='project_name'
-                Project_Name = True
-            # Check if tag is present with required value
-            if elem.tag == 'para' and str(elem.text).strip() == 'Variant':
-                key ='Variant'
-                Variant = True
-        return(temp_dict)
-    except Exception as e:
-        print("Error: Exception occured in the functoion get component name",e)
+        # Check if tag is present with required value
+        if elem.tag == 'para' and str(elem.text).strip() == 'Component Name':
+            key = 'sw_component'
+            component_name = True
+        # Check if tag is present with required value
+        if elem.tag == 'para' and str(elem.text).strip() == 'Customer':
+            key = 'Customer'
+            Customer = True
+        # Check if tag is present with required value
+        if elem.tag == 'para' and str(elem.text).strip() == 'Project Name':
+            key ='project_name'
+            Project_Name = True
+        # Check if tag is present with required value
+        if elem.tag == 'para' and str(elem.text).strip() == 'Variant':
+            key ='Variant'
+            Variant = True
+    return(temp_dict)
 
 ################################################################################
 # Function Name  : get_metrics_data
 # Arguments      : None
 # Return Value   : None
 # Called By      : main
-# Description    : This function is used to Get all metrics JSON file data 
+# Description    : This function is used to get all metrics JSON file data 
 ################################################################################
 def get_metrics_data():
     global combine_dict_list
@@ -301,24 +294,23 @@ def get_metrics_data():
                 if key == "metrics":
                     # Check metrics JSON file path exist
                     if not os.path.exists(data[key]):
+                        print("##################################")
                         print(f"Warning: {data[key]} File not found....")
+                        print("##################################")
                     else:
-                        try:
-                            # Reading json file  
-                            metrics_data = read_json(data[key])
-                            print(metrics_data)
-                        except Exception as e:
-                            print(f"Error Failed To Read Json {data[key]} - {e}") 
+                        # Reading json file  
+                        metrics_data = read_json(data[key])
+                        # print(metrics_data)
+
                 if key == "xml":
                     # Check metrics XML file path exist
                     if not os.path.exists(data[key]):
+                        print("##################################")
                         print(f"Warning: {data[key]} File not found....")
+                        print("##################################")
                     else:
-                        try:
-                            # Call get component name to extract component name from XML file
-                            list_of_comps=get_component_name(data[key])
-                        except Exception as e:
-                            print(f"Error Failed To Get Component Name {data[key]} - {e}") 
+                        # Call get component name to extract component name from XML file
+                        list_of_comps=get_component_info(data[key])
             # Store data form JSON and XML file              
             store_metrics_data(metrics_data,list_of_comps)
             metrics_data=""
@@ -326,7 +318,7 @@ def get_metrics_data():
             for key in list_of_comps:
                 list_of_comps[key] = ''
     except Exception as e :
-        print("Error: Exception occured in the functoion get metrics data",e)
+        print("Error: Exception Occured In The Function Get Metrics Data Function",e)
 ################################################################################
 # Function Name  : store_metrics_data
 # Arguments      : metrics_data,list_components
@@ -339,7 +331,7 @@ def store_metrics_data(metrics_data,list_components):
     try:
         # Check if xml and json file not present 
         # Check if data is not empty in metrics data list and list of components
-        if (metrics_data !="" and list_components !="" ):
+        if (metrics_data !="" and list_components !=""):
             # Convert raw metrics data to required dictonary format
             temp_dict=normalize_metrics_data(metrics_data,"Development",list_components)
             # append organised metrics data to list
@@ -348,19 +340,18 @@ def store_metrics_data(metrics_data,list_components):
             for key in temp_dict:
                 temp_dict[key] = ''
     except Exception as e:
-        print("Error : An Exception Occured While Storing Metrics Data :",{e})
+        print("Error : Exception Occured While Storing Metrics Data In Store Metrics Data Function",e)
 
 ################################################################################
 # Function Name  : store_csv
 # Arguments      : csvheader, job_info, csv_file
 # Return Value   : exit(-1) in case of failure
 # Called By      : main
-# Description    : Convert build_info dictionary to csv file.
+# Description    : This function is used to generate CSV and store data in the CSV File .
 ################################################################################
 def store_csv(csvHeader,data_list,output_csv_file):
     # csv_header names to be printed
     # Map column name to alias names. Change names of header column
-
     print("Preparing csv file...")
     csv_Header=[]
     try:
@@ -382,9 +373,9 @@ def store_csv(csvHeader,data_list,output_csv_file):
                     else:
                         data.append("")
                 csv_writer.writerow(data)
-        print(f" {output_csv_file} File Generated Successfully!")
+        print(f"{output_csv_file} File Generated Successfully!")
     except Exception as e:
-        print("Exception occurred : While generating CSV file ",e)
+        print("Error:Exception Occurred While Generating CSV File In Store CSV Function",e)
         exit(-1)
 ################################################################################
 # Function Name  : main
@@ -394,7 +385,7 @@ def store_csv(csvHeader,data_list,output_csv_file):
 # Description    : This is the main function.
 ################################################################################            
 def main():
-    global Metrics_dict_list,output_csv_file,csvHeader
+    global Metrics_dict_list,output_csv_file,csvHeader,output_csv_file
 try:
     # Processing commandline arguments 
     process_cmdl_args()
@@ -404,11 +395,8 @@ try:
     
     # Collecting metrics.json data in dict
     get_metrics_data()
-
     # Generating output and storing data in CSV File
     store_csv(csvHeader,Metrics_dict_list,output_csv_file)
-
-    print("File Generated Successfully !!!")
 except Exception as e:
     print(f"Exception Occurred: {e}")
         

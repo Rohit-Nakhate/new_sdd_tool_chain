@@ -5,17 +5,45 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Get Component Path Name",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--input_dir","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.sys.chorus_main_doxygen_reports\\mc_sw" ,
+                "--output_dir","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker"
+            ]
+        },
+        {
+            "name": "Python: csv_to_db_sdd_tool_chain",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--db_user_name",
+                "sa",
+                "--db_password",
+                "test",
+                "--input_csv_file",
+                "metrics.csv"
+            ]
+        },
+        {
             "name": "Python: Extract SDD toolchain File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args":
-            [
-                "--input_csv_file","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\component_list.csv",
-                
-                "--output_csv_file","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\metrics.csv"
+            "args": [
+                "--input_csv_file",
+                "D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\component_list.csv",
+                "--output_csv_file",
+                "D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\Review_latest\\metrics_11_05_23.csv"
             ]
         },
         {
