@@ -1,0 +1,84 @@
+
+Arguments validation :
+
+ 
+
+Test 1 :
+
+ 
+#Usage : python extractSDDMetrics.py
+#          --input_csv_file =get_component.csv  --output_csv_file= Review\\metrics.csv
+
+ 
+
+Provide valid mandatory arugments and check if script is succesfull . 
+python extractSDDMetrics.py  -input_csv_file = <CSV_FILE>  --output_csv_file= <CSV_FILE> --input_csv_file = "get_component.csv" --output_csv_file= <"metrics.csv">
+
+
+
+Expected output : Script generates succesfull output and Sucessfully store CSV file data in database
+Actual Result : Pass
+ 
+
+Test 2 :
+ 
+
+
+Provide invalid mandatory arugments and check if script gives -1 error status . 
+python SDD_csv_to_db.py --db_user_name = <DB_USERNAME> --db_password = <DB_PASSWORD>
+
+
+
+Expected output : Script generates -1 status 
+Actual Result : Pass
+
+
+Test 3 : 
+
+
+Provide invalid csv file as input and check if script gives -1 error status . 
+python SDD_csv_to_db.py --db_user_name = <DB_USERNAME> --db_password = <DB_PASSWORD> --input_csv_file = "sample.csv"
+
+ 
+
+Expected output : Script generates -1 status and provides error message stating invlaid csv
+Actual Result : Pass
+ 
+
+Test 4 :
+
+
+Provide invalid csv file contents as input and check if script gives -1 error status . 
+python SDD_csv_to_db.py --db_user_name = <DB_USERNAME> --db_password = <DB_PASSWORD> --input_csv_file = "sample.csv"
+
+ 
+
+Expected output : Script generates -1 status and provides error message stating invlaid csv
+
+ 
+
+Test 5 :
+
+
+Check if config file is filled correctly 
+Provide valid  csv file column header as provided in config file  and check if script is succesfull 
+python SDD_csv_to_db.py --db_user_name = <DB_USERNAME> --db_password = <DB_PASSWORD> --input_csv_file = "sample.csv"
+
+ 
+
+Expected output : Script generation succesfull
+
+ 
+
+Test 6 :
+
+ 
+
+Check if config file is filled correctly 
+Provide invalid  csv file column header as provided in config file  and check if script is succesfull .
+Remove type column from csv and check if script return -1 status 
+python SDD_csv_to_db.py --db_user_name = <DB_USERNAME> --db_password = <DB_PASSWORD> --input_csv_file = "sample.csv"
+
+ 
+
+Expected output : Script generation failure -1 status  

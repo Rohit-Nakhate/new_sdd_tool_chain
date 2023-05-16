@@ -35,9 +35,11 @@ def connect_to_mssql_db(db_server_name, db_user_name, db_password, db_name):
 
 def get_table_info(table_name, cursor, condition):
     data = []
+    # print(f"SELECT * FROM {table_name} where {condition}")
     # Extracting Information From Table.
     cursor.execute(
         f"SELECT * FROM {table_name} where {condition}"
+ 
     )
     # Getting Data From Above Query.
     data = [dict((cursor.description[i][0], value) for i, value in enumerate(row)) for row in cursor.fetchall()]
