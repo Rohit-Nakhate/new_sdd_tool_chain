@@ -1,8 +1,15 @@
+# Required Libraries
 import xml.etree.ElementTree as ET
 import re
 import appdata
 
-
+################################################################################
+# Function Name  : get_return
+# Arguments      : node
+# Return Value   : ret
+# Called By      : process_symbol
+# Description    : This function is used to get ret dictionary
+################################################################################
 def get_return(node):
     ret = {}
     ret['type'] = get_return_type(node)
@@ -10,7 +17,13 @@ def get_return(node):
 
     return ret
 
-
+################################################################################
+# Function Name  : get_return_type
+# Arguments      : node
+# Return Value   : return_type
+# Called By      : get_return
+# Description    : This function is used to get return type
+################################################################################
 def get_return_type(node):
     return_type = ""
 
@@ -26,7 +39,13 @@ def get_return_type(node):
 
     return return_type
 
-
+################################################################################
+# Function Name  : get_return_description
+# Arguments      : node
+# Return Value   : return_parameters
+# Called By      : get_return
+# Description    : This function is used to get return type
+################################################################################
 def get_return_description(node):
     return_parameters = []
 
@@ -73,13 +92,25 @@ def get_return_description(node):
 
     return return_parameters
 
-
+################################################################################
+# Function Name  : get_params
+# Arguments      : params
+# Return Value   : return_parameters
+# Called By      : get_return
+# Description    : This function is used to get params
+################################################################################
 def get_params(node):
     params = {'def': get_param_definition(node), 'desc': get_param_description(node)}
 
     return params
 
-
+################################################################################
+# Function Name  : get_param_definition
+# Arguments      : node
+# Return Value   : param_defs
+# Called By      : get_params
+# Description    : This function is used to get param definition
+################################################################################
 def get_param_definition(node):
     param_def_nodes = node.findall("./param")
     param_defs = []
@@ -113,7 +144,13 @@ def get_param_definition(node):
 
     return param_defs
 
-
+################################################################################
+# Function Name  : get_param_description
+# Arguments      : node
+# Return Value   : parameters
+# Called By      : get_params
+# Description    : This function is used to get param description 
+################################################################################
 def get_param_description(node):
     parameters = []
     parameter_list = node.find('./detaileddescription/para')
@@ -147,7 +184,13 @@ def get_param_description(node):
 
     return parameters
 
-
+################################################################################
+# Function Name  : get_test_info
+# Arguments      : node
+# Return Value   : test_info
+# Called By      : process_symbol
+# Description    : This function is used to get get test info
+################################################################################
 def get_test_info(node):
     test_info = {}
     test_info['test_cases'] = get_testmethod_info(node)
@@ -156,7 +199,13 @@ def get_test_info(node):
 
     return test_info
 
-
+################################################################################
+# Function Name  : get_testmethod_info
+# Arguments      : node
+# Return Value   : test_info
+# Called By      : get_params
+# Description    : This function is used to get get testmethod info
+################################################################################
 def get_testmethod_info(node):
     # every refence to a test case starts with "TEST_" as defined in guideline
     test_cases = []
@@ -182,7 +231,13 @@ def get_testmethod_info(node):
                         test_cases.append(test_link)
     return test_cases
 
-
+################################################################################
+# Function Name  : get_vc_info
+# Arguments      : node
+# Return Value   : test_cases
+# Called By      : get_test_info
+# Description    : This function is used to get get vc info
+################################################################################
 def get_vc_info(node):
     # every refence to a test case starts with "TEST_" as defined in guideline
     test_cases = []
@@ -239,7 +294,13 @@ def get_vc_info(node):
 
     return test_cases
 
-
+################################################################################
+# Function Name  : get_code_review_info
+# Arguments      : node
+# Return Value   : code_review_info
+# Called By      : get_test_info
+# Description    : This function is used to get code review info
+################################################################################
 def get_code_review_info(node):
     # return empty list if no tracebilty information can be found
     code_review_info = []
@@ -263,7 +324,13 @@ def get_code_review_info(node):
 
     return code_review_info
 
-
+################################################################################
+# Function Name  : get_meta
+# Arguments      : node
+# Return Value   : meta
+# Called By      : process_symbol
+# Description    : This function is used to get meta
+################################################################################
 def get_meta(node):
     meta = {}
     meta['virtual'] = is_virtual(node)
@@ -276,7 +343,13 @@ def get_meta(node):
 
     return meta
 
-
+################################################################################
+# Function Name  : is_mutable
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is mutable
+################################################################################
 def is_mutable(node):
     mutable = node.get("mutable")
 
@@ -285,7 +358,13 @@ def is_mutable(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : is_mutable
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is virtual
+################################################################################
 def is_virtual(node):
     virtual = node.get("virt")
 
@@ -294,7 +373,13 @@ def is_virtual(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : is_mutable
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is const
+################################################################################
 def is_const(node):
     const = node.get("const")
 
@@ -303,7 +388,13 @@ def is_const(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : is_mutable
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is static
+################################################################################
 def is_static(node):
     static = node.get("static")
 
@@ -312,7 +403,13 @@ def is_static(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : is_inline
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is inline
+################################################################################
 def is_inline(node):
     inline = node.get("inline")
 
@@ -321,7 +418,13 @@ def is_inline(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : is_explicit
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is explicit
+################################################################################
 def is_explicit(node):
     explicit = node.get("explicit")
 
@@ -330,7 +433,13 @@ def is_explicit(node):
     else:
         return False
 
-
+################################################################################
+# Function Name  : get_location
+# Arguments      : node
+# Return Value   : None
+# Called By      : get_meta
+# Description    : This function is used to is get location
+################################################################################
 def get_location(node):
     location = node.find('./location')
 
@@ -345,7 +454,13 @@ def get_location(node):
     else:
         return None
 
-
+################################################################################
+# Function Name  : get_kind
+# Arguments      : node
+# Return Value   : node_kind
+# Called By      : process_symbol
+# Description    : This function is used to is get kind
+################################################################################
 def get_kind(node):
     node_kind = node.get("kind")
 
@@ -367,7 +482,13 @@ def get_kind(node):
                     node_kind = 'function'
     return node_kind
 
-
+################################################################################
+# Function Name  : get_name
+# Arguments      : node
+# Return Value   : node_kind
+# Called By      : process_symbol
+# Description    : This function is used to is get name
+################################################################################
 def get_name(node):
     n_id = node.get("id")
     definition = node.find("./definition")
@@ -393,14 +514,26 @@ def get_name(node):
 
     return member_name + " - " + arguments
 
-
+################################################################################
+# Function Name  : get_brief_description
+# Arguments      : node
+# Return Value   : brief_desc
+# Called By      : process_symbol
+# Description    : This function is used to get brief description
+################################################################################
 def get_brief_description(node):
     brief_desc_node = node.find("./briefdescription")
     brief_desc = "".join(brief_desc_node.itertext()).strip()
 
     return brief_desc
 
-
+################################################################################
+# Function Name  : get_brief_description
+# Arguments      : node
+# Return Value   : brief_desc
+# Called By      : process_symbol
+# Description    : This function is used to get brief description
+################################################################################
 def get_detailed_description(node):
     detailed_desc_node = node.find('./detaileddescription/para')
     detailed_desc = None
@@ -411,7 +544,13 @@ def get_detailed_description(node):
 
     return detailed_desc
 
-
+################################################################################
+# Function Name  : get_enum_def_desc
+# Arguments      : node
+# Return Value   : enum_vars
+# Called By      : process_symbol
+# Description    : This function is used to get enum def desc
+################################################################################
 def get_enum_def_desc(node):
     enum_name = node.find("./name")
     enum_vars = []
@@ -441,7 +580,13 @@ def get_enum_def_desc(node):
 
     return enum_vars
 
-
+################################################################################
+# Function Name  : get_security_info
+# Arguments      : node
+# Return Value   : security_info
+# Called By      : process_symbol
+# Description    : This function is used to get security info
+################################################################################
 def get_security_info(node):
     # return empty list if no tracebilty information can be found
     security_info = []
@@ -477,12 +622,17 @@ def get_security_info(node):
                     "security_relevance": False,
                     "additional_description": ""
                 }
-
                 security_info.append(sec_info)
 
     return security_info
 
-
+################################################################################
+# Function Name  : parse_traceabily_section
+# Arguments      : node, xrefsects
+# Return Value   : linked_requirements
+# Called By      : get_tracability_info
+# Description    : This function is used to parse traceabily section
+################################################################################
 def parse_traceabily_section(node, xrefsects):
     linked_requirements = []
     for xrefsec in xrefsects:
@@ -542,7 +692,13 @@ def parse_traceabily_section(node, xrefsects):
 
     return linked_requirements
 
-
+################################################################################
+# Function Name  : get_tracability_info
+# Arguments      : node, type
+# Return Value   : linked_requirements
+# Called By      : process_symbol
+# Description    : This function is used to parse traceabily info
+################################################################################
 def get_tracability_info(node, type="header"):
     # type = "markdown" -> parse satisfy link from markdown
     # type = "header" -> parse satisfy link from header - default
@@ -562,7 +718,13 @@ def get_tracability_info(node, type="header"):
 
     return linked_requirements
 
-
+################################################################################
+# Function Name  : get_globals_info
+# Arguments      : node
+# Return Value   : globals_info
+# Called By      : process_symbol
+# Description    : This function is used to get globals info
+################################################################################
 def get_globals_info(node):
     # return empty list if no global information can be found
     globals_info = []

@@ -1,12 +1,18 @@
+#Required libraries
 import xml.etree.ElementTree as et
 from xml.dom import minidom
 import filter
 
-
+################################################################################
+# Function Name  : create_req_xml
+# Arguments      : allocated_req, meta_data
+# Return Value   : pretty_xml_str
+# Called By      : create_req_metric
+# Description    : This function is used to create req xml
+################################################################################
 # TODO reduce for loops
 # TODO later - check spr tag -> check if security relevant is spr true for function where spr_true requriements is linked
 # TODO print list where req is covered - functions and markdown
-
 # Used by DevOps for Grafana Dashboard
 def create_req_xml(allocated_req, meta_data):
     root = et.Element("REQUIREMENTS", Component=str(meta_data["ComponentName"]), Variant=meta_data["Variant"])
@@ -17,7 +23,13 @@ def create_req_xml(allocated_req, meta_data):
 
     return pretty_xml_str
 
-
+################################################################################
+# Function Name  : create_req_metric
+# Arguments      : symbols, meta_data
+# Return Value   : pretty_xml_str
+# Called By      : None
+# Description    : This function is used to create req xml
+################################################################################
 # Used by DevOps for Grafana Dashboard
 def create_req_metric(symbols, meta_data):
     allocated_req = []
@@ -32,12 +44,26 @@ def create_req_metric(symbols, meta_data):
                                               symbol["meta"]["location"][1]))
     return create_req_xml(allocated_req, meta_data)
 
+################################################################################
+# Function Name  : Avoid_ZeroDiv
+# Arguments      : num1 , num2
+# Return Value   : pretty_xml_str
+# Called By      : create_req_metric
+# Description    : This function is used to Avoid Zero Division
+################################################################################
 def Avoid_ZeroDiv(num1 , num2):
     try:
         return (num1 / num2)
     except ZeroDivisionError:
         return 0
-    
+
+################################################################################
+# Function Name  : create_function_metric
+# Arguments      : symbols, findings
+# Return Value   : metrics
+# Called By      : main
+# Description    : This function is used to create function metric
+################################################################################  
 def create_function_metric(symbols, findings):
     metrics = {}
 
@@ -155,14 +181,26 @@ def create_function_metric(symbols, findings):
 
     return metrics
 
-
+################################################################################
+# Function Name  : create_function_metric
+# Arguments      : symbols, findings
+# Return Value   : metrics
+# Called By      : create_function_metric
+# Description    : This function is used to get req id
+################################################################################  
 def get_req_id(req_ids):
     req_list = []
     if req_ids != "":
         req_list = req_ids.replace(';', ',').replace('\'', '').strip('.').split(',')
     return req_list
 
-
+################################################################################
+# Function Name  : get_doors_req_metrics
+# Arguments      : doors_req, sdd_metrics, target_release
+# Return Value   : doors_metrics
+# Called By      : main
+# Description    : This function is used to get doors req metrics
+################################################################################  
 def get_doors_req_metrics(doors_req, sdd_metrics, target_release):
     # TODO clean up
     doors_metrics = {}
@@ -219,7 +257,13 @@ def get_doors_req_metrics(doors_req, sdd_metrics, target_release):
 
     return doors_metrics
 
-
+################################################################################
+# Function Name  : get_metrics
+# Arguments      : kind, findings, nmb_elements
+# Return Value   : metric
+# Called By      : create_function_metric
+# Description    : This function is used to get metrics
+################################################################################ 
 def get_metrics(kind, findings, nmb_elements):
     nmb_not_covered = 0
 

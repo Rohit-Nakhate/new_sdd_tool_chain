@@ -1,12 +1,22 @@
+# Required Libraries
 import os
 import xml.etree.ElementTree as ET
 import appdata
-
 import xmlelem
 
+
 class XMLProcessor:
+
     def __init__(self, path_xml_dir):
         self.path_xml_dir = path_xml_dir
+
+    ################################################################################
+    # Function Name  : error
+    # Arguments      : err_format
+    # Return Value   : None
+    # Called By      : None
+    # Description    : This function is used for error handling
+    ################################################################################
 
     #  Error Handling
     @staticmethod
@@ -18,6 +28,14 @@ class XMLProcessor:
 
         raise RuntimeError(msg)
 
+    ################################################################################
+    # Function Name  : get_index_path
+    # Arguments      : xml_dir, index_file
+    # Return Value   : index_path
+    # Called By      : process
+    # Description    : This function is used for index file handling
+    ################################################################################
+    
     #  Index File Handling
     @staticmethod
     def get_index_path(xml_dir, index_file):
@@ -27,7 +45,14 @@ class XMLProcessor:
             XMLProcessor.error("%s not found - %s", index_file, index_path)
 
         return index_path
-
+    
+    ################################################################################
+    # Function Name  : get_indexed_files
+    # Arguments      : self, index_content
+    # Return Value   : index_files
+    # Called By      : process
+    # Description    : This function is used get indexed files
+    ################################################################################
     def get_indexed_files(self, index_content):
         index_files = []
 
@@ -40,13 +65,21 @@ class XMLProcessor:
 
             name = refid + ".xml"
             path = os.path.join(self.path_xml_dir, name)
-
+            # Check if path exists
             if not os.path.exists(path):
                 XMLProcessor.error("could not find indexed file %s", path)
 
             index_files.append(path)
 
         return index_files
+    
+    ################################################################################
+    # Function Name  : parse_xml_content
+    # Arguments      : file_path
+    # Return Value   : xml_content
+    # Called By      : process
+    # Description    : This function is used XML file handling
+    ################################################################################
 
     #  XML Handling
     @staticmethod
@@ -58,6 +91,14 @@ class XMLProcessor:
         except Exception as error:
             XMLProcessor.error("error while parsing xml file %s: %s", file_path, str(error))
         return xml_content
+    
+    ################################################################################
+    # Function Name  : process_symbol
+    # Arguments      : node
+    # Return Value   : symbol
+    # Called By      : process_xml_file
+    # Description    : This function is used for process symbol
+    ################################################################################
 
     @staticmethod
     def process_symbol(node):
@@ -131,6 +172,14 @@ class XMLProcessor:
 
         if symbol is not None:
             return symbol
+        
+    ################################################################################
+    # Function Name  : process_xml_file
+    # Arguments      : self, file_path
+    # Return Value   : symbols
+    # Called By      : process
+    # Description    : This function is used process xml files
+    ################################################################################
 
     def process_xml_file(self, file_path):
         symbols = []
@@ -145,6 +194,14 @@ class XMLProcessor:
                 symbols.append(symbol)
 
         return symbols
+    
+    ################################################################################
+    # Function Name  : get_metadata
+    # Arguments      : self, index_page_path
+    # Return Value   : meta_data
+    # Called By      : process
+    # Description    : This function is used get metadata
+    ################################################################################
 
     def get_metadata(self, index_page_path):
         # TODO adapt SDD guideline and template for metadata information - clear parsability
@@ -172,9 +229,16 @@ class XMLProcessor:
             "ComponentName": component_name,
             "Variant": variant
         }
-
         return meta_data
-
+    
+    ################################################################################
+    # Function Name  : process
+    # Arguments      : self
+    # Return Value   : symbols, meta_data
+    # Called By      : process_xml_file
+    # Description    : This function is used process symbol and metadata
+    ################################################################################
+    
     def process(self):
         index_path = self.get_index_path(self.path_xml_dir, "index.xml")
         index_page_path = self.get_index_path(self.path_xml_dir, "indexpage.xml")

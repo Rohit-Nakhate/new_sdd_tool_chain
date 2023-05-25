@@ -28,25 +28,24 @@ output_dir=""
 
 def process_cmdl_args():
     global input_dir , output_dir
-    
     print("\nReading Command Line Arguments...")
-
     #Reading Commandline arguments 
     parser = argparse.ArgumentParser(description="Collect paths of directories containing an 'xml' folder in a nested folder structure")
     parser.add_argument("--input_dir" ,required=True , help="Provide path to input dir here " )
     parser.add_argument("--output_dir" ,required=True , help="Provide path to output dir here " )
-
     try:
         # Assigning the Command Line Arguments to Global Variables
         args = parser.parse_args()
         input_dir = args.input_dir
         output_dir = args.output_dir
-        # print(output_dir)
-        #Check if output_dir exist 
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+
+        # Check if directory exist if not create     
+        output = os.path.dirname(output_dir)    
+        if not os.path.exists(output):
+            os.makedirs(output)
+            
     except Exception as e:
-        print(f"Exception Occurred: Invalid Arguments ",e)    
+        print(f"Exception Occurred: Invalid Arguments ",{e})    
         sys.exit(-1) 
 
 ################################################################################
@@ -64,7 +63,6 @@ def collect_path(input_dir):
         for root,dir,file_name in os.walk(input_dir):
             if 'xml' in dir:
                 dir_path = os.path.join(root, "xml")
-                print(dir_path)
                 # Add the path to the list
                 templist.append(dir_path)
                 outpath = dir_path.replace("doc\\Doxygen\\xml","")
@@ -72,12 +70,9 @@ def collect_path(input_dir):
                 templist.append(outpath)
                 collect_xml_path.append(templist)
                 templist = []
-                
-
-        # print("List of xml paths",collect_xml_path)
         return collect_xml_path
     except Exception as e :
-        print(f"Exception Occurred:Error while collect folder path ",e)  
+        print(f"Exception Occurred:Error while collect folder path ",{e})  
 
 ################################################################################
 # Function Name  : generate_csv
@@ -89,8 +84,9 @@ def collect_path(input_dir):
 
 def generate_csv(xml_path_list,output_dir):
     try:
-        #In this function we write logic to data in csv  
-        with open(f'{output_dir}\\component_list.csv','w+',newline='') as csv_file:
+        # In this function we write logic to data in csv  
+        # with open(f'{output_dir}\\component_list.csv','w+',newline='') as csv_file:
+        with open(output_dir,'w+',newline='') as csv_file:
             writer = csv.writer(csv_file)
             components=["Components","output_path"]
             writer.writerow(components)
@@ -98,7 +94,7 @@ def generate_csv(xml_path_list,output_dir):
             #     writer.writerow([items])
             writer.writerows(xml_path_list)
     except Exception as e:
-        print(f"Exception Occurred: Error while generating csv file",e)  
+        print(f"Exception Occurred: Error while generating csv file",{e})  
 
 ################################################################################
 # Function Name  : main
@@ -110,14 +106,12 @@ def generate_csv(xml_path_list,output_dir):
 
 def main():
     global input_dir , output_dir
-    
     #Processing Command Line Arguments
     process_cmdl_args()
     #Calling collect_path function 
     xml_path_list = collect_path(input_dir)
     #Generating csv file function 
     generate_csv(xml_path_list,output_dir)
-
 if __name__=='__main__':
     main()
-    print("<-- Script Run Sucessfully -->")
+    print("========================== Script Generate CSV File Sucessfully ==========================")

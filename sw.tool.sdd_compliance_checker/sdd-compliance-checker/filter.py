@@ -1,6 +1,14 @@
+# Required Libraries
 import appdata
 
 
+################################################################################
+# Function Name  : is_relevant_filep
+# Arguments      : filepath
+# Return Value   : None
+# Called By      : create_function_metric
+# Description    : This function is dump json data.
+################################################################################
 def is_relevant_filep(filepath):
     # filter files/dirs where no comliance check necessary e.g. .cpp
     if filepath is not None:
@@ -14,7 +22,13 @@ def is_relevant_filep(filepath):
         else:
             return True
 
-
+################################################################################
+# Function Name  : is_configured_check
+# Arguments      : symbol_kind,check_kind
+# Return Value   : None
+# Called By      : 
+# Description    : This function is dump json data.
+################################################################################
 def is_configured_check(symbol_kind, check_kind):
     # complinace check configuration based on config.yaml
     configured_checks = appdata.configuration["checks"][symbol_kind]

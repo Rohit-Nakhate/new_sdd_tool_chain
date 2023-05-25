@@ -1,3 +1,4 @@
+# Required Libraries
 import os
 import csv
 
@@ -7,6 +8,13 @@ allowed_maturity = ['project_accepted']
 allowed_type = ['functional_requirement', 'nonfunctional_requirement']
 allowed_variant = "ICAS1evo"
 
+################################################################################
+# Function Name  : get_req_ids
+# Arguments      : file_path, target_release
+# Return Value   : doors_req
+# Called By      : main
+# Description    : This function is used to get req ids
+################################################################################
 
 # SW Version as integer e.g. if ID.SW4.0_0152 -> 152
 def get_req_ids(file_path, target_release):

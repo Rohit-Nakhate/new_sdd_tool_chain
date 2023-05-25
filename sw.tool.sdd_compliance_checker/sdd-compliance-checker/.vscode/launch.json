@@ -4,18 +4,46 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+         
         {
-            "name": "Python: Get Component Path Name_2",
+            "name": "Python: Get Component list_1",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--input_dir","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.sys.chorus_main_doxygen_reports\\mc_sw" ,
-                "--output_dir","D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker"
+                "--input_dir","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\mc_sw",
+                "--output_dir","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output\\xml_and_metrics_path.csv"
             ]
         },
+
+        {
+            "name": "Python: main_2",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--xml-dir","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\mc_sw",
+                "--output-dir","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output",
+            ]
+        },
+
+        {
+            "name": "Python: Extract SDD toolchain File_3",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--input_csv_file","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output\\xml_and_metrics_path.csv",
+                "--output_csv_file","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output\\metrics.csv",
+            ]
+        },
+        
         {
             "name": "Python: CSV_to_DB_sdd_tool_chain_4",
             "type": "python",
@@ -26,36 +54,9 @@
             "args": [
                 "--db_user_name","sa",
                 "--db_password","test",
-                "--input_csv_file",".\\Review_latest\\test.csv"
-            ]
-        },
-        {
-            "name": "Python: Extract SDD toolchain File_3",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--input_csv_file",
-                "D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\component_list.csv",
-                "--output_csv_file",
-                "D:\\New_task\\cloned_repo\\SDD_Toolchain\\sw.tool.sdd_compliance_checker\\sdd-compliance-checker\\Review_latest\\metrics_11_05_23.csv"
-            ]
-        },
-        {
-            "name": "Python: Current File_1",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--xml-dir",
-                "D:\\python_Script\\SDD_toolchain\\sw.sys.chorus_main_doxygen_reports\\mc_sw\\cdd\\ECU_DIAG_Chorus\\BUILTINLIST\\Evo\\doc\\Doxygen\\xml",
-                "--output-dir",
-                "D:\\python_Script\\SDD_toolchain\\output\\cdd"
+                "--input_csv_file","D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output\\metrics.csv"
             ]
         }
+       
     ]
 }

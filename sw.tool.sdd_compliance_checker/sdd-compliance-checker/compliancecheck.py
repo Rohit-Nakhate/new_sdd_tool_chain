@@ -1,7 +1,14 @@
+# Required Libraries
 import appdata
 import filter
 
-
+################################################################################
+# Function Name  : create_finding
+# Arguments      : level,type,description,location
+# Return Value   : finding
+# Called By      : 
+# Description    : 
+################################################################################
 def create_finding(level, type, description, location):
     file = location[0]
     line = location[1]
@@ -15,7 +22,13 @@ def create_finding(level, type, description, location):
     }
     return finding
 
-
+################################################################################
+# Function Name  : check_brief_desc
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_brief_desc(symbol):
     # check if brief description is provided
     findings = []
@@ -23,10 +36,15 @@ def check_brief_desc(symbol):
         if ("brief" in symbol and not symbol['brief']) and ("detailed" in symbol and not symbol['detailed']):
             msg = "brief description missing for symbol -> " + str(symbol["symbol"] + " " + symbol["kind"])
             findings.append(create_finding("error", "brief", msg, symbol["meta"]["location"]))
-
     return findings
 
-
+################################################################################
+# Function Name  : check_enum_brief_desc
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_enum_brief_desc(symbol):
     findings = []
 
@@ -41,7 +59,13 @@ def check_enum_brief_desc(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_in_param_desc
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_in_param_desc(symbol):
     findings = []
 
@@ -62,7 +86,13 @@ def check_in_param_desc(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_return_param_desc
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_return_param_desc(symbol):
     findings = []
 
@@ -85,7 +115,13 @@ def check_return_param_desc(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_security_relevance
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_security_relevance(symbol):
     findings = []
 
@@ -105,7 +141,13 @@ def check_security_relevance(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_verification_criteria
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_verification_criteria(symbol):
     findings = []
 
@@ -126,7 +168,13 @@ def check_verification_criteria(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_traceability
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_traceability(symbol):
     findings = []
 
@@ -151,7 +199,13 @@ def check_traceability(symbol):
 
     return findings
 
-
+################################################################################
+# Function Name  : check_test_coverage
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : run_compliance_check
+# Description    : 
+################################################################################
 def check_test_coverage(symbol):
     # only covered if mentioned links to testcases have referece otherwise not covered
     findings = []
@@ -174,7 +228,13 @@ def check_test_coverage(symbol):
                         findings.append(create_finding("error", "test", msg, symbol["meta"]["location"]))
     return findings
 
-
+################################################################################
+# Function Name  : run_compliance_check
+# Arguments      : symbol
+# Return Value   : findings
+# Called By      : main
+# Description    : compliance_findings, ignored_files, contains_errors
+################################################################################
 def run_compliance_check(symbols):
     compliance_findings = []
     ignored_files = []

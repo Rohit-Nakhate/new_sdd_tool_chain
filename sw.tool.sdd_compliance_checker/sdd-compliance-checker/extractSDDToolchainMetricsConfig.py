@@ -4,9 +4,8 @@
 ################################################################################
 
 # Configure the below parameters for your server & database name.
-db_server_name ="192.168.1.18"
+db_server_name ="192.168.1.6"
 db_name ="sdd_toolchain"
-
 
 # Configure/ Add csv header names
 csv_header = {

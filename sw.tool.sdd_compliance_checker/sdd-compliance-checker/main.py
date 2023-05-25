@@ -1,3 +1,15 @@
+#! usr/bin/python3
+# -*- coding: utf-8 -*-
+################################################################################
+# This script is used to generate metrics json
+# Usage : python extractSDDMetrics.py
+#          --xml-dir =<INPUT DIR> 
+#          --output-dir=<OUTPUT DIR>
+# Based on different scenario script will return exit code as follows:
+#  -1: Script Failure.
+################################################################################
+
+#Required libraries
 import argparse
 import os
 import sys
@@ -9,6 +21,14 @@ import appdata
 import file
 import doorsimport
 
+
+################################################################################
+# Function Name  : main
+# Arguments      : None
+# Return Value   : 0,-1
+# Called By      : None
+# Description    : This is the main function.
+################################################################################
 
 def main():
     parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter, prog="sdd-compliance-metrics-checker")
@@ -37,6 +57,7 @@ def main():
 
     args = parser.parse_args()
     output = args.output_dir
+    # Check if output exist 
     if not os.path.exists(output):
         os.makedirs(output)
 

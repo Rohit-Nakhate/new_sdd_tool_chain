@@ -14,7 +14,6 @@ import sys
 import argparse
 import csv
 import extractSDDToolchainMetricsConfig as config
-# import as extractSDDToolchain_LIB lib
 sys.path.append('../')
 import extractSDDToolchain_LIB as lib
 
@@ -881,7 +880,6 @@ def main():
         # Storing data in database
         print("Storing data in database..")
         for csv_row in csv_data:  
-            # print(csv_row)
             # Calling the functions to store data in the tables.
             store_projects(csv_row, server, db_tables, cursor)
             project_id = get_project_id(csv_row, db_tables, cursor)
@@ -914,7 +912,7 @@ def main():
             
             store_sdd_linked_requirements(csv_row, server, db_tables, cursor)
 
-            store_requirement_info(csv_row, server, db_tables,cursor,version_id, branch_id, sw_component_id,variant_id,customer_id)
+            # store_requirement_info(csv_row, server, db_tables,cursor,version_id, branch_id, sw_component_id,variant_id,customer_id)
             
             # store_release(csv_row,server,db_tables,cursor,type_id)
         

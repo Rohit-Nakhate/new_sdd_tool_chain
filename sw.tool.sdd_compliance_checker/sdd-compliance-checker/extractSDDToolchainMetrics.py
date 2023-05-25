@@ -19,6 +19,7 @@ from copy import deepcopy
 import extractSDDToolchainMetricsConfig as config
 from datetime import datetime
 import xml.etree.ElementTree as ET
+import logging
 
 # Defining Global Parameters
 input_csv_file=""  
@@ -53,7 +54,7 @@ Variant = False
 def process_cmdl_args():
     global  input_csv_file, output_csv_file 
     # output_path=""
-    print("\nReading Command Line Arguments...")
+    print("\nReading Command Line Arguments...\n")
     parser=argparse.ArgumentParser()
     parser.add_argument("--input_csv_file",type=str, default=None,help="path to CSV inpput file")
     parser.add_argument("--output_csv_file",type=str, default=None,help="path to CSV output file")
@@ -66,7 +67,12 @@ def process_cmdl_args():
         output = os.path.dirname(output_csv_file)
         if not os.path.exists(output):
             os.makedirs(output)
-        
+
+        script_dir = os.path.dirname(output_csv_file)
+        log_file_path = os.path.join(script_dir,'metrics.log')
+        # Set up logging configuration
+        logging.basicConfig( level=logging.WARNING,filename='D:\\New_task\\cloned_repo\\GIT_CLONE\\new_sdd_tool_chain\\sw.sys.chorus_main_doxygen_reports\\output\\metrics.log',filemode='w',format='%(asctime)s - %(levelname)s - %(message)s')
+
         # Check if input path exists 
         if not os.path.exists(input_csv_file):
             print("Error Exception Occured csv File Not Exist ",input_csv_file)
@@ -294,9 +300,11 @@ def get_metrics_data():
                 if key == "metrics":
                     # Check metrics JSON file path exist
                     if not os.path.exists(data[key]):
-                        print("##################################")
-                        print(f"Warning: {data[key]} File not found....")
-                        print("##################################")
+                        #TODO
+                        # print("##################################")
+                        print(f"{data[key]} File not found....")
+                        logging.warning(f"{data[key]} File not found....")
+                        # print("##################################\n")
                     else:
                         # Reading json file  
                         metrics_data = read_json(data[key])
@@ -305,9 +313,10 @@ def get_metrics_data():
                 if key == "xml":
                     # Check metrics XML file path exist
                     if not os.path.exists(data[key]):
-                        print("##################################")
-                        print(f"Warning: {data[key]} File not found....")
-                        print("##################################")
+                        # print("##################################")
+                        print(f"{data[key]} File not found....")
+                        logging.warning(f"{data[key]} File not found....")
+                        # print("##################################\n")
                     else:
                         # Call get component name to extract component name from XML file
                         list_of_comps=get_component_info(data[key])
@@ -373,7 +382,15 @@ def store_csv(csvHeader,data_list,output_csv_file):
                     else:
                         data.append("")
                 csv_writer.writerow(data)
-        print(f"{output_csv_file} File Generated Successfully!")
+        
+        script_dir = os.path.dirname(output_csv_file)
+      
+        # Set up logging configuration
+        logging.basicConfig( level=logging.WARNING,filename='metrics.log',filemode='w',format='%(asctime)s - %(levelname)s - %(message)s')
+        log_file_path = os.path.join(script_dir,'metrics.log')
+    
+        # print(f"{output_csv_file} File Generated Successfully!")
+        print("File Generated Successfully!")
     except Exception as e:
         print("Error:Exception Occurred While Generating CSV File In Store CSV Function",e)
         exit(-1)
@@ -387,6 +404,7 @@ def store_csv(csvHeader,data_list,output_csv_file):
 def main():
     global Metrics_dict_list,output_csv_file,csvHeader,output_csv_file
 try:
+
     # Processing commandline arguments 
     process_cmdl_args()
 
